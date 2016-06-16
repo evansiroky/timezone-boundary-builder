@@ -2,8 +2,14 @@ var fs = require('fs'),
   http = require('http')
 
 var async = require('async'),
+  jsts = require('jsts'),
   overpass = require('query-overpass'),
   shp = require('shpjs')
+
+
+var osmBoundarySources = require('./osmBoundarySources.json'),
+  geoJsonReader = new jsts.io.GeoJSONReader(),
+  geoJsonWriter = new jsts.io.GeoJSONWriter()
 
 
 var toArrayBuffer = function(buffer) {
@@ -21,7 +27,72 @@ var extractToGeoJson = function(callback) {
     .catch(function(e){ console.log('extract err', e); callback(e) })
 }
 
-var osmBoundarySources = require('./osmBoundarySources.json')
+var union = function(a, b) {
+  var _a = geoJsonReader.read(JSON.stringify(a)),
+    _b = geoJsonReader.read(JSON.stringify(b))
+
+  var result = _a.union(_b)
+
+  return geoJsonWriter.write(result)
+
+}
+
+var downloadOsmBoundary = function(boundaryId, boundaryCallback) {
+  var cfg = osmBoundarySources[boundaryId],
+    query = '[out:json][timeout:60];',
+    boundaryFilename = './downloads/' + cfg.type,
+    debug = 'getting data for '
+
+  if(cfg.type === 'ISO3166-1') {
+    query += '(relation["boundary"="administrative"]' +
+      '["admin_level"="2"]' +
+      '["ISO3166-1"="' + cfg.code + '"]);' +
+      'out body;>;out meta qt;'
+    boundaryFilename += '_' + cfg.code
+    debug += 'country: ' + cfg.code
+  }
+
+  console.log(debug)
+
+  async.auto({
+    checkForAlreadyDownloadedFile: function(cb) {
+      fs.stat(boundaryFilename, function(err) {
+        if(!err) { return boundaryCallback() }
+        cb()
+      })
+    },
+    downloadFromOverpass: ['checkForAlreadyDownloadedFile', function(results, cb) {
+      console.log('downloading from overpass')
+      overpass(query, cb, { flatProperties: true })
+    }],
+    validateOverpassResult: ['downloadFromOverpass', function(results, cb) {
+      var data = results.downloadFromOverpass
+      if(!data.features || data.features.length == 0) {
+        err = new Error('Invalid geojson for boundary: ' + boundaryId)
+        return cb(err)
+      }
+      cb()
+    }],
+    saveSingleMultiPolygon: ['validateOverpassResult', function(results, cb) {
+      var data = results.downloadFromOverpass,
+        combined
+
+      // union all multi-polygons / polygons into one
+      for (var i = data.features.length - 1; i >= 0; i--) {
+        var curGeom = data.features[i].geometry
+        if(curGeom.type === 'Polygon' || curGeom.type === 'MultiPolygon') {
+          console.log('combining border')
+          if(!combined) {
+            combined = curGeom
+          } else {
+            combined = union(curGeom, combined)
+          }
+        }
+      }
+      fs.writeFile(boundaryFilename, JSON.stringify(combined, null, 2), cb)
+    }]
+  }, boundaryCallback)
+}
 
 async.auto({
   makeDownloadsDir: function(cb) {
@@ -47,27 +118,14 @@ async.auto({
         .on('error', cb)
     })
   }],
-  extractShapefile: ['getEfeleShapefile', function(results, cb) {
-    console.log('extracting efele.net shapefile')
-    extractToGeoJson(cb)
-  }],
   getOsmBoundaries: ['makeDownloadsDir', function(results, cb) {
     console.log('downloading osm boundaries')
-    var boundaryIds = Object.keys(osmBoundarySources)
-    async.eachSeries(boundaryIds,
-      function(boundaryId, boundaryCallback) {
-        var cfg = osmBoundarySources[boundaryId]
-        console.log('osm boundary for:', boundaryId, cfg.query)
-        overpass(cfg.query, function(err, data) {
-          if(err) { return boundaryCallback(err) }
-          if(!data.features || data.features.length == 0) {
-            err = new Error('Invalid geojson for boundary: ' + boundaryId)
-            return boundaryCallback(err)
-          }
-          // union all multi-polygons / polygons into one
-          fs.writeFile('./downloads/' + boundaryId, JSON.stringify(data, null, 2), boundaryCallback)
-        }, { flatProperties: true })
-      }, cb)
+    async.eachSeries(Object.keys(osmBoundarySources), downloadOsmBoundary, cb)
+  }],
+  extractEfeleNetShapefile: ['getOsmBoundaries', function(results, cb) {
+    return cb()
+    console.log('extracting efele.net shapefile')
+    extractToGeoJson(cb)
   }]
 }, function(err) {
   console.log('done')
