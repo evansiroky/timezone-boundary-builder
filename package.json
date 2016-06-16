@@ -1,0 +1,21 @@
+{
+  "name": "timezone-boundary-builder",
+  "version": "1.0.0",
+  "description": "Scripts to create a timezone shapefile from multiple sources",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "timezone",
+    "shapefile"
+  ],
+  "author": "Evan Siroky",
+  "license": "MIT",
+  "dependencies": {
+    "async": "^2.0.0-rc.5",
+    "jsts": "^1.1.2",
+    "query-overpass": "^1.1.0",
+    "shpjs": "^3.3.2"
+  }
+}

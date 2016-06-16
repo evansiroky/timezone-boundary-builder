@@ -1,0 +1,5 @@
+{
+  "USA": {
+    "query": "[out:json][timeout:60];(relation[\"boundary\"=\"administrative\"][\"admin_level\"=\"2\"][\"ISO3166-1\"=\"US\"]);out body;>;out meta qt;"
+  }
+}
