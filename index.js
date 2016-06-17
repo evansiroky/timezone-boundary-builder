@@ -8,6 +8,7 @@ var async = require('async'),
 
 
 var osmBoundarySources = require('./osmBoundarySources.json'),
+  zoneCfg = require('./timezones.json'),
   geoJsonReader = new jsts.io.GeoJSONReader(),
   geoJsonWriter = new jsts.io.GeoJSONWriter()
 
@@ -37,6 +38,13 @@ var union = function(a, b) {
 
 }
 
+var fetchIfNeeded = function(file, superCallback, fetchFn) {
+  fs.stat(file, function(err) {
+    if(!err) { return superCallback() }
+    fetchFn()
+  })
+}
+
 var downloadOsmBoundary = function(boundaryId, boundaryCallback) {
   var cfg = osmBoundarySources[boundaryId],
     query = '[out:json][timeout:60];',
@@ -55,16 +63,12 @@ var downloadOsmBoundary = function(boundaryId, boundaryCallback) {
   console.log(debug)
 
   async.auto({
-    checkForAlreadyDownloadedFile: function(cb) {
-      fs.stat(boundaryFilename, function(err) {
-        if(!err) { return boundaryCallback() }
-        cb()
+    downloadFromOverpass: function(results, cb) {
+      console.log('downloading from overpass')
+      fetchIfNeeded(boundaryFilename, cb, function() {
+        overpass(query, cb, { flatProperties: true })
       })
     },
-    downloadFromOverpass: ['checkForAlreadyDownloadedFile', function(results, cb) {
-      console.log('downloading from overpass')
-      overpass(query, cb, { flatProperties: true })
-    }],
     validateOverpassResult: ['downloadFromOverpass', function(results, cb) {
       var data = results.downloadFromOverpass
       if(!data.features || data.features.length == 0) {
@@ -106,33 +110,49 @@ async.auto({
     })
   },
   getEfeleShapefile: ['makeDownloadsDir', function(results, cb) {
-    console.log('downloads efele.net shapefile')
-    return cb()
-    var file = fs.createWriteStream('./downloads/tz_world_mp.zip')
-    http.get('http://efele.net/maps/tz/world/tz_world_mp.zip', function(response) {
-      response.pipe(file)
-      file
-        .on('finish', function() {
-          file.close(cb)
-        })
-        .on('error', cb)
+    console.log('download efele.net shapefile')
+    var efeleFilename = './downloads/tz_world_mp.zip'
+    fetchIfNeeded(efeleFilename, cb, function() {
+      var file = fs.createWriteStream(efeleFilename)
+      http.get('http://efele.net/maps/tz/world/tz_world_mp.zip', function(response) {
+        response.pipe(file)
+        file
+          .on('finish', function() {
+            file.close(cb)
+          })
+          .on('error', cb)
+      })
     })
   }],
   getOsmBoundaries: ['makeDownloadsDir', function(results, cb) {
     console.log('downloading osm boundaries')
+    return cb()
     async.eachSeries(Object.keys(osmBoundarySources), downloadOsmBoundary, cb)
   }],
   extractEfeleNetShapefile: ['getOsmBoundaries', function(results, cb) {
-    return cb()
     console.log('extracting efele.net shapefile')
     extractToGeoJson(cb)
+  }],
+  dictifyEfeleNetData: ['extractEfeleNetShapefile', function(results, cb) {
+    var timezoneLookup = {}
+    for (var i = results.extractEfeleNetShapefile.features.length - 1; i >= 0; i--) {
+      var curTz = results.extractEfeleNetShapefile.features[i]
+      timezoneLookup[curTz.properties.TZID] = i
+    }
+    cb(null, timezoneLookup)
+  }],
+  createZones: ['dictifyEfeleNetData', function(results, cb) {
+    async.each(Object.keys(zoneCfg), makeTimezoneBoundary, cb)
+  }],
+  mergeZones: ['createZones', function(results, cb) {
+
   }]
-}, function(err) {
+}, function(err, results) {
   console.log('done')
   if(err) {
     console.log('error!', err)
     return
   }
 
-  //console.log(osmBoundarySources)
+  console.log(results.dictifyEfeleNetData)
 })
