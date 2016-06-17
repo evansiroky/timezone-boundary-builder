@@ -89,6 +89,13 @@ var downloadOsmBoundary = function(boundaryId, boundaryCallback) {
       'out body;>;out meta qt;'
     boundaryFilename += '_' + cfg.code
     debug += 'country: ' + cfg.code
+  } else if(cfg.type === 'city') {
+    query += '(relation["boundary"="administrative"]' +
+      '["admin_level"="8"]' +
+      '["name"="' + cfg.name + '"]);' +
+      'out body;>;out meta qt;'
+    boundaryFilename += '_' + cfg.name
+    debug += 'city: ' + cfg.name
   }
 
   boundaryFilename += '.json'
@@ -96,7 +103,7 @@ var downloadOsmBoundary = function(boundaryId, boundaryCallback) {
   console.log(debug)
 
   async.auto({
-    downloadFromOverpass: function(results, cb) {
+    downloadFromOverpass: function(cb) {
       console.log('downloading from overpass')
       fetchIfNeeded(boundaryFilename, boundaryCallback, function() {
         overpass(query, cb, { flatProperties: true })

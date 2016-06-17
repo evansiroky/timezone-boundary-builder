@@ -2,5 +2,9 @@
   "USA": {
     "type": "ISO3166-1",
     "code": "US"
+  },
+  "West Wendover": {
+    "type": "city",
+    "name": "West Wendover"
   }
 }

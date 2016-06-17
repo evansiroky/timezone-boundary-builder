@@ -36,6 +36,10 @@
       "op": "difference",
       "source": "efele",
       "id": "America/Tijuana"
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "city_West Wendover"
     }
   ]
 }
