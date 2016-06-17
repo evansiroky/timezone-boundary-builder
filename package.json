@@ -16,6 +16,7 @@
     "async": "^2.0.0-rc.5",
     "jsts": "^1.1.2",
     "query-overpass": "^1.1.0",
-    "shpjs": "^3.3.2"
+    "shpjs": "^3.3.2",
+    "turf-polygon": "^1.0.3"
   }
 }

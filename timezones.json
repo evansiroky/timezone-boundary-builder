@@ -1,0 +1,41 @@
+{
+  "America/Los_Angeles": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "ISO3166-1_US"
+    }, {
+      "op": "intersect",
+      "source": "bbox",
+      "data": [[[-125.859375,30.4486736793],[-125.859375,49.5537255135],[-113.37890625,49.5537255135],[-113.37890625,30.4486736793],[-125.859375,30.4486736793]]]
+    }, {
+      "op": "difference",
+      "source": "efele",
+      "id": "America/Vancouver"
+    }, {
+      "op": "difference",
+      "source": "efele",
+      "id": "America/Creston"
+    }, {
+      "op": "difference",
+      "source": "efele",
+      "id": "America/Denver"
+    }, {
+      "op": "difference",
+      "source": "efele",
+      "id": "America/Boise"
+    }, {
+      "op": "difference",
+      "source": "efele",
+      "id": "America/Phoenix"
+    }, {
+      "op": "difference",
+      "source": "efele",
+      "id": "America/Hermosillo"
+    }, {
+      "op": "difference",
+      "source": "efele",
+      "id": "America/Tijuana"
+    }
+  ]
+}
