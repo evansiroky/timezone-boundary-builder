@@ -1,4 +1,22 @@
 {
+  "America/Boise": [
+    {
+      "op": "init",
+      "source": "efele",
+      "id": "America/Boise"
+    }
+  ],
+  "America/Denver": [
+    {
+      "op": "init",
+      "source": "efele",
+      "id": "America/Denver"
+    }, {
+      "op": "union",
+      "source": "overpass",
+      "id": "city_West Wendover"
+    }
+  ],
   "America/Los_Angeles": [
     {
       "op": "init",
@@ -40,6 +58,13 @@
       "op": "difference",
       "source": "overpass",
       "id": "city_West Wendover"
+    }
+  ],
+  "America/Phoenix": [
+    {
+      "op": "init",
+      "source": "efele",
+      "id": "America/Phoenix"
     }
   ]
 }

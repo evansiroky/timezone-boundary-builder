@@ -166,6 +166,8 @@ var makeTimezoneBoundary = function(tzid, callback) {
       geom = intersection(geom, taskData)
     } else if(task.op === 'difference') {
       geom = diff(geom, taskData)
+    } else if(task.op === 'union') {
+      geom = union(geom, taskData)
     }
     cb()
   }, function(err) {
