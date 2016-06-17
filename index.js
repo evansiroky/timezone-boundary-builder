@@ -12,7 +12,7 @@ var osmBoundarySources = require('./osmBoundarySources.json'),
   zoneCfg = require('./timezones.json'),
   geoJsonReader = new jsts.io.GeoJSONReader(),
   geoJsonWriter = new jsts.io.GeoJSONWriter(),
-  efeleGeoms, efeleLookup
+  efeleGeoms, efeleLookup = {}
 
 
 var safeMkdir = function(dirname, callback) {
@@ -36,22 +36,8 @@ var toArrayBuffer = function(buffer) {
 
 var extractToGeoJson = function(callback) {
   shp(toArrayBuffer(fs.readFileSync('./downloads/tz_world_mp.zip')))
-    .then(function(geojson) { console.log('extract success'); callback(null, geojson) })
+    .then(function(geojson) { console.log('extract success'); return callback(null, geojson) })
     .catch(function(e){ console.log('extract err', e); callback(e) })
-}
-
-var jstsToGeojson = function(data) {
-  var result = geoJsonWriter.write(data);
-
-  if(result.type === 'GeometryCollection' && result.geometries.length === 0) {
-    return undefined
-  } else {
-    return {
-      type: 'Feature',
-      properties: {},
-      geometry: result
-    }
-  }
 }
 
 var union = function(a, b) {
@@ -60,7 +46,7 @@ var union = function(a, b) {
 
   var result = _a.union(_b)
 
-  return jstsToGeojson(result)
+  return geoJsonWriter.write(result)
 
 }
 
@@ -71,7 +57,7 @@ var intersection = function(a, b) {
 
   var result = _a.intersection(_b)
 
-  return jstsToGeojson(result)
+  return geoJsonWriter.write(result)
 }
 
 var diff = function(a, b) {
@@ -80,7 +66,7 @@ var diff = function(a, b) {
 
   var result = _a.difference(_b)
 
-  return jstsToGeojson(result)
+  return geoJsonWriter.write(result)
 }
 
 var fetchIfNeeded = function(file, superCallback, fetchFn) {
@@ -147,11 +133,11 @@ var downloadOsmBoundary = function(boundaryId, boundaryCallback) {
 
 var getDataSource = function(source) {
   if(source.source === 'efele') {
-    return efeleGeoms[efeleLookup[source.id]]
+    return efeleGeoms[efeleLookup[source.id]].geometry
   } else if(source.source === 'overpass') {
     return require('./downloads/' + source.id + '.json')
-  } else if(source.source === 'bbox') {
-    return polygon(source.data)
+  } else if(source.source === 'manual-polygon') {
+    return polygon(source.data).geometry
   } else {
     var err = new Error('unknown source: ' + source.source)
     throw err
@@ -159,11 +145,14 @@ var getDataSource = function(source) {
 }
 
 var makeTimezoneBoundary = function(tzid, callback) {
+  console.log('makeTimezoneBoundary for', tzid)
+
   var ops = zoneCfg[tzid],
     geom
 
   async.eachSeries(ops, function(task, cb) {
     var taskData = getDataSource(task)
+    //console.log(task.op)
     if(task.op === 'init') {
       geom = taskData
     } else if(task.op === 'intersect') {
@@ -171,9 +160,10 @@ var makeTimezoneBoundary = function(tzid, callback) {
     } else if(task.op === 'difference') {
       geom = diff(geom, taskData)
     }
+    cb()
   }, function(err) {
     if(err) { return callback(err) }
-    fs.writeFile('./dist/' + tzid.replace(/\//g, '__'), JSON.stringify(geom))
+    fs.writeFile('./dist/' + tzid.replace(/\//g, '__') + '.json', JSON.stringify(geom), callback)
   })
 }
 
@@ -210,6 +200,7 @@ async.auto({
     extractToGeoJson(cb)
   }],
   dictifyEfeleNetData: ['extractEfeleNetShapefile', function(results, cb) {
+    console.log('dictify efele.net')
     efeleGeoms = results.extractEfeleNetShapefile.features
     for (var i = efeleGeoms.length - 1; i >= 0; i--) {
       var curTz = efeleGeoms[i]
@@ -218,6 +209,7 @@ async.auto({
     cb()
   }],
   createZones: ['makeDistDir', 'dictifyEfeleNetData', function(results, cb) {
+    console.log('createZones')
     async.each(Object.keys(zoneCfg), makeTimezoneBoundary, cb)
   }],
   mergeZones: ['createZones', function(results, cb) {
