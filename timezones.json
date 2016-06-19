@@ -1,9 +1,233 @@
 {
+  "Africa/Bamako": [
+    {
+      "op": "init",
+      "source": "efele",
+      "id": "Africa/Bamako"
+    }
+  ],
+  "Africa/Bangui": [
+    {
+      "op": "init",
+      "source": "efele",
+      "id": "Africa/Bangui"
+    }
+  ],
+  "Africa/Blantyre": [
+    {
+      "op": "init",
+      "source": "efele",
+      "id": "Africa/Blantyre"
+    }
+  ],
+  "Africa/Bujumbura": [
+    {
+      "op": "init",
+      "source": "efele",
+      "id": "Africa/Bujumbura"
+    }
+  ],
+  "Africa/Gaborone": [
+    {
+      "op": "init",
+      "source": "efele",
+      "id": "Africa/Gaborone"
+    }
+  ],
+  "Africa/Harare": [
+    {
+      "op": "init",
+      "source": "efele",
+      "id": "Africa/Harare"
+    }
+  ],
+  "Africa/Juba": [
+    {
+      "op": "init",
+      "source": "efele",
+      "id": "Africa/Juba"
+    }
+  ],
+  "Africa/Kampala": [
+    {
+      "op": "init",
+      "source": "efele",
+      "id": "Africa/Kampala"
+    }
+  ],
+  "Africa/Kigali": [
+    {
+      "op": "init",
+      "source": "efele",
+      "id": "Africa/Kigali"
+    }
+  ],
+  "Africa/Lubumbashi": [
+    {
+      "op": "init",
+      "source": "efele",
+      "id": "Africa/Lubumbashi"
+    }
+  ],
+  "Africa/Lusaka": [
+    {
+      "op": "init",
+      "source": "efele",
+      "id": "Africa/Lusaka"
+    }
+  ],
+  "Africa/Maseru": [
+    {
+      "op": "init",
+      "source": "efele",
+      "id": "Africa/Maseru"
+    }
+  ],
+  "Africa/Mbabane": [
+    {
+      "op": "init",
+      "source": "efele",
+      "id": "Africa/Mbabane"
+    }
+  ],
+  "Africa/Ndjamena": [
+    {
+      "op": "init",
+      "source": "efele",
+      "id": "Africa/Ndjamena"
+    }
+  ],
+  "Africa/Niamey": [
+    {
+      "op": "init",
+      "source": "efele",
+      "id": "Africa/Niamey"
+    }
+  ],
+  "Africa/Ouagadougou": [
+    {
+      "op": "init",
+      "source": "efele",
+      "id": "Africa/Ouagadougou"
+    }
+  ],
+  "America/Araguaina": [
+    {
+      "op": "init",
+      "source": "efele",
+      "id": "America/Araguaina"
+    }
+  ],
+  "America/Argentina/Jujuy": [
+    {
+      "op": "init",
+      "source": "efele",
+      "id": "America/Argentina/Jujuy"
+    }
+  ],
+  "America/Argentina/La_Rioja": [
+    {
+      "op": "init",
+      "source": "efele",
+      "id": "America/Argentina/La_Rioja"
+    }
+  ],
+  "America/Argentina/Mendoza": [
+    {
+      "op": "init",
+      "source": "efele",
+      "id": "America/Argentina/Mendoza"
+    }
+  ],
+  "America/Argentina/San_Juan": [
+    {
+      "op": "init",
+      "source": "efele",
+      "id": "America/Argentina/San_Juan"
+    }
+  ],
+  "America/Argentina/San_Luis": [
+    {
+      "op": "init",
+      "source": "efele",
+      "id": "America/Argentina/San_Luis"
+    }
+  ],
+  "America/Argentina/Tucuman": [
+    {
+      "op": "init",
+      "source": "efele",
+      "id": "America/Argentina/Tucuman"
+    }
+  ],
+  "America/Asuncion": [
+    {
+      "op": "init",
+      "source": "efele",
+      "id": "America/Asuncion"
+    }
+  ],
+  "America/Atikokan": [
+    {
+      "op": "init",
+      "source": "efele",
+      "id": "America/Atikokan"
+    }
+  ],
+  "America/Boa_Vista": [
+    {
+      "op": "init",
+      "source": "efele",
+      "id": "America/Boa_Vista"
+    }
+  ],
   "America/Boise": [
     {
       "op": "init",
       "source": "efele",
       "id": "America/Boise"
+    }
+  ],
+  "America/Campo_Grande": [
+    {
+      "op": "init",
+      "source": "efele",
+      "id": "America/Campo_Grande"
+    }
+  ],
+  "America/Chihuahua": [
+    {
+      "op": "init",
+      "source": "efele",
+      "id": "America/Chihuahua"
+    }
+  ],
+  "America/Creston": [
+    {
+      "op": "init",
+      "source": "efele",
+      "id": "America/Creston"
+    }
+  ],
+  "America/Cuiaba": [
+    {
+      "op": "init",
+      "source": "efele",
+      "id": "America/Cuiaba"
+    }
+  ],
+  "America/Dawson": [
+    {
+      "op": "init",
+      "source": "efele",
+      "id": "America/Dawson"
+    }
+  ],
+  "America/Dawson_Creek": [
+    {
+      "op": "init",
+      "source": "efele",
+      "id": "America/Dawson_Creek"
     }
   ],
   "America/Denver": [
@@ -15,6 +239,111 @@
       "op": "union",
       "source": "overpass",
       "id": "city_West Wendover"
+    }
+  ],
+  "America/Edmonton": [
+    {
+      "op": "init",
+      "source": "efele",
+      "id": "America/Edmonton"
+    }
+  ],
+  "America/Eirunepe": [
+    {
+      "op": "init",
+      "source": "efele",
+      "id": "America/Eirunepe"
+    }
+  ],
+  "America/Fort_Nelson": [
+    {
+      "op": "init",
+      "source": "efele",
+      "id": "America/Fort_Nelson"
+    }
+  ],
+  "America/Indiana/Indianapolis": [
+    {
+      "op": "init",
+      "source": "efele",
+      "id": "America/Indiana/Indianapolis"
+    }
+  ],
+  "America/Indiana/Knox": [
+    {
+      "op": "init",
+      "source": "efele",
+      "id": "America/Indiana/Knox"
+    }
+  ],
+  "America/Indiana/Marengo": [
+    {
+      "op": "init",
+      "source": "efele",
+      "id": "America/Indiana/Marengo"
+    }
+  ],
+  "America/Indiana/Petersburg": [
+    {
+      "op": "init",
+      "source": "efele",
+      "id": "America/Indiana/Petersburg"
+    }
+  ],
+  "America/Indiana/Tell_City": [
+    {
+      "op": "init",
+      "source": "efele",
+      "id": "America/Indiana/Tell_City"
+    }
+  ],
+  "America/Indiana/Vevay": [
+    {
+      "op": "init",
+      "source": "efele",
+      "id": "America/Indiana/Vevay"
+    }
+  ],
+  "America/Indiana/Vincennes": [
+    {
+      "op": "init",
+      "source": "efele",
+      "id": "America/Indiana/Vincennes"
+    }
+  ],
+  "America/Indiana/Winamac": [
+    {
+      "op": "init",
+      "source": "efele",
+      "id": "America/Indiana/Winamac"
+    }
+  ],
+  "America/Inuvik": [
+    {
+      "op": "init",
+      "source": "efele",
+      "id": "America/Inuvik"
+    }
+  ],
+  "America/Kentucky/Louisville": [
+    {
+      "op": "init",
+      "source": "efele",
+      "id": "America/Kentucky/Louisville"
+    }
+  ],
+  "America/Kentucky/Monticello": [
+    {
+      "op": "init",
+      "source": "efele",
+      "id": "America/Kentucky/Monticello"
+    }
+  ],
+  "America/La_Paz": [
+    {
+      "op": "init",
+      "source": "efele",
+      "id": "America/La_Paz"
     }
   ],
   "America/Los_Angeles": [
@@ -60,11 +389,403 @@
       "id": "city_West Wendover"
     }
   ],
+  "America/Manaus": [
+    {
+      "op": "init",
+      "source": "efele",
+      "id": "America/Manaus"
+    }
+  ],
+  "America/North_Dakota/Beulah": [
+    {
+      "op": "init",
+      "source": "efele",
+      "id": "America/North_Dakota/Beulah"
+    }
+  ],
+  "America/North_Dakota/Center": [
+    {
+      "op": "init",
+      "source": "efele",
+      "id": "America/North_Dakota/Center"
+    }
+  ],
+  "America/North_Dakota/New_Salem": [
+    {
+      "op": "init",
+      "source": "efele",
+      "id": "America/North_Dakota/New_Salem"
+    }
+  ],
+  "America/Ojinaga": [
+    {
+      "op": "init",
+      "source": "efele",
+      "id": "America/Ojinaga"
+    }
+  ],
   "America/Phoenix": [
     {
       "op": "init",
       "source": "efele",
       "id": "America/Phoenix"
+    }
+  ],
+  "America/Porto_Velho": [
+    {
+      "op": "init",
+      "source": "efele",
+      "id": "America/Porto_Velho"
+    }
+  ],
+  "America/Regina": [
+    {
+      "op": "init",
+      "source": "efele",
+      "id": "America/Regina"
+    }
+  ],
+  "America/Rio_Branco": [
+    {
+      "op": "init",
+      "source": "efele",
+      "id": "America/Rio_Branco"
+    }
+  ],
+  "America/Santarem": [
+    {
+      "op": "init",
+      "source": "efele",
+      "id": "America/Santarem"
+    }
+  ],
+  "America/Swift_Current": [
+    {
+      "op": "init",
+      "source": "efele",
+      "id": "America/Swift_Current"
+    }
+  ],
+  "Asia/Almaty": [
+    {
+      "op": "init",
+      "source": "efele",
+      "id": "Asia/Almaty"
+    }
+  ],
+  "Asia/Aqtobe": [
+    {
+      "op": "init",
+      "source": "efele",
+      "id": "Asia/Aqtobe"
+    }
+  ],
+  "Asia/Barnaul": [
+    {
+      "op": "init",
+      "source": "efele",
+      "id": "Asia/Barnaul"
+    }
+  ],
+  "Asia/Bishkek": [
+    {
+      "op": "init",
+      "source": "efele",
+      "id": "Asia/Bishkek"
+    }
+  ],
+  "Asia/Chita": [
+    {
+      "op": "init",
+      "source": "efele",
+      "id": "Asia/Chita"
+    }
+  ],
+  "Asia/Choibalsan": [
+    {
+      "op": "init",
+      "source": "efele",
+      "id": "Asia/Choibalsan"
+    }
+  ],
+  "Asia/Dushanbe": [
+    {
+      "op": "init",
+      "source": "efele",
+      "id": "Asia/Dushanbe"
+    }
+  ],
+  "Asia/Harbin": [
+    {
+      "op": "init",
+      "source": "efele",
+      "id": "Asia/Harbin"
+    }
+  ],
+  "Asia/Hebron": [
+    {
+      "op": "init",
+      "source": "efele",
+      "id": "Asia/Hebron"
+    }
+  ],
+  "Asia/Hovd": [
+    {
+      "op": "init",
+      "source": "efele",
+      "id": "Asia/Hovd"
+    }
+  ],
+  "Asia/Irkutsk": [
+    {
+      "op": "init",
+      "source": "efele",
+      "id": "Asia/Irkutsk"
+    }
+  ],
+  "Asia/Kabul": [
+    {
+      "op": "init",
+      "source": "efele",
+      "id": "Asia/Kabul"
+    }
+  ],
+  "Asia/Kashgar": [
+    {
+      "op": "init",
+      "source": "efele",
+      "id": "Asia/Kashgar"
+    }
+  ],
+  "Asia/Kathmandu": [
+    {
+      "op": "init",
+      "source": "efele",
+      "id": "Asia/Kathmandu"
+    }
+  ],
+  "Asia/Khandyga": [
+    {
+      "op": "init",
+      "source": "efele",
+      "id": "Asia/Khandyga"
+    }
+  ],
+  "Asia/Novokuznetsk": [
+    {
+      "op": "init",
+      "source": "efele",
+      "id": "Asia/Novokuznetsk"
+    }
+  ],
+  "Asia/Novosibirsk": [
+    {
+      "op": "init",
+      "source": "efele",
+      "id": "Asia/Novosibirsk"
+    }
+  ],
+  "Asia/Omsk": [
+    {
+      "op": "init",
+      "source": "efele",
+      "id": "Asia/Omsk"
+    }
+  ],
+  "Asia/Oral": [
+    {
+      "op": "init",
+      "source": "efele",
+      "id": "Asia/Oral"
+    }
+  ],
+  "Asia/Tashkent": [
+    {
+      "op": "init",
+      "source": "efele",
+      "id": "Asia/Tashkent"
+    }
+  ],
+  "Asia/Thimphu": [
+    {
+      "op": "init",
+      "source": "efele",
+      "id": "Asia/Thimphu"
+    }
+  ],
+  "Asia/Tomsk": [
+    {
+      "op": "init",
+      "source": "efele",
+      "id": "Asia/Tomsk"
+    }
+  ],
+  "Asia/Ulaanbaatar": [
+    {
+      "op": "init",
+      "source": "efele",
+      "id": "Asia/Ulaanbaatar"
+    }
+  ],
+  "Asia/Ust-Nera": [
+    {
+      "op": "init",
+      "source": "efele",
+      "id": "Asia/Ust-Nera"
+    }
+  ],
+  "Asia/Vientiane": [
+    {
+      "op": "init",
+      "source": "efele",
+      "id": "Asia/Vientiane"
+    }
+  ],
+  "Asia/Yerevan": [
+    {
+      "op": "init",
+      "source": "efele",
+      "id": "Asia/Yerevan"
+    }
+  ],
+  "Australia/Broken_Hill": [
+    {
+      "op": "init",
+      "source": "efele",
+      "id": "Australia/Broken_Hill"
+    }
+  ],
+  "Europe/Andorra": [
+    { 
+      "op": "init", 
+      "source": "efele", 
+      "id": "Europe/Andorra"
+    }
+  ],
+  "Europe/Belgrade": [
+    {
+      "op": "init",
+      "source": "efele",
+      "id": "Europe/Belgrade"
+    }
+  ],
+  "Europe/Bratislava": [
+    {
+      "op": "init",
+      "source": "efele",
+      "id": "Europe/Bratislava"
+    }
+  ],
+  "Europe/Budapest": [
+    {
+      "op": "init",
+      "source": "efele",
+      "id": "Europe/Budapest"
+    }
+  ],
+  "Europe/Chisinau": [
+    {
+      "op": "init",
+      "source": "efele",
+      "id": "Europe/Chisinau"
+    }
+  ],
+  "Europe/Kirov": [
+    {
+      "op": "init",
+      "source": "efele",
+      "id": "Europe/Kirov"
+    }
+  ],
+  "Europe/Luxembourg": [
+    {
+      "op": "init",
+      "source": "efele",
+      "id": "Europe/Luxembourg"
+    }
+  ],
+  "Europe/Minsk": [
+    { 
+      "op": "init", 
+      "source": "efele", 
+      "id": "Europe/Minsk"
+    }
+  ],
+  "Europe/Prague": [
+    {
+      "op": "init",
+      "source": "efele",
+      "id": "Europe/Prague"
+    }
+  ],
+  "Europe/Samara": [
+    {
+      "op": "init",
+      "source": "efele",
+      "id": "Europe/Samara"
+    }
+  ],
+  "Europe/San_Marino": [
+    { 
+      "op": "init", 
+      "source": "efele", 
+      "id": "Europe/San_Marino"
+    }
+  ],
+  "Europe/Skopje": [
+    {
+      "op": "init",
+      "source": "efele",
+      "id": "Europe/Skopje"
+    }
+  ],
+  "Europe/Ulyanovsk": [
+    {
+      "op": "init",
+      "source": "efele",
+      "id": "Europe/Ulyanovsk"
+    }
+  ],
+  "Europe/Uzhgorod": [
+    {
+      "op": "init",
+      "source": "efele",
+      "id": "Europe/Uzhgorod"
+    }
+  ],
+  "Europe/Vaduz": [
+    { 
+      "op": "init", 
+      "source": "efele", 
+      "id": "Europe/Vaduz"
+    }
+  ],
+  "Europe/Vatican": [
+    { 
+      "op": "init", 
+      "source": "efele", 
+      "id": "Europe/Vatican"
+    }
+  ],
+  "Europe/Vienna": [
+    {
+      "op": "init",
+      "source": "efele",
+      "id": "Europe/Vienna"
+    }
+  ],
+  "Europe/Volgograd": [
+    {
+      "op": "init",
+      "source": "efele",
+      "id": "Europe/Volgograd"
+    }
+  ],
+  "Europe/Zurich": [
+    {
+      "op": "init",
+      "source": "efele",
+      "id": "Europe/Zurich"
     }
   ]
 }
