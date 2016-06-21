@@ -1,4 +1,8 @@
 {
+  "Michigan": {
+    "type": "ISO3166-2",
+    "code": "US-MI"
+  },
   "USA": {
     "type": "ISO3166-1",
     "code": "US"

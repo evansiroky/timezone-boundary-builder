@@ -40,6 +40,30 @@ var extractToGeoJson = function(callback) {
     .catch(function(e){ console.log('extract err', e); callback(e) })
 }
 
+debugGeo = function(op, a, b) {
+  try {
+    switch(op) {
+      case 'union':
+        return union(a, b)
+        break
+      case 'intersection':
+        return intersection(a, b)
+        break
+      case 'diff':
+        return diff(a, b)
+        break
+      default:
+        var err = new Error('invalid op: ' + op)
+        throw err
+    }
+  } catch(e) {
+    console.log('op err')
+    fs.writeFileSync('debug_' + op + '_a.json', JSON.stringify(a))
+    fs.writeFileSync('debug_' + op + '_b.json', JSON.stringify(b))
+    throw e
+  }
+}
+
 var union = function(a, b) {
   var _a = geoJsonReader.read(JSON.stringify(a)),
     _b = geoJsonReader.read(JSON.stringify(b))
@@ -89,6 +113,13 @@ var downloadOsmBoundary = function(boundaryId, boundaryCallback) {
       'out body;>;out meta qt;'
     boundaryFilename += '_' + cfg.code
     debug += 'country: ' + cfg.code
+  } else if(cfg.type === 'ISO3166-2') {
+    query += '(relation["boundary"="administrative"]' +
+      '["admin_level"="4"]' +
+      '["ISO3166-2"="' + cfg.code + '"]);' +
+      'out body;>;out meta qt;'
+    boundaryFilename += '_' + cfg.code
+    debug += 'state/province: ' + cfg.code
   } else if(cfg.type === 'city') {
     query += '(relation["boundary"="administrative"]' +
       '["admin_level"="8"]' +
@@ -159,15 +190,15 @@ var makeTimezoneBoundary = function(tzid, callback) {
 
   async.eachSeries(ops, function(task, cb) {
     var taskData = getDataSource(task)
-    //console.log(task.op)
+    console.log('-', task.op, task.id)
     if(task.op === 'init') {
       geom = taskData
     } else if(task.op === 'intersect') {
-      geom = intersection(geom, taskData)
+      geom = debugGeo('intersection', geom, taskData)
     } else if(task.op === 'difference') {
-      geom = diff(geom, taskData)
+      geom = debugGeo('diff', geom, taskData)
     } else if(task.op === 'union') {
-      geom = union(geom, taskData)
+      geom = debugGeo('union', geom, taskData)
     }
     cb()
   }, function(err) {

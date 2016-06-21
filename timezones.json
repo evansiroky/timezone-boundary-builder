@@ -195,6 +195,97 @@
       "id": "America/Campo_Grande"
     }
   ],
+  "America/Chicago": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "ISO3166-1_US"
+    }, { 
+      "op": "union",
+      "source": "efele",
+      "id": "America/Chicago"
+    }, {
+      "op": "intersect",
+      "source": "manual-polygon",
+      "data": [[[-104.150390625,49.66762782262192],[-105.3369140625,29.420460341013133],[-97.119140625,25.16517336866393],[-84.605712890625,29.248063243796576],[-83.14453125,37.16031654673677],[-85.7373046875,49.439556958940855],[-104.150390625,49.66762782262192]]]
+    }, {
+      "op": "difference",
+      "source": "efele",
+      "id": "America/North_Dakota/New_Salem"
+    }, {
+      "op": "difference",
+      "source": "efele",
+      "id": "America/North_Dakota/Center"
+    }, {
+      "op": "difference",
+      "source": "efele",
+      "id": "America/North_Dakota/Beulah"
+    }, {
+      "op": "difference",
+      "source": "efele",
+      "id": "America/Denver"
+    }, {
+      "op": "difference",
+      "source": "efele",
+      "id": "America/Regina"
+    }, {
+      "op": "difference",
+      "source": "efele",
+      "id": "America/Winnipeg"
+    }, {
+      "op": "difference",
+      "source": "efele",
+      "id": "America/Rainy_River"
+    }, {
+      "op": "difference",
+      "source": "efele",
+      "id": "America/Atikokan"
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "ISO3166-2_US-MI"
+    }, {
+      "op": "difference",
+      "source": "efele",
+      "id": "America/Indiana/Indianapolis"
+    }, {
+      "op": "difference",
+      "source": "efele",
+      "id": "America/Indiana/Knox"
+    }, {
+      "op": "difference",
+      "source": "efele",
+      "id": "America/Indiana/Winamac"
+    }, {
+      "op": "difference",
+      "source": "efele",
+      "id": "America/Indiana/Vincennes"
+    }, {
+      "op": "difference",
+      "source": "efele",
+      "id": "America/Indiana/Petersburg"
+    }, {
+      "op": "difference",
+      "source": "efele",
+      "id": "America/Indiana/Tell_City"
+    }, {
+      "op": "difference",
+      "source": "efele",
+      "id": "America/New_York"
+    }, {
+      "op": "difference",
+      "source": "efele",
+      "id": "America/Kentucky/Monticello"
+    }, {
+      "op": "difference",
+      "source": "efele",
+      "id": "America/Matamoros"
+    }, {
+      "op": "difference",
+      "source": "efele",
+      "id": "America/Ojinaga"
+    }
+  ],
   "America/Chihuahua": [
     {
       "op": "init",
@@ -436,6 +527,13 @@
       "op": "init",
       "source": "efele",
       "id": "America/Porto_Velho"
+    }
+  ],
+  "America/Rainy_River": [
+    {
+      "op": "init",
+      "source": "efele",
+      "id": "America/Rainy_River"
     }
   ],
   "America/Regina": [
