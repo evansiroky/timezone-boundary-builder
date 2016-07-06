@@ -14,7 +14,6 @@ var osmBoundarySources = require('./osmBoundarySources.json'),
   geoJsonWriter = new jsts.io.GeoJSONWriter(),
   efeleGeoms, efeleLookup = {}
 
-
 var safeMkdir = function(dirname, callback) {
   fs.mkdir(dirname, function(err) {
     if(err && err.code === 'EEXIST') {
@@ -41,16 +40,34 @@ var extractToGeoJson = function(callback) {
 }
 
 debugGeo = function(op, a, b) {
+
+  var result
+
   try {
     switch(op) {
       case 'union':
-        return union(a, b)
+        result = a.union(b)
         break
       case 'intersection':
-        return intersection(a, b)
+        result = a.intersection(b)
         break
       case 'diff':
-        return diff(a, b)
+        try {
+          result = a.difference(b)
+        } catch(e) {
+          if(e.name === 'TopologyException') {
+            console.log('retry with GeometryPrecisionReducer')
+            var precisionModel = new jsts.geom.PrecisionModel(6),
+              precisionReducer = new jsts.precision.GeometryPrecisionReducer(precisionModel)
+
+            a = precisionReducer.reduce(a)
+            b = precisionReducer.reduce(b)
+
+            result = a.difference(b)
+          } else {
+            throw e
+          }
+        }
         break
       default:
         var err = new Error('invalid op: ' + op)
@@ -58,39 +75,14 @@ debugGeo = function(op, a, b) {
     }
   } catch(e) {
     console.log('op err')
-    fs.writeFileSync('debug_' + op + '_a.json', JSON.stringify(a))
-    fs.writeFileSync('debug_' + op + '_b.json', JSON.stringify(b))
+    console.log(e)
+    console.log(e.stack)
+    fs.writeFileSync('debug_' + op + '_a.json', JSON.stringify(geoJsonWriter.write(a)))
+    fs.writeFileSync('debug_' + op + '_b.json', JSON.stringify(geoJsonWriter.write(b)))
     throw e
   }
-}
 
-var union = function(a, b) {
-  var _a = geoJsonReader.read(JSON.stringify(a)),
-    _b = geoJsonReader.read(JSON.stringify(b))
-
-  var result = _a.union(_b)
-
-  return geoJsonWriter.write(result)
-
-}
-
-// copied and modified from turf-intersect
-var intersection = function(a, b) {
-  var _a = geoJsonReader.read(JSON.stringify(a)),
-    _b = geoJsonReader.read(JSON.stringify(b))
-
-  var result = _a.intersection(_b)
-
-  return geoJsonWriter.write(result)
-}
-
-var diff = function(a, b) {
-  var _a = geoJsonReader.read(JSON.stringify(a)),
-    _b = geoJsonReader.read(JSON.stringify(b))
-
-  var result = _a.difference(_b)
-
-  return geoJsonWriter.write(result)
+  return result
 }
 
 var fetchIfNeeded = function(file, superCallback, fetchFn) {
@@ -170,16 +162,18 @@ var downloadOsmBoundary = function(boundaryId, boundaryCallback) {
 }
 
 var getDataSource = function(source) {
+  var geoJson
   if(source.source === 'efele') {
-    return efeleGeoms[efeleLookup[source.id]].geometry
+    geoJson = efeleGeoms[efeleLookup[source.id]].geometry
   } else if(source.source === 'overpass') {
-    return require('./downloads/' + source.id + '.json')
+    geoJson = require('./downloads/' + source.id + '.json')
   } else if(source.source === 'manual-polygon') {
-    return polygon(source.data).geometry
+    geoJson = polygon(source.data).geometry
   } else {
     var err = new Error('unknown source: ' + source.source)
     throw err
   }
+  return geoJsonReader.read(JSON.stringify(geoJson))
 }
 
 var makeTimezoneBoundary = function(tzid, callback) {
@@ -203,7 +197,9 @@ var makeTimezoneBoundary = function(tzid, callback) {
     cb()
   }, function(err) {
     if(err) { return callback(err) }
-    fs.writeFile('./dist/' + tzid.replace(/\//g, '__') + '.json', JSON.stringify(geom), callback)
+    fs.writeFile('./dist/' + tzid.replace(/\//g, '__') + '.json', 
+      JSON.stringify(geoJsonWriter.write(geom)), 
+      callback)
   })
 }
 
