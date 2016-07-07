@@ -57,7 +57,7 @@ debugGeo = function(op, a, b) {
         } catch(e) {
           if(e.name === 'TopologyException') {
             console.log('retry with GeometryPrecisionReducer')
-            var precisionModel = new jsts.geom.PrecisionModel(6),
+            var precisionModel = new jsts.geom.PrecisionModel(10000),
               precisionReducer = new jsts.precision.GeometryPrecisionReducer(precisionModel)
 
             a = precisionReducer.reduce(a)
