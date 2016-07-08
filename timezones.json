@@ -332,6 +332,37 @@
       "id": "West Wendover"
     }
   ],
+  "America/Detroit": [
+    {
+      "op": "init",
+      "source": "efele",
+      "id": "America/Detroit"
+    }, {
+      "op": "union",
+      "source": "overpass",
+      "id": "Michigan"
+    }, {
+      "op": "difference",
+      "source": "efele",
+      "id": "America/Toronto"
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "Gogebic County"
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "Iron County, MI"
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "Dickinson County, MI"
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "Menominee County, MI"
+    }
+  ],
   "America/Edmonton": [
     {
       "op": "init",
