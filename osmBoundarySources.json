@@ -1,4 +1,19 @@
 {
+  "Dickinson County, MI": {
+    "name": "Dickinson County",
+    "nist:state_fips": "26"
+  },
+  "Gogebic County": {
+    "name": "Gogebic County"
+  },
+  "Iron County, MI": {
+    "name": "Iron County",
+    "nist:state_fips": "26"
+  },
+  "Menominee County, MI": {
+    "name": "Menominee County",
+    "nist:state_fips": "26"
+  },
   "Michigan": {
     "ISO3166-2": "US-MI"
   },

@@ -487,6 +487,25 @@
       "id": "America/Manaus"
     }
   ],
+  "America/Menominee": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Gogebic County"
+    }, {
+      "op": "union",
+      "source": "overpass",
+      "id": "Iron County, MI"
+    }, {
+      "op": "union",
+      "source": "overpass",
+      "id": "Dickinson County, MI"
+    }, {
+      "op": "union",
+      "source": "overpass",
+      "id": "Menominee County, MI"
+    }
+  ],
   "America/North_Dakota/Beulah": [
     {
       "op": "init",
