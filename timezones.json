@@ -200,14 +200,14 @@
       "op": "init",
       "source": "overpass",
       "id": "USA"
+    }, {
+      "op": "intersect",
+      "source": "manual-polygon",
+      "data": [[[-95,49.5],[-89.48193,48.1],[-89.48193,48],[-85,45],[-85,40.5],[-86.73,38.5],[-86.73,38.22],[-86.4,38],[-83,37],[-84.5,30],[-85,29.75],[-85.15,29.75],[-85.38922,29.92623],[-85.3891,29.92404],[-85.774,29.769],[-97,25],[-105,28],[-105,30.63],[-104.95,30.66],[-104.95,49],[-95,49.5]]]
     }, { 
       "op": "union",
       "source": "efele",
       "id": "America/Chicago"
-    }, {
-      "op": "intersect",
-      "source": "manual-polygon",
-      "data": [[[-95,49.5],[-89.48193,48.1],[-89.48193,48],[-85,45],[-85,40.5],[-86.73,38.5],[-86.73,38.22],[-86.4,38],[-83,37],[-84.5,30],[-85,29.75],[-85.15,29.75],[-85.38921,29.92616],[-85.3891,29.92404],[-85.774,29.769],[-97,25],[-105,28],[-105,30.63],[-104.95,30.66],[-104.95,49],[-95,49.5]]]
     }, {
       "op": "difference",
       "source": "efele",
@@ -389,6 +389,14 @@
       "op": "init",
       "source": "efele",
       "id": "America/Indiana/Indianapolis"
+    }, {
+      "op": "union",
+      "source": "manual-polygon",
+      "data": [[[-84.8,41.77],[-84.80596,41.696155],[-84.82,41.695632],[-84.82,41.77],[-84.8,41.77]]]
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "Michigan"
     }
   ],
   "America/Indiana/Knox": [
@@ -535,6 +543,65 @@
       "op": "union",
       "source": "overpass",
       "id": "Menominee County, MI"
+    }
+  ],
+  "America/New_York": [
+    {
+      "op": "init",
+      "source": "efele",
+      "id": "America/New_York"
+    }, {
+      "op": "intersect",
+      "source": "manual-polygon",
+      "data": [[[-85,42],[-86.7,38],[-85.38,30.0245],[-85.3921,30.0287],[-85.4, 30], [-85.38922,29.92623],[-85.3891,29.92404],[-85.774,29.769],[-84,23],[-65,23],[-65,44],[-74.7,45.1],[-85,42]]]
+    }, {
+      "op": "union",
+      "source": "overpass",
+      "id": "USA"
+    }, {
+      "op": "intersect",
+      "source": "manual-polygon",
+      "data": [[[-85,42],[-86.7,38],[-85.38,30.0245],[-85.3921,30.0287],[-85.4, 30], [-85.38922,29.92623],[-85.3891,29.92404],[-85.774,29.769],[-84,23],[-65,23],[-65,49],[-72,49],[-85,42]]]
+    }, {
+      "op": "difference",
+      "source": "manual-polygon",
+      "data": [[[-84.8,41.77],[-84.80596,41.696155],[-84.82,41.695632],[-84.82,41.77],[-84.8,41.77]]]
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "Michigan"
+    }, {
+      "op": "difference",
+      "source": "efele",
+      "id": "America/Toronto"
+    }, {
+      "op": "difference",
+      "source": "efele",
+      "id": "America/Chicago"
+    }, {
+      "op": "difference",
+      "source": "efele",
+      "id": "America/Kentucky/Monticello"
+    }, {
+      "op": "difference",
+      "source": "efele",
+      "id": "America/Indiana/Tell_City"
+    }, {
+      "op": "difference",
+      "source": "efele",
+      "id": "America/Indiana/Marengo"
+    }, {
+      "op": "difference",
+      "source": "efele",
+      "id": "America/Kentucky/Louisville"
+    }, {
+      "op": "difference",
+      "source": "efele",
+      "id": "America/Indiana/Indianapolis"
+    }, {
+      "op": "difference",
+      "source": "efele",
+      "id": "America/Indiana/Vevay"
     }
   ],
   "America/North_Dakota/Beulah": [
