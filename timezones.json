@@ -199,7 +199,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "ISO3166-1_US"
+      "id": "USA"
     }, { 
       "op": "union",
       "source": "efele",
@@ -243,7 +243,7 @@
     }, {
       "op": "difference",
       "source": "overpass",
-      "id": "ISO3166-2_US-MI"
+      "id": "Michigan"
     }, {
       "op": "difference",
       "source": "efele",
@@ -329,7 +329,7 @@
     }, {
       "op": "union",
       "source": "overpass",
-      "id": "city_West Wendover"
+      "id": "West Wendover"
     }
   ],
   "America/Edmonton": [
@@ -441,7 +441,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "ISO3166-1_US"
+      "id": "USA"
     }, {
       "op": "intersect",
       "source": "manual-polygon",
@@ -477,7 +477,7 @@
     }, {
       "op": "difference",
       "source": "overpass",
-      "id": "city_West Wendover"
+      "id": "West Wendover"
     }
   ],
   "America/Manaus": [

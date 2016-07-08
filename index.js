@@ -92,36 +92,30 @@ var fetchIfNeeded = function(file, superCallback, fetchFn) {
   })
 }
 
+var geoJsonToGeom = function(geoJson) {
+  return geoJsonReader.read(JSON.stringify(geoJson))
+}
+
+var geomToGeoJsonString = function(geom) {
+  return JSON.stringify(geoJsonWriter.write(geom))
+}
+
 var downloadOsmBoundary = function(boundaryId, boundaryCallback) {
   var cfg = osmBoundarySources[boundaryId],
-    query = '[out:json][timeout:60];',
-    boundaryFilename = './downloads/' + cfg.type,
-    debug = 'getting data for '
+    query = '[out:json][timeout:60];(relation',
+    boundaryFilename = './downloads/' + boundaryId + '.json',
+    debug = 'getting data for ' + boundaryId,
+    queryKeys = Object.keys(cfg)
 
-  if(cfg.type === 'ISO3166-1') {
-    query += '(relation["boundary"="administrative"]' +
-      '["admin_level"="2"]' +
-      '["ISO3166-1"="' + cfg.code + '"]);' +
-      'out body;>;out meta qt;'
-    boundaryFilename += '_' + cfg.code
-    debug += 'country: ' + cfg.code
-  } else if(cfg.type === 'ISO3166-2') {
-    query += '(relation["boundary"="administrative"]' +
-      '["admin_level"="4"]' +
-      '["ISO3166-2"="' + cfg.code + '"]);' +
-      'out body;>;out meta qt;'
-    boundaryFilename += '_' + cfg.code
-    debug += 'state/province: ' + cfg.code
-  } else if(cfg.type === 'city') {
-    query += '(relation["boundary"="administrative"]' +
-      '["admin_level"="8"]' +
-      '["name"="' + cfg.name + '"]);' +
-      'out body;>;out meta qt;'
-    boundaryFilename += '_' + cfg.name
-    debug += 'city: ' + cfg.name
+  for (var i = queryKeys.length - 1; i >= 0; i--) {
+    var k = queryKeys[i],
+      v = cfg[k]
+
+    query += '["' + k + '"="' + v + '"]'
+
   }
 
-  boundaryFilename += '.json'
+  query += ');out body;>;out meta qt;'
 
   console.log(debug)
 
@@ -146,17 +140,18 @@ var downloadOsmBoundary = function(boundaryId, boundaryCallback) {
 
       // union all multi-polygons / polygons into one
       for (var i = data.features.length - 1; i >= 0; i--) {
-        var curGeom = data.features[i].geometry
-        if(curGeom.type === 'Polygon' || curGeom.type === 'MultiPolygon') {
+        var curOsmGeom = data.features[i].geometry
+        if(curOsmGeom.type === 'Polygon' || curOsmGeom.type === 'MultiPolygon') {
           console.log('combining border')
+          var curGeom = geoJsonToGeom(curOsmGeom)
           if(!combined) {
             combined = curGeom
           } else {
-            combined = union(curGeom, combined)
+            combined = debugGeo('union', curGeom, combined)
           }
         }
       }
-      fs.writeFile(boundaryFilename, JSON.stringify(combined, null, 2), cb)
+      fs.writeFile(boundaryFilename, geomToGeoJsonString(combined), cb)
     }]
   }, boundaryCallback)
 }
@@ -173,7 +168,7 @@ var getDataSource = function(source) {
     var err = new Error('unknown source: ' + source.source)
     throw err
   }
-  return geoJsonReader.read(JSON.stringify(geoJson))
+  return geoJsonToGeom(geoJson)
 }
 
 var makeTimezoneBoundary = function(tzid, callback) {
@@ -198,7 +193,7 @@ var makeTimezoneBoundary = function(tzid, callback) {
   }, function(err) {
     if(err) { return callback(err) }
     fs.writeFile('./dist/' + tzid.replace(/\//g, '__') + '.json', 
-      JSON.stringify(geoJsonWriter.write(geom)), 
+      geomToGeoJsonString(geom), 
       callback)
   })
 }

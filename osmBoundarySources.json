@@ -1,14 +1,11 @@
 {
   "Michigan": {
-    "type": "ISO3166-2",
-    "code": "US-MI"
+    "ISO3166-2": "US-MI"
   },
   "USA": {
-    "type": "ISO3166-1",
-    "code": "US"
+    "ISO3166-1": "US"
   },
   "West Wendover": {
-    "type": "city",
     "name": "West Wendover"
   }
 }
