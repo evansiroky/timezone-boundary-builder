@@ -1,4 +1,13 @@
 {
+  "Anguilla": {
+    "ISO3166-1": "AI"
+  },
+  "Antigua and Barbuda": {
+    "ISO3166-1": "AG"
+  },
+  "Aruba": {
+    "ISO3166-1": "AW"
+  },
   "Dickinson County, MI": {
     "name": "Dickinson County",
     "nist:state_fips": "26"

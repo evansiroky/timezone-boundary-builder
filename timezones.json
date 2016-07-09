@@ -111,6 +111,27 @@
       "id": "Africa/Ouagadougou"
     }
   ],
+  "America/Anguilla": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Anguilla"
+    }
+  ],
+  "America/Antigua": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Antigua and Barbuda"
+    }
+  ],
+  "America/Aruba": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Aruba"
+    }
+  ],
   "America/Araguaina": [
     {
       "op": "init",
