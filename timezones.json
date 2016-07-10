@@ -195,6 +195,13 @@
       "id": "America/Atikokan"
     }
   ],
+  "America/Barbados": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Barbados"
+    }
+  ],
   "America/Boa_Vista": [
     {
       "op": "init",
@@ -214,6 +221,13 @@
       "op": "init",
       "source": "efele",
       "id": "America/Campo_Grande"
+    }
+  ],
+  "America/Cayman": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Cayman Islands"
     }
   ],
   "America/Chicago": [
@@ -326,6 +340,13 @@
       "op": "init",
       "source": "efele",
       "id": "America/Cuiaba"
+    }
+  ],
+  "America/Curacao": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Curaçao"
     }
   ],
   "America/Dawson": [
