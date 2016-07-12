@@ -405,6 +405,13 @@
       "id": "Menominee County, MI"
     }
   ],
+  "America/Dominica": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Dominica"
+    }
+  ],
   "America/Edmonton": [
     {
       "op": "init",
@@ -424,6 +431,20 @@
       "op": "init",
       "source": "efele",
       "id": "America/Fort_Nelson"
+    }
+  ],
+  "America/Grand_Turk": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Turks and Caicos Islands"
+    }
+  ],
+  "America/Grenada": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Grenada"
     }
   ],
   "America/Indiana/Indianapolis": [

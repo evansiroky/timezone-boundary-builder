@@ -21,8 +21,14 @@
     "name": "Dickinson County",
     "nist:state_fips": "26"
   },
+  "Dominica": {
+    "ISO3166-1": "DM"
+  },
   "Gogebic County": {
     "name": "Gogebic County"
+  },
+  "Grenada": {
+    "ISO3166-1": "GD"
   },
   "Iron County, MI": {
     "name": "Iron County",
@@ -34,6 +40,9 @@
   },
   "Michigan": {
     "ISO3166-2": "US-MI"
+  },
+  "Turks and Caicos Islands": {
+    "ISO3166-1": "TC"
   },
   "USA": {
     "ISO3166-1": "US"
