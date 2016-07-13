@@ -447,6 +447,13 @@
       "id": "Grenada"
     }
   ],
+  "America/Guadeloupe": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Guadeloupe"
+    }
+  ],
   "America/Indiana/Indianapolis": [
     {
       "op": "init",
@@ -518,6 +525,13 @@
       "id": "America/Inuvik"
     }
   ],
+  "America/Jamaica": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Jamaica"
+    }
+  ],
   "America/Kentucky/Louisville": [
     {
       "op": "init",
@@ -530,6 +544,13 @@
       "op": "init",
       "source": "efele",
       "id": "America/Kentucky/Monticello"
+    }
+  ],
+  "America/Kralendijk": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Bonaire, Sint Eustatius and Saba"
     }
   ],
   "America/La_Paz": [
@@ -728,6 +749,13 @@
       "op": "init",
       "source": "efele",
       "id": "America/Rio_Branco"
+    }
+  ],
+  "America/St_Barthelemy": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Saint-Barthélemy"
     }
   ],
   "America/Santarem": [

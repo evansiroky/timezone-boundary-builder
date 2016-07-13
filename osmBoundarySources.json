@@ -11,6 +11,9 @@
   "Barbados": {
     "ISO3166-1": "BB"
   },
+  "Bonaire, Sint Eustatius and Saba": {
+    "ISO3166-1": "BQ"
+  },
   "Cayman Islands": {
     "ISO3166-1": "KY"
   },
@@ -30,9 +33,15 @@
   "Grenada": {
     "ISO3166-1": "GD"
   },
+  "Guadeloupe": {
+    "ISO3166-1": "GP"
+  },
   "Iron County, MI": {
     "name": "Iron County",
     "nist:state_fips": "26"
+  },
+  "Jamaica": {
+    "ISO3166-1": "JM"
   },
   "Menominee County, MI": {
     "name": "Menominee County",
@@ -40,6 +49,9 @@
   },
   "Michigan": {
     "ISO3166-2": "US-MI"
+  },
+  "Saint-Barthélemy": {
+    "ISO3166-1": "BL"
   },
   "Turks and Caicos Islands": {
     "ISO3166-1": "TC"
