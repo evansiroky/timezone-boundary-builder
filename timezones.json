@@ -603,11 +603,32 @@
       "id": "West Wendover"
     }
   ],
+  "America/Lower_Princes": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Sint Maarten"
+    }
+  ],
   "America/Manaus": [
     {
       "op": "init",
       "source": "efele",
       "id": "America/Manaus"
+    }
+  ],
+  "America/Marigot": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Saint Maarten"
+    }
+  ],
+  "America/Martinique": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Saint Pierre and Miquelon"
     }
   ],
   "America/Menominee": [
