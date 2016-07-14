@@ -43,12 +43,18 @@
   "Jamaica": {
     "ISO3166-1": "JM"
   },
+  "Martinique": {
+    "ISO3166-1": "MQ"
+  },
   "Menominee County, MI": {
     "name": "Menominee County",
     "nist:state_fips": "26"
   },
   "Michigan": {
     "ISO3166-2": "US-MI"
+  },
+  "Montserrat": {
+    "ISO3166-1": "MS"
   },
   "Saint-Barthélemy": {
     "ISO3166-1": "BL"
@@ -61,6 +67,9 @@
   },
   "Sint Maarten": {
     "ISO3166-1": "SX"
+  },
+  "The Bahamas": {
+    "ISO3166-1": "BS"
   },
   "Turks and Caicos Islands": {
     "ISO3166-1": "TC"

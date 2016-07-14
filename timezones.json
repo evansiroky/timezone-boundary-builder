@@ -628,6 +628,13 @@
     {
       "op": "init",
       "source": "overpass",
+      "id": "Martinique"
+    }
+  ],
+  "America/Miquelon": [
+    {
+      "op": "init",
+      "source": "overpass",
       "id": "Saint Pierre and Miquelon"
     }
   ],
@@ -648,6 +655,20 @@
       "op": "union",
       "source": "overpass",
       "id": "Menominee County, MI"
+    }
+  ],
+  "America/Montserrat": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Montserrat"
+    }
+  ],
+  "America/Nassau": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "The Bahamas"
     }
   ],
   "America/New_York": [
