@@ -730,6 +730,17 @@
       "id": "America/Indiana/Vevay"
     }
   ],
+  "America/Noronha": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Brazil"
+    }, {
+      "op": "intersect",
+      "source": "manual-polygon",
+      "data": [[[-32.4,-3],[-33,-4.5],[-32,-4.5],[-32.4,-3]]]
+    }
+  ],
   "America/North_Dakota/Beulah": [
     {
       "op": "init",
@@ -763,6 +774,20 @@
       "op": "init",
       "source": "efele",
       "id": "America/Phoenix"
+    }
+  ],
+  "America/Port-au-Prince": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Haiti"
+    }
+  ],
+  "America/Port_of_Spain": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Trinidad and Tobago"
     }
   ],
   "America/Porto_Velho": [

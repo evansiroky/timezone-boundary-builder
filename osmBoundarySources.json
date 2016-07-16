@@ -14,6 +14,9 @@
   "Bonaire, Sint Eustatius and Saba": {
     "ISO3166-1": "BQ"
   },
+  "Brazil": {
+    "ISO3166-1": "BR"
+  },
   "Cayman Islands": {
     "ISO3166-1": "KY"
   },
@@ -35,6 +38,9 @@
   },
   "Guadeloupe": {
     "ISO3166-1": "GP"
+  },
+  "Haiti": {
+    "ISO3166-1": "HT"
   },
   "Iron County, MI": {
     "name": "Iron County",
@@ -70,6 +76,9 @@
   },
   "The Bahamas": {
     "ISO3166-1": "BS"
+  },
+  "Trinidad and Tobago": {
+    "ISO3166-1": "TT"
   },
   "Turks and Caicos Islands": {
     "ISO3166-1": "TC"
