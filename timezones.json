@@ -818,11 +818,11 @@
       "id": "America/Rio_Branco"
     }
   ],
-  "America/St_Barthelemy": [
+  "America/Santo_Domingo": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Saint-Barthélemy"
+      "id": "Dominican Republic"
     }
   ],
   "America/Santarem": [
@@ -837,6 +837,27 @@
       "op": "init",
       "source": "efele",
       "id": "America/Swift_Current"
+    }
+  ],
+  "America/St_Barthelemy": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Saint-Barthélemy"
+    }
+  ],
+  "America/St_Kitts": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Saint Kitts and Nevis"
+    }
+  ],
+  "America/St_Lucia": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Saint Lucia"
     }
   ],
   "Asia/Almaty": [

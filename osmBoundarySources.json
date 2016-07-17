@@ -30,6 +30,9 @@
   "Dominica": {
     "ISO3166-1": "DM"
   },
+  "Dominican Republic": {
+    "ISO3166-1": "DO"
+  },
   "Gogebic County": {
     "name": "Gogebic County"
   },
@@ -64,6 +67,12 @@
   },
   "Saint-Barthélemy": {
     "ISO3166-1": "BL"
+  },
+  "Saint Kitts and Nevis": {
+    "ISO3166-1": "KN"
+  },
+  "Saint Lucia": {
+    "ISO3166-1": "LC"
   },
   "Saint Maarten": {
     "ISO3166-1": "MF"
