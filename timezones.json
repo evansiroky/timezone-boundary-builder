@@ -860,6 +860,31 @@
       "id": "Saint Lucia"
     }
   ],
+  "America/St_Vincent": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Saint Vincent and the Grenadines"
+    }
+  ],
+  "America/Tortola": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "British Virgin Islands"
+    }
+  ],
+  "Antarctica/Macquarie": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Australia"
+    }, {
+      "op": "intersect",
+      "source": "manual-polygon",
+      "data": [[[159,-53],[156,-56],[162,-56],[159,-53]]]
+    }
+  ],
   "Asia/Almaty": [
     {
       "op": "init",

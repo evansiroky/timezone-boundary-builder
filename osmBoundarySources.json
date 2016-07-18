@@ -8,6 +8,9 @@
   "Aruba": {
     "ISO3166-1": "AW"
   },
+  "Australia": {
+    "ISO3166-1": "AU"
+  },
   "Barbados": {
     "ISO3166-1": "BB"
   },
@@ -16,6 +19,9 @@
   },
   "Brazil": {
     "ISO3166-1": "BR"
+  },
+  "British Virgin Islands": {
+    "ISO3166-1": "VG"
   },
   "Cayman Islands": {
     "ISO3166-1": "KY"
@@ -79,6 +85,9 @@
   },
   "Saint Pierre and Miquelon": {
     "ISO3166-1": "PM"
+  },
+  "Saint Vincent and the Grenadines": {
+    "ISO3166-1": "VC"
   },
   "Sint Maarten": {
     "ISO3166-1": "SX"
