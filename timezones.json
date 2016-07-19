@@ -885,6 +885,17 @@
       "data": [[[159,-53],[156,-56],[162,-56],[159,-53]]]
     }
   ],
+  "Arctic/Longyearbyen": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Norway"
+    }, {
+      "op": "intersect",
+      "source": "manual-polygon",
+      "data": [[[5,82],[5,73],[35,73],[35,82],[5,82]]]
+    }
+  ],
   "Asia/Almaty": [
     {
       "op": "init",
@@ -897,6 +908,13 @@
       "op": "init",
       "source": "efele",
       "id": "Asia/Aqtobe"
+    }
+  ],
+  "Asia/Bahrain": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Bahrain"
     }
   ],
   "Asia/Barnaul": [
@@ -925,6 +943,13 @@
       "op": "init",
       "source": "efele",
       "id": "Asia/Choibalsan"
+    }
+  ],
+  "Asia/Colombo": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Sri Lanka"
     }
   ],
   "Asia/Dushanbe": [

@@ -11,6 +11,9 @@
   "Australia": {
     "ISO3166-1": "AU"
   },
+  "Bahrain": {
+    "ISO3166-1": "BH"
+  },
   "Barbados": {
     "ISO3166-1": "BB"
   },
@@ -71,6 +74,9 @@
   "Montserrat": {
     "ISO3166-1": "MS"
   },
+  "Norway": {
+    "ISO3166-1": "NO"
+  },
   "Saint-Barthélemy": {
     "ISO3166-1": "BL"
   },
@@ -91,6 +97,9 @@
   },
   "Sint Maarten": {
     "ISO3166-1": "SX"
+  },
+  "Sri Lanka": {
+    "ISO3166-1": "LK"
   },
   "The Bahamas": {
     "ISO3166-1": "BS"
