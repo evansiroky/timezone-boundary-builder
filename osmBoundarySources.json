@@ -23,6 +23,9 @@
   "Brazil": {
     "ISO3166-1": "BR"
   },
+  "British Sovereign Base Areas": {
+    "name": "British Sovereign Base Areas"
+  },
   "British Virgin Islands": {
     "ISO3166-1": "VG"
   },
@@ -31,6 +34,9 @@
   },
   "Curaçao": {
     "ISO3166-1": "CW"
+  },
+  "Cyprus": {
+    "ISO3166-1": "CY"
   },
   "Dickinson County, MI": {
     "name": "Dickinson County",
@@ -77,6 +83,9 @@
   "Norway": {
     "ISO3166-1": "NO"
   },
+  "Philippines": {
+    "ISO3166-1": "PH"
+  },
   "Saint-Barthélemy": {
     "ISO3166-1": "BL"
   },
@@ -94,6 +103,9 @@
   },
   "Saint Vincent and the Grenadines": {
     "ISO3166-1": "VC"
+  },
+  "Singapore": {
+    "ISO3166-1": "SG"
   },
   "Sint Maarten": {
     "ISO3166-1": "SX"

@@ -1015,6 +1015,24 @@
       "id": "Asia/Khandyga"
     }
   ],
+  "Asia/Manila": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Philippines"
+    }
+  ],
+  "Asia/Nicosia": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Cyprus"
+    }, {
+      "op": "union",
+      "source": "overpass",
+      "id": "British Sovereign Base Areas"
+    }
+  ],
   "Asia/Novokuznetsk": [
     {
       "op": "init",
@@ -1041,6 +1059,13 @@
       "op": "init",
       "source": "efele",
       "id": "Asia/Oral"
+    }
+  ],
+  "Asia/Singapore": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Singapore"
     }
   ],
   "Asia/Tashkent": [
