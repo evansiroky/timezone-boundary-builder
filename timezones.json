@@ -1142,6 +1142,31 @@
       "data": [[[-21,41],[-25,33],[-35,41],[-21,41]]]
     }
   ],
+  "Atlantic/Bermuda": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Bermuda"
+    }
+  ],
+  "Atlantic/Canary": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Spain"
+    }, { 
+      "op": "intersect",
+      "source": "manual-polygon",
+      "data": [[[-20,28],[-12,22],[-12,33],[-20,28]]]
+    }
+  ],
+  "Atlantic/Cape_Verde": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Cape Verde"
+    }
+  ],
   "Australia/Broken_Hill": [
     {
       "op": "init",

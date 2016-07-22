@@ -17,6 +17,9 @@
   "Barbados": {
     "ISO3166-1": "BB"
   },
+  "Bermuda": {
+    "ISO3166-1": "BM"
+  },
   "Bonaire, Sint Eustatius and Saba": {
     "ISO3166-1": "BQ"
   },
@@ -28,6 +31,9 @@
   },
   "British Virgin Islands": {
     "ISO3166-1": "VG"
+  },
+  "Cape Verde": {
+    "ISO3166-1": "CV"
   },
   "Cayman Islands": {
     "ISO3166-1": "KY"
@@ -118,6 +124,9 @@
   },
   "Sint Maarten": {
     "ISO3166-1": "SX"
+  },
+  "Spain": {
+    "ISO3166-1": "ES"
   },
   "Sri Lanka": {
     "ISO3166-1": "LK"
