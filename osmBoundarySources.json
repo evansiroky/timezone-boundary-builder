@@ -67,6 +67,9 @@
   "Jamaica": {
     "ISO3166-1": "JM"
   },
+  "Japan": {
+    "ISO3166-1": "JP"
+  },
   "Martinique": {
     "ISO3166-1": "MQ"
   },
@@ -85,6 +88,12 @@
   },
   "Philippines": {
     "ISO3166-1": "PH"
+  },
+  "Portugal": {
+    "ISO3166-1": "PT"
+  },
+  "Republic of China": {
+    "ISO3166-1": "TW"
   },
   "Saint-Barthélemy": {
     "ISO3166-1": "BL"
