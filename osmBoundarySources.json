@@ -54,6 +54,9 @@
   "Dominican Republic": {
     "ISO3166-1": "DO"
   },
+  "Faroe Islands": {
+    "ISO3166-1": "FO"
+  },
   "Gogebic County": {
     "name": "Gogebic County"
   },
@@ -65,6 +68,9 @@
   },
   "Haiti": {
     "ISO3166-1": "HT"
+  },
+  "Iceland": {
+    "ISO3166-1": "IS"
   },
   "Iron County, MI": {
     "name": "Iron County",

@@ -1157,7 +1157,7 @@
     }, { 
       "op": "intersect",
       "source": "manual-polygon",
-      "data": [[[-20,28],[-12,22],[-12,33],[-20,28]]]
+      "data": [[[-24,29.5],[-12,22],[-12,31],[-15,29.5],[-24,29.5]]]
     }
   ],
   "Atlantic/Cape_Verde": [
@@ -1165,6 +1165,31 @@
       "op": "init",
       "source": "overpass",
       "id": "Cape Verde"
+    }
+  ],
+  "Atlantic/Faroe": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Faroe Islands"
+    }
+  ],
+  "Atlantic/Madeira": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Portugal"
+    }, {
+      "op": "intersect",
+      "source": "manual-polygon",
+      "data": [[[-24,35],[-10,35],[-16,29.5],[-24,35]]]
+    }
+  ],
+  "Atlantic/Reykjavik": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Iceland"
     }
   ],
   "Australia/Broken_Hill": [
