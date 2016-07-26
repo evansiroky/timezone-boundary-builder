@@ -54,6 +54,9 @@
   "Dominican Republic": {
     "ISO3166-1": "DO"
   },
+  "Falkland Islands": {
+    "ISO3166-1": "FK"
+  },
   "Faroe Islands": {
     "ISO3166-1": "FO"
   },
@@ -110,6 +113,9 @@
   "Saint-Barthélemy": {
     "ISO3166-1": "BL"
   },
+  "Saint Helena, Ascension and Tristan da Cunha": {
+    "ISO3166-1": "SH"
+  },
   "Saint Kitts and Nevis": {
     "ISO3166-1": "KN"
   },
@@ -130,6 +136,9 @@
   },
   "Sint Maarten": {
     "ISO3166-1": "SX"
+  },
+  "South Georgia and the South Sandwich Islands": {
+    "ISO3166-1": "GS"
   },
   "Spain": {
     "ISO3166-1": "ES"

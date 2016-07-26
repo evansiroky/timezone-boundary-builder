@@ -1192,6 +1192,27 @@
       "id": "Iceland"
     }
   ],
+  "Atlantic/South_Georgia": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "South Georgia and the South Sandwich Islands"
+    }
+  ],
+  "Atlantic/St_Helena": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Saint Helena, Ascension and Tristan da Cunha"
+    }
+  ],
+  "Atlantic/Stanley": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Falkland Islands"
+    }
+  ],
   "Australia/Broken_Hill": [
     {
       "op": "init",
