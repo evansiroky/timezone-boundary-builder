@@ -69,6 +69,9 @@
   "Guadeloupe": {
     "ISO3166-1": "GP"
   },
+  "Guernsey": {
+    "ISO3166-1": "GG"
+  },
   "Haiti": {
     "ISO3166-1": "HT"
   },
@@ -78,6 +81,9 @@
   "Iron County, MI": {
     "name": "Iron County",
     "nist:state_fips": "26"
+  },
+  "Isle of Man": {
+    "ISO3166-1": "IM"
   },
   "Jamaica": {
     "ISO3166-1": "JM"

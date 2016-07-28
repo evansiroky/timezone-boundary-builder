@@ -1220,6 +1220,17 @@
       "id": "Australia/Broken_Hill"
     }
   ],
+  "Australia/Lord_Howe": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Australia"
+    }, {
+      "op": "intersect",
+      "source": "manual-polygon",
+      "data": [[[160,-33],[160,-31],[157,-31],[160,-33]]]
+    }
+  ],
   "Europe/Andorra": [
     { 
       "op": "init", 
@@ -1248,11 +1259,32 @@
       "id": "Europe/Budapest"
     }
   ],
+  "Europe/Busingen": [
+    {
+      "op": "init",
+      "source": "efele",
+      "id": "Europe/Busingen"
+    }
+  ],
   "Europe/Chisinau": [
     {
       "op": "init",
       "source": "efele",
       "id": "Europe/Chisinau"
+    }
+  ],
+  "Europe/Guernsey": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Guernsey"
+    }
+  ],
+  "Europe/Isle_of_Man": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Isle of Man"
     }
   ],
   "Europe/Kirov": [
