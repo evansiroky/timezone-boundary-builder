@@ -91,6 +91,12 @@
   "Japan": {
     "ISO3166-1": "JP"
   },
+  "Jersey": {
+    "ISO3166-1": "JE"
+  },
+  "Malta": {
+    "ISO3166-1": "MT"
+  },
   "Martinique": {
     "ISO3166-1": "MQ"
   },
@@ -160,6 +166,9 @@
   },
   "Turks and Caicos Islands": {
     "ISO3166-1": "TC"
+  },
+  "United Kingdom": {
+    "ISO3166-1": "GB"
   },
   "USA": {
     "ISO3166-1": "US"

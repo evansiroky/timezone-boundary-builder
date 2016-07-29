@@ -1287,6 +1287,13 @@
       "id": "Isle of Man"
     }
   ],
+  "Europe/Jersey": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Jersey"
+    }
+  ],
   "Europe/Kirov": [
     {
       "op": "init",
@@ -1294,11 +1301,25 @@
       "id": "Europe/Kirov"
     }
   ],
+  "Europe/London": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "United Kingdom"
+    }
+  ],
   "Europe/Luxembourg": [
     {
       "op": "init",
       "source": "efele",
       "id": "Europe/Luxembourg"
+    }
+  ],
+  "Europe/Malta": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Malta"
     }
   ],
   "Europe/Minsk": [
