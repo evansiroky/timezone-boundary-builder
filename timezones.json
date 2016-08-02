@@ -1273,6 +1273,13 @@
       "id": "Europe/Chisinau"
     }
   ],
+  "Europe/Dublin": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Ireland"
+    }
+  ],
   "Europe/Guernsey": [
     {
       "op": "init",
@@ -1404,6 +1411,20 @@
       "op": "init",
       "source": "efele",
       "id": "Europe/Zurich"
+    }
+  ],
+  "Indian/Antananarivo": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Madagascar"
+    }
+  ],
+  "Indian/Chagos": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "British Indian Ocean Territory"
     }
   ]
 }

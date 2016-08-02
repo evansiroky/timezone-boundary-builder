@@ -26,6 +26,9 @@
   "Brazil": {
     "ISO3166-1": "BR"
   },
+  "British Indian Ocean Territory": {
+    "ISO3166-1": "IO"
+  },
   "British Sovereign Base Areas": {
     "name": "British Sovereign Base Areas"
   },
@@ -78,6 +81,9 @@
   "Iceland": {
     "ISO3166-1": "IS"
   },
+  "Ireland": {
+    "ISO3166-1": "IE"
+  },
   "Iron County, MI": {
     "name": "Iron County",
     "nist:state_fips": "26"
@@ -93,6 +99,9 @@
   },
   "Jersey": {
     "ISO3166-1": "JE"
+  },
+  "Madagascar": {
+    "ISO3166-1": "MG"
   },
   "Malta": {
     "ISO3166-1": "MT"
