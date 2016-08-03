@@ -1426,5 +1426,34 @@
       "source": "overpass",
       "id": "British Indian Ocean Territory"
     }
+  ],
+  "Indian/Christmas": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Australia"
+    }, {
+      "op": "intersect",
+      "source": "manual-polygon",
+      "data": [[[106,-10],[106,-12],[104,-10],[106,-10]]]
+    }
+  ],
+  "Indian/Cocos": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Australia"
+    }, {
+      "op": "intersect",
+      "source": "manual-polygon",
+      "data": [[[98,-11],[98,-14],[95,-11],[98,-11]]]
+    }
+  ],
+  "Indian/Comoro": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Comoros"
+    }
   ]
 }
