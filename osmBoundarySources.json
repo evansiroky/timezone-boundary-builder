@@ -66,6 +66,9 @@
   "Faroe Islands": {
     "ISO3166-1": "FO"
   },
+  "France": {
+    "ISO3166-1": "FR"
+  },
   "Gogebic County": {
     "name": "Gogebic County"
   },
@@ -106,11 +109,17 @@
   "Madagascar": {
     "ISO3166-1": "MG"
   },
+  "Maldives": {
+    "ISO3166-1": "MV"
+  },
   "Malta": {
     "ISO3166-1": "MT"
   },
   "Martinique": {
     "ISO3166-1": "MQ"
+  },
+  "Mauritius": {
+    "ISO3166-1": "MU"
   },
   "Menominee County, MI": {
     "name": "Menominee County",
@@ -154,6 +163,9 @@
   },
   "Saint Vincent and the Grenadines": {
     "ISO3166-1": "VC"
+  },
+  "Seychelles": {
+    "ISO3166-1": "SC"
   },
   "Singapore": {
     "ISO3166-1": "SG"
