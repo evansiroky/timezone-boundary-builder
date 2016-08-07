@@ -234,7 +234,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "USA"
+      "id": "United States of America"
     }, {
       "op": "intersect",
       "source": "manual-polygon",
@@ -564,7 +564,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "USA"
+      "id": "United States of America"
     }, {
       "op": "intersect",
       "source": "manual-polygon",
@@ -683,7 +683,7 @@
     }, {
       "op": "union",
       "source": "overpass",
-      "id": "USA"
+      "id": "United States of America"
     }, {
       "op": "intersect",
       "source": "manual-polygon",
@@ -1508,6 +1508,150 @@
       "op": "intersect",
       "source": "manual-polygon",
       "data": [[[57,-19],[57,-22],[53,-22],[57,-19]]]
+    }
+  ],
+  "Pacific/Apia": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Samoa"
+    }
+  ],
+  "Pacific/Auckland": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "New Zealand"
+    }, {
+      "op": "intersect",
+      "source": "manual-multipolygon",
+      "data": [[[[-179.8,-27],[-179.8,-34],[-172,-32],[-179.8,-27]]],[[[179.9,-33],[179.9,-56],[161,-56],[161,-33],[179.9,-33]]]]
+    }
+  ],
+  "Pacific/Bougainville": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Autonomous Region of Bougainville"
+    }
+  ],
+  "Pacific/Chatham": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "New Zealand"
+    }, {
+      "op": "intersect",
+      "source": "manual-polygon",
+      "data": [[[-178,-41],[-178,-47],[-172,-44],[-178,-41]]]
+    }
+  ],
+  "Pacific/Chuuk": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Chuuk"
+    }
+  ],
+  "Pacific/Easter": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Chile"
+    }, {
+      "op": "intersect",
+      "source": "manual-polygon",
+      "data": [[[-108,-25],[-108,-29],[-111,-27],[-108,-25]]]
+    }
+  ],
+  "Pacific/Efate": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Vanuatu"
+    }
+  ],
+  "Pacific/Enderbury": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Kiribati"
+    }, {
+      "op": "intersect",
+      "source": "manual-polygon",
+      "data": [[[-176,0],[-176,-9],[-169,-3],[-176,0]]]
+    }
+  ],
+  "Pacific/Fakaofo": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Tokelau"
+    }
+  ],
+  "Pacific/Fiji": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Fiji"
+    }
+  ],
+  "Pacific/Funafuti": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Tuvalu"
+    }
+  ],
+  "Pacific/Galapagos": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Ecuador"
+    }, {
+      "op": "intersect",
+      "source": "manual-polygon",
+      "data": [[[-93,4],[-93,-5],[-87,0],[-93,4]]]
+    }
+  ],
+  "Pacific/Gambier": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "France"
+    }, {
+      "op": "intersect",
+      "source": "manual-polygon",
+      "data": [[[-138,-21],[-135,-25],[-131,-20],[-138,-21]]]
+    }
+  ],
+  "Pacific/Guadalcanal": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Solomon Islands"
+    }
+  ],
+  "Pacific/Guam": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "United States of America"
+    }, {
+      "op": "intersect",
+      "source": "manual-polygon",
+      "data": [[[144,14.5],[145.7,13.5],[144,12],[144,14.5]]]
+    }
+  ],
+  "Pacific/Honolulu": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "United States of America"
+    }, {
+      "op": "intersect",
+      "source": "manual-polygon",
+      "data": [[[-179,18],[-169,35],[-148,18],[-179,18]]]
     }
   ]
 }

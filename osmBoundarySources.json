@@ -11,6 +11,9 @@
   "Australia": {
     "ISO3166-1": "AU"
   },
+  "Autonomous Region of Bougainville": {
+    "ISO3166-2": "PG-NSB"
+  },
   "Bahrain": {
     "ISO3166-1": "BH"
   },
@@ -41,6 +44,12 @@
   "Cayman Islands": {
     "ISO3166-1": "KY"
   },
+  "Chile": {
+    "ISO3166-1": "CL"
+  },
+  "Chuuk": {
+    "ISO3166-2": "FM-TRK"
+  },
   "Comoros": {
     "ISO3166-1": "KM"
   },
@@ -60,11 +69,17 @@
   "Dominican Republic": {
     "ISO3166-1": "DO"
   },
+  "Ecuador": {
+    "ISO3166-1": "EC"
+  },
   "Falkland Islands": {
     "ISO3166-1": "FK"
   },
   "Faroe Islands": {
     "ISO3166-1": "FO"
+  },
+  "Fiji": {
+    "ISO3166-1": "FJ"
   },
   "France": {
     "ISO3166-1": "FR"
@@ -106,6 +121,9 @@
   "Jersey": {
     "ISO3166-1": "JE"
   },
+  "Kiribati": {
+    "ISO3166-1": "KI"
+  },
   "Madagascar": {
     "ISO3166-1": "MG"
   },
@@ -130,6 +148,9 @@
   },
   "Montserrat": {
     "ISO3166-1": "MS"
+  },
+  "New Zealand": {
+    "ISO3166-1": "NZ"
   },
   "Norway": {
     "ISO3166-1": "NO"
@@ -164,6 +185,9 @@
   "Saint Vincent and the Grenadines": {
     "ISO3166-1": "VC"
   },
+  "Samoa": {
+    "ISO3166-1": "WS"
+  },
   "Seychelles": {
     "ISO3166-1": "SC"
   },
@@ -172,6 +196,9 @@
   },
   "Sint Maarten": {
     "ISO3166-1": "SX"
+  },
+  "Solomon Islands": {
+    "ISO3166-1": "SB"
   },
   "South Georgia and the South Sandwich Islands": {
     "ISO3166-1": "GS"
@@ -185,17 +212,26 @@
   "The Bahamas": {
     "ISO3166-1": "BS"
   },
+  "Tokelau": {
+    "ISO3166-1": "TK"
+  },
   "Trinidad and Tobago": {
     "ISO3166-1": "TT"
   },
   "Turks and Caicos Islands": {
     "ISO3166-1": "TC"
   },
+  "Tuvalu": {
+    "ISO3166-1": "TV"
+  },
   "United Kingdom": {
     "ISO3166-1": "GB"
   },
-  "USA": {
+  "United States of America": {
     "ISO3166-1": "US"
+  },
+  "Vanuatu": {
+    "ISO3166-1": "VU"
   },
   "West Wendover": {
     "name": "West Wendover"

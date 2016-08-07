@@ -3,6 +3,7 @@ var fs = require('fs'),
 
 var async = require('async'),
   jsts = require('jsts'),
+  multiPolygon = require('turf-multipolygon'),
   overpass = require('query-overpass'),
   polygon = require('turf-polygon'),
   shp = require('shpjs')
@@ -164,6 +165,8 @@ var getDataSource = function(source) {
     geoJson = require('./downloads/' + source.id + '.json')
   } else if(source.source === 'manual-polygon') {
     geoJson = polygon(source.data).geometry
+  } else if(source.source === 'manual-multipolygon') {
+    geoJson = multiPolygon(source.data).geometry
   } else {
     var err = new Error('unknown source: ' + source.source)
     throw err
