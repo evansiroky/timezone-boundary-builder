@@ -53,6 +53,9 @@
   "Comoros": {
     "ISO3166-1": "KM"
   },
+  "Cook Islands": {
+    "ISO3166-1": "CK"
+  },
   "Curaçao": {
     "ISO3166-1": "CW"
   },
@@ -124,6 +127,9 @@
   "Kiribati": {
     "ISO3166-1": "KI"
   },
+  "Kosrae": {
+    "ISO3166-2": "FM-KSA"
+  },
   "Madagascar": {
     "ISO3166-1": "MG"
   },
@@ -132,6 +138,9 @@
   },
   "Malta": {
     "ISO3166-1": "MT"
+  },
+  "Marshall Islands": {
+    "ISO3166-1": "MH"
   },
   "Martinique": {
     "ISO3166-1": "MQ"
@@ -149,14 +158,32 @@
   "Montserrat": {
     "ISO3166-1": "MS"
   },
+  "Nauru": {
+    "ISO3166-1": "NR"
+  },
   "New Zealand": {
     "ISO3166-1": "NZ"
+  },
+  "Niue": {
+    "ISO3166-1": "NU"
   },
   "Norway": {
     "ISO3166-1": "NO"
   },
+  "Palau": {
+    "ISO3166-1": "PW"
+  },
+  "Papua New Guinea": {
+    "ISO3166-1": "PG"
+  },
   "Philippines": {
     "ISO3166-1": "PH"
+  },
+  "Pitcairn Islands": {
+    "ISO3166-1": "PN"
+  },
+  "Pohnpei": {
+    "ISO3166-2": "FM-PNI"
   },
   "Portugal": {
     "ISO3166-1": "PT"
@@ -215,6 +242,9 @@
   "Tokelau": {
     "ISO3166-1": "TK"
   },
+  "Tonga": {
+    "ISO3166-1": "TO"
+  },
   "Trinidad and Tobago": {
     "ISO3166-1": "TT"
   },
@@ -235,5 +265,8 @@
   },
   "West Wendover": {
     "name": "West Wendover"
+  },
+  "Yap": {
+    "ISO3166-2": "FM-YAP"
   }
 }

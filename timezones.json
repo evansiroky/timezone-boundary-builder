@@ -1653,5 +1653,233 @@
       "source": "manual-polygon",
       "data": [[[-179,18],[-169,35],[-148,18],[-179,18]]]
     }
+  ],
+  "Pacific/Johnston": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "United States of America"
+    }, {
+      "op": "intersect",
+      "source": "manual-polygon",
+      "data": [[[-168,19],[-168,14],[-171,17],[-168,19]]]
+    }
+  ],
+  "Pacific/Kiritimati": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Kiribati"
+    }, {
+      "op": "intersect",
+      "source": "manual-polygon",
+      "data": [[[-162,7],[-153,-14],[-133,5],[-162,7]]]
+    }
+  ],
+  "Pacific/Kosrae": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Kosrae"
+    }
+  ],
+  "Pacific/Kwajalein": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Marshall Islands"
+    }, {
+      "op": "intersect",
+      "source": "manual-polygon",
+      "data": [[[168.6,9.7],[167.8,8.35],[165.7,9.7],[168.6,9.7]]]
+    }
+  ],
+  "Pacific/Majuro": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Marshall Islands"
+    }, {
+      "op": "difference",
+      "source": "manual-polygon",
+      "data": [[[168.6,9.7],[167.8,8.35],[165.7,9.7],[168.6,9.7]]]
+    }
+  ],
+  "Pacific/Marquesas": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "France"
+    }, {
+      "op": "intersect",
+      "source": "manual-polygon",
+      "data": [[[-141,-6],[-136,-11],[-143,-11],[-141,-6]]]
+    }
+  ],
+  "Pacific/Midway": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "United States of America"
+    }, {
+      "op": "intersect",
+      "source": "manual-polygon",
+      "data": [[[-179,29],[-176,29],[-179,26],[-179,29]]]
+    }
+  ],
+  "Pacific/Nauru": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Nauru"
+    }
+  ],
+  "Pacific/Niue": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Niue"
+    }
+  ],
+  "Pacific/Norfolk": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Australia"
+    }, {
+      "op": "intersect",
+      "source": "manual-polygon",
+      "data": [[[167,-28],[169,-28],[168,-30],[167,-28]]]
+    }
+  ],
+  "Pacific/Noumea": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "France"
+    }, {
+      "op": "intersect",
+      "source": "manual-polygon",
+      "data": [[[156,-13],[159,-27],[174,-23],[156,-13]]]
+    }
+  ],
+  "Pacific/Pago_Pago": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "United States of America"
+    }, {
+      "op": "intersect",
+      "source": "manual-polygon",
+      "data": [[[-171.5,-10],[-170.9,-17],[-167,-12],[-171.5,-10]]]
+    }
+  ],
+  "Pacific/Palau": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Palau"
+    }
+  ],
+  "Pacific/Pitcairn": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Pitcairn Islands"
+    }
+  ],
+  "Pacific/Pohnpei": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Pohnpei"
+    }
+  ],
+  "Pacific/Port_Moresby": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Papua New Guinea"
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "Autonomous Region of Bougainville"
+    }
+  ],
+  "Pacific/Rarotonga": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Cook Islands"
+    }
+  ],
+  "Pacific/Saipan": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "United States of America"
+    }, {
+      "op": "intersect",
+      "source": "manual-polygon",
+      "data": [[[144,23],[143,14.55],[151,12],[144,23]]]
+    }
+  ],
+  "Pacific/Tahiti": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "France"
+    }, {
+      "op": "intersect",
+      "source": "manual-polygon",
+      "data": [[[-137,-20],[-143,-32],[-156,-22],[-156,-14],[-139,-12],[-134,-20],[-137,-20]]]
+    }
+  ],
+  "Pacific/Tarawa": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Kiribati"
+    }, {
+      "op": "intersect",
+      "source": "manual-polygon",
+      "data": [[[173,5],[179,-4],[167,-2],[173,5]]]
+    }
+  ],
+  "Pacific/Tongatapu": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Tonga"
+    }
+  ],
+  "Pacific/Wake": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "United States of America"
+    }, {
+      "op": "intersect",
+      "source": "manual-polygon",
+      "data": [[[165,20],[168,20],[166,18],[165,20]]]
+    }
+  ],
+  "Pacific/Wallis": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "France"
+    }, {
+      "op": "intersect",
+      "source": "manual-polygon",
+      "data": [[[-179,-14],[-177,-17],[-175,-12],[-179,-14]]]
+    }
+  ],
+  "Pacific/Yap": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Yap"
+    }
   ]
 }
