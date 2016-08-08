@@ -111,6 +111,13 @@
       "id": "Africa/Ouagadougou"
     }
   ],
+  "Africa/Sao_Tome": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "São Tomé and Príncipe"
+    }
+  ],
   "America/Anguilla": [
     {
       "op": "init",
