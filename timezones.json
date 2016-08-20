@@ -1,114 +1,282 @@
 {
+  "Africa/Abidjan": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Côte d'Ivoire"
+    }
+  ],
+  "Africa/Accra": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Ghana"
+    }
+  ],
+  "Africa/Addis_Ababa": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Ethiopia"
+    }
+  ],
+  "Africa/Algiers": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Algeria"
+    }
+  ],
+  "Africa/Asmara": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Eritrea"
+    }
+  ],
   "Africa/Bamako": [
     {
       "op": "init",
-      "source": "efele",
-      "id": "Africa/Bamako"
+      "source": "overpass",
+      "id": "Mali"
     }
   ],
   "Africa/Bangui": [
     {
       "op": "init",
-      "source": "efele",
-      "id": "Africa/Bangui"
+      "source": "overpass",
+      "id": "Central African Republic"
+    }
+  ],
+  "Africa/Banjul": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "The Gambia"
+    }
+  ],
+  "Africa/Bissau": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Guinea-Bissau"
     }
   ],
   "Africa/Blantyre": [
     {
       "op": "init",
-      "source": "efele",
-      "id": "Africa/Blantyre"
+      "source": "overpass",
+      "id": "Malawi"
+    }
+  ],
+  "Africa/Brazzaville": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Congo-Brazzaville"
     }
   ],
   "Africa/Bujumbura": [
     {
       "op": "init",
-      "source": "efele",
-      "id": "Africa/Bujumbura"
+      "source": "overpass",
+      "id": "Burundi"
+    }
+  ],
+  "Africa/Cairo": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Egypt"
+    }
+  ],
+  "Africa/Conakry": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Guinea"
+    }
+  ],
+  "Africa/Dakar": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Senegal"
+    }
+  ],
+  "Africa/Dar_es_Salaam": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Tanzania"
+    }
+  ],
+  "Africa/Djibouti": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Djibouti"
+    }
+  ],
+  "Africa/Douala": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Cameroon"
+    }
+  ],
+  "Africa/Freetown": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Sierra Leone"
     }
   ],
   "Africa/Gaborone": [
     {
       "op": "init",
-      "source": "efele",
-      "id": "Africa/Gaborone"
+      "source": "overpass",
+      "id": "Botswana"
     }
   ],
   "Africa/Harare": [
     {
       "op": "init",
-      "source": "efele",
-      "id": "Africa/Harare"
-    }
-  ],
-  "Africa/Juba": [
-    {
-      "op": "init",
-      "source": "efele",
-      "id": "Africa/Juba"
+      "source": "overpass",
+      "id": "Zimbabwe"
     }
   ],
   "Africa/Kampala": [
     {
       "op": "init",
-      "source": "efele",
-      "id": "Africa/Kampala"
+      "source": "overpass",
+      "id": "Uganda"
     }
   ],
   "Africa/Kigali": [
     {
       "op": "init",
-      "source": "efele",
-      "id": "Africa/Kigali"
+      "source": "overpass",
+      "id": "Rwanda"
     }
   ],
-  "Africa/Lubumbashi": [
+  "Africa/Lagos": [
     {
       "op": "init",
-      "source": "efele",
-      "id": "Africa/Lubumbashi"
+      "source": "overpass",
+      "id": "Nigeria"
+    }
+  ],
+  "Africa/Libreville": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Gabon"
+    }
+  ],
+  "Africa/Lome": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Togo"
+    }
+  ],
+  "Africa/Luanda": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Angola"
     }
   ],
   "Africa/Lusaka": [
     {
       "op": "init",
-      "source": "efele",
-      "id": "Africa/Lusaka"
+      "source": "overpass",
+      "id": "Zambia"
+    }
+  ],
+  "Africa/Malabo": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Equatorial Guinea"
+    }
+  ],
+  "Africa/Maputo": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Mozambique"
     }
   ],
   "Africa/Maseru": [
     {
       "op": "init",
-      "source": "efele",
-      "id": "Africa/Maseru"
+      "source": "overpass",
+      "id": "Lesotho"
     }
   ],
   "Africa/Mbabane": [
     {
       "op": "init",
-      "source": "efele",
-      "id": "Africa/Mbabane"
+      "source": "overpass",
+      "id": "Swaziland"
+    }
+  ],
+  "Africa/Mogadishu": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Somalia"
+    }
+  ],
+  "Africa/Monrovia": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Liberia"
+    }
+  ],
+  "Africa/Nairobi": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Kenya"
     }
   ],
   "Africa/Ndjamena": [
     {
       "op": "init",
-      "source": "efele",
-      "id": "Africa/Ndjamena"
+      "source": "overpass",
+      "id": "Chad"
     }
   ],
   "Africa/Niamey": [
     {
       "op": "init",
-      "source": "efele",
-      "id": "Africa/Niamey"
+      "source": "overpass",
+      "id": "Niger"
+    }
+  ],
+  "Africa/Nouakchott": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Mauritania"
     }
   ],
   "Africa/Ouagadougou": [
     {
       "op": "init",
-      "source": "efele",
-      "id": "Africa/Ouagadougou"
+      "source": "overpass",
+      "id": "Burkina Faso"
+    }
+  ],
+  "Africa/Porto-Novo": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Benin"
     }
   ],
   "Africa/Sao_Tome": [
@@ -116,6 +284,27 @@
       "op": "init",
       "source": "overpass",
       "id": "São Tomé and Príncipe"
+    }
+  ],
+  "Africa/Tripoli": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Libya"
+    }
+  ],
+  "Africa/Tunis": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Tunisia"
+    }
+  ],
+  "Africa/Windhoek": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Namibia"
     }
   ],
   "America/Anguilla": [

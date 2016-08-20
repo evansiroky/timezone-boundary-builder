@@ -1,4 +1,10 @@
 {
+  "Algeria": {
+    "ISO3166-1": "DZ"
+  },
+  "Angola": {
+    "ISO3166-1": "AO"
+  },
   "Anguilla": {
     "ISO3166-1": "AI"
   },
@@ -20,11 +26,17 @@
   "Barbados": {
     "ISO3166-1": "BB"
   },
+  "Benin": {
+    "ISO3166-1": "BJ"
+  },
   "Bermuda": {
     "ISO3166-1": "BM"
   },
   "Bonaire, Sint Eustatius and Saba": {
     "ISO3166-1": "BQ"
+  },
+  "Botswana": {
+    "ISO3166-1": "BW"
   },
   "Brazil": {
     "ISO3166-1": "BR"
@@ -38,11 +50,26 @@
   "British Virgin Islands": {
     "ISO3166-1": "VG"
   },
+  "Burkina Faso": {
+    "ISO3166-1": "BF"
+  },
+  "Burundi": {
+    "ISO3166-1": "BI"
+  },
+  "Cameroon": {
+    "ISO3166-1": "CM"
+  },
   "Cape Verde": {
     "ISO3166-1": "CV"
   },
   "Cayman Islands": {
     "ISO3166-1": "KY"
+  },
+  "Central African Republic": {
+    "ISO3166-1": "CF"
+  },
+  "Chad": {
+    "ISO3166-1": "TD"
   },
   "Chile": {
     "ISO3166-1": "CL"
@@ -53,8 +80,14 @@
   "Comoros": {
     "ISO3166-1": "KM"
   },
+  "Congo-Brazzaville": {
+    "ISO3166-1": "CG"
+  },
   "Cook Islands": {
     "ISO3166-1": "CK"
+  },
+  "Côte d'Ivoire": {
+    "ISO3166-1": "CI"
   },
   "Curaçao": {
     "ISO3166-1": "CW"
@@ -66,6 +99,9 @@
     "name": "Dickinson County",
     "nist:state_fips": "26"
   },
+  "Djibouti": {
+    "ISO3166-1": "DJ"
+  },
   "Dominica": {
     "ISO3166-1": "DM"
   },
@@ -74,6 +110,18 @@
   },
   "Ecuador": {
     "ISO3166-1": "EC"
+  },
+  "Egypt": {
+    "ISO3166-1": "EG"
+  },
+  "Equatorial Guinea": {
+    "ISO3166-1": "GQ"
+  },
+  "Eritrea": {
+    "ISO3166-1": "ER"
+  },
+  "Ethiopia": {
+    "ISO3166-1": "ET"
   },
   "Falkland Islands": {
     "ISO3166-1": "FK"
@@ -87,6 +135,12 @@
   "France": {
     "ISO3166-1": "FR"
   },
+  "Gabon": {
+    "ISO3166-1": "GA"
+  },
+  "Ghana": {
+    "ISO3166-1": "GH"
+  },
   "Gogebic County": {
     "name": "Gogebic County"
   },
@@ -98,6 +152,12 @@
   },
   "Guernsey": {
     "ISO3166-1": "GG"
+  },
+  "Guinea": {
+    "ISO3166-1": "GN"
+  },
+  "Guinea-Bissau": {
+    "ISO3166-1": "GW"
   },
   "Haiti": {
     "ISO3166-1": "HT"
@@ -124,17 +184,35 @@
   "Jersey": {
     "ISO3166-1": "JE"
   },
+  "Kenya": {
+    "ISO3166-1": "KE"
+  },
   "Kiribati": {
     "ISO3166-1": "KI"
   },
   "Kosrae": {
     "ISO3166-2": "FM-KSA"
   },
+  "Lesotho": {
+    "ISO3166-1": "LS"
+  },
+  "Liberia": {
+    "ISO3166-1": "LR"
+  },
+  "Libya": {
+    "ISO3166-1": "LY"
+  },
   "Madagascar": {
     "ISO3166-1": "MG"
   },
+  "Malawi": {
+    "ISO3166-1": "MW"
+  },
   "Maldives": {
     "ISO3166-1": "MV"
+  },
+  "Mali": {
+    "ISO3166-1": "ML"
   },
   "Malta": {
     "ISO3166-1": "MT"
@@ -144,6 +222,9 @@
   },
   "Martinique": {
     "ISO3166-1": "MQ"
+  },
+  "Mauritania": {
+    "ISO3166-1": "MR"
   },
   "Mauritius": {
     "ISO3166-1": "MU"
@@ -158,11 +239,23 @@
   "Montserrat": {
     "ISO3166-1": "MS"
   },
+  "Mozambique": {
+    "ISO3166-1": "MZ"
+  },
+  "Namibia": {
+    "ISO3166-1": "NA"
+  },
   "Nauru": {
     "ISO3166-1": "NR"
   },
   "New Zealand": {
     "ISO3166-1": "NZ"
+  },
+  "Niger": {
+    "ISO3166-1": "NE"
+  },
+  "Nigeria": {
+    "ISO3166-1": "NG"
   },
   "Niue": {
     "ISO3166-1": "NU"
@@ -191,6 +284,9 @@
   "Republic of China": {
     "ISO3166-1": "TW"
   },
+  "Rwanda": {
+    "ISO3166-1": "RW"
+  },
   "Saint-Barthélemy": {
     "ISO3166-1": "BL"
   },
@@ -218,8 +314,14 @@
   "São Tomé and Príncipe": {
     "ISO3166-1": "ST"
   },
+  "Senegal": {
+    "ISO3166-1": "SN"
+  },
   "Seychelles": {
     "ISO3166-1": "SC"
+  },
+  "Sierra Leone": {
+    "ISO3166-1": "SL"
   },
   "Singapore": {
     "ISO3166-1": "SG"
@@ -230,6 +332,9 @@
   "Solomon Islands": {
     "ISO3166-1": "SB"
   },
+  "Somalia": {
+    "ISO3166-1": "SO"
+  },
   "South Georgia and the South Sandwich Islands": {
     "ISO3166-1": "GS"
   },
@@ -239,8 +344,20 @@
   "Sri Lanka": {
     "ISO3166-1": "LK"
   },
+  "Swaziland": {
+    "ISO3166-1": "SZ"
+  },
+  "Tanzania": {
+    "name:en": "Tanzania"
+  },
   "The Bahamas": {
     "ISO3166-1": "BS"
+  },
+  "The Gambia": {
+    "ISO3166-1": "GM"
+  },
+  "Togo": {
+    "ISO3166-1": "TG"
   },
   "Tokelau": {
     "ISO3166-1": "TK"
@@ -251,11 +368,17 @@
   "Trinidad and Tobago": {
     "ISO3166-1": "TT"
   },
+  "Tunisia": {
+    "ISO3166-1": "TN"
+  },
   "Turks and Caicos Islands": {
     "ISO3166-1": "TC"
   },
   "Tuvalu": {
     "ISO3166-1": "TV"
+  },
+  "Uganda": {
+    "ISO3166-1": "UG"
   },
   "United Kingdom": {
     "ISO3166-1": "GB"
@@ -271,5 +394,11 @@
   },
   "Yap": {
     "ISO3166-2": "FM-YAP"
+  },
+  "Zambia": {
+    "ISO3166-1": "ZM"
+  },
+  "Zimbabwe": {
+    "ISO3166-1": "ZW"
   }
 }
