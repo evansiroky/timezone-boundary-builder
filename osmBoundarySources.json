@@ -26,11 +26,17 @@
   "Barbados": {
     "ISO3166-1": "BB"
   },
+  "Belize": {
+    "ISO3166-1": "BZ"
+  },
   "Benin": {
     "ISO3166-1": "BJ"
   },
   "Bermuda": {
     "ISO3166-1": "BM"
+  },
+  "Bolivia": {
+    "ISO3166-1": "BO"
   },
   "Bonaire, Sint Eustatius and Saba": {
     "ISO3166-1": "BQ"
@@ -77,6 +83,9 @@
   "Chuuk": {
     "ISO3166-2": "FM-TRK"
   },
+  "Colombia": {
+    "ISO3166-1": "CO"
+  },
   "Comoros": {
     "ISO3166-1": "KM"
   },
@@ -85,6 +94,9 @@
   },
   "Cook Islands": {
     "ISO3166-1": "CK"
+  },
+  "Costa Rica": {
+    "ISO3166-1": "CR"
   },
   "Côte d'Ivoire": {
     "ISO3166-1": "CI"
@@ -113,6 +125,9 @@
   },
   "Egypt": {
     "ISO3166-1": "EG"
+  },
+  "El Salvador": {
+    "ISO3166-1": "SV"
   },
   "Equatorial Guinea": {
     "ISO3166-1": "GQ"
@@ -150,6 +165,9 @@
   "Guadeloupe": {
     "ISO3166-1": "GP"
   },
+  "Guatemala": {
+    "ISO3166-1": "GT"
+  },
   "Guernsey": {
     "ISO3166-1": "GG"
   },
@@ -158,6 +176,9 @@
   },
   "Guinea-Bissau": {
     "ISO3166-1": "GW"
+  },
+  "Guyana": {
+    "ISO3166-1": "GY"
   },
   "Haiti": {
     "ISO3166-1": "HT"
@@ -251,6 +272,9 @@
   "New Zealand": {
     "ISO3166-1": "NZ"
   },
+  "Nicaragua": {
+    "ISO3166-1": "NI"
+  },
   "Niger": {
     "ISO3166-1": "NE"
   },
@@ -266,8 +290,17 @@
   "Palau": {
     "ISO3166-1": "PW"
   },
+  "Panama": {
+    "ISO3166-1": "PA"
+  },
   "Papua New Guinea": {
     "ISO3166-1": "PG"
+  },
+  "Paraguay": {
+    "ISO3166-1": "PY"
+  },
+  "Peru": {
+    "ISO3166-1:alpha2": "PE"
   },
   "Philippines": {
     "ISO3166-1": "PH"
@@ -344,6 +377,9 @@
   "Sri Lanka": {
     "ISO3166-1": "LK"
   },
+  "Suriname": {
+    "ISO3166-1": "SR"
+  },
   "Swaziland": {
     "ISO3166-1": "SZ"
   },
@@ -386,8 +422,14 @@
   "United States of America": {
     "ISO3166-1": "US"
   },
+  "Uruguay": {
+    "ISO3166-1": "UY"
+  },
   "Vanuatu": {
     "ISO3166-1": "VU"
+  },
+  "Venezuela": {
+    "ISO3166-1": "VE"
   },
   "West Wendover": {
     "name": "West Wendover"

@@ -380,8 +380,8 @@
   "America/Asuncion": [
     {
       "op": "init",
-      "source": "efele",
-      "id": "America/Asuncion"
+      "source": "overpass",
+      "id": "Paraguay"
     }
   ],
   "America/Atikokan": [
@@ -398,11 +398,25 @@
       "id": "Barbados"
     }
   ],
+  "America/Belize": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Belize"
+    }
+  ],
   "America/Boa_Vista": [
     {
       "op": "init",
       "source": "efele",
       "id": "America/Boa_Vista"
+    }
+  ],
+  "America/Bogota": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Colombia"
     }
   ],
   "America/Boise": [
@@ -417,6 +431,24 @@
       "op": "init",
       "source": "efele",
       "id": "America/Campo_Grande"
+    }
+  ],
+  "America/Caracas": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Venezuela"
+    }
+  ],
+  "America/Cayenne": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "France"
+    }, {
+      "op": "intersect",
+      "source": "manual-polygon",
+      "data": [[[-55,8],[-55,0],[-48,4],[-55,8]]]
     }
   ],
   "America/Cayman": [
@@ -524,6 +556,13 @@
       "id": "America/Chihuahua"
     }
   ],
+  "America/Costa_Rica": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Costa Rica"
+    }
+  ],
   "America/Creston": [
     {
       "op": "init",
@@ -622,6 +661,13 @@
       "id": "America/Eirunepe"
     }
   ],
+  "America/El_Salvador": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "El Salvador"
+    }
+  ],
   "America/Fort_Nelson": [
     {
       "op": "init",
@@ -648,6 +694,31 @@
       "op": "init",
       "source": "overpass",
       "id": "Guadeloupe"
+    }
+  ],
+  "America/Guatemala": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Guatemala"
+    }
+  ],
+  "America/Guayaquil": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Ecuador"
+    }, {
+      "op": "intersect",
+      "source": "manual-polygon",
+      "data": [[[-72,0],[-83,4],[-83,-9],[-72,0]]]
+    }
+  ],
+  "America/Guyana": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Guyana"
     }
   ],
   "America/Indiana/Indianapolis": [
@@ -752,8 +823,15 @@
   "America/La_Paz": [
     {
       "op": "init",
-      "source": "efele",
-      "id": "America/La_Paz"
+      "source": "overpass",
+      "id": "Bolivia"
+    }
+  ],
+  "America/Lima": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Peru"
     }
   ],
   "America/Los_Angeles": [
@@ -806,6 +884,13 @@
       "id": "Sint Maarten"
     }
   ],
+  "America/Managua": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Nicaragua"
+    }
+  ],
   "America/Manaus": [
     {
       "op": "init",
@@ -851,6 +936,13 @@
       "op": "union",
       "source": "overpass",
       "id": "Menominee County, MI"
+    }
+  ],
+  "America/Montevideo": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Uruguay"
     }
   ],
   "America/Montserrat": [
@@ -965,6 +1057,20 @@
       "id": "America/Ojinaga"
     }
   ],
+  "America/Panama": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Panama"
+    }
+  ],
+  "America/Paramaribo": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Suriname"
+    }
+  ],
   "America/Phoenix": [
     {
       "op": "init",
@@ -1014,18 +1120,29 @@
       "id": "America/Rio_Branco"
     }
   ],
-  "America/Santo_Domingo": [
-    {
-      "op": "init",
-      "source": "overpass",
-      "id": "Dominican Republic"
-    }
-  ],
   "America/Santarem": [
     {
       "op": "init",
       "source": "efele",
       "id": "America/Santarem"
+    }
+  ],
+  "America/Santiago": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Chile"
+    }, {
+      "op": "intersect",
+      "source": "manual-polygon",
+      "data": [[[-70,15],[-50,-60],[-100,-60],[-70,15]]]
+    }
+  ],
+  "America/Santo_Domingo": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Dominican Republic"
     }
   ],
   "America/Swift_Current": [
