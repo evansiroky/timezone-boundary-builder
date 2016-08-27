@@ -1,4 +1,7 @@
 {
+  "Afghanistan": {
+    "ISO3166-1": "AF"
+  },
   "Algeria": {
     "ISO3166-1": "DZ"
   },
@@ -11,6 +14,9 @@
   "Antigua and Barbuda": {
     "ISO3166-1": "AG"
   },
+  "Armenia": {
+    "ISO3166-1": "AM"
+  },
   "Aruba": {
     "ISO3166-1": "AW"
   },
@@ -20,8 +26,14 @@
   "Autonomous Region of Bougainville": {
     "ISO3166-2": "PG-NSB"
   },
+  "Azerbaijan": {
+    "ISO3166-1": "AZ"
+  },
   "Bahrain": {
     "ISO3166-1": "BH"
+  },
+  "Bangladesh": {
+    "ISO3166-1": "BD"
   },
   "Barbados": {
     "ISO3166-1": "BB"
@@ -34,6 +46,9 @@
   },
   "Bermuda": {
     "ISO3166-1": "BM"
+  },
+  "Bhutan": {
+    "ISO3166-1": "BT"
   },
   "Bolivia": {
     "ISO3166-1": "BO"
@@ -56,11 +71,17 @@
   "British Virgin Islands": {
     "ISO3166-1": "VG"
   },
+  "Brunei": {
+    "ISO3166-1": "BN"
+  },
   "Burkina Faso": {
     "ISO3166-1": "BF"
   },
   "Burundi": {
     "ISO3166-1": "BI"
+  },
+  "Cambodia": {
+    "ISO3166-1": "KH"
   },
   "Cameroon": {
     "ISO3166-1": "CM"
@@ -120,6 +141,9 @@
   "Dominican Republic": {
     "ISO3166-1": "DO"
   },
+  "East Timor": {
+    "ISO3166-1": "TL"
+  },
   "Ecuador": {
     "ISO3166-1": "EC"
   },
@@ -152,6 +176,9 @@
   },
   "Gabon": {
     "ISO3166-1": "GA"
+  },
+  "Georgia": {
+    "ISO3166-1": "GE"
   },
   "Ghana": {
     "ISO3166-1": "GH"
@@ -186,6 +213,15 @@
   "Iceland": {
     "ISO3166-1": "IS"
   },
+  "India": {
+    "ISO3166-1": "IN"
+  },
+  "Iran": {
+    "ISO3166-1": "IR"
+  },
+  "Iraq": {
+    "ISO3166-1": "IQ"
+  },
   "Ireland": {
     "ISO3166-1": "IE"
   },
@@ -196,6 +232,9 @@
   "Isle of Man": {
     "ISO3166-1": "IM"
   },
+  "Israel": {
+    "ISO3166-1": "IL"
+  },
   "Jamaica": {
     "ISO3166-1": "JM"
   },
@@ -205,6 +244,9 @@
   "Jersey": {
     "ISO3166-1": "JE"
   },
+  "Jordan": {
+    "ISO3166-1": "JO"
+  },
   "Kenya": {
     "ISO3166-1": "KE"
   },
@@ -213,6 +255,18 @@
   },
   "Kosrae": {
     "ISO3166-2": "FM-KSA"
+  },
+  "Kuwait": {
+    "ISO3166-1": "KW"
+  },
+  "Kyrgyzstan": {
+    "ISO3166-1": "KG"
+  },
+  "Laos": {
+    "ISO3166-1": "LA"
+  },
+  "Lebanon": {
+    "ISO3166-1": "LB"
   },
   "Lesotho": {
     "ISO3166-1": "LS"
@@ -228,6 +282,9 @@
   },
   "Malawi": {
     "ISO3166-1": "MW"
+  },
+  "Malaysia": {
+    "ISO3166-1": "MY"
   },
   "Maldives": {
     "ISO3166-1": "MV"
@@ -263,11 +320,17 @@
   "Mozambique": {
     "ISO3166-1": "MZ"
   },
+  "Myanmar": {
+    "ISO3166-1": "MM"
+  },
   "Namibia": {
     "ISO3166-1": "NA"
   },
   "Nauru": {
     "ISO3166-1": "NR"
+  },
+  "Nepal": {
+    "ISO3166-1": "NP"
   },
   "New Zealand": {
     "ISO3166-1": "NZ"
@@ -284,11 +347,23 @@
   "Niue": {
     "ISO3166-1": "NU"
   },
+  "North Korea": {
+    "ISO3166-1": "KP"
+  },
   "Norway": {
     "ISO3166-1": "NO"
   },
+  "Oman": {
+    "ISO3166-1": "OM"
+  },
+  "Pakistan": {
+    "ISO3166-1": "PK"
+  },
   "Palau": {
     "ISO3166-1": "PW"
+  },
+  "Palestinian Territories": {
+    "ISO3166-1": "PS"
   },
   "Panama": {
     "ISO3166-1": "PA"
@@ -313,6 +388,9 @@
   },
   "Portugal": {
     "ISO3166-1": "PT"
+  },
+  "Qatar": {
+    "ISO3166-1": "QA"
   },
   "Republic of China": {
     "ISO3166-1": "TW"
@@ -344,6 +422,9 @@
   "Samoa": {
     "ISO3166-1": "WS"
   },
+  "Saudi Arabia": {
+    "ISO3166-1": "SA"
+  },
   "São Tomé and Príncipe": {
     "ISO3166-1": "ST"
   },
@@ -371,6 +452,9 @@
   "South Georgia and the South Sandwich Islands": {
     "ISO3166-1": "GS"
   },
+  "South Korea": {
+    "ISO3166-1": "KR"
+  },
   "Spain": {
     "ISO3166-1": "ES"
   },
@@ -383,8 +467,18 @@
   "Swaziland": {
     "ISO3166-1": "SZ"
   },
+  "Syria": {
+    "ISO3166-1": "SY"
+  },
+  "Tajikistan": {
+    "ISO3166-1": "TJ"
+  },
   "Tanzania": {
     "name:en": "Tanzania"
+  },
+  "Thailand": {
+    "ISO3166-1": "TH",
+    "admin_level": "2"
   },
   "The Bahamas": {
     "ISO3166-1": "BS"
@@ -407,6 +501,9 @@
   "Tunisia": {
     "ISO3166-1": "TN"
   },
+  "Turkmenistan": {
+    "ISO3166-1": "TM"
+  },
   "Turks and Caicos Islands": {
     "ISO3166-1": "TC"
   },
@@ -415,6 +512,9 @@
   },
   "Uganda": {
     "ISO3166-1": "UG"
+  },
+  "United Arab Emirates": {
+    "ISO3166-1": "AE"
   },
   "United Kingdom": {
     "ISO3166-1": "GB"
@@ -431,11 +531,17 @@
   "Venezuela": {
     "ISO3166-1": "VE"
   },
+  "Vietnam": {
+    "ISO3166-1": "VN"
+  },
   "West Wendover": {
     "name": "West Wendover"
   },
   "Yap": {
     "ISO3166-2": "FM-YAP"
+  },
+  "Yemen": {
+    "ISO3166-1": "YE"
   },
   "Zambia": {
     "ISO3166-1": "ZM"

@@ -1209,11 +1209,25 @@
       "data": [[[5,82],[5,73],[35,73],[35,82],[5,82]]]
     }
   ],
+  "Asia/Aden": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Yemen"
+    }
+  ],
   "Asia/Almaty": [
     {
       "op": "init",
       "source": "efele",
       "id": "Asia/Almaty"
+    }
+  ],
+  "Asia/Amman": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Jordan"
     }
   ],
   "Asia/Aqtobe": [
@@ -1223,11 +1237,39 @@
       "id": "Asia/Aqtobe"
     }
   ],
+  "Asia/Ashgabat": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Turkmenistan"
+    }
+  ],
+  "Asia/Baghdad": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Iraq"
+    }
+  ],
   "Asia/Bahrain": [
     {
       "op": "init",
       "source": "overpass",
       "id": "Bahrain"
+    }
+  ],
+  "Asia/Baku": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Azerbaijan"
+    }
+  ],
+  "Asia/Bangkok": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Thailand"
     }
   ],
   "Asia/Barnaul": [
@@ -1237,11 +1279,25 @@
       "id": "Asia/Barnaul"
     }
   ],
+  "Asia/Beirut": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Lebanon"
+    }
+  ],
   "Asia/Bishkek": [
     {
       "op": "init",
-      "source": "efele",
-      "id": "Asia/Bishkek"
+      "source": "overpass",
+      "id": "Kyrgyzstan"
+    }
+  ],
+  "Asia/Brunei": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Brunei"
     }
   ],
   "Asia/Chita": [
@@ -1265,11 +1321,50 @@
       "id": "Sri Lanka"
     }
   ],
+  "Asia/Damascus": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Syria"
+    }
+  ],
+  "Asia/Dhaka": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Bangladesh"
+    }
+  ],
+  "Asia/Dili": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "East Timor"
+    }
+  ],
+  "Asia/Dubai": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "United Arab Emirates"
+    }
+  ],
   "Asia/Dushanbe": [
     {
       "op": "init",
-      "source": "efele",
-      "id": "Asia/Dushanbe"
+      "source": "overpass",
+      "id": "Tajikistan"
+    }
+  ],
+  "Asia/Gaza": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Palestinian Territories"
+    }, {
+      "op": "intersect",
+      "source": "manual-polygon",
+      "data": [[[34.7,31.5],[33.8,32.5],[33.8,30],[34.7,31.5]]]
     }
   ],
   "Asia/Harbin": [
@@ -1282,8 +1377,19 @@
   "Asia/Hebron": [
     {
       "op": "init",
-      "source": "efele",
-      "id": "Asia/Hebron"
+      "source": "overpass",
+      "id": "Palestinian Territories"
+    }, {
+      "op": "intersect",
+      "source": "manual-polygon",
+      "data": [[[34.7,30],[34.7,34],[37,32],[34.7,30]]]
+    }
+  ],
+  "Asia/Ho_Chi_Minh": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Vietnam"
     }
   ],
   "Asia/Hovd": [
@@ -1300,11 +1406,25 @@
       "id": "Asia/Irkutsk"
     }
   ],
+  "Asia/Jerusalem": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Israel"
+    }
+  ],
   "Asia/Kabul": [
     {
       "op": "init",
-      "source": "efele",
-      "id": "Asia/Kabul"
+      "source": "overpass",
+      "id": "Afghanistan"
+    }
+  ],
+  "Asia/Karachi": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Pakistan"
     }
   ],
   "Asia/Kashgar": [
@@ -1317,8 +1437,8 @@
   "Asia/Kathmandu": [
     {
       "op": "init",
-      "source": "efele",
-      "id": "Asia/Kathmandu"
+      "source": "overpass",
+      "id": "Nepal"
     }
   ],
   "Asia/Khandyga": [
@@ -1328,11 +1448,54 @@
       "id": "Asia/Khandyga"
     }
   ],
+  "Asia/Kolkata": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "India"
+    }
+  ],
+  "Asia/Kuala_Lumpur": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Malaysia"
+    }, {
+      "op": "intersect",
+      "source": "manual-polygon",
+      "data": [[[106,-6],[106,13],[94,6],[106,-6]]]
+    }
+  ],
+  "Asia/Kuching": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Malaysia"
+    }, {
+      "op": "intersect",
+      "source": "manual-polygon",
+      "data": [[[107,18],[107,-15],[130,5],[107,18]]]
+    }
+  ],
+  "Asia/Kuwait": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Kuwait"
+    }
+  ],
   "Asia/Manila": [
     {
       "op": "init",
       "source": "overpass",
       "id": "Philippines"
+    }
+  ],
+  "Asia/Muscat": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Oman"
     }
   ],
   "Asia/Nicosia": [
@@ -1374,6 +1537,48 @@
       "id": "Asia/Oral"
     }
   ],
+  "Asia/Phnom_Penh": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Cambodia"
+    }
+  ],
+  "Asia/Pyongyang": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "North Korea"
+    }
+  ],
+  "Asia/Qatar": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Qatar"
+    }
+  ],
+  "Asia/Rangoon": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Myanmar"
+    }
+  ],
+  "Asia/Riyadh": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Saudi Arabia"
+    }
+  ],
+  "Asia/Seoul": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "South Korea"
+    }
+  ],
   "Asia/Singapore": [
     {
       "op": "init",
@@ -1388,18 +1593,25 @@
       "id": "Republic of China"
     }
   ],
-  "Asia/Tashkent": [
+  "Asia/Tbilisi": [
     {
       "op": "init",
-      "source": "efele",
-      "id": "Asia/Tashkent"
+      "source": "overpass",
+      "id": "Georgia"
+    }
+  ],
+  "Asia/Tehran": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Iran"
     }
   ],
   "Asia/Thimphu": [
     {
       "op": "init",
-      "source": "efele",
-      "id": "Asia/Thimphu"
+      "source": "overpass",
+      "id": "Bhutan"
     }
   ],
   "Asia/Tokyo": [
@@ -1433,15 +1645,15 @@
   "Asia/Vientiane": [
     {
       "op": "init",
-      "source": "efele",
-      "id": "Asia/Vientiane"
+      "source": "overpass",
+      "id": "Laos"
     }
   ],
   "Asia/Yerevan": [
     {
       "op": "init",
-      "source": "efele",
-      "id": "Asia/Yerevan"
+      "source": "overpass",
+      "id": "Armenia"
     }
   ],
   "Atlantic/Azores": [
