@@ -1206,7 +1206,7 @@
     }, {
       "op": "intersect",
       "source": "manual-polygon",
-      "data": [[[5,82],[5,73],[35,73],[35,82],[5,82]]]
+      "data": [[[-13,69],[2,82],[35,81],[35,74],[-13,69]]]
     }
   ],
   "Asia/Aden": [
@@ -1756,46 +1756,113 @@
       "data": [[[160,-33],[160,-31],[157,-31],[160,-33]]]
     }
   ],
+  "Europe/Amsterdam": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "The Netherlands"
+    }, {
+      "op": "intersect",
+      "source": "manual-polygon",
+      "data": [[[9,55],[9,48],[-2,52],[9,55]]]
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "Belgium"
+    }
+  ],
   "Europe/Andorra": [
-    { 
-      "op": "init", 
-      "source": "efele", 
-      "id": "Europe/Andorra"
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Andorra"
+    }
+  ],
+  "Europe/Athens": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Greece"
     }
   ],
   "Europe/Belgrade": [
     {
       "op": "init",
-      "source": "efele",
-      "id": "Europe/Belgrade"
+      "source": "overpass",
+      "id": "Republic of Kosovo"
+    },
+    {
+      "op": "union",
+      "source": "overpass",
+      "id": "Serbia"
     }
+  ],
+  "Europe/Berlin": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Germany"
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "The Netherlands"
+    }, {
+      "op": "difference",
+      "source": "manual-polygon",
+      "data": [[[8.7,47.75],[8.75,47.63],[8.6,47.7],[8.7,47.75]]]
+    }    
   ],
   "Europe/Bratislava": [
     {
       "op": "init",
-      "source": "efele",
-      "id": "Europe/Bratislava"
+      "source": "overpass",
+      "id": "Slovakia"
+    }
+  ],
+  "Europe/Brussels": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Belgium"
+    }
+  ],
+  "Europe/Bucharest": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Romania"
     }
   ],
   "Europe/Budapest": [
     {
       "op": "init",
-      "source": "efele",
-      "id": "Europe/Budapest"
+      "source": "overpass",
+      "id": "Hungary"
     }
   ],
   "Europe/Busingen": [
     {
       "op": "init",
-      "source": "efele",
-      "id": "Europe/Busingen"
+      "source": "overpass",
+      "id": "Germany"
+    }, {
+      "op": "intersect",
+      "source": "manual-polygon",
+      "data": [[[8.7,47.75],[8.75,47.63],[8.6,47.7],[8.7,47.75]]]
     }
   ],
   "Europe/Chisinau": [
     {
       "op": "init",
-      "source": "efele",
-      "id": "Europe/Chisinau"
+      "source": "overpass",
+      "id": "Moldova"
+    }
+  ],
+  "Europe/Copenhagen": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Denmark"
     }
   ],
   "Europe/Dublin": [
@@ -1803,6 +1870,13 @@
       "op": "init",
       "source": "overpass",
       "id": "Ireland"
+    }
+  ],
+  "Europe/Gibraltar": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Gibraltar"
     }
   ],
   "Europe/Guernsey": [
@@ -1819,6 +1893,13 @@
       "id": "Isle of Man"
     }
   ],
+  "Europe/Istanbul": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Turkey"
+    }
+  ],
   "Europe/Jersey": [
     {
       "op": "init",
@@ -1833,6 +1914,24 @@
       "id": "Europe/Kirov"
     }
   ],
+  "Europe/Lisbon": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Portugal"
+    }, {
+      "op": "intersect",
+      "source": "manual-polygon",
+      "data": [[[-3,45],[-3,28],[-17,40],[-3,45]]]
+    }
+  ],
+  "Europe/Ljubljana": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Slovenia"
+    }
+  ],
   "Europe/London": [
     {
       "op": "init",
@@ -1843,8 +1942,8 @@
   "Europe/Luxembourg": [
     {
       "op": "init",
-      "source": "efele",
-      "id": "Europe/Luxembourg"
+      "source": "overpass",
+      "id": "Luxemburg"
     }
   ],
   "Europe/Malta": [
@@ -1855,17 +1954,67 @@
     }
   ],
   "Europe/Minsk": [
-    { 
-      "op": "init", 
-      "source": "efele", 
-      "id": "Europe/Minsk"
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Belarus"
+    }
+  ],
+  "Europe/Monaco": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Monaco"
+    }
+  ],
+  "Europe/Oslo": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Norway"
+    }, {
+      "op": "intersect",
+      "source": "manual-polygon",
+      "data": [[[7,71],[0,54],[25,60],[37,73],[7,71]]]
+    }
+  ],
+  "Europe/Paris": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "France"
+    }, {
+      "op": "intersect",
+      "source": "manual-polygon",
+      "data": [[[17,38],[4,58],[-19,45],[17,38]]]
+    }
+  ],
+  "Europe/Podgorica": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Montenegro"
     }
   ],
   "Europe/Prague": [
     {
       "op": "init",
-      "source": "efele",
-      "id": "Europe/Prague"
+      "source": "overpass",
+      "id": "Czech Republic"
+    }
+  ],
+  "Europe/Riga": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Latvia"
+    }
+  ],
+  "Europe/Rome": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Italy"
     }
   ],
   "Europe/Samara": [
@@ -1876,17 +2025,52 @@
     }
   ],
   "Europe/San_Marino": [
-    { 
-      "op": "init", 
-      "source": "efele", 
-      "id": "Europe/San_Marino"
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "San Marino"
+    }
+  ],
+  "Europe/Sarajevo": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Bosnia and Herzegovina"
     }
   ],
   "Europe/Skopje": [
     {
       "op": "init",
-      "source": "efele",
-      "id": "Europe/Skopje"
+      "source": "overpass",
+      "id": "Macedonia"
+    }
+  ],
+  "Europe/Sofia": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Bulgaria"
+    }
+  ],
+  "Europe/Stockholm": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Sweden"
+    }
+  ],
+  "Europe/Tallinn": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Estonia"
+    }
+  ],
+  "Europe/Tirane": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Albania"
     }
   ],
   "Europe/Ulyanovsk": [
@@ -1904,24 +2088,31 @@
     }
   ],
   "Europe/Vaduz": [
-    { 
-      "op": "init", 
-      "source": "efele", 
-      "id": "Europe/Vaduz"
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Liechtenstein"
     }
   ],
   "Europe/Vatican": [
-    { 
-      "op": "init", 
-      "source": "efele", 
-      "id": "Europe/Vatican"
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Vatican City"
     }
   ],
   "Europe/Vienna": [
     {
       "op": "init",
-      "source": "efele",
-      "id": "Europe/Vienna"
+      "source": "overpass",
+      "id": "Austria"
+    }
+  ],
+  "Europe/Vilnius": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Lithuania"
     }
   ],
   "Europe/Volgograd": [
@@ -1931,11 +2122,25 @@
       "id": "Europe/Volgograd"
     }
   ],
+  "Europe/Warsaw": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Poland"
+    }
+  ],
+  "Europe/Zagreb": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Croatia"
+    }
+  ],
   "Europe/Zurich": [
     {
       "op": "init",
-      "source": "efele",
-      "id": "Europe/Zurich"
+      "source": "overpass",
+      "id": "Switzerland"
     }
   ],
   "Indian/Antananarivo": [

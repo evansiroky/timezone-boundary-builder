@@ -2,8 +2,14 @@
   "Afghanistan": {
     "ISO3166-1": "AF"
   },
+  "Albania": {
+    "ISO3166-1": "AL"
+  },
   "Algeria": {
     "ISO3166-1": "DZ"
+  },
+  "Andorra": {
+    "ISO3166-1": "AD"
   },
   "Angola": {
     "ISO3166-1": "AO"
@@ -23,6 +29,9 @@
   "Australia": {
     "ISO3166-1": "AU"
   },
+  "Austria": {
+    "ISO3166-1": "AT"
+  },
   "Autonomous Region of Bougainville": {
     "ISO3166-2": "PG-NSB"
   },
@@ -37,6 +46,12 @@
   },
   "Barbados": {
     "ISO3166-1": "BB"
+  },
+  "Belarus": {
+    "ISO3166-1": "BY"
+  },
+  "Belgium": {
+    "ISO3166-1": "BE"
   },
   "Belize": {
     "ISO3166-1": "BZ"
@@ -56,6 +71,9 @@
   "Bonaire, Sint Eustatius and Saba": {
     "ISO3166-1": "BQ"
   },
+  "Bosnia and Herzegovina": {
+    "ISO3166-1": "BA"
+  },
   "Botswana": {
     "ISO3166-1": "BW"
   },
@@ -73,6 +91,9 @@
   },
   "Brunei": {
     "ISO3166-1": "BN"
+  },
+  "Bulgaria": {
+    "ISO3166-1": "BG"
   },
   "Burkina Faso": {
     "ISO3166-1": "BF"
@@ -122,11 +143,20 @@
   "Côte d'Ivoire": {
     "ISO3166-1": "CI"
   },
+  "Croatia": {
+    "ISO3166-1": "HR"
+  },
   "Curaçao": {
     "ISO3166-1": "CW"
   },
   "Cyprus": {
     "ISO3166-1": "CY"
+  },
+  "Czech Republic": {
+    "ISO3166-1": "CZ"
+  },
+  "Denmark": {
+    "ISO3166-1": "DK"
   },
   "Dickinson County, MI": {
     "name": "Dickinson County",
@@ -159,6 +189,9 @@
   "Eritrea": {
     "ISO3166-1": "ER"
   },
+  "Estonia": {
+    "ISO3166-1": "EE"
+  },
   "Ethiopia": {
     "ISO3166-1": "ET"
   },
@@ -171,6 +204,9 @@
   "Fiji": {
     "ISO3166-1": "FJ"
   },
+  "Finland": {
+    "ISO3166-1": "FI"
+  },
   "France": {
     "ISO3166-1": "FR"
   },
@@ -180,11 +216,20 @@
   "Georgia": {
     "ISO3166-1": "GE"
   },
+  "Germany": {
+    "ISO3166-1": "DE"
+  },
   "Ghana": {
     "ISO3166-1": "GH"
   },
+  "Gibraltar": {
+    "ISO3166-1": "GI"
+  },
   "Gogebic County": {
     "name": "Gogebic County"
+  },
+  "Greece": {
+    "ISO3166-1": "GR"
   },
   "Grenada": {
     "ISO3166-1": "GD"
@@ -210,6 +255,9 @@
   "Haiti": {
     "ISO3166-1": "HT"
   },
+  "Hungary": {
+    "ISO3166-1": "HU"
+  },
   "Iceland": {
     "ISO3166-1": "IS"
   },
@@ -234,6 +282,9 @@
   },
   "Israel": {
     "ISO3166-1": "IL"
+  },
+  "Italy": {
+    "ISO3166-1": "IT"
   },
   "Jamaica": {
     "ISO3166-1": "JM"
@@ -265,6 +316,9 @@
   "Laos": {
     "ISO3166-1": "LA"
   },
+  "Latvia": {
+    "ISO3166-1": "LV"
+  },
   "Lebanon": {
     "ISO3166-1": "LB"
   },
@@ -276,6 +330,18 @@
   },
   "Libya": {
     "ISO3166-1": "LY"
+  },
+  "Liechtenstein": {
+    "ISO3166-1": "LI"
+  },
+  "Lithuania": {
+    "ISO3166-1": "LT"
+  },
+  "Luxemburg": {
+    "ISO3166-1": "LU"
+  },
+  "Macedonia": {
+    "ISO3166-1": "MK"
   },
   "Madagascar": {
     "ISO3166-1": "MG"
@@ -313,6 +379,15 @@
   },
   "Michigan": {
     "ISO3166-2": "US-MI"
+  },
+  "Moldova": {
+    "ISO3166-1": "MD"
+  },
+  "Monaco": {
+    "ISO3166-1": "MC"
+  },
+  "Montenegro": {
+    "ISO3166-1": "ME"
   },
   "Montserrat": {
     "ISO3166-1": "MS"
@@ -386,6 +461,9 @@
   "Pohnpei": {
     "ISO3166-2": "FM-PNI"
   },
+  "Poland": {
+    "ISO3166-1": "PL"
+  },
   "Portugal": {
     "ISO3166-1": "PT"
   },
@@ -394,6 +472,13 @@
   },
   "Republic of China": {
     "ISO3166-1": "TW"
+  },
+  "Republic of Kosovo": {
+    "name:en": "Kosovo",
+    "admin_level": "2"
+  },
+  "Romania": {
+    "ISO3166-1": "RO"
   },
   "Rwanda": {
     "ISO3166-1": "RW"
@@ -422,6 +507,9 @@
   "Samoa": {
     "ISO3166-1": "WS"
   },
+  "San Marino": {
+    "ISO3166-1": "SM"
+  },
   "Saudi Arabia": {
     "ISO3166-1": "SA"
   },
@@ -430,6 +518,9 @@
   },
   "Senegal": {
     "ISO3166-1": "SN"
+  },
+  "Serbia": {
+    "ISO3166-1": "RS"
   },
   "Seychelles": {
     "ISO3166-1": "SC"
@@ -442,6 +533,12 @@
   },
   "Sint Maarten": {
     "ISO3166-1": "SX"
+  },
+  "Slovakia": {
+    "ISO3166-1": "SK"
+  },
+  "Slovenia": {
+    "ISO3166-1": "SI"
   },
   "Solomon Islands": {
     "ISO3166-1": "SB"
@@ -467,6 +564,12 @@
   "Swaziland": {
     "ISO3166-1": "SZ"
   },
+  "Sweden": {
+    "ISO3166-1": "SE"
+  },
+  "Switzerland": {
+    "ISO3166-1": "CH"
+  },
   "Syria": {
     "ISO3166-1": "SY"
   },
@@ -486,6 +589,9 @@
   "The Gambia": {
     "ISO3166-1": "GM"
   },
+  "The Netherlands": {
+    "ISO3166-1": "NL"
+  },
   "Togo": {
     "ISO3166-1": "TG"
   },
@@ -500,6 +606,9 @@
   },
   "Tunisia": {
     "ISO3166-1": "TN"
+  },
+  "Turkey": {
+    "ISO3166-1": "TR"
   },
   "Turkmenistan": {
     "ISO3166-1": "TM"
@@ -527,6 +636,9 @@
   },
   "Vanuatu": {
     "ISO3166-1": "VU"
+  },
+  "Vatican City": {
+    "ISO3166-1": "VA"
   },
   "Venezuela": {
     "ISO3166-1": "VE"
