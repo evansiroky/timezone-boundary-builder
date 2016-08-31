@@ -90,6 +90,32 @@
       "id": "Egypt"
     }
   ],
+  "Africa/Casablanca": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Morocco"
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "Spain"
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "Western Sahara"
+    }
+  ],
+  "Africa/Ceuta": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Spain"
+    }, {
+      "op": "intersect",
+      "source": "manual-polygon",
+      "data": [[[-5.5,35.95],[-2,35.4],[-2,33],[-5.5,35.95]]]
+    }
+  ],
   "Africa/Conakry": [
     {
       "op": "init",
@@ -123,6 +149,13 @@
       "op": "init",
       "source": "overpass",
       "id": "Cameroon"
+    }
+  ],
+  "Africa/El_Aaiun": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Western Sahara"
     }
   ],
   "Africa/Freetown": [
@@ -1945,6 +1978,17 @@
       "source": "overpass",
       "id": "Luxemburg"
     }
+  ],
+  "Europe/Madrid": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Spain"
+    }, {
+      "op": "intersect",
+      "source": "manual-polygon",
+      "data": [[[-5.3,35.95],[6,34.5],[6,56],[-21,35],[-5.3,35.95]]]
+    } 
   ],
   "Europe/Malta": [
     {

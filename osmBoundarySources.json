@@ -392,6 +392,9 @@
   "Montserrat": {
     "ISO3166-1": "MS"
   },
+  "Morocco": {
+    "ISO3166-1": "MA"
+  },
   "Mozambique": {
     "ISO3166-1": "MZ"
   },
@@ -648,6 +651,9 @@
   },
   "West Wendover": {
     "name": "West Wendover"
+  },
+  "Western Sahara": {
+    "ISO3166-1": "EH"
   },
   "Yap": {
     "ISO3166-2": "FM-YAP"
