@@ -179,6 +179,32 @@
       "id": "Zimbabwe"
     }
   ],
+  "Africa/Johannesburg": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "South Africa"
+    }
+  ],
+  "Africa/Juba": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "South Sudan"
+    }, {
+      "op": "union",
+      "source": "manual-polygon",
+      "data": [[[35.3,5.2],[35.9,4.6],[34,4.6],[35.3,5.2]]]
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "Kenya"
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "Sudan"
+    }
+  ],
   "Africa/Kampala": [
     {
       "op": "init",
@@ -186,11 +212,49 @@
       "id": "Uganda"
     }
   ],
+  "Africa/Khartoum": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Sudan"
+    }, {
+      "op": "union",
+      "source": "manual-polygon",
+      "data": [[[33,22],[34,21],[35,22],[33,22]]]
+    }
+  ],
   "Africa/Kigali": [
     {
       "op": "init",
       "source": "overpass",
       "id": "Rwanda"
+    }
+  ],
+  "Africa/Kinshasa": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Congo-Kinshasa"
+    }, {
+      "op": "intersect",
+      "source": "manual-polygon",
+      "data": [[[20,-9],[21,-4],[24.6,-1.63],[23,13],[3,-9],[20,-9]]]
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "Kasai"
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "Sankuru"
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "Tshopo"
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "Bas-Uele"
     }
   ],
   "Africa/Lagos": [
@@ -219,6 +283,33 @@
       "op": "init",
       "source": "overpass",
       "id": "Angola"
+    }
+  ],
+  "Africa/Lubumbashi": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Congo-Kinshasa"
+    }, {
+      "op": "difference",
+      "source": "manual-polygon",
+      "data": [[[20,-9],[21,-4],[24.6,-1.63],[23,13],[3,-9],[20,-9]]]
+    }, {
+      "op": "union",
+      "source": "overpass",
+      "id": "Kasai"
+    }, {
+      "op": "union",
+      "source": "overpass",
+      "id": "Sankuru"
+    }, {
+      "op": "union",
+      "source": "overpass",
+      "id": "Tshopo"
+    }, {
+      "op": "union",
+      "source": "overpass",
+      "id": "Bas-Uele"
     }
   ],
   "Africa/Lusaka": [

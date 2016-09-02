@@ -47,6 +47,10 @@
   "Barbados": {
     "ISO3166-1": "BB"
   },
+  "Bas-Uele": {
+    "name": "Bas-Uele",
+    "admin_level": "4"
+  },
   "Belarus": {
     "ISO3166-1": "BY"
   },
@@ -298,6 +302,10 @@
   "Jordan": {
     "ISO3166-1": "JO"
   },
+  "Kasai": {
+    "name:en": "Kasai",
+    "admin_level": "4"
+  },
   "Kenya": {
     "ISO3166-1": "KE"
   },
@@ -513,6 +521,10 @@
   "San Marino": {
     "ISO3166-1": "SM"
   },
+  "Sankuru": {
+    "name": "Sankuru",
+    "admin_level": "4"
+  },
   "Saudi Arabia": {
     "ISO3166-1": "SA"
   },
@@ -549,6 +561,10 @@
   "Somalia": {
     "ISO3166-1": "SO"
   },
+  "South Africa": {
+    "ISO3166-1": "ZA",
+    "admin_level": "2"
+  },
   "South Georgia and the South Sandwich Islands": {
     "ISO3166-1": "GS"
   },
@@ -560,6 +576,9 @@
   },
   "Sri Lanka": {
     "ISO3166-1": "LK"
+  },
+  "Sudan": {
+    "ISO3166-1": "SD"
   },
   "Suriname": {
     "ISO3166-1": "SR"
@@ -606,6 +625,10 @@
   },
   "Trinidad and Tobago": {
     "ISO3166-1": "TT"
+  },
+  "Tshopo": {
+    "name": "Tshopo",
+    "admin_level": "4"
   },
   "Tunisia": {
     "ISO3166-1": "TN"
