@@ -431,6 +431,28 @@
       "id": "Namibia"
     }
   ],
+  "America/Adak": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "United States of America"
+    }, {
+      "op": "intersect",
+      "source": "manual-multipolygon",
+      "data": [[[[-170.1,51],[-169.48009,52.634],[-169.329,53.1067],[-168.8,54],[-179.9999,54],[-179.9999,48],[-170.1,51]]],[[[168,54],[179.9999,54],[179.9999,48],[168,54]]]]
+    }
+  ],
+  "America/Anchorage": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "United States of America"
+    }, {
+      "op": "intersect",
+      "source": "manual-polygon",
+      "data": [[[-162,77],[-162,48],[-141,48],[-141,77],[-162,77]]]
+    }
+  ],
   "America/Anguilla": [
     {
       "op": "init",
@@ -923,6 +945,21 @@
       "id": "Jamaica"
     }
   ],
+  "America/Juneau": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "United States of America"
+    }, {
+      "op": "intersect",
+      "source": "manual-polygon",
+      "data": [[[-136,58.1],[-136.431016,57.830928],[-137,57.8248],[-138.5,58.5],[-138.2781,58.719],[-137.9464,58.80181],[-137.5725,58.89509],[-137.52612,58.906375],[-136,60],[-132,60],[-132,57.5],[-136,58.1]]]
+    }, {
+      "op": "union",
+      "source": "overpass",
+      "id": "Hoonah-Angoon"
+    } 
+  ],
   "America/Kentucky/Louisville": [
     {
       "op": "init",
@@ -1062,6 +1099,17 @@
       "id": "Menominee County, MI"
     }
   ],
+  "America/Metlakatla": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Prince of Wales-Hyder"
+    }, {
+      "op": "intersect",
+      "source": "manual-polygon",
+      "data": [[[-131.65,55.11],[-131.674,55.04],[-131.65,54.964],[-131,54.96],[-131.3,55.4],[-131.8,55.25],[-131.65,55.11]]]
+    }
+  ],
   "America/Montevideo": [
     {
       "op": "init",
@@ -1140,6 +1188,17 @@
       "op": "difference",
       "source": "efele",
       "id": "America/Indiana/Vevay"
+    }
+  ],
+  "America/Nome": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "United States of America"
+    }, {
+      "op": "intersect",
+      "source": "manual-polygon",
+      "data": [[[-162,78],[-162,49],[-170,49],[-169.48009,52.634],[-169.329,53.1067],[-169,55],[-179,58],[-162,78]]]
     }
   ],
   "America/Noronha": [
@@ -1269,6 +1328,29 @@
       "id": "Dominican Republic"
     }
   ],
+  "America/Sitka": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Prince of Wales-Hyder"
+    }, {
+      "op": "intersect",
+      "source": "manual-polygon",
+      "data": [[[-131.65,55.11],[-131.674,55.04],[-131.65,54.964],[-131,54.96],[-131.3,55.4],[-131.8,55.25],[-131.65,55.11]]]
+    }, {
+      "op": "difference-reverse-order",
+      "source": "overpass",
+      "id": "United States of America"
+    }, {
+      "op": "intersect",
+      "source": "manual-polygon",
+      "data": [[[-136,58.1],[-136.431016,57.830928],[-137,57.8248],[-136,54],[-122,54],[-132,57.5],[-136,58.1]]]
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "Hoonah-Angoon"
+    }
+  ],
   "America/Swift_Current": [
     {
       "op": "init",
@@ -1309,6 +1391,17 @@
       "op": "init",
       "source": "overpass",
       "id": "British Virgin Islands"
+    }
+  ],
+  "America/Yakutat": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "United States of America"
+    }, {
+      "op": "intersect",
+      "source": "manual-polygon",
+      "data": [[[-141,62],[-141,58],[-138.2781,58.719],[-137.9464,58.80181],[-137.5725,58.89509],[-137.52612,58.906375],[-134,62],[-141,62]]]
     }
   ],
   "Antarctica/Macquarie": [

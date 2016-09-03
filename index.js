@@ -189,8 +189,13 @@ var makeTimezoneBoundary = function(tzid, callback) {
       geom = debugGeo('intersection', geom, taskData)
     } else if(task.op === 'difference') {
       geom = debugGeo('diff', geom, taskData)
+    } else if(task.op === 'difference-reverse-order') {
+      geom = debugGeo('diff', taskData, geom)
     } else if(task.op === 'union') {
       geom = debugGeo('union', geom, taskData)
+    } else {
+      var err = new Error('unknown op: ' + task.op)
+      return cb(err)
     }
     cb()
   }, function(err) {

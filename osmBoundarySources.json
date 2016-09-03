@@ -262,6 +262,9 @@
   "Hungary": {
     "ISO3166-1": "HU"
   },
+  "Hoonah-Angoon": {
+    "name": "Hoonah-Angoon"
+  },
   "Iceland": {
     "ISO3166-1": "IS"
   },
@@ -477,6 +480,9 @@
   },
   "Portugal": {
     "ISO3166-1": "PT"
+  },
+  "Prince of Wales-Hyder": {
+    "name": "Prince of Wales-Hyder"
   },
   "Qatar": {
     "ISO3166-1": "QA"
