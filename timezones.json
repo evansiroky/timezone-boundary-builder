@@ -481,46 +481,180 @@
       "id": "America/Araguaina"
     }
   ],
+  "America/Argentina/Buenos_Aires": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Argentina"
+    }, {
+      "op": "intersect",
+      "source": "manual-polygon",
+      "data": [[[-58,-34],[-52,-36],[-62.3476,-42],[-62.792531,-41.0179511],[-63,-35],[-58,-34]]]
+    }, {
+      "op": "union",
+      "source": "overpass",
+      "id": "Buenos Aires"
+    }
+  ],
+  "America/Argentina/Catamarca": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Chubut"
+    }, {
+      "op": "union",
+      "source": "overpass",
+      "id": "Departamento Atlántico"
+    }, {
+      "op": "union",
+      "source": "overpass",
+      "id": "Catamarca"
+    }
+  ],
+  "America/Argentina/Cordoba": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Argentina"
+    }, {
+      "op": "intersect",
+      "source": "manual-polygon",
+      "data": [[[-60,-23],[-59,-32],[-50,-24],[-60,-23]]]
+    }, {
+      "op": "union",
+      "source": "overpass",
+      "id": "Córdoba"
+    }, {
+      "op": "union",
+      "source": "overpass",
+      "id": "Santa Fe"
+    }, {
+      "op": "union",
+      "source": "overpass",
+      "id": "Entre Ríos"
+    }, {
+      "op": "union",
+      "source": "overpass",
+      "id": "Santiago del Estero"
+    }, {
+      "op": "union",
+      "source": "overpass",
+      "id": "Chaco"
+    }, {
+      "op": "union",
+      "source": "overpass",
+      "id": "Corrientes"
+    }, {
+      "op": "union",
+      "source": "overpass",
+      "id": "Misiones"
+    }, {
+      "op": "union",
+      "source": "overpass",
+      "id": "Formosa"
+    }
+  ],
   "America/Argentina/Jujuy": [
     {
       "op": "init",
-      "source": "efele",
-      "id": "America/Argentina/Jujuy"
+      "source": "overpass",
+      "id": "Jujuy"
     }
   ],
   "America/Argentina/La_Rioja": [
     {
       "op": "init",
-      "source": "efele",
-      "id": "America/Argentina/La_Rioja"
+      "source": "overpass",
+      "id": "La Rioja"
     }
   ],
   "America/Argentina/Mendoza": [
     {
       "op": "init",
-      "source": "efele",
-      "id": "America/Argentina/Mendoza"
+      "source": "overpass",
+      "id": "Mendoza"
+    }
+  ],
+  "America/Argentina/Rio_Gallegos": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Argentina"
+    }, {
+      "op": "intersect",
+      "source": "manual-polygon",
+      "data": [[[-59,-46],[-65,-52],[-68.3079531,-52.5782436],[-68.6,-52.5],[-80,-52],[-80,-46],[-59,-46]]]
+    }, {
+      "op": "union",
+      "source": "manual-polygon",
+      "data": [[[-72,-49],[-72,-50],[-73.4511111,-49.7894444],[-73.1126073,-49.1583333],[-72,-49]]]
+    }
+  ],
+  "America/Argentina/Salta": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Argentina"
+    }, {
+      "op": "intersect",
+      "source": "manual-polygon",
+      "data": [[[-66,-40.5],[-66,-43],[-61,-43],[-62.3476,-42],[-62.792531,-41.0179511],[-64,-40.5],[-66,-40.5]]]
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "Chubut"
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "Departamento Atlántico"
+    }, {
+      "op": "union",
+      "source": "overpass",
+      "id": "Rio Negro"
+    }, {
+      "op": "union",
+      "source": "overpass",
+      "id": "Neuquén"
+    }, {
+      "op": "union",
+      "source": "overpass",
+      "id": "La Pampa"
+    }, {
+      "op": "union",
+      "source": "overpass",
+      "id": "Salta"
     }
   ],
   "America/Argentina/San_Juan": [
     {
       "op": "init",
-      "source": "efele",
-      "id": "America/Argentina/San_Juan"
+      "source": "overpass",
+      "id": "San Juan"
     }
   ],
   "America/Argentina/San_Luis": [
     {
       "op": "init",
-      "source": "efele",
-      "id": "America/Argentina/San_Luis"
+      "source": "overpass",
+      "id": "San Luis"
     }
   ],
   "America/Argentina/Tucuman": [
     {
       "op": "init",
-      "source": "efele",
-      "id": "America/Argentina/Tucuman"
+      "source": "overpass",
+      "id": "Tucumán"
+    }
+  ],
+  "America/Argentina/Ushuaia": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Argentina"
+    }, {
+      "op": "intersect",
+      "source": "manual-polygon",
+      "data": [[[-59,-55],[-68.3079531,-52.5782436],[-68.6,-52.5],[-78,-57],[-59,-55]]]
     }
   ],
   "America/Asuncion": [
@@ -528,6 +662,10 @@
       "op": "init",
       "source": "overpass",
       "id": "Paraguay"
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "Argentina"
     }
   ],
   "America/Atikokan": [
@@ -1319,6 +1457,10 @@
       "op": "intersect",
       "source": "manual-polygon",
       "data": [[[-70,15],[-50,-60],[-100,-60],[-70,15]]]
+    }, {
+      "op": "union",
+      "source": "manual-polygon",
+      "data": [[[-75,-49],[-75,-50],[-73.4511111,-49.7894444],[-73.1126073,-49.1583333],[-75,-49]]]
     }
   ],
   "America/Santo_Domingo": [

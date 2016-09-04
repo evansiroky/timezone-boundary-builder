@@ -20,6 +20,9 @@
   "Antigua and Barbuda": {
     "ISO3166-1": "AG"
   },
+  "Argentina": {
+    "ISO3166-1": "AR"
+  },
   "Armenia": {
     "ISO3166-1": "AM"
   },
@@ -65,6 +68,9 @@
   },
   "Bermuda": {
     "ISO3166-1": "BM"
+  },
+  "Buenos Aires": {
+    "ISO3166-2": "AR-B"
   },
   "Bhutan": {
     "ISO3166-1": "BT"
@@ -114,17 +120,26 @@
   "Cape Verde": {
     "ISO3166-1": "CV"
   },
+  "Catamarca": {
+    "ISO3166-2": "AR-K"
+  },
   "Cayman Islands": {
     "ISO3166-1": "KY"
   },
   "Central African Republic": {
     "ISO3166-1": "CF"
   },
+  "Chaco": {
+    "ISO3166-2": "AR-H"
+  },
   "Chad": {
     "ISO3166-1": "TD"
   },
   "Chile": {
     "ISO3166-1": "CL"
+  },
+  "Chubut": {
+    "ISO3166-2": "AR-U"
   },
   "Chuuk": {
     "ISO3166-2": "FM-TRK"
@@ -141,8 +156,14 @@
   "Cook Islands": {
     "ISO3166-1": "CK"
   },
+  "Corrientes": {
+    "ISO3166-2": "AR-W"
+  },
   "Costa Rica": {
     "ISO3166-1": "CR"
+  },
+  "Córdoba": {
+    "ISO3166-2": "AR-X"
   },
   "Côte d'Ivoire": {
     "ISO3166-1": "CI"
@@ -158,6 +179,9 @@
   },
   "Czech Republic": {
     "ISO3166-1": "CZ"
+  },
+  "Departamento Atlántico": {
+    "name": "Departamento Atlántico"
   },
   "Denmark": {
     "ISO3166-1": "DK"
@@ -187,6 +211,9 @@
   "El Salvador": {
     "ISO3166-1": "SV"
   },
+  "Entre Ríos": {
+    "ISO3166-2": "AR-E"
+  },
   "Equatorial Guinea": {
     "ISO3166-1": "GQ"
   },
@@ -210,6 +237,9 @@
   },
   "Finland": {
     "ISO3166-1": "FI"
+  },
+  "Formosa": {
+    "ISO3166-2": "AR-P"
   },
   "France": {
     "ISO3166-1": "FR"
@@ -305,6 +335,9 @@
   "Jordan": {
     "ISO3166-1": "JO"
   },
+  "Jujuy": {
+    "ISO3166-2": "AR-Y"
+  },
   "Kasai": {
     "name:en": "Kasai",
     "admin_level": "4"
@@ -323,6 +356,12 @@
   },
   "Kyrgyzstan": {
     "ISO3166-1": "KG"
+  },
+  "La Pampa": {
+    "ISO3166-2": "AR-L"
+  },
+  "La Rioja": {
+    "ISO3166-2": "AR-F"
   },
   "Laos": {
     "ISO3166-1": "LA"
@@ -384,12 +423,18 @@
   "Mauritius": {
     "ISO3166-1": "MU"
   },
+  "Mendoza": {
+    "ISO3166-2": "AR-M"
+  },
   "Menominee County, MI": {
     "name": "Menominee County",
     "nist:state_fips": "26"
   },
   "Michigan": {
     "ISO3166-2": "US-MI"
+  },
+  "Misiones": {
+    "ISO3166-2": "AR-N"
   },
   "Moldova": {
     "ISO3166-1": "MD"
@@ -420,6 +465,9 @@
   },
   "Nepal": {
     "ISO3166-1": "NP"
+  },
+  "Neuquén": {
+    "ISO3166-2": "AR-Q"
   },
   "New Zealand": {
     "ISO3166-1": "NZ"
@@ -494,6 +542,9 @@
     "name:en": "Kosovo",
     "admin_level": "2"
   },
+  "Rio Negro": {
+    "ISO3166-2": "AR-R"
+  },
   "Romania": {
     "ISO3166-1": "RO"
   },
@@ -521,8 +572,17 @@
   "Saint Vincent and the Grenadines": {
     "ISO3166-1": "VC"
   },
+  "Salta": {
+    "ISO3166-2": "AR-A"
+  },
   "Samoa": {
     "ISO3166-1": "WS"
+  },
+  "San Juan": {
+    "ISO3166-2": "AR-J"
+  },
+  "San Luis": {
+    "ISO3166-2": "AR-D"
   },
   "San Marino": {
     "ISO3166-1": "SM"
@@ -530,6 +590,12 @@
   "Sankuru": {
     "name": "Sankuru",
     "admin_level": "4"
+  },
+  "Santa Fe": {
+    "ISO3166-2": "AR-S"
+  },
+  "Santiago del Estero": {
+    "ISO3166-2": "AR-G"
   },
   "Saudi Arabia": {
     "ISO3166-1": "SA"
@@ -635,6 +701,9 @@
   "Tshopo": {
     "name": "Tshopo",
     "admin_level": "4"
+  },
+  "Tucumán": {
+    "ISO3166-2": "AR-T"
   },
   "Tunisia": {
     "ISO3166-1": "TN"
