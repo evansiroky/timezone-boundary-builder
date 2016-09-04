@@ -477,8 +477,8 @@
   "America/Araguaina": [
     {
       "op": "init",
-      "source": "efele",
-      "id": "America/Araguaina"
+      "source": "overpass",
+      "id": "Tocantins"
     }
   ],
   "America/Argentina/Buenos_Aires": [
@@ -675,11 +675,25 @@
       "id": "America/Atikokan"
     }
   ],
+  "America/Bahia": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Bahia"
+    }
+  ],
   "America/Barbados": [
     {
       "op": "init",
       "source": "overpass",
       "id": "Barbados"
+    }
+  ],
+  "America/Belem": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Belem-tz"
     }
   ],
   "America/Belize": [
@@ -692,8 +706,8 @@
   "America/Boa_Vista": [
     {
       "op": "init",
-      "source": "efele",
-      "id": "America/Boa_Vista"
+      "source": "overpass",
+      "id": "Roraima"
     }
   ],
   "America/Bogota": [
@@ -713,8 +727,8 @@
   "America/Campo_Grande": [
     {
       "op": "init",
-      "source": "efele",
-      "id": "America/Campo_Grande"
+      "source": "overpass",
+      "id": "Mato Grosso do Sul"
     }
   ],
   "America/Caracas": [
@@ -857,8 +871,8 @@
   "America/Cuiaba": [
     {
       "op": "init",
-      "source": "efele",
-      "id": "America/Cuiaba"
+      "source": "overpass",
+      "id": "Mato Grosso"
     }
   ],
   "America/Curacao": [
@@ -941,8 +955,8 @@
   "America/Eirunepe": [
     {
       "op": "init",
-      "source": "efele",
-      "id": "America/Eirunepe"
+      "source": "overpass",
+      "id": "Eirunepe-tz"
     }
   ],
   "America/El_Salvador": [
@@ -957,6 +971,33 @@
       "op": "init",
       "source": "efele",
       "id": "America/Fort_Nelson"
+    }
+  ],
+  "America/Fortaleza": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Brazil"
+    }, {
+      "op": "intersect",
+      "source": "manual-polygon",
+      "data": [[[-28,-9],[-39,-8.5],[-44,-12],[-51,-8],[-46,2],[-28,-9]]]
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "Pernambuco"
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "Bahia"
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "Tocantins"
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "Belem-tz"
     }
   ],
   "America/Grand_Turk": [
@@ -1183,6 +1224,17 @@
       "id": "Sint Maarten"
     }
   ],
+  "America/Maceio": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Sergipe"
+    }, {
+      "op": "union",
+      "source": "overpass",
+      "id": "Alagoas"
+    }
+  ],
   "America/Managua": [
     {
       "op": "init",
@@ -1193,8 +1245,8 @@
   "America/Manaus": [
     {
       "op": "init",
-      "source": "efele",
-      "id": "America/Manaus"
+      "source": "overpass",
+      "id": "Manaus-tz"
     }
   ],
   "America/Marigot": [
@@ -1416,8 +1468,8 @@
   "America/Porto_Velho": [
     {
       "op": "init",
-      "source": "efele",
-      "id": "America/Porto_Velho"
+      "source": "overpass",
+      "id": "Rondônia"
     }
   ],
   "America/Rainy_River": [
@@ -1425,6 +1477,17 @@
       "op": "init",
       "source": "efele",
       "id": "America/Rainy_River"
+    }
+  ],
+  "America/Recife": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Pernambuco"
+    }, {
+      "op": "intersect",
+      "source": "manual-polygon",
+      "data": [[[-33,-5],[-34,-13],[-46,-8],[-33,-5]]]
     }
   ],
   "America/Regina": [
@@ -1437,15 +1500,15 @@
   "America/Rio_Branco": [
     {
       "op": "init",
-      "source": "efele",
-      "id": "America/Rio_Branco"
+      "source": "overpass",
+      "id": "Acre"
     }
   ],
   "America/Santarem": [
     {
       "op": "init",
-      "source": "efele",
-      "id": "America/Santarem"
+      "source": "overpass",
+      "id": "Santarem-tz"
     }
   ],
   "America/Santiago": [
@@ -1468,6 +1531,33 @@
       "op": "init",
       "source": "overpass",
       "id": "Dominican Republic"
+    }
+  ],
+  "America/Sao_Paulo": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Brazil"
+    }, {
+      "op": "intersect",
+      "source": "manual-polygon",
+      "data": [[[-52,-11],[-63,-30],[-49,-40],[-34,-13],[-52,-11]]]
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "Mato Grosso do Sul"
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "Mato Grosso"
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "Tocantins"
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "Bahia"
     }
   ],
   "America/Sitka": [

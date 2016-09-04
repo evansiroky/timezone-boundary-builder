@@ -1,6 +1,12 @@
 {
+  "Acre": {
+    "ISO3166-2": "BR-AC"
+  },
   "Afghanistan": {
     "ISO3166-1": "AF"
+  },
+  "Alagoas": {
+    "ISO3166-2": "BR-AL"
   },
   "Albania": {
     "ISO3166-1": "AL"
@@ -41,6 +47,9 @@
   "Azerbaijan": {
     "ISO3166-1": "AZ"
   },
+  "Bahia": {
+    "ISO3166-2": "BR-BA"
+  },
   "Bahrain": {
     "ISO3166-1": "BH"
   },
@@ -56,6 +65,9 @@
   },
   "Belarus": {
     "ISO3166-1": "BY"
+  },
+  "Belem-tz": {
+    "timezone": "America/Belem"
   },
   "Belgium": {
     "ISO3166-1": "BE"
@@ -207,6 +219,9 @@
   },
   "Egypt": {
     "ISO3166-1": "EG"
+  },
+  "Eirunepe-tz": {
+    "timezone": "America/Eirunepe"
   },
   "El Salvador": {
     "ISO3166-1": "SV"
@@ -411,6 +426,9 @@
   "Malta": {
     "ISO3166-1": "MT"
   },
+  "Manaus-tz": {
+    "timezone": "America/Manaus"
+  },
   "Marshall Islands": {
     "ISO3166-1": "MH"
   },
@@ -422,6 +440,12 @@
   },
   "Mauritius": {
     "ISO3166-1": "MU"
+  },
+  "Mato Grosso": {
+    "ISO3166-2": "BR-MT"
+  },
+  "Mato Grosso do Sul": {
+    "ISO3166-2": "BR-MS"
   },
   "Mendoza": {
     "ISO3166-2": "AR-M"
@@ -511,6 +535,9 @@
   "Paraguay": {
     "ISO3166-1": "PY"
   },
+  "Pernambuco": {
+    "ISO3166-2": "BR-PE"
+  },
   "Peru": {
     "ISO3166-1:alpha2": "PE"
   },
@@ -547,6 +574,12 @@
   },
   "Romania": {
     "ISO3166-1": "RO"
+  },
+  "Rondônia": {
+    "ISO3166-2": "BR-RO"
+  },
+  "Roraima": {
+    "ISO3166-2": "BR-RR"
   },
   "Rwanda": {
     "ISO3166-1": "RW"
@@ -594,6 +627,9 @@
   "Santa Fe": {
     "ISO3166-2": "AR-S"
   },
+  "Santarem-tz": {
+    "timezone": "America/Santarem"
+  },
   "Santiago del Estero": {
     "ISO3166-2": "AR-G"
   },
@@ -608,6 +644,9 @@
   },
   "Serbia": {
     "ISO3166-1": "RS"
+  },
+  "Sergipe": {
+    "ISO3166-2": "BR-SE"
   },
   "Seychelles": {
     "ISO3166-1": "SC"
@@ -685,6 +724,9 @@
   },
   "The Netherlands": {
     "ISO3166-1": "NL"
+  },
+  "Tocantins": {
+    "ISO3166-2": "BR-TO"
   },
   "Togo": {
     "ISO3166-1": "TG"
