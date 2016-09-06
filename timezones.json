@@ -671,8 +671,8 @@
   "America/Atikokan": [
     {
       "op": "init",
-      "source": "efele",
-      "id": "America/Atikokan"
+      "source": "overpass",
+      "id": "Atikokan-tz"
     }
   ],
   "America/Bahia": [
@@ -703,6 +703,21 @@
       "id": "Belize"
     }
   ],
+  "America/Blanc-Sablon": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Quebec"
+    }, {
+      "op": "intersect",
+      "source": "manual-polygon",
+      "data": [[[-61.25,53],[-61.25,48.57],[-51,53],[-61.25,53]]]
+    }, {
+      "op": "union",
+      "source": "manual-polygon",
+      "data": [[[-61.25,51.8],[-61.25,48.57],[-60.1,49.3],[-57.9,50.93],[-56.94,51.31],[-57.108836,51.3784254],[-57.4,51.8],[-61.25,51.8]]]
+    }
+  ],
   "America/Boa_Vista": [
     {
       "op": "init",
@@ -722,6 +737,13 @@
       "op": "init",
       "source": "efele",
       "id": "America/Boise"
+    }
+  ],
+  "America/Cambridge_Bay": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Cambridge Bay-tz"
     }
   ],
   "America/Campo_Grande": [
@@ -854,6 +876,13 @@
       "id": "America/Chihuahua"
     }
   ],
+  "America/Coral_Harbour": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Coral Harbour-tz"
+    }
+  ],
   "America/Costa_Rica": [
     {
       "op": "init",
@@ -864,8 +893,8 @@
   "America/Creston": [
     {
       "op": "init",
-      "source": "efele",
-      "id": "America/Creston"
+      "source": "overpass",
+      "id": "Creston-tz"
     }
   ],
   "America/Cuiaba": [
@@ -885,15 +914,15 @@
   "America/Dawson": [
     {
       "op": "init",
-      "source": "efele",
-      "id": "America/Dawson"
+      "source": "manual-polygon",
+      "data": [[[-139.446, 64.0893], [-139.4126, 64.0888], [-139.4105, 64.0688], [-139.3765, 64.0609], [-139.3758, 64.0556], [-139.2775, 64.0534], [-139.2854, 64.0208], [-139.4496, 64.0278], [-139.4546, 64.0254], [-139.4824, 64.0219], [-139.4838, 64.0314], [-139.4738, 64.034], [-139.4747, 64.0369], [-139.4737, 64.0404], [-139.4713, 64.0419], [-139.4677, 64.0469], [-139.4663, 64.0487], [-139.4572, 64.0515], [-139.4538, 64.0546], [-139.4417, 64.0736], [-139.4476, 64.0789], [-139.4477, 64.0807], [-139.44, 64.0819], [-139.446, 64.0893]]]
     }
   ],
   "America/Dawson_Creek": [
     {
       "op": "init",
-      "source": "efele",
-      "id": "America/Dawson_Creek"
+      "source": "overpass",
+      "id": "Dawson Creek-tz"
     }
   ],
   "America/Denver": [
@@ -948,8 +977,8 @@
   "America/Edmonton": [
     {
       "op": "init",
-      "source": "efele",
-      "id": "America/Edmonton"
+      "source": "overpass",
+      "id": "Edmonton-tz"
     }
   ],
   "America/Eirunepe": [
@@ -969,8 +998,8 @@
   "America/Fort_Nelson": [
     {
       "op": "init",
-      "source": "efele",
-      "id": "America/Fort_Nelson"
+      "source": "overpass",
+      "id": "Northern Rockies Regional Municipality"
     }
   ],
   "America/Fortaleza": [
@@ -998,6 +1027,40 @@
       "op": "difference",
       "source": "overpass",
       "id": "Belem-tz"
+    }
+  ],
+  "America/Glace_Bay": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Canada"
+    }, {
+      "op": "intersect",
+      "source": "manual-polygon",
+      "data": [[[-58,46],[-59,45.428],[-60.1323124,45.7017791],[-60.3408651,46.3601573],[-60.0238,46.5],[-58,46]]]
+    }, {
+      "op": "union",
+      "source": "overpass",
+      "id": "Cape Breton County"
+    }
+  ],
+  "America/Goose_Bay": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Canada"
+    }, {
+      "op": "intersect",
+      "source": "manual-polygon",
+      "data": [[[-71,50],[-57.1077594,51.9984948],[-56.59,53.2],[-53.7,53.6],[-65,62],[-71,50]]]
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "Quebec"
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "Pangnirtung-tz"
     }
   ],
   "America/Grand_Turk": [
@@ -1044,6 +1107,25 @@
       "op": "init",
       "source": "overpass",
       "id": "Guyana"
+    }
+  ],
+  "America/Halifax": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Canada"
+    }, {
+      "op": "intersect",
+      "source": "manual-polygon",
+      "data": [[[-60.3,48.2],[-60.3,47.8],[-58.9,46.8],[-60.0238,46.5],[-60.3408651,46.3601573],[-60.1323124,45.7017791],[-59,45.428],[-59,34],[-67,44.06],[-66.4878,44.482],[-66.21,44.83],[-65.3,45.2],[-65.13,45.38],[-64.98,45.47],[-64.80607,45.5364896],[-64.5,46],[-63.7491191,46.2295464],[-64.34,46.36],[-64.56,46.6],[-64.58,46.69],[-64.46,47.07],[-61.69,48.52],[-61.25,48.57],[-60.5,48.4],[-60.3,48.2]]]
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "Cape Breton County"
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "New Brunswick"
     }
   ],
   "America/Indiana/Indianapolis": [
@@ -1113,8 +1195,15 @@
   "America/Inuvik": [
     {
       "op": "init",
-      "source": "efele",
-      "id": "America/Inuvik"
+      "source": "manual-polygon",
+      "data": [[[-133.7991, 68.4161], [-133.73, 68.4165], [-133.7297, 68.3955], [-133.6343, 68.3464], [-133.3888, 68.3166], [-133.3843, 68.2982], [-133.4485, 68.297], [-133.4482, 68.2901], [-133.4719, 68.29], [-133.4726, 68.2926], [-133.4911, 68.2966], [-133.535, 68.2973], [-133.5556, 68.3015], [-133.5546, 68.3043], [-133.5653, 68.3074], [-133.6772, 68.3176], [-133.6734, 68.3226], [-133.7046, 68.3379], [-133.7225, 68.3508], [-133.7524, 68.3625], [-133.7709, 68.3749], [-133.7733, 68.3827], [-133.7695, 68.3874], [-133.775, 68.3906], [-133.7884, 68.394], [-133.7956, 68.4007], [-133.7956, 68.4092], [-133.7991, 68.4161]]]
+    }
+  ],
+  "America/Iqaluit": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Iqaluit-tz"
     }
   ],
   "America/Jamaica": [
@@ -1300,11 +1389,53 @@
       "data": [[[-131.65,55.11],[-131.674,55.04],[-131.65,54.964],[-131,54.96],[-131.3,55.4],[-131.8,55.25],[-131.65,55.11]]]
     }
   ],
+  "America/Moncton": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Canada"
+    }, {
+      "op": "intersect",
+      "source": "manual-polygon",
+      "data": [[[-70,46],[-67,44.06],[-66.4878,44.482],[-66.21,44.83],[-65.3,45.2],[-65.13,45.38],[-64.98,45.47],[-64.80607,45.5364896],[-64.5,46],[-63.7491191,46.2295464],[-64.34,46.36],[-64.56,46.6],[-64.58,46.69],[-64.46,47.07],[-61.69,48.52],[-63.16,48.34],[-64.66,48.12],[-65.23,47.92],[-65.48,47.86],[-65.76,48.02],[-66.0030068,48.016352],[-70,46]]]
+    }, {
+      "op": "union",
+      "source": "overpass",
+      "id": "New Brunswick"
+    }, {
+      "op": "union",
+      "source": "manual-polygon",
+      "data": [[[-66.681,48.01],[-66.685,48.0158],[-66.6864,48.0166],[-66.723,48.029],[-66.7179,48.0363],[-66.7407,48.0623],[-66.733,48.0728],[-66.756,48.1022],[-66.802,48.086],[-66.754,48.0305],[-66.737,48.0274],[-66.73,48.0309],[-66.71,47.996],[-66.681,48.01]]]
+    }
+  ],
   "America/Montevideo": [
     {
       "op": "init",
       "source": "overpass",
       "id": "Uruguay"
+    }
+  ],
+  "America/Montreal": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Quebec"
+    }, {
+      "op": "union",
+      "source": "manual-polygon",
+      "data": [[[-66.0030068,48.016352],[-65.76,48.02],[-65.48,47.86],[-65.23,47.92],[-64.66,48.12],[-63.16,48.34],[-61.69,48.52],[-61.25,48.57],[-61.25,51],[-66,51],[-66.0030068,48.016352]]]
+    }, {
+      "op": "difference",
+      "source": "manual-polygon",
+      "data": [[[-61.25,53],[-61.25,48.57],[-51,53],[-61.25,53]]]
+    }, {
+      "op": "difference",
+      "source": "manual-polygon",
+      "data": [[[-61,48],[-61.2,46.6],[-63.6,47.6],[-61,48]]]
+    }, {
+      "op": "difference",
+      "source": "manual-polygon",
+      "data": [[[-66.681,48.01],[-66.685,48.0158],[-66.6864,48.0166],[-66.723,48.029],[-66.7179,48.0363],[-66.7407,48.0623],[-66.733,48.0728],[-66.756,48.1022],[-66.802,48.086],[-66.754,48.0305],[-66.737,48.0274],[-66.73,48.0309],[-66.71,47.996],[-66.681,48.01]]]
     }
   ],
   "America/Montserrat": [
@@ -1380,6 +1511,13 @@
       "id": "America/Indiana/Vevay"
     }
   ],
+  "America/Nipigon": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Nipigon-tz"
+    }
+  ],
   "America/Nome": [
     {
       "op": "init",
@@ -1437,6 +1575,13 @@
       "id": "Panama"
     }
   ],
+  "America/Pangnirtung": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Pangnirtung-tz"
+    }
+  ],
   "America/Paramaribo": [
     {
       "op": "init",
@@ -1475,8 +1620,19 @@
   "America/Rainy_River": [
     {
       "op": "init",
-      "source": "efele",
-      "id": "America/Rainy_River"
+      "source": "overpass",
+      "id": "Canada"
+    }, {
+      "op": "intersect",
+      "source": "manual-polygon",
+      "data": [[[-94.5402,48.7369],[-94.5405,48.69],[-94.648,48.7369],[-94.5402,48.7369]]]
+    }
+  ],
+  "America/Rankin_Inlet": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Rankin Inlet-tz"
     }
   ],
   "America/Recife": [
@@ -1493,8 +1649,19 @@
   "America/Regina": [
     {
       "op": "init",
-      "source": "efele",
-      "id": "America/Regina"
+      "source": "overpass",
+      "id": "Regina-tz"
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "Swift Current"
+    }
+  ],
+  "America/Resolute": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Resolute-tz"
     }
   ],
   "America/Rio_Branco": [
@@ -1583,18 +1750,26 @@
       "id": "Hoonah-Angoon"
     }
   ],
-  "America/Swift_Current": [
-    {
-      "op": "init",
-      "source": "efele",
-      "id": "America/Swift_Current"
-    }
-  ],
   "America/St_Barthelemy": [
     {
       "op": "init",
       "source": "overpass",
       "id": "Saint-Barthélemy"
+    }
+  ],
+  "America/St_Johns": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Canada"
+    }, {
+      "op": "intersect",
+      "source": "manual-polygon",
+      "data": [[[-40,40],[-53.7,53.6],[-56.59,53.2],[-57.1077594,51.9984948],[-57.2,51.7],[-57.108836,51.3784254],[-56.94,51.31],[-57.9,50.93],[-60.1,49.3],[-61.25,48.57],[-60.5,48.4],[-60.3,48.2],[-60.3,47.8],[-58.9,46.8],[-40,40]]]
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "Quebec"
     }
   ],
   "America/St_Kitts": [
@@ -1618,11 +1793,73 @@
       "id": "Saint Vincent and the Grenadines"
     }
   ],
+  "America/Swift_Current": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Swift Current"
+    }
+  ],
+  "America/Thunder_Bay": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Thunder Bay-tz"
+    }
+  ],
+  "America/Toronto": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Toronto-tz"
+    }
+  ],
   "America/Tortola": [
     {
       "op": "init",
       "source": "overpass",
       "id": "British Virgin Islands"
+    }
+  ],
+  "America/Vancouver": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Canada"
+    }, {
+      "op": "intersect",
+      "source": "manual-polygon",
+      "data": [[[-121,47],[-133,61],[-143,61],[-127,47],[-121,47]]]
+    }, {
+      "op": "union",
+      "source": "overpass",
+      "id": "Vancouver-tz"
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "Yukon"
+    }
+  ],
+  "America/Whitehorse": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Yukon"
+    }, {
+      "op": "difference",
+      "source": "manual-polygon",
+      "data": [[[-139.446, 64.0893], [-139.4126, 64.0888], [-139.4105, 64.0688], [-139.3765, 64.0609], [-139.3758, 64.0556], [-139.2775, 64.0534], [-139.2854, 64.0208], [-139.4496, 64.0278], [-139.4546, 64.0254], [-139.4824, 64.0219], [-139.4838, 64.0314], [-139.4738, 64.034], [-139.4747, 64.0369], [-139.4737, 64.0404], [-139.4713, 64.0419], [-139.4677, 64.0469], [-139.4663, 64.0487], [-139.4572, 64.0515], [-139.4538, 64.0546], [-139.4417, 64.0736], [-139.4476, 64.0789], [-139.4477, 64.0807], [-139.44, 64.0819], [-139.446, 64.0893]]]
+    }
+  ],
+  "America/Winnipeg": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Winnipeg-tz"
+    }, {
+      "op": "difference",
+      "source": "manual-polygon",
+      "data": [[[-94.5402,48.7369],[-94.5405,48.69],[-94.648,48.7369],[-94.5402,48.7369]]]
     }
   ],
   "America/Yakutat": [
@@ -1634,6 +1871,17 @@
       "op": "intersect",
       "source": "manual-polygon",
       "data": [[[-141,62],[-141,58],[-138.2781,58.719],[-137.9464,58.80181],[-137.5725,58.89509],[-137.52612,58.906375],[-134,62],[-141,62]]]
+    }
+  ],
+  "America/Yellowknife": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Northwest Territories"
+    }, {
+      "op": "difference",
+      "source": "manual-polygon",
+      "data": [[[-133.7991, 68.4161], [-133.73, 68.4165], [-133.7297, 68.3955], [-133.6343, 68.3464], [-133.3888, 68.3166], [-133.3843, 68.2982], [-133.4485, 68.297], [-133.4482, 68.2901], [-133.4719, 68.29], [-133.4726, 68.2926], [-133.4911, 68.2966], [-133.535, 68.2973], [-133.5556, 68.3015], [-133.5546, 68.3043], [-133.5653, 68.3074], [-133.6772, 68.3176], [-133.6734, 68.3226], [-133.7046, 68.3379], [-133.7225, 68.3508], [-133.7524, 68.3625], [-133.7709, 68.3749], [-133.7733, 68.3827], [-133.7695, 68.3874], [-133.775, 68.3906], [-133.7884, 68.394], [-133.7956, 68.4007], [-133.7956, 68.4092], [-133.7991, 68.4161]]]
     }
   ],
   "Antarctica/Macquarie": [

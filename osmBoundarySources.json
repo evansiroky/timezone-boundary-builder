@@ -44,6 +44,9 @@
   "Autonomous Region of Bougainville": {
     "ISO3166-2": "PG-NSB"
   },
+  "Atikokan-tz": {
+    "timezone": "America/Atikokan"
+  },
   "Azerbaijan": {
     "ISO3166-1": "AZ"
   },
@@ -123,11 +126,20 @@
   "Burundi": {
     "ISO3166-1": "BI"
   },
+  "Cambridge Bay-tz": {
+    "timezone": "America/Cambridge_Bay"
+  },
   "Cambodia": {
     "ISO3166-1": "KH"
   },
   "Cameroon": {
     "ISO3166-1": "CM"
+  },
+  "Canada": {
+    "ISO3166-1": "CA"
+  },
+  "Cape Breton County": {
+    "name": "Cape Breton County"
   },
   "Cape Verde": {
     "ISO3166-1": "CV"
@@ -171,6 +183,9 @@
   "Corrientes": {
     "ISO3166-2": "AR-W"
   },
+  "Coral Harbour-tz": {
+    "timezone": "America/Coral_Harbour"
+  },
   "Costa Rica": {
     "ISO3166-1": "CR"
   },
@@ -179,6 +194,9 @@
   },
   "Côte d'Ivoire": {
     "ISO3166-1": "CI"
+  },
+  "Creston-tz": {
+    "timezone": "America/Creston"
   },
   "Croatia": {
     "ISO3166-1": "HR"
@@ -191,6 +209,9 @@
   },
   "Czech Republic": {
     "ISO3166-1": "CZ"
+  },
+  "Dawson Creek-tz": {
+    "timezone": "America/Dawson_Creek"
   },
   "Departamento Atlántico": {
     "name": "Departamento Atlántico"
@@ -216,6 +237,9 @@
   },
   "Ecuador": {
     "ISO3166-1": "EC"
+  },
+  "Edmonton-tz": {
+    "timezone": "America/Edmonton"
   },
   "Egypt": {
     "ISO3166-1": "EG"
@@ -328,6 +352,9 @@
   "Iron County, MI": {
     "name": "Iron County",
     "nist:state_fips": "26"
+  },
+  "Iqaluit-tz": {
+    "timezone": "America/Iqaluit"
   },
   "Isle of Man": {
     "ISO3166-1": "IM"
@@ -493,6 +520,9 @@
   "Neuquén": {
     "ISO3166-2": "AR-Q"
   },
+  "New Brunswick": {
+    "ISO3166-2": "CA-NB"
+  },
   "New Zealand": {
     "ISO3166-1": "NZ"
   },
@@ -505,11 +535,20 @@
   "Nigeria": {
     "ISO3166-1": "NG"
   },
+  "Nipigon-tz": {
+    "timezone": "America/Nipigon"
+  },
   "Niue": {
     "ISO3166-1": "NU"
   },
   "North Korea": {
     "ISO3166-1": "KP"
+  },
+  "Northern Rockies Regional Municipality": {
+    "name": "Northern Rockies Regional Municipality"
+  },
+  "Northwest Territories": {
+    "ISO3166-2": "CA-NT"
   },
   "Norway": {
     "ISO3166-1": "NO"
@@ -528,6 +567,9 @@
   },
   "Panama": {
     "ISO3166-1": "PA"
+  },
+  "Pangnirtung-tz": {
+    "timezone": "America/Pangnirtung"
   },
   "Papua New Guinea": {
     "ISO3166-1": "PG"
@@ -562,12 +604,24 @@
   "Qatar": {
     "ISO3166-1": "QA"
   },
+  "Quebec": {
+    "ISO3166-2": "CA-QC"
+  },
+  "Rankin Inlet-tz": {
+    "timezone": "America/Rankin_Inlet"
+  },
+  "Regina-tz": {
+    "timezone": "America/Regina"
+  },
   "Republic of China": {
     "ISO3166-1": "TW"
   },
   "Republic of Kosovo": {
     "name:en": "Kosovo",
     "admin_level": "2"
+  },
+  "Resolute-tz": {
+    "timezone": "America/Resolute"
   },
   "Rio Negro": {
     "ISO3166-2": "AR-R"
@@ -700,6 +754,9 @@
   "Sweden": {
     "ISO3166-1": "SE"
   },
+  "Swift Current": {
+    "name": "Swift Current"
+  },
   "Switzerland": {
     "ISO3166-1": "CH"
   },
@@ -725,6 +782,9 @@
   "The Netherlands": {
     "ISO3166-1": "NL"
   },
+  "Thunder Bay-tz": {
+    "timezone": "America/Thunder_Bay"
+  },
   "Tocantins": {
     "ISO3166-2": "BR-TO"
   },
@@ -736,6 +796,9 @@
   },
   "Tonga": {
     "ISO3166-1": "TO"
+  },
+  "Toronto-tz": {
+    "timezone": "America/Toronto"
   },
   "Trinidad and Tobago": {
     "ISO3166-1": "TT"
@@ -777,6 +840,9 @@
   "Uruguay": {
     "ISO3166-1": "UY"
   },
+  "Vancouver-tz": {
+    "timezone": "America/Vancouver"
+  },
   "Vanuatu": {
     "ISO3166-1": "VU"
   },
@@ -795,11 +861,17 @@
   "Western Sahara": {
     "ISO3166-1": "EH"
   },
+  "Winnipeg-tz": {
+    "timezone": "America/Winnipeg"
+  },
   "Yap": {
     "ISO3166-2": "FM-YAP"
   },
   "Yemen": {
     "ISO3166-1": "YE"
+  },
+  "Yukon": {
+    "ISO3166-2": "CA-YT"
   },
   "Zambia": {
     "ISO3166-1": "ZM"
