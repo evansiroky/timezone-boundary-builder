@@ -2,8 +2,15 @@
   "Acre": {
     "ISO3166-2": "BR-AC"
   },
+  "Adair County, KY": {
+    "name": "Adair County",
+    "nist:state_fips": "21"
+  },
   "Afghanistan": {
     "ISO3166-1": "AF"
+  },
+  "Alabama": {
+    "ISO3166-2": "US-AL"
   },
   "Alagoas": {
     "ISO3166-2": "BR-AL"
@@ -84,11 +91,18 @@
   "Bermuda": {
     "ISO3166-1": "BM"
   },
+  "Bledsoe County, TN": {
+    "name": "Bledsoe County",
+    "nist:state_fips": "47"
+  },
   "Buenos Aires": {
     "ISO3166-2": "AR-B"
   },
   "Bhutan": {
     "ISO3166-1": "BT"
+  },
+  "Boise-tz": {
+    "timezone": "America/Boise"
   },
   "Bolivia": {
     "ISO3166-1": "BO"
@@ -104,6 +118,10 @@
   },
   "Brazil": {
     "ISO3166-1": "BR"
+  },
+  "Breckinridge County, KY": {
+    "name": "Breckinridge County",
+    "nist:state_fips": "21"
   },
   "British Indian Ocean Territory": {
     "ISO3166-1": "IO"
@@ -125,6 +143,10 @@
   },
   "Burundi": {
     "ISO3166-1": "BI"
+  },
+  "Calhoun County, FL": {
+    "name": "Calhoun County",
+    "nist:state_fips": "12"
   },
   "Cambridge Bay-tz": {
     "timezone": "America/Cambridge_Bay"
@@ -159,6 +181,9 @@
   "Chad": {
     "ISO3166-1": "TD"
   },
+  "Chicago-tz": {
+    "timezone": "America/Chicago"
+  },
   "Chile": {
     "ISO3166-1": "CL"
   },
@@ -167,6 +192,10 @@
   },
   "Chuuk": {
     "ISO3166-2": "FM-TRK"
+  },
+  "Clark County, IN": {
+    "name": "Clark County",
+    "nist:state_fips": "18"
   },
   "Colombia": {
     "ISO3166-1": "CO"
@@ -195,6 +224,10 @@
   "Côte d'Ivoire": {
     "ISO3166-1": "CI"
   },
+  "Crawford County, IN": {
+    "name": "Crawford County",
+    "nist:state_fips": "18"
+  },
   "Creston-tz": {
     "timezone": "America/Creston"
   },
@@ -204,6 +237,10 @@
   "Curaçao": {
     "ISO3166-1": "CW"
   },
+  "Cumberland County, TN": {
+    "name": "Cumberland County",
+    "nist:state_fips": "47"
+  },
   "Cyprus": {
     "ISO3166-1": "CY"
   },
@@ -212,6 +249,13 @@
   },
   "Dawson Creek-tz": {
     "timezone": "America/Dawson_Creek"
+  },
+  "Dearborn County, IN": {
+    "name": "Dearborn County",
+    "nist:state_fips": "18"
+  },
+  "Denver-tz": {
+    "timezone": "America/Denver"
   },
   "Departamento Atlántico": {
     "name": "Departamento Atlántico"
@@ -277,11 +321,19 @@
   "Finland": {
     "ISO3166-1": "FI"
   },
+  "Floyd County, IN": {
+    "name": "Floyd County",
+    "nist:state_fips": "18"
+  },
   "Formosa": {
     "ISO3166-2": "AR-P"
   },
   "France": {
     "ISO3166-1": "FR"
+  },
+  "Franklin County, FL": {
+    "name": "Franklin County",
+    "nist:state_fips": "12"
   },
   "Gabon": {
     "ISO3166-1": "GA"
@@ -301,8 +353,16 @@
   "Gogebic County": {
     "name": "Gogebic County"
   },
+  "Grayson County, KY": {
+    "name": "Grayson County",
+    "nist:state_fips": "21"
+  },
   "Greece": {
     "ISO3166-1": "GR"
+  },
+  "Green County, KY": {
+    "name": "Green County",
+    "nist:state_fips": "21"
   },
   "Grenada": {
     "ISO3166-1": "GD"
@@ -328,6 +388,14 @@
   "Haiti": {
     "ISO3166-1": "HT"
   },
+  "Hart County, KY": {
+    "name": "Hart County",
+    "nist:state_fips": "21"
+  },
+  "Harrison County, IN": {
+    "name": "Harrison  County",
+    "nist:state_fips": "18"
+  },
   "Hungary": {
     "ISO3166-1": "HU"
   },
@@ -339,6 +407,12 @@
   },
   "India": {
     "ISO3166-1": "IN"
+  },
+  "Indiana": {
+    "ISO3166-2": "US-IN"
+  },
+  "Indianapolis-tz": {
+    "timezone": "America/Indiana/Indianapolis"
   },
   "Iran": {
     "ISO3166-1": "IR"
@@ -365,11 +439,19 @@
   "Italy": {
     "ISO3166-1": "IT"
   },
+  "Jackson County, FL": {
+    "name": "Jackson County",
+    "nist:state_fips": "12"
+  },
   "Jamaica": {
     "ISO3166-1": "JM"
   },
   "Japan": {
     "ISO3166-1": "JP"
+  },
+  "Jefferson County, KY": {
+    "name": "Jefferson County",
+    "nist:state_fips": "21"
   },
   "Jersey": {
     "ISO3166-1": "JE"
@@ -420,6 +502,10 @@
   "Liberia": {
     "ISO3166-1": "LR"
   },
+  "Liberty County, FL": {
+    "name": "Liberty County",
+    "nist:state_fips": "12"
+  },
   "Libya": {
     "ISO3166-1": "LY"
   },
@@ -428,6 +514,9 @@
   },
   "Lithuania": {
     "ISO3166-1": "LT"
+  },
+  "Los Angeles-tz": {
+    "timezone": "America/Los_Angeles"
   },
   "Luxemburg": {
     "ISO3166-1": "LU"
@@ -456,6 +545,10 @@
   "Manaus-tz": {
     "timezone": "America/Manaus"
   },
+  "Marion County, TN": {
+    "name": "Marion County",
+    "nist:state_fips": "47"
+  },
   "Marshall Islands": {
     "ISO3166-1": "MH"
   },
@@ -481,6 +574,10 @@
     "name": "Menominee County",
     "nist:state_fips": "26"
   },
+  "Mercer County, ND": {
+    "name": "Mercer County",
+    "nist:state_fips": "38"
+  },
   "Michigan": {
     "ISO3166-2": "US-MI"
   },
@@ -501,6 +598,10 @@
   },
   "Morocco": {
     "ISO3166-1": "MA"
+  },
+  "Morton County, ND": {
+    "name": "Morton County",
+    "nist:state_fips": "38"
   },
   "Mozambique": {
     "ISO3166-1": "MZ"
@@ -553,8 +654,20 @@
   "Norway": {
     "ISO3166-1": "NO"
   },
+  "Ohio County, IN": {
+    "name": "Ohio County",
+    "nist:state_fips": "18"
+  },
+  "Oliver County, ND": {
+    "name": "Oliver County",
+    "nist:state_fips": "38"
+  },
   "Oman": {
     "ISO3166-1": "OM"
+  },
+  "Overton County, TN": {
+    "name": "Overton County",
+    "nist:state_fips": "47"
   },
   "Pakistan": {
     "ISO3166-1": "PK"
@@ -583,11 +696,26 @@
   "Peru": {
     "ISO3166-1:alpha2": "PE"
   },
+  "Perry County, IN": {
+    "name": "Perry County",
+    "nist:state_fips": "18"
+  },
   "Philippines": {
     "ISO3166-1": "PH"
   },
+  "Phoenix-tz": {
+    "timezone": "America/Phoenix"
+  },
+  "Pickett County, TN": {
+    "name": "Pickett County",
+    "nist:state_fips": "47"
+  },
   "Pitcairn Islands": {
     "ISO3166-1": "PN"
+  },
+  "Pike County, IN": {
+    "name": "Pike County",
+    "nist:state_fips": "18"
   },
   "Pohnpei": {
     "ISO3166-2": "FM-PNI"
@@ -600,6 +728,10 @@
   },
   "Prince of Wales-Hyder": {
     "name": "Prince of Wales-Hyder"
+  },
+  "Pulaski County, IN": {
+    "name": "Pulaski County",
+    "nist:state_fips": "18"
   },
   "Qatar": {
     "ISO3166-1": "QA"
@@ -634,6 +766,10 @@
   },
   "Roraima": {
     "ISO3166-2": "BR-RR"
+  },
+  "Russell County, KY": {
+    "name": "Russell County",
+    "nist:state_fips": "21"
   },
   "Rwanda": {
     "ISO3166-1": "RW"
@@ -702,6 +838,10 @@
   "Sergipe": {
     "ISO3166-2": "BR-SE"
   },
+  "Sequatchie County, TN": {
+    "name": "Sequatchie County",
+    "nist:state_fips": "47"
+  },
   "Seychelles": {
     "ISO3166-1": "SC"
   },
@@ -742,6 +882,10 @@
   "Sri Lanka": {
     "ISO3166-1": "LK"
   },
+  "Starke County, IN": {
+    "name": "Starke County",
+    "nist:state_fips": "18"
+  },
   "Sudan": {
     "ISO3166-1": "SD"
   },
@@ -759,6 +903,10 @@
   },
   "Switzerland": {
     "ISO3166-1": "CH"
+  },
+  "Switzerland County, IN": {
+    "name": "Switzerland County",
+    "nist:state_fips": "18"
   },
   "Syria": {
     "ISO3166-1": "SY"
@@ -854,6 +1002,13 @@
   },
   "Vietnam": {
     "ISO3166-1": "VN"
+  },
+  "Vincennes-tz": {
+    "timezone": "America/Indiana/Vincennes"
+  },
+  "Wayne County, KY": {
+    "name": "Wayne County",
+    "nist:state_fips": "21"
   },
   "West Wendover": {
     "name": "West Wendover"
