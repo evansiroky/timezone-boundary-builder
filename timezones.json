@@ -682,6 +682,21 @@
       "id": "Bahia"
     }
   ],
+  "America/Bahia_Banderas": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Mexico"
+    }, {
+      "op": "intersect",
+      "source": "manual-polygon",
+      "data": [[[-105.287,20.68],[-105.3,20.8],[-105.4,20.8],[-105.3556082,20.9602092],[-105.56,21.11],[-106,21],[-105.883254,20.685482],[-105.5724898,20.62692],[-105.403923,20.6243015],[-105.330481,20.6347751],[-105.3009294,20.6475388],[-105.2808749,20.6713757],[-105.2786916,20.6724507],[-105.287,20.68]]]
+    }, {
+      "op": "union",
+      "source": "overpass",
+      "id": "Bahía de Banderas"
+    }
+  ],
   "America/Barbados": [
     {
       "op": "init",
@@ -753,6 +768,13 @@
       "id": "Mato Grosso do Sul"
     }
   ],
+  "America/Cancun": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Cancun-tz"
+    }
+  ],
   "America/Caracas": [
     {
       "op": "init",
@@ -792,8 +814,12 @@
   "America/Chihuahua": [
     {
       "op": "init",
-      "source": "efele",
-      "id": "America/Chihuahua"
+      "source": "overpass",
+      "id": "Chihuahua"
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "Ojinaga-tz"
     }
   ],
   "America/Coral_Harbour": [
@@ -1044,6 +1070,21 @@
       "id": "New Brunswick"
     }
   ],
+  "America/Hermosillo": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Mexico"
+    }, {
+      "op": "intersect",
+      "source": "manual-polygon",
+      "data": [[[-112.6,28.5],[-112.55,28.2],[-110,26.3],[-109.2480469,26.316067],[-109,27],[-114,34],[-114.8069313,31.8166753],[-114.802,31.816],[-114.793,31.8198],[-114.787,31.8205],[-114.7645,31.8174],[-114.755,31.812],[-114.7455,31.804],[-114.739,31.795],[-114.732,31.777],[-114.707,31.757],[-114.658,31.729],[-114.623,31.7],[-112.88,29.4],[-112.6,28.5]]]
+    }, {
+      "op": "union",
+      "source": "overpass",
+      "id": "Sonora"
+    }
+  ],
   "America/Indiana/Indianapolis": [
     {
       "op": "init",
@@ -1240,6 +1281,36 @@
       "id": "Martinique"
     }
   ],
+  "America/Matamoros": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Matamoros-tz"
+    }
+  ],
+  "America/Mazatlan": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Mexico"
+    }, {
+      "op": "intersect",
+      "source": "manual-polygon",
+      "data": [[[-112,28],[-110,26.3],[-109.2480469,26.316067],[-104.22,21.22],[-105.3556082,20.9602092],[-105.56,21.11],[-109,20],[-128,28],[-112,28]]]
+    }, {
+      "op": "union",
+      "source": "overpass",
+      "id": "Sinaloa"
+    }, {
+      "op": "union",
+      "source": "overpass",
+      "id": "Nayarit"
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "Bahía de Banderas"
+    }
+  ],
   "America/Miquelon": [
     {
       "op": "init",
@@ -1266,6 +1337,13 @@
       "id": "Menominee County, MI"
     }
   ],
+  "America/Merida": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Merida-tz"
+    }
+  ],
   "America/Metlakatla": [
     {
       "op": "init",
@@ -1275,6 +1353,21 @@
       "op": "intersect",
       "source": "manual-polygon",
       "data": [[[-131.65,55.11],[-131.674,55.04],[-131.65,54.964],[-131,54.96],[-131.3,55.4],[-131.8,55.25],[-131.65,55.11]]]
+    }
+  ],
+  "America/Mexico_City": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Mexico"
+    }, {
+      "op": "intersect",
+      "source": "manual-polygon",
+      "data": [[[-109,21],[-111,15],[-119,19],[-109,21]]]
+    }, {
+      "op": "union",
+      "source": "overpass",
+      "id": "Mexico City-tz"
     }
   ],
   "America/Moncton": [
@@ -1298,6 +1391,13 @@
       "op": "difference",
       "source": "overpass",
       "id": "United States of America"
+    }
+  ],
+  "America/Monterrey": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Monterrey-tz"
     }
   ],
   "America/Montevideo": [
@@ -1500,8 +1600,8 @@
   "America/Ojinaga": [
     {
       "op": "init",
-      "source": "efele",
-      "id": "America/Ojinaga"
+      "source": "overpass",
+      "id": "Ojinaga-tz"
     }
   ],
   "America/Panama": [
@@ -1741,6 +1841,21 @@
       "op": "init",
       "source": "overpass",
       "id": "Thunder Bay-tz"
+    }
+  ],
+  "America/Tijuana": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Mexico"
+    }, {
+      "op": "intersect",
+      "source": "manual-polygon",
+      "data": [[[-112.6,28.5],[-112.55,28.2],[-112,28],[-122,28],[-116,35],[-114,34],[-114.8069313,31.8166753],[-114.802,31.816],[-114.793,31.8198],[-114.787,31.8205],[-114.7645,31.8174],[-114.755,31.812],[-114.7455,31.804],[-114.739,31.795],[-114.732,31.777],[-114.707,31.757],[-114.658,31.729],[-114.623,31.7],[-112.88,29.4],[-112.6,28.5]]]
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "Sonora"
     }
   ],
   "America/Toronto": [
@@ -2423,8 +2538,7 @@
       "op": "init",
       "source": "overpass",
       "id": "Republic of Kosovo"
-    },
-    {
+    }, {
       "op": "union",
       "source": "overpass",
       "id": "Serbia"

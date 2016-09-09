@@ -60,6 +60,9 @@
   "Bahia": {
     "ISO3166-2": "BR-BA"
   },
+  "Bahía de Banderas": {
+    "name": "Bahía de Banderas"
+  },
   "Bahrain": {
     "ISO3166-1": "BH"
   },
@@ -160,6 +163,9 @@
   "Canada": {
     "ISO3166-1": "CA"
   },
+  "Cancun-tz": {
+    "timezone": "America/Cancun"
+  },
   "Cape Breton County": {
     "name": "Cape Breton County"
   },
@@ -183,6 +189,9 @@
   },
   "Chicago-tz": {
     "timezone": "America/Chicago"
+  },
+  "Chihuahua": {
+    "ISO3166-2": "MX-CHH"
   },
   "Chile": {
     "ISO3166-1": "CL"
@@ -561,6 +570,9 @@
   "Mauritius": {
     "ISO3166-1": "MU"
   },
+  "Matamoros-tz": {
+    "timezone": "America/Matamoros"
+  },
   "Mato Grosso": {
     "ISO3166-2": "BR-MT"
   },
@@ -578,6 +590,15 @@
     "name": "Mercer County",
     "nist:state_fips": "38"
   },
+  "Merida-tz": {
+    "timezone": "America/Merida"
+  },
+  "Mexico": {
+    "ISO3166-1": "MX"
+  },
+  "Mexico City-tz": {
+    "timezone": "America/Mexico_City"
+  },
   "Michigan": {
     "ISO3166-2": "US-MI"
   },
@@ -592,6 +613,9 @@
   },
   "Montenegro": {
     "ISO3166-1": "ME"
+  },
+  "Monterrey-tz": {
+    "timezone": "America/Monterrey"
   },
   "Montserrat": {
     "ISO3166-1": "MS"
@@ -614,6 +638,9 @@
   },
   "Nauru": {
     "ISO3166-1": "NR"
+  },
+  "Nayarit": {
+    "ISO3166-2": "MX-NAY"
   },
   "Nepal": {
     "ISO3166-1": "NP"
@@ -657,6 +684,9 @@
   "Ohio County, IN": {
     "name": "Ohio County",
     "nist:state_fips": "18"
+  },
+  "Ojinaga-tz": {
+    "timezone": "America/Ojinaga"
   },
   "Oliver County, ND": {
     "name": "Oliver County",
@@ -848,6 +878,9 @@
   "Sierra Leone": {
     "ISO3166-1": "SL"
   },
+  "Sinaloa": {
+    "ISO3166-2": "MX-SIN"
+  },
   "Singapore": {
     "ISO3166-1": "SG"
   },
@@ -865,6 +898,9 @@
   },
   "Somalia": {
     "ISO3166-1": "SO"
+  },
+  "Sonora": {
+    "ISO3166-2": "MX-SON"
   },
   "South Africa": {
     "ISO3166-1": "ZA",
