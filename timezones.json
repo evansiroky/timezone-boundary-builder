@@ -2250,6 +2250,48 @@
       "id": "Asia/Irkutsk"
     }
   ],
+  "Asia/Jakarta": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Indonesia"
+    }, {
+      "op": "intersect",
+      "source": "manual-polygon",
+      "data": [[[109,9],[114,-12],[56,14],[109,9]]]
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "West Kalimantan"
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "Central Kalimantan"
+    }, {
+      "op": "union",
+      "source": "overpass",
+      "id": "East Java"
+    }
+  ],
+  "Asia/Jayapura": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Indonesia"
+    }, {
+      "op": "difference",
+      "source": "manual-polygon",
+      "data": [[[90,9],[100,-12],[126,-13],[129,7],[90,9]]]
+    }, {
+      "op": "union",
+      "source": "overpass",
+      "id": "Maluku"
+    }, {
+      "op": "union",
+      "source": "overpass",
+      "id": "North Maluku"
+    }
+  ],
   "Asia/Jerusalem": [
     {
       "op": "init",
@@ -2328,6 +2370,37 @@
       "id": "Kuwait"
     }
   ],
+  "Asia/Makassar": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Indonesia"
+    }, {
+      "op": "intersect",
+      "source": "manual-polygon",
+      "data": [[[109,9],[114,-12],[126,-13],[129,7],[109,9]]]
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "West Kalimantan"
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "Central Kalimantan"
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "East Java"
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "Maluku"
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "North Maluku"
+    }
+  ],
   "Asia/Manila": [
     {
       "op": "init",
@@ -2386,6 +2459,17 @@
       "op": "init",
       "source": "overpass",
       "id": "Cambodia"
+    }
+  ],
+  "Asia/Pontianak": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "West Kalimantan"
+    }, {
+      "op": "union",
+      "source": "overpass",
+      "id": "Central Kalimantan"
     }
   ],
   "Asia/Pyongyang": [

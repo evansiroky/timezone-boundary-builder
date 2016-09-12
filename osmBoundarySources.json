@@ -181,6 +181,9 @@
   "Central African Republic": {
     "ISO3166-1": "CF"
   },
+  "Central Kalimantan": {
+    "name:en": "Central Kalimantan"
+  },
   "Chaco": {
     "ISO3166-2": "AR-H"
   },
@@ -287,6 +290,9 @@
   },
   "Dominican Republic": {
     "ISO3166-1": "DO"
+  },
+  "East Java": {
+    "name:en": "East Java"
   },
   "East Timor": {
     "ISO3166-1": "TL"
@@ -432,6 +438,9 @@
   "Indianapolis-tz": {
     "timezone": "America/Indiana/Indianapolis"
   },
+  "Indonesia": {
+    "ISO3166-1": "ID"
+  },
   "Iran": {
     "ISO3166-1": "IR"
   },
@@ -560,6 +569,9 @@
   "Malta": {
     "ISO3166-1": "MT"
   },
+  "Maluku": {
+    "name": "Maluku"
+  },
   "Manaus-tz": {
     "timezone": "America/Manaus"
   },
@@ -680,6 +692,9 @@
   },
   "North Korea": {
     "ISO3166-1": "KP"
+  },
+  "North Maluku": {
+    "name:en": "North Maluku"
   },
   "Northern Rockies Regional Municipality": {
     "name": "Northern Rockies Regional Municipality"
@@ -1054,6 +1069,9 @@
   "Wayne County, KY": {
     "name": "Wayne County",
     "nist:state_fips": "21"
+  },
+  "West Kalimantan": {
+    "name:en": "West Kalimantan"
   },
   "West Wendover": {
     "name": "West Wendover"
