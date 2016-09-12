@@ -291,6 +291,9 @@
   "Dominican Republic": {
     "ISO3166-1": "DO"
   },
+  "Dornod": {
+    "ISO3166-2": "MN-061"
+  },
   "East Java": {
     "name:en": "East Java"
   },
@@ -370,6 +373,9 @@
   },
   "Gogebic County": {
     "name": "Gogebic County"
+  },
+  "Govi-Altai": {
+    "ISO3166-2": "MN-065"
   },
   "Grayson County, KY": {
     "name": "Grayson County",
@@ -631,6 +637,9 @@
   },
   "Monaco": {
     "ISO3166-1": "MC"
+  },
+  "Mongolia": {
+    "ISO3166-1": "MN"
   },
   "Montenegro": {
     "ISO3166-1": "ME"
@@ -952,6 +961,9 @@
   "Suriname": {
     "ISO3166-1": "SR"
   },
+  "Sühbaatar": {
+    "ISO3166-2": "MN-051"
+  },
   "Swaziland": {
     "ISO3166-1": "SZ"
   },
@@ -1093,6 +1105,9 @@
   },
   "Zambia": {
     "ISO3166-1": "ZM"
+  },
+  "Zavkhan": {
+    "ISO3166-2": "MN-057"
   },
   "Zimbabwe": {
     "ISO3166-1": "ZW"

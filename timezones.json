@@ -2154,8 +2154,12 @@
   "Asia/Choibalsan": [
     {
       "op": "init",
-      "source": "efele",
-      "id": "Asia/Choibalsan"
+      "source": "overpass",
+      "id": "Dornod"
+    }, {
+      "op": "union",
+      "source": "overpass",
+      "id": "Sühbaatar"
     }
   ],
   "Asia/Colombo": [
@@ -2239,8 +2243,20 @@
   "Asia/Hovd": [
     {
       "op": "init",
-      "source": "efele",
-      "id": "Asia/Hovd"
+      "source": "overpass",
+      "id": "Mongolia"
+    }, {
+      "op": "intersect",
+      "source": "manual-polygon",
+      "data": [[[96,53],[97,40],[81,50],[96,53]]]
+    }, {
+      "op": "union",
+      "source": "overpass",
+      "id": "Zavkhan"
+    }, {
+      "op": "union",
+      "source": "overpass",
+      "id": "Govi-Altai"
     }
   ],
   "Asia/Irkutsk": [
@@ -2559,8 +2575,28 @@
   "Asia/Ulaanbaatar": [
     {
       "op": "init",
-      "source": "efele",
-      "id": "Asia/Ulaanbaatar"
+      "source": "overpass",
+      "id": "Mongolia"
+    }, {
+      "op": "intersect",
+      "source": "manual-polygon",
+      "data": [[[96,53],[113,55],[114,39],[97,40],[96,53]]]
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "Zavkhan"
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "Govi-Altai"
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "Dornod"
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "Sühbaatar"
     }
   ],
   "Asia/Ust-Nera": [
