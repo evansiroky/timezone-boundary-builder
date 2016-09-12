@@ -857,6 +857,17 @@
       "id": "Curaçao"
     }
   ],
+  "America/Danmarkshavn": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Greenland"
+    }, {
+      "op": "intersect",
+      "source": "manual-polygon",
+      "data": [[[-24,72.4],[-19,71],[-18,70],[-25,70.5],[-24,72.4]]]
+    }
+  ],
   "America/Dawson": [
     {
       "op": "init",
@@ -986,6 +997,25 @@
       "id": "Cape Breton County"
     }
   ],
+  "America/Godthab": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Greenland"
+    }, {
+      "op": "difference",
+      "source": "manual-polygon",
+      "data": [[[-24,72.4],[-19,71],[-18,70],[-25,70.5],[-24,72.4]]]
+    }, {
+      "op": "difference",
+      "source": "manual-polygon",
+      "data": [[[-24.2,73.5],[-15,71.8],[-14,77],[-24.2,73.5]]]
+    }, {
+      "op": "difference",
+      "source": "manual-polygon",
+      "data": [[[-81,82],[-60,78],[-81,60],[-81,82]]]
+    }
+  ],
   "America/Goose_Bay": [
     {
       "op": "init",
@@ -1068,6 +1098,17 @@
       "op": "difference",
       "source": "overpass",
       "id": "New Brunswick"
+    }
+  ],
+  "America/Havana": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Cuba"
+    }, {
+      "op": "difference",
+      "source": "manual-polygon",
+      "data": [[[-75.0866329,19.9027428],[-75.0866372,19.9041687],[-75.0866182,19.9104153],[-75.0866276,19.9115045],[-75.0866493,19.9122056],[-75.0866007,19.9125589],[-75.0865962,19.9138869],[-75.0866447,19.9738202],[-75.1668228,19.9738244],[-75.1906065,19.9737598],[-75.1946678,19.9699988],[-75.1964374,19.9683235],[-75.2320198,19.9345907],[-75.2320369,19.9022073],[-75.2324876,19.8697408],[-75.0865627,19.8717621],[-75.0866329,19.9027428]]]
     }
   ],
   "America/Hermosillo": [
@@ -1545,6 +1586,10 @@
       "op": "union",
       "source": "overpass",
       "id": "Franklin County, FL"
+    }, {
+      "op": "union",
+      "source": "manual-polygon",
+      "data": [[[-75.0866329,19.9027428],[-75.0866372,19.9041687],[-75.0866182,19.9104153],[-75.0866276,19.9115045],[-75.0866493,19.9122056],[-75.0866007,19.9125589],[-75.0865962,19.9138869],[-75.0866447,19.9738202],[-75.1668228,19.9738244],[-75.1906065,19.9737598],[-75.1946678,19.9699988],[-75.1964374,19.9683235],[-75.2320198,19.9345907],[-75.2320369,19.9022073],[-75.2324876,19.8697408],[-75.0865627,19.8717621],[-75.0866329,19.9027428]]]
     }
   ],
   "America/Nipigon": [
@@ -1651,6 +1696,17 @@
       "op": "init",
       "source": "overpass",
       "id": "Rondônia"
+    }
+  ],
+  "America/Puerto_Rico": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "United States of America"
+    }, {
+      "op": "intersect",
+      "source": "manual-polygon",
+      "data": [[[-65.22,18.6],[-65.108,18.43],[-65.16,18.25],[-65.145,18.23],[-65.1,18.225],[-65,18],[-66,17],[-77,18],[-65,19],[-65.22,18.6]]]
     }
   ],
   "America/Rainy_River": [
@@ -1763,6 +1819,17 @@
       "id": "Bahia"
     }
   ],
+  "America/Scoresbysund": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Greenland"
+    }, {
+      "op": "intersect",
+      "source": "manual-polygon",
+      "data": [[[-24.2,73.5],[-15,71.8],[-14,77],[-24.2,73.5]]]
+    }
+  ],
   "America/Sitka": [
     {
       "op": "init",
@@ -1822,6 +1889,17 @@
       "id": "Saint Lucia"
     }
   ],
+  "America/St_Thomas": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "United States of America"
+    }, {
+      "op": "intersect",
+      "source": "manual-polygon",
+      "data": [[[-65.22,18.6],[-65.108,18.43],[-65.16,18.25],[-65.145,18.23],[-65.1,18.225],[-65,18],[-66,17],[-62,18],[-65,19],[-65.22,18.6]]]
+    }
+  ],
   "America/St_Vincent": [
     {
       "op": "init",
@@ -1834,6 +1912,24 @@
       "op": "init",
       "source": "overpass",
       "id": "Swift Current"
+    }
+  ],
+  "America/Tegucigalpa": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Honduras"
+    }
+  ],
+  "America/Thule": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Greenland"
+    }, {
+      "op": "intersect",
+      "source": "manual-polygon",
+      "data": [[[-81,82],[-60,78],[-81,60],[-81,82]]]
     }
   ],
   "America/Thunder_Bay": [

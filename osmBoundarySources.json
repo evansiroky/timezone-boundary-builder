@@ -243,6 +243,9 @@
   "Croatia": {
     "ISO3166-1": "HR"
   },
+  "Cuba": {
+    "ISO3166-1": "CU"
+  },
   "Curaçao": {
     "ISO3166-1": "CW"
   },
@@ -373,6 +376,9 @@
     "name": "Green County",
     "nist:state_fips": "21"
   },
+  "Greenland": {
+    "ISO3166-1": "GL"
+  },
   "Grenada": {
     "ISO3166-1": "GD"
   },
@@ -404,6 +410,9 @@
   "Harrison County, IN": {
     "name": "Harrison  County",
     "nist:state_fips": "18"
+  },
+  "Honduras": {
+    "ISO3166-1": "HN"
   },
   "Hungary": {
     "ISO3166-1": "HU"
