@@ -2162,6 +2162,25 @@
       "id": "Sühbaatar"
     }
   ],
+  "Asia/Chongqing": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "China"
+    }, {
+      "op": "intersect",
+      "source": "manual-polygon",
+      "data": [[[110,44],[106,18],[87,18],[94,45],[110,44]]]
+    }, {
+      "op": "union",
+      "source": "overpass",
+      "id": "Chongqing-tz"
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "Urumqi-tz"
+    }
+  ],
   "Asia/Colombo": [
     {
       "op": "init",
@@ -2332,8 +2351,8 @@
   "Asia/Kashgar": [
     {
       "op": "init",
-      "source": "efele",
-      "id": "Asia/Kashgar"
+      "source": "overpass",
+      "id": "Kashgar-tz"
     }
   ],
   "Asia/Kathmandu": [
@@ -2597,6 +2616,29 @@
       "op": "difference",
       "source": "overpass",
       "id": "Sühbaatar"
+    }
+  ],
+  "Asia/Urumqi": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "China"
+    }, {
+      "op": "intersect",
+      "source": "manual-polygon",
+      "data": [[[113,19],[111.5,21.35],[111.45,21.48],[111.455,21.53],[111.441,21.5457],[111.4455,21.554],[111.4398,21.5638],[111.4391,21.574],[111.4364,21.5797],[111.4305,21.5802],[111.4311892,21.5843946],[111.37,21.6],[110,23],[107,19],[113,19]]]
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "Chongqing-tz"
+    }, {
+      "op": "union",
+      "source": "overpass",
+      "id": "Maoming City"
+    }, {
+      "op": "union",
+      "source": "overpass",
+      "id": "Urumqi-tz"
     }
   ],
   "Asia/Ust-Nera": [
