@@ -1216,7 +1216,7 @@
       "op": "union",
       "source": "overpass",
       "id": "Hoonah-Angoon"
-    } 
+    }
   ],
   "America/Kentucky/Louisville": [
     {
@@ -2162,6 +2162,65 @@
       "id": "Sühbaatar"
     }
   ],
+  "Asia/Chongqing": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "China"
+    }, {
+      "op": "intersect",
+      "source": "manual-multipolygon",
+      "data": [[[[110,44],[106,18],[87,18],[94,45],[110,44]]],[[[113.03,22.12],[113.05,22.097],[113.22,20.9],[113,19],[111.5,21.35],[111.45,21.48],[111.455,21.53],[111.441,21.5457],[111.4455,21.554],[111.4398,21.5638],[111.4391,21.574],[111.4364,21.5797],[111.4305,21.5802],[111.4311892,21.5843946],[111.6,21.6],[111.3,22.1],[110.5,22.3],[110,23],[111.9,23.2],[112.4,22.5],[112.8,22.45],[112.8,22.2],[113.0154615,22.1175344],[113.03,22.12]]]]
+    }, {
+      "op": "union",
+      "source": "overpass",
+      "id": "Chongqing-tz"
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "Urumqi-tz"
+    }, {
+      "op": "union",
+      "source": "overpass",
+      "id": "Yangjiang City"
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "Gaozhou City"
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "Xinyi City"
+    }, {
+      "op": "union",
+      "source": "overpass",
+      "id": "Luoding City"
+    }, {
+      "op": "union",
+      "source": "overpass",
+      "id": "Yangjiang City"
+    }, {
+      "op": "union",
+      "source": "overpass",
+      "id": "Xinxing County"
+    }, {
+      "op": "union",
+      "source": "overpass",
+      "id": "Kaiping City"
+    }, {
+      "op": "union",
+      "source": "overpass",
+      "id": "Taishan City"
+    }, {
+      "op": "union",
+      "source": "overpass",
+      "id": "Yunfu City"
+    }, {
+      "op": "union",
+      "source": "overpass",
+      "id": "Deqing County"
+    }
+  ],
   "Asia/Colombo": [
     {
       "op": "init",
@@ -2218,8 +2277,8 @@
   "Asia/Harbin": [
     {
       "op": "init",
-      "source": "efele",
-      "id": "Asia/Harbin"
+      "source": "overpass",
+      "id": "Harbin-tz"
     }
   ],
   "Asia/Hebron": [
@@ -2238,6 +2297,13 @@
       "op": "init",
       "source": "overpass",
       "id": "Vietnam"
+    }
+  ],
+  "Asia/Hong_Kong": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Hong Kong"
     }
   ],
   "Asia/Hovd": [
@@ -2332,8 +2398,8 @@
   "Asia/Kashgar": [
     {
       "op": "init",
-      "source": "efele",
-      "id": "Asia/Kashgar"
+      "source": "overpass",
+      "id": "Kashgar-tz"
     }
   ],
   "Asia/Kathmandu": [
@@ -2384,6 +2450,13 @@
       "op": "init",
       "source": "overpass",
       "id": "Kuwait"
+    }
+  ],
+  "Asia/Macau": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Macau"
     }
   ],
   "Asia/Makassar": [
@@ -2523,6 +2596,57 @@
       "id": "South Korea"
     }
   ],
+  "Asia/Shanghai": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Shanghai-tz"
+    }, {
+      "op": "difference",
+      "source": "manual-polygon",
+      "data": [[[110,44],[106,18],[87,18],[94,45],[110,44]]]
+    }, {
+      "op": "difference",
+      "source": "manual-polygon",
+      "data": [[[113.03,22.12],[113.05,22.097],[113.22,20.9],[113,19],[107,19],[110,23],[111.9,23.2],[112.4,22.5],[112.8,22.45],[112.8,22.2],[113.0154615,22.1175344],[113.03,22.12]]]
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "Luoding City"
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "Yangjiang City"
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "Xinxing County"
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "Kaiping City"
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "Taishan City"
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "Yunfu City"
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "Deqing County"
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "Hong Kong"
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "Macau"
+    }
+  ],
   "Asia/Singapore": [
     {
       "op": "init",
@@ -2599,6 +2723,37 @@
       "id": "Sühbaatar"
     }
   ],
+  "Asia/Urumqi": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "China"
+    }, {
+      "op": "intersect",
+      "source": "manual-polygon",
+      "data": [[[113,19],[111.5,21.35],[111.45,21.48],[111.455,21.53],[111.441,21.5457],[111.4455,21.554],[111.4398,21.5638],[111.4391,21.574],[111.4364,21.5797],[111.4305,21.5802],[111.4311892,21.5843946],[111.6,21.6],[111.3,22.1],[110,23],[107,19],[113,19]]]
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "Chongqing-tz"
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "Yangjiang City"
+    }, {
+      "op": "union",
+      "source": "overpass",
+      "id": "Gaozhou City"
+    }, {
+      "op": "union",
+      "source": "overpass",
+      "id": "Xinyi City"
+    }, {
+      "op": "union",
+      "source": "overpass",
+      "id": "Urumqi-tz"
+    }
+  ],
   "Asia/Ust-Nera": [
     {
       "op": "init",
@@ -2643,7 +2798,7 @@
       "op": "init",
       "source": "overpass",
       "id": "Spain"
-    }, { 
+    }, {
       "op": "intersect",
       "source": "manual-polygon",
       "data": [[[-24,29.5],[-12,22],[-12,31],[-15,29.5],[-24,29.5]]]
@@ -2773,7 +2928,7 @@
       "op": "difference",
       "source": "manual-polygon",
       "data": [[[8.7,47.75],[8.75,47.63],[8.6,47.7],[8.7,47.75]]]
-    }    
+    }
   ],
   "Europe/Bratislava": [
     {
@@ -2918,7 +3073,7 @@
       "op": "intersect",
       "source": "manual-polygon",
       "data": [[[-5.3,35.95],[6,34.5],[6,56],[-21,35],[-5.3,35.95]]]
-    } 
+    }
   ],
   "Europe/Malta": [
     {

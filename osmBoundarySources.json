@@ -199,6 +199,12 @@
   "Chile": {
     "ISO3166-1": "CL"
   },
+  "China": {
+    "ISO3166-1": "CN"
+  },
+  "Chongqing-tz": {
+    "timezone": "Asia/Chongqing"
+  },
   "Chubut": {
     "ISO3166-2": "AR-U"
   },
@@ -277,6 +283,10 @@
   },
   "Denmark": {
     "ISO3166-1": "DK"
+  },
+  "Deqing County": {
+    "name:en": "Deqing County",
+    "wikipedia:en": "Deqing County, Guangdong"
   },
   "Dickinson County, MI": {
     "name": "Dickinson County",
@@ -359,6 +369,9 @@
   "Gabon": {
     "ISO3166-1": "GA"
   },
+  "Gaozhou City": {
+    "name:en": "Gaozhou City"
+  },
   "Georgia": {
     "ISO3166-1": "GE"
   },
@@ -415,6 +428,9 @@
   "Haiti": {
     "ISO3166-1": "HT"
   },
+  "Harbin-tz": {
+    "timezone": "Asia/Harbin"
+  },
   "Hart County, KY": {
     "name": "Hart County",
     "nist:state_fips": "21"
@@ -426,11 +442,14 @@
   "Honduras": {
     "ISO3166-1": "HN"
   },
-  "Hungary": {
-    "ISO3166-1": "HU"
+  "Hong Kong": {
+    "ISO3166-1": "HK"
   },
   "Hoonah-Angoon": {
     "name": "Hoonah-Angoon"
+  },
+  "Hungary": {
+    "ISO3166-1": "HU"
   },
   "Iceland": {
     "ISO3166-1": "IS"
@@ -495,9 +514,15 @@
   "Jujuy": {
     "ISO3166-2": "AR-Y"
   },
+  "Kaiping City": {
+    "name:en": "Kaiping City"
+  },
   "Kasai": {
     "name:en": "Kasai",
     "admin_level": "4"
+  },
+  "Kashgar-tz": {
+    "timezone": "Asia/Kashgar"
   },
   "Kenya": {
     "ISO3166-1": "KE"
@@ -551,8 +576,14 @@
   "Los Angeles-tz": {
     "timezone": "America/Los_Angeles"
   },
+  "Luoding City": {
+    "name:en": "Luoding City"
+  },
   "Luxemburg": {
     "ISO3166-1": "LU"
+  },
+  "Macau": {
+    "ISO3166-1": "MO"
   },
   "Macedonia": {
     "ISO3166-1": "MK"
@@ -908,6 +939,9 @@
   "Seychelles": {
     "ISO3166-1": "SC"
   },
+  "Shanghai-tz": {
+    "timezone": "Asia/Shanghai"
+  },
   "Sierra Leone": {
     "ISO3166-1": "SL"
   },
@@ -986,6 +1020,9 @@
   "Tajikistan": {
     "ISO3166-1": "TJ"
   },
+  "Taishan City": {
+    "name:en": "Taishan City"
+  },
   "Tanzania": {
     "name:en": "Tanzania"
   },
@@ -1060,6 +1097,9 @@
   "Uruguay": {
     "ISO3166-1": "UY"
   },
+  "Urumqi-tz": {
+    "timezone": "Asia/Urumqi"
+  },
   "Vancouver-tz": {
     "timezone": "America/Vancouver"
   },
@@ -1094,6 +1134,16 @@
   "Winnipeg-tz": {
     "timezone": "America/Winnipeg"
   },
+  "Xinxing County": {
+    "name:en": "Xinxing County"
+  },
+  "Xinyi City": {
+    "name:en": "Xinyi City",
+    "wikipedia:en": "Xinyi, Guangdong"
+  },
+  "Yangjiang City": {
+    "name:en": "Yangjiang City"
+  },
   "Yap": {
     "ISO3166-2": "FM-YAP"
   },
@@ -1102,6 +1152,9 @@
   },
   "Yukon": {
     "ISO3166-2": "CA-YT"
+  },
+  "Yunfu City": {
+    "name:en": "Yunfu City"
   },
   "Zambia": {
     "ISO3166-1": "ZM"
