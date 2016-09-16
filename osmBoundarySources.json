@@ -284,6 +284,10 @@
   "Denmark": {
     "ISO3166-1": "DK"
   },
+  "Deqing County": {
+    "name:en": "Deqing County",
+    "wikipedia:en": "Deqing County, Guangdong"
+  },
   "Dickinson County, MI": {
     "name": "Dickinson County",
     "nist:state_fips": "26"
@@ -365,6 +369,9 @@
   "Gabon": {
     "ISO3166-1": "GA"
   },
+  "Gaozhou City": {
+    "name:en": "Gaozhou City"
+  },
   "Georgia": {
     "ISO3166-1": "GE"
   },
@@ -435,11 +442,14 @@
   "Honduras": {
     "ISO3166-1": "HN"
   },
-  "Hungary": {
-    "ISO3166-1": "HU"
+  "Hong Kong": {
+    "ISO3166-1": "HK"
   },
   "Hoonah-Angoon": {
     "name": "Hoonah-Angoon"
+  },
+  "Hungary": {
+    "ISO3166-1": "HU"
   },
   "Iceland": {
     "ISO3166-1": "IS"
@@ -572,6 +582,9 @@
   "Luxemburg": {
     "ISO3166-1": "LU"
   },
+  "Macau": {
+    "ISO3166-1": "MO"
+  },
   "Macedonia": {
     "ISO3166-1": "MK"
   },
@@ -598,9 +611,6 @@
   },
   "Manaus-tz": {
     "timezone": "America/Manaus"
-  },
-  "Maoming City": {
-    "name:en": "Maoming City"
   },
   "Marion County, TN": {
     "name": "Marion County",
@@ -929,6 +939,9 @@
   "Seychelles": {
     "ISO3166-1": "SC"
   },
+  "Shanghai-tz": {
+    "timezone": "Asia/Shanghai"
+  },
   "Sierra Leone": {
     "ISO3166-1": "SL"
   },
@@ -1124,6 +1137,10 @@
   "Xinxing County": {
     "name:en": "Xinxing County"
   },
+  "Xinyi City": {
+    "name:en": "Xinyi City",
+    "wikipedia:en": "Xinyi, Guangdong"
+  },
   "Yangjiang City": {
     "name:en": "Yangjiang City"
   },
@@ -1135,6 +1152,9 @@
   },
   "Yukon": {
     "ISO3166-2": "CA-YT"
+  },
+  "Yunfu City": {
+    "name:en": "Yunfu City"
   },
   "Zambia": {
     "ISO3166-1": "ZM"
