@@ -2074,6 +2074,13 @@
       "id": "Jordan"
     }
   ],
+  "Asia/Anadyr": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Chukotka"
+    }
+  ],
   "Asia/Aqtobe": [
     {
       "op": "init",
@@ -2119,8 +2126,12 @@
   "Asia/Barnaul": [
     {
       "op": "init",
-      "source": "efele",
-      "id": "Asia/Barnaul"
+      "source": "overpass",
+      "id": "Altai Krai"
+    }, {
+      "op": "union",
+      "source": "overpass",
+      "id": "Altai Republic"
     }
   ],
   "Asia/Beirut": [
@@ -2147,8 +2158,8 @@
   "Asia/Chita": [
     {
       "op": "init",
-      "source": "efele",
-      "id": "Asia/Chita"
+      "source": "overpass",
+      "id": "Zabaykalsk"
     }
   ],
   "Asia/Choibalsan": [
@@ -2328,8 +2339,12 @@
   "Asia/Irkutsk": [
     {
       "op": "init",
-      "source": "efele",
-      "id": "Asia/Irkutsk"
+      "source": "overpass",
+      "id": "Irkutsk"
+    }, {
+      "op": "union",
+      "source": "overpass",
+      "id": "Buryatia"
     }
   ],
   "Asia/Jakarta": [
@@ -2388,6 +2403,13 @@
       "id": "Afghanistan"
     }
   ],
+  "Asia/Kamchatka": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Kamchatka"
+    }
+  ],
   "Asia/Karachi": [
     {
       "op": "init",
@@ -2412,8 +2434,12 @@
   "Asia/Khandyga": [
     {
       "op": "init",
-      "source": "efele",
-      "id": "Asia/Khandyga"
+      "source": "overpass",
+      "id": "Tomponsky"
+    }, {
+      "op": "union",
+      "source": "overpass",
+      "id": "Ust-Maysky"
     }
   ],
   "Asia/Kolkata": [
@@ -2421,6 +2447,21 @@
       "op": "init",
       "source": "overpass",
       "id": "India"
+    }
+  ],
+  "Asia/Krasnoyarsk": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Krasnoyarsk"
+    }, {
+      "op": "union",
+      "source": "overpass",
+      "id": "Khakassia"
+    }, {
+      "op": "union",
+      "source": "overpass",
+      "id": "Tuva"
     }
   ],
   "Asia/Kuala_Lumpur": [
@@ -2457,6 +2498,13 @@
       "op": "init",
       "source": "overpass",
       "id": "Macau"
+    }
+  ],
+  "Asia/Magadan": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Magadan"
     }
   ],
   "Asia/Makassar": [
@@ -2518,22 +2566,30 @@
   "Asia/Novokuznetsk": [
     {
       "op": "init",
-      "source": "efele",
-      "id": "Asia/Novokuznetsk"
+      "source": "overpass",
+      "id": "Kemerovo"
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "Altai Krai"
     }
   ],
   "Asia/Novosibirsk": [
     {
       "op": "init",
-      "source": "efele",
-      "id": "Asia/Novosibirsk"
+      "source": "overpass",
+      "id": "Novosibirsk"
     }
   ],
   "Asia/Omsk": [
     {
       "op": "init",
-      "source": "efele",
-      "id": "Asia/Omsk"
+      "source": "overpass",
+      "id": "Omsk"
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "Yekaterinburg-tz"
     }
   ],
   "Asia/Oral": [
@@ -2587,6 +2643,17 @@
       "op": "init",
       "source": "overpass",
       "id": "Saudi Arabia"
+    }
+  ],
+  "Asia/Sakhalin": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Sakhalin"
+    }, {
+      "op": "intersect",
+      "source": "manual-polygon",
+      "data": [[[152,52],[138,40],[140,61],[152,52]]]
     }
   ],
   "Asia/Seoul": [
@@ -2654,6 +2721,13 @@
       "id": "Singapore"
     }
   ],
+  "Asia/Srednekolymsk": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Srednekolymsk-tz"
+    }
+  ],
   "Asia/Taipei": [
     {
       "op": "init",
@@ -2692,8 +2766,8 @@
   "Asia/Tomsk": [
     {
       "op": "init",
-      "source": "efele",
-      "id": "Asia/Tomsk"
+      "source": "overpass",
+      "id": "Tomsk"
     }
   ],
   "Asia/Ulaanbaatar": [
@@ -2757,8 +2831,20 @@
   "Asia/Ust-Nera": [
     {
       "op": "init",
-      "source": "efele",
-      "id": "Asia/Ust-Nera"
+      "source": "overpass",
+      "id": "Sakhalin"
+    }, {
+      "op": "intersect",
+      "source": "manual-polygon",
+      "data": [[[140,41],[153,50],[155,43],[140,41]]]
+    }, {
+      "op": "union",
+      "source": "overpass",
+      "id": "Oymyakonsky"
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "Srednekolymsk-tz"
     }
   ],
   "Asia/Vientiane": [
@@ -2766,6 +2852,63 @@
       "op": "init",
       "source": "overpass",
       "id": "Laos"
+    }
+  ],
+  "Asia/Vladivostok": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Sakha Republic"
+    }, {
+      "op": "intersect",
+      "source": "manual-polygon",
+      "data": [[[141,72.1],[107,78],[174,78],[141,72.1]]]
+    }, {
+      "op": "union",
+      "source": "overpass",
+      "id": "Vladivostok-tz"
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "Oymyakonsky"
+    }
+  ],
+  "Asia/Yakutsk": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Sakha Republic"
+    }, {
+      "op": "intersect",
+      "source": "manual-polygon",
+      "data": [[[137,35],[142,71],[112,77],[46,29],[137,35]]]
+    }, {
+      "op": "union",
+      "source": "overpass",
+      "id": "Amur"
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "Vladivostok-tz"
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "Tomponsky"
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "Ust-Maysky"
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "Srednekolymsk-tz"
+    }
+  ],
+  "Asia/Yekaterinburg": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Yekaterinburg-tz"
     }
   ],
   "Asia/Yerevan": [
@@ -2895,6 +3038,21 @@
       "op": "init",
       "source": "overpass",
       "id": "Andorra"
+    }
+  ],
+  "Europe/Astrakhan": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Astrakhan"
+    }, {
+      "op": "union",
+      "source": "manual-polygon",
+      "data": [[[46.9,45.6],[47.6,46.2],[46.6,46.2],[46.9,45.6]]]
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "Moscow-tz"
     }
   ],
   "Europe/Athens": [
@@ -3028,8 +3186,12 @@
   "Europe/Kirov": [
     {
       "op": "init",
-      "source": "efele",
-      "id": "Europe/Kirov"
+      "source": "overpass",
+      "id": "Kirov"
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "Yekaterinburg-tz"
     }
   ],
   "Europe/Lisbon": [
@@ -3096,6 +3258,33 @@
       "id": "Monaco"
     }
   ],
+  "Europe/Moscow": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Moscow-tz"
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "Kirov"
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "Kirov"
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "Saratov"
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "Volgograd"
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "Crimea"
+    }
+  ],
   "Europe/Oslo": [
     {
       "op": "init",
@@ -3149,8 +3338,12 @@
   "Europe/Samara": [
     {
       "op": "init",
-      "source": "efele",
-      "id": "Europe/Samara"
+      "source": "overpass",
+      "id": "Samara"
+    }, {
+      "op": "union",
+      "source": "overpass",
+      "id": "Udmurtia"
     }
   ],
   "Europe/San_Marino": [
@@ -3165,6 +3358,13 @@
       "op": "init",
       "source": "overpass",
       "id": "Bosnia and Herzegovina"
+    }
+  ],
+  "Europe/Simferopol": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Crimea"
     }
   ],
   "Europe/Skopje": [
@@ -3205,8 +3405,8 @@
   "Europe/Ulyanovsk": [
     {
       "op": "init",
-      "source": "efele",
-      "id": "Europe/Ulyanovsk"
+      "source": "overpass",
+      "id": "Ulyanovsk"
     }
   ],
   "Europe/Uzhgorod": [
@@ -3247,8 +3447,12 @@
   "Europe/Volgograd": [
     {
       "op": "init",
-      "source": "efele",
-      "id": "Europe/Volgograd"
+      "source": "overpass",
+      "id": "Saratov"
+    }, {
+      "op": "union",
+      "source": "overpass",
+      "id": "Volgograd"
     }
   ],
   "Europe/Warsaw": [

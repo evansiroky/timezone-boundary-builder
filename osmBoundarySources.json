@@ -21,6 +21,15 @@
   "Algeria": {
     "ISO3166-1": "DZ"
   },
+  "Altai Krai": {
+    "ISO3166-2": "RU-ALT"
+  },
+  "Altai Republic": {
+    "ISO3166-2": "RU-AL"
+  },
+  "Amur": {
+    "ISO3166-2": "RU-AMU"
+  },
   "Andorra": {
     "ISO3166-1": "AD"
   },
@@ -41,6 +50,9 @@
   },
   "Aruba": {
     "ISO3166-1": "AW"
+  },
+  "Astrakhan": {
+    "ISO3166-2": "RU-AST"
   },
   "Australia": {
     "ISO3166-1": "AU"
@@ -147,6 +159,9 @@
   "Burundi": {
     "ISO3166-1": "BI"
   },
+  "Buryatia": {
+    "ISO3166-2": "RU-BU"
+  },
   "Calhoun County, FL": {
     "name": "Calhoun County",
     "nist:state_fips": "12"
@@ -208,6 +223,9 @@
   "Chubut": {
     "ISO3166-2": "AR-U"
   },
+  "Chukotka": {
+    "ISO3166-2": "RU-CHU"
+  },
   "Chuuk": {
     "ISO3166-2": "FM-TRK"
   },
@@ -248,6 +266,9 @@
   },
   "Creston-tz": {
     "timezone": "America/Creston"
+  },
+  "Crimea": {
+    "name:en": "Crimean Federal District"
   },
   "Croatia": {
     "ISO3166-1": "HR"
@@ -475,6 +496,9 @@
   "Ireland": {
     "ISO3166-1": "IE"
   },
+  "Irkutsk": {
+    "ISO3166-2": "RU-IRK"
+  },
   "Iron County, MI": {
     "name": "Iron County",
     "nist:state_fips": "26"
@@ -517,6 +541,9 @@
   "Kaiping City": {
     "name:en": "Kaiping City"
   },
+  "Kamchatka": {
+    "ISO3166-2": "RU-KAM"
+  },
   "Kasai": {
     "name:en": "Kasai",
     "admin_level": "4"
@@ -524,14 +551,26 @@
   "Kashgar-tz": {
     "timezone": "Asia/Kashgar"
   },
+  "Kemerovo": {
+    "ISO3166-2": "RU-KEM"
+  },
   "Kenya": {
     "ISO3166-1": "KE"
+  },
+  "Khakassia": {
+    "ISO3166-2": "RU-KK"
   },
   "Kiribati": {
     "ISO3166-1": "KI"
   },
+  "Kirov": {
+    "ISO3166-2": "RU-KIR"
+  },
   "Kosrae": {
     "ISO3166-2": "FM-KSA"
+  },
+  "Krasnoyarsk": {
+    "ISO3166-2": "RU-KYA"
   },
   "Kuwait": {
     "ISO3166-1": "KW"
@@ -590,6 +629,9 @@
   },
   "Madagascar": {
     "ISO3166-1": "MG"
+  },
+  "Magadan": {
+    "ISO3166-2": "RU-MAG"
   },
   "Malawi": {
     "ISO3166-1": "MW"
@@ -688,6 +730,9 @@
     "name": "Morton County",
     "nist:state_fips": "38"
   },
+  "Moscow-tz": {
+    "timezone": "Europe/Moscow"
+  },
   "Mozambique": {
     "ISO3166-1": "MZ"
   },
@@ -745,6 +790,9 @@
   "Norway": {
     "ISO3166-1": "NO"
   },
+  "Novosibirsk": {
+    "ISO3166-2": "RU-NVS"
+  },
   "Ohio County, IN": {
     "name": "Ohio County",
     "nist:state_fips": "18"
@@ -759,9 +807,15 @@
   "Oman": {
     "ISO3166-1": "OM"
   },
+  "Omsk": {
+    "ISO3166-2": "RU-OMS"
+  },
   "Overton County, TN": {
     "name": "Overton County",
     "nist:state_fips": "47"
+  },
+  "Oymyakonsky": {
+    "name:en": "Oymyakonsky Ulus"
   },
   "Pakistan": {
     "ISO3166-1": "PK"
@@ -892,6 +946,15 @@
   "Salta": {
     "ISO3166-2": "AR-A"
   },
+  "Sakha Republic": {
+    "ISO3166-2": "RU-SA"
+  },
+  "Sakhalin": {
+    "ISO3166-2": "RU-SAK"
+  },
+  "Samara": {
+    "ISO3166-2": "RU-SAM"
+  },
   "Samoa": {
     "ISO3166-1": "WS"
   },
@@ -916,6 +979,9 @@
   },
   "Santiago del Estero": {
     "ISO3166-2": "AR-G"
+  },
+  "Saratov": {
+    "ISO3166-2": "RU-SAR"
   },
   "Saudi Arabia": {
     "ISO3166-1": "SA"
@@ -981,6 +1047,9 @@
   },
   "Spain": {
     "ISO3166-1": "ES"
+  },
+  "Srednekolymsk-tz": {
+    "timezone": "Asia/Srednekolymsk"
   },
   "Sri Lanka": {
     "ISO3166-1": "LK"
@@ -1051,6 +1120,12 @@
   "Tokelau": {
     "ISO3166-1": "TK"
   },
+  "Tomponsky": {
+    "name:en": "Tomponsky Ulus"
+  },
+  "Tomsk": {
+    "ISO3166-2": "RU-TOM"
+  },
   "Tonga": {
     "ISO3166-1": "TO"
   },
@@ -1079,11 +1154,20 @@
   "Turks and Caicos Islands": {
     "ISO3166-1": "TC"
   },
+  "Tuva": {
+    "ISO3166-2": "RU-TY"
+  },
   "Tuvalu": {
     "ISO3166-1": "TV"
   },
+  "Udmurtia": {
+    "ISO3166-2": "RU-UD"
+  },
   "Uganda": {
     "ISO3166-1": "UG"
+  },
+  "Ulyanovsk": {
+    "ISO3166-2": "RU-ULY"
   },
   "United Arab Emirates": {
     "ISO3166-1": "AE"
@@ -1099,6 +1183,9 @@
   },
   "Urumqi-tz": {
     "timezone": "Asia/Urumqi"
+  },
+  "Ust-Maysky": {
+    "name:en": "Ust-Maysky Ulus"
   },
   "Vancouver-tz": {
     "timezone": "America/Vancouver"
@@ -1117,6 +1204,12 @@
   },
   "Vincennes-tz": {
     "timezone": "America/Indiana/Vincennes"
+  },
+  "Vladivostok-tz": {
+    "timezone": "Asia/Vladivostok"
+  },
+  "Volgograd": {
+    "ISO3166-2": "RU-VGG"
   },
   "Wayne County, KY": {
     "name": "Wayne County",
@@ -1147,6 +1240,9 @@
   "Yap": {
     "ISO3166-2": "FM-YAP"
   },
+  "Yekaterinburg-tz": {
+    "timezone": "Asia/Yekaterinburg"
+  },
   "Yemen": {
     "ISO3166-1": "YE"
   },
@@ -1155,6 +1251,9 @@
   },
   "Yunfu City": {
     "name:en": "Yunfu City"
+  },
+  "Zabaykalsk": {
+    "ISO3166-2": "RU-ZAB"
   },
   "Zambia": {
     "ISO3166-1": "ZM"
