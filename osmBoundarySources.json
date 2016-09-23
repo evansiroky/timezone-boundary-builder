@@ -9,6 +9,9 @@
   "Afghanistan": {
     "ISO3166-1": "AF"
   },
+  "Aktobe": {
+    "ISO3166-2": "KZ-AKT"
+  },
   "Alabama": {
     "ISO3166-2": "US-AL"
   },
@@ -551,6 +554,9 @@
   "Kashgar-tz": {
     "timezone": "Asia/Kashgar"
   },
+  "Kazakhstan": {
+    "ISO3166-1": "KZ"
+  },
   "Kemerovo": {
     "ISO3166-2": "RU-KEM"
   },
@@ -569,6 +575,9 @@
   "Kosrae": {
     "ISO3166-2": "FM-KSA"
   },
+  "Kostanay": {
+    "ISO3166-2": "KZ-KUS"
+  },
   "Krasnoyarsk": {
     "ISO3166-2": "RU-KYA"
   },
@@ -577,6 +586,9 @@
   },
   "Kyrgyzstan": {
     "ISO3166-1": "KG"
+  },
+  "Kyzylorda": {
+    "ISO3166-2": "KZ-KZY"
   },
   "La Pampa": {
     "ISO3166-2": "AR-L"
@@ -1217,6 +1229,9 @@
   },
   "West Kalimantan": {
     "name:en": "West Kalimantan"
+  },
+  "West Kazakhstan": {
+    "ISO3166-2": "KZ-ZAP"
   },
   "West Wendover": {
     "name": "West Wendover"

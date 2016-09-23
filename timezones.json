@@ -2063,8 +2063,24 @@
   "Asia/Almaty": [
     {
       "op": "init",
-      "source": "efele",
-      "id": "Asia/Almaty"
+      "source": "overpass",
+      "id": "Kazakhstan"
+    }, {
+      "op": "difference",
+      "source": "manual-polygon",
+      "data": [[[57,52],[57,26],[23,56],[57,52]]]
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "Kostanay"
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "Aktobe"
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "Kyzylorda"
     }
   ],
   "Asia/Amman": [
@@ -2081,11 +2097,30 @@
       "id": "Chukotka"
     }
   ],
+  "Asia/Aqtau": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Kazakhstan"
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "West Kazakhstan"
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "Aktobe"
+    }, {
+      "op": "intersect",
+      "source": "manual-polygon",
+      "data": [[[57,52],[57,26],[23,56],[57,52]]]
+    }
+  ],
   "Asia/Aqtobe": [
     {
       "op": "init",
-      "source": "efele",
-      "id": "Asia/Aqtobe"
+      "source": "overpass",
+      "id": "Aktobe"
     }
   ],
   "Asia/Ashgabat": [
@@ -2595,8 +2630,8 @@
   "Asia/Oral": [
     {
       "op": "init",
-      "source": "efele",
-      "id": "Asia/Oral"
+      "source": "overpass",
+      "id": "West Kazakhstan"
     }
   ],
   "Asia/Phnom_Penh": [
@@ -2629,6 +2664,17 @@
       "op": "init",
       "source": "overpass",
       "id": "Qatar"
+    }
+  ],
+  "Asia/Qyzylorda": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Kostanay"
+    }, {
+      "op": "union",
+      "source": "overpass",
+      "id": "Kyzylorda"
     }
   ],
   "Asia/Rangoon": [
@@ -3283,6 +3329,10 @@
       "op": "difference",
       "source": "overpass",
       "id": "Crimea"
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "Yekaterinburg-tz"
     }
   ],
   "Europe/Oslo": [
