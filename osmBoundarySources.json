@@ -967,6 +967,9 @@
   "Samara": {
     "ISO3166-2": "RU-SAM"
   },
+  "Samarkand": {
+    "timezone": "Asia/Samarkand"
+  },
   "Samoa": {
     "ISO3166-1": "WS"
   },
@@ -1198,6 +1201,9 @@
   },
   "Ust-Maysky": {
     "name:en": "Ust-Maysky Ulus"
+  },
+  "Uzbekistan": {
+    "ISO3166-1": "UZ"
   },
   "Vancouver-tz": {
     "timezone": "America/Vancouver"

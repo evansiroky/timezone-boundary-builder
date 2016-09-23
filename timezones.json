@@ -2181,6 +2181,10 @@
       "op": "init",
       "source": "overpass",
       "id": "Kyrgyzstan"
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "Uzbekistan"
     }
   ],
   "Asia/Brunei": [
@@ -2307,6 +2311,10 @@
       "op": "init",
       "source": "overpass",
       "id": "Tajikistan"
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "Uzbekistan"
     }
   ],
   "Asia/Gaza": [
@@ -2691,6 +2699,13 @@
       "id": "Saudi Arabia"
     }
   ],
+  "Asia/Samarkand": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Samarkand"
+    }
+  ],
   "Asia/Sakhalin": [
     {
       "op": "init",
@@ -2779,6 +2794,17 @@
       "op": "init",
       "source": "overpass",
       "id": "Republic of China"
+    }
+  ],
+  "Asia/Tashkent": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Uzbekistan"
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "Samarkand"
     }
   ],
   "Asia/Tbilisi": [
