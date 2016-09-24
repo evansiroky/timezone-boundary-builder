@@ -550,6 +550,9 @@
   "Kaiping City": {
     "name:en": "Kaiping City"
   },
+  "Kaliningrad": {
+    "ISO3166-2": "RU-KGD"
+  },
   "Kamchatka": {
     "ISO3166-2": "RU-KAM"
   },
@@ -1205,6 +1208,9 @@
   "Ulyanovsk": {
     "ISO3166-2": "RU-ULY"
   },
+  "Ukraine": {
+    "ISO3166-1": "UA"
+  },
   "United Arab Emirates": {
     "ISO3166-1": "AE"
   },
@@ -1306,8 +1312,14 @@
   "Zabaykalsk": {
     "ISO3166-2": "RU-ZAB"
   },
+  "Zakarpattia": {
+    "ISO3166-2": "UA-21"
+  },
   "Zambia": {
     "ISO3166-1": "ZM"
+  },
+  "Zaporizhzhia": {
+    "ISO3166-2": "UA-23"
   },
   "Zavkhan": {
     "ISO3166-2": "MN-057"

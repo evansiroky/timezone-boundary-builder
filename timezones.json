@@ -3380,6 +3380,32 @@
       "id": "Jersey"
     }
   ],
+  "Europe/Kaliningrad": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Kaliningrad"
+    }
+  ],
+  "Europe/Kiev": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Ukraine"
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "Zaporizhzhia"
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "Crimea"
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "Zakarpattia"
+    }
+  ],
   "Europe/Kirov": [
     {
       "op": "init",
@@ -3620,8 +3646,8 @@
   "Europe/Uzhgorod": [
     {
       "op": "init",
-      "source": "efele",
-      "id": "Europe/Uzhgorod"
+      "source": "overpass",
+      "id": "Zakarpattia"
     }
   ],
   "Europe/Vaduz": [
@@ -3675,6 +3701,13 @@
       "op": "init",
       "source": "overpass",
       "id": "Croatia"
+    }
+  ],
+  "Europe/Zaporozhye": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Zaporizhzhia"
     }
   ],
   "Europe/Zurich": [
