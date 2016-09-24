@@ -60,6 +60,9 @@
   "Australia": {
     "ISO3166-1": "AU"
   },
+  "Australian Capital Territory": {
+    "ISO3166-2": "AU-ACT"
+  },
   "Austria": {
     "ISO3166-1": "AT"
   },
@@ -769,6 +772,9 @@
   "New Brunswick": {
     "ISO3166-2": "CA-NB"
   },
+  "New South Wales": {
+    "ISO3166-2": "AU-NSW"
+  },
   "New Zealand": {
     "ISO3166-1": "NZ"
   },
@@ -795,6 +801,9 @@
   },
   "Northern Rockies Regional Municipality": {
     "name": "Northern Rockies Regional Municipality"
+  },
+  "Northern Territory": {
+    "ISO3166-2": "AU-NT"
   },
   "Northwest Territories": {
     "ISO3166-2": "CA-NT"
@@ -898,6 +907,9 @@
   },
   "Quebec": {
     "ISO3166-2": "CA-QC"
+  },
+  "Queensland": {
+    "ISO3166-2": "AU-QLD"
   },
   "Rankin Inlet-tz": {
     "timezone": "America/Rankin_Inlet"
@@ -1054,6 +1066,9 @@
     "ISO3166-1": "ZA",
     "admin_level": "2"
   },
+  "South Australia": {
+    "ISO3166-2": "AU-SA"
+  },
   "South Georgia and the South Sandwich Islands": {
     "ISO3166-1": "GS"
   },
@@ -1109,6 +1124,9 @@
   },
   "Tanzania": {
     "name:en": "Tanzania"
+  },
+  "Tasmania": {
+    "ISO3166-2": "AU-TAS"
   },
   "Thailand": {
     "ISO3166-1": "TH",
@@ -1217,6 +1235,9 @@
   "Venezuela": {
     "ISO3166-1": "VE"
   },
+  "Victoria": {
+    "ISO3166-2": "AU-VIC"
+  },
   "Vietnam": {
     "ISO3166-1": "VN"
   },
@@ -1242,6 +1263,9 @@
   "West Wendover": {
     "name": "West Wendover"
   },
+  "Western Australia": {
+    "ISO3166-2": "AU-WA"
+  },
   "Western Sahara": {
     "ISO3166-1": "EH"
   },
@@ -1254,6 +1278,9 @@
   "Xinyi City": {
     "name:en": "Xinyi City",
     "wikipedia:en": "Xinyi, Guangdong"
+  },
+  "Yancowinna County": {
+    "name": "NSW Central Time Zone"
   },
   "Yangjiang City": {
     "name:en": "Yangjiang City"

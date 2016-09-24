@@ -3072,11 +3072,84 @@
       "id": "Falkland Islands"
     }
   ],
+  "Australia/Adelaide": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "South Australia"
+    }
+  ],
+  "Australia/Brisbane": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Queensland"
+    }, {
+      "op": "difference",
+      "source": "manual-polygon",
+      "data": [[[148.8437,-20.354],[148.834,-20.32],[148.88,-20.27],[148.7,-19.7],[149.1,-19.84],[149.5,-20.25],[149.6,-20.37],[149.12,-20.57],[149.03,-20.57],[148.95,-20.45],[148.86,-20.42],[148.842,-20.38],[148.8437,-20.354]]]
+    }
+  ],
   "Australia/Broken_Hill": [
     {
       "op": "init",
-      "source": "efele",
-      "id": "Australia/Broken_Hill"
+      "source": "overpass",
+      "id": "Yancowinna County"
+    }
+  ],
+  "Australia/Currie": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Australia"
+    }, {
+      "op": "intersect",
+      "source": "manual-polygon",
+      "data": [[[143,-39.2],[146,-39.2],[142.2,-41.5],[143,-39.2]]]
+    }
+  ],
+  "Australia/Darwin": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Northern Territory"
+    }
+  ],
+  "Australia/Eucla": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Western Australia"
+    }, {
+      "op": "intersect",
+      "source": "manual-polygon",
+      "data": [[[131,-31.3],[125.5,-31.3],[125.5,-35],[131,-31.3]]]
+    }
+  ],
+  "Australia/Hobart": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Tasmania"
+    }, {
+      "op": "difference",
+      "source": "manual-polygon",
+      "data": [[[143,-39.2],[146,-39.2],[142.2,-41.5],[143,-39.2]]]
+    }, {
+      "op": "difference",
+      "source": "manual-polygon",
+      "data": [[[159,-53],[156,-56],[162,-56],[159,-53]]]
+    }
+  ],
+  "Australia/Lindeman": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Queensland"
+    }, {
+      "op": "intersect",
+      "source": "manual-polygon",
+      "data": [[[148.8437,-20.354],[148.834,-20.32],[148.88,-20.27],[148.7,-19.7],[149.1,-19.84],[149.5,-20.25],[149.6,-20.37],[149.12,-20.57],[149.03,-20.57],[148.95,-20.45],[148.86,-20.42],[148.842,-20.38],[148.8437,-20.354]]]
     }
   ],
   "Australia/Lord_Howe": [
@@ -3088,6 +3161,47 @@
       "op": "intersect",
       "source": "manual-polygon",
       "data": [[[160,-33],[160,-31],[157,-31],[160,-33]]]
+    }
+  ],
+  "Australia/Melbourne": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Victoria"
+    }
+  ],
+  "Australia/Perth": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Western Australia"
+    }, {
+      "op": "difference",
+      "source": "manual-polygon",
+      "data": [[[131,-31.3],[125.5,-31.3],[125.5,-35],[131,-31.3]]]
+    }
+  ],
+  "Australia/Sydney": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "New South Wales"
+    }, {
+      "op": "union",
+      "source": "overpass",
+      "id": "Australian Capital Territory"
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "Yancowinna County"
+    }, {
+      "op": "difference",
+      "source": "manual-polygon",
+      "data": [[[160,-33],[160,-31],[157,-31],[160,-33]]]
+    }, {
+      "op": "union",
+      "source": "manual-polygon",
+      "data": [[[150.85,-35.07],[150.45,-35.09],[150.7,-35.3],[150.85,-35.07]]]
     }
   ],
   "Europe/Amsterdam": [
