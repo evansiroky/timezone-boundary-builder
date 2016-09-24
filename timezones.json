@@ -3348,6 +3348,17 @@
       "id": "Guernsey"
     }
   ],
+  "Europe/Helsinki": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Finland"
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "Åland Islands"
+    }
+  ],
   "Europe/Isle_of_Man": [
     {
       "op": "init",
@@ -3428,6 +3439,13 @@
       "op": "init",
       "source": "overpass",
       "id": "Malta"
+    }
+  ],
+  "Europe/Mariehamn": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Åland Islands"
     }
   ],
   "Europe/Minsk": [
