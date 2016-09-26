@@ -13,7 +13,7 @@ var osmBoundarySources = require('./osmBoundarySources.json'),
   zoneCfg = require('./timezones.json'),
   geoJsonReader = new jsts.io.GeoJSONReader(),
   geoJsonWriter = new jsts.io.GeoJSONWriter(),
-  efeleGeoms, efeleLookup = {}
+  distZones = {}
 
 var safeMkdir = function(dirname, callback) {
   fs.mkdir(dirname, function(err) {
@@ -23,21 +23,6 @@ var safeMkdir = function(dirname, callback) {
       callback(err)
     }
   })
-}
-
-var toArrayBuffer = function(buffer) {
-  var ab = new ArrayBuffer(buffer.length)
-  var view = new Uint8Array(ab)
-  for (var i = 0; i < buffer.length; ++i) {
-    view[i] = buffer[i]
-  }
-  return view
-}
-
-var extractToGeoJson = function(callback) {
-  shp(toArrayBuffer(fs.readFileSync('./downloads/tz_world_mp.zip')))
-    .then(function(geojson) { console.log('extract success'); return callback(null, geojson) })
-    .catch(function(e){ console.log('extract err', e); callback(e) })
 }
 
 debugGeo = function(op, a, b) {
@@ -157,16 +142,29 @@ var downloadOsmBoundary = function(boundaryId, boundaryCallback) {
   }, boundaryCallback)
 }
 
+var getTzDistFilename = function (tzid) {
+  return './dist/' + tzid.replace(/\//g, '__') + '.json'
+}
+
+/**
+ * Get the geometry of the requested source data
+ *
+ * @return {Object} geom  The geometry of the source
+ * @param {Object} source  An object representing the data source
+ *   must have `source` key and then either:
+ *     - `id` if from a file
+ *     - `id` if from a file
+ */
 var getDataSource = function(source) {
   var geoJson
-  if(source.source === 'efele') {
-    geoJson = efeleGeoms[efeleLookup[source.id]].geometry
-  } else if(source.source === 'overpass') {
+  if(source.source === 'overpass') {
     geoJson = require('./downloads/' + source.id + '.json')
   } else if(source.source === 'manual-polygon') {
     geoJson = polygon(source.data).geometry
   } else if(source.source === 'manual-multipolygon') {
     geoJson = multiPolygon(source.data).geometry
+  } else if(source.source === 'dist') {
+    geoJson = require(getTzDistFilename(source.id))
   } else {
     var err = new Error('unknown source: ' + source.source)
     throw err
@@ -198,12 +196,58 @@ var makeTimezoneBoundary = function(tzid, callback) {
       return cb(err)
     }
     cb()
-  }, function(err) {
+  },
+  function(err) {
     if(err) { return callback(err) }
-    fs.writeFile('./dist/' + tzid.replace(/\//g, '__') + '.json', 
-      geomToGeoJsonString(geom), 
+    fs.writeFile(getTzDistFilename(tzid),
+      geomToGeoJsonString(geom),
       callback)
   })
+}
+
+var loadDistZonesIntoMemory = function () {
+  console.log('load zones into memory')
+  var zones = Object.keys(zoneCfg),
+    tzid
+
+  for (var i = 0; i < zones.length; i++) {
+    tzid = zones[i]
+    distZones[tzid] = getDataSource({ source: 'dist', id: tzid })
+  }
+}
+
+var getDistZoneGeom = function (tzid) {
+  return distZones[tzid]
+}
+
+var validateTimezoneBoundaries = function () {
+  console.log('do validation')
+  var allZonesOk = true,
+    zones = Object.keys(zoneCfg),
+    compareTzid, tzid, zoneGeom
+
+  for (var i = 0; i < zones.length; i++) {
+    tzid = zones[i]
+    zoneGeom = getDistZoneGeom(tzid)
+
+    for (var j = i + 1; j < zones.length; j++) {
+      compareTzid = zones[j]
+
+      var compareZoneGeom = getDistZoneGeom(compareTzid)
+      if(zoneGeom.intersects(compareZoneGeom)) {
+        var intersectedGeom = debugGeo('intersection', zoneGeom, compareZoneGeom),
+          intersectedArea = intersectedGeom.getArea()
+
+        if(intersectedArea > 0.0001) {
+          console.log('Validation error: ' + tzid + ' intersects ' + compareTzid + ' area: ' + intersectedArea)
+          allZonesOk = false
+        }
+      }
+    }
+  }
+
+  return allZonesOk ? null : 'Zone validation unsuccessful'
+
 }
 
 async.auto({
@@ -215,43 +259,21 @@ async.auto({
     console.log('createing dist dir')
     safeMkdir('./dist', cb)
   },
-  getEfeleShapefile: ['makeDownloadsDir', function(results, cb) {
-    console.log('download efele.net shapefile')
-    var efeleFilename = './downloads/tz_world_mp.zip'
-    fetchIfNeeded(efeleFilename, cb, function() {
-      var file = fs.createWriteStream(efeleFilename)
-      http.get('http://efele.net/maps/tz/world/tz_world_mp.zip', function(response) {
-        response.pipe(file)
-        file
-          .on('finish', function() {
-            file.close(cb)
-          })
-          .on('error', cb)
-      })
-    })
-  }],
   getOsmBoundaries: ['makeDownloadsDir', function(results, cb) {
     console.log('downloading osm boundaries')
     async.eachSeries(Object.keys(osmBoundarySources), downloadOsmBoundary, cb)
   }],
-  extractEfeleNetShapefile: ['getOsmBoundaries', function(results, cb) {
-    console.log('extracting efele.net shapefile')
-    extractToGeoJson(cb)
-  }],
-  dictifyEfeleNetData: ['extractEfeleNetShapefile', function(results, cb) {
-    console.log('dictify efele.net')
-    efeleGeoms = results.extractEfeleNetShapefile.features
-    for (var i = efeleGeoms.length - 1; i >= 0; i--) {
-      var curTz = efeleGeoms[i]
-      efeleLookup[curTz.properties.TZID] = i
-    }
-    cb()
-  }],
-  createZones: ['makeDistDir', 'dictifyEfeleNetData', function(results, cb) {
+  createZones: ['makeDistDir', 'getOsmBoundaries', function(results, cb) {
     console.log('createZones')
     async.each(Object.keys(zoneCfg), makeTimezoneBoundary, cb)
   }],
-  mergeZones: ['createZones', function(results, cb) {
+  validateZones: ['createZones', function(results, cb) {
+    console.log('validating zones')
+    loadDistZonesIntoMemory()
+    cb(validateTimezoneBoundaries())
+  }],
+  mergeZones: ['validateZones', function(results, cb) {
+    // TODO: merge zones into single geojson file
     cb()
   }]
 }, function(err, results) {
