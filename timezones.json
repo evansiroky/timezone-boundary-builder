@@ -331,6 +331,10 @@
       "op": "init",
       "source": "overpass",
       "id": "Mozambique"
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "Malawi"
     }
   ],
   "Africa/Maseru": [
@@ -451,6 +455,10 @@
       "op": "intersect",
       "source": "manual-polygon",
       "data": [[[-162,77],[-162,48],[-141,48],[-141,77],[-162,77]]]
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "Yukon"
     }
   ],
   "America/Anguilla": [
@@ -552,6 +560,10 @@
       "op": "union",
       "source": "overpass",
       "id": "Formosa"
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "Uruguay"
     }
   ],
   "America/Argentina/Jujuy": [
@@ -827,6 +839,10 @@
       "op": "init",
       "source": "overpass",
       "id": "Coral Harbour-tz"
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "Iqaluit-tz"
     }
   ],
   "America/Costa_Rica": [
@@ -1119,7 +1135,7 @@
     }, {
       "op": "intersect",
       "source": "manual-polygon",
-      "data": [[[-112.6,28.5],[-112.55,28.2],[-110,26.3],[-109.2480469,26.316067],[-109,27],[-114,34],[-114.8069313,31.8166753],[-114.802,31.816],[-114.793,31.8198],[-114.787,31.8205],[-114.7645,31.8174],[-114.755,31.812],[-114.7455,31.804],[-114.739,31.795],[-114.732,31.777],[-114.707,31.757],[-114.658,31.729],[-114.623,31.7],[-112.88,29.4],[-112.6,28.5]]]
+      "data": [[[-112.6,28.5],[-112.55,28.2],[-111.5,27.6],[-110,26.3],[-109.2480469,26.316067],[-109,27],[-114,34],[-114.8069313,31.8166753],[-114.802,31.816],[-114.793,31.8198],[-114.787,31.8205],[-114.7645,31.8174],[-114.755,31.812],[-114.7455,31.804],[-114.739,31.795],[-114.732,31.777],[-114.707,31.757],[-114.658,31.729],[-114.623,31.7],[-112.88,29.4],[-112.6,28.5]]]
     }, {
       "op": "union",
       "source": "overpass",
@@ -2185,6 +2201,10 @@
       "op": "difference",
       "source": "overpass",
       "id": "Uzbekistan"
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "Tajikistan"
     }
   ],
   "Asia/Brunei": [
@@ -2437,6 +2457,10 @@
       "op": "init",
       "source": "overpass",
       "id": "Israel"
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "Palestinian Territories"
     }
   ],
   "Asia/Kabul": [
@@ -2490,6 +2514,10 @@
       "op": "init",
       "source": "overpass",
       "id": "India"
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "Bangladesh"
     }
   ],
   "Asia/Krasnoyarsk": [
@@ -2593,6 +2621,10 @@
       "op": "init",
       "source": "overpass",
       "id": "Oman"
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "United Arab Emirates"
     }
   ],
   "Asia/Nicosia": [
@@ -2773,6 +2805,10 @@
       "op": "difference",
       "source": "overpass",
       "id": "Macau"
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "Republic of China"
     }
   ],
   "Asia/Singapore": [
@@ -2981,6 +3017,14 @@
       "op": "init",
       "source": "overpass",
       "id": "Yekaterinburg-tz"
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "Udmurtia"
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "Samara"
     }
   ],
   "Asia/Yerevan": [
@@ -2988,6 +3032,10 @@
       "op": "init",
       "source": "overpass",
       "id": "Armenia"
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "Azerbaijan"
     }
   ],
   "Atlantic/Azores": [
@@ -3270,6 +3318,10 @@
       "id": "The Netherlands"
     }, {
       "op": "difference",
+      "source": "overpass",
+      "id": "Luxemburg"
+    }, {
+      "op": "difference",
       "source": "manual-polygon",
       "data": [[[8.7,47.75],[8.75,47.63],[8.6,47.7],[8.7,47.75]]]
     }
@@ -3479,6 +3531,10 @@
       "op": "init",
       "source": "overpass",
       "id": "Belarus"
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "Moscow-tz"
     }
   ],
   "Europe/Monaco": [
@@ -3493,10 +3549,6 @@
       "op": "init",
       "source": "overpass",
       "id": "Moscow-tz"
-    }, {
-      "op": "difference",
-      "source": "overpass",
-      "id": "Kirov"
     }, {
       "op": "difference",
       "source": "overpass",
@@ -3567,6 +3619,10 @@
       "op": "init",
       "source": "overpass",
       "id": "Italy"
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "France"
     }
   ],
   "Europe/Samara": [
