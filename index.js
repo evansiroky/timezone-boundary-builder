@@ -1,4 +1,5 @@
-var fs = require('fs'),
+var exec = require('child_process').exec,
+  fs = require('fs'),
   http = require('http')
 
 var async = require('async'),
@@ -80,6 +81,10 @@ var fetchIfNeeded = function(file, superCallback, fetchFn) {
 
 var geoJsonToGeom = function(geoJson) {
   return geoJsonReader.read(JSON.stringify(geoJson))
+}
+
+var geomToGeoJson = function (geom) {
+  return geoJsonWriter.write(geom)
 }
 
 var geomToGeoJsonString = function(geom) {
@@ -250,6 +255,26 @@ var validateTimezoneBoundaries = function () {
 
 }
 
+var combineAndWriteZones = function(callback) {
+  var stream = fs.createWriteStream('./dist/combined.json')
+  var zones = Object.keys(zoneCfg)
+
+  stream.write('{"type":"FeatureCollection","features":[')
+
+  for (var i = 0; i < zones.length; i++) {
+    if(i > 0) {
+      stream.write(',')
+    }
+    var feature = {
+      type: 'Feature',
+      properties: { tzid: zones[i] },
+      geometry: geomToGeoJson(getDistZoneGeom(zones[i]))
+    }
+    stream.write(JSON.stringify(feature))
+  }
+  stream.end(']}', callback)
+}
+
 async.auto({
   makeDownloadsDir: function(cb) {
     console.log('creating downloads dir')
@@ -273,8 +298,19 @@ async.auto({
     cb(validateTimezoneBoundaries())
   }],
   mergeZones: ['validateZones', function(results, cb) {
-    // TODO: merge zones into single geojson file
-    cb()
+    console.log('merge zones')
+    combineAndWriteZones(cb)
+  }],
+  zipGeoJson: ['mergeZones', function (results, cb) {
+    console.log('zip geojson')
+    exec('zip dist/timezones.geojson.zip dist/combined.json', cb)
+  }],
+  makeShapefile: ['mergeZones', function (results, cb) {
+    console.log('convert from geojson to shapefile')
+    exec('ogr2ogr -nlt MULTIPOLYGON dist/combined_shapefile.shp dist/combined.json OGRGeoJSON', function (err, stdout, stderr) {
+      if(err) { return cb(err) }
+      exec('zip dist/timezones.shapefile.zip dist/combined_shapefile.*', cb)
+    })
   }]
 }, function(err, results) {
   console.log('done')
