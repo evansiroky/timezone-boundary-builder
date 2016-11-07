@@ -8,7 +8,7 @@ There are two config files that describe the boundary building process.  The `os
 
 ### Special note regarding the Overpass API
 
-Although the code currently queries the publicly available overpass API, this is not recommended because you will get throttled really quickly!  I was able to get away with this because I worked on extracting pieces of data over a few months.  In the future, I hope to make a docker file that downloads a planet dump and starts a local version of the Overpass API to extract the data.
+The code does query the publicly available overpass API, but it self-throttles the making of requests to have a minimum of 4 seconds gap between requests.  If the Overpass API throttles the download, then the gap will be increased exponentionally.
 
 ### Running the project
 

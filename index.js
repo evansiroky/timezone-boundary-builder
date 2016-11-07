@@ -3,6 +3,7 @@ var fs = require('fs')
 
 var asynclib = require('async')
 var jsts = require('jsts')
+var rimraf = require('rimraf')
 var multiPolygon = require('turf-multipolygon')
 var overpass = require('query-overpass')
 var polygon = require('turf-polygon')
@@ -12,6 +13,8 @@ var zoneCfg = require('./timezones.json')
 var geoJsonReader = new jsts.io.GeoJSONReader()
 var geoJsonWriter = new jsts.io.GeoJSONWriter()
 var distZones = {}
+var minRequestGap = 4
+var curRequestGap = 4
 
 var safeMkdir = function (dirname, callback) {
   fs.mkdir(dirname, function (err) {
@@ -109,7 +112,25 @@ var downloadOsmBoundary = function (boundaryId, boundaryCallback) {
     downloadFromOverpass: function (cb) {
       console.log('downloading from overpass')
       fetchIfNeeded(boundaryFilename, boundaryCallback, function () {
-        overpass(query, cb, { flatProperties: true })
+        var overpassResponseHandler = function (err, data) {
+          if (err) {
+            console.log(err)
+            console.log('Increasing overpass request gap')
+            curRequestGap *= 2
+            makeQuery()
+          } else {
+            console.log('Success, decreasing overpass request gap')
+            curRequestGap = Math.max(minRequestGap, curRequestGap / 2)
+            cb(null, data)
+          }
+        }
+        var makeQuery = function () {
+          console.log('waiting ' + curRequestGap + ' seconds')
+          setTimeout(function () {
+            overpass(query, overpassResponseHandler, { flatProperties: true })
+          }, curRequestGap * 1000)
+        }
+        makeQuery()
       })
     },
     validateOverpassResult: ['downloadFromOverpass', function (results, cb) {
@@ -301,6 +322,8 @@ asynclib.auto({
   }],
   makeShapefile: ['mergeZones', function (results, cb) {
     console.log('convert from geojson to shapefile')
+    rimraf.sync('dist/dist')
+    rimraf.sync('dist/combined_shapefile.*')
     exec('ogr2ogr -nlt MULTIPOLYGON dist/combined_shapefile.shp dist/combined.json OGRGeoJSON', function (err, stdout, stderr) {
       if (err) { return cb(err) }
       exec('zip dist/timezones.shapefile.zip dist/combined_shapefile.*', cb)
