@@ -13,9 +13,10 @@
   "author": "Evan Siroky",
   "license": "MIT",
   "dependencies": {
-    "async": "^2.0.0-rc.5",
+    "async": "^2.1.2",
     "jsts": "^1.2.1",
     "query-overpass": "^1.1.0",
+    "rimraf": "^2.5.4",
     "shpjs": "^3.3.2",
     "turf-multipolygon": "^1.0.1",
     "turf-polygon": "^1.0.3"

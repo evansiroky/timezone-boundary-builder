@@ -251,6 +251,9 @@
   "Congo-Brazzaville": {
     "ISO3166-1": "CG"
   },
+  "Congo-Kinshasa": {
+    "ISO3166-1": "CD"
+  },
   "Cook Islands": {
     "ISO3166-1": "CK"
   },
@@ -277,7 +280,7 @@
     "timezone": "America/Creston"
   },
   "Crimea": {
-    "name:en": "Crimean Federal District"
+    "name:en": "Republic of Crimea"
   },
   "Croatia": {
     "ISO3166-1": "HR"
@@ -466,7 +469,7 @@
     "nist:state_fips": "21"
   },
   "Harrison County, IN": {
-    "name": "Harrison  County",
+    "name": "Harrison County",
     "nist:state_fips": "18"
   },
   "Honduras": {
@@ -1035,6 +1038,9 @@
     "name": "Sequatchie County",
     "nist:state_fips": "47"
   },
+  "Sevastopol": {
+    "name:en": "Sevastopol"
+  },
   "Seychelles": {
     "ISO3166-1": "SC"
   },
@@ -1081,6 +1087,9 @@
   "South Korea": {
     "ISO3166-1": "KR"
   },
+  "South Sudan": {
+    "ISO3166-1": "SS"
+  },
   "Spain": {
     "ISO3166-1": "ES"
   },
@@ -1124,9 +1133,6 @@
   },
   "Tajikistan": {
     "ISO3166-1": "TJ"
-  },
-  "Taishan City": {
-    "name:en": "Taishan City"
   },
   "Tanzania": {
     "name:en": "Tanzania"
@@ -1217,6 +1223,9 @@
   "United Kingdom": {
     "ISO3166-1": "GB"
   },
+  "United Nations Buffer Zone": {
+    "name": "United Nations Buffer Zone"
+  },
   "United States of America": {
     "ISO3166-1": "US"
   },
@@ -1280,6 +1289,9 @@
   },
   "Winnipeg-tz": {
     "timezone": "America/Winnipeg"
+  },
+  "Xinhui District": {
+    "name:en": "Xinhui District"
   },
   "Xinxing County": {
     "name:en": "Xinxing County"
