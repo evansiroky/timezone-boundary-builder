@@ -2,13 +2,15 @@
 
 A tool to extract data from Open Street Map (OSM) to build the boundaries of the world's timezones that includes territorial waters.
 
+**[Download the data from the releases](https://github.com/evansiroky/timezone-boundary-builder/releases)**
+
 ## How does it work?
 
 There are two config files that describe the boundary building process.  The `osmBoundarySources.json` file lists all of the needed boundaries to extract via queries to the Overpass API.  The `timezones.json` file lists all of the timezones and various operations to perform to build the boundaries.  The `index.js` file downloads all of the required geometries, builds the specified geometries, validates that there aren't large areas of overlap, outputs one huge geojson file, and finally zips up the geojson file using the `zip` cli and also converts the geojson to a shapefile using the `ogr2ogr` cli.  See the releases for the data.
 
 ### Special note regarding the Overpass API
 
-The code does query the publicly available overpass API, but it self-throttles the making of requests to have a minimum of 4 seconds gap between requests.  If the Overpass API throttles the download, then the gap will be increased exponentionally.
+The code does query the publicly available overpass API, but it self-throttles the making of requests to have a minimum of 4 seconds gap between requests.  If the Overpass API throttles the download, then the gap will be increased exponentially.
 
 ### Running the project
 
@@ -28,15 +30,15 @@ Pull requests are welcome!  Please follow the guidelines listed below:
 
 ### Improvements to code
 
-Will be approved subject to code review.  As noted, I hope to create a docker file that starts a local instance of the Overpass API to use to extract data from OSM.  I also hope to add tests in the future to expedite the code review process.  Pull requests are welcome for those two items as well!
+Will be approved subject to code review.  I hope to add tests in the future to expedite the code review process.
 
 ### Changes to timezone boundary configuration
 
-Any change to the boundary of existing timezones must have some explanation of why the change is necessary.  If there are official, publicly available documents of administrative areas describing their timezone boundary please link to them when making your case.  All changes involving an administrative area changing their observed time should instead be sent to the [timezone database project](https://www.iana.org/time-zones).
+Any change to the boundary of existing timezones must have some explanation of why the change is necessary.  If there are official, publicly available documents of administrative areas describing their timezone boundary please link to them when making your case.  All changes involving an administrative area changing their observed time should instead be sent to the [timezone database](https://www.iana.org/time-zones).
 
 ## Future data releases
 
-I hope to at least keep up with updates produced from the timezone database.
+This project tries to keep up with updates produced from the [timezone database](https://www.iana.org/time-zones) that include new zones.
 
 In my opinion, the geographic data of the timezone boundaries should reside completely within OSM.  In the future, it may be possible to be able to retrieve all of this data directly from OSM by extracting all relations with a `timezone` tag.  However, there is some controversy as to whether timezone boundary data should be in OSM ([see email thread](https://lists.openstreetmap.org/pipermail/talk-us/2016-May/thread.html#16331)).
 
@@ -44,9 +46,10 @@ In my opinion, the geographic data of the timezone boundaries should reside comp
 
 Thanks to following people whose open-source and open-data contributions have made this project possible:
 
-- all the maintainers of the timezone database.  
+- All the maintainers of the [timezone database](https://www.iana.org/time-zones).  
 - Eric Muller for constructing and maintaining the timezone shapefile at [efele.net](http://efele.net/maps/tz/world/).  
 - The [OSM contributor Shinigami](https://www.openstreetmap.org/user/Shinigami) for making lots of edits in OSM of various timezone boundaries.
+- [Björn Harrtell](https://github.com/bjornharrtell) for all his work and help with [jsts](https://github.com/bjornharrtell/jsts).
 
 ## Licenses
 

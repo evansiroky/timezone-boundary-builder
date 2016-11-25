@@ -2117,19 +2117,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Kazakhstan"
-    }, {
-      "op": "difference",
-      "source": "overpass",
-      "id": "West Kazakhstan"
-    }, {
-      "op": "difference",
-      "source": "overpass",
-      "id": "Aktobe"
-    }, {
-      "op": "intersect",
-      "source": "manual-polygon",
-      "data": [[[57,52],[57,26],[23,56],[57,52]]]
+      "id": "Mangystau Region"
     }
   ],
   "Asia/Aqtobe": [
@@ -2144,6 +2132,13 @@
       "op": "init",
       "source": "overpass",
       "id": "Turkmenistan"
+    }
+  ],
+  "Asia/Atyrau": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Atyrau Region"
     }
   ],
   "Asia/Baghdad": [
@@ -3685,6 +3680,13 @@
       "id": "Bosnia and Herzegovina"
     }
   ],
+  "Europe/Saratov": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Saratov"
+    }
+  ],
   "Europe/Simferopol": [
     {
       "op": "init",
@@ -3776,10 +3778,6 @@
   "Europe/Volgograd": [
     {
       "op": "init",
-      "source": "overpass",
-      "id": "Saratov"
-    }, {
-      "op": "union",
       "source": "overpass",
       "id": "Volgograd"
     }

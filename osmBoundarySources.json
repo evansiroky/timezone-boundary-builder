@@ -57,6 +57,9 @@
   "Astrakhan": {
     "ISO3166-2": "RU-AST"
   },
+  "Atyrau Region": {
+    "ISO3166-2": "KZ-ATY"
+  },
   "Australia": {
     "ISO3166-1": "AU"
   },
@@ -677,6 +680,9 @@
   },
   "Manaus-tz": {
     "timezone": "America/Manaus"
+  },
+  "Mangystau Region": {
+    "ISO3166-2": "KZ-MAN"
   },
   "Marion County, TN": {
     "name": "Marion County",
