@@ -1,12 +1,13 @@
 var exec = require('child_process').exec
 var fs = require('fs')
 
+var helpers = require('@turf/helpers')
+var multiPolygon = helpers.multipolygon
+var polygon = helpers.polygon
 var asynclib = require('async')
 var jsts = require('jsts')
 var rimraf = require('rimraf')
-var multiPolygon = require('turf-multipolygon')
 var overpass = require('query-overpass')
-var polygon = require('turf-polygon')
 
 var osmBoundarySources = require('./osmBoundarySources.json')
 var zoneCfg = require('./timezones.json')
@@ -79,7 +80,13 @@ var fetchIfNeeded = function (file, superCallback, fetchFn) {
 }
 
 var geoJsonToGeom = function (geoJson) {
-  return geoJsonReader.read(JSON.stringify(geoJson))
+  try {
+    return geoJsonReader.read(JSON.stringify(geoJson))
+  } catch (e) {
+    console.error('error converting geojson to geometry')
+    fs.writeFileSync('debug_geojson_read_error.json', JSON.stringify(geoJson))
+    throw e
+  }
 }
 
 var geomToGeoJson = function (geom) {
