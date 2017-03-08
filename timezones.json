@@ -4095,6 +4095,10 @@
       "op": "difference",
       "source": "overpass",
       "id": "Serbia"
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "Hungary"
     }
   ],
   "Europe/Zaporozhye": [
