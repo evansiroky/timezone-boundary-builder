@@ -27,8 +27,16 @@ var safeMkdir = function (dirname, callback) {
   })
 }
 
-var debugGeo = function (op, a, b) {
+var debugGeo = function (op, a, b, reducePrecision) {
   var result
+
+  if (reducePrecision) {
+    var precisionModel = new jsts.geom.PrecisionModel(10000)
+    var precisionReducer = new jsts.precision.GeometryPrecisionReducer(precisionModel)
+
+    a = precisionReducer.reduce(a)
+    b = precisionReducer.reduce(b)
+  }
 
   try {
     switch (op) {
@@ -42,28 +50,17 @@ var debugGeo = function (op, a, b) {
         result = a.intersects(b)
         break
       case 'diff':
-        try {
-          result = a.difference(b)
-        } catch (e) {
-          if (e.name === 'TopologyException') {
-            console.log('retry with GeometryPrecisionReducer')
-            var precisionModel = new jsts.geom.PrecisionModel(10000)
-            var precisionReducer = new jsts.precision.GeometryPrecisionReducer(precisionModel)
-
-            a = precisionReducer.reduce(a)
-            b = precisionReducer.reduce(b)
-
-            result = a.difference(b)
-          } else {
-            throw e
-          }
-        }
+        result = a.difference(b)
         break
       default:
         var err = new Error('invalid op: ' + op)
         throw err
     }
   } catch (e) {
+    if (e.name === 'TopologyException') {
+      console.log('Encountered TopologyException, retry with GeometryPrecisionReducer')
+      return debugGeo(op, a, b, true)
+    }
     console.log('op err')
     console.log(e)
     console.log(e.stack)
