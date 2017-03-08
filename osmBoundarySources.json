@@ -51,6 +51,10 @@
   "Armenia": {
     "ISO3166-1": "AM"
   },
+  "Arthur County, NE": {
+    "name": "Arthur County",
+    "nist:state_fips": "31"
+  },
   "Aruba": {
     "ISO3166-1": "AW"
   },
@@ -217,8 +221,9 @@
   "Chad": {
     "ISO3166-1": "TD"
   },
-  "Chicago-tz": {
-    "timezone": "America/Chicago"
+  "Chase County, NE": {
+    "name": "Chase County",
+    "nist:state_fips": "31"
   },
   "Chihuahua": {
     "ISO3166-2": "MX-CHH"
@@ -248,6 +253,9 @@
   "Colombia": {
     "ISO3166-1": "CO"
   },
+  "Colorado": {
+    "ISO3166-2": "US-CO"
+  },
   "Comoros": {
     "ISO3166-1": "KM"
   },
@@ -265,6 +273,10 @@
   },
   "Coral Harbour-tz": {
     "timezone": "America/Coral_Harbour"
+  },
+  "Corson County, SD": {
+    "name": "Corson County",
+    "nist:state_fips": "46"
   },
   "Costa Rica": {
     "ISO3166-1": "CR"
@@ -322,7 +334,11 @@
   },
   "Deqing County": {
     "name:en": "Deqing County",
-    "wikipedia:en": "Deqing County, Guangdong"
+    "wikipedia": "en:Deqing County, Guangdong"
+  },
+  "Dewey County, SD": {
+    "name": "Dewey County",
+    "nist:state_fips": "46"
   },
   "Dickinson County, MI": {
     "name": "Dickinson County",
@@ -339,6 +355,14 @@
   },
   "Dornod": {
     "ISO3166-2": "MN-061"
+  },
+  "Dubois County, IN": {
+    "name": "Dubois County",
+    "nist:state_fips": "18"
+  },
+  "Dundy County, NE": {
+    "name": "Dundy County",
+    "nist:state_fips": "31"
   },
   "East Java": {
     "name:en": "East Java"
@@ -420,11 +444,19 @@
   "Gibraltar": {
     "ISO3166-1": "GI"
   },
+  "Gibson County, IN": {
+    "name": "Gibson County",
+    "nist:state_fips": "18"
+  },
   "Gogebic County": {
     "name": "Gogebic County"
   },
   "Govi-Altai": {
     "ISO3166-2": "MN-065"
+  },
+  "Grant County, ND": {
+    "name": "Grant County",
+    "nist:state_fips": "38"
   },
   "Grayson County, KY": {
     "name": "Grayson County",
@@ -432,6 +464,10 @@
   },
   "Greece": {
     "ISO3166-1": "GR"
+  },
+  "Greeley County, KS": {
+    "name": "Greeley County",
+    "nist:state_fips": "20"
   },
   "Green County, KY": {
     "name": "Green County",
@@ -464,6 +500,10 @@
   "Haiti": {
     "ISO3166-1": "HT"
   },
+  "Hamilton County, KS": {
+    "name": "Hamilton County",
+    "nist:state_fips": "20"
+  },
   "Harbin-tz": {
     "timezone": "Asia/Harbin"
   },
@@ -481,14 +521,29 @@
   "Hong Kong": {
     "ISO3166-1": "HK"
   },
+  "Hooker County, NE": {
+    "name": "Hooker County",
+    "nist:state_fips": "31"
+  },
   "Hoonah-Angoon": {
     "name": "Hoonah-Angoon"
+  },
+  "Hudspeth County, TX": {
+    "name": "Hudspeth County",
+    "nist:state_fips": "48"
+  },
+  "Hughes County, SD": {
+    "name": "Hughes County",
+    "nist:state_fips": "46"
   },
   "Hungary": {
     "ISO3166-1": "HU"
   },
   "Iceland": {
     "ISO3166-1": "IS"
+  },
+  "Illinois": {
+    "ISO3166-2": "US-IL"
   },
   "India": {
     "ISO3166-1": "IN"
@@ -534,11 +589,18 @@
     "name": "Jackson County",
     "nist:state_fips": "12"
   },
+  "Jalisco": {
+    "ISO3166-2": "MX-JAL"
+  },
   "Jamaica": {
     "ISO3166-1": "JM"
   },
   "Japan": {
     "ISO3166-1": "JP"
+  },
+  "Jasper County, IN": {
+    "name": "Jasper County",
+    "nist:state_fips": "18"
   },
   "Jefferson County, KY": {
     "name": "Jefferson County",
@@ -546,6 +608,10 @@
   },
   "Jersey": {
     "ISO3166-1": "JE"
+  },
+  "Jones County, SD": {
+    "name": "Jones County",
+    "nist:state_fips": "46"
   },
   "Jordan": {
     "ISO3166-1": "JO"
@@ -571,6 +637,10 @@
   },
   "Kazakhstan": {
     "ISO3166-1": "KZ"
+  },
+  "Keith County, NE": {
+    "name": "Keith County",
+    "nist:state_fips": "31"
   },
   "Kemerovo": {
     "ISO3166-2": "RU-KEM"
@@ -613,6 +683,10 @@
   },
   "Laos": {
     "ISO3166-1": "LA"
+  },
+  "LaPorte County, IN": {
+    "name": "LaPorte County",
+    "nist:state_fips": "18"
   },
   "Latvia": {
     "ISO3166-1": "LV"
@@ -712,6 +786,10 @@
   "Mato Grosso do Sul": {
     "ISO3166-2": "BR-MS"
   },
+  "McLean County, ND": {
+    "name": "McLean County",
+    "nist:state_fips": "38"
+  },
   "Mendoza": {
     "ISO3166-2": "AR-M"
   },
@@ -723,14 +801,15 @@
     "name": "Mercer County",
     "nist:state_fips": "38"
   },
+  "Mellette County, SD": {
+    "name": "Mellette County",
+    "nist:state_fips": "46"
+  },
   "Merida-tz": {
     "timezone": "America/Merida"
   },
   "Mexico": {
     "ISO3166-1": "MX"
-  },
-  "Mexico City-tz": {
-    "timezone": "America/Mexico_City"
   },
   "Michigan": {
     "ISO3166-2": "US-MI"
@@ -746,6 +825,9 @@
   },
   "Mongolia": {
     "ISO3166-1": "MN"
+  },
+  "Montana": {
+    "ISO3166-2": "US-MT"
   },
   "Montenegro": {
     "ISO3166-1": "ME"
@@ -790,11 +872,18 @@
   "New Brunswick": {
     "ISO3166-2": "CA-NB"
   },
+  "New Mexico": {
+    "ISO3166-2": "US-NM"
+  },
   "New South Wales": {
     "ISO3166-2": "AU-NSW"
   },
   "New Zealand": {
     "ISO3166-1": "NZ"
+  },
+  "Newton County, IN": {
+    "name": "Newton County",
+    "nist:state_fips": "18"
   },
   "Nicaragua": {
     "ISO3166-1": "NI"
@@ -883,6 +972,10 @@
   "Peru": {
     "ISO3166-1:alpha2": "PE"
   },
+  "Perkins County, NE": {
+    "name": "Perkins County",
+    "nist:state_fips": "31"
+  },
   "Perry County, IN": {
     "name": "Perry County",
     "nist:state_fips": "18"
@@ -909,6 +1002,10 @@
   },
   "Poland": {
     "ISO3166-1": "PL"
+  },
+  "Porter County, IN": {
+    "name": "Porter County",
+    "nist:state_fips": "18"
   },
   "Portugal": {
     "ISO3166-1": "PT"
@@ -1009,6 +1106,9 @@
   "San Luis": {
     "ISO3166-2": "AR-D"
   },
+  "San Luis Potosí": {
+    "ISO3166-2": "MX-SLP"
+  },
   "San Marino": {
     "ISO3166-1": "SM"
   },
@@ -1056,6 +1156,10 @@
   "Shanghai-tz": {
     "timezone": "Asia/Shanghai"
   },
+  "Sherman County, KS": {
+    "name": "Sherman County",
+    "nist:state_fips": "20"
+  },
   "Sierra Leone": {
     "ISO3166-1": "SL"
   },
@@ -1067,6 +1171,10 @@
   },
   "Sint Maarten": {
     "ISO3166-1": "SX"
+  },
+  "Sioux County, ND": {
+    "name": "Sioux County",
+    "nist:state_fips": "38"
   },
   "Slovakia": {
     "ISO3166-1": "SK"
@@ -1115,6 +1223,10 @@
   "Sudan": {
     "ISO3166-1": "SD"
   },
+  "Sully County, SD": {
+    "name": "Sully County",
+    "nist:state_fips": "46"
+  },
   "Suriname": {
     "ISO3166-1": "SR"
   },
@@ -1140,6 +1252,9 @@
   "Syria": {
     "ISO3166-1": "SY"
   },
+  "Tabasco": {
+    "ISO3166-2": "MX-TAB"
+  },
   "Tajikistan": {
     "ISO3166-1": "TJ"
   },
@@ -1162,11 +1277,19 @@
   "The Netherlands": {
     "ISO3166-1": "NL"
   },
+  "Thomas County, NE": {
+    "name": "Thomas County",
+    "nist:state_fips": "31"
+  },
   "Thunder Bay-tz": {
     "timezone": "America/Thunder_Bay"
   },
   "Tocantins": {
     "ISO3166-2": "BR-TO"
+  },
+  "Todd County, SD": {
+    "name": "Todd County",
+    "nist:state_fips": "46"
   },
   "Togo": {
     "ISO3166-1": "TG"
@@ -1262,6 +1385,9 @@
   "Venezuela": {
     "ISO3166-1": "VE"
   },
+  "Veracruz": {
+    "ISO3166-2": "MX-VER"
+  },
   "Victoria": {
     "ISO3166-2": "AU-VIC"
   },
@@ -1276,6 +1402,10 @@
   },
   "Volgograd": {
     "ISO3166-2": "RU-VGG"
+  },
+  "Wallace County, KS": {
+    "name": "Wallace County",
+    "nist:state_fips": "20"
   },
   "Wayne County, KY": {
     "name": "Wayne County",
@@ -1307,7 +1437,7 @@
   },
   "Xinyi City": {
     "name:en": "Xinyi City",
-    "wikipedia:en": "Xinyi, Guangdong"
+    "wikipedia": "en:Xinyi, Guangdong"
   },
   "Yancowinna County": {
     "name": "NSW Central Time Zone"
@@ -1332,6 +1462,9 @@
   },
   "Zabaykalsk": {
     "ISO3166-2": "RU-ZAB"
+  },
+  "Zacatecas": {
+    "ISO3166-2": "MX-ZAC"
   },
   "Zakarpattia": {
     "ISO3166-2": "UA-21"

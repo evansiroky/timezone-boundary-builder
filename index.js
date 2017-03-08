@@ -2,7 +2,7 @@ var exec = require('child_process').exec
 var fs = require('fs')
 
 var helpers = require('@turf/helpers')
-var multiPolygon = helpers.multipolygon
+var multiPolygon = helpers.multiPolygon
 var polygon = helpers.polygon
 var asynclib = require('async')
 var jsts = require('jsts')
@@ -38,6 +38,9 @@ var debugGeo = function (op, a, b) {
       case 'intersection':
         result = a.intersection(b)
         break
+      case 'intersects':
+        result = a.intersects(b)
+        break
       case 'diff':
         try {
           result = a.difference(b)
@@ -72,10 +75,23 @@ var debugGeo = function (op, a, b) {
   return result
 }
 
-var fetchIfNeeded = function (file, superCallback, fetchFn) {
+var fetchIfNeeded = function (file, superCallback, downloadCallback, fetchFn) {
+  // check for file that got downloaded
   fs.stat(file, function (err) {
-    if (!err) { return superCallback() }
-    fetchFn()
+    if (!err) {
+      // file found, skip download steps
+      return superCallback()
+    }
+    // check for manual file that got fixed and needs validation
+    var fixedFile = file.replace('.json', '_fixed.json')
+    fs.stat(fixedFile, function (err) {
+      if (!err) {
+        // file found, return fixed file
+        return downloadCallback(null, require(fixedFile))
+      }
+      // no manual fixed file found, download from overpass
+      fetchFn()
+    })
   })
 }
 
@@ -118,7 +134,7 @@ var downloadOsmBoundary = function (boundaryId, boundaryCallback) {
   asynclib.auto({
     downloadFromOverpass: function (cb) {
       console.log('downloading from overpass')
-      fetchIfNeeded(boundaryFilename, boundaryCallback, function () {
+      fetchIfNeeded(boundaryFilename, boundaryCallback, cb, function () {
         var overpassResponseHandler = function (err, data) {
           if (err) {
             console.log(err)
@@ -157,7 +173,13 @@ var downloadOsmBoundary = function (boundaryId, boundaryCallback) {
         var curOsmGeom = data.features[i].geometry
         if (curOsmGeom.type === 'Polygon' || curOsmGeom.type === 'MultiPolygon') {
           console.log('combining border')
-          var curGeom = geoJsonToGeom(curOsmGeom)
+          try {
+            var curGeom = geoJsonToGeom(curOsmGeom)
+          } catch (e) {
+            console.error('error converting overpass result to geojson')
+            fs.writeFileSync(boundaryId + '_fixed.json', JSON.stringify(data))
+            throw e
+          }
           if (!combined) {
             combined = curGeom
           } else {
@@ -262,7 +284,14 @@ var validateTimezoneBoundaries = function () {
       compareTzid = zones[j]
 
       var compareZoneGeom = getDistZoneGeom(compareTzid)
-      if (zoneGeom.intersects(compareZoneGeom)) {
+
+      var intersects = false
+      try {
+        intersects = debugGeo('intersects', zoneGeom, compareZoneGeom)
+      } catch (e) {
+        console.warn('warning, encountered intersection error with zone ' + tzid + ' and ' + compareTzid)
+      }
+      if (intersects) {
         var intersectedGeom = debugGeo('intersection', zoneGeom, compareZoneGeom)
         var intersectedArea = intersectedGeom.getArea()
 
