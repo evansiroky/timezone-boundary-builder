@@ -2795,6 +2795,15 @@
       "op": "init",
       "source": "overpass",
       "id": "Kashgar-tz"
+    }, {
+      "op": "union",
+      "source": "manual-polygon",
+      "data": [[[81.6,42],[81.6,46],[79,46],[79,43],[81.6,42]]],
+      "description": "Some cities in this area lost their timezone tag in OSM, patch holes with polygon for now"
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "Kazakhstan"
     }
   ],
   "Asia/Kathmandu": [
