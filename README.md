@@ -2,6 +2,8 @@
 
 A tool to extract data from Open Street Map (OSM) to build the boundaries of the world's timezones that includes territorial waters.
 
+<p align="center"><img src="2017a.png" /></p>
+
 **[Download the data from the releases](https://github.com/evansiroky/timezone-boundary-builder/releases)**
 
 ## How does it work?
