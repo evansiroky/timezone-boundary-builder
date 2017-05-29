@@ -174,7 +174,7 @@ var downloadOsmBoundary = function (boundaryId, boundaryCallback) {
             var curGeom = geoJsonToGeom(curOsmGeom)
           } catch (e) {
             console.error('error converting overpass result to geojson')
-            fs.writeFileSync(boundaryId + '_fixed.json', JSON.stringify(data))
+            fs.writeFileSync(boundaryId + '_convert_to_geom_error.json', JSON.stringify(data))
             throw e
           }
           if (!combined) {
@@ -184,7 +184,13 @@ var downloadOsmBoundary = function (boundaryId, boundaryCallback) {
           }
         }
       }
-      fs.writeFile(boundaryFilename, geomToGeoJsonString(combined), cb)
+      try {
+        fs.writeFile(boundaryFilename, geomToGeoJsonString(combined), cb)
+      } catch (e) {
+        console.error('error writing combined border to geojson')
+        fs.writeFileSync(boundaryId + '_combined_border_convert_to_geom_error.json', JSON.stringify(data))
+        throw e
+      }
     }]
   }, boundaryCallback)
 }
