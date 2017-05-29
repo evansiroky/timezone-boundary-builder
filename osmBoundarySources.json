@@ -234,9 +234,6 @@
   "China": {
     "ISO3166-1": "CN"
   },
-  "Chongqing-tz": {
-    "timezone": "Asia/Chongqing"
-  },
   "Chubut": {
     "ISO3166-2": "AR-U"
   },
@@ -332,10 +329,6 @@
   "Denmark": {
     "ISO3166-1": "DK"
   },
-  "Deqing County": {
-    "name:en": "Deqing County",
-    "wikipedia": "en:Deqing County, Guangdong"
-  },
   "Dewey County, SD": {
     "name": "Dewey County",
     "nist:state_fips": "46"
@@ -420,7 +413,7 @@
     "ISO3166-2": "AR-P"
   },
   "France": {
-    "ISO3166-1": "FR"
+    "ISO3166-1:alpha2": "FR"
   },
   "Franklin County, FL": {
     "name": "Franklin County",
@@ -428,9 +421,6 @@
   },
   "Gabon": {
     "ISO3166-1": "GA"
-  },
-  "Gaozhou City": {
-    "name:en": "Gaozhou City"
   },
   "Georgia": {
     "ISO3166-1": "GE"
@@ -503,9 +493,6 @@
   "Hamilton County, KS": {
     "name": "Hamilton County",
     "nist:state_fips": "20"
-  },
-  "Harbin-tz": {
-    "timezone": "Asia/Harbin"
   },
   "Hart County, KY": {
     "name": "Hart County",
@@ -619,9 +606,6 @@
   "Jujuy": {
     "ISO3166-2": "AR-Y"
   },
-  "Kaiping City": {
-    "name:en": "Kaiping City"
-  },
   "Kaliningrad": {
     "ISO3166-2": "RU-KGD"
   },
@@ -631,9 +615,6 @@
   "Kasai": {
     "name:en": "Kasai",
     "admin_level": "4"
-  },
-  "Kashgar-tz": {
-    "timezone": "Asia/Kashgar"
   },
   "Kazakhstan": {
     "ISO3166-1": "KZ"
@@ -715,9 +696,6 @@
   },
   "Los Angeles-tz": {
     "timezone": "America/Los_Angeles"
-  },
-  "Luoding City": {
-    "name:en": "Luoding City"
   },
   "Luxemburg": {
     "ISO3166-1": "LU"
@@ -1036,8 +1014,7 @@
     "ISO3166-1": "TW"
   },
   "Republic of Kosovo": {
-    "name:en": "Kosovo",
-    "admin_level": "2"
+    "ISO3166-1": "XK"
   },
   "Resolute-tz": {
     "timezone": "America/Resolute"
@@ -1153,9 +1130,6 @@
   "Seychelles": {
     "ISO3166-1": "SC"
   },
-  "Shanghai-tz": {
-    "timezone": "Asia/Shanghai"
-  },
   "Sherman County, KS": {
     "name": "Sherman County",
     "nist:state_fips": "20"
@@ -1208,7 +1182,7 @@
     "ISO3166-1": "SS"
   },
   "Spain": {
-    "ISO3166-1": "ES"
+    "ISO3166-1:alpha2": "ES"
   },
   "Srednekolymsk-tz": {
     "timezone": "Asia/Srednekolymsk"
@@ -1364,9 +1338,6 @@
   "Uruguay": {
     "ISO3166-1": "UY"
   },
-  "Urumqi-tz": {
-    "timezone": "Asia/Urumqi"
-  },
   "Ust-Maysky": {
     "name:en": "Ust-Maysky Ulus"
   },
@@ -1429,21 +1400,11 @@
   "Winnipeg-tz": {
     "timezone": "America/Winnipeg"
   },
-  "Xinhui District": {
-    "name:en": "Xinhui District"
-  },
-  "Xinxing County": {
-    "name:en": "Xinxing County"
-  },
-  "Xinyi City": {
-    "name:en": "Xinyi City",
-    "wikipedia": "en:Xinyi, Guangdong"
+  "Xinjiang": {
+    "ISO3166-2": "CN-65"
   },
   "Yancowinna County": {
     "name": "NSW Central Time Zone"
-  },
-  "Yangjiang City": {
-    "name:en": "Yangjiang City"
   },
   "Yap": {
     "ISO3166-2": "FM-YAP"
@@ -1456,9 +1417,6 @@
   },
   "Yukon": {
     "ISO3166-2": "CA-YT"
-  },
-  "Yunfu City": {
-    "name:en": "Yunfu City"
   },
   "Zabaykalsk": {
     "ISO3166-2": "RU-ZAB"
