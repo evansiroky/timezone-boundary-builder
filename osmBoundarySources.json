@@ -104,6 +104,10 @@
     "name": "Bas-Uele",
     "admin_level": "4"
   },
+  "Bay County, FL": {
+    "name": "Bay County",
+    "nist:state_fips": "12"
+  },
   "Belarus": {
     "ISO3166-1": "BY"
   },
