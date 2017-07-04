@@ -9,7 +9,7 @@ Object.keys(osmBoundarySources).forEach(source => {
 })
 
 Object.keys(zoneCfg).forEach(zone => {
-  zoneCfg[zone].forEach(operation => {
+  zoneCfg[zone].forEach((operation, idx) => {
     if (operation.source === 'overpass') {
       // check if source is defined
       if (!osmBoundarySources[operation.id]) {
@@ -19,6 +19,12 @@ Object.keys(zoneCfg).forEach(zone => {
       } else {
         sourcesUsage[operation.id] = true
       }
+    } else if (operation.source.indexOf('manual') > -1 &&
+      (!operation.description ||
+        operation.description.length < 3)) {
+      numErrors++
+
+      console.error(`No description of ${operation.source} for operation ${idx} of zone: ${zone}`)
     }
   })
 })
