@@ -595,11 +595,13 @@
     }, {
       "op": "intersect",
       "source": "manual-polygon",
-      "data": [[[-59,-46],[-65,-52],[-68.3079531,-52.5782436],[-68.6,-52.5],[-80,-52],[-80,-46],[-59,-46]]]
+      "data": [[[-59,-46],[-65,-52],[-68.3079531,-52.5782436],[-68.6,-52.5],[-80,-52],[-80,-46],[-59,-46]]],
+      "description": "Use this polygon to create northern boundary of Santa Cruz.  Also, use arbitrary sea boundary between Santa Cruz and Tierra Del Fuego"
     }, {
-      "op": "union",
+      "op": "difference",
       "source": "manual-polygon",
-      "data": [[[-72,-49],[-72,-50],[-73.4511111,-49.7894444],[-73.1126073,-49.1583333],[-72,-49]]]
+      "data": [[[-75,-50],[-73.4511111,-49.7894444],[-73.1126073,-49.1583333],[-75,-49.1583333], [-75,-50]]],
+      "description": "In disputed Viedma Glacier area on Argentina-Chile border, assume that a straight line is drawn between last agreed upon boundary points"
     }
   ],
   "America/Argentina/Salta": [
@@ -666,7 +668,8 @@
     }, {
       "op": "intersect",
       "source": "manual-polygon",
-      "data": [[[-59,-55],[-68.3079531,-52.5782436],[-68.6,-52.5],[-78,-57],[-59,-55]]]
+      "data": [[[-59,-55],[-68.3079531,-52.5782436],[-68.6,-52.5],[-78,-57],[-59,-55]]],
+      "description": "Use arbitrary sea boundary between Santa Cruz and Tierra Del Fuego"
     }
   ],
   "America/Asuncion": [
@@ -2022,7 +2025,8 @@
     }, {
       "op": "union",
       "source": "manual-polygon",
-      "data": [[[-75,-50],[-73.4511111,-49.7894444],[-73.1126073,-49.1583333],[-75,-49.1583333], [-75,-50]]]
+      "data": [[[-75,-50],[-73.4511111,-49.7894444],[-73.1126073,-49.1583333],[-75,-49.1583333], [-75,-50]]],
+      "description": "In disputed Viedma Glacier area on Argentina-Chile border, assume that a straight line is drawn between last agreed upon boundary points"
     }
   ],
   "America/Rainy_River": [
@@ -2094,11 +2098,17 @@
     }, {
       "op": "intersect",
       "source": "manual-polygon",
-      "data": [[[-70,15],[-50,-60],[-100,-60],[-70,15]]]
+      "data": [[[-70,15],[-50,-60],[-100,-60],[-70,15]]],
+      "description": "Include only mainlaind Chile (Exclude Easter Island)"
     }, {
       "op": "difference",
       "source": "overpass",
       "id": "Magallanes Region"
+    }, {
+      "op": "difference",
+      "source": "manual-polygon",
+      "data":  [[[-72,-49],[-72,-50],[-73.4511111,-49.7894444],[-75,-50],[-75,-49.1583333],[-73.1126073,-49.1583333],[-72,-49]]],
+      "description": "Exclude all of Viedma Glacier area"
     }
   ],
   "America/Santo_Domingo": [
