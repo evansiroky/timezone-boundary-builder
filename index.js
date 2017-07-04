@@ -11,6 +11,30 @@ var overpass = require('query-overpass')
 
 var osmBoundarySources = require('./osmBoundarySources.json')
 var zoneCfg = require('./timezones.json')
+
+// allow building of only a specified zones
+var filteredIndex = process.argv.indexOf('--filtered-zones')
+if (filteredIndex > -1 && process.argv[filteredIndex + 1]) {
+  filteredZones = process.argv[filteredIndex + 1].split(',')
+  var newZoneCfg = {}
+  filteredZones.forEach((zoneName) => {
+    newZoneCfg[zoneName] = zoneCfg[zoneName]
+  })
+  zoneCfg = newZoneCfg
+
+  // filter out unneccessary downloads
+  var newOsmBoundarySources = {}
+  Object.keys(zoneCfg).forEach((zoneName) => {
+    zoneCfg[zoneName].forEach((op) => {
+      if (op.source === 'overpass') {
+        newOsmBoundarySources[op.id] = osmBoundarySources[op.id]
+      }
+    })
+  })
+
+  osmBoundarySources = newOsmBoundarySources
+}
+
 var geoJsonReader = new jsts.io.GeoJSONReader()
 var geoJsonWriter = new jsts.io.GeoJSONWriter()
 var distZones = {}
@@ -349,7 +373,12 @@ asynclib.auto({
   validateZones: ['createZones', function (results, cb) {
     console.log('validating zones')
     loadDistZonesIntoMemory()
-    cb(validateTimezoneBoundaries())
+    if (process.argv.indexOf('no-validation') > -1) {
+      console.warn('WARNING: Skipping validation!')
+      cb()
+    } else {
+      cb(validateTimezoneBoundaries())
+    }
   }],
   mergeZones: ['validateZones', function (results, cb) {
     console.log('merge zones')

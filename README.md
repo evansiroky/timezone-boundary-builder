@@ -16,8 +16,16 @@ The code does query the publicly available overpass API, but it self-throttles t
 
 ### Running the project
 
+#### All the zones!
+
 ```shell
 node --max-old-space-size=8192 index.js
+```
+
+#### Only certain zones
+
+```shell
+node --max-old-space-size=8192 index.js --filtered-zones "America/New_York,America/Chicago"
 ```
 
 ## How is this different from the shapefile over at efele.net?
