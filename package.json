@@ -17,6 +17,7 @@
   "author": "Evan Siroky",
   "license": "MIT",
   "dependencies": {
+    "@mapbox/geojson-area": "^0.2.2",
     "@turf/helpers": "^3.10.3",
     "async": "^2.1.5",
     "jsts": "^1.3.0",

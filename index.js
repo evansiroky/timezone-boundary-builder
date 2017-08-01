@@ -1,6 +1,7 @@
 var exec = require('child_process').exec
 var fs = require('fs')
 
+var area = require('@mapbox/geojson-area')
 var helpers = require('@turf/helpers')
 var multiPolygon = helpers.multiPolygon
 var polygon = helpers.polygon
@@ -37,6 +38,8 @@ if (filteredIndex > -1 && process.argv[filteredIndex + 1]) {
 
 var geoJsonReader = new jsts.io.GeoJSONReader()
 var geoJsonWriter = new jsts.io.GeoJSONWriter()
+var precisionModel = new jsts.geom.PrecisionModel(1000000)
+var precisionReducer = new jsts.precision.GeometryPrecisionReducer(precisionModel)
 var distZones = {}
 var minRequestGap = 4
 var curRequestGap = 4
@@ -55,9 +58,6 @@ var debugGeo = function (op, a, b, reducePrecision) {
   var result
 
   if (reducePrecision) {
-    var precisionModel = new jsts.geom.PrecisionModel(10000)
-    var precisionReducer = new jsts.precision.GeometryPrecisionReducer(precisionModel)
-
     a = precisionReducer.reduce(a)
     b = precisionReducer.reduce(b)
   }
@@ -198,6 +198,7 @@ var downloadOsmBoundary = function (boundaryId, boundaryCallback) {
             var curGeom = geoJsonToGeom(curOsmGeom)
           } catch (e) {
             console.error('error converting overpass result to geojson')
+            console.error(e)
             fs.writeFileSync(boundaryId + '_convert_to_geom_error.json', JSON.stringify(data))
             throw e
           }
@@ -249,6 +250,67 @@ var getDataSource = function (source) {
   return geoJsonToGeom(geoJson)
 }
 
+/**
+ * Post process created timezone boundary.
+ * - remove small holes and exclaves
+ * - reduce geometry precision
+ *
+ * @param  {Geometry} geom  The jsts geometry of the timezone
+ * @return {String}         Stringified geojson
+ */
+var postProcessZone = function (geom) {
+  // reduce precision of geometry
+  const geojson = geomToGeoJson(precisionReducer.reduce(geom))
+
+  // iterate through all polygons
+  const filteredPolygons = []
+  let allPolygons = geojson.coordinates
+  if (geojson.type === 'Polygon') {
+    allPolygons = [geojson.coordinates]
+  }
+
+  allPolygons.forEach((curPolygon, idx) => {
+    // remove any polygon with very small area
+    const polygonFeature = polygon(curPolygon)
+    const polygonArea = area.geometry(polygonFeature.geometry)
+
+    if (polygonArea < 1) return
+
+    // find all holes
+    const filteredLinearRings = []
+
+    curPolygon.forEach((curLinearRing, lrIdx) => {
+      if (lrIdx === 0) {
+        // always keep first linearRing
+        filteredLinearRings.push(curLinearRing)
+      } else {
+        const polygonFromLinearRing = polygon([curLinearRing])
+        const linearRingArea = area.geometry(polygonFromLinearRing.geometry)
+
+        // only include holes with relevant area
+        if (linearRingArea > 1) {
+          filteredLinearRings.push(curLinearRing)
+        }
+      }
+    })
+
+    filteredPolygons.push(filteredLinearRings)
+  })
+
+  // recompile to geojson string
+  const newGeojson = {
+    type: geojson.type
+  }
+
+  if (geojson.type === 'Polygon') {
+    newGeojson.coordinates = filteredPolygons[0]
+  } else {
+    newGeojson.coordinates = filteredPolygons
+  }
+
+  return JSON.stringify(newGeojson)
+}
+
 var makeTimezoneBoundary = function (tzid, callback) {
   console.log('makeTimezoneBoundary for', tzid)
 
@@ -277,7 +339,7 @@ var makeTimezoneBoundary = function (tzid, callback) {
   function (err) {
     if (err) { return callback(err) }
     fs.writeFile(getTzDistFilename(tzid),
-      geomToGeoJsonString(geom),
+      postProcessZone(geom),
       callback)
   })
 }
