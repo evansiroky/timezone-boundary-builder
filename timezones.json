@@ -113,7 +113,8 @@
     }, {
       "op": "intersect",
       "source": "manual-polygon",
-      "data": [[[-5.5,35.95],[-2,35.4],[-2,33],[-5.5,35.95]]]
+      "data": [[[-5.5,35.95],[-2,35.4],[-2,33],[-5.5,35.95]]],
+      "description": "Isolate exclaves of Spain that are enclaves of Morocco."
     }
   ],
   "Africa/Conakry": [
@@ -194,7 +195,8 @@
     }, {
       "op": "union",
       "source": "manual-polygon",
-      "data": [[[35.3,5.2],[35.9,4.6],[34,4.6],[35.3,5.2]]]
+      "data": [[[35.3,5.2],[35.9,4.6],[34,4.6],[35.3,5.2]]],
+      "description": "Initially add Ilemi Triangle to South Sudan area.  Whatever OSM thinks Kenya's border is is then used as seen in the next operation."
     }, {
       "op": "difference",
       "source": "overpass",
@@ -220,7 +222,8 @@
     }, {
       "op": "union",
       "source": "manual-polygon",
-      "data": [[[33,22],[34,21],[35,22],[33,22]]]
+      "data": [[[33,22],[34,21],[35,22],[33,22]]],
+      "description": "Add unclaimed area of Bir Tawil to Sudan to avoid having holes."
     }
   ],
   "Africa/Kigali": [
@@ -238,7 +241,8 @@
     }, {
       "op": "intersect",
       "source": "manual-polygon",
-      "data": [[[20,-9],[21,-4],[24.6,-1.63],[23,13],[3,-9],[20,-9]]]
+      "data": [[[20,-9],[21,-4],[24.6,-1.63],[23,13],[3,-9],[20,-9]]],
+      "description": "Grab western part of Congo-Kinshasa."
     }, {
       "op": "difference",
       "source": "overpass",
@@ -293,7 +297,8 @@
     }, {
       "op": "difference",
       "source": "manual-polygon",
-      "data": [[[20,-9],[21,-4],[24.6,-1.63],[23,13],[3,-9],[20,-9]]]
+      "data": [[[20,-9],[21,-4],[24.6,-1.63],[23,13],[3,-9],[20,-9]]],
+      "description": "Exclude eastern part of Congo-Kinshasa."
     }, {
       "op": "union",
       "source": "overpass",
@@ -443,7 +448,8 @@
     }, {
       "op": "intersect",
       "source": "manual-multipolygon",
-      "data": [[[[-170.1,51],[-169.48009,52.634],[-169.329,53.1067],[-168.8,54],[-179.9999,54],[-179.9999,48],[-170.1,51]]],[[[168,54],[179.9999,54],[179.9999,48],[168,54]]]]
+      "data": [[[[-170.1,51],[-169.48009,52.634],[-169.329,53.1067],[-168.8,54],[-179.9999,54],[-179.9999,48],[-170.1,51]]],[[[168,54],[179.9999,54],[179.9999,48],[168,54]]]],
+      "description": "Grab western parts of Aleutian Islands."
     }
   ],
   "America/Anchorage": [
@@ -454,7 +460,8 @@
     }, {
       "op": "intersect",
       "source": "manual-polygon",
-      "data": [[[-162,77],[-162,48],[-141,48],[-141,77],[-162,77]]]
+      "data": [[[-162,77],[-162,48],[-141,48],[-141,77],[-162,77]]],
+      "description": "Grab part of Alaska between -162 longitude and Canadian border."
     }, {
       "op": "difference",
       "source": "overpass",
@@ -497,7 +504,8 @@
     }, {
       "op": "intersect",
       "source": "manual-polygon",
-      "data": [[[-58,-34],[-52,-36],[-62.3476,-42],[-62.792531,-41.0179511],[-63,-35],[-58,-34]]]
+      "data": [[[-58,-34],[-52,-36],[-62.3476,-42],[-62.792531,-41.0179511],[-63,-35],[-58,-34]]],
+      "description": "Grab part of Argentina near Buenos Aires.  Make an arbitrary boundary in the sea for the boundary with Rio Negro."
     }, {
       "op": "union",
       "source": "overpass",
@@ -527,7 +535,8 @@
     }, {
       "op": "intersect",
       "source": "manual-polygon",
-      "data": [[[-60,-23],[-59,-32],[-50,-24],[-60,-23]]]
+      "data": [[[-60,-23],[-59,-32],[-50,-24],[-60,-23]]],
+      "description": "Intersect with a long section of the Paraná and Uruguay Rivers because there were holes.  Whatever OSM thinks Uruguay's border is will be diffed as the last operation for this zone."
     }, {
       "op": "union",
       "source": "overpass",
@@ -612,7 +621,8 @@
     }, {
       "op": "intersect",
       "source": "manual-polygon",
-      "data": [[[-66,-40.5],[-66,-43],[-61,-43],[-62.3476,-42],[-62.792531,-41.0179511],[-64,-40.5],[-66,-40.5]]]
+      "data": [[[-66,-40.5],[-66,-43],[-61,-43],[-62.3476,-42],[-62.792531,-41.0179511],[-64,-40.5],[-66,-40.5]]],
+      "description": "intersect part of Argentina to get Territorial waters and create an arbitrary sea boundary between Rio Negro and Buenos Aires."
     }, {
       "op": "difference",
       "source": "overpass",
@@ -713,7 +723,8 @@
     }, {
       "op": "intersect",
       "source": "manual-polygon",
-      "data": [[[-105.287,20.68],[-105.3,20.8],[-105.4,20.8],[-105.3556082,20.9602092],[-105.56,21.11],[-106,21],[-105.883254,20.685482],[-105.5724898,20.62692],[-105.403923,20.6243015],[-105.330481,20.6347751],[-105.3009294,20.6475388],[-105.2808749,20.6713757],[-105.2786916,20.6724507],[-105.287,20.68]]]
+      "data": [[[-105.287,20.68],[-105.3,20.8],[-105.4,20.8],[-105.3556082,20.9602092],[-105.56,21.11],[-106,21],[-105.883254,20.685482],[-105.5724898,20.62692],[-105.403923,20.6243015],[-105.330481,20.6347751],[-105.3009294,20.6475388],[-105.2808749,20.6713757],[-105.2786916,20.6724507],[-105.287,20.68]]],
+      "description": "Grab part of Mexico to get terriritorial waters near Bahía de Banderas."
     }, {
       "op": "union",
       "source": "overpass",
@@ -815,7 +826,8 @@
     }, {
       "op": "intersect",
       "source": "manual-polygon",
-      "data": [[[-55,8],[-55,0],[-48,4],[-55,8]]]
+      "data": [[[-55,8],[-55,0],[-48,4],[-55,8]]],
+      "description": "Grab the part of France that represents French Guiana."
     }
   ],
   "America/Cayman": [
@@ -1123,14 +1135,16 @@
     }, {
       "op": "intersect",
       "source": "manual-polygon",
-      "data": [[[-24,72.4],[-19,71],[-18,70],[-25,70.5],[-24,72.4]]]
+      "data": [[[-24,72.4],[-19,71],[-18,70],[-25,70.5],[-24,72.4]]],
+      "description": "Grab part of Greenland and make a best guess at this timezone's location."
     }
   ],
   "America/Dawson": [
     {
       "op": "init",
       "source": "manual-polygon",
-      "data": [[[-139.446, 64.0893], [-139.4126, 64.0888], [-139.4105, 64.0688], [-139.3765, 64.0609], [-139.3758, 64.0556], [-139.2775, 64.0534], [-139.2854, 64.0208], [-139.4496, 64.0278], [-139.4546, 64.0254], [-139.4824, 64.0219], [-139.4838, 64.0314], [-139.4738, 64.034], [-139.4747, 64.0369], [-139.4737, 64.0404], [-139.4713, 64.0419], [-139.4677, 64.0469], [-139.4663, 64.0487], [-139.4572, 64.0515], [-139.4538, 64.0546], [-139.4417, 64.0736], [-139.4476, 64.0789], [-139.4477, 64.0807], [-139.44, 64.0819], [-139.446, 64.0893]]]
+      "data": [[[-139.446, 64.0893], [-139.4126, 64.0888], [-139.4105, 64.0688], [-139.3765, 64.0609], [-139.3758, 64.0556], [-139.2775, 64.0534], [-139.2854, 64.0208], [-139.4496, 64.0278], [-139.4546, 64.0254], [-139.4824, 64.0219], [-139.4838, 64.0314], [-139.4738, 64.034], [-139.4747, 64.0369], [-139.4737, 64.0404], [-139.4713, 64.0419], [-139.4677, 64.0469], [-139.4663, 64.0487], [-139.4572, 64.0515], [-139.4538, 64.0546], [-139.4417, 64.0736], [-139.4476, 64.0789], [-139.4477, 64.0807], [-139.44, 64.0819], [-139.446, 64.0893]]],
+      "description": "Manually create polygon based off of best guess of city limits of Dawson as shown in this map: http://dawson.planyukon.ca/index.php/the-dawson-region/resource-maps/6-01-regional-overview-map/file"
     }
   ],
   "America/Dawson_Creek": [
