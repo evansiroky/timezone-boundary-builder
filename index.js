@@ -47,9 +47,9 @@ var curRequestGap = 4
 var safeMkdir = function (dirname, callback) {
   fs.mkdir(dirname, function (err) {
     if (err && err.code === 'EEXIST') {
-      callback()
-    } else {
       callback(err)
+    } else {
+      callback()
     }
   })
 }
