@@ -3220,7 +3220,8 @@
     }, {
       "op": "intersect",
       "source": "manual-polygon",
-      "data": [[[137,35],[142,71],[112,77],[46,29],[137,35]]]
+      "data": [[[137,35],[142,71],[112,77],[46,29],[137,35]]],
+      "description": "Grab working area, excluding unneeded parts to east and west."
     }, {
       "op": "union",
       "source": "overpass",
@@ -3241,6 +3242,10 @@
       "op": "difference",
       "source": "overpass",
       "id": "Srednekolymsk-tz"
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "Oymyakonsky"
     }
   ],
   "Asia/Yangon": [
