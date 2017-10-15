@@ -927,6 +927,11 @@
   "Oymyakonsky": {
     "name:en": "Oymyakonsky Ulus"
   },
+  "Page": {
+    "way": true,
+    "name": "Page",
+    "is_in:state_code": "AZ"
+  },
   "Pakistan": {
     "ISO3166-1": "PK"
   },

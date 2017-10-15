@@ -1168,6 +1168,10 @@
       "source": "overpass",
       "id": "Boise-tz"
     }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "Page"
+    }, {
       "op": "union",
       "source": "overpass",
       "id": "Sioux County, ND"
@@ -1192,6 +1196,11 @@
       "op": "difference",
       "source": "overpass",
       "id": "Morton County, ND"
+    }, {
+      "op": "difference",
+      "source": "manual-polygon",
+      "data": [[[-111.432,36.937],[-111.423,36.933],[-111.423,36.928],[-111.488,36.875],[-111.58,36.875],[-111.45,36.97],[-111.432,36.937]]],
+      "description": "Exclude artifacts as result of mismatching City boundary of Page, AZ"
     }
   ],
   "America/Detroit": [
@@ -1984,6 +1993,15 @@
       "op": "init",
       "source": "overpass",
       "id": "Phoenix-tz"
+    }, {
+      "op": "union",
+      "source": "overpass",
+      "id": "Page"
+    }, {
+      "op": "union",
+      "source": "manual-polygon",
+      "data": [[[-111.432,36.937],[-111.423,36.933],[-111.423,36.928],[-111.488,36.875],[-111.58,36.875],[-111.45,36.97],[-111.432,36.937]]],
+      "description": "Include artifacts as result of mismatching City boundary of Page, AZ"
     }
   ],
   "America/Port-au-Prince": [

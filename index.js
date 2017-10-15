@@ -136,13 +136,19 @@ var geomToGeoJsonString = function (geom) {
 
 var downloadOsmBoundary = function (boundaryId, boundaryCallback) {
   var cfg = osmBoundarySources[boundaryId]
-  var query = '[out:json][timeout:60];(relation'
+  var query = '[out:json][timeout:60];('
+  if (cfg.way) {
+    query += 'way'
+  } else {
+    query += 'relation'
+  }
   var boundaryFilename = './downloads/' + boundaryId + '.json'
   var debug = 'getting data for ' + boundaryId
   var queryKeys = Object.keys(cfg)
 
   for (var i = queryKeys.length - 1; i >= 0; i--) {
     var k = queryKeys[i]
+    if (k === 'way') continue
     var v = cfg[k]
 
     query += '["' + k + '"="' + v + '"]'
@@ -199,7 +205,8 @@ var downloadOsmBoundary = function (boundaryId, boundaryCallback) {
           } catch (e) {
             console.error('error converting overpass result to geojson')
             console.error(e)
-            fs.writeFileSync(boundaryId + '_convert_to_geom_error.json', JSON.stringify(data))
+            fs.writeFileSync(boundaryId + '_convert_to_geom_error.json', JSON.stringify(curOsmGeom))
+            fs.writeFileSync(boundaryId + '_convert_to_geom_error-all-features.json', JSON.stringify(data))
             throw e
           }
           if (!combined) {
