@@ -3732,6 +3732,10 @@
       "op": "init",
       "source": "overpass",
       "id": "Slovenia"
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "Croatia"
     }
   ],
   "Europe/London": [
