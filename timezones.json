@@ -2773,6 +2773,10 @@
       "op": "init",
       "source": "overpass",
       "id": "Nepal"
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "Uttarakhand"
     }
   ],
   "Asia/Khandyga": [
