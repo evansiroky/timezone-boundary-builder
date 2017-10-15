@@ -3059,6 +3059,11 @@
       "op": "difference",
       "source": "overpass",
       "id": "Republic of China"
+    }, {
+      "op": "difference",
+      "source": "manual-polygon",
+      "data": [[[117.76,16.2],[116,14],[119,14],[117.76,16.2]]],
+      "description": "Exclude Scarborough Shoal so it becomes part of Asia/Manila"
     }
   ],
   "Asia/Singapore": [
