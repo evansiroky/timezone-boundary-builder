@@ -2027,7 +2027,12 @@
       "op": "union",
       "source": "manual-polygon",
       "data": [[[-75,-50],[-73.4511111,-49.7894444],[-73.1126073,-49.1583333],[-75,-49.1583333], [-75,-50]]],
-      "description": "In disputed Viedma Glacier area on Argentina-Chile border, assume that a straight line is drawn between last agreed upon boundary points"
+      "description": "In disputed Viedma Glacier area on Argentina-Chile border, assume that a straight line is drawn between last agreed upon boundary points.  This operation adds area in Chile to compensate for straight line rule."
+    }, {
+      "op": "difference",
+      "source": "manual-polygon",
+      "data": [[[-70,-50],[-73.4511111,-49.7894444],[-73.1126073,-49.1583333],[-70,-49.1583333], [-70,-50]]],
+      "description": "In disputed Viedma Glacier area on Argentina-Chile border, assume that a straight line is drawn between last agreed upon boundary points.  This operation removes area in Chile to compensate for the straight line rule."
     }
   ],
   "America/Rainy_River": [
