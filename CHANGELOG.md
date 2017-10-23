@@ -16,6 +16,7 @@
   * Asia/Rangoon renamed to Asia/Yangon
   * Pacific/Yap integrated into Pacific/Chuuk
   * Pacific/Johnston integrated into Pacific/Honolulu
+* Refactor arbitrary sea boundaries of timezones in the Gulf of St Lawrence to account for updated OSM geometry of the boundary of Quebec.
 * Add Page, AZ to America/Phoenix ([#9](https://github.com/evansiroky/timezone-boundary-builder/issues/9))
 * Update to latest OSM data
 
