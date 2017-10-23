@@ -29,6 +29,7 @@
 * Add ability to build only certain zones in builder script
 * Add travis-ci builds that require linting script to pass
 * Added descriptions to manual geometries
+* Add ability to use overpass to fetch ways that represent boundaries
 
 ## 2017a
 
