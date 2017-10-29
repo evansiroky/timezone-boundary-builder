@@ -1,4 +1,4 @@
-## Unreleased
+## 2017c
 
 ### Zone Changes
 
@@ -30,6 +30,7 @@
 * Add travis-ci builds that require linting script to pass
 * Added descriptions to manual geometries
 * Add ability to use overpass to fetch ways that represent boundaries
+* Rewrite README
 
 ## 2017a
 
