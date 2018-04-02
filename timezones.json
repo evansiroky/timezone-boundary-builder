@@ -2042,6 +2042,11 @@
       "op": "init",
       "source": "overpass",
       "id": "Rondônia"
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "Bolivia",
+      "description": "There is a territorial dispute over Isla Suárez, but apparently Bolivia controls it (https://es.wikipedia.org/wiki/Isla_Su%C3%A1rez).  Therefore this zone is diffed againest Bolivia."
     }
   ],
   "America/Puerto_Rico": [
@@ -3131,6 +3136,11 @@
       "source": "manual-polygon",
       "data": [[[117.76,16.2],[116,14],[119,14],[117.76,16.2]]],
       "description": "Exclude Scarborough Shoal so it becomes part of Asia/Manila"
+    }, {
+      "op": "difference",
+      "source": "manual-polygon",
+      "data": [[[114.08,10.99],[114.13,10.9],[114.14,11],[114.08,10.99]]],
+      "description": "Clip part of area off of Subi Reef that encroaches on territory claimed by Philippines."
     }
   ],
   "Asia/Singapore": [
