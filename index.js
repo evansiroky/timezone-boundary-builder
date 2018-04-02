@@ -2,6 +2,7 @@ var exec = require('child_process').exec
 var fs = require('fs')
 
 var area = require('@mapbox/geojson-area')
+var geojsonhint = require('@mapbox/geojsonhint')
 var helpers = require('@turf/helpers')
 var multiPolygon = helpers.multiPolygon
 var polygon = helpers.polygon
@@ -185,8 +186,15 @@ var downloadOsmBoundary = function (boundaryId, boundaryCallback) {
     },
     validateOverpassResult: ['downloadFromOverpass', function (results, cb) {
       var data = results.downloadFromOverpass
-      if (!data.features || data.features.length === 0) {
+      if (!data.features) {
         var err = new Error('Invalid geojson for boundary: ' + boundaryId)
+        return cb(err)
+      }
+      if (data.features.length === 0) {
+        console.error('No data for the following query:')
+        console.error(query)
+        console.error('To read more about this error, please visit https://git.io/vxKQL')
+        var err = new Error('No data found for from overpass query')
         return cb(err)
       }
       cb()
@@ -200,14 +208,26 @@ var downloadOsmBoundary = function (boundaryId, boundaryCallback) {
         var curOsmGeom = data.features[i].geometry
         if (curOsmGeom.type === 'Polygon' || curOsmGeom.type === 'MultiPolygon') {
           console.log('combining border')
+          let errors = geojsonhint.hint(curOsmGeom)
+          if (errors && errors.length > 0) {
+            const stringifiedGeojson = JSON.stringify(curOsmGeom, null, 2)
+            errors = geojsonhint.hint(stringifiedGeojson)
+            console.error('Invalid geojson received in Overpass Result')
+            console.error('Overpass query: ' + query)
+            const problemFilename = boundaryId + '_convert_to_geom_error.json'
+            fs.writeFileSync(problemFilename, stringifiedGeojson)
+            console.error('saved problem file to ' + problemFilename)
+            console.error('To read more about this error, please visit https://git.io/vxKQq')
+            return cb(errors)
+          }
           try {
             var curGeom = geoJsonToGeom(curOsmGeom)
           } catch (e) {
             console.error('error converting overpass result to geojson')
             console.error(e)
-            fs.writeFileSync(boundaryId + '_convert_to_geom_error.json', JSON.stringify(curOsmGeom))
+
             fs.writeFileSync(boundaryId + '_convert_to_geom_error-all-features.json', JSON.stringify(data))
-            throw e
+            return cb(e)
           }
           if (!combined) {
             combined = curGeom
@@ -221,7 +241,7 @@ var downloadOsmBoundary = function (boundaryId, boundaryCallback) {
       } catch (e) {
         console.error('error writing combined border to geojson')
         fs.writeFileSync(boundaryId + '_combined_border_convert_to_geom_error.json', JSON.stringify(data))
-        throw e
+        return cb(e)
       }
     }]
   }, boundaryCallback)
@@ -392,7 +412,14 @@ var validateTimezoneBoundaries = function () {
         var intersectedArea = intersectedGeom.getArea()
 
         if (intersectedArea > 0.0001) {
-          console.log('Validation error: ' + tzid + ' intersects ' + compareTzid + ' area: ' + intersectedArea)
+          console.error('Validation error: ' + tzid + ' intersects ' + compareTzid + ' area: ' + intersectedArea)
+          const debugFilename = tzid.replace('/', '-') + '-' + compareTzid.replace('/', '-') + '-overlap.json'
+          fs.writeFileSync(
+            debugFilename,
+            JSON.stringify(geoJsonWriter.write(intersectedGeom))
+          )
+          console.error('wrote overlap area as file ' + debugFilename)
+          console.error('To read more about this error, please visit https://git.io/vx6nx')
           allZonesOk = false
         }
       }

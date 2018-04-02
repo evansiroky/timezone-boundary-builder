@@ -14,9 +14,23 @@ The underlying data is download from [OpenStreetMap](http://www.openstreetmap.or
 
 To maintain consistency with the timezone database, this project will only create a new release after the timezone database creates a new release.  If there are no new timezones created or deleted in a timezone database release, then this project will only create a release if there have been changes performed to the boundary definitions of an existing zone within this project.
 
+## Lookup Libraries
+
+A few common languages already have libraries with an API that can be used to lookup the timezone name at a particular GPS coordinate.  Here are some libraries that use the data produced by timezone-boundary-builder:
+
+| Library | Language |
+| -- | -- |
+| [ZoneDetect](https://github.com/BertoldVdb/ZoneDetect) | C |
+| [node-geo-tz](https://github.com/evansiroky/node-geo-tz/) | JavaScript (node.js only) |
+| [tz-lookup](https://github.com/darkskyapp/tz-lookup/) | JavaScript (node.js and in browser) |
+| [timezonefinder](https://github.com/MrMinimal64/timezonefinder) | Python |
+| [GeoTimezone](https://github.com/mj1856/GeoTimeZone) | .NET |
+
+Another common way to use the data for lookup purposes is to load the shapefile into a spatially-aware database.  See this [blog post](https://simonwillison.net/2017/Dec/12/location-time-zone-api/) for an example of how that can be done.
+
 ## Running the script
 
-It is possible to run the script to generate the timezones.  Due to the ever-changing nature of OpenStreetMap, the script can break when unexpected data is received.
+If the data in the releases are not sufficiently recent or you want to build the latest from master, it is possible to run the script to generate the timezones.  However, due to the ever-changing nature of OpenStreetMap, the script should be considered unstable.  The script frequently breaks when unexpected data is received or changes in OpenStreetMap cause validation issues.  Please see the [troubleshooting guide](https://github.com/evansiroky/timezone-boundary-builder/wiki/Troubleshooting) for help with common errors.
 
 **Run the script to generate timezones for all timezones.**
 

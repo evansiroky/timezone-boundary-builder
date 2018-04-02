@@ -1,3 +1,16 @@
+## Unreleased
+
+### Other Changes
+
+* Better debugging
+  * Printing Overpass query for when no data is received.
+  * Using geojsonhint and writing problematic geojson to a pretty-printed file.
+  * Save validation overlaps to file.
+  * Add links to troubleshooting wiki for common errors.
+* Update README
+  * Add list of geogrphical lookup libraries
+  * Add troubleshooting wiki
+
 ## 2017c
 
 ### Zone Changes
