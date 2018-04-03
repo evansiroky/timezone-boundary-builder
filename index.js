@@ -283,9 +283,10 @@ var getDataSource = function (source) {
  * - reduce geometry precision
  *
  * @param  {Geometry} geom  The jsts geometry of the timezone
- * @return {String}         Stringified geojson
+ * @param  {boolean} returnAsObject if true, return as object, otherwise return stringified
+ * @return {Object|String}         geojson as object or stringified
  */
-var postProcessZone = function (geom) {
+var postProcessZone = function (geom, returnAsObject) {
   // reduce precision of geometry
   const geojson = geomToGeoJson(precisionReducer.reduce(geom))
 
@@ -335,7 +336,7 @@ var postProcessZone = function (geom) {
     newGeojson.coordinates = filteredPolygons
   }
 
-  return JSON.stringify(newGeojson)
+  return returnAsObject ? newGeojson : JSON.stringify(newGeojson)
 }
 
 var makeTimezoneBoundary = function (tzid, callback) {
@@ -387,7 +388,7 @@ var getDistZoneGeom = function (tzid) {
 }
 
 var validateTimezoneBoundaries = function () {
-  console.log('do validation')
+  console.log('do validation... this may take a few minutes')
   var allZonesOk = true
   var zones = Object.keys(zoneCfg)
   var compareTzid, tzid, zoneGeom
@@ -429,24 +430,105 @@ var validateTimezoneBoundaries = function () {
   return allZonesOk ? null : 'Zone validation unsuccessful'
 }
 
+let oceanZoneBoundaries
+
+var addOceans = function (callback) {
+  console.log('adding ocean boundaries')
+  const oceanZones = [
+    { tzid: 'Etc/GMT-12', left: 172.5, right: 180 },
+    { tzid: 'Etc/GMT-11', left: 157.5, right: 172.5 },
+    { tzid: 'Etc/GMT-10', left: 142.5, right: 157.5 },
+    { tzid: 'Etc/GMT-9', left: 127.5, right: 142.5 },
+    { tzid: 'Etc/GMT-8', left: 112.5, right: 127.5 },
+    { tzid: 'Etc/GMT-7', left: 97.5, right: 112.5 },
+    { tzid: 'Etc/GMT-6', left: 82.5, right: 97.5 },
+    { tzid: 'Etc/GMT-5', left: 67.5, right: 82.5 },
+    { tzid: 'Etc/GMT-4', left: 52.5, right: 67.5 },
+    { tzid: 'Etc/GMT-3', left: 37.5, right: 52.5 },
+    { tzid: 'Etc/GMT-2', left: 22.5, right: 37.5 },
+    { tzid: 'Etc/GMT-1', left: 7.5, right: 22.5 },
+    { tzid: 'Etc/GMT', left: -7.5, right: 7.5 },
+    { tzid: 'Etc/GMT+1', left: -22.5, right: -7.5 },
+    { tzid: 'Etc/GMT+2', left: -37.5, right: -22.5 },
+    { tzid: 'Etc/GMT+3', left: -52.5, right: -37.5 },
+    { tzid: 'Etc/GMT+4', left: -67.5, right: -52.5 },
+    { tzid: 'Etc/GMT+5', left: -82.5, right: -67.5 },
+    { tzid: 'Etc/GMT+6', left: -97.5, right: -82.5 },
+    { tzid: 'Etc/GMT+7', left: -112.5, right: -97.5 },
+    { tzid: 'Etc/GMT+8', left: -127.5, right: -112.5 },
+    { tzid: 'Etc/GMT+9', left: -142.5, right: -127.5 },
+    { tzid: 'Etc/GMT+10', left: -157.5, right: -142.5 },
+    { tzid: 'Etc/GMT+11', left: -172.5, right: -157.5 },
+    { tzid: 'Etc/GMT+12', left: -180, right: -172.5 }
+  ]
+
+  const zones = Object.keys(zoneCfg)
+
+  oceanZoneBoundaries = oceanZones.map(zone => {
+    console.log(zone.tzid)
+    const geoJson = polygon([[
+      [zone.left, 90],
+      [zone.left,-90],
+      [zone.right,-90],
+      [zone.right,90],
+      [zone.left, 90]
+    ]]).geometry
+
+    let geom = geoJsonToGeom(geoJson)
+
+    // diff against every zone
+    zones.forEach(distZone => {
+      geom = debugGeo('diff', geom, getDistZoneGeom(distZone))
+    })
+
+    return {
+      geom: postProcessZone(geom, true),
+      tzid: zone.tzid
+    }
+  })
+
+  callback()
+}
+
 var combineAndWriteZones = function (callback) {
   var stream = fs.createWriteStream('./dist/combined.json')
+  var streamWithOceans = fs.createWriteStream('./dist/combined-with-oceans.json')
   var zones = Object.keys(zoneCfg)
 
   stream.write('{"type":"FeatureCollection","features":[')
+  streamWithOceans.write('{"type":"FeatureCollection","features":[')
 
   for (var i = 0; i < zones.length; i++) {
     if (i > 0) {
       stream.write(',')
+      streamWithOceans.write(',')
     }
     var feature = {
       type: 'Feature',
       properties: { tzid: zones[i] },
       geometry: geomToGeoJson(getDistZoneGeom(zones[i]))
     }
-    stream.write(JSON.stringify(feature))
+    const stringified = JSON.stringify(feature)
+    stream.write(stringified)
+    streamWithOceans.write(stringified)
   }
-  stream.end(']}', callback)
+  oceanZoneBoundaries.forEach(boundary => {
+    streamWithOceans.write(',')
+    var feature = {
+      type: 'Feature',
+      properties: { tzid: boundary.tzid },
+      geometry: boundary.geom
+    }
+    streamWithOceans.write(JSON.stringify(feature))
+  })
+  asynclib.parallel([
+    cb => {
+      stream.end(']}', cb)
+    },
+    cb => {
+      streamWithOceans.end(']}', cb)
+    }
+  ], callback)
 }
 
 asynclib.auto({
@@ -476,7 +558,10 @@ asynclib.auto({
       cb(validateTimezoneBoundaries())
     }
   }],
-  mergeZones: ['validateZones', function (results, cb) {
+  addOceans: ['validateZones', function (results, cb) {
+    addOceans(cb)
+  }],
+  mergeZones: ['addOceans', function (results, cb) {
     console.log('merge zones')
     combineAndWriteZones(cb)
   }],
@@ -484,14 +569,31 @@ asynclib.auto({
     console.log('zip geojson')
     exec('zip dist/timezones.geojson.zip dist/combined.json', cb)
   }],
+  zipGeoJsonWithOceans: ['mergeZones', function (results, cb) {
+    console.log('zip geojson with oceans')
+    exec('zip dist/timezones-with-oceans.geojson.zip dist/combined-with-oceans.json', cb)
+  }],
   makeShapefile: ['mergeZones', function (results, cb) {
     console.log('convert from geojson to shapefile')
-    rimraf.sync('dist/dist')
-    rimraf.sync('dist/combined_shapefile.*')
-    exec('ogr2ogr -nlt MULTIPOLYGON dist/combined_shapefile.shp dist/combined.json OGRGeoJSON', function (err, stdout, stderr) {
-      if (err) { return cb(err) }
-      exec('zip dist/timezones.shapefile.zip dist/combined_shapefile.*', cb)
-    })
+    rimraf.sync('dist/combined-shapefile.*')
+    exec(
+      'ogr2ogr -nlt MULTIPOLYGON dist/combined-shapefile.shp dist/combined.json OGRGeoJSON',
+      function (err, stdout, stderr) {
+        if (err) { return cb(err) }
+        exec('zip dist/timezones.shapefile.zip dist/combined-shapefile.*', cb)
+      }
+    )
+  }],
+  makeShapefileWithOceans: ['mergeZones', function (results, cb) {
+    console.log('convert from geojson with oceans to shapefile')
+    rimraf.sync('dist/combined-shapefile-with-oceans.*')
+    exec(
+      'ogr2ogr -nlt MULTIPOLYGON dist/combined-shapefile-with-oceans.shp dist/combined-with-oceans.json OGRGeoJSON',
+      function (err, stdout, stderr) {
+        if (err) { return cb(err) }
+        exec('zip dist/timezones-with-oceans.shapefile.zip dist/combined-shapefile-with-oceans.*', cb)
+      }
+    )
   }]
 }, function (err, results) {
   console.log('done')

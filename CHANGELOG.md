@@ -1,4 +1,10 @@
-## Unreleased
+## 2018d
+
+### Zone Changes
+
+* Add timezones in the oceans ([#34](https://github.com/evansiroky/timezone-boundary-builder/issues/34))
+  * Shapefiles and geojson are now outputted as with or without oceans
+* Update to latest OSM data
 
 ### Other Changes
 
@@ -8,7 +14,7 @@
   * Save validation overlaps to file.
   * Add links to troubleshooting wiki for common errors.
 * Update README
-  * Add list of geogrphical lookup libraries
+  * Add list of geographical lookup libraries
   * Add troubleshooting wiki
 
 ## 2017c

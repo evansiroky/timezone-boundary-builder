@@ -2,11 +2,11 @@
 
 The goal of this project is to produce a shapefile with the boundaries of the world's timezones using OpenStreetMap data.
 
-<p align="center"><img src="2017c.png" /></p>
+<p align="center"><img src="2018d.png" /></p>
 
 ## Shapefiles and data
 
-The shapefiles are available for download in this project's [releases](https://github.com/evansiroky/timezone-boundary-builder/releases). Each shape or geojson object has a single attribute or property respectively called `tzid`.  The tzid corresponds to the timezone name as defined in the [timezone database](https://www.iana.org/time-zones) (for example: `America/Los_Angeles` or `Asia/Shanghai`).
+The shapefiles are available for download in this project's [releases](https://github.com/evansiroky/timezone-boundary-builder/releases). As of release 2018d shapefiles are available with or without oceans.  Each shape or geojson object has a single attribute or property respectively called `tzid`.  The tzid corresponds to the timezone name as defined in the [timezone database](https://www.iana.org/time-zones) (for example: `America/Los_Angeles` or `Asia/Shanghai`).
 
 This project aims to stay up-to-date with all of the currently valid timezones that are defined in the timezone database.  This project also will attempt to provide the most accurate possible boundaries of timezones according to community input.
 
@@ -52,7 +52,7 @@ The code does query the publicly available overpass API, but it self-throttles t
 
 ## Limitations of this project
 
-The data is almost completely comprised of OpenStreetMap data which is editable by anyone.  There are a few educated guesses on where to draw an arbitrary border in the open waters and a few sparsely inhabited areas.  Some uninhabited islands are omitted from this project.  All of Antarctica is currently omitted as well.  This project also doesn't include any timezones in oceans except where the territorial waters of a country would apply.
+The data is almost completely comprised of OpenStreetMap data which is editable by anyone.  There are a few guesses on where to draw an arbitrary border in the open waters and a few sparsely inhabited areas.  Some uninhabited islands are omitted from this project.  This project does include timezones in the oceans, but strictly uses territorial waters or Etc/GMT timezones instead of unofficially observed areas such as Exclusive Economic Zones.  All of Antarctica is currently omitted and instead shows up as a Etc/GMT timezone as if it were the ocean.
 
 ## Contributing
 
