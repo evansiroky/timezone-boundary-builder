@@ -609,7 +609,7 @@
     }, {
       "op": "difference",
       "source": "manual-polygon",
-      "data": [[[-75,-50],[-73.4511111,-49.7894444],[-73.1126073,-49.1583333],[-75,-49.1583333], [-75,-50]]],
+      "data": [[[-75,-50],[-73.4511111,-49.7894444],[-73.0975128,-49.2838889],[-75,-48.8], [-75,-50]]],
       "description": "In disputed Viedma Glacier area on Argentina-Chile border, assume that a straight line is drawn between last agreed upon boundary points"
     }
   ],
@@ -2067,14 +2067,9 @@
       "source": "overpass",
       "id": "Magallanes Region"
     }, {
-      "op": "union",
-      "source": "manual-polygon",
-      "data": [[[-75,-50],[-73.4511111,-49.7894444],[-73.1126073,-49.1583333],[-75,-49.1583333], [-75,-50]]],
-      "description": "In disputed Viedma Glacier area on Argentina-Chile border, assume that a straight line is drawn between last agreed upon boundary points.  This operation adds area in Chile to compensate for straight line rule."
-    }, {
       "op": "difference",
       "source": "manual-polygon",
-      "data": [[[-70,-50],[-73.4511111,-49.7894444],[-73.1126073,-49.1583333],[-70,-49.1583333], [-70,-50]]],
+      "data": [[[-70,-50],[-73.4511111,-49.7894444],[-73.0975128,-49.2838889],[-70,-50]]],
       "description": "In disputed Viedma Glacier area on Argentina-Chile border, assume that a straight line is drawn between last agreed upon boundary points.  This operation removes area in Chile to compensate for the straight line rule."
     }
   ],
@@ -2155,11 +2150,6 @@
       "op": "difference",
       "source": "overpass",
       "id": "Magallanes Region"
-    }, {
-      "op": "difference",
-      "source": "manual-polygon",
-      "data":  [[[-72,-49],[-72,-50],[-73.4511111,-49.7894444],[-75,-50],[-75,-49.1583333],[-73.1126073,-49.1583333],[-72,-49]]],
-      "description": "Exclude all of Viedma Glacier area"
     }
   ],
   "America/Santo_Domingo": [
