@@ -4,6 +4,7 @@
 
 * Add timezones in the oceans ([#34](https://github.com/evansiroky/timezone-boundary-builder/issues/34))
   * Shapefiles and geojson are now outputted as with or without oceans
+* Fix Viedma Glacier are to reflect latest OSM boundaries
 * Update to latest OSM data
 
 ### Other Changes
