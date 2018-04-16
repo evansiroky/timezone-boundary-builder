@@ -1,3 +1,9 @@
+## Unreleased
+
+### Other Changes
+
+* Added more libraries to list of lookup libraries using this project's data
+
 ## 2018d
 
 ### Zone Changes

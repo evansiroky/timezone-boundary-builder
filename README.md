@@ -21,11 +21,12 @@ A few common languages already have libraries with an API that can be used to lo
 | Library | Language |
 | -- | -- |
 | [ZoneDetect](https://github.com/BertoldVdb/ZoneDetect) | C |
+| [Timeshape](https://github.com/RomanIakovlev/timeshape) | Java |
 | [node-geo-tz](https://github.com/evansiroky/node-geo-tz/) | JavaScript (node.js only) |
 | [tz-lookup](https://github.com/darkskyapp/tz-lookup/) | JavaScript (node.js and in browser) |
-| [timezonefinder](https://github.com/MrMinimal64/timezonefinder) | Python |
 | [GeoTimezone](https://github.com/mj1856/GeoTimeZone) | .NET |
-| [Timeshape](https://github.com/RomanIakovlev/timeshape) | Java |
+| [Geo-Timezone](https://github.com/minube/geo-timezone) | php |
+| [timezonefinder](https://github.com/MrMinimal64/timezonefinder) | Python |
 
 Another common way to use the data for lookup purposes is to load the shapefile into a spatially-aware database.  See this [blog post](https://simonwillison.net/2017/Dec/12/location-time-zone-api/) for an example of how that can be done.
 
