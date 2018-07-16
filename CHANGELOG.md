@@ -3,6 +3,7 @@
 ### Other Changes
 
 * Added more libraries to list of lookup libraries using this project's data
+* Fixed overpass querying ([#43](https://github.com/evansiroky/timezone-boundary-builder/issues/43))
 
 ## 2018d
 

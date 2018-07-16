@@ -155,7 +155,7 @@ var downloadOsmBoundary = function (boundaryId, boundaryCallback) {
     query += '["' + k + '"="' + v + '"]'
   }
 
-  query += ');out body;>;out meta qt;'
+  query += ';);out body;>;out meta qt;'
 
   console.log(debug)
 
