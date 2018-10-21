@@ -1135,7 +1135,7 @@
     }, {
       "op": "intersect",
       "source": "manual-polygon",
-      "data": [[[-24,72.4],[-19,71],[-18,70],[-25,70.5],[-24,72.4]]],
+      "data": [[[-24.2,73.5],[-15,71.8],[-14,77],[-24.2,73.5]]],
       "description": "Grab part of Greenland and make a best guess at this timezone's location."
     }
   ],
@@ -1314,12 +1314,12 @@
       "op": "difference",
       "source": "manual-polygon",
       "data": [[[-24,72.4],[-19,71],[-18,70],[-25,70.5],[-24,72.4]]],
-      "description": "Exclude area from Greenland used to make America/Danmarkshavn"
+      "description": "Exclude area from Greenland used to make America/Scoresbysund"
     }, {
       "op": "difference",
       "source": "manual-polygon",
       "data": [[[-24.2,73.5],[-15,71.8],[-14,77],[-24.2,73.5]]],
-      "description": "Exclude area from Greenland used to make America/Scoresbysund"
+      "description": "Exclude area from Greenland used to make America/Danmarkshavn"
     }, {
       "op": "difference",
       "source": "manual-polygon",
@@ -2195,7 +2195,7 @@
     }, {
       "op": "intersect",
       "source": "manual-polygon",
-      "data": [[[-24.2,73.5],[-15,71.8],[-14,77],[-24.2,73.5]]],
+      "data": [[[-24,72.4],[-19,71],[-18,70],[-25,70.5],[-24,72.4]]],
       "description": "Grab part of Greenland and make a best guess at this timezone's location."
     }
   ],
