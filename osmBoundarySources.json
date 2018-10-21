@@ -928,7 +928,6 @@
     "name:en": "Oymyakonsky Ulus"
   },
   "Page": {
-    "way": true,
     "name": "Page",
     "is_in:state_code": "AZ"
   },
