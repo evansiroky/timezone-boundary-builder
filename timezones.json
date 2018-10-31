@@ -185,6 +185,11 @@
       "op": "init",
       "source": "overpass",
       "id": "South Africa"
+    }, {
+      "op": "union",
+      "source": "manual-polygon",
+      "data": [[[-5.5,-86],[0,-86],[0,-68],[-5.5,-69],[-5.5,-86]]],
+      "description": "Add Antarctic Station of SANAE IV."
     }
   ],
   "Africa/Juba": [
@@ -680,6 +685,16 @@
       "source": "manual-polygon",
       "data": [[[-59,-55],[-68.3079531,-52.5782436],[-68.6,-52.5],[-78,-57],[-59,-55]]],
       "description": "Use arbitrary sea boundary between Santa Cruz and Tierra Del Fuego"
+    }, {
+      "op": "union",
+      "source": "manual-polygon",
+      "data": [[[-58,-86],[-45,-86],[-35,-86],[-35,-75],[-58,-74],[-54,-63],[-57,-61.6],[-59,-61.8],[-58.8,-62.25],[-57.3,-63.4],[-64,-64],[-63.8,-64.8],[-65.5,-65.25],[-67.5,-66],[-67.5,-86],[-60,-86],[-58,-86]]],
+      "description": "Add Antarctic areas near Stations: Belgrano II, San Martín, Vernadsky, Esperanza and Arctowski."
+    }, {
+      "op": "union",
+      "source": "manual-polygon",
+      "data": [[[-45,-60],[-47.5,-60.5],[-46,-61.5],[-43.5,-61],[-43.5,-60],[-45,-60]]],
+      "description": "Add Antarctic area near Orcadas Station."
     }
   ],
   "America/Asuncion": [
@@ -2071,6 +2086,11 @@
       "source": "manual-polygon",
       "data": [[[-70,-50],[-73.4511111,-49.7894444],[-73.0975128,-49.2838889],[-70,-50]]],
       "description": "In disputed Viedma Glacier area on Argentina-Chile border, assume that a straight line is drawn between last agreed upon boundary points.  This operation removes area in Chile to compensate for the straight line rule."
+    }, {
+      "op": "union",
+      "source": "manual-polygon",
+      "data": [[[-64,-64],[-57.3,-63.4],[-58.8,-62.25],[-59,-61.8],[-63,-62.7],[-64,-64]]],
+      "description": "Add Antarctic Areas.  Includes stations General Bernardo O'Higgins, Great Wall, Bellinghausen and Artigas."
     }
   ],
   "America/Rainy_River": [
@@ -2431,6 +2451,30 @@
       "description": "This is a manual trace of what appears to be the boundary of the city limits of Inuvik.  Boundary is based off of this document: http://www.inuvik.ca/en/living-here/resources/By-laws/2582_Community_Plan_Map.pdf"
     }
   ],
+  "Antarctica/Casey": [
+    {
+      "op": "init",
+      "source": "manual-polygon",
+      "data": [[[97,-70],[115,-70],[120,-70],[120,-65],[97,-64],[97,-70]]],
+      "description": "Best guess at extent of Casey timezone based off of map at https://en.wikipedia.org/wiki/Time_in_Antarctica, but subtracting area for Vostok and Mirny Stations."
+    }
+  ],
+  "Antarctica/Davis": [
+    {
+      "op": "init",
+      "source": "manual-polygon",
+      "data": [[[77.5,-86],[86,-86],[86,-65],[77.5,-68],[77.5,-86]]],
+      "description": "Best guess at extent of Davis timezone."
+    }
+  ],
+  "Antarctica/DumontDUrville": [
+    {
+      "op": "init",
+      "source": "manual-polygon",
+      "data": [[[120,-70],[135,-70],[150,-70],[160,-70],[160,-65],[150,-65],[135,-65],[120,-65],[120,-70]]],
+      "description": "Best guess at extent of DumontDUrville timezone based off of map at https://en.wikipedia.org/wiki/Time_in_Antarctica, but subtracting area for Concordia Station (Australia/Perth)."
+    }
+  ],
   "Antarctica/Macquarie": [
     {
       "op": "init",
@@ -2441,6 +2485,67 @@
       "source": "manual-polygon",
       "data": [[[159,-53],[156,-56],[162,-56],[159,-53]]],
       "description": "Intersect part of Australia to isolate Macquarie Island."
+    }
+  ],
+  "Antarctica/Mawson": [
+    {
+      "op": "init",
+      "source": "manual-polygon",
+      "data": [[[55,-86],[60,-86],[75,-86],[77.5,-86],[77.5,-68],[55,-64],[55,-86]]],
+      "description": "Best guess at extent of Mawson timezone.  This timezone also includes the Zhongshan and Bharati stations because apparently they also use UTC+5 https://encyclopedia.timegenie.com/time_zones/antarctica/."
+    }
+  ],
+  "Antarctica/McMurdo": [
+    {
+      "op": "init",
+      "source": "manual-polygon",
+      "data": [[[-180,-90],[-180,-75],[-150,-75],[-150,-86],[-135,-86],[-120,-86],[-105,-86],[-90,-86],[-80,-86],[-75,-86],[-67.5,-86],[-60,-86],[-58,-86],[-45,-86],[-35,-86],[-30,-86],[-17,-86],[-15,-86],[-5.5,-86],[0,-86],[15,-86],[25,-86],[30,-86],[45,-86],[55,-86],[60,-86],[75,-86],[77.5,-86],[86,-86],[90,-86],[105,-86],[115,-86],[120,-86],[135,-86],[150,-86],[160,-86],[160,-65],[180,-70],[180,-86],[180,-90],[-180,-90]]],
+      "description": "Best guess at McMurdo timezone according to map of timezone at https://en.wikipedia.org/wiki/Time_in_Antarctica.  Includes South Pole timezone since it is linked to McMurdo in the timezone DB."
+    }
+  ],
+  "Antarctica/Palmer": [
+    {
+      "op": "init",
+      "source": "manual-polygon",
+      "data": [[[-64,-64],[-65,-64.5],[-65.5,-65.25],[-63.8,-64.8],[-64,-64]]],
+      "description": "Best guess at Palmer timezone."
+    }
+  ],
+  "Antarctica/Rothera": [
+    {
+      "op": "init",
+      "source": "manual-polygon",
+      "data": [[[-80,-86],[-75,-86],[-67.5,-86],[-67.5,-66],[-80,-66],[-80,-86]]],
+      "description": "Best guess at Rothera timezone partially based off of British Antarctic Claims."
+    }, {
+      "op": "union",
+      "source": "manual-polygon",
+      "data": [[[-35,-86],[-30,-86],[-17,-86],[-17,-71],[-35,-75],[-35,-86]]],
+      "description": "Add area near Halley Station."
+    }
+  ],
+  "Antarctica/Syowa": [
+    {
+      "op": "init",
+      "source": "manual-polygon",
+      "data": [[[25,-86],[30,-86],[45,-86],[55,-86],[55,-64],[25,-68],[25,-86]]],
+      "description": "Best guess at Syowa timezone according to map of timezone at https://en.wikipedia.org/wiki/Time_in_Antarctica.  Also, Mirny station uses the same timezone as Vostok according to https://encyclopedia.timegenie.com/time_zones/antarctica/.  Also includes Japanese Asuka Station."
+    }
+  ],
+  "Antarctica/Troll": [
+    {
+      "op": "init",
+      "source": "manual-polygon",
+      "data": [[[0,-86],[15,-86],[25,-86],[25,-68],[0,-68],[0,-86]]],
+      "description": "Best guess at Troll timezone according to map of timezone at https://en.wikipedia.org/wiki/Time_in_Antarctica, but subtracting area to west starting with SANAE IV station.  Also includes Maitri and Novolazarevskaya Stations."
+    }
+  ],
+  "Antarctica/Vostok": [
+    {
+      "op": "init",
+      "source": "manual-polygon",
+      "data": [[[86,-86],[90,-86],[105,-86],[115,-86],[115,-70],[97,-70],[97,-64],[86,-65],[86,-86]]],
+      "description": "Best guess at Vostok timezone according to map of timezone at https://en.wikipedia.org/wiki/Time_in_Antarctica.  Also, Mirny station uses the same timezone as Vostok according to https://encyclopedia.timegenie.com/time_zones/antarctica/."
     }
   ],
   "Arctic/Longyearbyen": [
@@ -3551,6 +3656,11 @@
       "source": "manual-polygon",
       "data": [[[131,-31.3],[125.5,-31.3],[125.5,-35],[131,-31.3]]],
       "description": "Difference part of Western Australia to form zone.  Boundary is based off of the boundary coded in efele.net's shapefile."
+    }, {
+      "op": "union",
+      "source": "manual-polygon",
+      "data": [[[115,-86],[120,-86],[135,-86],[150,-86],[160,-86],[160,-70],[150,-70],[135,-70],[120,-70],[115,-70],[115,-86]]],
+      "description": "According to chatter on the tz mailing list, the Antrarctic Concordia Station uses Australia/Perth time.  https://mm.icann.org/pipermail/tz/2013-December/020520.html"
     }
   ],
   "Australia/Sydney": [
@@ -3654,6 +3764,11 @@
       "source": "manual-polygon",
       "data": [[[8.7,47.75],[8.75,47.63],[8.6,47.7],[8.7,47.75]]],
       "description": "Exclude area belonging to Busingen timezone."
+    }, {
+      "op": "union",
+      "source": "manual-polygon",
+      "data": [[[-17,-86],[-15,-86],[-5.5,-86],[-5.5,-69],[-17,-71],[-17,-86]]],
+      "description": "Add Antarctic Station Neumayer III Station."
     }
   ],
   "Europe/Bratislava": [
