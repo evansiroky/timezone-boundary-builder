@@ -19,7 +19,8 @@
   "dependencies": {
     "@mapbox/geojson-area": "^0.2.2",
     "@mapbox/geojsonhint": "^2.1.0",
-    "@turf/helpers": "^3.10.3",
+    "@turf/bbox": "^6.0.1",
+    "@turf/helpers": "^6.1.4",
     "async": "^2.1.5",
     "jsts": "^1.3.0",
     "query-overpass": "^1.1.3",

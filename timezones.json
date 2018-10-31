@@ -3212,10 +3212,6 @@
     }, {
       "op": "difference",
       "source": "overpass",
-      "id": "Xinjiang"
-    }, {
-      "op": "difference",
-      "source": "overpass",
       "id": "Hong Kong"
     }, {
       "op": "difference",

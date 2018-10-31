@@ -3,6 +3,7 @@ var fs = require('fs')
 
 var area = require('@mapbox/geojson-area')
 var geojsonhint = require('@mapbox/geojsonhint')
+var bbox = require('@turf/bbox').default
 var helpers = require('@turf/helpers')
 var multiPolygon = helpers.multiPolygon
 var polygon = helpers.polygon
@@ -13,11 +14,12 @@ var overpass = require('query-overpass')
 
 var osmBoundarySources = require('./osmBoundarySources.json')
 var zoneCfg = require('./timezones.json')
+var expectedZoneOverlaps = require('./expectedZoneOverlaps.json')
 
 // allow building of only a specified zones
 var filteredIndex = process.argv.indexOf('--filtered-zones')
 if (filteredIndex > -1 && process.argv[filteredIndex + 1]) {
-  filteredZones = process.argv[filteredIndex + 1].split(',')
+  const filteredZones = process.argv[filteredIndex + 1].split(',')
   var newZoneCfg = {}
   filteredZones.forEach((zoneName) => {
     newZoneCfg[zoneName] = zoneCfg[zoneName]
@@ -194,8 +196,7 @@ var downloadOsmBoundary = function (boundaryId, boundaryCallback) {
         console.error('No data for the following query:')
         console.error(query)
         console.error('To read more about this error, please visit https://git.io/vxKQL')
-        var err = new Error('No data found for from overpass query')
-        return cb(err)
+        return cb(new Error('No data found for from overpass query'))
       }
       cb()
     }],
@@ -413,11 +414,50 @@ var validateTimezoneBoundaries = function () {
         var intersectedArea = intersectedGeom.getArea()
 
         if (intersectedArea > 0.0001) {
+          // check if the intersected area(s) are one of the expected areas of overlap
+          const allowedOverlapBounds = expectedZoneOverlaps[`${tzid}-${compareTzid}`] || expectedZoneOverlaps[`${compareTzid}-${tzid}`]
+          const overlapsGeoJson = geoJsonWriter.write(intersectedGeom)
+
+          // these zones are allowed to overlap in certain places, make sure the
+          // found overlap(s) all fit within the expected areas of overlap
+          if (allowedOverlapBounds) {
+            // if the overlaps are a multipolygon, make sure each individual
+            // polygon of overlap fits within at least one of the expected
+            // overlaps
+            let overlapsPolygons
+            switch (overlapsGeoJson.type) {
+              case 'Polygon':
+                overlapsPolygons = [overlapsGeoJson]
+                break
+              default:
+                break
+            }
+
+            let allOverlapsOk = true
+            overlapsPolygons.forEach((polygon, idx) => {
+              const bounds = bbox(polygon)
+              if (
+                !allowedOverlapBounds.some(allowedBounds =>
+                  allowedBounds[0] <= bounds[0] && // minX
+                    allowedBounds[1] <= bounds[1] && // minY
+                    allowedBounds[2] >= bounds[2] && // maxX
+                    allowedBounds[3] >= bounds[3] // maxY
+                )
+              ) {
+                console.error('Unexpected intersection with bounds: ', bounds)
+                allOverlapsOk = false
+              }
+            })
+
+            if (allOverlapsOk) continue
+          }
+
+          // not an expected overlap, output an error
           console.error('Validation error: ' + tzid + ' intersects ' + compareTzid + ' area: ' + intersectedArea)
           const debugFilename = tzid.replace('/', '-') + '-' + compareTzid.replace('/', '-') + '-overlap.json'
           fs.writeFileSync(
             debugFilename,
-            JSON.stringify(geoJsonWriter.write(intersectedGeom))
+            JSON.stringify(overlapsGeoJson)
           )
           console.error('wrote overlap area as file ' + debugFilename)
           console.error('To read more about this error, please visit https://git.io/vx6nx')
@@ -468,9 +508,9 @@ var addOceans = function (callback) {
     console.log(zone.tzid)
     const geoJson = polygon([[
       [zone.left, 90],
-      [zone.left,-90],
-      [zone.right,-90],
-      [zone.right,90],
+      [zone.left, -90],
+      [zone.right, -90],
+      [zone.right, 90],
       [zone.left, 90]
     ]]).geometry
 
@@ -599,6 +639,5 @@ asynclib.auto({
   console.log('done')
   if (err) {
     console.log('error!', err)
-    return
   }
 })
