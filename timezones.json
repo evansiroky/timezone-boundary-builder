@@ -609,13 +609,12 @@
     }, {
       "op": "intersect",
       "source": "manual-polygon",
-      "data": [[[-59,-46],[-65,-52],[-68.3079531,-52.5782436],[-68.6,-52.5],[-80,-52],[-80,-46],[-59,-46]]],
-      "description": "Use this polygon to create northern boundary of Santa Cruz.  Also, use arbitrary sea boundary between Santa Cruz and Tierra Del Fuego"
+      "data": [[[-59,-44],[-65,-52],[-68.3079531,-52.5782436],[-68.6,-52.5],[-80,-52],[-80,-44],[-59,-44]]],
+      "description": "Isolate most of Santa Cruz from the rest of Argentina.  Also, use arbitrary sea boundary between Santa Cruz and Tierra Del Fuego"
     }, {
       "op": "difference",
-      "source": "manual-polygon",
-      "data": [[[-75,-50],[-73.4511111,-49.7894444],[-73.0975128,-49.2838889],[-75,-48.8], [-75,-50]]],
-      "description": "In disputed Viedma Glacier area on Argentina-Chile border, assume that a straight line is drawn between last agreed upon boundary points"
+      "source": "overpass",
+      "id": "Chubut"
     }
   ],
   "America/Argentina/Salta": [
