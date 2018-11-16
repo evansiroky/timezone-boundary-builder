@@ -665,7 +665,7 @@ asynclib.auto({
     console.log('convert from geojson to shapefile')
     rimraf.sync('dist/combined-shapefile.*')
     exec(
-      'ogr2ogr -f "ESRI Shapefile" dist/combined-shapefile.shp dist/combined.json OGRGeoJSON',
+      'ogr2ogr -f "ESRI Shapefile" dist/combined-shapefile.shp dist/combined.json',
       function (err, stdout, stderr) {
         if (err) { return cb(err) }
         exec('zip dist/timezones.shapefile.zip dist/combined-shapefile.*', cb)
@@ -676,7 +676,7 @@ asynclib.auto({
     console.log('convert from geojson with oceans to shapefile')
     rimraf.sync('dist/combined-shapefile-with-oceans.*')
     exec(
-      'ogr2ogr -nlt MULTIPOLYGON dist/combined-shapefile-with-oceans.shp dist/combined-with-oceans.json OGRGeoJSON',
+      'ogr2ogr -f "ESRI Shapefile" dist/combined-shapefile-with-oceans.shp dist/combined-with-oceans.json',
       function (err, stdout, stderr) {
         if (err) { return cb(err) }
         exec('zip dist/timezones-with-oceans.shapefile.zip dist/combined-shapefile-with-oceans.*', cb)
