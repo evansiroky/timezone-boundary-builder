@@ -23,7 +23,7 @@
     "@turf/helpers": "^6.1.4",
     "async": "^2.1.5",
     "jsts": "^1.3.0",
-    "query-overpass": "^1.1.3",
+    "query-overpass": "^1.5.3",
     "rimraf": "^2.6.1",
     "shpjs": "^3.3.2"
   }

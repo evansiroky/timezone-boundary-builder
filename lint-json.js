@@ -1,5 +1,6 @@
 const osmBoundarySources = require('./osmBoundarySources.json')
 const zoneCfg = require('./timezones.json')
+const expectedZoneOverlaps = require('./expectedZoneOverlaps.json')
 
 let numErrors = 0
 
@@ -35,6 +36,16 @@ Object.keys(sourcesUsage).forEach(source => {
     numErrors++
     console.error(`osmBoundarySources config "${source}" is never used in timezone boundary building`)
   }
+})
+
+// Make sure all expected zone overlaps have a description
+Object.keys(expectedZoneOverlaps).forEach(zoneOverlap => {
+  expectedZoneOverlaps[zoneOverlap].forEach((overlapBounds, idx) => {
+    if (!overlapBounds.description || overlapBounds.description.length < 3) {
+      numErrors++
+      console.error(`Expected overlap #${idx} of zones ${zoneOverlap} missing description`)
+    }
+  })
 })
 
 if (numErrors > 0) {

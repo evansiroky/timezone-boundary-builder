@@ -201,15 +201,11 @@
       "op": "union",
       "source": "manual-polygon",
       "data": [[[35.3,5.2],[35.9,4.6],[34,4.6],[35.3,5.2]]],
-      "description": "Initially add Ilemi Triangle to South Sudan area.  Whatever OSM thinks Kenya's border is is then used as seen in the next operation."
+      "description": "Initially add Ilemi Triangle to South Sudan area.  Whatever OSM thinks Kenya's border is is then used as seen in the next operation.  This avoids having holes."
     }, {
       "op": "difference",
       "source": "overpass",
       "id": "Kenya"
-    }, {
-      "op": "difference",
-      "source": "overpass",
-      "id": "Sudan"
     }
   ],
   "Africa/Kampala": [
@@ -341,10 +337,6 @@
       "op": "init",
       "source": "overpass",
       "id": "Mozambique"
-    }, {
-      "op": "difference",
-      "source": "overpass",
-      "id": "Malawi"
     }
   ],
   "Africa/Maseru": [
@@ -1788,11 +1780,6 @@
       "source": "manual-polygon",
       "data": [[[-66.681,48.01],[-66.685,48.0158],[-66.6864,48.0166],[-66.723,48.029],[-66.7179,48.0363],[-66.7407,48.0623],[-66.733,48.0728],[-66.756,48.1022],[-66.802,48.086],[-66.754,48.0305],[-66.737,48.0274],[-66.73,48.0309],[-66.71,47.996],[-66.681,48.01]]],
       "description": "Include terroritory belonging to Listuguj Mi'gmaq First Nation"
-    }, {
-      "op": "difference",
-      "source": "overpass",
-      "id": "United States of America",
-      "description": "Exclude USA territory that is overlapping near Maine"
     }
   ],
   "America/Monterrey": [
@@ -2056,11 +2043,6 @@
       "op": "init",
       "source": "overpass",
       "id": "Rondônia"
-    }, {
-      "op": "difference",
-      "source": "overpass",
-      "id": "Bolivia",
-      "description": "There is a territorial dispute over Isla Suárez, but apparently Bolivia controls it (https://es.wikipedia.org/wiki/Isla_Su%C3%A1rez).  Therefore this zone is diffed againest Bolivia."
     }
   ],
   "America/Puerto_Rico": [
@@ -2080,11 +2062,6 @@
       "op": "init",
       "source": "overpass",
       "id": "Magallanes Region"
-    }, {
-      "op": "difference",
-      "source": "manual-polygon",
-      "data": [[[-70,-50],[-73.4511111,-49.7894444],[-73.0975128,-49.2838889],[-70,-50]]],
-      "description": "In disputed Viedma Glacier area on Argentina-Chile border, assume that a straight line is drawn between last agreed upon boundary points.  This operation removes area in Chile to compensate for the straight line rule."
     }, {
       "op": "union",
       "source": "manual-polygon",
@@ -2373,6 +2350,14 @@
       "source": "manual-polygon",
       "data": [[[-66.681,48.01],[-66.685,48.0158],[-66.6864,48.0166],[-66.723,48.029],[-66.7179,48.0363],[-66.7407,48.0623],[-66.733,48.0728],[-66.756,48.1022],[-66.802,48.086],[-66.754,48.0305],[-66.737,48.0274],[-66.73,48.0309],[-66.71,47.996],[-66.681,48.01]]],
       "description": "Exclude terroritory belonging to Listuguj Mi'gmaq First Nation"
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "Nipigon-tz"
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "Thunder Bay-tz"
     }
   ],
   "America/Tortola": [
@@ -2683,14 +2668,6 @@
       "op": "init",
       "source": "overpass",
       "id": "Kyrgyzstan"
-    }, {
-      "op": "difference",
-      "source": "overpass",
-      "id": "Uzbekistan"
-    }, {
-      "op": "difference",
-      "source": "overpass",
-      "id": "Tajikistan"
     }
   ],
   "Asia/Brunei": [
@@ -2758,10 +2735,6 @@
       "op": "init",
       "source": "overpass",
       "id": "Tajikistan"
-    }, {
-      "op": "difference",
-      "source": "overpass",
-      "id": "Uzbekistan"
     }
   ],
   "Asia/Famagusta": [
@@ -2813,6 +2786,11 @@
       "op": "init",
       "source": "overpass",
       "id": "Vietnam"
+    }, {
+      "op": "difference",
+      "source": "manual-polygon",
+      "data": [[[117.76,16.2],[116,14],[119,14],[117.76,16.2]]],
+      "description": "Exclude Scarborough Shoal because it's not claimed by Vietnam (https://en.wikipedia.org/wiki/Scarborough_Shoal)"
     }
   ],
   "Asia/Hong_Kong": [
@@ -2902,10 +2880,6 @@
       "op": "init",
       "source": "overpass",
       "id": "Israel"
-    }, {
-      "op": "difference",
-      "source": "overpass",
-      "id": "Palestinian Territories"
     }
   ],
   "Asia/Kabul": [
@@ -2934,10 +2908,6 @@
       "op": "init",
       "source": "overpass",
       "id": "Nepal"
-    }, {
-      "op": "difference",
-      "source": "overpass",
-      "id": "Uttarakhand"
     }
   ],
   "Asia/Khandyga": [
@@ -2956,10 +2926,6 @@
       "op": "init",
       "source": "overpass",
       "id": "India"
-    }, {
-      "op": "difference",
-      "source": "overpass",
-      "id": "Bangladesh"
     }
   ],
   "Asia/Krasnoyarsk": [
@@ -3066,10 +3032,6 @@
       "op": "init",
       "source": "overpass",
       "id": "Oman"
-    }, {
-      "op": "difference",
-      "source": "overpass",
-      "id": "United Arab Emirates"
     }
   ],
   "Asia/Nicosia": [
@@ -3217,20 +3179,6 @@
       "op": "difference",
       "source": "overpass",
       "id": "Macau"
-    }, {
-      "op": "difference",
-      "source": "overpass",
-      "id": "Republic of China"
-    }, {
-      "op": "difference",
-      "source": "manual-polygon",
-      "data": [[[117.76,16.2],[116,14],[119,14],[117.76,16.2]]],
-      "description": "Exclude Scarborough Shoal so it becomes part of Asia/Manila"
-    }, {
-      "op": "difference",
-      "source": "manual-polygon",
-      "data": [[[114.08,10.99],[114.13,10.9],[114.14,11],[114.08,10.99]]],
-      "description": "Clip part of area off of Subi Reef that encroaches on territory claimed by Philippines."
     }
   ],
   "Asia/Singapore": [
@@ -3445,10 +3393,6 @@
       "op": "init",
       "source": "overpass",
       "id": "Armenia"
-    }, {
-      "op": "difference",
-      "source": "overpass",
-      "id": "Azerbaijan"
     }
   ],
   "Atlantic/Azores": [
@@ -3559,7 +3503,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Yancowinna County"
+      "id": "Broken_Hill-tz"
     }
   ],
   "Australia/Currie": [
@@ -3670,7 +3614,7 @@
     }, {
       "op": "difference",
       "source": "overpass",
-      "id": "Yancowinna County"
+      "id": "Broken_Hill-tz"
     }, {
       "op": "difference",
       "source": "manual-polygon",
@@ -3693,11 +3637,6 @@
       "source": "manual-polygon",
       "data": [[[9,55],[9,48],[-2,52],[9,55]]],
       "description": "Intersect to include only European area of The Netherlands."
-    }, {
-      "op": "difference",
-      "source": "overpass",
-      "id": "Belgium",
-      "description": "Difference against Belgium to make sure that a lot of the Belgian exclaves are properly recognized."
     }
   ],
   "Europe/Andorra": [
@@ -3746,14 +3685,6 @@
       "op": "init",
       "source": "overpass",
       "id": "Germany"
-    }, {
-      "op": "difference",
-      "source": "overpass",
-      "id": "The Netherlands"
-    }, {
-      "op": "difference",
-      "source": "overpass",
-      "id": "Luxemburg"
     }, {
       "op": "difference",
       "source": "manual-polygon",
@@ -3982,10 +3913,6 @@
       "op": "init",
       "source": "overpass",
       "id": "Belarus"
-    }, {
-      "op": "difference",
-      "source": "overpass",
-      "id": "Moscow-tz"
     }
   ],
   "Europe/Monaco": [
@@ -4076,10 +4003,6 @@
       "op": "init",
       "source": "overpass",
       "id": "Italy"
-    }, {
-      "op": "difference",
-      "source": "overpass",
-      "id": "France"
     }
   ],
   "Europe/Samara": [
@@ -4221,19 +4144,6 @@
       "op": "init",
       "source": "overpass",
       "id": "Croatia"
-    }, {
-      "op": "union",
-      "source": "manual-polygon",
-      "data": [[[19,46],[18.6,46],[18.7,45.5],[19.2,45.5],[19,46]]],
-      "description": "filling area of border dispute and then diffing it against Serbia"
-    }, {
-      "op": "difference",
-      "source": "overpass",
-      "id": "Serbia"
-    }, {
-      "op": "difference",
-      "source": "overpass",
-      "id": "Hungary"
     }
   ],
   "Europe/Zaporozhye": [

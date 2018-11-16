@@ -1,3 +1,116 @@
 {
-  "Asia/Shanghai-Asia/Urumqi": [[73.4, 34.3, 96.4, 49.2]]
+  "Africa/Juba-Africa/Khartoum": [
+    {
+      "bounds": [27.8, 9.3, 29.1, 10.2],
+      "description": "Allow disputed Abyei Area (https://en.wikipedia.org/wiki/Abyei) to overlap."
+    }, {
+      "bounds": [23.4, 8.6, 24.9, 9.9],
+      "description": "Allow disputed Kafia Kingi region (https://en.wikipedia.org/wiki/Kafia_Kingi) to overlap."
+    }
+  ],
+  "America/Argentina/Rio_Gallegos-America/Punta_Arenas": [
+    {
+      "bounds": [-73.6, -49.8, -73, -49.2],
+      "description": "Allow disputed Southern Patagonia Ice Field are (https://en.wikipedia.org/wiki/Argentina%E2%80%93Chile_relations#Border_issues) to overlap."
+    }
+  ],
+  "America/La_Paz-America/Porto_Velho": [
+    {
+      "bounds": [-65.4, -10.9, -65.3, -10.7],
+      "description": "Allow disputed area of Isla Suárez (https://en.wikipedia.org/wiki/Isla_Su%C3%A1rez) to overlap."
+    }
+  ],
+  "America/Moncton-America/New_York": [
+    {
+      "bounds": [-67.4, 44.2, -66.9, 44.8],
+      "description": "Allow disputed area near Machias Seal Island (https://en.wikipedia.org/wiki/Machias_Seal_Island) to overlap."
+    }
+  ],
+  "Asia/Hebron-Asia/Jerusalem": [
+    {
+      "bounds": [35.1, 31.7, 35.3, 31.9],
+      "description": "Allow disputed areas in Jerusalem (https://en.wikipedia.org/wiki/Borders_of_Israel#Status_of_Jerusalem) to overlap."
+    }
+  ],
+  "Asia/Ho_Chi_Minh-Asia/Manila": [
+    {
+      "bounds": [114.1, 10.9, 114.2, 11],
+      "description": "Allow disputed area near Gaven Reefs (https://en.wikipedia.org/wiki/Gaven_Reefs) to overlap."
+    }
+  ],
+  "Asia/Ho_Chi_Minh-Asia/Shanghai": [
+    {
+      "bounds": [114, 10.1, 114.3, 11],
+      "description": "Allow disputed area near Gaven Reefs (https://en.wikipedia.org/wiki/Gaven_Reefs) to overlap."
+    }, {
+      "bounds": [114.4, 9.8, 114.6, 10],
+      "description": "Allow disputed area near Hughes Reef (https://en.wikipedia.org/wiki/Hughes_Reef) to overlap."
+    }, {
+      "bounds": [115.4, 9.8, 115.6, 10],
+      "description": "Allow disputed area near Mischief Reef (https://en.wikipedia.org/wiki/Mischief_Reef) to overlap."
+    }, {
+      "bounds": [114.2, 9.6, 114.4, 9.8],
+      "description": "Allow disputed area near Johnson South Reef (https://en.wikipedia.org/wiki/Johnson_South_Reef) to overlap."
+    }, {
+      "bounds": [112.8, 9.5, 113.1, 9.8],
+      "description": "Allow disputed area near Fiery Cross Reef (https://en.wikipedia.org/wiki/Fiery_Cross_Reef) to overlap."
+    }, {
+      "bounds": [112.7, 8.8, 112.9, 8.9],
+      "description": "Allow disputed area near Cuarteron Reef (https://en.wikipedia.org/wiki/Cuarteron_Reef) to overlap."
+    }, {
+      "bounds": [110.9, 15.5, 113, 17.4],
+      "description": "Allow disputed area near Paracel Islands (https://en.wikipedia.org/wiki/Paracel_Islands) to overlap."
+    }
+  ],
+  "Asia/Manila-Asia/Shanghai": [
+    {
+      "bounds": [114.1, 10.9, 114.2, 11],
+      "description": "Allow disputed area near Gaven Reefs (https://en.wikipedia.org/wiki/Gaven_Reefs) to overlap."
+    }
+  ],
+  "Asia/Shanghai-Asia/Taipei": [
+    {
+      "bounds": [119.4, 24.9, 119.5, 25.1],
+      "description": "Allow disputed area near Wuqiu Township (https://en.wikipedia.org/wiki/Wuqiu,_Kinmen) to overlap."
+    }, {
+      "bounds": [118.1, 24.3, 118.6, 24.6],
+      "description": "Allow disputed islands of Great Kinmen and Lesser Kinmen (https://en.wikipedia.org/wiki/Kinmen) to overlap."
+    }, {
+      "bounds": [118.2, 24.1, 118.3, 24.2],
+      "description": "Allow disputed area near Dongding Island (https://en.wikipedia.org/wiki/Jincheng,_Kinmen) to overlap."
+    }, {
+      "bounds": [119.8, 25.9, 120.6, 26.5],
+      "description": "Allow disputed area near Matsu Islands (https://en.wikipedia.org/wiki/Matsu_Islands) to overlap."
+    }
+  ],
+  "Asia/Shanghai-Asia/Urumqi": [
+    {
+      "bounds": [73.4, 34.3, 96.4, 49.2],
+      "description": "Xinjiang time might be used by some locals in Xinjiang.  https://en.wikipedia.org/wiki/Xinjiang_Time"
+    }
+  ],
+  "Europe/Amsterdam-Europe/Berlin": [
+    {
+      "bounds": [6.3, 53.3, 7.2, 53.8],
+      "description": "Allow dispupted maritime border near the Ems estuary to overlap.  https://en.wikipedia.org/wiki/Germany%E2%80%93Netherlands_border#Disputes"
+    }
+  ],
+  "Europe/Belgrade-Europe/Zagreb": [
+    {
+      "bounds": [18.8, 45.2, 19.3, 46],
+      "description": "Allow disupted borders of Croatia and Serbia to overlap.  https://en.wikipedia.org/wiki/Croatia%E2%80%93Serbia_border_dispute"
+    }
+  ],
+  "Europe/Berlin-Europe/Luxembourg": [
+    {
+      "bounds": [6.1, 49.4, 6.6, 50.2],
+      "description": "Allow entire border of Germany and Luxembourg to overlap as most of it is a condominium.  https://opinionator.blogs.nytimes.com/2012/01/23/the-worlds-most-exclusive-condominium/"
+    }
+  ],
+  "Europe/Paris-Europe/Rome": [
+    {
+      "bounds": [6.8, 45.8, 6.9, 45.9],
+      "description": "Allow disputed areas near Mont Blanc (https://en.wikipedia.org/wiki/Mont_Blanc#Ownership_of_the_summit) and Dôme du Goûter (https://en.wikipedia.org/wiki/D%C3%B4me_du_Go%C3%BBter) to overlap."
+    }
+  ]
 }

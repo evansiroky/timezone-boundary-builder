@@ -207,7 +207,11 @@ var downloadOsmBoundary = function (boundaryId, boundaryCallback) {
       // union all multi-polygons / polygons into one
       for (var i = data.features.length - 1; i >= 0; i--) {
         var curOsmGeom = data.features[i].geometry
-        if (curOsmGeom.type === 'Polygon' || curOsmGeom.type === 'MultiPolygon') {
+        const curOsmProps = data.features[i].properties
+        if (
+          (curOsmGeom.type === 'Polygon' || curOsmGeom.type === 'MultiPolygon') &&
+          curOsmProps.type === 'boundary' // need to make sure enclaves aren't unioned
+        ) {
           console.log('combining border')
           let errors = geojsonhint.hint(curOsmGeom)
           if (errors && errors.length > 0) {
@@ -388,6 +392,23 @@ var getDistZoneGeom = function (tzid) {
   return distZones[tzid]
 }
 
+var roundDownToTenth = function (n) {
+  return Math.floor(n * 10) / 10
+}
+
+var roundUpToTenth = function (n) {
+  return Math.ceil(n * 10) / 10
+}
+
+var formatBounds = function (bounds) {
+  let boundsStr = '['
+  boundsStr += roundDownToTenth(bounds[0]) + ', '
+  boundsStr += roundDownToTenth(bounds[1]) + ', '
+  boundsStr += roundUpToTenth(bounds[2]) + ', '
+  boundsStr += roundUpToTenth(bounds[3]) + ']'
+  return boundsStr
+}
+
 var validateTimezoneBoundaries = function () {
   console.log('do validation... this may take a few minutes')
   var allZonesOk = true
@@ -426,25 +447,52 @@ var validateTimezoneBoundaries = function () {
             // overlaps
             let overlapsPolygons
             switch (overlapsGeoJson.type) {
+              case 'MultiPolygon':
+                overlapsPolygons = overlapsGeoJson.coordinates.map(
+                  polygonCoords => ({
+                    coordinates: polygonCoords,
+                    type: 'Polygon'
+                  })
+                )
+                break
               case 'Polygon':
                 overlapsPolygons = [overlapsGeoJson]
                 break
+              case 'GeometryCollection':
+                overlapsPolygons = []
+                overlapsGeoJson.geometries.forEach(geom => {
+                  if (geom.type === 'Polygon') {
+                    overlapsPolygons.push(geom)
+                  } else if (geom.type === 'MultiPolygon') {
+                    geom.coordinates.forEach(polygonCoords => {
+                      overlapsPolygons.push({
+                        coordinates: polygonCoords,
+                        type: 'Polygon'
+                      })
+                    })
+                  }
+                })
+                break
               default:
+                console.error('unexpected geojson overlap type')
+                console.log(overlapsGeoJson)
                 break
             }
 
             let allOverlapsOk = true
             overlapsPolygons.forEach((polygon, idx) => {
               const bounds = bbox(polygon)
+              const polygonArea = area.geometry(polygon)
               if (
+                polygonArea > 10 && // ignore small polygons
                 !allowedOverlapBounds.some(allowedBounds =>
-                  allowedBounds[0] <= bounds[0] && // minX
-                    allowedBounds[1] <= bounds[1] && // minY
-                    allowedBounds[2] >= bounds[2] && // maxX
-                    allowedBounds[3] >= bounds[3] // maxY
+                  allowedBounds.bounds[0] <= bounds[0] && // minX
+                    allowedBounds.bounds[1] <= bounds[1] && // minY
+                    allowedBounds.bounds[2] >= bounds[2] && // maxX
+                    allowedBounds.bounds[3] >= bounds[3] // maxY
                 )
               ) {
-                console.error('Unexpected intersection with bounds: ', bounds)
+                console.error(`Unexpected intersection (${polygonArea} area) with bounds: ${formatBounds(bounds)}`)
                 allOverlapsOk = false
               }
             })
@@ -452,9 +500,9 @@ var validateTimezoneBoundaries = function () {
             if (allOverlapsOk) continue
           }
 
-          // not an expected overlap, output an error
+          // at least one unexpected overlap found, output an error and write debug file
           console.error('Validation error: ' + tzid + ' intersects ' + compareTzid + ' area: ' + intersectedArea)
-          const debugFilename = tzid.replace('/', '-') + '-' + compareTzid.replace('/', '-') + '-overlap.json'
+          const debugFilename = tzid.replace(/\//g, '-') + '-' + compareTzid.replace(/\//g, '-') + '-overlap.json'
           fs.writeFileSync(
             debugFilename,
             JSON.stringify(overlapsGeoJson)
@@ -617,7 +665,7 @@ asynclib.auto({
     console.log('convert from geojson to shapefile')
     rimraf.sync('dist/combined-shapefile.*')
     exec(
-      'ogr2ogr -nlt MULTIPOLYGON dist/combined-shapefile.shp dist/combined.json OGRGeoJSON',
+      'ogr2ogr -f "ESRI Shapefile" dist/combined-shapefile.shp dist/combined.json OGRGeoJSON',
       function (err, stdout, stderr) {
         if (err) { return cb(err) }
         exec('zip dist/timezones.shapefile.zip dist/combined-shapefile.*', cb)
