@@ -1243,7 +1243,24 @@
     {
       "op": "init",
       "source": "overpass",
+      "id": "Canada"
+    }, {
+      "op": "intersect",
+      "source": "manual-polygon",
+      "data": [[[-118,55],[-123,48],[-112,48],[-118,55]]],
+      "description": "The Edmonton timezone in OSM currently does not include the British Columbia portion.  Therefore, the boundary is obtained by first intersect Canada with this polygon and then remove the Vancouver and Creston timezones."
+    }, {
+      "op": "union",
+      "source": "overpass",
       "id": "Edmonton-tz"
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "Vancouver-tz"
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "Creston-tz"
     }
   ],
   "America/Eirunepe": [
