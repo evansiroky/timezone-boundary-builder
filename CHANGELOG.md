@@ -1,26 +1,28 @@
-## Unreleased
+## 2018g
 
 ### Zone Changes
 
-* Switch geometries of America/Danmarkshavn and America/Scoresbysund ([#40](https://github.com/evansiroky/timezone-boundary-builder/issues/40))
+* Switch geometries of `America/Danmarkshavn` and `America/Scoresbysund` ([#40](https://github.com/evansiroky/timezone-boundary-builder/issues/40))
 * Add timezones in Antarctica ([#42](https://github.com/evansiroky/timezone-boundary-builder/issues/42))
-* Fix northern border of America/Argentina/Rio_Gallegos ([#46](https://github.com/evansiroky/timezone-boundary-builder/issues/46))
+* Fix northern border of `America/Argentina/Rio_Gallegos` ([#46](https://github.com/evansiroky/timezone-boundary-builder/issues/46))
 * Allow timezone boundaries to overlap. ([#41](https://github.com/evansiroky/timezone-boundary-builder/issues/41))
   * This change now means that the following zones overlap:
-    * Africa/Juba, Africa/Khartoum
-    * America/Argentina/Rio_Gallegos, America/Punta_Arenas
-    * America/La_Paz, America/Porto_Velho
-    * America/Moncton, America/New_York
-    * Asia/Hebron, Asia/Jerusalem
-    * Asia/Ho_Chi_Minh, Asia/Manila
-    * Asia/Ho_Chi_Minh, Asia/Shanghai
-    * Asia/Manila, Asia/Shanghai
-    * Asia/Shanghai, Asia/Taipei
-    * Asia/Shanghai, Asia/Urumqi
-    * Europe/Amsterdam, Europe/Berlin
-    * Europe/Belgrade, Europe/Zagreb
-    * Europe/Berlin, Europe/Luxembourg
-    * Europe/Paris, Europe/Rome
+    * `Africa/Juba`, `Africa/Khartoum`
+    * `America/Argentina/Rio_Gallegos`, `America/Punta_Arenas`
+    * `America/La_Paz`, `America/Porto_Velho`
+    * `America/Moncton`, `America/New_York`
+    * `Asia/Hebron`, `Asia/Jerusalem`
+    * `Asia/Ho_Chi_Minh`, `Asia/Manila`
+    * `Asia/Ho_Chi_Minh`, `Asia/Shanghai`
+    * `Asia/Manila`, `Asia/Shanghai`
+    * `Asia/Shanghai`, `Asia/Taipei`
+    * `Asia/Shanghai`, `Asia/Urumqi`
+    * `Europe/Amsterdam`, `Europe/Berlin`
+    * `Europe/Belgrade`, `Europe/Zagreb`
+    * `Europe/Berlin`, `Europe/Luxembourg`
+    * `Europe/Paris`, `Europe/Rome`
+* Add disupted area near Doklam to `Asia/Shanghai` and `Asia/Thimphu` ([#49](https://github.com/evansiroky/timezone-boundary-builder/issues/49))
+* Update boundaries of `America/Creston` and `America/Edmonton` to reflect changes in OpenStreetMap
 * Update to latest OSM data
 
 ### Other Changes
