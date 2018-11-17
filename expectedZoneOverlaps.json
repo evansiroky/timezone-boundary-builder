@@ -83,6 +83,12 @@
       "description": "Allow disputed area near Matsu Islands (https://en.wikipedia.org/wiki/Matsu_Islands) to overlap."
     }
   ],
+  "Asia/Shanghai-Asia/Thimphu": [
+    {
+      "bounds": [88.9, 27.2, 89.2, 27.7],
+      "description": "Allow disputed area near Doklam to overlap (See https://zh.wikipedia.org/wiki/%E4%B8%AD%E4%B8%8D%E8%BE%B9%E7%95%8C%E4%BA%89%E8%AE%AE and https://en.wikipedia.org/wiki/Doklam)"
+    }
+  ],
   "Asia/Shanghai-Asia/Urumqi": [
     {
       "bounds": [73.4, 34.3, 96.4, 49.2],

@@ -3179,6 +3179,26 @@
       "op": "difference",
       "source": "overpass",
       "id": "Macau"
+    }, {
+      "op": "union",
+      "source": "overpass",
+      "id": "Doklam 洞郎地区",
+      "description": "Add dispuated area in Doklam.  See https://zh.wikipedia.org/wiki/%E4%B8%AD%E4%B8%8D%E8%BE%B9%E7%95%8C%E4%BA%89%E8%AE%AE and https://en.wikipedia.org/wiki/Doklam"
+    }, {
+      "op": "union",
+      "source": "overpass",
+      "id": "鲁林地区",
+      "description": "Add dispuated area in Doklam.  See https://zh.wikipedia.org/wiki/%E4%B8%AD%E4%B8%8D%E8%BE%B9%E7%95%8C%E4%BA%89%E8%AE%AE and https://en.wikipedia.org/wiki/Doklam"
+    }, {
+      "op": "union",
+      "source": "overpass",
+      "id": "查马普地区",
+      "description": "Add dispuated area in Doklam.  See https://zh.wikipedia.org/wiki/%E4%B8%AD%E4%B8%8D%E8%BE%B9%E7%95%8C%E4%BA%89%E8%AE%AE and https://en.wikipedia.org/wiki/Doklam"
+    }, {
+      "op": "union",
+      "source": "overpass",
+      "id": "基伍地区",
+      "description": "Add dispuated area in Doklam.  See https://zh.wikipedia.org/wiki/%E4%B8%AD%E4%B8%8D%E8%BE%B9%E7%95%8C%E4%BA%89%E8%AE%AE and https://en.wikipedia.org/wiki/Doklam"
     }
   ],
   "Asia/Singapore": [
@@ -3232,6 +3252,26 @@
       "op": "init",
       "source": "overpass",
       "id": "Bhutan"
+    }, {
+      "op": "union",
+      "source": "overpass",
+      "id": "Doklam 洞郎地区",
+      "description": "Add dispuated area in Doklam.  See https://zh.wikipedia.org/wiki/%E4%B8%AD%E4%B8%8D%E8%BE%B9%E7%95%8C%E4%BA%89%E8%AE%AE and https://en.wikipedia.org/wiki/Doklam"
+    }, {
+      "op": "union",
+      "source": "overpass",
+      "id": "鲁林地区",
+      "description": "Add dispuated area in Doklam.  See https://zh.wikipedia.org/wiki/%E4%B8%AD%E4%B8%8D%E8%BE%B9%E7%95%8C%E4%BA%89%E8%AE%AE and https://en.wikipedia.org/wiki/Doklam"
+    }, {
+      "op": "union",
+      "source": "overpass",
+      "id": "查马普地区",
+      "description": "Add dispuated area in Doklam.  See https://zh.wikipedia.org/wiki/%E4%B8%AD%E4%B8%8D%E8%BE%B9%E7%95%8C%E4%BA%89%E8%AE%AE and https://en.wikipedia.org/wiki/Doklam"
+    }, {
+      "op": "union",
+      "source": "overpass",
+      "id": "基伍地区",
+      "description": "Add dispuated area in Doklam.  See https://zh.wikipedia.org/wiki/%E4%B8%AD%E4%B8%8D%E8%BE%B9%E7%95%8C%E4%BA%89%E8%AE%AE and https://en.wikipedia.org/wiki/Doklam"
     }
   ],
   "Asia/Tokyo": [
