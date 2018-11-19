@@ -4,6 +4,8 @@ The goal of this project is to produce a shapefile with the boundaries of the wo
 
 <p align="center"><img src="2018g.png" /></p>
 
+[![Github downloads for all releases](https://img.shields.io/github/downloads/evansiroky/timezone-boundary-builder/total.svg)](https://www.somsubhra.com/github-release-stats/?username=evansiroky&repository=timezone-boundary-builder)
+
 ## Shapefiles and data
 
 The shapefiles are available for download in this project's [releases](https://github.com/evansiroky/timezone-boundary-builder/releases). As of release 2018d shapefiles are available with or without oceans.  Each shape or geojson object has a single attribute or property respectively called `tzid`.  The tzid corresponds to the timezone name as defined in the [timezone database](https://www.iana.org/time-zones) (for example: `America/Los_Angeles` or `Asia/Shanghai`).
