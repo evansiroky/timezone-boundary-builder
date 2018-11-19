@@ -4,7 +4,8 @@ The goal of this project is to produce a shapefile with the boundaries of the wo
 
 <p align="center"><img src="2018g.png" /></p>
 
-[![Github downloads for all releases](https://img.shields.io/github/downloads/evansiroky/timezone-boundary-builder/total.svg)](https://www.somsubhra.com/github-release-stats/?username=evansiroky&repository=timezone-boundary-builder)
+[![Github downloads for all releases](https://img.shields.io/github/downloads/evansiroky/timezone-boundary-builder/total.svg)](https://www.somsubhra.com/github-release-stats/?username=evansiroky&repository=timezone-boundary-builder)  [![GitHub release](https://img.shields.io/github/release/evansiroky/timezone-boundary-builder.svg)](https://github.com/evansiroky/timezone-boundary-builder/releases/latest)
+
 
 ## Shapefiles and data
 
