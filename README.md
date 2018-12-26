@@ -26,6 +26,7 @@ A few common languages already have libraries with an API that can be used to lo
 | [ZoneDetect](https://github.com/BertoldVdb/ZoneDetect) | C |
 | [go-tz](https://github.com/ugjka/go-tz) | Go |
 | [timezoneLookup](https://github.com/evanoberholster/timezoneLookup) | Go |
+| [TimeZoneMap](https://github.com/dustin-johnson/timezonemap) | Java & Android |
 | [Timeshape](https://github.com/RomanIakovlev/timeshape) | Java |
 | [node-geo-tz](https://github.com/evansiroky/node-geo-tz/) | JavaScript (node.js only) |
 | [timespace](https://github.com/mapbox/timespace) | JavaScript (node.js and in browser) |
