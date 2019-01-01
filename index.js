@@ -16,6 +16,9 @@ var osmBoundarySources = require('./osmBoundarySources.json')
 var zoneCfg = require('./timezones.json')
 var expectedZoneOverlaps = require('./expectedZoneOverlaps.json')
 
+const ProgressStats = require('./progressStats')
+var progressStats = new ProgressStats(Object.keys(osmBoundarySources).length)
+
 // allow building of only a specified zones
 var filteredIndex = process.argv.indexOf('--filtered-zones')
 if (filteredIndex > -1 && process.argv[filteredIndex + 1]) {
@@ -163,7 +166,8 @@ var downloadOsmBoundary = function (boundaryId, boundaryCallback) {
 
   asynclib.auto({
     downloadFromOverpass: function (cb) {
-      console.log('downloading from overpass')
+      progressStats.logNext()
+      console.log('downloading from overpass; overall progress ' + progressStats.getPercentage() + '% done - ' + progressStats.getTimeLeft(5) + ' left')
       fetchIfNeeded(boundaryFilename, boundaryCallback, cb, function () {
         var overpassResponseHandler = function (err, data) {
           if (err) {
