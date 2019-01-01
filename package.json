@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Scripts to create a timezone shapefile from multiple sources",
   "main": "index.js",
+  "engines": {
+    "node": ">=10"
+  },
   "scripts": {
     "test": "node lint-json.js"
   },
