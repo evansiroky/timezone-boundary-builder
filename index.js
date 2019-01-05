@@ -12,12 +12,11 @@ var jsts = require('jsts')
 var rimraf = require('rimraf')
 var overpass = require('query-overpass')
 
+const ProgressStats = require('./progressStats')
+
 var osmBoundarySources = require('./osmBoundarySources.json')
 var zoneCfg = require('./timezones.json')
 var expectedZoneOverlaps = require('./expectedZoneOverlaps.json')
-
-const ProgressStats = require('./progressStats')
-var progressStats = new ProgressStats(Object.keys(osmBoundarySources).length)
 
 // allow building of only a specified zones
 var filteredIndex = process.argv.indexOf('--filtered-zones')
@@ -140,6 +139,11 @@ var geomToGeoJsonString = function (geom) {
   return JSON.stringify(geoJsonWriter.write(geom))
 }
 
+const downloadProgress = new ProgressStats(
+  'Downloading',
+  Object.keys(osmBoundarySources).length
+)
+
 var downloadOsmBoundary = function (boundaryId, boundaryCallback) {
   var cfg = osmBoundarySources[boundaryId]
   var query = '[out:json][timeout:60];('
@@ -162,12 +166,11 @@ var downloadOsmBoundary = function (boundaryId, boundaryCallback) {
 
   query += ';);out body;>;out meta qt;'
 
-  console.log(debug)
+  downloadProgress.beginTask(debug, true)
 
   asynclib.auto({
     downloadFromOverpass: function (cb) {
-      progressStats.logNext()
-      console.log('downloading from overpass; overall progress ' + progressStats.getPercentage() + '% done - ' + progressStats.getTimeLeft(5) + ' left')
+      console.log('downloading from overpass')
       fetchIfNeeded(boundaryFilename, boundaryCallback, cb, function () {
         var overpassResponseHandler = function (err, data) {
           if (err) {
@@ -348,8 +351,13 @@ var postProcessZone = function (geom, returnAsObject) {
   return returnAsObject ? newGeojson : JSON.stringify(newGeojson)
 }
 
+const buildingProgress = new ProgressStats(
+  'Building',
+  Object.keys(zoneCfg).length
+)
+
 var makeTimezoneBoundary = function (tzid, callback) {
-  console.log('makeTimezoneBoundary for', tzid)
+  buildingProgress.beginTask('makeTimezoneBoundary for', tzid)
 
   var ops = zoneCfg[tzid]
   var geom
@@ -414,6 +422,12 @@ var formatBounds = function (bounds) {
 }
 
 var validateTimezoneBoundaries = function () {
+  const numZones = Object.keys(zoneCfg).length
+  const validationProgress = new ProgressStats(
+    'Validation',
+    numZones * (numZones + 1) / 2
+  )
+
   console.log('do validation... this may take a few minutes')
   var allZonesOk = true
   var zones = Object.keys(zoneCfg)
@@ -424,6 +438,9 @@ var validateTimezoneBoundaries = function () {
     zoneGeom = getDistZoneGeom(tzid)
 
     for (var j = i + 1; j < zones.length; j++) {
+      if (Math.round(validationProgress.getPercentage()) % 10 === 0) {
+        validationProgress.printStats('Validating zones', true)
+      }
       compareTzid = zones[j]
 
       var compareZoneGeom = getDistZoneGeom(compareTzid)
@@ -516,6 +533,7 @@ var validateTimezoneBoundaries = function () {
           allZonesOk = false
         }
       }
+      validationProgress.logNext()
     }
   }
 
@@ -623,25 +641,25 @@ var combineAndWriteZones = function (callback) {
   ], callback)
 }
 
-asynclib.auto({
+const autoScript = {
   makeDownloadsDir: function (cb) {
-    console.log('creating downloads dir')
+    overallProgress.beginTask('Creating downloads dir')
     safeMkdir('./downloads', cb)
   },
   makeDistDir: function (cb) {
-    console.log('createing dist dir')
+    overallProgress.beginTask('Creating dist dir')
     safeMkdir('./dist', cb)
   },
   getOsmBoundaries: ['makeDownloadsDir', function (results, cb) {
-    console.log('downloading osm boundaries')
+    overallProgress.beginTask('Downloading osm boundaries')
     asynclib.eachSeries(Object.keys(osmBoundarySources), downloadOsmBoundary, cb)
   }],
   createZones: ['makeDistDir', 'getOsmBoundaries', function (results, cb) {
-    console.log('createZones')
+    overallProgress.beginTask('Creating timezone boundaries')
     asynclib.each(Object.keys(zoneCfg), makeTimezoneBoundary, cb)
   }],
   validateZones: ['createZones', function (results, cb) {
-    console.log('validating zones')
+    overallProgress.beginTask('Validating timezone boundaries')
     loadDistZonesIntoMemory()
     if (process.argv.indexOf('no-validation') > -1) {
       console.warn('WARNING: Skipping validation!')
@@ -651,22 +669,23 @@ asynclib.auto({
     }
   }],
   addOceans: ['validateZones', function (results, cb) {
+    overallProgress.beginTask('Adding oceans')
     addOceans(cb)
   }],
   mergeZones: ['addOceans', function (results, cb) {
-    console.log('merge zones')
+    overallProgress.beginTask('Merging zones')
     combineAndWriteZones(cb)
   }],
   zipGeoJson: ['mergeZones', function (results, cb) {
-    console.log('zip geojson')
+    overallProgress.beginTask('Zipping geojson')
     exec('zip dist/timezones.geojson.zip dist/combined.json', cb)
   }],
   zipGeoJsonWithOceans: ['mergeZones', function (results, cb) {
-    console.log('zip geojson with oceans')
+    overallProgress.beginTask('Zipping geojson with oceans')
     exec('zip dist/timezones-with-oceans.geojson.zip dist/combined-with-oceans.json', cb)
   }],
   makeShapefile: ['mergeZones', function (results, cb) {
-    console.log('convert from geojson to shapefile')
+    overallProgress.beginTask('Converting from geojson to shapefile')
     rimraf.sync('dist/combined-shapefile.*')
     exec(
       'ogr2ogr -f "ESRI Shapefile" dist/combined-shapefile.shp dist/combined.json',
@@ -677,7 +696,7 @@ asynclib.auto({
     )
   }],
   makeShapefileWithOceans: ['mergeZones', function (results, cb) {
-    console.log('convert from geojson with oceans to shapefile')
+    overallProgress.beginTask('Converting from geojson with oceans to shapefile')
     rimraf.sync('dist/combined-shapefile-with-oceans.*')
     exec(
       'ogr2ogr -f "ESRI Shapefile" dist/combined-shapefile-with-oceans.shp dist/combined-with-oceans.json',
@@ -687,7 +706,11 @@ asynclib.auto({
       }
     )
   }]
-}, function (err, results) {
+}
+
+const overallProgress = new ProgressStats('Overall', Object.keys(autoScript).length)
+
+asynclib.auto(autoScript, function (err, results) {
   console.log('done')
   if (err) {
     console.log('error!', err)

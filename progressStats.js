@@ -1,17 +1,42 @@
 class ProgressStats {
 
-    constructor(totalDownloads) {
-        this.totalDownloads = totalDownloads
-        this.downloadCounter = 0
+    constructor(trackerName, totalTasks) {
+        this.trackerName = trackerName
+        this.totalTasks = totalTasks
+        this.taskCounter = 0
+        this.referenceLength = 5
         this.timestamps = []
     }
 
     logNext() {
-        this.downloadCounter++
+        this.taskCounter++
         this.timestamps.push({
-            "index": this.downloadCounter,
+            "index": this.taskCounter,
             "timestamp": Date.now()
         })
+    }
+
+    /**
+     * Begin a new task.  Print the current progress and then increment the number of tasks.
+     * @param  {string}    A short message about the current task progress
+     * @param  {[boolean]} logTimeLeft whether or not to log the time left.
+     */
+    beginTask (message, logTimeLeft) {
+      this.printStats(message, logTimeLeft)
+      this.logNext()
+    }
+
+    /**
+     * Print the current progress.
+     * @param  {string}    A short message about the current task progress
+     * @param  {[boolean]} logTimeLeft whether or not to log the time left.
+     */
+    printStats (message, logTimeLeft) {
+      message = `${message}; ${this.trackerName} progress: ${this.getPercentage()}% done`
+      if (logTimeLeft) {
+        message = `${message} - ${this.getTimeLeft()} left`
+      }
+      console.log(message)
     }
 
     /**
@@ -19,7 +44,7 @@ class ProgressStats {
      * @returns {string}
      */
     getPercentage() {
-        var current = (this.downloadCounter / this.totalDownloads)
+        var current = (this.taskCounter / this.totalTasks)
         return Math.round(current * 1000.0) / 10.0
     }
 
@@ -29,8 +54,8 @@ class ProgressStats {
      *
      * @returns {string}
      */
-    getTimeLeft(referenceLength) {
-        if(this.downloadCounter <= referenceLength){
+    getTimeLeft () {
+        if(this.taskCounter <= this.referenceLength) {
             //number of reference downloads must exist before left time can be predicted
             return "? minutes"
         }
@@ -41,12 +66,12 @@ class ProgressStats {
         }
 
         var indexOfStepsBefore = this.timestamps.findIndex((t) => {
-            return t.index == (this.downloadCounter - referenceLength)
+            return t.index === (this.taskCounter - this.referenceLength)
         })
         var lastSteps = this.timestamps[indexOfStepsBefore];
         var millisOflastSteps = Date.now() - lastSteps.timestamp
-        var downloadsLeft = this.totalDownloads - this.downloadCounter
-        var millisecondsLeft = (millisOflastSteps / referenceLength) * downloadsLeft
+        var downloadsLeft = this.totalTasks - this.taskCounter
+        var millisecondsLeft = (millisOflastSteps / this.referenceLength) * downloadsLeft
         return this.formatMilliseconds(millisecondsLeft)
     }
 
