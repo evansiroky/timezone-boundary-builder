@@ -357,7 +357,7 @@ const buildingProgress = new ProgressStats(
 )
 
 var makeTimezoneBoundary = function (tzid, callback) {
-  buildingProgress.beginTask('makeTimezoneBoundary for', tzid)
+  buildingProgress.beginTask(`makeTimezoneBoundary for ${tzid}`, true)
 
   var ops = zoneCfg[tzid]
   var geom
@@ -431,6 +431,7 @@ var validateTimezoneBoundaries = function () {
   console.log('do validation... this may take a few minutes')
   var allZonesOk = true
   var zones = Object.keys(zoneCfg)
+  var lastPct = 0
   var compareTzid, tzid, zoneGeom
 
   for (var i = 0; i < zones.length; i++) {
@@ -438,8 +439,10 @@ var validateTimezoneBoundaries = function () {
     zoneGeom = getDistZoneGeom(tzid)
 
     for (var j = i + 1; j < zones.length; j++) {
-      if (Math.round(validationProgress.getPercentage()) % 10 === 0) {
+      const curPct = Math.floor(validationProgress.getPercentage())
+      if (curPct % 10 === 0 && curPct !== lastPct) {
         validationProgress.printStats('Validating zones', true)
+        lastPct = curPct
       }
       compareTzid = zones[j]
 
@@ -574,8 +577,13 @@ var addOceans = function (callback) {
 
   const zones = Object.keys(zoneCfg)
 
+  const oceanProgress = new ProgressStats(
+    'Oceans',
+    oceanZones.length
+  )
+
   oceanZoneBoundaries = oceanZones.map(zone => {
-    console.log(zone.tzid)
+    oceanProgress.beginTask(zone.tzid, true)
     const geoJson = polygon([[
       [zone.left, 90],
       [zone.left, -90],

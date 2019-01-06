@@ -4,16 +4,13 @@ class ProgressStats {
         this.trackerName = trackerName
         this.totalTasks = totalTasks
         this.taskCounter = 0
-        this.referenceLength = 5
-        this.timestamps = []
     }
 
     logNext() {
         this.taskCounter++
-        this.timestamps.push({
-            "index": this.taskCounter,
-            "timestamp": Date.now()
-        })
+        if (!this.beginTime) {
+          this.beginTime = new Date()
+        }
     }
 
     /**
@@ -50,28 +47,15 @@ class ProgressStats {
 
     /**
      * calculates the time left and outputs it in human readable format
-     * calculation is based on a reference length, that can be defined.
+     * calculation is based on the average time per task so far
      *
      * @returns {string}
      */
     getTimeLeft () {
-        if(this.taskCounter <= this.referenceLength) {
-            //number of reference downloads must exist before left time can be predicted
-            return "? minutes"
-        }
-        var processDurationInSeconds = (Date.now() - this.timestamps[0].timestamp) / 1000
-        if(processDurationInSeconds < 60){
-            //process must run longer than 60seconds before left time can be predicted
-            return "? minutes"
-        }
-
-        var indexOfStepsBefore = this.timestamps.findIndex((t) => {
-            return t.index === (this.taskCounter - this.referenceLength)
-        })
-        var lastSteps = this.timestamps[indexOfStepsBefore];
-        var millisOflastSteps = Date.now() - lastSteps.timestamp
-        var downloadsLeft = this.totalTasks - this.taskCounter
-        var millisecondsLeft = (millisOflastSteps / this.referenceLength) * downloadsLeft
+        if (this.taskCounter === 0) return '?'
+        const averageTimePerTask = (Date.now() - this.beginTime.getTime()) / this.taskCounter
+        var tasksLeft = this.totalTasks - this.taskCounter
+        var millisecondsLeft = averageTimePerTask * tasksLeft
         return this.formatMilliseconds(millisecondsLeft)
     }
 
