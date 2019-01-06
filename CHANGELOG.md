@@ -1,11 +1,16 @@
-## Unreleased
+## 2018i
 
 ### Zone Changes
+
+* Make territories of Taiwan take precedence when they overlap Chinese-claimed territories.  ([#52](https://github.com/evansiroky/timezone-boundary-builder/issues/52))
+* Add Oslo Accords Area B and C to `Asia/Jerusalem`.  ([#53](https://github.com/evansiroky/timezone-boundary-builder/issues/53))
+* Create new zone `Asia/Qostanay` by taking area from `Asia/Qyzylorda`.  ([#59](https://github.com/evansiroky/timezone-boundary-builder/issues/59))
+* Change timezone for Antarctic Station Neumayer III Station from `Europe/Berlin` to `Etc/UTC`.  ([#61](https://github.com/evansiroky/timezone-boundary-builder/issues/61))
 
 ### Other Changes
 
 * Add progress stats reporting
-* Update to use Node 10
+* Update to use Node 10 ([#56](https://github.com/evansiroky/timezone-boundary-builder/issues/56))
 
 ## 2018g
 

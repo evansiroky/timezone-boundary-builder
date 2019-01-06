@@ -2,7 +2,7 @@
 
 The goal of this project is to produce a shapefile with the boundaries of the world's timezones using OpenStreetMap data.
 
-<p align="center"><img src="2018g.png" /></p>
+<p align="center"><img src="2018i.png" /></p>
 
 [![Github downloads for all releases](https://img.shields.io/github/downloads/evansiroky/timezone-boundary-builder/total.svg)](https://www.somsubhra.com/github-release-stats/?username=evansiroky&repository=timezone-boundary-builder)  [![GitHub release](https://img.shields.io/github/release/evansiroky/timezone-boundary-builder.svg)](https://github.com/evansiroky/timezone-boundary-builder/releases/latest)
 
@@ -60,7 +60,7 @@ There are three config files that describe the boundary building process.  The `
 
 The `index.js` file downloads all of the required geometries, builds the specified geometries, validates that there aren't large areas of overlap (other than those that are expected), outputs one huge geojson file, and finally zips up the geojson file using the `zip` cli and also converts the geojson to a shapefile using the `ogr2ogr` cli.  The script has only been verified to run with Node.js 10 on the MacOS platform.
 
-The code does query the publicly available overpass API, but it self-throttles the making of requests to have a minimum of 4 seconds gap between requests.  If the Overpass API throttles the download, then the gap will be increased exponentially.
+The code does query the publicly available Overpass API, but it self-throttles the making of requests to have a minimum of 4 seconds gap between requests.  If the Overpass API throttles the download, then the gap will be increased exponentially.
 
 ## Limitations of this project
 
