@@ -3700,6 +3700,14 @@
       "description": "Union this area to include Jervis Bay Territory"
     }
   ],
+  "Etc/UTC": [
+    {
+      "op": "init",
+      "source": "manual-polygon",
+      "data": [[[-17,-86],[-15,-86],[-5.5,-86],[-5.5,-69],[-17,-71],[-17,-86]]],
+      "description": "Add Antarctic Station Neumayer III Station.  See discussion at https://github.com/evansiroky/timezone-boundary-builder/issues/61"
+    }
+  ],
   "Europe/Amsterdam": [
     {
       "op": "init",
@@ -3763,11 +3771,6 @@
       "source": "manual-polygon",
       "data": [[[8.7,47.75],[8.75,47.63],[8.6,47.7],[8.7,47.75]]],
       "description": "Exclude area belonging to Busingen timezone."
-    }, {
-      "op": "union",
-      "source": "manual-polygon",
-      "data": [[[-17,-86],[-15,-86],[-5.5,-86],[-5.5,-69],[-17,-71],[-17,-86]]],
-      "description": "Add Antarctic Station Neumayer III Station."
     }
   ],
   "Europe/Bratislava": [
