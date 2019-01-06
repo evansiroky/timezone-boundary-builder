@@ -68,21 +68,6 @@
       "description": "Allow disputed area near Gaven Reefs (https://en.wikipedia.org/wiki/Gaven_Reefs) to overlap."
     }
   ],
-  "Asia/Shanghai-Asia/Taipei": [
-    {
-      "bounds": [119.4, 24.9, 119.5, 25.1],
-      "description": "Allow disputed area near Wuqiu Township (https://en.wikipedia.org/wiki/Wuqiu,_Kinmen) to overlap."
-    }, {
-      "bounds": [118.1, 24.3, 118.6, 24.6],
-      "description": "Allow disputed islands of Great Kinmen and Lesser Kinmen (https://en.wikipedia.org/wiki/Kinmen) to overlap."
-    }, {
-      "bounds": [118.2, 24.1, 118.3, 24.2],
-      "description": "Allow disputed area near Dongding Island (https://en.wikipedia.org/wiki/Jincheng,_Kinmen) to overlap."
-    }, {
-      "bounds": [119.8, 25.9, 120.6, 26.5],
-      "description": "Allow disputed area near Matsu Islands (https://en.wikipedia.org/wiki/Matsu_Islands) to overlap."
-    }
-  ],
   "Asia/Shanghai-Asia/Thimphu": [
     {
       "bounds": [88.9, 27.2, 89.2, 27.7],
