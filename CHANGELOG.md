@@ -6,9 +6,11 @@
 * Add Oslo Accords Area B and C to `Asia/Jerusalem`.  ([#53](https://github.com/evansiroky/timezone-boundary-builder/issues/53))
 * Create new zone `Asia/Qostanay` by taking area from `Asia/Qyzylorda`.  ([#59](https://github.com/evansiroky/timezone-boundary-builder/issues/59))
 * Change timezone for Antarctic Station Neumayer III Station from `Europe/Berlin` to `Etc/UTC`.  ([#61](https://github.com/evansiroky/timezone-boundary-builder/issues/61))
+* Update to latest OSM data
 
 ### Other Changes
 
+* Add some badges to the README
 * Add progress stats reporting
 * Update to use Node 10 ([#56](https://github.com/evansiroky/timezone-boundary-builder/issues/56))
 
