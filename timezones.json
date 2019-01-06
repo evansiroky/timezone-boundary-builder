@@ -3147,13 +3147,16 @@
       "id": "Qatar"
     }
   ],
-  "Asia/Qyzylorda": [
+  "Asia/Qostanay": [
     {
       "op": "init",
       "source": "overpass",
       "id": "Kostanay"
-    }, {
-      "op": "union",
+    }
+  ],
+  "Asia/Qyzylorda": [
+    {
+      "op": "init",
       "source": "overpass",
       "id": "Kyzylorda"
     }
