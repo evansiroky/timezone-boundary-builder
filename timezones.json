@@ -2897,6 +2897,14 @@
       "op": "init",
       "source": "overpass",
       "id": "Israel"
+    }, {
+      "op": "union",
+      "source": "overpass",
+      "id": "שטח C"
+    }, {
+      "op": "union",
+      "source": "overpass",
+      "id": "שטח B"
     }
   ],
   "Asia/Kabul": [

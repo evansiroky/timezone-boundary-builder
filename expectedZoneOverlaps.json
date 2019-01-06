@@ -28,8 +28,8 @@
   ],
   "Asia/Hebron-Asia/Jerusalem": [
     {
-      "bounds": [35.1, 31.7, 35.3, 31.9],
-      "description": "Allow disputed areas in Jerusalem (https://en.wikipedia.org/wiki/Borders_of_Israel#Status_of_Jerusalem) to overlap."
+      "bounds": [34.8, 31.3, 35.6, 32.6],
+      "description": "Allow disputed areas in Jerusalem (https://en.wikipedia.org/wiki/Borders_of_Israel#Status_of_Jerusalem) and Oslo Occord Areas B and C (see https://github.com/evansiroky/timezone-boundary-builder/issues/53 for discussion) to overlap."
     }
   ],
   "Asia/Ho_Chi_Minh-Asia/Manila": [
