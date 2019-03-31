@@ -1,5 +1,12 @@
 ## Unreleased
 
+### Zone Changes
+
+* Split Vietnam into 2 zones ([#66](https://github.com/evansiroky/timezone-boundary-builder/issues/66))
+  * Make Northern Vietnam be a part of `Asia/Bangkok`
+  * Southern Vietnam stays `Asia/Ho_Chi_Minh`
+* Update to latest OSM data
+
 ### Other Changes
 
 * Add standard linter ([#67](https://github.com/evansiroky/timezone-boundary-builder/issues/67))
