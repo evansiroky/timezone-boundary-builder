@@ -1,3 +1,9 @@
+## Unreleased
+
+### Other Changes
+
+* Add standard linter ([#67](https://github.com/evansiroky/timezone-boundary-builder/issues/67))
+
 ## 2018i
 
 ### Zone Changes
