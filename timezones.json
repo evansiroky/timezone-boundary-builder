@@ -88,6 +88,11 @@
       "op": "init",
       "source": "overpass",
       "id": "Egypt"
+    }, {
+      "op": "union",
+      "source": "overpass",
+      "id": "Bir Tawil",
+      "description": "Although Bir Tawil is officially not part of Egypt, union to avoid holes. The wikipedia article on Bir Tawil suggests that Egypt retains administrative control of the area (https://en.wikipedia.org/wiki/Bir_Tawil)."
     }
   ],
   "Africa/Casablanca": [
@@ -220,11 +225,6 @@
       "op": "init",
       "source": "overpass",
       "id": "Sudan"
-    }, {
-      "op": "union",
-      "source": "manual-polygon",
-      "data": [[[33,22],[34,21],[35,22],[33,22]]],
-      "description": "Add unclaimed area of Bir Tawil to Sudan to avoid having holes."
     }
   ],
   "Africa/Kigali": [

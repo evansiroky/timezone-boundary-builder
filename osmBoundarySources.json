@@ -141,6 +141,9 @@
   "Bermuda": {
     "ISO3166-1": "BM"
   },
+  "Bir Tawil": {
+    "alt_name:en": "Bi'r Tawīl"
+  },
   "Bledsoe County, TN": {
     "name": "Bledsoe County",
     "nist:state_fips": "47"

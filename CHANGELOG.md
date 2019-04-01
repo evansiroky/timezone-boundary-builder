@@ -1,10 +1,11 @@
-## Unreleased
+## 2019a
 
 ### Zone Changes
 
 * Split Vietnam into 2 zones ([#66](https://github.com/evansiroky/timezone-boundary-builder/issues/66))
   * Make Northern Vietnam be a part of `Asia/Bangkok`
   * Southern Vietnam stays `Asia/Ho_Chi_Minh`
+* Make Bir Tawil area be a part of `Africa/Cairo` instead of being a part of `Africa/Khartoum`.
 * Update to latest OSM data
 
 ### Other Changes
