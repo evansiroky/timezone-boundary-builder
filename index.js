@@ -20,8 +20,9 @@ var expectedZoneOverlaps = require('./expectedZoneOverlaps.json')
 
 // allow building of only a specified zones
 var filteredIndex = process.argv.indexOf('--filtered-zones')
+let filteredZones = []
 if (filteredIndex > -1 && process.argv[filteredIndex + 1]) {
-  const filteredZones = process.argv[filteredIndex + 1].split(',')
+  filteredZones = process.argv[filteredIndex + 1].split(',')
   var newZoneCfg = {}
   filteredZones.forEach((zoneName) => {
     newZoneCfg[zoneName] = zoneCfg[zoneName]
@@ -544,37 +545,40 @@ var validateTimezoneBoundaries = function () {
 }
 
 let oceanZoneBoundaries
+let oceanZones = [
+  { tzid: 'Etc/GMT-12', left: 172.5, right: 180 },
+  { tzid: 'Etc/GMT-11', left: 157.5, right: 172.5 },
+  { tzid: 'Etc/GMT-10', left: 142.5, right: 157.5 },
+  { tzid: 'Etc/GMT-9', left: 127.5, right: 142.5 },
+  { tzid: 'Etc/GMT-8', left: 112.5, right: 127.5 },
+  { tzid: 'Etc/GMT-7', left: 97.5, right: 112.5 },
+  { tzid: 'Etc/GMT-6', left: 82.5, right: 97.5 },
+  { tzid: 'Etc/GMT-5', left: 67.5, right: 82.5 },
+  { tzid: 'Etc/GMT-4', left: 52.5, right: 67.5 },
+  { tzid: 'Etc/GMT-3', left: 37.5, right: 52.5 },
+  { tzid: 'Etc/GMT-2', left: 22.5, right: 37.5 },
+  { tzid: 'Etc/GMT-1', left: 7.5, right: 22.5 },
+  { tzid: 'Etc/GMT', left: -7.5, right: 7.5 },
+  { tzid: 'Etc/GMT+1', left: -22.5, right: -7.5 },
+  { tzid: 'Etc/GMT+2', left: -37.5, right: -22.5 },
+  { tzid: 'Etc/GMT+3', left: -52.5, right: -37.5 },
+  { tzid: 'Etc/GMT+4', left: -67.5, right: -52.5 },
+  { tzid: 'Etc/GMT+5', left: -82.5, right: -67.5 },
+  { tzid: 'Etc/GMT+6', left: -97.5, right: -82.5 },
+  { tzid: 'Etc/GMT+7', left: -112.5, right: -97.5 },
+  { tzid: 'Etc/GMT+8', left: -127.5, right: -112.5 },
+  { tzid: 'Etc/GMT+9', left: -142.5, right: -127.5 },
+  { tzid: 'Etc/GMT+10', left: -157.5, right: -142.5 },
+  { tzid: 'Etc/GMT+11', left: -172.5, right: -157.5 },
+  { tzid: 'Etc/GMT+12', left: -180, right: -172.5 }
+]
+
+if (filteredZones.length > 0) {
+  oceanZones = oceanZones.filter(oceanZone => filteredZones.indexOf(oceanZone) > -1)
+}
 
 var addOceans = function (callback) {
   console.log('adding ocean boundaries')
-  const oceanZones = [
-    { tzid: 'Etc/GMT-12', left: 172.5, right: 180 },
-    { tzid: 'Etc/GMT-11', left: 157.5, right: 172.5 },
-    { tzid: 'Etc/GMT-10', left: 142.5, right: 157.5 },
-    { tzid: 'Etc/GMT-9', left: 127.5, right: 142.5 },
-    { tzid: 'Etc/GMT-8', left: 112.5, right: 127.5 },
-    { tzid: 'Etc/GMT-7', left: 97.5, right: 112.5 },
-    { tzid: 'Etc/GMT-6', left: 82.5, right: 97.5 },
-    { tzid: 'Etc/GMT-5', left: 67.5, right: 82.5 },
-    { tzid: 'Etc/GMT-4', left: 52.5, right: 67.5 },
-    { tzid: 'Etc/GMT-3', left: 37.5, right: 52.5 },
-    { tzid: 'Etc/GMT-2', left: 22.5, right: 37.5 },
-    { tzid: 'Etc/GMT-1', left: 7.5, right: 22.5 },
-    { tzid: 'Etc/GMT', left: -7.5, right: 7.5 },
-    { tzid: 'Etc/GMT+1', left: -22.5, right: -7.5 },
-    { tzid: 'Etc/GMT+2', left: -37.5, right: -22.5 },
-    { tzid: 'Etc/GMT+3', left: -52.5, right: -37.5 },
-    { tzid: 'Etc/GMT+4', left: -67.5, right: -52.5 },
-    { tzid: 'Etc/GMT+5', left: -82.5, right: -67.5 },
-    { tzid: 'Etc/GMT+6', left: -97.5, right: -82.5 },
-    { tzid: 'Etc/GMT+7', left: -112.5, right: -97.5 },
-    { tzid: 'Etc/GMT+8', left: -127.5, right: -112.5 },
-    { tzid: 'Etc/GMT+9', left: -142.5, right: -127.5 },
-    { tzid: 'Etc/GMT+10', left: -157.5, right: -142.5 },
-    { tzid: 'Etc/GMT+11', left: -172.5, right: -157.5 },
-    { tzid: 'Etc/GMT+12', left: -180, right: -172.5 }
-  ]
-
   const zones = Object.keys(zoneCfg)
 
   const oceanProgress = new ProgressStats(
@@ -713,7 +717,22 @@ const autoScript = {
         exec('zip dist/timezones-with-oceans.shapefile.zip dist/combined-shapefile-with-oceans.*', cb)
       }
     )
-  }]
+  }],
+  makeListOfTimeZoneNames: function (cb) {
+    overallProgress.beginTask('Writing timezone names to file')
+    let zoneNames = Object.keys(zoneCfg)
+    oceanZones.forEach(oceanZone => {
+      zoneNames.push(oceanZone.tzid)
+    })
+    if (filteredZones.length > 0) {
+      zoneNames = zoneNames.filter(zoneName => filteredZones.indexOf(zoneName) > -1)
+    }
+    fs.writeFile(
+      'dist/timezone-names.json',
+      JSON.stringify(zoneNames),
+      cb
+    )
+  }
 }
 
 const overallProgress = new ProgressStats('Overall', Object.keys(autoScript).length)
