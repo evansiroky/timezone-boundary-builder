@@ -1,3 +1,14 @@
+## 2019b
+
+### Zone Changes
+
+* Update to latest OSM data
+
+### Other Changes
+
+* Include JSON list of timezone names in each release ([#69](https://github.com/evansiroky/timezone-boundary-builder/issues/69))
+* Improve troubleshooting wiki by adding demo video on fixing broken relations ([#68](https://github.com/evansiroky/timezone-boundary-builder/issues/68))
+
 ## 2019a
 
 ### Zone Changes
