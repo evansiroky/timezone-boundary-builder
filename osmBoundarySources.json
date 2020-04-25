@@ -293,9 +293,6 @@
   "Corrientes": {
     "ISO3166-2": "AR-W"
   },
-  "Coral Harbour-tz": {
-    "timezone": "America/Coral_Harbour"
-  },
   "Corson County, SD": {
     "name": "Corson County",
     "nist:state_fips": "46"
@@ -314,7 +311,7 @@
     "nist:state_fips": "18"
   },
   "Creston-tz": {
-    "timezone": "America/Creston"
+    "name": "America/Creston"
   },
   "Crimea": {
     "name:en": "Republic of Crimea"
@@ -365,8 +362,8 @@
   "Djibouti": {
     "ISO3166-1": "DJ"
   },
-  "Doklam 洞郎地区": {
-    "name": "Doklam 洞郎地区"
+  "Doklam 洞朗地区": {
+    "name": "Doklam 洞朗地区"
   },
   "Dominica": {
     "ISO3166-1": "DM"

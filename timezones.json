@@ -705,10 +705,6 @@
       "source": "overpass",
       "id": "Atikokan-tz"
     }, {
-      "op": "union",
-      "source": "overpass",
-      "id": "Coral Harbour-tz"
-    }, {
       "op": "difference",
       "source": "overpass",
       "id": "Iqaluit-tz"
@@ -3233,7 +3229,7 @@
     }, {
       "op": "union",
       "source": "overpass",
-      "id": "Doklam 洞郎地区",
+      "id": "Doklam 洞朗地区",
       "description": "Add dispuated area in Doklam.  See https://zh.wikipedia.org/wiki/%E4%B8%AD%E4%B8%8D%E8%BE%B9%E7%95%8C%E4%BA%89%E8%AE%AE and https://en.wikipedia.org/wiki/Doklam"
     }, {
       "op": "union",
@@ -3311,7 +3307,7 @@
     }, {
       "op": "union",
       "source": "overpass",
-      "id": "Doklam 洞郎地区",
+      "id": "Doklam 洞朗地区",
       "description": "Add dispuated area in Doklam.  See https://zh.wikipedia.org/wiki/%E4%B8%AD%E4%B8%8D%E8%BE%B9%E7%95%8C%E4%BA%89%E8%AE%AE and https://en.wikipedia.org/wiki/Doklam"
     }, {
       "op": "union",
@@ -3972,6 +3968,10 @@
       "op": "init",
       "source": "overpass",
       "id": "United Kingdom"
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "Isle of Man"
     }
   ],
   "Europe/Luxembourg": [
