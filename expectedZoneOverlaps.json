@@ -82,7 +82,7 @@
   ],
   "Asia/Tbilisi-Europe/Moscow": [
     {
-      "bounds": [39.8, 42.5, 42.2, 43.6],
+      "bounds": [39.8, 42.4, 42.2, 43.6],
       "description": "Allow overlap of state of Abkhazia using Moscow time with Georgian time.  https://en.wikipedia.org/wiki/Abkhazia"
     }
   ],
