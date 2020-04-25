@@ -1144,9 +1144,13 @@
   "America/Dawson": [
     {
       "op": "init",
+      "source": "overpass",
+      "id": "Yukon"
+    }, {
+      "op": "difference",
       "source": "manual-polygon",
-      "data": [[[-139.446, 64.0893], [-139.4126, 64.0888], [-139.4105, 64.0688], [-139.3765, 64.0609], [-139.3758, 64.0556], [-139.2775, 64.0534], [-139.2854, 64.0208], [-139.4496, 64.0278], [-139.4546, 64.0254], [-139.4824, 64.0219], [-139.4838, 64.0314], [-139.4738, 64.034], [-139.4747, 64.0369], [-139.4737, 64.0404], [-139.4713, 64.0419], [-139.4677, 64.0469], [-139.4663, 64.0487], [-139.4572, 64.0515], [-139.4538, 64.0546], [-139.4417, 64.0736], [-139.4476, 64.0789], [-139.4477, 64.0807], [-139.44, 64.0819], [-139.446, 64.0893]]],
-      "description": "Manually create polygon based off of best guess of city limits of Dawson as shown in this map: http://dawson.planyukon.ca/index.php/the-dawson-region/resource-maps/6-01-regional-overview-map/file"
+      "data": [[[-138,75],[-138,56],[-95,62],[-138,75]]],
+      "description": "Difference against a manually created polygon to create an east-west split at the 138th meridian."
     }
   ],
   "America/Dawson_Creek": [
@@ -1410,6 +1414,10 @@
       "source": "overpass",
       "id": "New Brunswick",
       "description": "Exclude New Brunswick to get exact boundary between Nova Scotia and New Brunswick"
+    }, {
+      "op": "union",
+      "source": "overpass",
+      "id": "Listuguj"
     }
   ],
   "America/Havana": [
@@ -1499,9 +1507,13 @@
   "America/Inuvik": [
     {
       "op": "init",
+      "source": "overpass",
+      "id": "Northwest Territories"
+    }, {
+      "op": "difference",
       "source": "manual-polygon",
-      "data": [[[-133.7991, 68.4161], [-133.73, 68.4165], [-133.7297, 68.3955], [-133.6343, 68.3464], [-133.3888, 68.3166], [-133.3843, 68.2982], [-133.4485, 68.297], [-133.4482, 68.2901], [-133.4719, 68.29], [-133.4726, 68.2926], [-133.4911, 68.2966], [-133.535, 68.2973], [-133.5556, 68.3015], [-133.5546, 68.3043], [-133.5653, 68.3074], [-133.6772, 68.3176], [-133.6734, 68.3226], [-133.7046, 68.3379], [-133.7225, 68.3508], [-133.7524, 68.3625], [-133.7709, 68.3749], [-133.7733, 68.3827], [-133.7695, 68.3874], [-133.775, 68.3906], [-133.7884, 68.394], [-133.7956, 68.4007], [-133.7956, 68.4092], [-133.7991, 68.4161]]],
-      "description": "This is a manual trace of what appears to be the boundary of the city limits of Inuvik.  Boundary is based off of this document: http://www.inuvik.ca/en/living-here/resources/By-laws/2582_Community_Plan_Map.pdf"
+      "data": [[[-120,85],[-120,56],[-55,62],[-120,85]]],
+      "description": "Difference against a manually created polygon to create an east-west split at the 120th meridian."
     }
   ],
   "America/Iqaluit": [
@@ -1766,11 +1778,6 @@
       "source": "overpass",
       "id": "New Brunswick",
       "description": "Union to get exact border between New Brunswick and Nova Scotia"
-    }, {
-      "op": "union",
-      "source": "manual-polygon",
-      "data": [[[-66.681,48.01],[-66.685,48.0158],[-66.6864,48.0166],[-66.723,48.029],[-66.7179,48.0363],[-66.7407,48.0623],[-66.733,48.0728],[-66.756,48.1022],[-66.802,48.086],[-66.754,48.0305],[-66.737,48.0274],[-66.73,48.0309],[-66.71,47.996],[-66.681,48.01]]],
-      "description": "Include terroritory belonging to Listuguj Mi'gmaq First Nation"
     }
   ],
   "America/Monterrey": [
@@ -2360,9 +2367,8 @@
       "description": "Exclude Magdalen Islands"
     }, {
       "op": "difference",
-      "source": "manual-polygon",
-      "data": [[[-66.681,48.01],[-66.685,48.0158],[-66.6864,48.0166],[-66.723,48.029],[-66.7179,48.0363],[-66.7407,48.0623],[-66.733,48.0728],[-66.756,48.1022],[-66.802,48.086],[-66.754,48.0305],[-66.737,48.0274],[-66.73,48.0309],[-66.71,47.996],[-66.681,48.01]]],
-      "description": "Exclude terroritory belonging to Listuguj Mi'gmaq First Nation"
+      "source": "overpass",
+      "id": "Listuguj"
     }, {
       "op": "difference",
       "source": "overpass",
@@ -2408,8 +2414,8 @@
     }, {
       "op": "difference",
       "source": "manual-polygon",
-      "data": [[[-139.446, 64.0893], [-139.4126, 64.0888], [-139.4105, 64.0688], [-139.3765, 64.0609], [-139.3758, 64.0556], [-139.2775, 64.0534], [-139.2854, 64.0208], [-139.4496, 64.0278], [-139.4546, 64.0254], [-139.4824, 64.0219], [-139.4838, 64.0314], [-139.4738, 64.034], [-139.4747, 64.0369], [-139.4737, 64.0404], [-139.4713, 64.0419], [-139.4677, 64.0469], [-139.4663, 64.0487], [-139.4572, 64.0515], [-139.4538, 64.0546], [-139.4417, 64.0736], [-139.4476, 64.0789], [-139.4477, 64.0807], [-139.44, 64.0819], [-139.446, 64.0893]]],
-      "description": "Difference against a manually created polygon based off of best guess of city limits of Dawson as shown in this map: http://dawson.planyukon.ca/index.php/the-dawson-region/resource-maps/6-01-regional-overview-map/file"
+      "data": [[[-138,75],[-138,56],[-165,62],[-138,75]]],
+      "description": "Difference against a manually created polygon to create an east-west split at the 138th meridian."
     }
   ],
   "America/Winnipeg": [
@@ -2444,8 +2450,8 @@
     }, {
       "op": "difference",
       "source": "manual-polygon",
-      "data": [[[-133.7991, 68.4161], [-133.73, 68.4165], [-133.7297, 68.3955], [-133.6343, 68.3464], [-133.3888, 68.3166], [-133.3843, 68.2982], [-133.4485, 68.297], [-133.4482, 68.2901], [-133.4719, 68.29], [-133.4726, 68.2926], [-133.4911, 68.2966], [-133.535, 68.2973], [-133.5556, 68.3015], [-133.5546, 68.3043], [-133.5653, 68.3074], [-133.6772, 68.3176], [-133.6734, 68.3226], [-133.7046, 68.3379], [-133.7225, 68.3508], [-133.7524, 68.3625], [-133.7709, 68.3749], [-133.7733, 68.3827], [-133.7695, 68.3874], [-133.775, 68.3906], [-133.7884, 68.394], [-133.7956, 68.4007], [-133.7956, 68.4092], [-133.7991, 68.4161]]],
-      "description": "This is a manual trace of what appears to be the boundary of the city limits of Inuvik.  Boundary is based off of this document: http://www.inuvik.ca/en/living-here/resources/By-laws/2582_Community_Plan_Map.pdf"
+      "data": [[[-120,85],[-120,56],[-165,62],[-120,85]]],
+      "description": "Difference against a manually created polygon to create an east-west split at the 120th meridian."
     }
   ],
   "Antarctica/Casey": [
