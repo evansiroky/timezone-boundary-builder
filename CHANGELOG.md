@@ -1,3 +1,19 @@
+## Unreleased
+
+### Zone Changes
+
+* Allow timezones `Asia/Tbilisi` and `Europe/Moscow` to overlap
+* Rename `America/Godthab` to `America/Nuuk` ([#77](https://github.com/evansiroky/timezone-boundary-builder/issues/77))
+* Update some Canadian zones as follows ([#76](https://github.com/evansiroky/timezone-boundary-builder/issues/76))
+  * Make Listuguj part of `America/Halifax` instead of `America/Moncton`
+  * Split Northwest Territories timezones (`America/Inuvik` and `America/Yellowknife`) in two using 120th meridian
+  * Split Yukon timezones (`America/Dawson` and `America/Whitehorse`) in two using 138th meridian
+* Update to latest OSM data
+
+### Other Changes
+
+* Update packages to latest versions
+
 ## 2019b
 
 ### Zone Changes
