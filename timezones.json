@@ -2414,11 +2414,6 @@
       "op": "init",
       "source": "overpass",
       "id": "Winnipeg-tz"
-    }, {
-      "op": "difference",
-      "source": "manual-polygon",
-      "data": [[[-94.5402,48.7369],[-94.5405,48.69],[-94.648,48.7369],[-94.5402,48.7369]]],
-      "description": "Difference part of this timezone near Rainy River.  Includes arbitrary boundary of 2 farm roads to the east and north of the town."
     }
   ],
   "America/Yakutat": [
