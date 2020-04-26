@@ -84,6 +84,9 @@
     {
       "bounds": [39.8, 42.4, 42.2, 43.6],
       "description": "Allow overlap of state of Abkhazia using Moscow time with Georgian time.  https://en.wikipedia.org/wiki/Abkhazia"
+    }, {
+      "bounds": [43.3, 42.8, 43.5, 42.9],
+      "description": "Allow overlap of minimal areas at mountaintops due to likely mismatching OSM boundaries that should probably be fixed in OSM."
     }
   ],
   "Europe/Amsterdam-Europe/Berlin": [
