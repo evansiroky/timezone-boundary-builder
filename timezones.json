@@ -2093,12 +2093,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Canada"
-    }, {
-      "op": "intersect",
-      "source": "manual-polygon",
-      "data": [[[-94.5402,48.7369],[-94.5405,48.69],[-94.648,48.7369],[-94.5402,48.7369]]],
-      "description": "Intersect part of Canada near Rainy River.  Includes arbitrary boundary of 2 farm roads to the east and north of the town."
+      "id": "Rainy River-tz"
     }
   ],
   "America/Rankin_Inlet": [
@@ -2125,10 +2120,6 @@
       "op": "init",
       "source": "overpass",
       "id": "Regina-tz"
-    }, {
-      "op": "difference",
-      "source": "overpass",
-      "id": "Swift Current"
     }
   ],
   "America/Resolute": [
@@ -2301,7 +2292,20 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Swift Current"
+      "id": "Canada"
+    }, {
+      "op": "intersect",
+      "source": "manual-polygon",
+      "data": [[[-114,47],[-100,47],[-110,59],[-114,47]]],
+      "description": "Intersect a good chunk of Canada containing parts of Alberta and Saskatchewan."
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "Edmonton-tz"
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "Regina-tz"
     }
   ],
   "America/Tegucigalpa": [

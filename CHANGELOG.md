@@ -6,7 +6,10 @@
 * Rename `America/Godthab` to `America/Nuuk` ([#77](https://github.com/evansiroky/timezone-boundary-builder/issues/77))
 * Update some Canadian zones as follows ([#76](https://github.com/evansiroky/timezone-boundary-builder/issues/76))
   * Make Listuguj part of `America/Halifax` instead of `America/Moncton`
+  * Make `America/Nipigon` comprise of most of mid-Ontario. _Credit to OSM user [Arctic gnome](https://www.openstreetmap.org/user/Arctic%20gnome) for OSM edits._
+  * Make `America/Rainy_River` comprise of the Westernmost parts of Ontario bordering Manitoba. _Credit to OSM user [Arctic gnome](https://www.openstreetmap.org/user/Arctic%20gnome) for OSM edits._
   * Split Northwest Territories timezones (`America/Inuvik` and `America/Yellowknife`) in two using 120th meridian
+  * Make `America/Swift_Current` comprise of all areas in southwest Saskatchewan between the `America/Regina` and `America/Edmonton` timezones.
   * Split Yukon timezones (`America/Dawson` and `America/Whitehorse`) in two using 138th meridian
 * Update to latest OSM data
 
