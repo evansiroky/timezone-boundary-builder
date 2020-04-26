@@ -528,15 +528,6 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Argentina"
-    }, {
-      "op": "intersect",
-      "source": "manual-polygon",
-      "data": [[[-60,-23],[-59,-32],[-50,-24],[-60,-23]]],
-      "description": "Intersect with a long section of the Paraná and Uruguay Rivers because there were holes.  Whatever OSM thinks Uruguay's border is will be diffed as the last operation for this zone."
-    }, {
-      "op": "union",
-      "source": "overpass",
       "id": "Córdoba"
     }, {
       "op": "union",
@@ -566,10 +557,6 @@
       "op": "union",
       "source": "overpass",
       "id": "Formosa"
-    }, {
-      "op": "difference",
-      "source": "overpass",
-      "id": "Uruguay"
     }
   ],
   "America/Argentina/Jujuy": [
