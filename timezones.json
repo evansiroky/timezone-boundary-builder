@@ -4105,6 +4105,11 @@
       "op": "union",
       "source": "overpass",
       "id": "Udmurtia"
+    }, {
+      "op": "union",
+      "source": "manual-polygon",
+      "data": [[[53.05,56.185],[53.11,56.18],[53.1,56.23],[53.05,56.185]]],
+      "description": "Union this area to add some exclaves that probably don't belong to Moscow timezone"
     }
   ],
   "Europe/San_Marino": [
@@ -4126,6 +4131,15 @@
       "op": "init",
       "source": "overpass",
       "id": "Saratov"
+    }, {
+      "op": "intersect",
+      "source": "manual-polygon",
+      "data": [[[46.7,52.7],[46.6,52.65],[46.7,52.65],[46.7,52.7]]],
+      "description": "Intersect with part of Moscow timezone along a river to cover holes between the OSM boundaries of Saratov and the Moscow timezone"
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "Moscow-tz"
     }
   ],
   "Europe/Simferopol": [
