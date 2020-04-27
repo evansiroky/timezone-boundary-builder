@@ -2279,7 +2279,7 @@
     }, {
       "op": "intersect",
       "source": "manual-polygon",
-      "data": [[[-114,47],[-100,47],[-110,59],[-114,47]]],
+      "data": [[[-114,47],[-100,47],[-109,59.9],[-114,47]]],
       "description": "Intersect a good chunk of Canada containing parts of Alberta and Saskatchewan."
     }, {
       "op": "difference",
