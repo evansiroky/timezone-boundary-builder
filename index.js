@@ -666,6 +666,10 @@ const autoScript = {
     overallProgress.beginTask('Downloading osm boundaries')
     asynclib.eachSeries(Object.keys(osmBoundarySources), downloadOsmBoundary, cb)
   }],
+  zipInputData: ['makeDistDir', 'getOsmBoundaries', function (results, cb) {
+    overallProgress.beginTask('Zipping up input data')
+    exec('zip dist/input-data.zip downloads/* timezones.json osmBoundarySources.json expectedZoneOverlaps.json', cb)
+  }],
   createZones: ['makeDistDir', 'getOsmBoundaries', function (results, cb) {
     overallProgress.beginTask('Creating timezone boundaries')
     asynclib.each(Object.keys(zoneCfg), makeTimezoneBoundary, cb)
