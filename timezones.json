@@ -680,10 +680,6 @@
       "op": "init",
       "source": "overpass",
       "id": "Paraguay"
-    }, {
-      "op": "difference",
-      "source": "overpass",
-      "id": "Argentina"
     }
   ],
   "America/Atikokan": [
