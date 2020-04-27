@@ -4128,7 +4128,7 @@
       "source": "overpass",
       "id": "Saratov"
     }, {
-      "op": "intersect",
+      "op": "union",
       "source": "manual-polygon",
       "data": [[[46.7,52.7],[46.6,52.65],[46.7,52.65],[46.7,52.7]]],
       "description": "Intersect with part of Moscow timezone along a river to cover holes between the OSM boundaries of Saratov and the Moscow timezone"
