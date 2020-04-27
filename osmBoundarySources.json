@@ -424,6 +424,10 @@
   "Faroe Islands": {
     "ISO3166-1": "FO"
   },
+  "Fentress County, TN": {
+    "name": "Fentress County",
+    "nist:state_fips": "47"
+  },
   "Fiji": {
     "ISO3166-1": "FJ"
   },
@@ -943,10 +947,6 @@
   },
   "Omsk": {
     "ISO3166-2": "RU-OMS"
-  },
-  "Overton County, TN": {
-    "name": "Overton County",
-    "nist:state_fips": "47"
   },
   "Oymyakonsky": {
     "name:en": "Oymyakonsky Ulus"
