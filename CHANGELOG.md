@@ -1,4 +1,4 @@
-## Unreleased
+## 2020a
 
 ### Zone Changes
 
@@ -16,6 +16,7 @@
 ### Other Changes
 
 * Update packages to latest versions
+* Include input data in release files ([#78](https://github.com/evansiroky/timezone-boundary-builder/issues/78))
 
 ## 2019b
 
