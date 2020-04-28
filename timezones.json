@@ -4019,6 +4019,11 @@
       "source": "overpass",
       "id": "Kirov"
     }, {
+      "op": "union",
+      "source": "manual-polygon",
+      "data": [[[46.7,52.7],[46.5,52.65],[46.7,52.65],[46.7,52.7]]],
+      "description": "Union with part of Moscow timezone along a river to cover holes between the OSM boundaries of Saratov and the Moscow timezone"
+    }, {
       "op": "difference",
       "source": "overpass",
       "id": "Saratov"
@@ -4127,15 +4132,6 @@
       "op": "init",
       "source": "overpass",
       "id": "Saratov"
-    }, {
-      "op": "union",
-      "source": "manual-polygon",
-      "data": [[[46.7,52.7],[46.6,52.65],[46.7,52.65],[46.7,52.7]]],
-      "description": "Intersect with part of Moscow timezone along a river to cover holes between the OSM boundaries of Saratov and the Moscow timezone"
-    }, {
-      "op": "difference",
-      "source": "overpass",
-      "id": "Moscow-tz"
     }
   ],
   "Europe/Simferopol": [
