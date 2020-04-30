@@ -24,6 +24,10 @@ const argv = yargs
     description: 'Include specified zones',
     type: 'array'
   })
+  .option('excluded_zones', {
+    description: 'Exclude specified zones',
+    type: 'array'
+  })
   .option('no_validation', {
     description: 'Skip validation',
     type: 'boolean'
@@ -35,13 +39,26 @@ const argv = yargs
 
 // allow building of only a specified zones
 let includedZones = []
-if (argv.included_zones) {
-  var newZoneCfg = {}
-  includedZones = argv.included_zones
-  includedZones.forEach((zoneName) => {
-    newZoneCfg[zoneName] = zoneCfg[zoneName]
-  })
-  zoneCfg = newZoneCfg
+let excludedZones = []
+if (argv.included_zones || argv.excluded_zones) {
+  if (argv.included_zones) {
+    let newZoneCfg = {}
+    includedZones = argv.included_zones
+    includedZones.forEach((zoneName) => {
+      newZoneCfg[zoneName] = zoneCfg[zoneName]
+    })
+    zoneCfg = newZoneCfg
+  }
+  if (argv.excluded_zones) {
+    let newZoneCfg = {}
+    excludedZones = argv.excluded_zones
+    Object.keys(zoneCfg).forEach((zoneName) => {
+      if (!excludedZones.includes(zoneName)) {
+        newZoneCfg[zoneName] = zoneCfg[zoneName]
+      }
+    })
+    zoneCfg = newZoneCfg
+  }
 
   // filter out unneccessary downloads
   var newOsmBoundarySources = {}
@@ -590,6 +607,9 @@ let oceanZones = [
 if (includedZones.length > 0) {
   oceanZones = oceanZones.filter(oceanZone => includedZones.indexOf(oceanZone) > -1)
 }
+if (excludedZones.length > 0) {
+  oceanZones = oceanZones.filter(oceanZone => excludedZones.indexOf(oceanZone) === -1)
+}
 
 var addOceans = function (callback) {
   console.log('adding ocean boundaries')
@@ -744,6 +764,9 @@ const autoScript = {
     })
     if (includedZones.length > 0) {
       zoneNames = zoneNames.filter(zoneName => includedZones.indexOf(zoneName) > -1)
+    }
+    if (excludedZones.length > 0) {
+      zoneNames = zoneNames.filter(zoneName => excludedZones.indexOf(zoneName) === -1)
     }
     fs.writeFile(
       'dist/timezone-names.json',
