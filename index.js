@@ -11,6 +11,7 @@ var asynclib = require('async')
 var jsts = require('jsts')
 var rimraf = require('rimraf')
 var overpass = require('query-overpass')
+var yargs = require('yargs')
 
 const ProgressStats = require('./progressStats')
 
@@ -18,13 +19,26 @@ var osmBoundarySources = require('./osmBoundarySources.json')
 var zoneCfg = require('./timezones.json')
 var expectedZoneOverlaps = require('./expectedZoneOverlaps.json')
 
+const argv = yargs
+  .option('included_zones', {
+    description: 'Include specified zones',
+    type: 'array'
+  })
+  .option('no_validation', {
+    description: 'Skip validation',
+    type: 'boolean'
+  })
+  .help()
+  .strict()
+  .alias('help', 'h')
+  .argv
+
 // allow building of only a specified zones
-var filteredIndex = process.argv.indexOf('--filtered-zones')
-let filteredZones = []
-if (filteredIndex > -1 && process.argv[filteredIndex + 1]) {
-  filteredZones = process.argv[filteredIndex + 1].split(',')
+let includedZones = []
+if (argv.included_zones) {
   var newZoneCfg = {}
-  filteredZones.forEach((zoneName) => {
+  includedZones = argv.included_zones
+  includedZones.forEach((zoneName) => {
     newZoneCfg[zoneName] = zoneCfg[zoneName]
   })
   zoneCfg = newZoneCfg
@@ -573,8 +587,8 @@ let oceanZones = [
   { tzid: 'Etc/GMT+12', left: -180, right: -172.5 }
 ]
 
-if (filteredZones.length > 0) {
-  oceanZones = oceanZones.filter(oceanZone => filteredZones.indexOf(oceanZone) > -1)
+if (includedZones.length > 0) {
+  oceanZones = oceanZones.filter(oceanZone => includedZones.indexOf(oceanZone) > -1)
 }
 
 var addOceans = function (callback) {
@@ -677,7 +691,7 @@ const autoScript = {
   validateZones: ['createZones', function (results, cb) {
     overallProgress.beginTask('Validating timezone boundaries')
     loadDistZonesIntoMemory()
-    if (process.argv.indexOf('no-validation') > -1) {
+    if (argv.no_validation) {
       console.warn('WARNING: Skipping validation!')
       cb()
     } else {
@@ -728,8 +742,8 @@ const autoScript = {
     oceanZones.forEach(oceanZone => {
       zoneNames.push(oceanZone.tzid)
     })
-    if (filteredZones.length > 0) {
-      zoneNames = zoneNames.filter(zoneName => filteredZones.indexOf(zoneName) > -1)
+    if (includedZones.length > 0) {
+      zoneNames = zoneNames.filter(zoneName => includedZones.indexOf(zoneName) > -1)
     }
     fs.writeFile(
       'dist/timezone-names.json',

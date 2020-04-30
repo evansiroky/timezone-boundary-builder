@@ -51,7 +51,7 @@ node --max-old-space-size=8192 index.js
 **Run the script to generate timezones for only specified timezones.**
 
 ```shell
-node --max-old-space-size=8192 index.js --filtered-zones "America/New_York,America/Chicago"
+node --max-old-space-size=8192 index.js --included_zones America/New_York America/Chicago
 ```
 
 ### What the script does
