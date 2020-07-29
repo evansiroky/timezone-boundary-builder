@@ -747,60 +747,60 @@ const autoScript = {
   zipGeoJson: ['mergeZones', function (results, cb) {
     if (argv.skip_zip) {
       overallProgress.beginTask('Skipping zip')
-    } else {
-      overallProgress.beginTask('Zipping geojson')
-      let zipFile = argv.dist_dir + '/timezones.geojson.zip'
-      let jsonFile = argv.dist_dir + '/combined.json'
-      exec('zip ' + zipFile + ' ' + jsonFile, cb)
+      return cb()
     }
+    overallProgress.beginTask('Zipping geojson')
+    let zipFile = argv.dist_dir + '/timezones.geojson.zip'
+    let jsonFile = argv.dist_dir + '/combined.json'
+    exec('zip ' + zipFile + ' ' + jsonFile, cb)
   }],
   zipGeoJsonWithOceans: ['mergeZones', function (results, cb) {
     if (argv.skip_zip) {
       overallProgress.beginTask('Skipping with oceans zip')
-    } else {
-      overallProgress.beginTask('Zipping geojson with oceans')
-      let zipFile = argv.dist_dir + '/timezones-with-oceans.geojson.zip'
-      let jsonFile = argv.dist_dir + '/combined-with-oceans.json'
-      exec('zip ' + zipFile + ' ' + jsonFile, cb)
+      return cb()
     }
+    overallProgress.beginTask('Zipping geojson with oceans')
+    let zipFile = argv.dist_dir + '/timezones-with-oceans.geojson.zip'
+    let jsonFile = argv.dist_dir + '/combined-with-oceans.json'
+    exec('zip ' + zipFile + ' ' + jsonFile, cb)
   }],
   makeShapefile: ['mergeZones', function (results, cb) {
     if (argv.skip_shapefile) {
       overallProgress.beginTask('Skipping shapefile creation')
-    } else {
-      overallProgress.beginTask('Converting from geojson to shapefile')
-      let shapeFileGlob = argv.dist_dir + '/combined-shapefile.*'
-      rimraf.sync(shapeFileGlob)
-      let shapeFile = argv.dist_dir + '/combined-shapefile.shp'
-      let jsonFile = argv.dist_dir + '/combined.json'
-      exec(
-        'ogr2ogr -f "ESRI Shapefile" ' + shapeFile + ' ' + jsonFile,
-        function (err, stdout, stderr) {
-          if (err) { return cb(err) }
-          let shapeFileZip = argv.dist_dir + '/timezones.shapefile.zip'
-          exec('zip ' + shapeFileZip + ' ' + shapeFileGlob, cb)
-        }
-      )
+      return cb()
     }
+    overallProgress.beginTask('Converting from geojson to shapefile')
+    let shapeFileGlob = argv.dist_dir + '/combined-shapefile.*'
+    rimraf.sync(shapeFileGlob)
+    let shapeFile = argv.dist_dir + '/combined-shapefile.shp'
+    let jsonFile = argv.dist_dir + '/combined.json'
+    exec(
+      'ogr2ogr -f "ESRI Shapefile" ' + shapeFile + ' ' + jsonFile,
+      function (err, stdout, stderr) {
+        if (err) { return cb(err) }
+        let shapeFileZip = argv.dist_dir + '/timezones.shapefile.zip'
+        exec('zip ' + shapeFileZip + ' ' + shapeFileGlob, cb)
+      }
+    )
   }],
   makeShapefileWithOceans: ['mergeZones', function (results, cb) {
     if (argv.skip_shapefile) {
       overallProgress.beginTask('Skipping with oceans shapefile creation')
-    } else {
-      overallProgress.beginTask('Converting from geojson with oceans to shapefile')
-      let shapeFileGlob = argv.dist_dir + '/combined-shapefile-with-oceans.*'
-      rimraf.sync(shapeFileGlob)
-      let shapeFile = argv.dist_dir + '/combined-shapefile-with-oceans.shp'
-      let jsonFile = argv.dist_dir + '/combined-with-oceans.json'
-      exec(
-        'ogr2ogr -f "ESRI Shapefile" ' + shapeFile + ' ' + jsonFile,
-        function (err, stdout, stderr) {
-          if (err) { return cb(err) }
-          let shapeFileZip = argv.dist_dir + '/timezones-with-oceans.shapefile.zip'
-          exec('zip ' + shapeFileZip + ' ' + shapeFileGlob, cb)
-        }
-      )
+      return cb()
     }
+    overallProgress.beginTask('Converting from geojson with oceans to shapefile')
+    let shapeFileGlob = argv.dist_dir + '/combined-shapefile-with-oceans.*'
+    rimraf.sync(shapeFileGlob)
+    let shapeFile = argv.dist_dir + '/combined-shapefile-with-oceans.shp'
+    let jsonFile = argv.dist_dir + '/combined-with-oceans.json'
+    exec(
+      'ogr2ogr -f "ESRI Shapefile" ' + shapeFile + ' ' + jsonFile,
+      function (err, stdout, stderr) {
+        if (err) { return cb(err) }
+        let shapeFileZip = argv.dist_dir + '/timezones-with-oceans.shapefile.zip'
+        exec('zip ' + shapeFileZip + ' ' + shapeFileGlob, cb)
+      }
+    )
   }],
   makeListOfTimeZoneNames: function (cb) {
     overallProgress.beginTask('Writing timezone names to file')
