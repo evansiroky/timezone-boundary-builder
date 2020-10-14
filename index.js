@@ -57,8 +57,8 @@ const argv = yargs
   .argv
 
 // Resolve the arguments with paths so relative paths become absolute.
-let downloads_dir = path.resolve(argv.downloads_dir)
-let dist_dir = path.resolve(argv.dist_dir)
+let downloadsDir = path.resolve(argv.downloads_dir)
+let distDir = path.resolve(argv.dist_dir)
 
 // allow building of only a specified zones
 let includedZones = []
@@ -207,7 +207,7 @@ var downloadOsmBoundary = function (boundaryId, boundaryCallback) {
   } else {
     query += 'relation'
   }
-  var boundaryFilename = downloads_dir + '/' + boundaryId + '.json'
+  var boundaryFilename = downloadsDir + '/' + boundaryId + '.json'
   var debug = 'getting data for ' + boundaryId
   var queryKeys = Object.keys(cfg)
 
@@ -315,7 +315,7 @@ var downloadOsmBoundary = function (boundaryId, boundaryCallback) {
 }
 
 var getTzDistFilename = function (tzid) {
-  return dist_dir + '/' + tzid.replace(/\//g, '__') + '.json'
+  return distDir + '/' + tzid.replace(/\//g, '__') + '.json'
 }
 
 /**
@@ -330,7 +330,7 @@ var getTzDistFilename = function (tzid) {
 var getDataSource = function (source) {
   var geoJson
   if (source.source === 'overpass') {
-    geoJson = require(downloads_dir + '/' + source.id + '.json')
+    geoJson = require(downloadsDir + '/' + source.id + '.json')
   } else if (source.source === 'manual-polygon') {
     geoJson = polygon(source.data).geometry
   } else if (source.source === 'manual-multipolygon') {
@@ -670,8 +670,8 @@ var addOceans = function (callback) {
 }
 
 var combineAndWriteZones = function (callback) {
-  var stream = fs.createWriteStream(dist_dir + '/combined.json')
-  var streamWithOceans = fs.createWriteStream(dist_dir + '/combined-with-oceans.json')
+  var stream = fs.createWriteStream(distDir + '/combined.json')
+  var streamWithOceans = fs.createWriteStream(distDir + '/combined-with-oceans.json')
   var zones = Object.keys(zoneCfg)
 
   stream.write('{"type":"FeatureCollection","features":[')
@@ -713,11 +713,11 @@ var combineAndWriteZones = function (callback) {
 const autoScript = {
   makeDownloadsDir: function (cb) {
     overallProgress.beginTask('Creating downloads dir')
-    safeMkdir(downloads_dir, cb)
+    safeMkdir(downloadsDir, cb)
   },
   makeDistDir: function (cb) {
     overallProgress.beginTask('Creating dist dir')
-    safeMkdir(dist_dir, cb)
+    safeMkdir(distDir, cb)
   },
   getOsmBoundaries: ['makeDownloadsDir', function (results, cb) {
     overallProgress.beginTask('Downloading osm boundaries')
@@ -725,8 +725,8 @@ const autoScript = {
   }],
   zipInputData: ['makeDistDir', 'getOsmBoundaries', function (results, cb) {
     overallProgress.beginTask('Zipping up input data')
-    exec('zip ' + dist_dir + '/input-data.zip ' + downloads_dir
-         + '/* timezones.json osmBoundarySources.json expectedZoneOverlaps.json', cb)
+    exec('zip ' + distDir + '/input-data.zip ' + downloadsDir +
+         '/* timezones.json osmBoundarySources.json expectedZoneOverlaps.json', cb)
   }],
   createZones: ['makeDistDir', 'getOsmBoundaries', function (results, cb) {
     overallProgress.beginTask('Creating timezone boundaries')
@@ -756,8 +756,8 @@ const autoScript = {
       return cb()
     }
     overallProgress.beginTask('Zipping geojson')
-    let zipFile = dist_dir + '/timezones.geojson.zip'
-    let jsonFile = dist_dir + '/combined.json'
+    let zipFile = distDir + '/timezones.geojson.zip'
+    let jsonFile = distDir + '/combined.json'
     exec('zip ' + zipFile + ' ' + jsonFile, cb)
   }],
   zipGeoJsonWithOceans: ['mergeZones', function (results, cb) {
@@ -766,8 +766,8 @@ const autoScript = {
       return cb()
     }
     overallProgress.beginTask('Zipping geojson with oceans')
-    let zipFile = dist_dir + '/timezones-with-oceans.geojson.zip'
-    let jsonFile = dist_dir + '/combined-with-oceans.json'
+    let zipFile = distDir + '/timezones-with-oceans.geojson.zip'
+    let jsonFile = distDir + '/combined-with-oceans.json'
     exec('zip ' + zipFile + ' ' + jsonFile, cb)
   }],
   makeShapefile: ['mergeZones', function (results, cb) {
@@ -776,15 +776,15 @@ const autoScript = {
       return cb()
     }
     overallProgress.beginTask('Converting from geojson to shapefile')
-    let shapeFileGlob = dist_dir + '/combined-shapefile.*'
+    let shapeFileGlob = distDir + '/combined-shapefile.*'
     rimraf.sync(shapeFileGlob)
-    let shapeFile = dist_dir + '/combined-shapefile.shp'
-    let jsonFile = dist_dir + '/combined.json'
+    let shapeFile = distDir + '/combined-shapefile.shp'
+    let jsonFile = distDir + '/combined.json'
     exec(
       'ogr2ogr -f "ESRI Shapefile" ' + shapeFile + ' ' + jsonFile,
       function (err, stdout, stderr) {
         if (err) { return cb(err) }
-        let shapeFileZip = dist_dir + '/timezones.shapefile.zip'
+        let shapeFileZip = distDir + '/timezones.shapefile.zip'
         exec('zip ' + shapeFileZip + ' ' + shapeFileGlob, cb)
       }
     )
@@ -795,15 +795,15 @@ const autoScript = {
       return cb()
     }
     overallProgress.beginTask('Converting from geojson with oceans to shapefile')
-    let shapeFileGlob = dist_dir + '/combined-shapefile-with-oceans.*'
+    let shapeFileGlob = distDir + '/combined-shapefile-with-oceans.*'
     rimraf.sync(shapeFileGlob)
-    let shapeFile = dist_dir + '/combined-shapefile-with-oceans.shp'
-    let jsonFile = dist_dir + '/combined-with-oceans.json'
+    let shapeFile = distDir + '/combined-shapefile-with-oceans.shp'
+    let jsonFile = distDir + '/combined-with-oceans.json'
     exec(
       'ogr2ogr -f "ESRI Shapefile" ' + shapeFile + ' ' + jsonFile,
       function (err, stdout, stderr) {
         if (err) { return cb(err) }
-        let shapeFileZip = dist_dir + '/timezones-with-oceans.shapefile.zip'
+        let shapeFileZip = distDir + '/timezones-with-oceans.shapefile.zip'
         exec('zip ' + shapeFileZip + ' ' + shapeFileGlob, cb)
       }
     )
@@ -821,7 +821,7 @@ const autoScript = {
       zoneNames = zoneNames.filter(zoneName => excludedZones.indexOf(zoneName) === -1)
     }
     fs.writeFile(
-      dist_dir + '/timezone-names.json',
+      distDir + '/timezone-names.json',
       JSON.stringify(zoneNames),
       cb
     )
