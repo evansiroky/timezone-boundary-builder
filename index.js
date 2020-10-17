@@ -57,15 +57,15 @@ const argv = yargs
   .argv
 
 // Resolve the arguments with paths so relative paths become absolute.
-let downloadsDir = path.resolve(argv.downloads_dir)
-let distDir = path.resolve(argv.dist_dir)
+const downloadsDir = path.resolve(argv.downloads_dir)
+const distDir = path.resolve(argv.dist_dir)
 
 // allow building of only a specified zones
 let includedZones = []
 let excludedZones = []
 if (argv.included_zones || argv.excluded_zones) {
   if (argv.included_zones) {
-    let newZoneCfg = {}
+    const newZoneCfg = {}
     includedZones = argv.included_zones
     includedZones.forEach((zoneName) => {
       newZoneCfg[zoneName] = zoneCfg[zoneName]
@@ -73,7 +73,7 @@ if (argv.included_zones || argv.excluded_zones) {
     zoneCfg = newZoneCfg
   }
   if (argv.excluded_zones) {
-    let newZoneCfg = {}
+    const newZoneCfg = {}
     excludedZones = argv.excluded_zones
     Object.keys(zoneCfg).forEach((zoneName) => {
       if (!excludedZones.includes(zoneName)) {
@@ -756,8 +756,8 @@ const autoScript = {
       return cb()
     }
     overallProgress.beginTask('Zipping geojson')
-    let zipFile = distDir + '/timezones.geojson.zip'
-    let jsonFile = distDir + '/combined.json'
+    const zipFile = distDir + '/timezones.geojson.zip'
+    const jsonFile = distDir + '/combined.json'
     exec('zip ' + zipFile + ' ' + jsonFile, cb)
   }],
   zipGeoJsonWithOceans: ['mergeZones', function (results, cb) {
@@ -766,8 +766,8 @@ const autoScript = {
       return cb()
     }
     overallProgress.beginTask('Zipping geojson with oceans')
-    let zipFile = distDir + '/timezones-with-oceans.geojson.zip'
-    let jsonFile = distDir + '/combined-with-oceans.json'
+    const zipFile = distDir + '/timezones-with-oceans.geojson.zip'
+    const jsonFile = distDir + '/combined-with-oceans.json'
     exec('zip ' + zipFile + ' ' + jsonFile, cb)
   }],
   makeShapefile: ['mergeZones', function (results, cb) {
@@ -776,15 +776,15 @@ const autoScript = {
       return cb()
     }
     overallProgress.beginTask('Converting from geojson to shapefile')
-    let shapeFileGlob = distDir + '/combined-shapefile.*'
+    const shapeFileGlob = distDir + '/combined-shapefile.*'
     rimraf.sync(shapeFileGlob)
-    let shapeFile = distDir + '/combined-shapefile.shp'
-    let jsonFile = distDir + '/combined.json'
+    const shapeFile = distDir + '/combined-shapefile.shp'
+    const jsonFile = distDir + '/combined.json'
     exec(
       'ogr2ogr -f "ESRI Shapefile" ' + shapeFile + ' ' + jsonFile,
       function (err, stdout, stderr) {
         if (err) { return cb(err) }
-        let shapeFileZip = distDir + '/timezones.shapefile.zip'
+        const shapeFileZip = distDir + '/timezones.shapefile.zip'
         exec('zip ' + shapeFileZip + ' ' + shapeFileGlob, cb)
       }
     )
@@ -795,15 +795,15 @@ const autoScript = {
       return cb()
     }
     overallProgress.beginTask('Converting from geojson with oceans to shapefile')
-    let shapeFileGlob = distDir + '/combined-shapefile-with-oceans.*'
+    const shapeFileGlob = distDir + '/combined-shapefile-with-oceans.*'
     rimraf.sync(shapeFileGlob)
-    let shapeFile = distDir + '/combined-shapefile-with-oceans.shp'
-    let jsonFile = distDir + '/combined-with-oceans.json'
+    const shapeFile = distDir + '/combined-shapefile-with-oceans.shp'
+    const jsonFile = distDir + '/combined-with-oceans.json'
     exec(
       'ogr2ogr -f "ESRI Shapefile" ' + shapeFile + ' ' + jsonFile,
       function (err, stdout, stderr) {
         if (err) { return cb(err) }
-        let shapeFileZip = distDir + '/timezones-with-oceans.shapefile.zip'
+        const shapeFileZip = distDir + '/timezones-with-oceans.shapefile.zip'
         exec('zip ' + shapeFileZip + ' ' + shapeFileGlob, cb)
       }
     )
