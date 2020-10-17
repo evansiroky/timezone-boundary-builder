@@ -28,7 +28,8 @@
     "jsts": "^2.1.2",
     "query-overpass": "^1.5.5",
     "rimraf": "^2.7.1",
-    "shpjs": "^3.4.3"
+    "shpjs": "^3.4.3",
+    "yargs": "^16.0.3"
   },
   "devDependencies": {
     "standard": "^12.0.1"

@@ -51,12 +51,38 @@ node --max-old-space-size=8192 index.js
 **Run the script to generate timezones for only specified timezones.**
 
 ```shell
-node --max-old-space-size=8192 index.js --filtered-zones "America/New_York,America/Chicago"
+node --max-old-space-size=8192 index.js --included_zones America/New_York America/Chicago
 ```
+
+**Run the script to generate timezones while excluding specified timezones.**
+
+```shell
+node --max-old-space-size=8192 index.js --excluded_zones America/New_York America/Chicago
+```
+
+**Run the script with custom working / output directories.**
+
+timezone-boundary-builder downloads boundaries from OpenStreetMap and places them in the `./downloads` directory by default. It generates output files in the `./dist` directory by default.
+
+If you want to use different directories, you can do so with the `--downloads_dir` and `--dist_dir` flags.
+
+```shell
+node --max-old-space-size=8192 index.js --downloads_dir ./downloads2 --dist_dir ./dist2
+```
+
+**Other command line flags**
+
+Other command line flags:
+
+  + `--help` - show some basic usage information
+  + `--no_validation` - do not validate the time zone boundaries
+  + `--skip_zip` - do not zip the generated geojson files
+  + `--skip_shapefile` - do not create the shapefile from the geojson file
+
 
 ### What the script does
 
-There are three config files that describe the boundary building process.  The `osmBoundarySources.json` file lists all of the needed boundaries to extract via queries to the Overpass API.  The `timezones.json` file lists all of the timezones and various operations to perform to build the boundaries.  The `expectedZoneOverlaps.json` file lists all timezones that are allowed to overlap each other and the acceptable bounds of a particular overlap.  
+There are three config files that describe the boundary building process.  The `osmBoundarySources.json` file lists all of the needed boundaries to extract via queries to the Overpass API.  The `timezones.json` file lists all of the timezones and various operations to perform to build the boundaries.  The `expectedZoneOverlaps.json` file lists all timezones that are allowed to overlap each other and the acceptable bounds of a particular overlap.
 
 The `index.js` file downloads all of the required geometries, builds the specified geometries, validates that there aren't large areas of overlap (other than those that are expected), outputs one huge geojson file, and finally zips up the geojson file using the `zip` cli and also converts the geojson to a shapefile using the `ogr2ogr` cli.  The script has only been verified to run with Node.js 10 on the MacOS platform.
 

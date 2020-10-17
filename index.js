@@ -11,6 +11,8 @@ var asynclib = require('async')
 var jsts = require('jsts')
 var rimraf = require('rimraf')
 var overpass = require('query-overpass')
+var yargs = require('yargs')
+var path = require('path')
 
 const ProgressStats = require('./progressStats')
 
@@ -18,16 +20,68 @@ var osmBoundarySources = require('./osmBoundarySources.json')
 var zoneCfg = require('./timezones.json')
 var expectedZoneOverlaps = require('./expectedZoneOverlaps.json')
 
-// allow building of only a specified zones
-var filteredIndex = process.argv.indexOf('--filtered-zones')
-let filteredZones = []
-if (filteredIndex > -1 && process.argv[filteredIndex + 1]) {
-  filteredZones = process.argv[filteredIndex + 1].split(',')
-  var newZoneCfg = {}
-  filteredZones.forEach((zoneName) => {
-    newZoneCfg[zoneName] = zoneCfg[zoneName]
+const argv = yargs
+  .option('included_zones', {
+    description: 'Include specified zones',
+    type: 'array'
   })
-  zoneCfg = newZoneCfg
+  .option('excluded_zones', {
+    description: 'Exclude specified zones',
+    type: 'array'
+  })
+  .option('downloads_dir', {
+    description: 'Set the download location',
+    default: './downloads',
+    type: 'string'
+  })
+  .option('dist_dir', {
+    description: 'Set the dist location',
+    default: './dist',
+    type: 'string'
+  })
+  .option('no_validation', {
+    description: 'Skip validation',
+    type: 'boolean'
+  })
+  .option('skip_zip', {
+    description: 'Skip zip creation',
+    type: 'boolean'
+  })
+  .option('skip_shapefile', {
+    description: 'Skip shapefile creation',
+    type: 'boolean'
+  })
+  .help()
+  .strict()
+  .alias('help', 'h')
+  .argv
+
+// Resolve the arguments with paths so relative paths become absolute.
+let downloadsDir = path.resolve(argv.downloads_dir)
+let distDir = path.resolve(argv.dist_dir)
+
+// allow building of only a specified zones
+let includedZones = []
+let excludedZones = []
+if (argv.included_zones || argv.excluded_zones) {
+  if (argv.included_zones) {
+    let newZoneCfg = {}
+    includedZones = argv.included_zones
+    includedZones.forEach((zoneName) => {
+      newZoneCfg[zoneName] = zoneCfg[zoneName]
+    })
+    zoneCfg = newZoneCfg
+  }
+  if (argv.excluded_zones) {
+    let newZoneCfg = {}
+    excludedZones = argv.excluded_zones
+    Object.keys(zoneCfg).forEach((zoneName) => {
+      if (!excludedZones.includes(zoneName)) {
+        newZoneCfg[zoneName] = zoneCfg[zoneName]
+      }
+    })
+    zoneCfg = newZoneCfg
+  }
 
   // filter out unneccessary downloads
   var newOsmBoundarySources = {}
@@ -153,7 +207,7 @@ var downloadOsmBoundary = function (boundaryId, boundaryCallback) {
   } else {
     query += 'relation'
   }
-  var boundaryFilename = './downloads/' + boundaryId + '.json'
+  var boundaryFilename = downloadsDir + '/' + boundaryId + '.json'
   var debug = 'getting data for ' + boundaryId
   var queryKeys = Object.keys(cfg)
 
@@ -261,7 +315,7 @@ var downloadOsmBoundary = function (boundaryId, boundaryCallback) {
 }
 
 var getTzDistFilename = function (tzid) {
-  return './dist/' + tzid.replace(/\//g, '__') + '.json'
+  return distDir + '/' + tzid.replace(/\//g, '__') + '.json'
 }
 
 /**
@@ -276,7 +330,7 @@ var getTzDistFilename = function (tzid) {
 var getDataSource = function (source) {
   var geoJson
   if (source.source === 'overpass') {
-    geoJson = require('./downloads/' + source.id + '.json')
+    geoJson = require(downloadsDir + '/' + source.id + '.json')
   } else if (source.source === 'manual-polygon') {
     geoJson = polygon(source.data).geometry
   } else if (source.source === 'manual-multipolygon') {
@@ -573,8 +627,11 @@ let oceanZones = [
   { tzid: 'Etc/GMT+12', left: -180, right: -172.5 }
 ]
 
-if (filteredZones.length > 0) {
-  oceanZones = oceanZones.filter(oceanZone => filteredZones.indexOf(oceanZone) > -1)
+if (includedZones.length > 0) {
+  oceanZones = oceanZones.filter(oceanZone => includedZones.indexOf(oceanZone) > -1)
+}
+if (excludedZones.length > 0) {
+  oceanZones = oceanZones.filter(oceanZone => excludedZones.indexOf(oceanZone) === -1)
 }
 
 var addOceans = function (callback) {
@@ -613,8 +670,8 @@ var addOceans = function (callback) {
 }
 
 var combineAndWriteZones = function (callback) {
-  var stream = fs.createWriteStream('./dist/combined.json')
-  var streamWithOceans = fs.createWriteStream('./dist/combined-with-oceans.json')
+  var stream = fs.createWriteStream(distDir + '/combined.json')
+  var streamWithOceans = fs.createWriteStream(distDir + '/combined-with-oceans.json')
   var zones = Object.keys(zoneCfg)
 
   stream.write('{"type":"FeatureCollection","features":[')
@@ -656,11 +713,11 @@ var combineAndWriteZones = function (callback) {
 const autoScript = {
   makeDownloadsDir: function (cb) {
     overallProgress.beginTask('Creating downloads dir')
-    safeMkdir('./downloads', cb)
+    safeMkdir(downloadsDir, cb)
   },
   makeDistDir: function (cb) {
     overallProgress.beginTask('Creating dist dir')
-    safeMkdir('./dist', cb)
+    safeMkdir(distDir, cb)
   },
   getOsmBoundaries: ['makeDownloadsDir', function (results, cb) {
     overallProgress.beginTask('Downloading osm boundaries')
@@ -668,7 +725,8 @@ const autoScript = {
   }],
   zipInputData: ['makeDistDir', 'getOsmBoundaries', function (results, cb) {
     overallProgress.beginTask('Zipping up input data')
-    exec('zip dist/input-data.zip downloads/* timezones.json osmBoundarySources.json expectedZoneOverlaps.json', cb)
+    exec('zip ' + distDir + '/input-data.zip ' + downloadsDir +
+         '/* timezones.json osmBoundarySources.json expectedZoneOverlaps.json', cb)
   }],
   createZones: ['makeDistDir', 'getOsmBoundaries', function (results, cb) {
     overallProgress.beginTask('Creating timezone boundaries')
@@ -677,7 +735,7 @@ const autoScript = {
   validateZones: ['createZones', function (results, cb) {
     overallProgress.beginTask('Validating timezone boundaries')
     loadDistZonesIntoMemory()
-    if (process.argv.indexOf('no-validation') > -1) {
+    if (argv.no_validation) {
       console.warn('WARNING: Skipping validation!')
       cb()
     } else {
@@ -693,32 +751,60 @@ const autoScript = {
     combineAndWriteZones(cb)
   }],
   zipGeoJson: ['mergeZones', function (results, cb) {
+    if (argv.skip_zip) {
+      overallProgress.beginTask('Skipping zip')
+      return cb()
+    }
     overallProgress.beginTask('Zipping geojson')
-    exec('zip dist/timezones.geojson.zip dist/combined.json', cb)
+    let zipFile = distDir + '/timezones.geojson.zip'
+    let jsonFile = distDir + '/combined.json'
+    exec('zip ' + zipFile + ' ' + jsonFile, cb)
   }],
   zipGeoJsonWithOceans: ['mergeZones', function (results, cb) {
+    if (argv.skip_zip) {
+      overallProgress.beginTask('Skipping with oceans zip')
+      return cb()
+    }
     overallProgress.beginTask('Zipping geojson with oceans')
-    exec('zip dist/timezones-with-oceans.geojson.zip dist/combined-with-oceans.json', cb)
+    let zipFile = distDir + '/timezones-with-oceans.geojson.zip'
+    let jsonFile = distDir + '/combined-with-oceans.json'
+    exec('zip ' + zipFile + ' ' + jsonFile, cb)
   }],
   makeShapefile: ['mergeZones', function (results, cb) {
+    if (argv.skip_shapefile) {
+      overallProgress.beginTask('Skipping shapefile creation')
+      return cb()
+    }
     overallProgress.beginTask('Converting from geojson to shapefile')
-    rimraf.sync('dist/combined-shapefile.*')
+    let shapeFileGlob = distDir + '/combined-shapefile.*'
+    rimraf.sync(shapeFileGlob)
+    let shapeFile = distDir + '/combined-shapefile.shp'
+    let jsonFile = distDir + '/combined.json'
     exec(
-      'ogr2ogr -f "ESRI Shapefile" dist/combined-shapefile.shp dist/combined.json',
+      'ogr2ogr -f "ESRI Shapefile" ' + shapeFile + ' ' + jsonFile,
       function (err, stdout, stderr) {
         if (err) { return cb(err) }
-        exec('zip dist/timezones.shapefile.zip dist/combined-shapefile.*', cb)
+        let shapeFileZip = distDir + '/timezones.shapefile.zip'
+        exec('zip ' + shapeFileZip + ' ' + shapeFileGlob, cb)
       }
     )
   }],
   makeShapefileWithOceans: ['mergeZones', function (results, cb) {
+    if (argv.skip_shapefile) {
+      overallProgress.beginTask('Skipping with oceans shapefile creation')
+      return cb()
+    }
     overallProgress.beginTask('Converting from geojson with oceans to shapefile')
-    rimraf.sync('dist/combined-shapefile-with-oceans.*')
+    let shapeFileGlob = distDir + '/combined-shapefile-with-oceans.*'
+    rimraf.sync(shapeFileGlob)
+    let shapeFile = distDir + '/combined-shapefile-with-oceans.shp'
+    let jsonFile = distDir + '/combined-with-oceans.json'
     exec(
-      'ogr2ogr -f "ESRI Shapefile" dist/combined-shapefile-with-oceans.shp dist/combined-with-oceans.json',
+      'ogr2ogr -f "ESRI Shapefile" ' + shapeFile + ' ' + jsonFile,
       function (err, stdout, stderr) {
         if (err) { return cb(err) }
-        exec('zip dist/timezones-with-oceans.shapefile.zip dist/combined-shapefile-with-oceans.*', cb)
+        let shapeFileZip = distDir + '/timezones-with-oceans.shapefile.zip'
+        exec('zip ' + shapeFileZip + ' ' + shapeFileGlob, cb)
       }
     )
   }],
@@ -728,11 +814,14 @@ const autoScript = {
     oceanZones.forEach(oceanZone => {
       zoneNames.push(oceanZone.tzid)
     })
-    if (filteredZones.length > 0) {
-      zoneNames = zoneNames.filter(zoneName => filteredZones.indexOf(zoneName) > -1)
+    if (includedZones.length > 0) {
+      zoneNames = zoneNames.filter(zoneName => includedZones.indexOf(zoneName) > -1)
+    }
+    if (excludedZones.length > 0) {
+      zoneNames = zoneNames.filter(zoneName => excludedZones.indexOf(zoneName) === -1)
     }
     fs.writeFile(
-      'dist/timezone-names.json',
+      distDir + '/timezone-names.json',
       JSON.stringify(zoneNames),
       cb
     )
