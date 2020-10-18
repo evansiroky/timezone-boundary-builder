@@ -788,7 +788,7 @@ const autoScript = {
   }],
   zipInputData: ['cleanDownloadFolder', function (results, cb) {
     overallProgress.beginTask('Zipping up input data')
-    exec('zip ' + distDir + '/input-data.zip ' + downloadsDir +
+    exec('zip -j ' + distDir + '/input-data.zip ' + downloadsDir +
          '/* timezones.json osmBoundarySources.json expectedZoneOverlaps.json', cb)
   }],
   downloadLastRelease: ['makeDistDir', function (results, cb) {
@@ -829,7 +829,7 @@ const autoScript = {
     overallProgress.beginTask('Zipping geojson')
     const zipFile = distDir + '/timezones.geojson.zip'
     const jsonFile = distDir + '/combined.json'
-    exec('zip ' + zipFile + ' ' + jsonFile, cb)
+    exec('zip -j ' + zipFile + ' ' + jsonFile, cb)
   }],
   zipGeoJsonWithOceans: ['mergeZones', function (results, cb) {
     if (argv.skip_zip) {
@@ -839,7 +839,7 @@ const autoScript = {
     overallProgress.beginTask('Zipping geojson with oceans')
     const zipFile = distDir + '/timezones-with-oceans.geojson.zip'
     const jsonFile = distDir + '/combined-with-oceans.json'
-    exec('zip ' + zipFile + ' ' + jsonFile, cb)
+    exec('zip -j ' + zipFile + ' ' + jsonFile, cb)
   }],
   makeShapefile: ['mergeZones', function (results, cb) {
     if (argv.skip_shapefile) {
@@ -856,7 +856,7 @@ const autoScript = {
       function (err, stdout, stderr) {
         if (err) { return cb(err) }
         const shapeFileZip = distDir + '/timezones.shapefile.zip'
-        exec('zip ' + shapeFileZip + ' ' + shapeFileGlob, cb)
+        exec('zip -j ' + shapeFileZip + ' ' + shapeFileGlob, cb)
       }
     )
   }],
@@ -875,7 +875,7 @@ const autoScript = {
       function (err, stdout, stderr) {
         if (err) { return cb(err) }
         const shapeFileZip = distDir + '/timezones-with-oceans.shapefile.zip'
-        exec('zip ' + shapeFileZip + ' ' + shapeFileGlob, cb)
+        exec('zip -j ' + shapeFileZip + ' ' + shapeFileGlob, cb)
       }
     )
   }],
