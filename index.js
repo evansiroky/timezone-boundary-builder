@@ -101,6 +101,7 @@ var geoJsonWriter = new jsts.io.GeoJSONWriter()
 var precisionModel = new jsts.geom.PrecisionModel(1000000)
 var precisionReducer = new jsts.precision.GeometryPrecisionReducer(precisionModel)
 var distZones = {}
+var lastReleaseJSONfile
 var minRequestGap = 4
 var curRequestGap = 4
 
@@ -710,6 +711,47 @@ var combineAndWriteZones = function (callback) {
   ], callback)
 }
 
+var cleanDownloadsDir = function (cb) {
+  // TODO:
+
+  // list all files in downloads dir
+  // for each file
+  // if file does not exist in osmBoundarySources.json file, then remove
+  cb()
+}
+
+var downloadLastRelease = function (cb) {
+  // TODO:
+
+  // download latest release info
+  // determine last release version name
+  lastReleaseJSONfile = `./dist/${lastReleaseName}.json`
+
+  // check if file already downloaded, if so immediately callback
+  fetchIfNeeded(lastReleaseJSONfile, cb, cb, function () {
+    // find download link for geojson with oceans
+    // download the latest release data into the dist directory
+    // unzip geojson
+    cb()
+  })
+}
+
+var analyzeChangesFromLastRelease = function (cb) {
+  // TODO
+
+  // load last release data into memory
+
+  // generate set of keys from last release and current
+
+  // for each zone
+  // diff current - last = additions
+  // diff last - current = removals
+
+  // write file of additions
+  // write file of removals
+  cb()
+}
+
 const autoScript = {
   makeDownloadsDir: function (cb) {
     overallProgress.beginTask('Creating downloads dir')
@@ -719,6 +761,10 @@ const autoScript = {
     overallProgress.beginTask('Creating dist dir')
     safeMkdir(distDir, cb)
   },
+  cleanDownloadsDir: ['makeDownloadsDir', function (results, cb) {
+    overallProgress.beginTask('Cleaning downloads directory of unused files')
+    cleanDownloadsDir(cb)
+  }],
   getOsmBoundaries: ['makeDownloadsDir', function (results, cb) {
     overallProgress.beginTask('Downloading osm boundaries')
     asynclib.eachSeries(Object.keys(osmBoundarySources), downloadOsmBoundary, cb)
@@ -744,6 +790,14 @@ const autoScript = {
     overallProgress.beginTask('Zipping up input data')
     exec('zip ' + distDir + '/input-data.zip ' + downloadsDir +
          '/* timezones.json osmBoundarySources.json expectedZoneOverlaps.json', cb)
+  }],
+  downloadLastRelease: ['makeDistDir', function (results, cb) {
+    if (process.argv.indexOf('analyze-changes') > -1) {
+      overallProgress.beginTask('Downloading last release for analysis')
+      downloadLastRelease(cb)
+    } else {
+      overallProgress.beginTask('WARNING: Skipping download of last release for analysis!')
+    }
   }],
   createZones: ['makeDistDir', 'getOsmBoundaries', function (results, cb) {
     overallProgress.beginTask('Creating timezone boundaries')
@@ -842,7 +896,15 @@ const autoScript = {
       JSON.stringify(zoneNames),
       cb
     )
-  }
+  },
+  analyzeChangesFromLastRelease: ['downloadLastRelease', 'mergeZones', function (results, cb) {
+    if (process.argv.indexOf('analyze-changes') > -1) {
+      overallProgress.beginTask('Analyzing changes from last release')
+      analyzeChangesFromLastRelease(cb)
+    } else {
+      overallProgress.beginTask('WARNING: Skipping analysis of changes from last release!')
+    }
+  }]
 }
 
 const overallProgress = new ProgressStats('Overall', Object.keys(autoScript).length)
