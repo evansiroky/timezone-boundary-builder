@@ -1,5 +1,11 @@
 ## Pending
 
+### Zone Changes
+
+* Update some Canadian zones as follows ([#90](https://github.com/evansiroky/timezone-boundary-builder/issues/90))
+  * Use OSM timezone relations in entirety for the following zones: `America/Blanc_Sablon`, `America/Glace_Bay`, `America/Halifax`, `America/Swift_Current`, `America/Toronto`
+* Update to latest OSM data
+
 ### Other Changes
 
 * Switch command line flag processing to use the yargs library. Existing flags have changed: --no-validation and --filtered-zones have been renamed to --no_validation and --included_zones respectively. --included_zones now takes a list without quotes or commas.

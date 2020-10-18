@@ -144,6 +144,9 @@
   "Bir Tawil": {
     "alt_name:en": "Bi'r Tawīl"
   },
+  "Blanc Sablon-tz": {
+    "timezone": "America/Blanc-Sablon"
+  },
   "Bledsoe County, TN": {
     "name": "Bledsoe County",
     "nist:state_fips": "47"
@@ -221,9 +224,6 @@
   },
   "Cancun-tz": {
     "timezone": "America/Cancun"
-  },
-  "Cape Breton County": {
-    "name": "Cape Breton County"
   },
   "Cape Verde": {
     "ISO3166-1": "CV"
@@ -467,6 +467,10 @@
     "name": "Gibson County",
     "nist:state_fips": "18"
   },
+  "Glace Bay-tz": {
+    "boundary": "timezone",
+    "name": "America/Glace_Bay Timezone"
+  },
   "Gogebic County": {
     "name": "Gogebic County"
   },
@@ -518,6 +522,9 @@
   },
   "Haiti": {
     "ISO3166-1": "HT"
+  },
+  "Halifax-tz": {
+    "timezone": "America/Halifax"
   },
   "Hamilton County, KS": {
     "name": "Hamilton County",
@@ -719,9 +726,6 @@
   },
   "Liechtenstein": {
     "ISO3166-1": "LI"
-  },
-  "Listuguj": {
-    "name": "Listuguj"
   },
   "Lithuania": {
     "ISO3166-1": "LT"
@@ -1250,6 +1254,10 @@
   },
   "Sweden": {
     "ISO3166-1": "SE"
+  },
+  "Swift Current-tz": {
+    "boundary": "timezone",
+    "name": "America/Swift_Current timezone"
   },
   "Switzerland": {
     "ISO3166-1": "CH"

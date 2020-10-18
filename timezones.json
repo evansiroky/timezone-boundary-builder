@@ -741,17 +741,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Quebec"
-    }, {
-      "op": "intersect",
-      "source": "manual-polygon",
-      "data": [[[-61.25,53],[-61.25,48],[-51,53],[-61.25,53]]],
-      "description": "Grab eastern section of Quebec"
-    }, {
-      "op": "difference",
-      "source": "manual-polygon",
-      "data": [[[-58.9,46.8],[-63.37,47.66],[-60.4768198,48.7813802],[-58.9,46.8]]],
-      "description": "Exclude a section of area that should be America/Halifax"
+      "id": "Blanc Sablon-tz"
     }
   ],
   "America/Boa_Vista": [
@@ -1299,16 +1289,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Canada"
-    }, {
-      "op": "intersect",
-      "source": "manual-polygon",
-      "data": [[[-58,46],[-59,45.428],[-60.1323124,45.7017791],[-60.3408651,46.3601573],[-60.0238,46.5],[-58,46]]],
-      "description": "intersect part of Canada in Cape Breton County to preserve terriritorial waters"
-    }, {
-      "op": "union",
-      "source": "overpass",
-      "id": "Cape Breton County"
+      "id": "Glace Bay-tz"
     }
   ],
   "America/Goose_Bay": [
@@ -1382,25 +1363,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Canada"
-    }, {
-      "op": "intersect",
-      "source": "manual-polygon",
-      "data": [[[-58.9,46.8],[-60.0238,46.5],[-60.3408651,46.3601573],[-60.1323124,45.7017791],[-59,45.428],[-59,34],[-67,44.06],[-66.4878,44.482],[-66.21,44.83],[-65.3,45.2],[-65.13,45.38],[-64.98,45.47],[-64.80607,45.5364896],[-64.5,46],[-63.7491191,46.2295464],[-64.34,46.36],[-64.56,46.6],[-64.58,46.69],[-64.46,47.07],[-63.37,47.66],[-60.4768198,48.7813802],[-60.4037717,47.7610985],[-58.9,46.8]]],
-      "description": "Grab area of Canada including New Brunswick and an area of the Gulf of St Lawrence including Prince Edward Island and the Magdalen Islands"
-    }, {
-      "op": "difference",
-      "source": "overpass",
-      "id": "Cape Breton County"
-    }, {
-      "op": "difference",
-      "source": "overpass",
-      "id": "New Brunswick",
-      "description": "Exclude New Brunswick to get exact boundary between Nova Scotia and New Brunswick"
-    }, {
-      "op": "union",
-      "source": "overpass",
-      "id": "Listuguj"
+      "id": "Halifax-tz"
     }
   ],
   "America/Havana": [
@@ -1745,22 +1708,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Canada"
-    }, {
-      "op": "intersect",
-      "source": "manual-polygon",
-      "data": [[[-70,46],[-67,44.06],[-66.4878,44.482],[-66.21,44.83],[-65.3,45.2],[-65.13,45.38],[-64.98,45.47],[-64.80607,45.5364896],[-64.5,46],[-63.7491191,46.2295464],[-64.34,46.36],[-64.56,46.6],[-64.58,46.69],[-64.46,47.07],[-63.37,47.66],[-61.69,48.52],[-60,52],[-70,50],[-70,46]]],
-      "description": "Grab area of Canada around New Brunswick including part of Gulf of St Lawrence"
-    }, {
-      "op": "difference",
-      "source": "overpass",
-      "id": "Quebec",
-      "description": "Exclude Quebec territory including parts of Gulf of St Lawrence"
-    }, {
-      "op": "union",
-      "source": "overpass",
-      "id": "New Brunswick",
-      "description": "Union to get exact border between New Brunswick and Nova Scotia"
+      "id": "New Brunswick"
     }
   ],
   "America/Monterrey": [
@@ -2236,6 +2184,10 @@
       "op": "difference",
       "source": "overpass",
       "id": "Quebec"
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "Glace Bay-tz"
     }
   ],
   "America/St_Kitts": [
@@ -2275,20 +2227,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Canada"
-    }, {
-      "op": "intersect",
-      "source": "manual-polygon",
-      "data": [[[-114,47],[-100,47],[-109,59.9],[-114,47]]],
-      "description": "Intersect a good chunk of Canada containing parts of Alberta and Saskatchewan."
-    }, {
-      "op": "difference",
-      "source": "overpass",
-      "id": "Edmonton-tz"
-    }, {
-      "op": "difference",
-      "source": "overpass",
-      "id": "Regina-tz"
+      "id": "Swift Current-tz"
     }
   ],
   "America/Tegucigalpa": [
@@ -2338,32 +2277,6 @@
       "op": "init",
       "source": "overpass",
       "id": "Toronto-tz"
-    }, {
-      "op": "union",
-      "source": "overpass",
-      "id": "Quebec"
-    }, {
-      "op": "difference",
-      "source": "manual-polygon",
-      "data": [[[-61.25,53],[-61.25,48],[-51,53],[-61.25,53]]],
-      "description": "Exclude part of Quebec belonging to timezone America/Blanc-Sablon."
-    }, {
-      "op": "difference",
-      "source": "manual-polygon",
-      "data": [[[-58.9,46.8],[-60.4768198,48.7813802],[-63.37,47.66],[-64,45],[-58.9,46.8]]],
-      "description": "Exclude Magdalen Islands"
-    }, {
-      "op": "difference",
-      "source": "overpass",
-      "id": "Listuguj"
-    }, {
-      "op": "difference",
-      "source": "overpass",
-      "id": "Nipigon-tz"
-    }, {
-      "op": "difference",
-      "source": "overpass",
-      "id": "Thunder Bay-tz"
     }
   ],
   "America/Tortola": [
