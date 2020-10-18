@@ -1,5 +1,6 @@
 var exec = require('child_process').exec
 var fs = require('fs')
+var path = require('path')
 
 var area = require('@mapbox/geojson-area')
 var geojsonhint = require('@mapbox/geojsonhint')
@@ -12,7 +13,6 @@ var jsts = require('jsts')
 var rimraf = require('rimraf')
 var overpass = require('query-overpass')
 var yargs = require('yargs')
-var path = require('path')
 
 const ProgressStats = require('./progressStats')
 
@@ -723,7 +723,24 @@ const autoScript = {
     overallProgress.beginTask('Downloading osm boundaries')
     asynclib.eachSeries(Object.keys(osmBoundarySources), downloadOsmBoundary, cb)
   }],
-  zipInputData: ['makeDistDir', 'getOsmBoundaries', function (results, cb) {
+  cleanDownloadFolder: ['makeDistDir', 'getOsmBoundaries', function (results, cb) {
+    overallProgress.beginTask('cleanDownloadFolder')
+    const downloadedFilenames = Object.keys(osmBoundarySources).map(name => `${name}.json`)
+    fs.readdir('downloads', (err, files) => {
+      if (err) return cb(err)
+      asynclib.each(
+        files,
+        (file, fileCb) => {
+          if (downloadedFilenames.indexOf(file) === -1) {
+            return fs.unlink(path.join('downloads', file), fileCb)
+          }
+          fileCb()
+        },
+        cb
+      )
+    })
+  }],
+  zipInputData: ['cleanDownloadFolder', function (results, cb) {
     overallProgress.beginTask('Zipping up input data')
     exec('zip ' + distDir + '/input-data.zip ' + downloadsDir +
          '/* timezones.json osmBoundarySources.json expectedZoneOverlaps.json', cb)
