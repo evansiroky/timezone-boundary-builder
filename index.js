@@ -761,10 +761,6 @@ const autoScript = {
     overallProgress.beginTask('Creating dist dir')
     safeMkdir(distDir, cb)
   },
-  cleanDownloadsDir: ['makeDownloadsDir', function (results, cb) {
-    overallProgress.beginTask('Cleaning downloads directory of unused files')
-    cleanDownloadsDir(cb)
-  }],
   getOsmBoundaries: ['makeDownloadsDir', function (results, cb) {
     overallProgress.beginTask('Downloading osm boundaries')
     asynclib.eachSeries(Object.keys(osmBoundarySources), downloadOsmBoundary, cb)
@@ -772,13 +768,13 @@ const autoScript = {
   cleanDownloadFolder: ['makeDistDir', 'getOsmBoundaries', function (results, cb) {
     overallProgress.beginTask('cleanDownloadFolder')
     const downloadedFilenames = Object.keys(osmBoundarySources).map(name => `${name}.json`)
-    fs.readdir('downloads', (err, files) => {
+    fs.readdir(downloadsDir, (err, files) => {
       if (err) return cb(err)
       asynclib.each(
         files,
         (file, fileCb) => {
           if (downloadedFilenames.indexOf(file) === -1) {
-            return fs.unlink(path.join('downloads', file), fileCb)
+            return fs.unlink(path.join(downloadsDir, file), fileCb)
           }
           fileCb()
         },
