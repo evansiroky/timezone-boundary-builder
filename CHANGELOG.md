@@ -8,10 +8,11 @@
 
 ### Other Changes
 
-* Switch command line flag processing to use the yargs library. Existing flags have changed: --no-validation and --filtered-zones have been renamed to --no_validation and --included_zones respectively. --included_zones now takes a list without quotes or commas.
-* Addition of new flags: --excluded_zones, --dist_dir, --downloads_dir, --skip_zip, --skip_shapefile. See --help and README.md for details.
+* Switch command line flag processing to use the yargs library. Existing flags have changed: ``--no-validation` and ``--filtered-zones` have been renamed to ``--skip_validation` and `--included_zones` respectively. `--included_zones` now takes a list without quotes or commas.
+* Addition of new flags: `--excluded_zones`, `--dist_dir`, `--downloads_dir`, `--skip_analyze_diffs`, `--skip_shapefile`, `--skip_zip`. See `--help` and README.md for details.
 * Remove unneeded downloaded files from downloads directory before creating input data zipfile ([#82](https://github.com/evansiroky/timezone-boundary-builder/issues/82)).
 * Junk directory names when zipping data for releases
+* Add ability to generate a difference of the zone boundaries between the current config and the latest release. ([#83](https://github.com/evansiroky/timezone-boundary-builder/issues/83)).
 
 ## 2020a
 

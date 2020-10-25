@@ -25,6 +25,7 @@
     "@turf/bbox": "^6.0.1",
     "@turf/helpers": "^6.1.4",
     "async": "^3.2.0",
+    "follow-redirects": "^1.13.0",
     "jsts": "^2.5.1",
     "query-overpass": "^1.5.5",
     "rimraf": "^3.0.2",

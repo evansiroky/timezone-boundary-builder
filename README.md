@@ -75,18 +75,21 @@ node --max-old-space-size=8192 index.js --downloads_dir ./downloads2 --dist_dir 
 Other command line flags:
 
   + `--help` - show some basic usage information
-  + `--no_validation` - do not validate the time zone boundaries
-  + `--skip_zip` - do not zip the generated geojson files
+  + `--skip_analyze_diffs` - do not analyze differences between the current output and another version
   + `--skip_shapefile` - do not create the shapefile from the geojson file
+  + `--skip_validation` - do not validate the time zone boundaries
+  + `--skip_zip` - do not zip the generated geojson files
 
 
 ### What the script does
 
 There are three config files that describe the boundary building process.  The `osmBoundarySources.json` file lists all of the needed boundaries to extract via queries to the Overpass API.  The `timezones.json` file lists all of the timezones and various operations to perform to build the boundaries.  The `expectedZoneOverlaps.json` file lists all timezones that are allowed to overlap each other and the acceptable bounds of a particular overlap.
 
-The `index.js` file downloads all of the required geometries, builds the specified geometries, validates that there aren't large areas of overlap (other than those that are expected), outputs one huge geojson file, and finally zips up the geojson file using the `zip` cli and also converts the geojson to a shapefile using the `ogr2ogr` cli.  The script has only been verified to run with Node.js 10 on the MacOS platform.
+The `index.js` file downloads all of the required geometries, builds the specified geometries, validates that there aren't large areas of overlap (other than those that are expected), analyzes the difference between the current output and the last release, outputs one huge geojson file, and finally zips up the geojson file using the `zip` cli and also converts the geojson to a shapefile using the `ogr2ogr` cli.  The script has only been verified to run with Node.js 10 on the MacOS platform.
 
 The code does query the publicly available Overpass API, but it self-throttles the making of requests to have a minimum of 4 seconds gap between requests.  If the Overpass API throttles the download, then the gap will be increased exponentially.
+
+The validation and difference analysis can take a really long time to compute. If these tasks are not needed, be sure to add the `--skip_analyze_diffs` and `--skip_validation` flags.
 
 As of release 2020a, it is possible to run the script with the underlying input data that was used to build the timezone geometries at the time of the release. In the release files, the `input-data.zip` will have all of the necessary input data including the downloaded files from overpass, the `timezones.json` file and the `osmBoundarySources.json` file as well.
 

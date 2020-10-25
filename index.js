@@ -9,26 +9,20 @@ var helpers = require('@turf/helpers')
 var multiPolygon = helpers.multiPolygon
 var polygon = helpers.polygon
 var asynclib = require('async')
+var https = require('follow-redirects').https
 var jsts = require('jsts')
 var rimraf = require('rimraf')
 var overpass = require('query-overpass')
 var yargs = require('yargs')
 
-const ProgressStats = require('./progressStats')
+const FeatureWriterStream = require('./util/featureWriterStream')
+const ProgressStats = require('./util/progressStats')
 
 var osmBoundarySources = require('./osmBoundarySources.json')
 var zoneCfg = require('./timezones.json')
 var expectedZoneOverlaps = require('./expectedZoneOverlaps.json')
 
 const argv = yargs
-  .option('included_zones', {
-    description: 'Include specified zones',
-    type: 'array'
-  })
-  .option('excluded_zones', {
-    description: 'Exclude specified zones',
-    type: 'array'
-  })
   .option('downloads_dir', {
     description: 'Set the download location',
     default: './downloads',
@@ -39,16 +33,28 @@ const argv = yargs
     default: './dist',
     type: 'string'
   })
-  .option('no_validation', {
+  .option('excluded_zones', {
+    description: 'Exclude specified zones',
+    type: 'array'
+  })
+  .option('included_zones', {
+    description: 'Include specified zones',
+    type: 'array'
+  })
+  .option('skip_analyze_diffs', {
+    description: 'Skip analysis of diffs between versions',
+    type: 'boolean'
+  })
+  .option('skip_shapefile', {
+    description: 'Skip shapefile creation',
+    type: 'boolean'
+  })
+  .option('skip_validation', {
     description: 'Skip validation',
     type: 'boolean'
   })
   .option('skip_zip', {
     description: 'Skip zip creation',
-    type: 'boolean'
-  })
-  .option('skip_shapefile', {
-    description: 'Skip shapefile creation',
     type: 'boolean'
   })
   .help()
@@ -104,6 +110,7 @@ var distZones = {}
 var lastReleaseJSONfile
 var minRequestGap = 4
 var curRequestGap = 4
+const bufferDistance = 0.01
 
 var safeMkdir = function (dirname, callback) {
   fs.mkdir(dirname, function (err) {
@@ -115,7 +122,13 @@ var safeMkdir = function (dirname, callback) {
   })
 }
 
-var debugGeo = function (op, a, b, reducePrecision) {
+var debugGeo = function (
+  op,
+  a,
+  b,
+  reducePrecision,
+  bufferAfterPrecisionReduction
+) {
   var result
 
   if (reducePrecision) {
@@ -143,8 +156,23 @@ var debugGeo = function (op, a, b, reducePrecision) {
     }
   } catch (e) {
     if (e.name === 'TopologyException') {
-      console.log('Encountered TopologyException, retry with GeometryPrecisionReducer')
-      return debugGeo(op, a, b, true)
+      if (reducePrecision) {
+        if (bufferAfterPrecisionReduction) {
+          console.log('Encountered TopologyException, retry with buffer increase')
+          return debugGeo(
+            op,
+            a.buffer(bufferDistance),
+            b.buffer(bufferDistance),
+            true,
+            bufferAfterPrecisionReduction
+          )
+        } else {
+          throw new Error('Encountered TopologyException after reducing precision')
+        }
+      } else {
+        console.log('Encountered TopologyException, retry with GeometryPrecisionReducer')
+        return debugGeo(op, a, b, true, bufferAfterPrecisionReduction)
+      }
     }
     console.log('op err')
     console.log(e)
@@ -671,85 +699,195 @@ var addOceans = function (callback) {
 }
 
 var combineAndWriteZones = function (callback) {
-  var stream = fs.createWriteStream(distDir + '/combined.json')
-  var streamWithOceans = fs.createWriteStream(distDir + '/combined-with-oceans.json')
+  const regularWriter = new FeatureWriterStream(distDir + '/combined.json')
+  const oceanWriter = new FeatureWriterStream(distDir + '/combined-with-oceans.json')
   var zones = Object.keys(zoneCfg)
 
-  stream.write('{"type":"FeatureCollection","features":[')
-  streamWithOceans.write('{"type":"FeatureCollection","features":[')
-
-  for (var i = 0; i < zones.length; i++) {
-    if (i > 0) {
-      stream.write(',')
-      streamWithOceans.write(',')
-    }
-    var feature = {
+  zones.forEach(zoneName => {
+    const feature = {
       type: 'Feature',
-      properties: { tzid: zones[i] },
-      geometry: geomToGeoJson(getDistZoneGeom(zones[i]))
+      properties: { tzid: zoneName },
+      geometry: geomToGeoJson(getDistZoneGeom(zoneName))
     }
     const stringified = JSON.stringify(feature)
-    stream.write(stringified)
-    streamWithOceans.write(stringified)
-  }
+    regularWriter.add(stringified)
+    oceanWriter.add(stringified)
+  })
   oceanZoneBoundaries.forEach(boundary => {
-    streamWithOceans.write(',')
     var feature = {
       type: 'Feature',
       properties: { tzid: boundary.tzid },
       geometry: boundary.geom
     }
-    streamWithOceans.write(JSON.stringify(feature))
+    oceanWriter.add(JSON.stringify(feature))
   })
   asynclib.parallel([
-    cb => {
-      stream.end(']}', cb)
-    },
-    cb => {
-      streamWithOceans.end(']}', cb)
-    }
+    cb => regularWriter.end(cb),
+    cb => oceanWriter.end(cb)
   ], callback)
 }
 
-var cleanDownloadsDir = function (cb) {
-  // TODO:
-
-  // list all files in downloads dir
-  // for each file
-  // if file does not exist in osmBoundarySources.json file, then remove
-  cb()
-}
-
 var downloadLastRelease = function (cb) {
-  // TODO:
-
   // download latest release info
-  // determine last release version name
-  lastReleaseJSONfile = `./dist/${lastReleaseName}.json`
+  https.get(
+    {
+      headers: { 'user-agent': 'timezone-boundary-builder' },
+      host: 'api.github.com',
+      path: '/repos/evansiroky/timezone-boundary-builder/releases/latest'
+    },
+    function (res) {
+      var data = ''
+      res.on('data', function (chunk) {
+        data += chunk
+      })
+      res.on('end', function () {
+        data = JSON.parse(data)
+        // determine last release version name and download link
+        const lastReleaseName = data.name
+        lastReleaseJSONfile = `./dist/${lastReleaseName}.json`
+        let lastReleaseDownloadUrl
+        for (var i = 0; i < data.assets.length; i++) {
+          if (data.assets[i].browser_download_url.indexOf('timezones-with-oceans.geojson') > -1) {
+            lastReleaseDownloadUrl = data.assets[i].browser_download_url
+          }
+        }
+        if (!lastReleaseDownloadUrl) {
+          return cb(new Error('geojson not found'))
+        }
 
-  // check if file already downloaded, if so immediately callback
-  fetchIfNeeded(lastReleaseJSONfile, cb, cb, function () {
-    // find download link for geojson with oceans
-    // download the latest release data into the dist directory
-    // unzip geojson
-    cb()
-  })
+        // check for file that got downloaded
+        fs.stat(lastReleaseJSONfile, function (err) {
+          if (!err) {
+            // file found, skip download steps
+            return cb()
+          }
+          // file not found, download
+          console.log(`Downloading latest release to ${lastReleaseJSONfile}.zip`)
+          https.get({
+            headers: { 'user-agent': 'timezone-boundary-builder' },
+            host: 'github.com',
+            path: lastReleaseDownloadUrl.replace('https://github.com', '')
+          }, function (response) {
+            var file = fs.createWriteStream(`${lastReleaseJSONfile}.zip`)
+            response.pipe(file)
+            file.on('finish', function () {
+              file.close((err) => {
+                if (err) return cb(err)
+                // unzip file
+                console.log('unzipping latest release')
+                exec(
+                  `unzip -o ${lastReleaseJSONfile} -d dist`,
+                  err => {
+                    if (err) { return cb(err) }
+                    console.log('unzipped file')
+                    console.log('moving unzipped file')
+                    // might need to change this after changes to how files are
+                    // zipped after 2020a
+                    fs.copyFile(
+                      path.join(
+                        'dist',
+                        'dist',
+                        'combined-with-oceans.json'
+                      ),
+                      lastReleaseJSONfile,
+                      cb
+                    )
+                  }
+                )
+              })
+            })
+          }).on('error', cb)
+        })
+      })
+    }
+  )
 }
 
 var analyzeChangesFromLastRelease = function (cb) {
-  // TODO
-
   // load last release data into memory
+  console.log('loading previous release into memory')
+  const lastReleaseData = require(lastReleaseJSONfile)
+
+  // load each feature's geojson into JSTS format and then organized by tzid
+  const lastReleaseZones = {}
+  lastReleaseData.features.forEach(
+    feature => {
+      lastReleaseZones[feature.properties.tzid] = feature
+    }
+  )
 
   // generate set of keys from last release and current
+  const zoneNames = new Set()
+  Object.keys(distZones).forEach(zoneName => zoneNames.add(zoneName))
+  Object.keys(lastReleaseZones).forEach(zoneName => zoneNames.add(zoneName))
 
-  // for each zone
-  // diff current - last = additions
-  // diff last - current = removals
+  // create diff for each zone
+  const analysisProgress = new ProgressStats(
+    'Analyzing diffs',
+    zoneNames.size
+  )
+  const additionsWriter = new FeatureWriterStream(distDir + '/additions.json')
+  const removalsWriter = new FeatureWriterStream(distDir + '/removals.json')
+  zoneNames.forEach(zoneName => {
+    analysisProgress.beginTask(zoneName, true)
+    if (distZones[zoneName] && lastReleaseZones[zoneName]) {
+      // some zones take forever to diff unless they are buffered, so buffer by
+      // just a small amount
+      const lastReleaseGeom = geoJsonToGeom(
+        lastReleaseZones[zoneName].geometry
+      ).buffer(bufferDistance)
+      const curDataGeom = getDistZoneGeom(zoneName).buffer(bufferDistance)
 
-  // write file of additions
-  // write file of removals
-  cb()
+      // don't diff equal geometries
+      if (curDataGeom.equals(lastReleaseGeom)) return
+
+      // diff current - last = additions
+      const addition = debugGeo(
+        'diff',
+        curDataGeom,
+        lastReleaseGeom,
+        false,
+        true
+      )
+      if (addition.getArea() > 0.0001) {
+        additionsWriter.add(JSON.stringify({
+          type: 'Feature',
+          properties: { tzid: zoneName },
+          geometry: geomToGeoJson(addition)
+        }))
+      }
+
+      // diff last - current = removals
+      const removal = debugGeo(
+        'diff',
+        lastReleaseGeom,
+        curDataGeom,
+        false,
+        true
+      )
+      if (removal.getArea() > 0.0001) {
+        removalsWriter.add(JSON.stringify({
+          type: 'Feature',
+          properties: { tzid: zoneName },
+          geometry: geomToGeoJson(removal)
+        }))
+      }
+    } else if (distZones[zoneName]) {
+      additionsWriter.add(JSON.stringify({
+        type: 'Feature',
+        properties: { tzid: zoneName },
+        geometry: geomToGeoJson(getDistZoneGeom(zoneName))
+      }))
+    } else {
+      removalsWriter.add(JSON.stringify(lastReleaseZones[zoneName]))
+    }
+  })
+
+  // write files
+  asynclib.parallel([
+    wcb => additionsWriter.end(wcb),
+    wcb => removalsWriter.end(wcb)
+  ], cb)
 }
 
 const autoScript = {
@@ -788,11 +926,12 @@ const autoScript = {
          '/* timezones.json osmBoundarySources.json expectedZoneOverlaps.json', cb)
   }],
   downloadLastRelease: ['makeDistDir', function (results, cb) {
-    if (process.argv.indexOf('analyze-changes') > -1) {
+    if (argv.skip_analyze_diffs) {
+      overallProgress.beginTask('WARNING: Skipping download of last release for analysis!')
+      cb()
+    } else {
       overallProgress.beginTask('Downloading last release for analysis')
       downloadLastRelease(cb)
-    } else {
-      overallProgress.beginTask('WARNING: Skipping download of last release for analysis!')
     }
   }],
   createZones: ['makeDistDir', 'getOsmBoundaries', function (results, cb) {
@@ -802,7 +941,7 @@ const autoScript = {
   validateZones: ['createZones', function (results, cb) {
     overallProgress.beginTask('Validating timezone boundaries')
     loadDistZonesIntoMemory()
-    if (argv.no_validation) {
+    if (argv.skip_validation) {
       console.warn('WARNING: Skipping validation!')
       cb()
     } else {
@@ -894,11 +1033,12 @@ const autoScript = {
     )
   },
   analyzeChangesFromLastRelease: ['downloadLastRelease', 'mergeZones', function (results, cb) {
-    if (process.argv.indexOf('analyze-changes') > -1) {
+    if (argv.skip_analyze_diffs) {
+      overallProgress.beginTask('WARNING: Skipping analysis of changes from last release!')
+      cb()
+    } else {
       overallProgress.beginTask('Analyzing changes from last release')
       analyzeChangesFromLastRelease(cb)
-    } else {
-      overallProgress.beginTask('WARNING: Skipping analysis of changes from last release!')
     }
   }]
 }
