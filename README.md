@@ -30,7 +30,7 @@ A few common languages already have libraries with an API that can be used to lo
 | [Timeshape](https://github.com/RomanIakovlev/timeshape) | Java |
 | [node-geo-tz](https://github.com/evansiroky/node-geo-tz/) | JavaScript (node.js only) |
 | [timespace](https://github.com/mapbox/timespace) | JavaScript (node.js and in browser) |
-| [tz-lookup](https://github.com/darkskyapp/tz-lookup/) | JavaScript (node.js and in browser) |
+| [tz-lookup](https://github.com/darkskyapp/tz-lookup-oss) | JavaScript (node.js and in browser) |
 | [GeoTimezone](https://github.com/mj1856/GeoTimeZone) | .NET |
 | [Geo-Timezone](https://github.com/minube/geo-timezone) | php |
 | [timezonefinder](https://github.com/MrMinimal64/timezonefinder) | Python |
