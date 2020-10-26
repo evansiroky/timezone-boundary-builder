@@ -72,6 +72,9 @@
     {
       "bounds": [88.9, 27.2, 89.2, 27.7],
       "description": "Allow disputed area near Doklam to overlap (See https://zh.wikipedia.org/wiki/%E4%B8%AD%E4%B8%8D%E8%BE%B9%E7%95%8C%E4%BA%89%E8%AE%AE and https://en.wikipedia.org/wiki/Doklam)"
+    }, {
+      "bounds": [90.7, 27.8, 91.4, 28.1],
+      "description": "Allow disputed area along Northwest Bhutan-China border to overlap (See https://zh.wikipedia.org/wiki/%E4%B8%AD%E4%B8%8D%E8%BE%B9%E7%95%8C%E4%BA%89%E8%AE%AE)"
     }
   ],
   "Asia/Shanghai-Asia/Urumqi": [

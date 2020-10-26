@@ -3131,22 +3131,27 @@
       "op": "union",
       "source": "overpass",
       "id": "Doklam 洞朗地区",
-      "description": "Add dispuated area in Doklam.  See https://zh.wikipedia.org/wiki/%E4%B8%AD%E4%B8%8D%E8%BE%B9%E7%95%8C%E4%BA%89%E8%AE%AE and https://en.wikipedia.org/wiki/Doklam"
+      "description": "Add disputed area in Doklam.  See https://zh.wikipedia.org/wiki/%E4%B8%AD%E4%B8%8D%E8%BE%B9%E7%95%8C%E4%BA%89%E8%AE%AE and https://en.wikipedia.org/wiki/Doklam"
     }, {
       "op": "union",
       "source": "overpass",
       "id": "鲁林地区",
-      "description": "Add dispuated area in Doklam.  See https://zh.wikipedia.org/wiki/%E4%B8%AD%E4%B8%8D%E8%BE%B9%E7%95%8C%E4%BA%89%E8%AE%AE and https://en.wikipedia.org/wiki/Doklam"
+      "description": "Add disputed area in Doklam.  See https://zh.wikipedia.org/wiki/%E4%B8%AD%E4%B8%8D%E8%BE%B9%E7%95%8C%E4%BA%89%E8%AE%AE and https://en.wikipedia.org/wiki/Doklam"
     }, {
       "op": "union",
       "source": "overpass",
       "id": "查马普地区",
-      "description": "Add dispuated area in Doklam.  See https://zh.wikipedia.org/wiki/%E4%B8%AD%E4%B8%8D%E8%BE%B9%E7%95%8C%E4%BA%89%E8%AE%AE and https://en.wikipedia.org/wiki/Doklam"
+      "description": "Add disputed area in Doklam.  See https://zh.wikipedia.org/wiki/%E4%B8%AD%E4%B8%8D%E8%BE%B9%E7%95%8C%E4%BA%89%E8%AE%AE and https://en.wikipedia.org/wiki/Doklam"
     }, {
       "op": "union",
       "source": "overpass",
       "id": "基伍地区",
-      "description": "Add dispuated area in Doklam.  See https://zh.wikipedia.org/wiki/%E4%B8%AD%E4%B8%8D%E8%BE%B9%E7%95%8C%E4%BA%89%E8%AE%AE and https://en.wikipedia.org/wiki/Doklam"
+      "description": "Add disputed area in Doklam.  See https://zh.wikipedia.org/wiki/%E4%B8%AD%E4%B8%8D%E8%BE%B9%E7%95%8C%E4%BA%89%E8%AE%AE and https://en.wikipedia.org/wiki/Doklam"
+    }, {
+      "op": "union",
+      "source": "overpass",
+      "id": "中国实控白玉地区",
+      "description": "Add disputed area along Northwest Bhutan-China border.  See https://zh.wikipedia.org/wiki/%E4%B8%AD%E4%B8%8D%E8%BE%B9%E7%95%8C%E4%BA%89%E8%AE%AE"
     }, {
       "op": "difference",
       "source": "overpass",
@@ -3209,22 +3214,27 @@
       "op": "union",
       "source": "overpass",
       "id": "Doklam 洞朗地区",
-      "description": "Add dispuated area in Doklam.  See https://zh.wikipedia.org/wiki/%E4%B8%AD%E4%B8%8D%E8%BE%B9%E7%95%8C%E4%BA%89%E8%AE%AE and https://en.wikipedia.org/wiki/Doklam"
+      "description": "Add disputed area in Doklam.  See https://zh.wikipedia.org/wiki/%E4%B8%AD%E4%B8%8D%E8%BE%B9%E7%95%8C%E4%BA%89%E8%AE%AE and https://en.wikipedia.org/wiki/Doklam"
     }, {
       "op": "union",
       "source": "overpass",
       "id": "鲁林地区",
-      "description": "Add dispuated area in Doklam.  See https://zh.wikipedia.org/wiki/%E4%B8%AD%E4%B8%8D%E8%BE%B9%E7%95%8C%E4%BA%89%E8%AE%AE and https://en.wikipedia.org/wiki/Doklam"
+      "description": "Add disputed area in Doklam.  See https://zh.wikipedia.org/wiki/%E4%B8%AD%E4%B8%8D%E8%BE%B9%E7%95%8C%E4%BA%89%E8%AE%AE and https://en.wikipedia.org/wiki/Doklam"
     }, {
       "op": "union",
       "source": "overpass",
       "id": "查马普地区",
-      "description": "Add dispuated area in Doklam.  See https://zh.wikipedia.org/wiki/%E4%B8%AD%E4%B8%8D%E8%BE%B9%E7%95%8C%E4%BA%89%E8%AE%AE and https://en.wikipedia.org/wiki/Doklam"
+      "description": "Add disputed area in Doklam.  See https://zh.wikipedia.org/wiki/%E4%B8%AD%E4%B8%8D%E8%BE%B9%E7%95%8C%E4%BA%89%E8%AE%AE and https://en.wikipedia.org/wiki/Doklam"
     }, {
       "op": "union",
       "source": "overpass",
       "id": "基伍地区",
-      "description": "Add dispuated area in Doklam.  See https://zh.wikipedia.org/wiki/%E4%B8%AD%E4%B8%8D%E8%BE%B9%E7%95%8C%E4%BA%89%E8%AE%AE and https://en.wikipedia.org/wiki/Doklam"
+      "description": "Add disputed area in Doklam.  See https://zh.wikipedia.org/wiki/%E4%B8%AD%E4%B8%8D%E8%BE%B9%E7%95%8C%E4%BA%89%E8%AE%AE and https://en.wikipedia.org/wiki/Doklam"
+    }, {
+      "op": "union",
+      "source": "overpass",
+      "id": "中国实控白玉地区",
+      "description": "Add disputed area along Northwest Bhutan-China border.  See https://zh.wikipedia.org/wiki/%E4%B8%AD%E4%B8%8D%E8%BE%B9%E7%95%8C%E4%BA%89%E8%AE%AE"
     }
   ],
   "Asia/Tokyo": [
