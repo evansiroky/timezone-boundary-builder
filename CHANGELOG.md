@@ -1,10 +1,11 @@
-## Pending
+## 2020d
 
 ### Zone Changes
 
 * Update some Canadian zones as follows ([#90](https://github.com/evansiroky/timezone-boundary-builder/issues/90))
   * Use OSM timezone relations in entirety for the following zones: `America/Blanc_Sablon`, `America/Glace_Bay`, `America/Halifax`, `America/Swift_Current`, `America/Toronto`
 * Add disputed area along Northwest Bhutan-China border.
+* Manually add back the Jungholz Village to `Europe/Vienna` ([#90](https://github.com/evansiroky/timezone-boundary-builder/issues/90)).
 * Update to latest OSM data
 
 ### Other Changes
