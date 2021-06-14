@@ -24,12 +24,17 @@ var expectedZoneOverlaps = require('./expectedZoneOverlaps.json')
 
 const argv = yargs
   .option('downloads_dir', {
-    description: 'Set the download location',
+    description: 'Set the download location for features from OpenStreetMap',
     default: './downloads',
     type: 'string'
   })
+  .option('working_dir', {
+    description: 'Set the working files location for temporary / intermediate files',
+    default: './working',
+    type: 'string'
+  })
   .option('dist_dir', {
-    description: 'Set the dist location',
+    description: 'Set the dist location, for the generated release files',
     default: './dist',
     type: 'string'
   })
@@ -65,6 +70,7 @@ const argv = yargs
 // Resolve the arguments with paths so relative paths become absolute.
 const downloadsDir = path.resolve(argv.downloads_dir)
 const distDir = path.resolve(argv.dist_dir)
+const workingDir = path.resolve(argv.working_dir)
 
 // allow building of only a specified zones
 let includedZones = []
@@ -744,7 +750,7 @@ var downloadLastRelease = function (cb) {
         data = JSON.parse(data)
         // determine last release version name and download link
         const lastReleaseName = data.name
-        lastReleaseJSONfile = `./dist/${lastReleaseName}.json`
+        lastReleaseJSONfile = `${workingDir}/${lastReleaseName}.json`
         let lastReleaseDownloadUrl
         for (var i = 0; i < data.assets.length; i++) {
           if (data.assets[i].browser_download_url.indexOf('timezones-with-oceans.geojson') > -1) {
@@ -774,24 +780,18 @@ var downloadLastRelease = function (cb) {
               file.close((err) => {
                 if (err) return cb(err)
                 // unzip file
-                console.log('unzipping latest release')
+                console.log(`unzipping latest release from ${lastReleaseJSONfile}.zip`)
                 exec(
-                  `unzip -o ${lastReleaseJSONfile} -d dist`,
+                  `unzip -o ${lastReleaseJSONfile} -d ${workingDir}`,
                   err => {
                     if (err) { return cb(err) }
-                    console.log('unzipped file')
-                    console.log('moving unzipped file')
-                    // might need to change this after changes to how files are
-                    // zipped after 2020a
-                    fs.copyFile(
-                      path.join(
-                        'dist',
-                        'dist',
-                        'combined-with-oceans.json'
-                      ),
-                      lastReleaseJSONfile,
-                      cb
-                    )
+
+                    const srcFile = path.join(workingDir, 'combined-with-oceans.json')
+                    console.log(`unzipped file: ${srcFile}`)
+
+                    const destFile = lastReleaseJSONfile
+                    console.log(`Renaming ${srcFile} to ${destFile}`)
+                    fs.rename(srcFile, destFile, cb)
                   }
                 )
               })
@@ -892,11 +892,15 @@ var analyzeChangesFromLastRelease = function (cb) {
 
 const autoScript = {
   makeDownloadsDir: function (cb) {
-    overallProgress.beginTask('Creating downloads dir')
+    overallProgress.beginTask(`Creating downloads dir (${downloadsDir})`)
     safeMkdir(downloadsDir, cb)
   },
+  makeWorkingDir: function (cb) {
+    overallProgress.beginTask(`Creating working dir (${workingDir})`)
+    safeMkdir(workingDir, cb)
+  },
   makeDistDir: function (cb) {
-    overallProgress.beginTask('Creating dist dir')
+    overallProgress.beginTask(`Creating dist dir (${distDir})`)
     safeMkdir(distDir, cb)
   },
   getOsmBoundaries: ['makeDownloadsDir', function (results, cb) {
@@ -925,7 +929,7 @@ const autoScript = {
     exec('zip -j ' + distDir + '/input-data.zip ' + downloadsDir +
          '/* timezones.json osmBoundarySources.json expectedZoneOverlaps.json', cb)
   }],
-  downloadLastRelease: ['makeDistDir', function (results, cb) {
+  downloadLastRelease: ['makeWorkingDir', function (results, cb) {
     if (argv.skip_analyze_diffs) {
       overallProgress.beginTask('WARNING: Skipping download of last release for analysis!')
       cb()
