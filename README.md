@@ -36,6 +36,7 @@ A few common languages already have libraries with an API that can be used to lo
 | [timezonefinder](https://github.com/MrMinimal64/timezonefinder) | Python |
 | [lutz](https://github.com/ateucher/lutz) | R |
 | [wheretz](https://github.com/zverok/wheretz) | Ruby |
+| [tz_world](https://hex.pm/packages/tz_world) | Elixir |
 
 Another common way to use the data for lookup purposes is to load the shapefile into a spatially-aware database.  See this [blog post](https://simonwillison.net/2017/Dec/12/location-time-zone-api/) for an example of how that can be done.
 
@@ -116,8 +117,8 @@ A linting script will verify the integrity of the `timezones.json`, `osmBoundary
 
 Thanks to following people whose open-source and open-data contributions have made this project possible:
 
-- All the maintainers of the [timezone database](https://www.iana.org/time-zones).  
-- Eric Muller for constructing and maintaining the timezone shapefile at [efele.net](http://efele.net/maps/tz/world/).  
+- All the maintainers of the [timezone database](https://www.iana.org/time-zones).
+- Eric Muller for constructing and maintaining the timezone shapefile at [efele.net](http://efele.net/maps/tz/world/).
 - The [OpenStreetMap contributor Shinigami](https://www.openstreetmap.org/user/Shinigami) for making lots of edits in OpenStreetMap of various timezone boundaries.
 - [Björn Harrtell](https://github.com/bjornharrtell) for all his work and help with [jsts](https://github.com/bjornharrtell/jsts).
 
