@@ -26,6 +26,12 @@
       "description": "Allow disputed area near Machias Seal Island (https://en.wikipedia.org/wiki/Machias_Seal_Island) to overlap."
     }
   ],
+  "Asia/Bangkok-Asia/Yangon": [
+    {
+      "bounds": [98.3, 9.7, 98.6, 10],
+      "description": "Allow disputed borders near Ranong between Myanmar and Thailand (https://en.wikipedia.org/wiki/Myanmar%E2%80%93Thailand_relations#Disputed_territory) to overlap."
+    }
+  ],
   "Asia/Hebron-Asia/Jerusalem": [
     {
       "bounds": [34.8, 31.3, 35.6, 32.6],
@@ -62,6 +68,12 @@
       "description": "Allow disputed area near Paracel Islands (https://en.wikipedia.org/wiki/Paracel_Islands) to overlap."
     }
   ],
+  "Asia/Kolkata-Asia/Shanghai": [
+    {
+      "bounds": [78.5, 32.5, 78.7, 32.7],
+      "description": "Allow disputed areas near Chūmar (https://en.wikipedia.org/wiki/Sino-Indian_border_dispute) to overlap."
+    }
+  ],
   "Asia/Manila-Asia/Shanghai": [
     {
       "bounds": [114.1, 10.9, 114.2, 11],
@@ -96,6 +108,12 @@
     {
       "bounds": [6.3, 53.3, 7.2, 53.8],
       "description": "Allow dispupted maritime border near the Ems estuary to overlap.  https://en.wikipedia.org/wiki/Germany%E2%80%93Netherlands_border#Disputes"
+    }
+  ],
+  "Europe/Athens-Europe/Istanbul": [
+    {
+      "bounds": [27.1, 37, 27.2, 37.1],
+      "description": "Allow disputed areas near Imia/Kardak (https://en.wikipedia.org/wiki/Imia/Kardak) to overlap."
     }
   ],
   "Europe/Belgrade-Europe/Zagreb": [

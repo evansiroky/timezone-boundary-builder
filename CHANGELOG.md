@@ -1,5 +1,10 @@
 ## Unreleased
 
+### Zone Changes
+
+* Allow additional disputed areas to overlap ([#105](https://github.com/evansiroky/timezone-boundary-builder/issues/105))
+* Update to latest OSM data
+
 ### Other Changes
 
 * Change output folder of various files outputted from building script ([#102](https://github.com/evansiroky/timezone-boundary-builder/pull/102)).
