@@ -63,12 +63,12 @@ node --max-old-space-size=8192 index.js --excluded_zones America/New_York Americ
 
 **Run the script with custom working / output directories.**
 
-timezone-boundary-builder downloads boundaries from OpenStreetMap and places them in the `./downloads` directory by default. It generates output files in the `./dist` directory by default.
+timezone-boundary-builder downloads boundaries from OpenStreetMap and places them in the `./downloads` directory. It writes various intermediate files to `./working`. All files included in releases are written to the `./dist` directory.
 
-If you want to use different directories, you can do so with the `--downloads_dir` and `--dist_dir` flags.
+If you want to use different directories, you can do so with the `--downloads_dir`, `--dist_dir` and `--working_dir` flags.
 
 ```shell
-node --max-old-space-size=8192 index.js --downloads_dir ./downloads2 --dist_dir ./dist2
+node --max-old-space-size=8192 index.js --downloads_dir ./downloads2 --dist_dir ./dist2 --working_dir ./working2
 ```
 
 **Other command line flags**
