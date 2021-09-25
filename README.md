@@ -21,22 +21,22 @@ To maintain consistency with the timezone database, this project will only creat
 
 A few common languages already have libraries with an API that can be used to lookup the timezone name at a particular GPS coordinate.  Here are some libraries that use the data produced by timezone-boundary-builder:
 
-| Library | Language |
+| Language | Library |
 | -- | -- |
-| [ZoneDetect](https://github.com/BertoldVdb/ZoneDetect) | C |
-| [tz_world](https://hex.pm/packages/tz_world) | Elixir |
-| [go-tz](https://github.com/ugjka/go-tz) | Go |
-| [timezoneLookup](https://github.com/evanoberholster/timezoneLookup) | Go |
-| [TimeZoneMap](https://github.com/dustin-johnson/timezonemap) | Java & Android |
-| [Timeshape](https://github.com/RomanIakovlev/timeshape) | Java |
-| [node-geo-tz](https://github.com/evansiroky/node-geo-tz/) | JavaScript (node.js only) |
-| [timespace](https://github.com/mapbox/timespace) | JavaScript (node.js and in browser) |
-| [tz-lookup](https://github.com/darkskyapp/tz-lookup-oss) | JavaScript (node.js and in browser) |
-| [GeoTimezone](https://github.com/mj1856/GeoTimeZone) | .NET |
-| [Geo-Timezone](https://github.com/minube/geo-timezone) | php |
-| [timezonefinder](https://github.com/MrMinimal64/timezonefinder) | Python |
-| [lutz](https://github.com/ateucher/lutz) | R |
-| [wheretz](https://github.com/zverok/wheretz) | Ruby |
+| C | [ZoneDetect](https://github.com/BertoldVdb/ZoneDetect)|
+| Elixir | [tz_world](https://hex.pm/packages/tz_world)|
+| Go | [go-tz](https://github.com/ugjka/go-tz)|
+| Go | [timezoneLookup](https://github.com/evanoberholster/timezoneLookup)|
+| Java & Android | [TimeZoneMap](https://github.com/dustin-johnson/timezonemap)|
+| Java | [Timeshape](https://github.com/RomanIakovlev/timeshape)|
+| JavaScript (node.js only) | [node-geo-tz](https://github.com/evansiroky/node-geo-tz/)|
+| JavaScript (node.js and in browser) | [timespace](https://github.com/mapbox/timespace)|
+| JavaScript (node.js and i| [tz-lookup](https://github.com/darkskyapp/tz-lookup-oss)n browser) |
+| .NET | [GeoTimezone](https://github.com/mj1856/GeoTimeZone)|
+| php | [Geo-Timezone](https://github.com/minube/geo-timezone)|
+| Python | [timezonefinder](https://github.com/MrMinimal64/timezonefinder)|
+| R | [lutz](https://github.com/ateucher/lutz)|
+| Ruby | [wheretz](https://github.com/zverok/wheretz)|
 
 Another common way to use the data for lookup purposes is to load the shapefile into a spatially-aware database.  See this [blog post](https://simonwillison.net/2017/Dec/12/location-time-zone-api/) for an example of how that can be done.
 
