@@ -24,6 +24,7 @@ A few common languages already have libraries with an API that can be used to lo
 | Library | Language |
 | -- | -- |
 | [ZoneDetect](https://github.com/BertoldVdb/ZoneDetect) | C |
+| [tz_world](https://hex.pm/packages/tz_world) | Elixir |
 | [go-tz](https://github.com/ugjka/go-tz) | Go |
 | [timezoneLookup](https://github.com/evanoberholster/timezoneLookup) | Go |
 | [TimeZoneMap](https://github.com/dustin-johnson/timezonemap) | Java & Android |
