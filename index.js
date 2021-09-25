@@ -112,7 +112,7 @@ var geoJsonReader = new jsts.io.GeoJSONReader()
 var geoJsonWriter = new jsts.io.GeoJSONWriter()
 var precisionModel = new jsts.geom.PrecisionModel(1000000)
 var precisionReducer = new jsts.precision.GeometryPrecisionReducer(precisionModel)
-var distZones = {}
+var finalZones = {}
 var lastReleaseJSONfile
 var minRequestGap = 4
 var curRequestGap = 4
@@ -349,8 +349,8 @@ var downloadOsmBoundary = function (boundaryId, boundaryCallback) {
   }, boundaryCallback)
 }
 
-var getTzDistFilename = function (tzid) {
-  return distDir + '/' + tzid.replace(/\//g, '__') + '.json'
+var getFinalTzOutputFilename = function (tzid) {
+  return workingDir + '/' + tzid.replace(/\//g, '__') + '.json'
 }
 
 /**
@@ -370,8 +370,8 @@ var getDataSource = function (source) {
     geoJson = polygon(source.data).geometry
   } else if (source.source === 'manual-multipolygon') {
     geoJson = multiPolygon(source.data).geometry
-  } else if (source.source === 'dist') {
-    geoJson = require(getTzDistFilename(source.id))
+  } else if (source.source === 'final') {
+    geoJson = require(getFinalTzOutputFilename(source.id))
   } else {
     var err = new Error('unknown source: ' + source.source)
     throw err
@@ -473,25 +473,21 @@ var makeTimezoneBoundary = function (tzid, callback) {
   },
   function (err) {
     if (err) { return callback(err) }
-    fs.writeFile(getTzDistFilename(tzid),
+    fs.writeFile(getFinalTzOutputFilename(tzid),
       postProcessZone(geom),
       callback)
   })
 }
 
-var loadDistZonesIntoMemory = function () {
+var loadFinalZonesIntoMemory = function () {
   console.log('load zones into memory')
   var zones = Object.keys(zoneCfg)
   var tzid
 
   for (var i = 0; i < zones.length; i++) {
     tzid = zones[i]
-    distZones[tzid] = getDataSource({ source: 'dist', id: tzid })
+    finalZones[tzid] = getDataSource({ source: 'final', id: tzid })
   }
-}
-
-var getDistZoneGeom = function (tzid) {
-  return distZones[tzid]
 }
 
 var roundDownToTenth = function (n) {
@@ -526,7 +522,7 @@ var validateTimezoneBoundaries = function () {
 
   for (var i = 0; i < zones.length; i++) {
     tzid = zones[i]
-    zoneGeom = getDistZoneGeom(tzid)
+    zoneGeom = finalZones[tzid]
 
     for (var j = i + 1; j < zones.length; j++) {
       const curPct = Math.floor(validationProgress.getPercentage())
@@ -536,7 +532,7 @@ var validateTimezoneBoundaries = function () {
       }
       compareTzid = zones[j]
 
-      var compareZoneGeom = getDistZoneGeom(compareTzid)
+      var compareZoneGeom = finalZones[compareTzid]
 
       var intersects = false
       try {
@@ -691,8 +687,8 @@ var addOceans = function (callback) {
     let geom = geoJsonToGeom(geoJson)
 
     // diff against every zone
-    zones.forEach(distZone => {
-      geom = debugGeo('diff', geom, getDistZoneGeom(distZone))
+    zones.forEach(finalZone => {
+      geom = debugGeo('diff', geom, finalZones[finalZone])
     })
 
     return {
@@ -705,15 +701,15 @@ var addOceans = function (callback) {
 }
 
 var combineAndWriteZones = function (callback) {
-  const regularWriter = new FeatureWriterStream(distDir + '/combined.json')
-  const oceanWriter = new FeatureWriterStream(distDir + '/combined-with-oceans.json')
+  const regularWriter = new FeatureWriterStream(workingDir + '/combined.json')
+  const oceanWriter = new FeatureWriterStream(workingDir + '/combined-with-oceans.json')
   var zones = Object.keys(zoneCfg)
 
   zones.forEach(zoneName => {
     const feature = {
       type: 'Feature',
       properties: { tzid: zoneName },
-      geometry: geomToGeoJson(getDistZoneGeom(zoneName))
+      geometry: geomToGeoJson(finalZones[zoneName])
     }
     const stringified = JSON.stringify(feature)
     regularWriter.add(stringified)
@@ -818,7 +814,7 @@ var analyzeChangesFromLastRelease = function (cb) {
 
   // generate set of keys from last release and current
   const zoneNames = new Set()
-  Object.keys(distZones).forEach(zoneName => zoneNames.add(zoneName))
+  Object.keys(finalZones).forEach(zoneName => zoneNames.add(zoneName))
   Object.keys(lastReleaseZones).forEach(zoneName => zoneNames.add(zoneName))
 
   // create diff for each zone
@@ -826,17 +822,17 @@ var analyzeChangesFromLastRelease = function (cb) {
     'Analyzing diffs',
     zoneNames.size
   )
-  const additionsWriter = new FeatureWriterStream(distDir + '/additions.json')
-  const removalsWriter = new FeatureWriterStream(distDir + '/removals.json')
+  const additionsWriter = new FeatureWriterStream(workingDir + '/additions.json')
+  const removalsWriter = new FeatureWriterStream(workingDir + '/removals.json')
   zoneNames.forEach(zoneName => {
     analysisProgress.beginTask(zoneName, true)
-    if (distZones[zoneName] && lastReleaseZones[zoneName]) {
+    if (finalZones[zoneName] && lastReleaseZones[zoneName]) {
       // some zones take forever to diff unless they are buffered, so buffer by
       // just a small amount
       const lastReleaseGeom = geoJsonToGeom(
         lastReleaseZones[zoneName].geometry
       ).buffer(bufferDistance)
-      const curDataGeom = getDistZoneGeom(zoneName).buffer(bufferDistance)
+      const curDataGeom = finalZones[zoneName].buffer(bufferDistance)
 
       // don't diff equal geometries
       if (curDataGeom.equals(lastReleaseGeom)) return
@@ -872,11 +868,11 @@ var analyzeChangesFromLastRelease = function (cb) {
           geometry: geomToGeoJson(removal)
         }))
       }
-    } else if (distZones[zoneName]) {
+    } else if (finalZones[zoneName]) {
       additionsWriter.add(JSON.stringify({
         type: 'Feature',
         properties: { tzid: zoneName },
-        geometry: geomToGeoJson(getDistZoneGeom(zoneName))
+        geometry: geomToGeoJson(finalZones[zoneName])
       }))
     } else {
       removalsWriter.add(JSON.stringify(lastReleaseZones[zoneName]))
@@ -938,13 +934,13 @@ const autoScript = {
       downloadLastRelease(cb)
     }
   }],
-  createZones: ['makeDistDir', 'getOsmBoundaries', function (results, cb) {
+  createZones: ['makeWorkingDir', 'getOsmBoundaries', function (results, cb) {
     overallProgress.beginTask('Creating timezone boundaries')
     asynclib.each(Object.keys(zoneCfg), makeTimezoneBoundary, cb)
   }],
   validateZones: ['createZones', function (results, cb) {
     overallProgress.beginTask('Validating timezone boundaries')
-    loadDistZonesIntoMemory()
+    loadFinalZonesIntoMemory()
     if (argv.skip_validation) {
       console.warn('WARNING: Skipping validation!')
       cb()
@@ -967,7 +963,7 @@ const autoScript = {
     }
     overallProgress.beginTask('Zipping geojson')
     const zipFile = distDir + '/timezones.geojson.zip'
-    const jsonFile = distDir + '/combined.json'
+    const jsonFile = workingDir + '/combined.json'
     exec('zip -j ' + zipFile + ' ' + jsonFile, cb)
   }],
   zipGeoJsonWithOceans: ['mergeZones', function (results, cb) {
@@ -977,7 +973,7 @@ const autoScript = {
     }
     overallProgress.beginTask('Zipping geojson with oceans')
     const zipFile = distDir + '/timezones-with-oceans.geojson.zip'
-    const jsonFile = distDir + '/combined-with-oceans.json'
+    const jsonFile = workingDir + '/combined-with-oceans.json'
     exec('zip -j ' + zipFile + ' ' + jsonFile, cb)
   }],
   makeShapefile: ['mergeZones', function (results, cb) {
@@ -986,10 +982,10 @@ const autoScript = {
       return cb()
     }
     overallProgress.beginTask('Converting from geojson to shapefile')
-    const shapeFileGlob = distDir + '/combined-shapefile.*'
+    const shapeFileGlob = workingDir + '/combined-shapefile.*'
     rimraf.sync(shapeFileGlob)
-    const shapeFile = distDir + '/combined-shapefile.shp'
-    const jsonFile = distDir + '/combined.json'
+    const shapeFile = workingDir + '/combined-shapefile.shp'
+    const jsonFile = workingDir + '/combined.json'
     exec(
       'ogr2ogr -f "ESRI Shapefile" ' + shapeFile + ' ' + jsonFile,
       function (err, stdout, stderr) {
@@ -1005,10 +1001,10 @@ const autoScript = {
       return cb()
     }
     overallProgress.beginTask('Converting from geojson with oceans to shapefile')
-    const shapeFileGlob = distDir + '/combined-shapefile-with-oceans.*'
+    const shapeFileGlob = workingDir + '/combined-shapefile-with-oceans.*'
     rimraf.sync(shapeFileGlob)
-    const shapeFile = distDir + '/combined-shapefile-with-oceans.shp'
-    const jsonFile = distDir + '/combined-with-oceans.json'
+    const shapeFile = workingDir + '/combined-shapefile-with-oceans.shp'
+    const jsonFile = workingDir + '/combined-with-oceans.json'
     exec(
       'ogr2ogr -f "ESRI Shapefile" ' + shapeFile + ' ' + jsonFile,
       function (err, stdout, stderr) {
