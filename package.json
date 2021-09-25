@@ -4,7 +4,7 @@
   "description": "Scripts to create a timezone shapefile from multiple sources",
   "main": "index.js",
   "engines": {
-    "node": ">=10"
+    "node": ">=12"
   },
   "scripts": {
     "test": "standard && node lint-json.js"
@@ -21,18 +21,18 @@
   "license": "MIT",
   "dependencies": {
     "@mapbox/geojson-area": "^0.2.2",
-    "@mapbox/geojsonhint": "^3.0.0",
-    "@turf/bbox": "^6.0.1",
-    "@turf/helpers": "^6.1.4",
-    "async": "^3.2.0",
-    "follow-redirects": "^1.13.0",
-    "jsts": "^2.5.1",
+    "@mapbox/geojsonhint": "^3.0.1",
+    "@turf/bbox": "^6.5.0",
+    "@turf/helpers": "^6.5.0",
+    "async": "^3.2.1",
+    "follow-redirects": "^1.14.4",
+    "jsts": "^2.7.1",
     "query-overpass": "^1.5.5",
     "rimraf": "^3.0.2",
-    "shpjs": "^3.6.0",
-    "yargs": "^16.1.0"
+    "shpjs": "^4.0.2",
+    "yargs": "^17.2.0"
   },
   "devDependencies": {
-    "standard": "^14.3.4"
+    "standard": "^16.0.3"
   }
 }

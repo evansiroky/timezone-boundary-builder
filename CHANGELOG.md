@@ -1,3 +1,11 @@
+## Unreleased
+
+### Other Changes
+
+* Change output folder of various files outputted from building script ([#102](https://github.com/evansiroky/timezone-boundary-builder/pull/102)).
+* Update list of libraries using data ([#110](https://github.com/evansiroky/timezone-boundary-builder/issues/110), [#111](https://github.com/evansiroky/timezone-boundary-builder/pull/111)).
+* Update all dependencies and require at least node 12.
+
 ## 2020d
 
 ### Zone Changes
