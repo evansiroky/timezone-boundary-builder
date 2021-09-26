@@ -400,6 +400,11 @@
       "op": "init",
       "source": "overpass",
       "id": "Burkina Faso"
+    }, {
+      "op": "union",
+      "source": "overpass",
+      "id": "Koalou/Kourou Zone",
+      "description": "Add Koalou/Kourou Zone. See https://fr.wikipedia.org/wiki/Koalou."
     }
   ],
   "Africa/Porto-Novo": [
@@ -407,6 +412,11 @@
       "op": "init",
       "source": "overpass",
       "id": "Benin"
+    }, {
+      "op": "union",
+      "source": "overpass",
+      "id": "Koalou/Kourou Zone",
+      "description": "Add Koalou/Kourou Zone. See https://fr.wikipedia.org/wiki/Koalou."
     }
   ],
   "Africa/Sao_Tome": [

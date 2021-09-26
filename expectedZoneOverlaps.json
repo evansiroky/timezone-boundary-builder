@@ -8,6 +8,12 @@
       "description": "Allow disputed Kafia Kingi region (https://en.wikipedia.org/wiki/Kafia_Kingi) to overlap."
     }
   ],
+  "Africa/Ouagadougou-Africa/Porto-Novo": [
+    {
+      "bounds": [0.9, 10.9, 1, 11.1],
+      "description": "Allow disputed Koalou/Kourou Zone (https://fr.wikipedia.org/wiki/Koalou) to overlap."
+    }
+  ],
   "America/Argentina/Rio_Gallegos-America/Punta_Arenas": [
     {
       "bounds": [-73.6, -49.8, -73, -49.2],
