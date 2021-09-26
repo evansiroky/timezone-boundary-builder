@@ -403,7 +403,7 @@
     }, {
       "op": "union",
       "source": "overpass",
-      "id": "Koalou/Kourou Zone",
+      "id": "Koalou-Kourou Zone",
       "description": "Add Koalou/Kourou Zone. See https://fr.wikipedia.org/wiki/Koalou."
     }
   ],
@@ -415,7 +415,7 @@
     }, {
       "op": "union",
       "source": "overpass",
-      "id": "Koalou/Kourou Zone",
+      "id": "Koalou-Kourou Zone",
       "description": "Add Koalou/Kourou Zone. See https://fr.wikipedia.org/wiki/Koalou."
     }
   ],
@@ -2737,6 +2737,10 @@
       "source": "manual-polygon",
       "data": [[[34.7,30],[34.7,34],[37,32],[34.7,30]]],
       "description": "Intersect the Palestinian Territories to isolate the West Bank."
+    }, {
+      "op": "union",
+      "source": "overpass",
+      "id": "Area H2"
     }
   ],
   "Asia/Ho_Chi_Minh": [
@@ -2855,6 +2859,10 @@
       "op": "union",
       "source": "overpass",
       "id": "שטח B"
+    }, {
+      "op": "union",
+      "source": "overpass",
+      "id": "Area H2"
     }
   ],
   "Asia/Kabul": [

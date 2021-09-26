@@ -63,6 +63,10 @@
   "Antigua and Barbuda": {
     "ISO3166-1": "AG"
   },
+  "Area H2": {
+    "name:en": "Area H2",
+    "admin_level": "6"
+  },
   "Argentina": {
     "ISO3166-1": "AR"
   },
@@ -681,7 +685,7 @@
   "Kirov": {
     "ISO3166-2": "RU-KIR"
   },
-  "Koalou/Kourou Zone": {
+  "Koalou-Kourou Zone": {
     "name:en": "Neutral Zone Burkina Faso and Benin"
   },
   "Kosrae": {

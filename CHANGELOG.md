@@ -6,6 +6,7 @@
   * `Africa/Ouagadougou`, `Africa/Porto-Novo` overlap. See [article](https://fr.wikipedia.org/wiki/Koalou).
   * `America/Lower_Princes`, `America/Marigot` overlap. See [article](http://www.dclportal.dreamhosters.com/news/latest-news/9228-negotiations-on-oyster-pond-border-to-commence-late-2019).
   * `Asia/Bangkok`, `Asia/Yangon` overlap. See [article](https://en.wikipedia.org/wiki/Myanmar%E2%80%93Thailand_relations#Disputed_territory).
+  * `Asia/Hebron`, `Asia/Jerusalem` overlap in Area H2. See [article](https://en.wikipedia.org/wiki/Hebron#Division_of_Hebron)
   * `Asia/Kolkata`, `Asia/Shanghai` overlap. See [article](https://en.wikipedia.org/wiki/Sino-Indian_border_dispute).
   * `Europe/Athens`, `Europe/Istanbul` overlap. See [article](https://en.wikipedia.org/wiki/Imia/Kardak).
 * Update to latest OSM data
