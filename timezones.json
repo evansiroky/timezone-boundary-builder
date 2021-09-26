@@ -4136,6 +4136,11 @@
       "op": "init",
       "source": "overpass",
       "id": "Austria"
+    }, {
+      "op": "union",
+      "source": "overpass",
+      "id": "Jungholz, AT",
+      "description": "Add back Jungholz as union to Austria. See https://github.com/evansiroky/timezone-boundary-builder/issues/93"
     }
   ],
   "Europe/Vilnius": [

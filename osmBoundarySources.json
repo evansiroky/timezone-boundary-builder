@@ -645,6 +645,10 @@
   "Jujuy": {
     "ISO3166-2": "AR-Y"
   },
+  "Jungholz, AT": {
+    "name": "Jungholz",
+    "admin_level": "8"
+  },
   "Kaliningrad": {
     "ISO3166-2": "RU-KGD"
   },
