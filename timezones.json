@@ -1555,6 +1555,16 @@
       "op": "init",
       "source": "overpass",
       "id": "Sint Maarten"
+    }, {
+      "op": "union",
+      "source": "manual-polygon",
+      "data": [[[-63.03,18.06],[-63.01,18.04],[-63,18.06],[-63.03,18.06]]],
+      "description": "Union an area such that the disputed area of Oyster Pond is included. See article: http://www.dclportal.dreamhosters.com/news/latest-news/9228-negotiations-on-oyster-pond-border-to-commence-late-2019."
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "Saint Maarten",
+      "description": "Diff the Dutch part of Saint Martin."
     }
   ],
   "America/Maceio": [
@@ -1587,6 +1597,16 @@
       "op": "init",
       "source": "overpass",
       "id": "Saint Maarten"
+    }, {
+      "op": "union",
+      "source": "manual-polygon",
+      "data": [[[-63.03,18.06],[-63.01,18.04],[-63,18.06],[-63.03,18.06]]],
+      "description": "Union an area such that the disputed area of Oyster Pond is included. See article: http://www.dclportal.dreamhosters.com/news/latest-news/9228-negotiations-on-oyster-pond-border-to-commence-late-2019."
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "Sint Maarten",
+      "description": "Diff the French part of Saint Martin."
     }
   ],
   "America/Martinique": [

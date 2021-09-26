@@ -3,6 +3,10 @@
 ### Zone Changes
 
 * Allow additional disputed areas to overlap ([#105](https://github.com/evansiroky/timezone-boundary-builder/issues/105))
+  * `America/Lower_Princes`, `America/Marigot` overlap. See [article](http://www.dclportal.dreamhosters.com/news/latest-news/9228-negotiations-on-oyster-pond-border-to-commence-late-2019).
+  * `Asia/Bangkok`, `Asia/Yangon` overlap. See [article](https://en.wikipedia.org/wiki/Myanmar%E2%80%93Thailand_relations#Disputed_territory).
+  * `Asia/Kolkata`, `Asia/Shanghai` overlap. See [article](https://en.wikipedia.org/wiki/Sino-Indian_border_dispute).
+  * `Europe/Athens`, `Europe/Istanbul` overlap. See [article](https://en.wikipedia.org/wiki/Imia/Kardak).
 * Update to latest OSM data
 
 ### Other Changes
