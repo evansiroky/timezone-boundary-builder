@@ -11,6 +11,17 @@
   * `Europe/Athens`, `Europe/Istanbul` overlap. See [article](https://en.wikipedia.org/wiki/Imia/Kardak).
 * Ensure territorial waters are included in the following zones:
   * `Asia/Srednekolymsk`
+  * `Australia/Adelaide`
+  * `Australia/Brisbane`
+  * `Australia/Darwin`
+  * `Australia/Eucla`
+  * `Australia/Hobart`
+  * `Australia/Lindeman`
+  * `Australia/Melbourne`
+  * `Australia/Perth`
+  * `Australia/Sydney`
+* Merge some zones that were moved to the backzone file in the timezone database
+  * `Australia/Currie` is now a part of `Australia/Hobart`
 * Update to latest OSM data
 
 ### Other Changes

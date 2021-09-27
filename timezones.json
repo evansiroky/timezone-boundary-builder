@@ -3542,12 +3542,42 @@
     {
       "op": "init",
       "source": "overpass",
+      "id": "Australia"
+    }, {
+      "op": "intersect",
+      "source": "manual-polygon",
+      "data": [[[137,-27],[100,-40],[140.9658101,-40],[140.9658101,-38.1084575],[137,-27]]],
+      "description": "Intersect part of South Australia to preserve Australian territorial waters."
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "Perth-tz"
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "Eucla-tz"
+    }, {
+      "op": "union",
+      "source": "overpass",
       "id": "South Australia"
     }
   ],
   "Australia/Brisbane": [
     {
       "op": "init",
+      "source": "overpass",
+      "id": "Australia"
+    }, {
+      "op": "intersect",
+      "source": "manual-polygon",
+      "data": [[[138.0273711,-16.4843665],[150,-31],[163,-24],[138,0],[138.3,-16.15],[138.0273711,-16.4843665]]],
+      "description": "Intersect part of Queensland to preserve Australian territorial waters."
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "Sydney-tz"
+    }, {
+      "op": "union",
       "source": "overpass",
       "id": "Queensland"
     }, {
@@ -3564,7 +3594,7 @@
       "id": "Broken_Hill-tz"
     }
   ],
-  "Australia/Currie": [
+  "Australia/Darwin": [
     {
       "op": "init",
       "source": "overpass",
@@ -3572,13 +3602,14 @@
     }, {
       "op": "intersect",
       "source": "manual-polygon",
-      "data": [[[143,-39.2],[146,-39.2],[142.2,-41.5],[143,-39.2]]],
-      "description": "Exclude King Island from rest of Australia via an arbitraty sea boundary."
-    }
-  ],
-  "Australia/Darwin": [
-    {
-      "op": "init",
+      "data": [[[138.0273711,-16.4843665],[125,-16],[138,0],[138.3,-16.15],[138.0273711,-16.4843665]]],
+      "description": "Intersect part of Northern Territory to preserve Australian territorial waters."
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "Perth-tz"
+    }, {
+      "op": "union",
       "source": "overpass",
       "id": "Northern Territory"
     }
@@ -3587,36 +3618,26 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Western Australia"
-    }, {
-      "op": "intersect",
-      "source": "manual-polygon",
-      "data": [[[131,-31.3],[125.5,-31.3],[125.5,-35],[131,-31.3]]],
-      "description": "Intersect part of Western Australia to form zone.  Boundary is based off of the boundary coded in efele.net's shapefile."
+      "id": "Eucla-tz"
     }
   ],
   "Australia/Hobart": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Tasmania"
+      "id": "Australia"
     }, {
-      "op": "difference",
+      "op": "intersect",
       "source": "manual-polygon",
-      "data": [[[143,-39.2],[146,-39.2],[142.2,-41.5],[143,-39.2]]],
-      "description": "Exclude King Island from rest of Tasmania via an arbitraty sea boundary."
-    }, {
-      "op": "difference",
-      "source": "manual-polygon",
-      "data": [[[159,-53],[156,-56],[162,-56],[159,-53]]],
-      "description": "Exclude Macquarie Island."
+      "data": [[[141,-39.198485],[146,-50],[152,-39.198485],[141,-39.198485]]],
+      "description": "Extract Tasmania from Australia to include territorial waters."
     }
   ],
   "Australia/Lindeman": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Queensland"
+      "id": "Australia"
     }, {
       "op": "intersect",
       "source": "manual-polygon",
@@ -3640,6 +3661,19 @@
     {
       "op": "init",
       "source": "overpass",
+      "id": "Australia"
+    }, {
+      "op": "intersect",
+      "source": "manual-polygon",
+      "data": [[[147,-36.5],[140.9658101,-38.1084575],[140.9658101,-39.198485],[160,-39.198485],[147,-36.5]]],
+      "description": "Intersect part of Victoria to preserve Australian territorial waters."
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "Sydney-tz"
+    }, {
+      "op": "union",
+      "source": "overpass",
       "id": "Victoria"
     }
   ],
@@ -3647,42 +3681,24 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Western Australia"
-    }, {
-      "op": "difference",
-      "source": "manual-polygon",
-      "data": [[[131,-31.3],[125.5,-31.3],[125.5,-35],[131,-31.3]]],
-      "description": "Difference part of Western Australia to form zone.  Boundary is based off of the boundary coded in efele.net's shapefile."
+      "id": "Perth-tz"
     }, {
       "op": "union",
       "source": "manual-polygon",
       "data": [[[115,-86],[120,-86],[135,-86],[150,-86],[160,-86],[160,-70],[150,-70],[135,-70],[120,-70],[115,-70],[115,-86]]],
       "description": "According to chatter on the tz mailing list, the Antrarctic Concordia Station uses Australia/Perth time.  https://mm.icann.org/pipermail/tz/2013-December/020520.html"
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "Eucla-tz",
+      "description": "Remove Eucla portion since it's also added to the Western Australia relation."
     }
   ],
   "Australia/Sydney": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "New South Wales"
-    }, {
-      "op": "union",
-      "source": "overpass",
-      "id": "Australian Capital Territory"
-    }, {
-      "op": "difference",
-      "source": "overpass",
-      "id": "Broken_Hill-tz"
-    }, {
-      "op": "difference",
-      "source": "manual-polygon",
-      "data": [[[160,-33],[160,-31],[157,-31],[160,-33]]],
-      "description": "Difference to exclude only Lord Howe Island."
-    }, {
-      "op": "union",
-      "source": "manual-polygon",
-      "data": [[[150.85,-35.07],[150.45,-35.09],[150.7,-35.3],[150.85,-35.07]]],
-      "description": "Union this area to include Jervis Bay Territory"
+      "id": "Sydney-tz"
     }
   ],
   "Etc/UTC": [

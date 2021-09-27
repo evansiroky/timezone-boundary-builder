@@ -89,9 +89,6 @@
   "Australia": {
     "ISO3166-1": "AU"
   },
-  "Australian Capital Territory": {
-    "ISO3166-2": "AU-ACT"
-  },
   "Austria": {
     "ISO3166-1": "AT"
   },
@@ -424,6 +421,9 @@
   },
   "Ethiopia": {
     "ISO3166-1": "ET"
+  },
+  "Eucla-tz": {
+    "timezone": "Australia/Eucla"
   },
   "Falkland Islands": {
     "ISO3166-1": "FK"
@@ -903,9 +903,6 @@
   "New Mexico": {
     "ISO3166-2": "US-NM"
   },
-  "New South Wales": {
-    "ISO3166-2": "AU-NSW"
-  },
   "New Zealand": {
     "ISO3166-1": "NZ"
   },
@@ -1007,6 +1004,9 @@
   "Perry County, IN": {
     "name": "Perry County",
     "nist:state_fips": "18"
+  },
+  "Perth-tz": {
+    "timezone": "Australia/Perth"
   },
   "Philippines": {
     "ISO3166-1": "PH"
@@ -1280,6 +1280,9 @@
     "name": "Switzerland County",
     "nist:state_fips": "18"
   },
+  "Sydney-tz": {
+    "timezone": "Australia/Sydney"
+  },
   "Syria": {
     "ISO3166-1": "SY"
   },
@@ -1291,9 +1294,6 @@
   },
   "Tanzania": {
     "name:en": "Tanzania"
-  },
-  "Tasmania": {
-    "ISO3166-2": "AU-TAS"
   },
   "Thailand": {
     "ISO3166-1": "TH",
@@ -1447,9 +1447,6 @@
   },
   "West Wendover": {
     "name": "West Wendover"
-  },
-  "Western Australia": {
-    "ISO3166-2": "AU-WA"
   },
   "Western Sahara": {
     "ISO3166-1": "EH"
