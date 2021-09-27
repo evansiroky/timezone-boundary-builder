@@ -3208,6 +3208,23 @@
     {
       "op": "init",
       "source": "overpass",
+      "id": "Sakha Republic"
+    }, {
+      "op": "intersect",
+      "source": "manual-polygon",
+      "data": [[[147,74],[142,71.5],[164,66],[164,72],[147,74]]],
+      "description": "Intersect part of Sakha Republic to make sure Russian territorial waters are included."
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "Vladivostok-tz"
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "Chukotka"
+    }, {
+      "op": "union",
+      "source": "overpass",
       "id": "Srednekolymsk-tz"
     }
   ],

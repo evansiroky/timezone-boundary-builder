@@ -9,6 +9,8 @@
   * `Asia/Hebron`, `Asia/Jerusalem` overlap in Area H2. See [article](https://en.wikipedia.org/wiki/Hebron#Division_of_Hebron)
   * `Asia/Kolkata`, `Asia/Shanghai` overlap. See [article](https://en.wikipedia.org/wiki/Sino-Indian_border_dispute).
   * `Europe/Athens`, `Europe/Istanbul` overlap. See [article](https://en.wikipedia.org/wiki/Imia/Kardak).
+* Ensure territorial waters are included in the following zones:
+  * `Asia/Srednekolymsk`
 * Update to latest OSM data
 
 ### Other Changes
