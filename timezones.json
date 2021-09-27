@@ -4426,18 +4426,6 @@
       "id": "Vanuatu"
     }
   ],
-  "Pacific/Enderbury": [
-    {
-      "op": "init",
-      "source": "overpass",
-      "id": "Kiribati"
-    }, {
-      "op": "intersect",
-      "source": "manual-polygon",
-      "data": [[[-176,0],[-176,-9],[-169,-3],[-176,0]]],
-      "description": "Intersect Kiribati to include Enderbury and some other atolls."
-    }
-  ],
   "Pacific/Fakaofo": [
     {
       "op": "init",
@@ -4512,6 +4500,18 @@
       "source": "manual-polygon",
       "data": [[[-179,18],[-169,35],[-144,10],[-179,18]]],
       "description": "Clip US boundary to include Hawaiian Island and Jonhston Atoll"
+    }
+  ],
+  "Pacific/Kanton": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Kiribati"
+    }, {
+      "op": "intersect",
+      "source": "manual-polygon",
+      "data": [[[-176,0],[-176,-9],[-169,-3],[-176,0]]],
+      "description": "Intersect Kiribati to include Kanton Island and some other atolls."
     }
   ],
   "Pacific/Kiritimati": [
