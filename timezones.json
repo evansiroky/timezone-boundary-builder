@@ -1091,13 +1091,6 @@
       "id": "Costa Rica"
     }
   ],
-  "America/Creston": [
-    {
-      "op": "init",
-      "source": "overpass",
-      "id": "Creston-tz"
-    }
-  ],
   "America/Cuiaba": [
     {
       "op": "init",
@@ -1226,24 +1219,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Canada"
-    }, {
-      "op": "intersect",
-      "source": "manual-polygon",
-      "data": [[[-118,55],[-123,48],[-112,48],[-118,55]]],
-      "description": "The Edmonton timezone in OSM currently does not include the British Columbia portion.  Therefore, the boundary is obtained by first intersect Canada with this polygon and then remove the Vancouver and Creston timezones."
-    }, {
-      "op": "union",
-      "source": "overpass",
       "id": "Edmonton-tz"
-    }, {
-      "op": "difference",
-      "source": "overpass",
-      "id": "Vancouver-tz"
-    }, {
-      "op": "difference",
-      "source": "overpass",
-      "id": "Creston-tz"
     }
   ],
   "America/Eirunepe": [
@@ -2003,6 +1979,11 @@
       "source": "manual-polygon",
       "data": [[[-111.432,36.937],[-111.423,36.933],[-111.423,36.928],[-111.488,36.875],[-111.58,36.875],[-111.45,36.97],[-111.432,36.937]]],
       "description": "Include artifacts as result of mismatching City boundary of Page, AZ"
+    }, {
+      "op": "union",
+      "source": "overpass",
+      "id": "Creston-tz",
+      "description": "As of 2021b, America/Creston has been moved to the backzone file and has a link in the backward file to America/Phoenix."
     }
   ],
   "America/Port-au-Prince": [

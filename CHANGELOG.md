@@ -21,6 +21,7 @@
   * `Australia/Perth`
   * `Australia/Sydney`
 * Merge some zones that were moved to the backzone file in the timezone database
+  * `America/Creston` is now a part of `America/Phoenix`
   * `Australia/Currie` is now a part of `Australia/Hobart`
 * Update to latest OSM data
 
