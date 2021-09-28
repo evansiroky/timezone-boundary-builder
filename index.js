@@ -749,7 +749,7 @@ var downloadLastRelease = function (cb) {
         lastReleaseJSONfile = `${workingDir}/${lastReleaseName}.json`
         let lastReleaseDownloadUrl
         for (var i = 0; i < data.assets.length; i++) {
-          if (data.assets[i].browser_download_url.indexOf('timezones-with-oceans.geojson') > -1) {
+          if (data.assets[i].browser_download_url.indexOf('timezones.geojson') > -1) {
             lastReleaseDownloadUrl = data.assets[i].browser_download_url
           }
         }
