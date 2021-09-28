@@ -2741,6 +2741,10 @@
       "op": "union",
       "source": "overpass",
       "id": "Area H2"
+    }, {
+      "op": "union",
+      "source": "overpass",
+      "id": "שטח C"
     }
   ],
   "Asia/Ho_Chi_Minh": [
