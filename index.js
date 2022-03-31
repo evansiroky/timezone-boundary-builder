@@ -22,20 +22,22 @@ var osmBoundarySources = require('./osmBoundarySources.json')
 var zoneCfg = require('./timezones.json')
 var expectedZoneOverlaps = require('./expectedZoneOverlaps.json')
 
+const fiveYearsAgo = (new Date()).getFullYear()
+
 const argv = yargs
-  .option('downloads_dir', {
-    description: 'Set the download location for features from OpenStreetMap',
-    default: './downloads',
-    type: 'string'
-  })
-  .option('working_dir', {
-    description: 'Set the working files location for temporary / intermediate files',
-    default: './working',
-    type: 'string'
+  .option('cutoff_years', {
+    description: 'Generate additional release files for timezones with the same data after a certain cutoff year.',
+    default: [fiveYearsAgo],
+    type: 'array'
   })
   .option('dist_dir', {
     description: 'Set the dist location, for the generated release files',
     default: './dist',
+    type: 'string'
+  })
+  .option('downloads_dir', {
+    description: 'Set the download location for features from OpenStreetMap',
+    default: './downloads',
     type: 'string'
   })
   .option('excluded_zones', {
@@ -61,6 +63,11 @@ const argv = yargs
   .option('skip_zip', {
     description: 'Skip zip creation',
     type: 'boolean'
+  })
+  .option('working_dir', {
+    description: 'Set the working files location for temporary / intermediate files',
+    default: './working',
+    type: 'string'
   })
   .help()
   .strict()
@@ -234,34 +241,43 @@ const downloadProgress = new ProgressStats(
   Object.keys(osmBoundarySources).length
 )
 
-var downloadOsmBoundary = function (boundaryId, boundaryCallback) {
-  var cfg = osmBoundarySources[boundaryId]
+/**
+ * Download something from overpass and convert it into GeoJSON.
+ *
+ * @param  {string} queryName  Name of the query (for debugging purposes)
+ * @param  {object} overpassConfig Config used to build overpass query
+ * @param  {string} filename  Filename to save result to
+ * @param  {function} overpassDownloadCallback  The callback to call when done
+ */
+function downloadFromOverpass (
+  queryName,
+  overpassConfig,
+  filename,
+  overpassDownloadCallback
+) {
   var query = '[out:json][timeout:60];('
-  if (cfg.way) {
+  if (overpassConfig.way) {
     query += 'way'
   } else {
     query += 'relation'
   }
-  var boundaryFilename = downloadsDir + '/' + boundaryId + '.json'
-  var debug = 'getting data for ' + boundaryId
-  var queryKeys = Object.keys(cfg)
+
+  var queryKeys = Object.keys(overpassConfig)
 
   for (var i = queryKeys.length - 1; i >= 0; i--) {
     var k = queryKeys[i]
     if (k === 'way') continue
-    var v = cfg[k]
+    var v = overpassConfig[k]
 
     query += '["' + k + '"="' + v + '"]'
   }
 
   query += ';);out body;>;out meta qt;'
 
-  downloadProgress.beginTask(debug, true)
-
   asynclib.auto({
     downloadFromOverpass: function (cb) {
       console.log('downloading from overpass')
-      fetchIfNeeded(boundaryFilename, boundaryCallback, cb, function () {
+      fetchIfNeeded(filename, overpassDownloadCallback, cb, function () {
         var overpassResponseHandler = function (err, data) {
           if (err) {
             console.log(err)
@@ -286,7 +302,7 @@ var downloadOsmBoundary = function (boundaryId, boundaryCallback) {
     validateOverpassResult: ['downloadFromOverpass', function (results, cb) {
       var data = results.downloadFromOverpass
       if (!data.features) {
-        var err = new Error('Invalid geojson for boundary: ' + boundaryId)
+        var err = new Error(`Invalid geojson from overpass for query: ${queryName}`)
         return cb(err)
       }
       if (data.features.length === 0) {
@@ -316,7 +332,7 @@ var downloadOsmBoundary = function (boundaryId, boundaryCallback) {
             errors = geojsonhint.hint(stringifiedGeojson)
             console.error('Invalid geojson received in Overpass Result')
             console.error('Overpass query: ' + query)
-            const problemFilename = boundaryId + '_convert_to_geom_error.json'
+            const problemFilename = `${queryName}_convert_to_geom_error.json`
             fs.writeFileSync(problemFilename, stringifiedGeojson)
             console.error('saved problem file to ' + problemFilename)
             console.error('To read more about this error, please visit https://git.io/vxKQq')
@@ -328,7 +344,10 @@ var downloadOsmBoundary = function (boundaryId, boundaryCallback) {
             console.error('error converting overpass result to geojson')
             console.error(e)
 
-            fs.writeFileSync(boundaryId + '_convert_to_geom_error-all-features.json', JSON.stringify(data))
+            fs.writeFileSync(
+              `${queryName}_convert_to_geom_error-all-features.json`,
+              JSON.stringify(data)
+            )
             return cb(e)
           }
           if (!combined) {
@@ -339,14 +358,30 @@ var downloadOsmBoundary = function (boundaryId, boundaryCallback) {
         }
       }
       try {
-        fs.writeFile(boundaryFilename, geomToGeoJsonString(combined), cb)
+        fs.writeFile(filename, geomToGeoJsonString(combined), cb)
       } catch (e) {
         console.error('error writing combined border to geojson')
-        fs.writeFileSync(boundaryId + '_combined_border_convert_to_geom_error.json', JSON.stringify(data))
+        fs.writeFileSync(
+          queryName + '_combined_border_convert_to_geom_error.json',
+          JSON.stringify(data)
+        )
         return cb(e)
       }
     }]
-  }, boundaryCallback)
+  }, overpassDownloadCallback)
+}
+
+var downloadOsmBoundary = function (boundaryId, boundaryCallback) {
+  const boundaryFilename = downloadsDir + '/' + boundaryId + '.json'
+
+  downloadProgress.beginTask(`getting data for ${boundaryId}`, true)
+
+  downloadFromOverpass(
+    boundaryId,
+    osmBoundarySources[boundaryId],
+    boundaryFilename,
+    boundaryCallback
+  )
 }
 
 var getFinalTzOutputFilename = function (tzid) {
@@ -799,6 +834,10 @@ var downloadLastRelease = function (cb) {
   )
 }
 
+function mergeZonesForCutoffYears (cb) {
+
+}
+
 var analyzeChangesFromLastRelease = function (cb) {
   // load last release data into memory
   console.log('loading previous release into memory')
@@ -900,8 +939,11 @@ const autoScript = {
     safeMkdir(distDir, cb)
   },
   getOsmBoundaries: ['makeDownloadsDir', function (results, cb) {
-    overallProgress.beginTask('Downloading osm boundaries')
+    overallProgress.beginTask('Downloading OSM boundaries')
     asynclib.eachSeries(Object.keys(osmBoundarySources), downloadOsmBoundary, cb)
+  }],
+  getOsmTzBoundaries: ['getOsmBoundaries', (results, cb) => {
+    overallProgress.beginTask('Downloading OSM TZ boundaries')
   }],
   cleanDownloadFolder: ['makeDistDir', 'getOsmBoundaries', function (results, cb) {
     overallProgress.beginTask('cleanDownloadFolder')
@@ -1032,6 +1074,9 @@ const autoScript = {
       cb
     )
   },
+  mergeZonesForCutoffYears: ['validateZones', function (results, cb) {
+    mergeZonesForCutoffYears(cb)
+  }],
   analyzeChangesFromLastRelease: ['downloadLastRelease', 'mergeZones', function (results, cb) {
     if (argv.skip_analyze_diffs) {
       overallProgress.beginTask('WARNING: Skipping analysis of changes from last release!')
