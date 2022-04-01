@@ -782,7 +782,7 @@ var downloadLastRelease = function (cb) {
                   err => {
                     if (err) { return cb(err) }
 
-                    const srcFile = path.join(workingDir, 'combined-with-oceans.json')
+                    const srcFile = path.join(workingDir, 'combined.json')
                     console.log(`unzipped file: ${srcFile}`)
 
                     const destFile = lastReleaseJSONfile
