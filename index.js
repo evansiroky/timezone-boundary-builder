@@ -258,11 +258,21 @@ var downloadOsmBoundary = function (boundaryId, boundaryCallback) {
 
   downloadProgress.beginTask(debug, true)
 
+  // query-overpass sometimes makes duplicate callbacks, so keep track of the callbacks and
+  // only do a next action once.
+  let curOverpassQueryAttempt = 0
+  const overpassAttempts = {}
+
   asynclib.auto({
     downloadFromOverpass: function (cb) {
       console.log('downloading from overpass')
       fetchIfNeeded(boundaryFilename, boundaryCallback, cb, function () {
-        var overpassResponseHandler = function (err, data) {
+        const overpassResponseHandler = function (err, data, overpassAttempt) {
+          if (overpassAttempts[overpassAttempt]) {
+            // Skip duplicate callback
+            return
+          }
+          overpassAttempts[overpassAttempt] = true
           if (err) {
             console.log(err)
             console.log('Increasing overpass request gap')
@@ -274,10 +284,15 @@ var downloadOsmBoundary = function (boundaryId, boundaryCallback) {
             cb(null, data)
           }
         }
-        var makeQuery = function () {
+        const makeQuery = function () {
           console.log('waiting ' + curRequestGap + ' seconds')
           setTimeout(function () {
-            overpass(query, overpassResponseHandler, { flatProperties: true })
+            curOverpassQueryAttempt++
+            overpass(
+              query, 
+              (err, data) => overpassResponseHandler(err, data, curOverpassQueryAttempt), 
+              { flatProperties: true }
+            )
           }, curRequestGap * 1000)
         }
         makeQuery()
