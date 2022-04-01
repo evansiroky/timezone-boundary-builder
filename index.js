@@ -125,8 +125,8 @@ var precisionModel = new jsts.geom.PrecisionModel(1000000)
 var precisionReducer = new jsts.precision.GeometryPrecisionReducer(precisionModel)
 var finalZones = {}
 var lastReleaseJSONfile
-var minRequestGap = 4
-var curRequestGap = 4
+var minRequestGap = 8
+var curRequestGap = 8
 const bufferDistance = 0.01
 
 var safeMkdir = function (dirname, callback) {
