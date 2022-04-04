@@ -32,6 +32,18 @@
       "description": "Allow disputed area near Machias Seal Island (https://en.wikipedia.org/wiki/Machias_Seal_Island) to overlap."
     }
   ],
+  "America/Nuuk-America/Pangnirtung": [
+    {
+      "bounds": [-66.6, 80.8, -66.3, 80.9],
+      "description": "Allow disupted borders of Greenland and Canada (https://en.wikipedia.org/wiki/Hans_Island) to overlap."
+    }
+  ],
+  "America/Sitka-America/Vancouver": [
+    {
+      "bounds": [-133.2, 54.4, -130.6, 54.8],
+      "description": "Allow disputed area in Dixon Entrance (https://en.wikipedia.org/wiki/Dixon_Entrance#Boundary_dispute) to overlap."
+    }
+  ],
   "Asia/Bangkok-Asia/Yangon": [
     {
       "bounds": [98.3, 9.7, 98.6, 10],
