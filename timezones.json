@@ -696,11 +696,11 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Atikokan-tz"
+      "id": "America-Atikokan-tz"
     }, {
       "op": "difference",
       "source": "overpass",
-      "id": "Iqaluit-tz"
+      "id": "America-Iqaluit-tz"
     }
   ],
   "America/Bahia": [
@@ -737,7 +737,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Belem-tz"
+      "id": "America-Belem-tz"
     }
   ],
   "America/Belize": [
@@ -751,7 +751,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Blanc Sablon-tz"
+      "id": "America-Blanc_Sablon-tz"
     }
   ],
   "America/Boa_Vista": [
@@ -772,14 +772,14 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Boise-tz"
+      "id": "America-Boise-tz"
     }
   ],
   "America/Cambridge_Bay": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Cambridge Bay-tz"
+      "id": "America-Cambridge_Bay-tz"
     }
   ],
   "America/Campo_Grande": [
@@ -793,7 +793,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Cancun-tz"
+      "id": "America-Cancun-tz"
     }
   ],
   "America/Caracas": [
@@ -1081,7 +1081,7 @@
     }, {
       "op": "difference",
       "source": "overpass",
-      "id": "Ojinaga-tz"
+      "id": "America-Ojinaga-tz"
     }
   ],
   "America/Costa_Rica": [
@@ -1095,7 +1095,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Creston-tz"
+      "id": "America-Creston-tz"
     }
   ],
   "America/Cuiaba": [
@@ -1140,14 +1140,14 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Dawson Creek-tz"
+      "id": "America-Dawson_Creek-tz"
     }
   ],
   "America/Denver": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Denver-tz"
+      "id": "America-Denver-tz"
     }, {
       "op": "union",
       "source": "overpass",
@@ -1155,7 +1155,7 @@
     }, {
       "op": "difference",
       "source": "overpass",
-      "id": "Boise-tz"
+      "id": "America-Boise-tz"
     }, {
       "op": "difference",
       "source": "overpass",
@@ -1235,22 +1235,22 @@
     }, {
       "op": "union",
       "source": "overpass",
-      "id": "Edmonton-tz"
+      "id": "America-Edmonton-tz"
     }, {
       "op": "difference",
       "source": "overpass",
-      "id": "Vancouver-tz"
+      "id": "America-Vancouver-tz"
     }, {
       "op": "difference",
       "source": "overpass",
-      "id": "Creston-tz"
+      "id": "America-Creston-tz"
     }
   ],
   "America/Eirunepe": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Eirunepe-tz"
+      "id": "America-Eirunepe-tz"
     }
   ],
   "America/El_Salvador": [
@@ -1292,14 +1292,14 @@
     }, {
       "op": "difference",
       "source": "overpass",
-      "id": "Belem-tz"
+      "id": "America-Belem-tz"
     }
   ],
   "America/Glace_Bay": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Glace Bay-tz"
+      "id": "America-Glace_Bay-tz"
     }
   ],
   "America/Goose_Bay": [
@@ -1319,7 +1319,7 @@
     }, {
       "op": "difference",
       "source": "overpass",
-      "id": "Pangnirtung-tz"
+      "id": "America-Pangnirtung-tz"
     }
   ],
   "America/Grand_Turk": [
@@ -1373,7 +1373,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Halifax-tz"
+      "id": "America-Halifax-tz"
     }
   ],
   "America/Havana": [
@@ -1408,7 +1408,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Indianapolis-tz"
+      "id": "America-Indiana-Indianapolis-tz"
     }
   ],
   "America/Indiana/Knox": [
@@ -1450,7 +1450,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Vincennes-tz"
+      "id": "America-Indiana-Vincennes-tz"
     }
   ],
   "America/Indiana/Winamac": [
@@ -1476,7 +1476,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Iqaluit-tz"
+      "id": "America-Iqaluit-tz"
     }
   ],
   "America/Jamaica": [
@@ -1553,7 +1553,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Los Angeles-tz"
+      "id": "America-Los_Angeles-tz"
     }, {
       "op": "difference",
       "source": "overpass",
@@ -1599,7 +1599,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Manaus-tz"
+      "id": "America-Manaus-tz"
     }
   ],
   "America/Marigot": [
@@ -1630,7 +1630,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Matamoros-tz"
+      "id": "America-Matamoros-tz"
     }
   ],
   "America/Mazatlan": [
@@ -1687,7 +1687,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Merida-tz"
+      "id": "America-Merida-tz"
     }
   ],
   "America/Metlakatla": [
@@ -1745,7 +1745,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Monterrey-tz"
+      "id": "America-Monterrey-tz"
     }
   ],
   "America/Montevideo": [
@@ -1891,7 +1891,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Nipigon-tz"
+      "id": "America-Nipigon-tz"
     }
   ],
   "America/Nome": [
@@ -1965,7 +1965,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Ojinaga-tz"
+      "id": "America-Ojinaga-tz"
     }
   ],
   "America/Panama": [
@@ -1979,7 +1979,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Pangnirtung-tz"
+      "id": "America-Pangnirtung-tz"
     }
   ],
   "America/Paramaribo": [
@@ -1993,7 +1993,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Phoenix-tz"
+      "id": "America-Phoenix-tz"
     }, {
       "op": "union",
       "source": "overpass",
@@ -2054,14 +2054,14 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Rainy River-tz"
+      "id": "America-Rainy_River-tz"
     }
   ],
   "America/Rankin_Inlet": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Rankin Inlet-tz"
+      "id": "America-Rankin_Inlet-tz"
     }
   ],
   "America/Recife": [
@@ -2080,14 +2080,14 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Regina-tz"
+      "id": "America-Regina-tz"
     }
   ],
   "America/Resolute": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Resolute-tz"
+      "id": "America-Resolute-tz"
     }
   ],
   "America/Rio_Branco": [
@@ -2101,7 +2101,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Santarem-tz"
+      "id": "America-Santarem-tz"
     }
   ],
   "America/Santiago": [
@@ -2217,7 +2217,7 @@
     }, {
       "op": "difference",
       "source": "overpass",
-      "id": "Glace Bay-tz"
+      "id": "America-Glace_Bay-tz"
     }
   ],
   "America/St_Kitts": [
@@ -2257,7 +2257,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Swift Current-tz"
+      "id": "America-Swift_Current-tz"
     }
   ],
   "America/Tegucigalpa": [
@@ -2283,7 +2283,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Thunder Bay-tz"
+      "id": "America-Thunder_Bay-tz"
     }
   ],
   "America/Tijuana": [
@@ -2306,7 +2306,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Toronto-tz"
+      "id": "America-Toronto-tz"
     }
   ],
   "America/Tortola": [
@@ -2329,7 +2329,7 @@
     }, {
       "op": "union",
       "source": "overpass",
-      "id": "Vancouver-tz"
+      "id": "America-Vancouver-tz"
     }, {
       "op": "difference",
       "source": "overpass",
@@ -2352,7 +2352,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Winnipeg-tz"
+      "id": "America-Winnipeg-tz"
     }
   ],
   "America/Yakutat": [
@@ -3067,7 +3067,7 @@
     }, {
       "op": "difference",
       "source": "overpass",
-      "id": "Yekaterinburg-tz"
+      "id": "Asia-Yekaterinburg-tz"
     }
   ],
   "Asia/Oral": [
@@ -3221,7 +3221,7 @@
     }, {
       "op": "difference",
       "source": "overpass",
-      "id": "Vladivostok-tz"
+      "id": "Asia-Vladivostok-tz"
     }, {
       "op": "difference",
       "source": "overpass",
@@ -3229,7 +3229,7 @@
     }, {
       "op": "union",
       "source": "overpass",
-      "id": "Srednekolymsk-tz"
+      "id": "Asia-Srednekolymsk-tz"
     }
   ],
   "Asia/Taipei": [
@@ -3362,7 +3362,7 @@
     }, {
       "op": "difference",
       "source": "overpass",
-      "id": "Srednekolymsk-tz"
+      "id": "Asia-Srednekolymsk-tz"
     }
   ],
   "Asia/Vientiane": [
@@ -3385,7 +3385,7 @@
     }, {
       "op": "union",
       "source": "overpass",
-      "id": "Vladivostok-tz"
+      "id": "Asia-Vladivostok-tz"
     }, {
       "op": "difference",
       "source": "overpass",
@@ -3409,7 +3409,7 @@
     }, {
       "op": "difference",
       "source": "overpass",
-      "id": "Vladivostok-tz"
+      "id": "Asia-Vladivostok-tz"
     }, {
       "op": "difference",
       "source": "overpass",
@@ -3421,7 +3421,7 @@
     }, {
       "op": "difference",
       "source": "overpass",
-      "id": "Srednekolymsk-tz"
+      "id": "Asia-Srednekolymsk-tz"
     }, {
       "op": "difference",
       "source": "overpass",
@@ -3439,7 +3439,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Yekaterinburg-tz"
+      "id": "Asia-Yekaterinburg-tz"
     }, {
       "op": "difference",
       "source": "overpass",
@@ -3555,11 +3555,11 @@
     }, {
       "op": "difference",
       "source": "overpass",
-      "id": "Perth-tz"
+      "id": "Australia-Perth-tz"
     }, {
       "op": "difference",
       "source": "overpass",
-      "id": "Eucla-tz"
+      "id": "Australia-Eucla-tz"
     }, {
       "op": "union",
       "source": "overpass",
@@ -3579,7 +3579,7 @@
     }, {
       "op": "difference",
       "source": "overpass",
-      "id": "Sydney-tz"
+      "id": "Australia-Sydney-tz"
     }, {
       "op": "union",
       "source": "overpass",
@@ -3595,7 +3595,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Broken_Hill-tz"
+      "id": "Australia-Broken_Hill-tz"
     }
   ],
   "Australia/Darwin": [
@@ -3611,7 +3611,7 @@
     }, {
       "op": "difference",
       "source": "overpass",
-      "id": "Perth-tz"
+      "id": "Australia-Perth-tz"
     }, {
       "op": "union",
       "source": "overpass",
@@ -3622,7 +3622,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Eucla-tz"
+      "id": "Australia-Eucla-tz"
     }
   ],
   "Australia/Hobart": [
@@ -3674,7 +3674,7 @@
     }, {
       "op": "difference",
       "source": "overpass",
-      "id": "Sydney-tz"
+      "id": "Australia-Sydney-tz"
     }, {
       "op": "union",
       "source": "overpass",
@@ -3685,7 +3685,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Perth-tz"
+      "id": "Australia-Perth-tz"
     }, {
       "op": "union",
       "source": "manual-polygon",
@@ -3694,7 +3694,7 @@
     }, {
       "op": "difference",
       "source": "overpass",
-      "id": "Eucla-tz",
+      "id": "Australia-Eucla-tz",
       "description": "Remove Eucla portion since it's also added to the Western Australia relation."
     }
   ],
@@ -3702,7 +3702,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Sydney-tz"
+      "id": "Australia-Sydney-tz"
     }
   ],
   "Etc/UTC": [
@@ -3745,7 +3745,7 @@
     }, {
       "op": "difference",
       "source": "overpass",
-      "id": "Moscow-tz"
+      "id": "Europe-Moscow-tz"
     }
   ],
   "Europe/Athens": [
@@ -3923,7 +3923,7 @@
     }, {
       "op": "difference",
       "source": "overpass",
-      "id": "Yekaterinburg-tz"
+      "id": "Asia-Yekaterinburg-tz"
     }
   ],
   "Europe/Lisbon": [
@@ -4011,7 +4011,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Moscow-tz"
+      "id": "Europe-Moscow-tz"
     }, {
       "op": "difference",
       "source": "overpass",
@@ -4040,7 +4040,7 @@
     }, {
       "op": "difference",
       "source": "overpass",
-      "id": "Yekaterinburg-tz"
+      "id": "Asia-Yekaterinburg-tz"
     }
   ],
   "Europe/Oslo": [

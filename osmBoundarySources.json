@@ -1,22 +1,4 @@
 {
-  "鲁林地区": {
-    "name": "鲁林地区"
-  },
-  "查马普地区": {
-    "name": "查马普地区"
-  },
-  "基伍地区": {
-    "name": "基伍地区"
-  },
-  "中国实控白玉地区": {
-    "name:zh": "中国实控白玉地区"
-  },
-  "שטח B": {
-    "name:he": "שטח B"
-  },
-  "שטח C": {
-    "name:he": "שטח C"
-  },
   "Acre": {
     "ISO3166-2": "BR-AC"
   },
@@ -47,6 +29,111 @@
   },
   "Altai Republic": {
     "ISO3166-2": "RU-AL"
+  },
+  "America-Atikokan-tz": {
+    "timezone": "America/Atikokan"
+  },
+  "America-Belem-tz": {
+    "timezone": "America/Belem"
+  },
+  "America-Blanc_Sablon-tz": {
+    "timezone": "America/Blanc-Sablon"
+  },
+  "America-Boise-tz": {
+    "timezone": "America/Boise"
+  },
+  "America-Cambridge_Bay-tz": {
+    "timezone": "America/Cambridge_Bay"
+  },
+  "America-Cancun-tz": {
+    "timezone": "America/Cancun"
+  },
+  "America-Creston-tz": {
+    "name": "America/Creston"
+  },
+  "America-Dawson_Creek-tz": {
+    "timezone": "America/Dawson_Creek"
+  },
+  "America-Denver-tz": {
+    "timezone": "America/Denver"
+  },
+  "America-Edmonton-tz": {
+    "timezone": "America/Edmonton"
+  },
+  "America-Eirunepe-tz": {
+    "timezone": "America/Eirunepe"
+  },
+  "America-Glace_Bay-tz": {
+    "timezone": "America/Glace_Bay"
+  },
+  "America-Halifax-tz": {
+    "timezone": "America/Halifax"
+  },
+  "America-Indiana-Indianapolis-tz": {
+    "timezone": "America/Indiana/Indianapolis"
+  },
+  "America-Indiana-Vincennes-tz": {
+    "timezone": "America/Indiana/Vincennes"
+  },
+  "America-Iqaluit-tz": {
+    "timezone": "America/Iqaluit"
+  },
+  "America-Los_Angeles-tz": {
+    "timezone": "America/Los_Angeles"
+  },
+  "America-Manaus-tz": {
+    "timezone": "America/Manaus"
+  },
+  "America-Matamoros-tz": {
+    "timezone": "America/Matamoros"
+  },
+  "America-Merida-tz": {
+    "timezone": "America/Merida"
+  },
+  "America-Monterrey-tz": {
+    "timezone": "America/Monterrey"
+  },
+  "America-Nipigon-tz": {
+    "timezone": "America/Nipigon"
+  },
+  "America-Ojinaga-tz": {
+    "timezone": "America/Ojinaga"
+  },
+  "America-Pangnirtung-tz": {
+    "timezone": "America/Pangnirtung"
+  },
+  "America-Phoenix-tz": {
+    "timezone": "America/Phoenix"
+  },
+  "America-Rainy_River-tz": {
+    "timezone": "America/Rainy_River"
+  },
+  "America-Rankin_Inlet-tz": {
+    "timezone": "America/Rankin_Inlet"
+  },
+  "America-Regina-tz": {
+    "timezone": "America/Regina"
+  },
+  "America-Resolute-tz": {
+    "timezone": "America/Resolute"
+  },
+  "America-Santarem-tz": {
+    "timezone": "America/Santarem"
+  },
+  "America-Swift_Current-tz": {
+    "timezone": "America/Swift_Current"
+  },
+  "America-Thunder_Bay-tz": {
+    "timezone": "America/Thunder_Bay"
+  },
+  "America-Toronto-tz": {
+    "timezone": "America/Toronto"
+  },
+  "America-Vancouver-tz": {
+    "timezone": "America/Vancouver"
+  },
+  "America-Winnipeg-tz": {
+    "timezone": "America/Winnipeg"
   },
   "Amur": {
     "ISO3166-2": "RU-AMU"
@@ -80,6 +167,15 @@
   "Aruba": {
     "ISO3166-1": "AW"
   },
+  "Asia-Srednekolymsk-tz": {
+    "timezone": "Asia/Srednekolymsk"
+  },
+  "Asia-Vladivostok-tz": {
+    "timezone": "Asia/Vladivostok"
+  },
+  "Asia-Yekaterinburg-tz": {
+    "timezone": "Asia/Yekaterinburg"
+  },
   "Astrakhan": {
     "ISO3166-2": "RU-AST"
   },
@@ -89,29 +185,35 @@
   "Australia": {
     "ISO3166-1": "AU"
   },
+  "Australia-Broken_Hill-tz": {
+    "timezone": "Australia/Broken_Hill"
+  },
+  "Australia-Eucla-tz": {
+    "timezone": "Australia/Eucla"
+  },
+  "Australia-Perth-tz": {
+    "timezone": "Australia/Perth"
+  },
+  "Australia-Sydney-tz": {
+    "timezone": "Australia/Sydney"
+  },
   "Austria": {
     "ISO3166-1": "AT"
   },
   "Autonomous Region of Bougainville": {
     "ISO3166-2": "PG-NSB"
   },
-  "Atikokan-tz": {
-    "timezone": "America/Atikokan"
-  },
   "Azerbaijan": {
     "ISO3166-1": "AZ"
-  },
-  "Åland Islands": {
-    "ISO3166-2": "FI-01"
   },
   "Bahia": {
     "ISO3166-2": "BR-BA"
   },
-  "Bahía de Banderas": {
-    "name": "Bahía de Banderas"
-  },
   "Bahrain": {
     "ISO3166-1": "BH"
+  },
+  "Bahía de Banderas": {
+    "name": "Bahía de Banderas"
   },
   "Bangladesh": {
     "ISO3166-1": "BD"
@@ -130,9 +232,6 @@
   "Belarus": {
     "ISO3166-1": "BY"
   },
-  "Belem-tz": {
-    "timezone": "America/Belem"
-  },
   "Belgium": {
     "ISO3166-1": "BE"
   },
@@ -145,24 +244,15 @@
   "Bermuda": {
     "ISO3166-1": "BM"
   },
+  "Bhutan": {
+    "ISO3166-1": "BT"
+  },
   "Bir Tawil": {
     "alt_name:en": "Bi'r Tawīl"
-  },
-  "Blanc Sablon-tz": {
-    "timezone": "America/Blanc-Sablon"
   },
   "Bledsoe County, TN": {
     "name": "Bledsoe County",
     "nist:state_fips": "47"
-  },
-  "Buenos Aires": {
-    "ISO3166-2": "AR-B"
-  },
-  "Bhutan": {
-    "ISO3166-1": "BT"
-  },
-  "Boise-tz": {
-    "timezone": "America/Boise"
   },
   "Bolivia": {
     "ISO3166-1": "BO"
@@ -192,11 +282,11 @@
   "British Virgin Islands": {
     "ISO3166-1": "VG"
   },
-  "Broken_Hill-tz": {
-    "timezone": "Australia/Broken_Hill"
-  },
   "Brunei": {
     "ISO3166-1": "BN"
+  },
+  "Buenos Aires": {
+    "ISO3166-2": "AR-B"
   },
   "Bulgaria": {
     "ISO3166-1": "BG"
@@ -214,9 +304,6 @@
     "name": "Calhoun County",
     "nist:state_fips": "12"
   },
-  "Cambridge Bay-tz": {
-    "timezone": "America/Cambridge_Bay"
-  },
   "Cambodia": {
     "ISO3166-1": "KH"
   },
@@ -225,9 +312,6 @@
   },
   "Canada": {
     "ISO3166-1": "CA"
-  },
-  "Cancun-tz": {
-    "timezone": "America/Cancun"
   },
   "Cape Verde": {
     "ISO3166-1": "CV"
@@ -304,18 +388,9 @@
   "Costa Rica": {
     "ISO3166-1": "CR"
   },
-  "Córdoba": {
-    "ISO3166-2": "AR-X"
-  },
-  "Côte d'Ivoire": {
-    "ISO3166-1": "CI"
-  },
   "Crawford County, IN": {
     "name": "Crawford County",
     "nist:state_fips": "18"
-  },
-  "Creston-tz": {
-    "name": "America/Creston"
   },
   "Crimea": {
     "name:en": "Republic of Crimea"
@@ -326,12 +401,12 @@
   "Cuba": {
     "ISO3166-1": "CU"
   },
-  "Curaçao": {
-    "ISO3166-1": "CW"
-  },
   "Cumberland County, TN": {
     "name": "Cumberland County",
     "nist:state_fips": "47"
+  },
+  "Curaçao": {
+    "ISO3166-1": "CW"
   },
   "Cyprus": {
     "ISO3166-1": "CY"
@@ -339,21 +414,21 @@
   "Czech Republic": {
     "ISO3166-1": "CZ"
   },
-  "Dawson Creek-tz": {
-    "timezone": "America/Dawson_Creek"
+  "Córdoba": {
+    "ISO3166-2": "AR-X"
+  },
+  "Côte d'Ivoire": {
+    "ISO3166-1": "CI"
   },
   "Dearborn County, IN": {
     "name": "Dearborn County",
     "nist:state_fips": "18"
   },
-  "Denver-tz": {
-    "timezone": "America/Denver"
+  "Denmark": {
+    "ISO3166-1": "DK"
   },
   "Departamento Atlántico": {
     "name": "Departamento Atlántico"
-  },
-  "Denmark": {
-    "ISO3166-1": "DK"
   },
   "Dewey County, SD": {
     "name": "Dewey County",
@@ -395,14 +470,8 @@
   "Ecuador": {
     "ISO3166-1": "EC"
   },
-  "Edmonton-tz": {
-    "timezone": "America/Edmonton"
-  },
   "Egypt": {
     "ISO3166-1": "EG"
-  },
-  "Eirunepe-tz": {
-    "timezone": "America/Eirunepe"
   },
   "El Salvador": {
     "ISO3166-1": "SV"
@@ -422,8 +491,8 @@
   "Ethiopia": {
     "ISO3166-1": "ET"
   },
-  "Eucla-tz": {
-    "timezone": "Australia/Eucla"
+  "Europe-Moscow-tz": {
+    "timezone": "Europe/Moscow"
   },
   "Falkland Islands": {
     "ISO3166-1": "FK"
@@ -473,10 +542,6 @@
   "Gibson County, IN": {
     "name": "Gibson County",
     "nist:state_fips": "18"
-  },
-  "Glace Bay-tz": {
-    "boundary": "timezone",
-    "name": "America/Glace_Bay Timezone"
   },
   "Gogebic County": {
     "name": "Gogebic County"
@@ -530,20 +595,17 @@
   "Haiti": {
     "ISO3166-1": "HT"
   },
-  "Halifax-tz": {
-    "timezone": "America/Halifax"
-  },
   "Hamilton County, KS": {
     "name": "Hamilton County",
     "nist:state_fips": "20"
   },
-  "Hart County, KY": {
-    "name": "Hart County",
-    "nist:state_fips": "21"
-  },
   "Harrison County, IN": {
     "name": "Harrison County",
     "nist:state_fips": "18"
+  },
+  "Hart County, KY": {
+    "name": "Hart County",
+    "nist:state_fips": "21"
   },
   "Honduras": {
     "ISO3166-1": "HN"
@@ -581,9 +643,6 @@
   "Indiana": {
     "ISO3166-2": "US-IN"
   },
-  "Indianapolis-tz": {
-    "timezone": "America/Indiana/Indianapolis"
-  },
   "Indonesia": {
     "name": "Indonesia"
   },
@@ -602,9 +661,6 @@
   "Iron County, MI": {
     "name": "Iron County",
     "nist:state_fips": "26"
-  },
-  "Iqaluit-tz": {
-    "timezone": "America/Iqaluit"
   },
   "Isle of Man": {
     "ISO3166-1": "IM"
@@ -712,12 +768,12 @@
   "La Rioja": {
     "ISO3166-2": "AR-F"
   },
-  "Laos": {
-    "ISO3166-1": "LA"
-  },
   "LaPorte County, IN": {
     "name": "LaPorte County",
     "nist:state_fips": "18"
+  },
+  "Laos": {
+    "ISO3166-1": "LA"
   },
   "Latvia": {
     "ISO3166-1": "LV"
@@ -743,9 +799,6 @@
   },
   "Lithuania": {
     "ISO3166-1": "LT"
-  },
-  "Los Angeles-tz": {
-    "timezone": "America/Los_Angeles"
   },
   "Luxemburg": {
     "ISO3166-1": "LU"
@@ -783,9 +836,6 @@
   "Maluku": {
     "ISO3166-2": "ID-MA"
   },
-  "Manaus-tz": {
-    "timezone": "America/Manaus"
-  },
   "Mangystau Region": {
     "ISO3166-2": "KZ-MAN"
   },
@@ -799,24 +849,25 @@
   "Martinique": {
     "ISO3166-1": "MQ"
   },
+  "Mato Grosso do Sul": {
+    "ISO3166-2": "BR-MS"
+  },
+  "Mato Grosso": {
+    "ISO3166-2": "BR-MT"
+  },
   "Mauritania": {
     "ISO3166-1": "MR"
   },
   "Mauritius": {
     "ISO3166-1": "MU"
   },
-  "Matamoros-tz": {
-    "timezone": "America/Matamoros"
-  },
-  "Mato Grosso": {
-    "ISO3166-2": "BR-MT"
-  },
-  "Mato Grosso do Sul": {
-    "ISO3166-2": "BR-MS"
-  },
   "McLean County, ND": {
     "name": "McLean County",
     "nist:state_fips": "38"
+  },
+  "Mellette County, SD": {
+    "name": "Mellette County",
+    "nist:state_fips": "46"
   },
   "Mendoza": {
     "ISO3166-2": "AR-M"
@@ -828,13 +879,6 @@
   "Mercer County, ND": {
     "name": "Mercer County",
     "nist:state_fips": "38"
-  },
-  "Mellette County, SD": {
-    "name": "Mellette County",
-    "nist:state_fips": "46"
-  },
-  "Merida-tz": {
-    "timezone": "America/Merida"
   },
   "Mexico": {
     "ISO3166-1": "MX"
@@ -860,9 +904,6 @@
   "Montenegro": {
     "ISO3166-1": "ME"
   },
-  "Monterrey-tz": {
-    "timezone": "America/Monterrey"
-  },
   "Montserrat": {
     "ISO3166-1": "MS"
   },
@@ -872,9 +913,6 @@
   "Morton County, ND": {
     "name": "Morton County",
     "nist:state_fips": "38"
-  },
-  "Moscow-tz": {
-    "timezone": "Europe/Moscow"
   },
   "Mozambique": {
     "ISO3166-1": "MZ"
@@ -919,9 +957,6 @@
   "Nigeria": {
     "ISO3166-1": "NG"
   },
-  "Nipigon-tz": {
-    "timezone": "America/Nipigon"
-  },
   "Niue": {
     "ISO3166-1": "NU"
   },
@@ -949,9 +984,6 @@
   "Ohio County, IN": {
     "name": "Ohio County",
     "nist:state_fips": "18"
-  },
-  "Ojinaga-tz": {
-    "timezone": "America/Ojinaga"
   },
   "Oliver County, ND": {
     "name": "Oliver County",
@@ -982,48 +1014,39 @@
   "Panama": {
     "ISO3166-1": "PA"
   },
-  "Pangnirtung-tz": {
-    "timezone": "America/Pangnirtung"
-  },
   "Papua New Guinea": {
     "ISO3166-1": "PG"
   },
   "Paraguay": {
     "ISO3166-1": "PY"
   },
-  "Pernambuco": {
-    "ISO3166-2": "BR-PE"
-  },
-  "Peru": {
-    "ISO3166-1:alpha2": "PE"
-  },
   "Perkins County, NE": {
     "name": "Perkins County",
     "nist:state_fips": "31"
+  },
+  "Pernambuco": {
+    "ISO3166-2": "BR-PE"
   },
   "Perry County, IN": {
     "name": "Perry County",
     "nist:state_fips": "18"
   },
-  "Perth-tz": {
-    "timezone": "Australia/Perth"
+  "Peru": {
+    "ISO3166-1:alpha2": "PE"
   },
   "Philippines": {
     "ISO3166-1": "PH"
-  },
-  "Phoenix-tz": {
-    "timezone": "America/Phoenix"
   },
   "Pickett County, TN": {
     "name": "Pickett County",
     "nist:state_fips": "47"
   },
-  "Pitcairn Islands": {
-    "ISO3166-1": "PN"
-  },
   "Pike County, IN": {
     "name": "Pike County",
     "nist:state_fips": "18"
+  },
+  "Pitcairn Islands": {
+    "ISO3166-1": "PN"
   },
   "Pohnpei": {
     "ISO3166-2": "FM-PNI"
@@ -1057,23 +1080,11 @@
   "Queensland": {
     "ISO3166-2": "AU-QLD"
   },
-  "Rainy River-tz": {
-    "timezone": "America/Rainy_River"
-  },
-  "Rankin Inlet-tz": {
-    "timezone": "America/Rankin_Inlet"
-  },
-  "Regina-tz": {
-    "timezone": "America/Regina"
-  },
   "Republic of China": {
     "ISO3166-1": "TW"
   },
   "Republic of Kosovo": {
     "ISO3166-1": "XK"
-  },
-  "Resolute-tz": {
-    "timezone": "America/Resolute"
   },
   "Rio Negro": {
     "ISO3166-2": "AR-R"
@@ -1094,9 +1105,6 @@
   "Rwanda": {
     "ISO3166-1": "RW"
   },
-  "Saint-Barthélemy": {
-    "ISO3166-1": "BL"
-  },
   "Saint Helena, Ascension and Tristan da Cunha": {
     "ISO3166-1": "SH"
   },
@@ -1115,14 +1123,17 @@
   "Saint Vincent and the Grenadines": {
     "ISO3166-1": "VC"
   },
-  "Salta": {
-    "ISO3166-2": "AR-A"
+  "Saint-Barthélemy": {
+    "ISO3166-1": "BL"
   },
   "Sakha Republic": {
     "ISO3166-2": "RU-SA"
   },
   "Sakhalin": {
     "ISO3166-2": "RU-SAK"
+  },
+  "Salta": {
+    "ISO3166-2": "AR-A"
   },
   "Samara": {
     "ISO3166-2": "RU-SAM"
@@ -1136,11 +1147,11 @@
   "San Juan": {
     "ISO3166-2": "AR-J"
   },
-  "San Luis": {
-    "ISO3166-2": "AR-D"
-  },
   "San Luis Potosí": {
     "ISO3166-2": "MX-SLP"
+  },
+  "San Luis": {
+    "ISO3166-2": "AR-D"
   },
   "San Marino": {
     "ISO3166-1": "SM"
@@ -1152,9 +1163,6 @@
   "Santa Fe": {
     "ISO3166-2": "AR-S"
   },
-  "Santarem-tz": {
-    "timezone": "America/Santarem"
-  },
   "Santiago del Estero": {
     "ISO3166-2": "AR-G"
   },
@@ -1164,21 +1172,18 @@
   "Saudi Arabia": {
     "ISO3166-1": "SA"
   },
-  "São Tomé and Príncipe": {
-    "ISO3166-1": "ST"
-  },
   "Senegal": {
     "ISO3166-1": "SN"
+  },
+  "Sequatchie County, TN": {
+    "name": "Sequatchie County",
+    "nist:state_fips": "47"
   },
   "Serbia": {
     "ISO3166-1": "RS"
   },
   "Sergipe": {
     "ISO3166-2": "BR-SE"
-  },
-  "Sequatchie County, TN": {
-    "name": "Sequatchie County",
-    "nist:state_fips": "47"
   },
   "Sevastopol": {
     "name:en": "Sevastopol"
@@ -1240,9 +1245,6 @@
   "Spain": {
     "ISO3166-1:alpha2": "ES"
   },
-  "Srednekolymsk-tz": {
-    "timezone": "Asia/Srednekolymsk"
-  },
   "Sri Lanka": {
     "ISO3166-1": "LK"
   },
@@ -1260,31 +1262,27 @@
   "Suriname": {
     "ISO3166-1": "SR"
   },
-  "Sühbaatar": {
-    "ISO3166-2": "MN-051"
-  },
   "Swaziland": {
     "ISO3166-1": "SZ"
   },
   "Sweden": {
     "ISO3166-1": "SE"
   },
-  "Swift Current-tz": {
-    "boundary": "timezone",
-    "name": "America/Swift_Current timezone"
-  },
-  "Switzerland": {
-    "ISO3166-1": "CH"
-  },
   "Switzerland County, IN": {
     "name": "Switzerland County",
     "nist:state_fips": "18"
   },
-  "Sydney-tz": {
-    "timezone": "Australia/Sydney"
+  "Switzerland": {
+    "ISO3166-1": "CH"
   },
   "Syria": {
     "ISO3166-1": "SY"
+  },
+  "São Tomé and Príncipe": {
+    "ISO3166-1": "ST"
+  },
+  "Sühbaatar": {
+    "ISO3166-2": "MN-051"
   },
   "Tabasco": {
     "ISO3166-2": "MX-TAB"
@@ -1312,9 +1310,6 @@
     "name": "Thomas County",
     "nist:state_fips": "31"
   },
-  "Thunder Bay-tz": {
-    "timezone": "America/Thunder_Bay"
-  },
   "Tocantins": {
     "ISO3166-2": "BR-TO"
   },
@@ -1336,9 +1331,6 @@
   },
   "Tonga": {
     "ISO3166-1": "TO"
-  },
-  "Toronto-tz": {
-    "timezone": "America/Toronto"
   },
   "Trinidad and Tobago": {
     "ISO3166-1": "TT"
@@ -1374,11 +1366,11 @@
   "Uganda": {
     "ISO3166-1": "UG"
   },
-  "Ulyanovsk": {
-    "ISO3166-2": "RU-ULY"
-  },
   "Ukraine": {
     "ISO3166-1": "UA"
+  },
+  "Ulyanovsk": {
+    "ISO3166-2": "RU-ULY"
   },
   "United Arab Emirates": {
     "ISO3166-1": "AE"
@@ -1401,9 +1393,6 @@
   "Uzbekistan": {
     "ISO3166-1": "UZ"
   },
-  "Vancouver-tz": {
-    "timezone": "America/Vancouver"
-  },
   "Vanuatu": {
     "ISO3166-1": "VU"
   },
@@ -1421,12 +1410,6 @@
   },
   "Vietnam": {
     "ISO3166-1": "VN"
-  },
-  "Vincennes-tz": {
-    "timezone": "America/Indiana/Vincennes"
-  },
-  "Vladivostok-tz": {
-    "timezone": "Asia/Vladivostok"
   },
   "Volgograd": {
     "ISO3166-2": "RU-VGG"
@@ -1451,17 +1434,11 @@
   "Western Sahara": {
     "ISO3166-1": "EH"
   },
-  "Winnipeg-tz": {
-    "timezone": "America/Winnipeg"
-  },
   "Xinjiang": {
     "ISO3166-2": "CN-XJ"
   },
   "Yap": {
     "ISO3166-2": "FM-YAP"
-  },
-  "Yekaterinburg-tz": {
-    "timezone": "Asia/Yekaterinburg"
   },
   "Yemen": {
     "ISO3166-1": "YE"
@@ -1489,5 +1466,26 @@
   },
   "Zimbabwe": {
     "ISO3166-1": "ZW"
+  },
+  "Åland Islands": {
+    "ISO3166-2": "FI-01"
+  },
+  "שטח B": {
+    "name:he": "שטח B"
+  },
+  "שטח C": {
+    "name:he": "שטח C"
+  },
+  "中国实控白玉地区": {
+    "name:zh": "中国实控白玉地区"
+  },
+  "基伍地区": {
+    "name": "基伍地区"
+  },
+  "查马普地区": {
+    "name": "查马普地区"
+  },
+  "鲁林地区": {
+    "name": "鲁林地区"
   }
 }
