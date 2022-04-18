@@ -77,6 +77,7 @@ Other command line flags:
 
   + `--help` - show some basic usage information
   + `--skip_analyze_diffs` - do not analyze differences between the current output and another version
+  + `--skip_analyze_osm_tz_diffs` - do not download and analyze differences between timezone-boundary-builder output and raw OSM timezone relations
   + `--skip_shapefile` - do not create the shapefile from the geojson file
   + `--skip_validation` - do not validate the time zone boundaries
   + `--skip_zip` - do not zip the generated geojson files
