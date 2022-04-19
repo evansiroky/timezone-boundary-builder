@@ -820,32 +820,18 @@ var combineAndWriteZones = function (callback) {
 
 function combineAndWriteOSMZones(callback) {
   const osmZoneWriter = new FeatureWriterStream(workingDir + '/combined-osm-zones.json')
-  asynclib.each(
-    Object.keys(zoneCfg), 
-    (tzId, tzCallback) => {
-      const tzBoundayName = `${tzId.replaceAll('/', '-')}-tz`
-      const boundaryFilename = downloadsDir + '/' + tzBoundayName + '.json'
-      fs.readFile(boundaryFilename, (err, data) => {
-        if (err) {
-          return tzCallback(err)
-        }
-        const feature = {
-          type: 'Feature',
-          properties: { tzid: tzId },
-          geometry: data
-        }
-        const stringified = JSON.stringify(feature)
-        osmZoneWriter.add(stringified)
-        tzCallback()
-      })
-    }, 
-    err => {
-      if (err) {
-        return callback(err)
-      }
-      osmZoneWriter.end(callback)
+  Object.keys(zoneCfg).forEach(tzId => {
+    const tzBoundayName = `${tzId.replaceAll('/', '-')}-tz`
+    const boundaryFilename = downloadsDir + '/' + tzBoundayName + '.json'
+    const feature = {
+      type: 'Feature',
+      properties: { tzid: tzId },
+      geometry: require(boundaryFilename)
     }
-  )
+    const stringified = JSON.stringify(feature)
+    osmZoneWriter.add(stringified)
+  })
+  osmZoneWriter.end(callback)
 }
 
 var downloadLastRelease = function (cb) {
