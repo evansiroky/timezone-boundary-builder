@@ -288,6 +288,11 @@ function downloadFromOverpass (
   let curOverpassQueryAttempt = 0
   const overpassAttempts = {}
 
+  // query-overpass sometimes makes duplicate callbacks, so keep track of the callbacks and
+  // only do a next action once.
+  let curOverpassQueryAttempt = 0
+  const overpassAttempts = {}
+
   asynclib.auto({
     fetchFromOverpassIfNeeded: function (cb) {
       console.log('downloading from overpass')
@@ -887,7 +892,7 @@ var downloadLastRelease = function (cb) {
                   err => {
                     if (err) { return cb(err) }
 
-                    const srcFile = path.join(workingDir, 'combined-with-oceans.json')
+                    const srcFile = path.join(workingDir, 'combined.json')
                     console.log(`unzipped file: ${srcFile}`)
 
                     const destFile = lastReleaseJSONfile
