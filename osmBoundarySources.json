@@ -2,18 +2,11 @@
   "Acre": {
     "ISO3166-2": "BR-AC"
   },
-  "Adair County, KY": {
-    "name": "Adair County",
-    "nist:state_fips": "21"
-  },
   "Afghanistan": {
     "ISO3166-1": "AF"
   },
   "Aktobe": {
     "ISO3166-2": "KZ-AKT"
-  },
-  "Alabama": {
-    "ISO3166-2": "US-AL"
   },
   "Alagoas": {
     "ISO3166-2": "BR-AL"
@@ -47,6 +40,9 @@
   },
   "America-Cancun-tz": {
     "timezone": "America/Cancun"
+  },
+  "America-Chicago-tz": {
+    "timezone": "America/Chicago"
   },
   "America-Creston-tz": {
     "name": "America/Creston"
@@ -92,6 +88,9 @@
   },
   "America-Monterrey-tz": {
     "timezone": "America/Monterrey"
+  },
+  "America-New_York-tz": {
+    "timezone": "America/New_York"
   },
   "America-Nipigon-tz": {
     "timezone": "America/Nipigon"
@@ -160,10 +159,6 @@
   "Armenia": {
     "ISO3166-1": "AM"
   },
-  "Arthur County, NE": {
-    "name": "Arthur County",
-    "nist:state_fips": "31"
-  },
   "Aruba": {
     "ISO3166-1": "AW"
   },
@@ -225,10 +220,6 @@
     "name": "Bas-Uele",
     "admin_level": "4"
   },
-  "Bay County, FL": {
-    "name": "Bay County",
-    "nist:state_fips": "12"
-  },
   "Belarus": {
     "ISO3166-1": "BY"
   },
@@ -250,10 +241,6 @@
   "Bir Tawil": {
     "alt_name:en": "Bi'r Tawīl"
   },
-  "Bledsoe County, TN": {
-    "name": "Bledsoe County",
-    "nist:state_fips": "47"
-  },
   "Bolivia": {
     "ISO3166-1": "BO"
   },
@@ -268,10 +255,6 @@
   },
   "Brazil": {
     "ISO3166-1": "BR"
-  },
-  "Breckinridge County, KY": {
-    "name": "Breckinridge County",
-    "nist:state_fips": "21"
   },
   "British Indian Ocean Territory": {
     "ISO3166-1": "IO"
@@ -299,10 +282,6 @@
   },
   "Buryatia": {
     "ISO3166-2": "RU-BU"
-  },
-  "Calhoun County, FL": {
-    "name": "Calhoun County",
-    "nist:state_fips": "12"
   },
   "Cambodia": {
     "ISO3166-1": "KH"
@@ -334,10 +313,6 @@
   "Chad": {
     "ISO3166-1": "TD"
   },
-  "Chase County, NE": {
-    "name": "Chase County",
-    "nist:state_fips": "31"
-  },
   "Chihuahua": {
     "ISO3166-2": "MX-CHH"
   },
@@ -362,9 +337,6 @@
   },
   "Colombia": {
     "ISO3166-1": "CO"
-  },
-  "Colorado": {
-    "ISO3166-2": "US-CO"
   },
   "Comoros": {
     "ISO3166-1": "KM"
@@ -401,10 +373,6 @@
   "Cuba": {
     "ISO3166-1": "CU"
   },
-  "Cumberland County, TN": {
-    "name": "Cumberland County",
-    "nist:state_fips": "47"
-  },
   "Curaçao": {
     "ISO3166-1": "CW"
   },
@@ -419,10 +387,6 @@
   },
   "Côte d'Ivoire": {
     "ISO3166-1": "CI"
-  },
-  "Dearborn County, IN": {
-    "name": "Dearborn County",
-    "nist:state_fips": "18"
   },
   "Denmark": {
     "ISO3166-1": "DK"
@@ -452,14 +416,6 @@
   },
   "Dornod": {
     "ISO3166-2": "MN-061"
-  },
-  "Dubois County, IN": {
-    "name": "Dubois County",
-    "nist:state_fips": "18"
-  },
-  "Dundy County, NE": {
-    "name": "Dundy County",
-    "nist:state_fips": "31"
   },
   "East Java": {
     "name:en": "East Java"
@@ -500,10 +456,6 @@
   "Faroe Islands": {
     "ISO3166-1": "FO"
   },
-  "Fentress County, TN": {
-    "name": "Fentress County",
-    "nist:state_fips": "47"
-  },
   "Fiji": {
     "ISO3166-1": "FJ"
   },
@@ -520,10 +472,6 @@
   "France": {
     "ISO3166-1:alpha2": "FR"
   },
-  "Franklin County, FL": {
-    "name": "Franklin County",
-    "nist:state_fips": "12"
-  },
   "Gabon": {
     "ISO3166-1": "GA"
   },
@@ -539,10 +487,6 @@
   "Gibraltar": {
     "ISO3166-1": "GI"
   },
-  "Gibson County, IN": {
-    "name": "Gibson County",
-    "nist:state_fips": "18"
-  },
   "Gogebic County": {
     "name": "Gogebic County"
   },
@@ -553,20 +497,8 @@
     "name": "Grant County",
     "nist:state_fips": "38"
   },
-  "Grayson County, KY": {
-    "name": "Grayson County",
-    "nist:state_fips": "21"
-  },
   "Greece": {
     "ISO3166-1": "GR"
-  },
-  "Greeley County, KS": {
-    "name": "Greeley County",
-    "nist:state_fips": "20"
-  },
-  "Green County, KY": {
-    "name": "Green County",
-    "nist:state_fips": "21"
   },
   "Greenland": {
     "ISO3166-1": "GL"
@@ -595,17 +527,9 @@
   "Haiti": {
     "ISO3166-1": "HT"
   },
-  "Hamilton County, KS": {
-    "name": "Hamilton County",
-    "nist:state_fips": "20"
-  },
   "Harrison County, IN": {
     "name": "Harrison County",
     "nist:state_fips": "18"
-  },
-  "Hart County, KY": {
-    "name": "Hart County",
-    "nist:state_fips": "21"
   },
   "Honduras": {
     "ISO3166-1": "HN"
@@ -613,20 +537,8 @@
   "Hong Kong": {
     "ISO3166-1": "HK"
   },
-  "Hooker County, NE": {
-    "name": "Hooker County",
-    "nist:state_fips": "31"
-  },
   "Hoonah-Angoon": {
     "name": "Hoonah-Angoon"
-  },
-  "Hudspeth County, TX": {
-    "name": "Hudspeth County",
-    "nist:state_fips": "48"
-  },
-  "Hughes County, SD": {
-    "name": "Hughes County",
-    "nist:state_fips": "46"
   },
   "Hungary": {
     "ISO3166-1": "HU"
@@ -634,14 +546,8 @@
   "Iceland": {
     "ISO3166-1": "IS"
   },
-  "Illinois": {
-    "ISO3166-2": "US-IL"
-  },
   "India": {
     "ISO3166-1": "IN"
-  },
-  "Indiana": {
-    "ISO3166-2": "US-IN"
   },
   "Indonesia": {
     "name": "Indonesia"
@@ -671,10 +577,6 @@
   "Italy": {
     "ISO3166-1": "IT"
   },
-  "Jackson County, FL": {
-    "name": "Jackson County",
-    "nist:state_fips": "12"
-  },
   "Jalisco": {
     "ISO3166-2": "MX-JAL"
   },
@@ -684,20 +586,12 @@
   "Japan": {
     "ISO3166-1": "JP"
   },
-  "Jasper County, IN": {
-    "name": "Jasper County",
-    "nist:state_fips": "18"
-  },
   "Jefferson County, KY": {
     "name": "Jefferson County",
     "nist:state_fips": "21"
   },
   "Jersey": {
     "ISO3166-1": "JE"
-  },
-  "Jones County, SD": {
-    "name": "Jones County",
-    "nist:state_fips": "46"
   },
   "Jordan": {
     "ISO3166-1": "JO"
@@ -721,10 +615,6 @@
   },
   "Kazakhstan": {
     "ISO3166-1": "KZ"
-  },
-  "Keith County, NE": {
-    "name": "Keith County",
-    "nist:state_fips": "31"
   },
   "Kemerovo": {
     "ISO3166-2": "RU-KEM"
@@ -768,10 +658,6 @@
   "La Rioja": {
     "ISO3166-2": "AR-F"
   },
-  "LaPorte County, IN": {
-    "name": "LaPorte County",
-    "nist:state_fips": "18"
-  },
   "Laos": {
     "ISO3166-1": "LA"
   },
@@ -786,10 +672,6 @@
   },
   "Liberia": {
     "ISO3166-1": "LR"
-  },
-  "Liberty County, FL": {
-    "name": "Liberty County",
-    "nist:state_fips": "12"
   },
   "Libya": {
     "ISO3166-1": "LY"
@@ -839,10 +721,6 @@
   "Mangystau Region": {
     "ISO3166-2": "KZ-MAN"
   },
-  "Marion County, TN": {
-    "name": "Marion County",
-    "nist:state_fips": "47"
-  },
   "Marshall Islands": {
     "ISO3166-1": "MH"
   },
@@ -860,14 +738,6 @@
   },
   "Mauritius": {
     "ISO3166-1": "MU"
-  },
-  "McLean County, ND": {
-    "name": "McLean County",
-    "nist:state_fips": "38"
-  },
-  "Mellette County, SD": {
-    "name": "Mellette County",
-    "nist:state_fips": "46"
   },
   "Mendoza": {
     "ISO3166-2": "AR-M"
@@ -897,9 +767,6 @@
   },
   "Mongolia": {
     "ISO3166-1": "MN"
-  },
-  "Montana": {
-    "ISO3166-2": "US-MT"
   },
   "Montenegro": {
     "ISO3166-1": "ME"
@@ -938,15 +805,8 @@
   "New Brunswick": {
     "ISO3166-2": "CA-NB"
   },
-  "New Mexico": {
-    "ISO3166-2": "US-NM"
-  },
   "New Zealand": {
     "ISO3166-1": "NZ"
-  },
-  "Newton County, IN": {
-    "name": "Newton County",
-    "nist:state_fips": "18"
   },
   "Nicaragua": {
     "ISO3166-1": "NI"
@@ -980,10 +840,6 @@
   },
   "Novosibirsk": {
     "ISO3166-2": "RU-NVS"
-  },
-  "Ohio County, IN": {
-    "name": "Ohio County",
-    "nist:state_fips": "18"
   },
   "Oliver County, ND": {
     "name": "Oliver County",
@@ -1020,10 +876,6 @@
   "Paraguay": {
     "ISO3166-1": "PY"
   },
-  "Perkins County, NE": {
-    "name": "Perkins County",
-    "nist:state_fips": "31"
-  },
   "Pernambuco": {
     "ISO3166-2": "BR-PE"
   },
@@ -1037,10 +889,6 @@
   "Philippines": {
     "ISO3166-1": "PH"
   },
-  "Pickett County, TN": {
-    "name": "Pickett County",
-    "nist:state_fips": "47"
-  },
   "Pike County, IN": {
     "name": "Pike County",
     "nist:state_fips": "18"
@@ -1053,10 +901,6 @@
   },
   "Poland": {
     "ISO3166-1": "PL"
-  },
-  "Porter County, IN": {
-    "name": "Porter County",
-    "nist:state_fips": "18"
   },
   "Portugal": {
     "ISO3166-1": "PT"
@@ -1097,10 +941,6 @@
   },
   "Roraima": {
     "ISO3166-2": "BR-RR"
-  },
-  "Russell County, KY": {
-    "name": "Russell County",
-    "nist:state_fips": "21"
   },
   "Rwanda": {
     "ISO3166-1": "RW"
@@ -1175,10 +1015,6 @@
   "Senegal": {
     "ISO3166-1": "SN"
   },
-  "Sequatchie County, TN": {
-    "name": "Sequatchie County",
-    "nist:state_fips": "47"
-  },
   "Serbia": {
     "ISO3166-1": "RS"
   },
@@ -1190,10 +1026,6 @@
   },
   "Seychelles": {
     "ISO3166-1": "SC"
-  },
-  "Sherman County, KS": {
-    "name": "Sherman County",
-    "nist:state_fips": "20"
   },
   "Sierra Leone": {
     "ISO3166-1": "SL"
@@ -1255,10 +1087,6 @@
   "Sudan": {
     "ISO3166-1": "SD"
   },
-  "Sully County, SD": {
-    "name": "Sully County",
-    "nist:state_fips": "46"
-  },
   "Suriname": {
     "ISO3166-1": "SR"
   },
@@ -1306,16 +1134,8 @@
   "The Netherlands": {
     "ISO3166-1": "NL"
   },
-  "Thomas County, NE": {
-    "name": "Thomas County",
-    "nist:state_fips": "31"
-  },
   "Tocantins": {
     "ISO3166-2": "BR-TO"
-  },
-  "Todd County, SD": {
-    "name": "Todd County",
-    "nist:state_fips": "46"
   },
   "Togo": {
     "ISO3166-1": "TG"
@@ -1413,10 +1233,6 @@
   },
   "Volgograd": {
     "ISO3166-2": "RU-VGG"
-  },
-  "Wallace County, KS": {
-    "name": "Wallace County",
-    "nist:state_fips": "20"
   },
   "Wayne County, KY": {
     "name": "Wayne County",
