@@ -288,11 +288,6 @@ function downloadFromOverpass (
   let curOverpassQueryAttempt = 0
   const overpassAttempts = {}
 
-  // query-overpass sometimes makes duplicate callbacks, so keep track of the callbacks and
-  // only do a next action once.
-  let curOverpassQueryAttempt = 0
-  const overpassAttempts = {}
-
   asynclib.auto({
     fetchFromOverpassIfNeeded: function (cb) {
       console.log('downloading from overpass')
