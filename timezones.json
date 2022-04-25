@@ -835,6 +835,11 @@
     }, {
       "op": "difference",
       "source": "manual-polygon",
+      "data": [[[-102,46],[-101.326,46.146],[-101.324,45.938],[-102,46]]],
+      "description": "Draw the line slightly east of ND 31"
+    }, {
+      "op": "difference",
+      "source": "manual-polygon",
       "data": [[[-85.2,32.97],[-85.237,32.954],[-85.282,32.847],[-85.235,32.765],[-85.198,32.656],[-85.182,32.571],[-85.214,32.514],[-85.119,32.444],[-85.094,32.397],[-85.073,32.355],[-85.031,32.339],[-85.02,32.3429],[-85.011,32.358],[-84.86,32.35],[-85.2,32.97]]],
       "description": "Omit a few towns in Alabama close to Georgia that observe eastern time"
     }
