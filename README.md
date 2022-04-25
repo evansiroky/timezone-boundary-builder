@@ -17,6 +17,14 @@ The underlying data is downloaded from [OpenStreetMap](http://www.openstreetmap.
 
 To maintain consistency with the timezone database, this project will only create a new release after the timezone database creates a new release.  If there are no new timezones created or deleted in a timezone database release, then this project will only create a release if there have been changes performed to the boundary definitions of an existing zone within this project.
 
+### Timezone Data in OpenStreetMap
+
+Within OpenStreetMap there exist a lot of data about timezone boundaries. A lot of the timezone boundaries exist by piggy-backing on top of existing administrative boundary relations, however some timezone boundaries have their own dedicated relations. Some of these relations are pulled in verbatim by this project. 
+
+Shortly after this project began in the year 2017, there was controversy on the [OpenStreetMap mailing list](https://lists.openstreetmap.org/pipermail/tagging/2017-March/031453.html) about whether timezone relations should exist in OpenStreetMap. Since then, the timezone relations in OpenStreetMap have remained and improved in quality. Also, recently the [OpenStreetMap wiki page Key:timezone](https://wiki.openstreetmap.org/wiki/Key:timezone) was updated to include great instructions on how to map timezone boundaries.
+
+Given this stability, improvement in quality, and documentation, it is the intent of this project to rely more heavily on the timezone data from OpenStreetMap. In future releases, more boundaries will have their definitions come directly from overpass searches for timezone key/value pairs in OpenStreetMap. This project will continue to quality-control the resulting worldwide data prior to releasing.
+
 ## Lookup Libraries
 
 A few common languages already have libraries with an API that can be used to lookup the timezone name at a particular GPS coordinate.  Here are some libraries that use the data produced by timezone-boundary-builder:
@@ -119,7 +127,7 @@ Thanks to following people whose open-source and open-data contributions have ma
 
 - All the maintainers of the [timezone database](https://www.iana.org/time-zones).  
 - Eric Muller for constructing and maintaining the timezone shapefile at [efele.net](http://efele.net/maps/tz/world/).  
-- The [OpenStreetMap contributor Shinigami](https://www.openstreetmap.org/user/Shinigami) for making lots of edits in OpenStreetMap of various timezone boundaries.
+- OpenStreetMap contributors, with a special shoutout to [OpenStreetMap contributor Shinigami](https://www.openstreetmap.org/user/Shinigami) for making lots of edits in OpenStreetMap of various timezone boundaries.
 - [Björn Harrtell](https://github.com/bjornharrtell) for all his work and help with [jsts](https://github.com/bjornharrtell/jsts).
 
 ## Licenses
