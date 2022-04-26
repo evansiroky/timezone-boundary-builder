@@ -24,7 +24,7 @@
     "@mapbox/geojsonhint": "^3.0.1",
     "@turf/bbox": "^6.5.0",
     "@turf/helpers": "^6.5.0",
-    "async": "^3.2.1",
+    "async": "^3.2.2",
     "got": "^11.8.3",
     "jsts": "^2.7.1",
     "query-overpass": "^1.5.5",
