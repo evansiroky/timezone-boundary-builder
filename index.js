@@ -1,6 +1,8 @@
 var exec = require('child_process').exec
 var fs = require('fs')
 var path = require('path')
+const stream = require('stream')
+const {promisify} = require('util')
 
 var area = require('@mapbox/geojson-area')
 var geojsonhint = require('@mapbox/geojsonhint')
@@ -9,7 +11,7 @@ var helpers = require('@turf/helpers')
 var multiPolygon = helpers.multiPolygon
 var polygon = helpers.polygon
 var asynclib = require('async')
-var https = require('follow-redirects').https
+var got = require('got')
 var jsts = require('jsts')
 var rimraf = require('rimraf')
 var overpass = require('query-overpass')
@@ -409,7 +411,7 @@ var downloadOsmBoundary = function (boundaryId, boundaryCallback) {
 }
 
 function downloadOsmTimezoneBoundary (tzId, boundaryCallback) {
-  const tzBoundayName = `${tzId.replaceAll('/', '-')}-tz`
+  const tzBoundayName = `${tzId.replace(/\//g,'-')}-tz`
   const boundaryFilename = downloadsDir + '/' + tzBoundayName + '.json'
 
   downloadOSMZoneProgress.beginTask(`getting data for ${tzBoundayName}`, true)
@@ -836,72 +838,54 @@ function combineAndWriteOSMZones(callback) {
 
 var downloadLastRelease = function (cb) {
   // download latest release info
-  https.get(
-    {
-      headers: { 'user-agent': 'timezone-boundary-builder' },
-      host: 'api.github.com',
-      path: '/repos/evansiroky/timezone-boundary-builder/releases/latest'
-    },
-    function (res) {
-      var data = ''
-      res.on('data', function (chunk) {
-        data += chunk
-      })
-      res.on('end', function () {
-        data = JSON.parse(data)
-        // determine last release version name and download link
-        const lastReleaseName = data.name
-        lastReleaseJSONfile = `${workingDir}/${lastReleaseName}.json`
-        let lastReleaseDownloadUrl
-        for (var i = 0; i < data.assets.length; i++) {
-          if (data.assets[i].browser_download_url.indexOf('timezones.geojson') > -1) {
-            lastReleaseDownloadUrl = data.assets[i].browser_download_url
-          }
+  got(
+    'https://api.github.com/repos/evansiroky/timezone-boundary-builder/releases/latest'
+  ).json()
+    .then(data => {
+      // determine last release version name and download link
+      const lastReleaseName = data.name
+      lastReleaseJSONfile = `${workingDir}/${lastReleaseName}.json`
+      let lastReleaseDownloadUrl
+      for (var i = 0; i < data.assets.length; i++) {
+        if (data.assets[i].browser_download_url.indexOf('timezones.geojson') > -1) {
+          lastReleaseDownloadUrl = data.assets[i].browser_download_url
         }
-        if (!lastReleaseDownloadUrl) {
-          return cb(new Error('geojson not found'))
+      }
+      if (!lastReleaseDownloadUrl) {
+        return cb(new Error('geojson not found'))
+      }
+
+      // check for file that got downloaded
+      fs.stat(lastReleaseJSONfile, function (err) {
+        if (!err) {
+          // file found, skip download steps
+          return cb()
         }
+        // file not found, download
+        console.log(`Downloading latest release to ${lastReleaseJSONfile}.zip`)
+        const pipeline = promisify(stream.pipeline)
+        pipeline(
+          got.stream(lastReleaseDownloadUrl),
+          fs.createWriteStream(`${lastReleaseJSONfile}.zip`)
+        ).then(() => {
+          // unzip file
+          console.log(`unzipping latest release from ${lastReleaseJSONfile}.zip`)
+          exec(
+            `unzip -o ${lastReleaseJSONfile} -d ${workingDir}`,
+            err => {
+              if (err) { return cb(err) }
 
-        // check for file that got downloaded
-        fs.stat(lastReleaseJSONfile, function (err) {
-          if (!err) {
-            // file found, skip download steps
-            return cb()
-          }
-          // file not found, download
-          console.log(`Downloading latest release to ${lastReleaseJSONfile}.zip`)
-          https.get({
-            headers: { 'user-agent': 'timezone-boundary-builder' },
-            host: 'github.com',
-            path: lastReleaseDownloadUrl.replace('https://github.com', '')
-          }, function (response) {
-            var file = fs.createWriteStream(`${lastReleaseJSONfile}.zip`)
-            response.pipe(file)
-            file.on('finish', function () {
-              file.close((err) => {
-                if (err) return cb(err)
-                // unzip file
-                console.log(`unzipping latest release from ${lastReleaseJSONfile}.zip`)
-                exec(
-                  `unzip -o ${lastReleaseJSONfile} -d ${workingDir}`,
-                  err => {
-                    if (err) { return cb(err) }
+              const srcFile = path.join(workingDir, 'combined.json')
+              console.log(`unzipped file: ${srcFile}`)
 
-                    const srcFile = path.join(workingDir, 'combined.json')
-                    console.log(`unzipped file: ${srcFile}`)
-
-                    const destFile = lastReleaseJSONfile
-                    console.log(`Renaming ${srcFile} to ${destFile}`)
-                    fs.rename(srcFile, destFile, cb)
-                  }
-                )
-              })
-            })
-          }).on('error', cb)
+              const destFile = lastReleaseJSONfile
+              console.log(`Renaming ${srcFile} to ${destFile}`)
+              fs.rename(srcFile, destFile, cb)
+            }
+          )
         })
       })
-    }
-  )
+    })
 }
 
 function mergeZonesForCutoffYears (cb) {
