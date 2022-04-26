@@ -5,6 +5,8 @@
 * Allow additional disputed areas to overlap ([#105](https://github.com/evansiroky/timezone-boundary-builder/issues/105))
   * `Africa/Ouagadougou`, `Africa/Porto-Novo` overlap. See [article](https://fr.wikipedia.org/wiki/Koalou).
   * `America/Lower_Princes`, `America/Marigot` overlap. See [article](http://www.dclportal.dreamhosters.com/news/latest-news/9228-negotiations-on-oyster-pond-border-to-commence-late-2019).
+  * `America/Nuuk`, `America/Pangnirtung` overlap. See [article](https://en.wikipedia.org/wiki/Hans_Island).
+  * `America/Sitka`, `America/Vancouver` overlap. See [article](https://en.wikipedia.org/wiki/Dixon_Entrance#Boundary_dispute).
   * `Asia/Bangkok`, `Asia/Yangon` overlap. See [article](https://en.wikipedia.org/wiki/Myanmar%E2%80%93Thailand_relations#Disputed_territory).
   * `Asia/Hebron`, `Asia/Jerusalem` overlap in Area H2. See [article](https://en.wikipedia.org/wiki/Hebron#Division_of_Hebron)
   * `Asia/Kolkata`, `Asia/Shanghai` overlap. See [article](https://en.wikipedia.org/wiki/Sino-Indian_border_dispute).
@@ -22,13 +24,17 @@
   * `Australia/Sydney`
 * Merge some zones that were moved to the backzone file in the timezone database
   * `Australia/Currie` is now a part of `Australia/Hobart`
+* Rename `Pacific/Enderbury` to `Pacific/Kanton`
+* Rely mostly on OSM timezone relations for `America/Chicago` and `America/New_York` ([#123](https://github.com/evansiroky/timezone-boundary-builder/issues/123)).
 * Update to latest OSM data
 
 ### Other Changes
 
 * Change output folder of various files outputted from building script ([#102](https://github.com/evansiroky/timezone-boundary-builder/pull/102)).
-* Update list of libraries using data ([#110](https://github.com/evansiroky/timezone-boundary-builder/issues/110), [#111](https://github.com/evansiroky/timezone-boundary-builder/pull/111)).
+* Update list of libraries using data ([#110](https://github.com/evansiroky/timezone-boundary-builder/issues/110), [#111](https://github.com/evansiroky/timezone-boundary-builder/pull/111))
 * Update all dependencies and require at least node 12.
+* Begin using a standard naming practice for timezone relations in `osmBoundarySources.json`.
+* Add note about intent to rely more on timezone data directly from OpenStreetMap.
 
 ## 2020d
 
