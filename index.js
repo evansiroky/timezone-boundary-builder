@@ -1,28 +1,28 @@
-var exec = require('child_process').exec
-var fs = require('fs')
-var path = require('path')
+const exec = require('child_process').exec
+const fs = require('fs')
+const path = require('path')
 const stream = require('stream')
-const {promisify} = require('util')
+const { promisify } = require('util')
 
-var area = require('@mapbox/geojson-area')
-var geojsonhint = require('@mapbox/geojsonhint')
-var bbox = require('@turf/bbox').default
-var helpers = require('@turf/helpers')
-var multiPolygon = helpers.multiPolygon
-var polygon = helpers.polygon
-var asynclib = require('async')
-var got = require('got')
-var jsts = require('jsts')
-var rimraf = require('rimraf')
-var overpass = require('query-overpass')
-var yargs = require('yargs')
+const area = require('@mapbox/geojson-area')
+const geojsonhint = require('@mapbox/geojsonhint')
+const bbox = require('@turf/bbox').default
+const helpers = require('@turf/helpers')
+const multiPolygon = helpers.multiPolygon
+const polygon = helpers.polygon
+const asynclib = require('async')
+const got = require('got')
+const jsts = require('jsts')
+const rimraf = require('rimraf')
+const overpass = require('query-overpass')
+const yargs = require('yargs')
 
 const FeatureWriterStream = require('./util/featureWriterStream')
 const ProgressStats = require('./util/progressStats')
 
-var osmBoundarySources = require('./osmBoundarySources.json')
-var zoneCfg = require('./timezones.json')
-var expectedZoneOverlaps = require('./expectedZoneOverlaps.json')
+let osmBoundarySources = require('./osmBoundarySources.json')
+let zoneCfg = require('./timezones.json')
+const expectedZoneOverlaps = require('./expectedZoneOverlaps.json')
 
 const fiveYearsAgo = (new Date()).getFullYear()
 
@@ -109,7 +109,7 @@ if (argv.included_zones || argv.excluded_zones) {
   }
 
   // filter out unneccessary downloads
-  var newOsmBoundarySources = {}
+  const newOsmBoundarySources = {}
   Object.keys(zoneCfg).forEach((zoneName) => {
     zoneCfg[zoneName].forEach((op) => {
       if (op.source === 'overpass') {
@@ -121,17 +121,17 @@ if (argv.included_zones || argv.excluded_zones) {
   osmBoundarySources = newOsmBoundarySources
 }
 
-var geoJsonReader = new jsts.io.GeoJSONReader()
-var geoJsonWriter = new jsts.io.GeoJSONWriter()
-var precisionModel = new jsts.geom.PrecisionModel(1000000)
-var precisionReducer = new jsts.precision.GeometryPrecisionReducer(precisionModel)
-var finalZones = {}
-var lastReleaseJSONfile
-var minRequestGap = 8
-var curRequestGap = 8
+const geoJsonReader = new jsts.io.GeoJSONReader()
+const geoJsonWriter = new jsts.io.GeoJSONWriter()
+const precisionModel = new jsts.geom.PrecisionModel(1000000)
+const precisionReducer = new jsts.precision.GeometryPrecisionReducer(precisionModel)
+const finalZones = {}
+let lastReleaseJSONfile
+const minRequestGap = 8
+let curRequestGap = 8
 const bufferDistance = 0.01
 
-var safeMkdir = function (dirname, callback) {
+function safeMkdir (dirname, callback) {
   fs.mkdir(dirname, function (err) {
     if (err && err.code === 'EEXIST') {
       callback()
@@ -141,14 +141,14 @@ var safeMkdir = function (dirname, callback) {
   })
 }
 
-var debugGeo = function (
+function debugGeo (
   op,
   a,
   b,
   reducePrecision,
   bufferAfterPrecisionReduction
 ) {
-  var result
+  let result
 
   if (reducePrecision) {
     a = precisionReducer.reduce(a)
@@ -170,8 +170,7 @@ var debugGeo = function (
         result = a.difference(b)
         break
       default:
-        var err = new Error('invalid op: ' + op)
-        throw err
+        throw new Error('invalid op: ' + op)
     }
   } catch (e) {
     if (e.name === 'TopologyException') {
@@ -204,7 +203,7 @@ var debugGeo = function (
   return result
 }
 
-var fetchIfNeeded = function (file, superCallback, downloadCallback, fetchFn) {
+function fetchIfNeeded (file, superCallback, downloadCallback, fetchFn) {
   // check for file that got downloaded
   fs.stat(file, function (err) {
     if (!err) {
@@ -212,7 +211,7 @@ var fetchIfNeeded = function (file, superCallback, downloadCallback, fetchFn) {
       return superCallback()
     }
     // check for manual file that got fixed and needs validation
-    var fixedFile = file.replace('.json', '_fixed.json')
+    const fixedFile = file.replace('.json', '_fixed.json')
     fs.stat(fixedFile, function (err) {
       if (!err) {
         // file found, return fixed file
@@ -224,7 +223,7 @@ var fetchIfNeeded = function (file, superCallback, downloadCallback, fetchFn) {
   })
 }
 
-var geoJsonToGeom = function (geoJson) {
+function geoJsonToGeom (geoJson) {
   try {
     return geoJsonReader.read(JSON.stringify(geoJson))
   } catch (e) {
@@ -234,11 +233,11 @@ var geoJsonToGeom = function (geoJson) {
   }
 }
 
-var geomToGeoJson = function (geom) {
+function geomToGeoJson (geom) {
   return geoJsonWriter.write(geom)
 }
 
-var geomToGeoJsonString = function (geom) {
+function geomToGeoJsonString (geom) {
   return JSON.stringify(geoJsonWriter.write(geom))
 }
 
@@ -266,19 +265,19 @@ function downloadFromOverpass (
   filename,
   overpassDownloadCallback
 ) {
-  var query = '[out:json][timeout:60];('
+  let query = '[out:json][timeout:60];('
   if (overpassConfig.way) {
     query += 'way'
   } else {
     query += 'relation'
   }
 
-  var queryKeys = Object.keys(overpassConfig)
+  const queryKeys = Object.keys(overpassConfig)
 
-  for (var i = queryKeys.length - 1; i >= 0; i--) {
-    var k = queryKeys[i]
+  for (let i = queryKeys.length - 1; i >= 0; i--) {
+    const k = queryKeys[i]
     if (k === 'way') continue
-    var v = overpassConfig[k]
+    const v = overpassConfig[k]
 
     query += '["' + k + '"="' + v + '"]'
   }
@@ -316,8 +315,8 @@ function downloadFromOverpass (
           setTimeout(function () {
             curOverpassQueryAttempt++
             overpass(
-              query, 
-              (err, data) => overpassResponseHandler(err, data, curOverpassQueryAttempt), 
+              query,
+              (err, data) => overpassResponseHandler(err, data, curOverpassQueryAttempt),
               { flatProperties: true }
             )
           }, curRequestGap * 1000)
@@ -326,9 +325,9 @@ function downloadFromOverpass (
       })
     },
     validateOverpassResult: ['fetchFromOverpassIfNeeded', function (results, cb) {
-      var data = results.fetchFromOverpassIfNeeded
+      const data = results.fetchFromOverpassIfNeeded
       if (!data.features) {
-        var err = new Error(`Invalid geojson from overpass for query: ${queryName}`)
+        const err = new Error(`Invalid geojson from overpass for query: ${queryName}`)
         return cb(err)
       }
       if (data.features.length === 0) {
@@ -340,12 +339,12 @@ function downloadFromOverpass (
       cb()
     }],
     saveSingleMultiPolygon: ['validateOverpassResult', function (results, cb) {
-      var data = results.fetchFromOverpassIfNeeded
-      var combined
+      const data = results.fetchFromOverpassIfNeeded
+      let combined
 
       // union all multi-polygons / polygons into one
-      for (var i = data.features.length - 1; i >= 0; i--) {
-        var curOsmGeom = data.features[i].geometry
+      for (let i = data.features.length - 1; i >= 0; i--) {
+        const curOsmGeom = data.features[i].geometry
         const curOsmProps = data.features[i].properties
         if (
           (curOsmGeom.type === 'Polygon' || curOsmGeom.type === 'MultiPolygon') &&
@@ -364,8 +363,9 @@ function downloadFromOverpass (
             console.error('To read more about this error, please visit https://git.io/vxKQq')
             return cb(errors)
           }
+          let curGeom
           try {
-            var curGeom = geoJsonToGeom(curOsmGeom)
+            curGeom = geoJsonToGeom(curOsmGeom)
           } catch (e) {
             console.error('error converting overpass result to geojson')
             console.error(e)
@@ -397,7 +397,7 @@ function downloadFromOverpass (
   }, overpassDownloadCallback)
 }
 
-var downloadOsmBoundary = function (boundaryId, boundaryCallback) {
+function downloadOsmBoundary (boundaryId, boundaryCallback) {
   const boundaryFilename = downloadsDir + '/' + boundaryId + '.json'
 
   downloadProgress.beginTask(`getting data for ${boundaryId}`, true)
@@ -411,7 +411,7 @@ var downloadOsmBoundary = function (boundaryId, boundaryCallback) {
 }
 
 function downloadOsmTimezoneBoundary (tzId, boundaryCallback) {
-  const tzBoundayName = `${tzId.replace(/\//g,'-')}-tz`
+  const tzBoundayName = `${tzId.replace(/\//g, '-')}-tz`
   const boundaryFilename = downloadsDir + '/' + tzBoundayName + '.json'
 
   downloadOSMZoneProgress.beginTask(`getting data for ${tzBoundayName}`, true)
@@ -424,13 +424,15 @@ function downloadOsmTimezoneBoundary (tzId, boundaryCallback) {
       if (err) {
         // assume no data or unparseable data, write a null island
         fs.writeFile(
-          boundaryFilename, 
+          boundaryFilename,
           JSON.stringify(
             {
-              type:"Polygon",
-              coordinates:[[[-.1,-.1],[.1,-.1],[.1,.1],[-.1,.1],[-.1,-.1]]]
+              type: 'Polygon',
+              coordinates: [
+                [[-0.1, -0.1], [0.1, -0.1], [0.1, 0.1], [-0.1, 0.1], [-0.1, -0.1]]
+              ]
             }
-          ), 
+          ),
           boundaryCallback
         )
       } else {
@@ -440,7 +442,7 @@ function downloadOsmTimezoneBoundary (tzId, boundaryCallback) {
   )
 }
 
-var getFinalTzOutputFilename = function (tzid) {
+function getFinalTzOutputFilename (tzid) {
   return workingDir + '/' + tzid.replace(/\//g, '__') + '.json'
 }
 
@@ -453,8 +455,8 @@ var getFinalTzOutputFilename = function (tzid) {
  *     - `id` if from a file
  *     - `id` if from a file
  */
-var getDataSource = function (source) {
-  var geoJson
+function getDataSource (source) {
+  let geoJson
   if (source.source === 'overpass') {
     geoJson = require(downloadsDir + '/' + source.id + '.json')
   } else if (source.source === 'manual-polygon') {
@@ -464,7 +466,7 @@ var getDataSource = function (source) {
   } else if (source.source === 'final') {
     geoJson = require(getFinalTzOutputFilename(source.id))
   } else {
-    var err = new Error('unknown source: ' + source.source)
+    const err = new Error('unknown source: ' + source.source)
     throw err
   }
   return geoJsonToGeom(geoJson)
@@ -479,7 +481,7 @@ var getDataSource = function (source) {
  * @param  {boolean} returnAsObject if true, return as object, otherwise return stringified
  * @return {Object|String}         geojson as object or stringified
  */
-var postProcessZone = function (geom, returnAsObject) {
+function postProcessZone (geom, returnAsObject) {
   // reduce precision of geometry
   const geojson = geomToGeoJson(precisionReducer.reduce(geom))
 
@@ -537,14 +539,14 @@ const buildingProgress = new ProgressStats(
   Object.keys(zoneCfg).length
 )
 
-var makeTimezoneBoundary = function (tzid, callback) {
+function makeTimezoneBoundary (tzid, callback) {
   buildingProgress.beginTask(`makeTimezoneBoundary for ${tzid}`, true)
 
-  var ops = zoneCfg[tzid]
-  var geom
+  const ops = zoneCfg[tzid]
+  let geom
 
   asynclib.eachSeries(ops, function (task, cb) {
-    var taskData = getDataSource(task)
+    const taskData = getDataSource(task)
     console.log('-', task.op, task.id)
     if (task.op === 'init') {
       geom = taskData
@@ -557,7 +559,7 @@ var makeTimezoneBoundary = function (tzid, callback) {
     } else if (task.op === 'union') {
       geom = debugGeo('union', geom, taskData)
     } else {
-      var err = new Error('unknown op: ' + task.op)
+      const err = new Error('unknown op: ' + task.op)
       return cb(err)
     }
     cb()
@@ -570,26 +572,26 @@ var makeTimezoneBoundary = function (tzid, callback) {
   })
 }
 
-var loadFinalZonesIntoMemory = function () {
+function loadFinalZonesIntoMemory () {
   console.log('load zones into memory')
-  var zones = Object.keys(zoneCfg)
-  var tzid
+  const zones = Object.keys(zoneCfg)
+  let tzid
 
-  for (var i = 0; i < zones.length; i++) {
+  for (let i = 0; i < zones.length; i++) {
     tzid = zones[i]
     finalZones[tzid] = getDataSource({ source: 'final', id: tzid })
   }
 }
 
-var roundDownToTenth = function (n) {
+function roundDownToTenth (n) {
   return Math.floor(n * 10) / 10
 }
 
-var roundUpToTenth = function (n) {
+function roundUpToTenth (n) {
   return Math.ceil(n * 10) / 10
 }
 
-var formatBounds = function (bounds) {
+function formatBounds (bounds) {
   let boundsStr = '['
   boundsStr += roundDownToTenth(bounds[0]) + ', '
   boundsStr += roundDownToTenth(bounds[1]) + ', '
@@ -598,7 +600,7 @@ var formatBounds = function (bounds) {
   return boundsStr
 }
 
-var validateTimezoneBoundaries = function () {
+function validateTimezoneBoundaries () {
   const numZones = Object.keys(zoneCfg).length
   const validationProgress = new ProgressStats(
     'Validation',
@@ -606,16 +608,16 @@ var validateTimezoneBoundaries = function () {
   )
 
   console.log('do validation... this may take a few minutes')
-  var allZonesOk = true
-  var zones = Object.keys(zoneCfg)
-  var lastPct = 0
-  var compareTzid, tzid, zoneGeom
+  let allZonesOk = true
+  const zones = Object.keys(zoneCfg)
+  let lastPct = 0
+  let compareTzid, tzid, zoneGeom
 
-  for (var i = 0; i < zones.length; i++) {
+  for (let i = 0; i < zones.length; i++) {
     tzid = zones[i]
     zoneGeom = finalZones[tzid]
 
-    for (var j = i + 1; j < zones.length; j++) {
+    for (let j = i + 1; j < zones.length; j++) {
       const curPct = Math.floor(validationProgress.getPercentage())
       if (curPct % 10 === 0 && curPct !== lastPct) {
         validationProgress.printStats('Validating zones', true)
@@ -623,17 +625,17 @@ var validateTimezoneBoundaries = function () {
       }
       compareTzid = zones[j]
 
-      var compareZoneGeom = finalZones[compareTzid]
+      const compareZoneGeom = finalZones[compareTzid]
 
-      var intersects = false
+      let intersects = false
       try {
         intersects = debugGeo('intersects', zoneGeom, compareZoneGeom)
       } catch (e) {
         console.warn('warning, encountered intersection error with zone ' + tzid + ' and ' + compareTzid)
       }
       if (intersects) {
-        var intersectedGeom = debugGeo('intersection', zoneGeom, compareZoneGeom)
-        var intersectedArea = intersectedGeom.getArea()
+        const intersectedGeom = debugGeo('intersection', zoneGeom, compareZoneGeom)
+        const intersectedArea = intersectedGeom.getArea()
 
         if (intersectedArea > 0.0001) {
           // check if the intersected area(s) are one of the expected areas of overlap
@@ -756,7 +758,7 @@ if (excludedZones.length > 0) {
   oceanZones = oceanZones.filter(oceanZone => excludedZones.indexOf(oceanZone) === -1)
 }
 
-var addOceans = function (callback) {
+function addOceans (callback) {
   console.log('adding ocean boundaries')
   const zones = Object.keys(zoneCfg)
 
@@ -791,10 +793,10 @@ var addOceans = function (callback) {
   callback()
 }
 
-var combineAndWriteZones = function (callback) {
+function combineAndWriteZones (callback) {
   const regularWriter = new FeatureWriterStream(workingDir + '/combined.json')
   const oceanWriter = new FeatureWriterStream(workingDir + '/combined-with-oceans.json')
-  var zones = Object.keys(zoneCfg)
+  const zones = Object.keys(zoneCfg)
 
   zones.forEach(zoneName => {
     const feature = {
@@ -807,7 +809,7 @@ var combineAndWriteZones = function (callback) {
     oceanWriter.add(stringified)
   })
   oceanZoneBoundaries.forEach(boundary => {
-    var feature = {
+    const feature = {
       type: 'Feature',
       properties: { tzid: boundary.tzid },
       geometry: boundary.geom
@@ -820,7 +822,7 @@ var combineAndWriteZones = function (callback) {
   ], callback)
 }
 
-function combineAndWriteOSMZones(callback) {
+function combineAndWriteOSMZones (callback) {
   const osmZoneWriter = new FeatureWriterStream(workingDir + '/combined-osm-zones.json')
   Object.keys(zoneCfg).forEach(tzId => {
     const tzBoundayName = `${tzId.replaceAll('/', '-')}-tz`
@@ -836,7 +838,7 @@ function combineAndWriteOSMZones(callback) {
   osmZoneWriter.end(callback)
 }
 
-var downloadLastRelease = function (cb) {
+function downloadLastRelease (cb) {
   // download latest release info
   got(
     'https://api.github.com/repos/evansiroky/timezone-boundary-builder/releases/latest'
@@ -846,7 +848,7 @@ var downloadLastRelease = function (cb) {
       const lastReleaseName = data.name
       lastReleaseJSONfile = `${workingDir}/${lastReleaseName}.json`
       let lastReleaseDownloadUrl
-      for (var i = 0; i < data.assets.length; i++) {
+      for (let i = 0; i < data.assets.length; i++) {
         if (data.assets[i].browser_download_url.indexOf('timezones.geojson') > -1) {
           lastReleaseDownloadUrl = data.assets[i].browser_download_url
         }
@@ -892,7 +894,7 @@ function mergeZonesForCutoffYears (cb) {
 
 }
 
-var analyzeChangesFromLastRelease = function (cb) {
+function analyzeChangesFromLastRelease (cb) {
   // load last release data into memory
   console.log('loading previous release into memory')
   const lastReleaseData = require(lastReleaseJSONfile)

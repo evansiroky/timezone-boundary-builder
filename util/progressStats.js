@@ -40,7 +40,7 @@ class ProgressStats {
      * @returns {string}
      */
   getPercentage () {
-    var current = (this.taskCounter / this.totalTasks)
+    const current = (this.taskCounter / this.totalTasks)
     return Math.round(current * 1000.0) / 10.0
   }
 
@@ -53,8 +53,8 @@ class ProgressStats {
   getTimeLeft () {
     if (this.taskCounter === 0) return '?'
     const averageTimePerTask = (Date.now() - this.beginTime.getTime()) / this.taskCounter
-    var tasksLeft = this.totalTasks - this.taskCounter
-    var millisecondsLeft = averageTimePerTask * tasksLeft
+    const tasksLeft = this.totalTasks - this.taskCounter
+    const millisecondsLeft = averageTimePerTask * tasksLeft
     return this.formatMilliseconds(millisecondsLeft)
   }
 
@@ -64,10 +64,10 @@ class ProgressStats {
      * @returns {string}
      */
   formatMilliseconds (millisec) {
-    var seconds = (millisec / 1000).toFixed(1)
-    var minutes = (millisec / (1000 * 60)).toFixed(1)
-    var hours = (millisec / (1000 * 60 * 60)).toFixed(1)
-    var days = (millisec / (1000 * 60 * 60 * 24)).toFixed(1)
+    const seconds = (millisec / 1000).toFixed(1)
+    const minutes = (millisec / (1000 * 60)).toFixed(1)
+    const hours = (millisec / (1000 * 60 * 60)).toFixed(1)
+    const days = (millisec / (1000 * 60 * 60 * 24)).toFixed(1)
     if (seconds < 60) {
       return seconds + ' seconds'
     } else if (minutes < 60) {
