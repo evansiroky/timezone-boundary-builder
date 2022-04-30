@@ -1,3 +1,20 @@
+## Unreleased
+
+### Zone Changes
+
+* Directly use OpenStreetMap timezone relations for the following zones:
+  * `America/Denver`
+  * `America/Los_Angeles`
+  * `America/North_Dakota/Beulah`
+  * `America/North_Dakota/Center`
+  * `America/North_Dakota/New_Salem`
+  * `America/Phoenix`
+* Update to latest OSM data
+
+### Other Changes
+
+* Fix linting errors
+
 ## 2021c
 
 ### Zone Changes

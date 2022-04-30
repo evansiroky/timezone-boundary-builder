@@ -95,6 +95,15 @@
   "America-Nipigon-tz": {
     "timezone": "America/Nipigon"
   },
+  "America-North_Dakota-Beulah-tz": {
+    "timezone": "America-North_Dakota-Beulah-tz"
+  },
+  "America-North_Dakota-Center-tz": {
+    "timezone": "America-North_Dakota-Center-tz"
+  },
+  "America-North_Dakota-New_Salem-tz": {
+    "timezone": "America-North_Dakota-New_Salem-tz"
+  },
   "America-Ojinaga-tz": {
     "timezone": "America/Ojinaga"
   },
@@ -353,10 +362,6 @@
   "Corrientes": {
     "ISO3166-2": "AR-W"
   },
-  "Corson County, SD": {
-    "name": "Corson County",
-    "nist:state_fips": "46"
-  },
   "Costa Rica": {
     "ISO3166-1": "CR"
   },
@@ -393,10 +398,6 @@
   },
   "Departamento Atlántico": {
     "name": "Departamento Atlántico"
-  },
-  "Dewey County, SD": {
-    "name": "Dewey County",
-    "nist:state_fips": "46"
   },
   "Dickinson County, MI": {
     "name": "Dickinson County",
@@ -492,10 +493,6 @@
   },
   "Govi-Altai": {
     "ISO3166-2": "MN-065"
-  },
-  "Grant County, ND": {
-    "name": "Grant County",
-    "nist:state_fips": "38"
   },
   "Greece": {
     "ISO3166-1": "GR"
@@ -746,10 +743,6 @@
     "name": "Menominee County",
     "nist:state_fips": "26"
   },
-  "Mercer County, ND": {
-    "name": "Mercer County",
-    "nist:state_fips": "38"
-  },
   "Mexico": {
     "ISO3166-1": "MX"
   },
@@ -776,10 +769,6 @@
   },
   "Morocco": {
     "ISO3166-1": "MA"
-  },
-  "Morton County, ND": {
-    "name": "Morton County",
-    "nist:state_fips": "38"
   },
   "Mozambique": {
     "ISO3166-1": "MZ"
@@ -841,10 +830,6 @@
   "Novosibirsk": {
     "ISO3166-2": "RU-NVS"
   },
-  "Oliver County, ND": {
-    "name": "Oliver County",
-    "nist:state_fips": "38"
-  },
   "Oman": {
     "ISO3166-1": "OM"
   },
@@ -853,10 +838,6 @@
   },
   "Oymyakonsky": {
     "name:en": "Oymyakonsky Ulus"
-  },
-  "Page": {
-    "name": "Page",
-    "is_in:state_code": "AZ"
   },
   "Pakistan": {
     "ISO3166-1": "PK"
@@ -1243,9 +1224,6 @@
   },
   "West Kazakhstan": {
     "ISO3166-2": "KZ-ZAP"
-  },
-  "West Wendover": {
-    "name": "West Wendover"
   },
   "Western Sahara": {
     "ISO3166-1": "EH"

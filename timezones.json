@@ -922,45 +922,12 @@
     }, {
       "op": "union",
       "source": "overpass",
-      "id": "West Wendover"
-    }, {
-      "op": "difference",
-      "source": "overpass",
-      "id": "America-Boise-tz"
-    }, {
-      "op": "difference",
-      "source": "overpass",
-      "id": "Page"
-    }, {
-      "op": "union",
-      "source": "overpass",
       "id": "Sioux County, ND"
     }, {
       "op": "difference",
       "source": "manual-polygon",
       "data": [[[-98,44],[-98,46.5],[-100.8,46.57],[-101.326,46.146],[-101.324,45.938],[-100.583,44.865],[-100.475,44.533],[-100.855,44.162],[-98,44]]],
       "description": "anomalies in North Dakota"
-    }, {
-      "op": "union",
-      "source": "overpass",
-      "id": "Dewey County, SD"
-    }, {
-      "op": "union",
-      "source": "overpass",
-      "id": "Corson County, SD"
-    }, {
-      "op": "union",
-      "source": "overpass",
-      "id": "Grant County, ND"
-    }, {
-      "op": "difference",
-      "source": "overpass",
-      "id": "Morton County, ND"
-    }, {
-      "op": "difference",
-      "source": "manual-polygon",
-      "data": [[[-111.432,36.937],[-111.423,36.933],[-111.423,36.928],[-111.488,36.875],[-111.58,36.875],[-111.45,36.97],[-111.432,36.937]]],
-      "description": "Exclude artifacts as result of mismatching City boundary of Page, AZ"
     }
   ],
   "America/Detroit": [
@@ -1325,10 +1292,6 @@
       "op": "init",
       "source": "overpass",
       "id": "America-Los_Angeles-tz"
-    }, {
-      "op": "difference",
-      "source": "overpass",
-      "id": "West Wendover"
     }
   ],
   "America/Lower_Princes": [
@@ -1596,21 +1559,21 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Mercer County, ND"
+      "id": "America-North_Dakota-Beulah-tz"
     }
   ],
   "America/North_Dakota/Center": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Oliver County, ND"
+      "id": "America-North_Dakota-Center-tz"
     }
   ],
   "America/North_Dakota/New_Salem": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Morton County, ND"
+      "id": "America-North_Dakota-New_Salem-tz"
     }
   ],
   "America/Nuuk": [
@@ -1668,15 +1631,6 @@
       "op": "init",
       "source": "overpass",
       "id": "America-Phoenix-tz"
-    }, {
-      "op": "union",
-      "source": "overpass",
-      "id": "Page"
-    }, {
-      "op": "union",
-      "source": "manual-polygon",
-      "data": [[[-111.432,36.937],[-111.423,36.933],[-111.423,36.928],[-111.488,36.875],[-111.58,36.875],[-111.45,36.97],[-111.432,36.937]]],
-      "description": "Include artifacts as result of mismatching City boundary of Page, AZ"
     }
   ],
   "America/Port-au-Prince": [
