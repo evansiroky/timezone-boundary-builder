@@ -697,10 +697,6 @@
       "op": "init",
       "source": "overpass",
       "id": "America-Atikokan-tz"
-    }, {
-      "op": "difference",
-      "source": "overpass",
-      "id": "America-Iqaluit-tz"
     }
   ],
   "America/Bahia": [
@@ -899,12 +895,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Yukon"
-    }, {
-      "op": "difference",
-      "source": "manual-polygon",
-      "data": [[[-138,75],[-138,56],[-95,62],[-138,75]]],
-      "description": "Difference against a manually created polygon to create an east-west split at the 138th meridian."
+      "id": "America-Dawson-tz"
     }
   ],
   "America/Dawson_Creek": [
@@ -934,23 +925,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Michigan"
-    }, {
-      "op": "difference",
-      "source": "overpass",
-      "id": "Gogebic County"
-    }, {
-      "op": "difference",
-      "source": "overpass",
-      "id": "Iron County, MI"
-    }, {
-      "op": "difference",
-      "source": "overpass",
-      "id": "Dickinson County, MI"
-    }, {
-      "op": "difference",
-      "source": "overpass",
-      "id": "Menominee County, MI"
+      "id": "America-Detroit-tz"
     }
   ],
   "America/Dominica": [
@@ -962,26 +937,9 @@
   ],
   "America/Edmonton": [
     {
-      "op": "init",
-      "source": "overpass",
-      "id": "Canada"
-    }, {
-      "op": "intersect",
-      "source": "manual-polygon",
-      "data": [[[-118,55],[-123,48],[-112,48],[-118,55]]],
-      "description": "The Edmonton timezone in OSM currently does not include the British Columbia portion.  Therefore, the boundary is obtained by first intersect Canada with this polygon and then remove the Vancouver and Creston timezones."
-    }, {
       "op": "union",
       "source": "overpass",
       "id": "America-Edmonton-tz"
-    }, {
-      "op": "difference",
-      "source": "overpass",
-      "id": "America-Vancouver-tz"
-    }, {
-      "op": "difference",
-      "source": "overpass",
-      "id": "America-Creston-tz"
     }
   ],
   "America/Eirunepe": [
@@ -1002,7 +960,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Northern Rockies Regional Municipality"
+      "id": "America-Fort_Nelson-tz"
     }
   ],
   "America/Fortaleza": [
@@ -1153,35 +1111,35 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Starke County, IN"
+      "id": "America-Indiana-Knox-tz"
     }
   ],
   "America/Indiana/Marengo": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Crawford County, IN"
+      "id": "America-Indiana-Marengo-tz"
     }
   ],
   "America/Indiana/Petersburg": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Pike County, IN"
+      "id": "America-Indiana-Petersburg-tz"
     }
   ],
   "America/Indiana/Tell_City": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Perry County, IN"
+      "id": "America-Indiana-Tell_City-tz"
     }
   ],
   "America/Indiana/Vevay": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Switzerland County, IN"
+      "id": "America-Indiana-Vevay-tz"
     }
   ],
   "America/Indiana/Vincennes": [
@@ -1195,19 +1153,14 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Pulaski County, IN"
+      "id": "America-Indiana-Winamac-tz"
     }
   ],
   "America/Inuvik": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Northwest Territories"
-    }, {
-      "op": "difference",
-      "source": "manual-polygon",
-      "data": [[[-120,85],[-120,56],[-55,62],[-120,85]]],
-      "description": "Difference against a manually created polygon to create an east-west split at the 120th meridian."
+      "id": "America-Inuvik-tz"
     }
   ],
   "America/Iqaluit": [
@@ -1228,42 +1181,21 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "United States of America"
-    }, {
-      "op": "intersect",
-      "source": "manual-polygon",
-      "data": [[[-136,58.1],[-136.431016,57.830928],[-137,57.8248],[-138.5,58.5],[-138.2781,58.719],[-137.9464,58.80181],[-137.5725,58.89509],[-137.52612,58.906375],[-136,60],[-132,60],[-132,57.5],[-136,58.1]]],
-      "description": "Isolate Juneau area from the rest of Alaska.  This operation results in an arbitrary sea boundary based off of the last known trajectories of various county boundaries."
-    }, {
-      "op": "union",
-      "source": "overpass",
-      "id": "Hoonah-Angoon"
+      "id": "America-Juneau-tz"
     }
   ],
   "America/Kentucky/Louisville": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Jefferson County, KY"
-    }, {
-      "op": "union",
-      "source": "overpass",
-      "id": "Clark County, IN"
-    }, {
-      "op": "union",
-      "source": "overpass",
-      "id": "Floyd County, IN"
-    }, {
-      "op": "union",
-      "source": "overpass",
-      "id": "Harrison County, IN"
+      "id": "America-Kentucky-Louisville-tz"
     }
   ],
   "America/Kentucky/Monticello": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Wayne County, KY"
+      "id": "America-Kentucky-Monticello-tz"
     }
   ],
   "America/Kralendijk": [
@@ -1395,26 +1327,14 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Saint Pierre and Miquelon"
+      "id": "America-Miquelon-tz"
     }
   ],
   "America/Menominee": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Gogebic County"
-    }, {
-      "op": "union",
-      "source": "overpass",
-      "id": "Iron County, MI"
-    }, {
-      "op": "union",
-      "source": "overpass",
-      "id": "Dickinson County, MI"
-    }, {
-      "op": "union",
-      "source": "overpass",
-      "id": "Menominee County, MI"
+      "id": "America-Menominee-tz"
     }
   ],
   "America/Merida": [
@@ -1472,7 +1392,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "New Brunswick"
+      "id": "America-Moncton-tz"
     }
   ],
   "America/Monterrey": [
@@ -1508,10 +1428,6 @@
       "op": "init",
       "source": "overpass",
       "id": "America-New_York-tz"
-    }, {
-      "op": "difference",
-      "source": "overpass",
-      "id": "Jefferson County, KY"
     }, {
       "op": "union",
       "source": "manual-polygon",
@@ -1946,34 +1862,16 @@
   ],
   "America/Vancouver": [
     {
-      "op": "init",
-      "source": "overpass",
-      "id": "Canada"
-    }, {
-      "op": "intersect",
-      "source": "manual-polygon",
-      "data": [[[-121,47],[-133,61],[-143,61],[-127,47],[-121,47]]],
-      "description": "Intersect part of Canada to include terriritorial waters."
-    }, {
       "op": "union",
       "source": "overpass",
       "id": "America-Vancouver-tz"
-    }, {
-      "op": "difference",
-      "source": "overpass",
-      "id": "Yukon"
     }
   ],
   "America/Whitehorse": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Yukon"
-    }, {
-      "op": "difference",
-      "source": "manual-polygon",
-      "data": [[[-138,75],[-138,56],[-165,62],[-138,75]]],
-      "description": "Difference against a manually created polygon to create an east-west split at the 138th meridian."
+      "id": "America-Whitehorse-tz"
     }
   ],
   "America/Winnipeg": [
@@ -1987,24 +1885,14 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "United States of America"
-    }, {
-      "op": "intersect",
-      "source": "manual-polygon",
-      "data": [[[-141,62],[-141,58],[-138.2781,58.719],[-137.9464,58.80181],[-137.5725,58.89509],[-137.52612,58.906375],[-134,62],[-141,62]]],
-      "description": "Intersect part of USA in Alaska to create timezone.  Includes arbitrary sea boundary along the -141st meridian and along the last observed trajectories of the sea bouandary of Yakutat and Hoonah-Angoon counties."
+      "id": "America-Yakutat-tz"
     }
   ],
   "America/Yellowknife": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Northwest Territories"
-    }, {
-      "op": "difference",
-      "source": "manual-polygon",
-      "data": [[[-120,85],[-120,56],[-165,62],[-120,85]]],
-      "description": "Difference against a manually created polygon to create an east-west split at the 120th meridian."
+      "id": "America-Yellowknife-tz"
     }
   ],
   "Antarctica/Casey": [

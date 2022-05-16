@@ -47,17 +47,26 @@
   "America-Creston-tz": {
     "name": "America/Creston"
   },
+  "America-Dawson-tz": {
+    "timezone": "America/Dawson"
+  },
   "America-Dawson_Creek-tz": {
     "timezone": "America/Dawson_Creek"
   },
   "America-Denver-tz": {
     "timezone": "America/Denver"
   },
+  "America-Detroit-tz": {
+    "timezone": "America/Detroit"
+  },
   "America-Edmonton-tz": {
     "timezone": "America/Edmonton"
   },
   "America-Eirunepe-tz": {
     "timezone": "America/Eirunepe"
+  },
+  "America-Fort_Nelson-tz": {
+    "timezone": "America/Fort_Nelson"
   },
   "America-Glace_Bay-tz": {
     "timezone": "America/Glace_Bay"
@@ -68,14 +77,44 @@
   "America-Indiana-Indianapolis-tz": {
     "timezone": "America/Indiana/Indianapolis"
   },
+  "America-Indiana-Knox-tz": {
+    "timezone": "America/Indiana/Knox"
+  },
+  "America-Indiana-Marengo-tz": {
+    "timezone": "America/Indiana/Marengo"
+  },
+  "America-Indiana-Petersburg-tz": {
+    "timezone": "America/Indiana/Petersburg"
+  },
+  "America-Indiana-Tell_City-tz": {
+    "timezone": "America/Indiana/Tell_City"
+  },
+  "America-Indiana-Vevay-tz": {
+    "timezone": "America/Indiana/Vevay"
+  },
   "America-Indiana-Vincennes-tz": {
     "timezone": "America/Indiana/Vincennes"
+  },
+  "America-Indiana-Winamac-tz": {
+    "timezone": "America/Indiana/Winamac"
+  },
+  "America-Inuvik-tz": {
+    "timezone": "America/Inuvik"
   },
   "America-Iqaluit-tz": {
     "timezone": "America/Iqaluit"
   },
+  "America-Juneau-tz": {
+    "timezone": "America/Juneau"
+  },
+  "America-Kentucky-Louisville-tz": {
+    "timezone": "America/Kentucky/Louisville"
+  },
   "America-Los_Angeles-tz": {
     "timezone": "America/Los_Angeles"
+  },
+  "America-Kentucky-Monticello-tz": {
+    "timezone": "America/Kentucky/Monticello"
   },
   "America-Manaus-tz": {
     "timezone": "America/Manaus"
@@ -83,8 +122,17 @@
   "America-Matamoros-tz": {
     "timezone": "America/Matamoros"
   },
+  "America-Menominee-tz": {
+    "timezone": "America/Menominee"
+  },
   "America-Merida-tz": {
     "timezone": "America/Merida"
+  },
+  "America-Miquelon-tz": {
+    "timezone": "America/Miquelon"
+  },
+  "America-Moncton-tz": {
+    "timezone": "America/Moncton"
   },
   "America-Monterrey-tz": {
     "timezone": "America/Monterrey"
@@ -140,8 +188,17 @@
   "America-Vancouver-tz": {
     "timezone": "America/Vancouver"
   },
+  "America-Whitehorse-tz": {
+    "timezone": "America/Whitehorse"
+  },
   "America-Winnipeg-tz": {
     "timezone": "America/Winnipeg"
+  },
+  "America-Yakutat-tz": {
+    "timezone": "America/Yakutat"
+  },
+  "America-Yellowknife-tz": {
+    "timezone": "America/Yellowknife"
   },
   "Amur": {
     "ISO3166-2": "RU-AMU"
@@ -340,10 +397,6 @@
   "Chuuk": {
     "ISO3166-2": "FM-TRK"
   },
-  "Clark County, IN": {
-    "name": "Clark County",
-    "nist:state_fips": "18"
-  },
   "Colombia": {
     "ISO3166-1": "CO"
   },
@@ -364,10 +417,6 @@
   },
   "Costa Rica": {
     "ISO3166-1": "CR"
-  },
-  "Crawford County, IN": {
-    "name": "Crawford County",
-    "nist:state_fips": "18"
   },
   "Crimea": {
     "name:en": "Republic of Crimea"
@@ -398,10 +447,6 @@
   },
   "Departamento Atlántico": {
     "name": "Departamento Atlántico"
-  },
-  "Dickinson County, MI": {
-    "name": "Dickinson County",
-    "nist:state_fips": "26"
   },
   "Djibouti": {
     "ISO3166-1": "DJ"
@@ -463,10 +508,6 @@
   "Finland": {
     "ISO3166-1": "FI"
   },
-  "Floyd County, IN": {
-    "name": "Floyd County",
-    "nist:state_fips": "18"
-  },
   "Formosa": {
     "ISO3166-2": "AR-P"
   },
@@ -487,9 +528,6 @@
   },
   "Gibraltar": {
     "ISO3166-1": "GI"
-  },
-  "Gogebic County": {
-    "name": "Gogebic County"
   },
   "Govi-Altai": {
     "ISO3166-2": "MN-065"
@@ -524,10 +562,6 @@
   "Haiti": {
     "ISO3166-1": "HT"
   },
-  "Harrison County, IN": {
-    "name": "Harrison County",
-    "nist:state_fips": "18"
-  },
   "Honduras": {
     "ISO3166-1": "HN"
   },
@@ -561,10 +595,6 @@
   "Irkutsk": {
     "ISO3166-2": "RU-IRK"
   },
-  "Iron County, MI": {
-    "name": "Iron County",
-    "nist:state_fips": "26"
-  },
   "Isle of Man": {
     "ISO3166-1": "IM"
   },
@@ -582,10 +612,6 @@
   },
   "Japan": {
     "ISO3166-1": "JP"
-  },
-  "Jefferson County, KY": {
-    "name": "Jefferson County",
-    "nist:state_fips": "21"
   },
   "Jersey": {
     "ISO3166-1": "JE"
@@ -739,15 +765,8 @@
   "Mendoza": {
     "ISO3166-2": "AR-M"
   },
-  "Menominee County, MI": {
-    "name": "Menominee County",
-    "nist:state_fips": "26"
-  },
   "Mexico": {
     "ISO3166-1": "MX"
-  },
-  "Michigan": {
-    "ISO3166-2": "US-MI"
   },
   "Misiones": {
     "ISO3166-2": "AR-N"
@@ -791,9 +810,6 @@
   "Neuquén": {
     "ISO3166-2": "AR-Q"
   },
-  "New Brunswick": {
-    "ISO3166-2": "CA-NB"
-  },
   "New Zealand": {
     "ISO3166-1": "NZ"
   },
@@ -815,14 +831,8 @@
   "North Maluku": {
     "name:en": "North Maluku"
   },
-  "Northern Rockies Regional Municipality": {
-    "name": "Northern Rockies Regional Municipality"
-  },
   "Northern Territory": {
     "ISO3166-2": "AU-NT"
-  },
-  "Northwest Territories": {
-    "ISO3166-2": "CA-NT"
   },
   "Norway": {
     "ISO3166-1": "NO"
@@ -860,19 +870,11 @@
   "Pernambuco": {
     "ISO3166-2": "BR-PE"
   },
-  "Perry County, IN": {
-    "name": "Perry County",
-    "nist:state_fips": "18"
-  },
   "Peru": {
     "ISO3166-1:alpha2": "PE"
   },
   "Philippines": {
     "ISO3166-1": "PH"
-  },
-  "Pike County, IN": {
-    "name": "Pike County",
-    "nist:state_fips": "18"
   },
   "Pitcairn Islands": {
     "ISO3166-1": "PN"
@@ -888,10 +890,6 @@
   },
   "Prince of Wales-Hyder": {
     "name": "Prince of Wales-Hyder"
-  },
-  "Pulaski County, IN": {
-    "name": "Pulaski County",
-    "nist:state_fips": "18"
   },
   "Qatar": {
     "ISO3166-1": "QA"
@@ -937,9 +935,6 @@
   },
   "Saint Maarten": {
     "ISO3166-1": "MF"
-  },
-  "Saint Pierre and Miquelon": {
-    "ISO3166-1": "PM"
   },
   "Saint Vincent and the Grenadines": {
     "ISO3166-1": "VC"
@@ -1061,10 +1056,6 @@
   "Sri Lanka": {
     "ISO3166-1": "LK"
   },
-  "Starke County, IN": {
-    "name": "Starke County",
-    "nist:state_fips": "18"
-  },
   "Sudan": {
     "ISO3166-1": "SD"
   },
@@ -1076,10 +1067,6 @@
   },
   "Sweden": {
     "ISO3166-1": "SE"
-  },
-  "Switzerland County, IN": {
-    "name": "Switzerland County",
-    "nist:state_fips": "18"
   },
   "Switzerland": {
     "ISO3166-1": "CH"
@@ -1214,10 +1201,6 @@
   },
   "Volgograd": {
     "ISO3166-2": "RU-VGG"
-  },
-  "Wayne County, KY": {
-    "name": "Wayne County",
-    "nist:state_fips": "21"
   },
   "West Kalimantan": {
     "name:en": "West Kalimantan"
