@@ -3,12 +3,34 @@
 ### Zone Changes
 
 * Directly use OpenStreetMap timezone relations for the following zones:
+  * `America/Atikokan`
+  * `America/Dawson`
   * `America/Denver`
+  * `America/Detroit`
+  * `America/Edmonton`
+  * `America/Fort_Nelson`
+  * `America/Indiana/Knox`
+  * `America/Indiana/Marengo`
+  * `America/Indiana/Petersburg`
+  * `America/Indiana/Tell_City`
+  * `America/Indiana/Vevay`
+  * `America/Indiana/Winamac`
+  * `America/Inuvik`
+  * `America/Juneau`
+  * `America/Kentucky/Louisville`
+  * `America/Kentucky/Monticello`
   * `America/Los_Angeles`
+  * `America/Menominee`
+  * `America/Miquelon`
+  * `America/Moncton`
   * `America/North_Dakota/Beulah`
   * `America/North_Dakota/Center`
   * `America/North_Dakota/New_Salem`
   * `America/Phoenix`
+  * `America/Vancouver`
+  * `America/Whitehorse`
+  * `America/Yakutat`
+  * `America/Yellowknife`
 * Update to latest OSM data
 
 ### Other Changes
