@@ -34,6 +34,7 @@ A few common languages already have libraries with an API that can be used to lo
 | C | [ZoneDetect](https://github.com/BertoldVdb/ZoneDetect)|
 | Elixir | [tz_world](https://hex.pm/packages/tz_world)|
 | Go | [timezoneLookup](https://github.com/evanoberholster/timezoneLookup)|
+| Go | [tzf](https://github.com/ringsaturn/tzf)|
 | Java & Android | [TimeZoneMap](https://github.com/dustin-johnson/timezonemap)|
 | Java | [Timeshape](https://github.com/RomanIakovlev/timeshape)|
 | JavaScript (node.js only) | [node-geo-tz](https://github.com/evansiroky/node-geo-tz/)|
