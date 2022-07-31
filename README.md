@@ -43,6 +43,7 @@ A few common languages already have libraries with an API that can be used to lo
 | .NET | [GeoTimezone](https://github.com/mj1856/GeoTimeZone)|
 | php | [Geo-Timezone](https://github.com/minube/geo-timezone)|
 | Python | [timezonefinder](https://github.com/MrMinimal64/timezonefinder)|
+| Python | [tzfpy](https://github.com/ringsaturn/tzf/tree/main/python) |
 | R | [lutz](https://github.com/ateucher/lutz)|
 | Ruby | [wheretz](https://github.com/zverok/wheretz)|
 
