@@ -144,13 +144,13 @@
     "timezone": "America/Nipigon"
   },
   "America-North_Dakota-Beulah-tz": {
-    "timezone": "America-North_Dakota-Beulah-tz"
+    "timezone": "America/North_Dakota/Beulah"
   },
   "America-North_Dakota-Center-tz": {
-    "timezone": "America-North_Dakota-Center-tz"
+    "timezone": "America/North_Dakota/Center"
   },
   "America-North_Dakota-New_Salem-tz": {
-    "timezone": "America-North_Dakota-New_Salem-tz"
+    "timezone": "America/North_Dakota/New_Salem"
   },
   "America-Ojinaga-tz": {
     "timezone": "America/Ojinaga"
