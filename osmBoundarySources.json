@@ -312,6 +312,9 @@
   "America-Santarem-tz": {
     "timezone": "America/Santarem"
   },
+  "America-St_Johns-tz": {
+    "timezone": "America/St_Johns"
+  },
   "America-Swift_Current-tz": {
     "timezone": "America/Swift_Current"
   },
@@ -463,9 +466,6 @@
   },
   "Cameroon": {
     "ISO3166-1": "CM"
-  },
-  "Canada": {
-    "ISO3166-1": "CA"
   },
   "Cape Verde": {
     "ISO3166-1": "CV"
@@ -921,9 +921,6 @@
   },
   "Quang Tri": {
     "ISO3166-2": "VN-25"
-  },
-  "Quebec": {
-    "ISO3166-2": "CA-QC"
   },
   "Queensland": {
     "ISO3166-2": "AU-QLD"
