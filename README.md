@@ -40,6 +40,7 @@ A few common languages already have libraries with an API that can be used to lo
 | JavaScript (node.js only) | [node-geo-tz](https://github.com/evansiroky/node-geo-tz/)|
 | JavaScript (node.js and in browser) | [timespace](https://github.com/mapbox/timespace)|
 | JavaScript (node.js and in browser) | [tz-lookup](https://github.com/darkskyapp/tz-lookup-oss) |
+| Julia | [TimeZoneFinder](https://github.com/tpgillam/TimeZoneFinder.jl)|
 | .NET | [GeoTimezone](https://github.com/mj1856/GeoTimeZone)|
 | php | [Geo-Timezone](https://github.com/minube/geo-timezone)|
 | Python | [timezonefinder](https://github.com/MrMinimal64/timezonefinder)|
