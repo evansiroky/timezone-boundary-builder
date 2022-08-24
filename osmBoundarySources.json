@@ -24,16 +24,16 @@
     "ISO3166-2": "RU-AL"
   },
   "America-Anguilla-tz": {
-    "timezone": "America/Anguilla-tz"
+    "timezone": "America/Anguilla"
   },
   "America-Antigua-tz": {
-    "timezone": "America/Antigua-tz"
+    "timezone": "America/Antigua"
   },
   "America-Aruba-tz": {
-    "timezone": "America/Aruba-tz"
+    "timezone": "America/Aruba"
   },
   "America-Araguaina-tz": {
-    "timezone": "America/Araguaina-tz"
+    "timezone": "America/Araguaina"
   },
   "America-Argentina-Buenos_Aires-tz": {
     "timezone": "America/Argentina/Buenos_Aires"
@@ -280,13 +280,13 @@
     "timezone": "America/Nipigon"
   },
   "America-North_Dakota-Beulah-tz": {
-    "timezone": "America-North_Dakota-Beulah-tz"
+    "timezone": "America/North_Dakota/Beulah"
   },
   "America-North_Dakota-Center-tz": {
-    "timezone": "America-North_Dakota-Center-tz"
+    "timezone": "America/North_Dakota/Center"
   },
   "America-North_Dakota-New_Salem-tz": {
-    "timezone": "America-North_Dakota-New_Salem-tz"
+    "timezone": "America/North_Dakota/New_Salem"
   },
   "America-Ojinaga-tz": {
     "timezone": "America/Ojinaga"

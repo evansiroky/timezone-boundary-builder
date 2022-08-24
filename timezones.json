@@ -831,7 +831,7 @@
   ],
   "America/Edmonton": [
     {
-      "op": "union",
+      "op": "init",
       "source": "overpass",
       "id": "America-Edmonton-tz"
     }
@@ -1716,7 +1716,7 @@
   ],
   "America/Vancouver": [
     {
-      "op": "union",
+      "op": "init",
       "source": "overpass",
       "id": "America-Vancouver-tz"
     }
