@@ -1285,7 +1285,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "America-Nipigon-tz"
+      "id": "Nipigon"
     }
   ],
   "America/Nome": [
@@ -1448,7 +1448,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "America-Rainy_River-tz"
+      "id": "Town of Rainy River"
     }
   ],
   "America/Rankin_Inlet": [
@@ -1673,7 +1673,11 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "America-Thunder_Bay-tz"
+      "id": "City of Thunder Bay"
+    }, {
+      "op": "union",
+      "source": "overpass",
+      "id": "Fort William First Nation"
     }
   ],
   "America/Tijuana": [
@@ -1688,6 +1692,18 @@
       "op": "init",
       "source": "overpass",
       "id": "America-Toronto-tz"
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "City of Thunder Bay"
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "Fort William First Nation"
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "Nipigon"
     }
   ],
   "America/Tortola": [
@@ -1716,6 +1732,10 @@
       "op": "init",
       "source": "overpass",
       "id": "America-Winnipeg-tz"
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "Town of Rainy River"
     }
   ],
   "America/Yakutat": [

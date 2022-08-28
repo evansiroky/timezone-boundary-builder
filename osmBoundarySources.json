@@ -282,9 +282,6 @@
   "America-New_York-tz": {
     "timezone": "America/New_York"
   },
-  "America-Nipigon-tz": {
-    "timezone": "America/Nipigon"
-  },
   "America-North_Dakota-Beulah-tz": {
     "timezone": "America/North_Dakota/Beulah"
   },
@@ -302,9 +299,6 @@
   },
   "America-Phoenix-tz": {
     "timezone": "America/Phoenix"
-  },
-  "America-Rainy_River-tz": {
-    "timezone": "America/Rainy_River"
   },
   "America-Rankin_Inlet-tz": {
     "timezone": "America/Rankin_Inlet"
@@ -324,8 +318,6 @@
   "America-Swift_Current-tz": {
     "timezone": "America/Swift_Current"
   },
-  "America-Thunder_Bay-tz": {
-    "timezone": "America/Thunder_Bay"
   "America-Tijuana-tz": {
     "timezone": "America/Tijuana"
   },
@@ -496,6 +488,9 @@
   "Chuuk": {
     "ISO3166-2": "FM-TRK"
   },
+  "City of Thunder Bay": {
+    "wikidata": "Q34116"
+  },
   "Comoros": {
     "ISO3166-1": "KM"
   },
@@ -587,6 +582,9 @@
   },
   "Finland": {
     "ISO3166-1": "FI"
+  },
+  "Fort William First Nation": {
+    "name": "Animkii Wajiw / Fort William First Nation"
   },
   "France": {
     "ISO3166-1:alpha2": "FR"
@@ -861,6 +859,9 @@
   "Nigeria": {
     "ISO3166-1": "NG"
   },
+  "Nipigon": {
+    "wikidata": "Q1993247"
+  },
   "Niue": {
     "ISO3166-1": "NU"
   },
@@ -1116,6 +1117,9 @@
   },
   "Tonga": {
     "ISO3166-1": "TO"
+  },
+  "Town of Rainy River": {
+    "wikidata": "Q3492477"
   },
   "Trinidad and Tobago": {
     "ISO3166-1": "TT"
