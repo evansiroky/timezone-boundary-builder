@@ -258,6 +258,12 @@
   "America-Matamoros-tz": {
     "timezone": "America/Matamoros"
   },
+  "America-Mazatlan-tz": {
+    "timezone": "America/Mazatlan"
+  },
+  "America-Mexico_City-tz": {
+    "timezone": "America/Mexico_City"
+  },
   "America-Menominee-tz": {
     "timezone": "America/Menominee"
   },
@@ -320,6 +326,8 @@
   },
   "America-Thunder_Bay-tz": {
     "timezone": "America/Thunder_Bay"
+  "America-Tijuana-tz": {
+    "timezone": "America/Tijuana"
   },
   "America-Toronto-tz": {
     "timezone": "America/Toronto"
@@ -399,9 +407,6 @@
   },
   "Bahrain": {
     "ISO3166-1": "BH"
-  },
-  "Bahía de Banderas": {
-    "name": "Bahía de Banderas"
   },
   "Bangladesh": {
     "ISO3166-1": "BD"
@@ -656,9 +661,6 @@
   "Italy": {
     "ISO3166-1": "IT"
   },
-  "Jalisco": {
-    "ISO3166-2": "MX-JAL"
-  },
   "Japan": {
     "ISO3166-1": "JP"
   },
@@ -802,9 +804,6 @@
   "Mauritius": {
     "ISO3166-1": "MU"
   },
-  "Mexico": {
-    "ISO3166-1": "MX"
-  },
   "Moldova": {
     "ISO3166-1": "MD"
   },
@@ -834,9 +833,6 @@
   },
   "Nauru": {
     "ISO3166-1": "NR"
-  },
-  "Nayarit": {
-    "ISO3166-2": "MX-NAY"
   },
   "Nepal": {
     "ISO3166-1": "NP"
@@ -973,9 +969,6 @@
   "Samoa": {
     "ISO3166-1": "WS"
   },
-  "San Luis Potosí": {
-    "ISO3166-2": "MX-SLP"
-  },
   "San Marino": {
     "ISO3166-1": "SM"
   },
@@ -1007,9 +1000,6 @@
   "Sierra Leone": {
     "ISO3166-1": "SL"
   },
-  "Sinaloa": {
-    "ISO3166-2": "MX-SIN"
-  },
   "Singapore": {
     "ISO3166-1": "SG"
   },
@@ -1031,9 +1021,6 @@
   },
   "Somalia": {
     "ISO3166-1": "SO"
-  },
-  "Sonora": {
-    "ISO3166-2": "MX-SON"
   },
   "South Africa": {
     "ISO3166-1": "ZA",
@@ -1080,9 +1067,6 @@
   },
   "Sühbaatar": {
     "ISO3166-2": "MN-051"
-  },
-  "Tabasco": {
-    "ISO3166-2": "MX-TAB"
   },
   "Tajikistan": {
     "ISO3166-1": "TJ"
@@ -1182,9 +1166,6 @@
   "Vatican City": {
     "ISO3166-1": "VA"
   },
-  "Veracruz": {
-    "ISO3166-2": "MX-VER"
-  },
   "Victoria": {
     "ISO3166-2": "AU-VIC"
   },
@@ -1217,9 +1198,6 @@
   },
   "Zabaykalsk": {
     "ISO3166-2": "RU-ZAB"
-  },
-  "Zacatecas": {
-    "ISO3166-2": "MX-ZAC"
   },
   "Zakarpattia": {
     "ISO3166-2": "UA-21"

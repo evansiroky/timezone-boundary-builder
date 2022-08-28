@@ -67,7 +67,9 @@
   * `America/La_Paz`
   * `America/Lima`
   * `America/Los_Angeles`
+  * `America/Mazatlan`
   * `America/Menominee`
+  * `America/Mexico_City`
   * `America/Miquelon`
   * `America/Moncton`
   * `America/North_Dakota/Beulah`
@@ -75,6 +77,7 @@
   * `America/North_Dakota/New_Salem`
   * `America/Phoenix`
   * `America/St_Johns`
+  * `America/Tijuana`
   * `America/Vancouver`
   * `America/Whitehorse`
   * `America/Yakutat`

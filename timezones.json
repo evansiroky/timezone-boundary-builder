@@ -1170,24 +1170,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Mexico"
-    }, {
-      "op": "intersect",
-      "source": "manual-polygon",
-      "data": [[[-112,28],[-128,28],[-109,20],[-105.56,21.11],[-105.3556082,20.9602092],[-104.22,21.22],[-107.75,25.33],[-109.2480469,26.316067],[-110,26.3],[-112,28]]],
-      "description": "Grab part of Mexico to make this timezone.  This operation results in two arbitrary sea boundaries - one near Los Mochis and another near Puerto Vallarta."
-    }, {
-      "op": "union",
-      "source": "overpass",
-      "id": "Sinaloa"
-    }, {
-      "op": "union",
-      "source": "overpass",
-      "id": "Nayarit"
-    }, {
-      "op": "difference",
-      "source": "overpass",
-      "id": "Bahía de Banderas"
+      "id": "America-Mazatlan-tz"
     }
   ],
   "America/Miquelon": [
@@ -1227,32 +1210,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Mexico"
-    }, {
-      "op": "intersect",
-      "source": "manual-polygon",
-      "data": [[[-120,18],[-93.64,11.17],[-89.4,15.7],[-90,17],[-91.74,17.9],[-92.7,18.2],[-92.4690272,18.6504269],[-92.5110808,18.8519806],[-95,23],[-97.574497,22.313607],[-97.7743477,22.263916],[-97.7745,22.2638],[-97.7844,22.26143],[-97.79,22.2604],[-97.797,22.256],[-98,21.7],[-102.7,24],[-103.3,21.4],[-104.3,20.4],[-105.26,20.68],[-105.2786916,20.6724507],[-105.2808749,20.6713757],[-105.3009294,20.6475388],[-105.330481,20.6347751],[-105.403923,20.6243015],[-105.5724898,20.62692],[-105.883254,20.685482],[-108,21.5],[-120,18]]],
-      "description": "Grab part of Mexico to make this timezone.  This operation results in three arbitrary sea boundaries - one near Puerto Vallarta, one near Tampico and another near Ciudad del Carmen."
-    }, {
-      "op": "union",
-      "source": "overpass",
-      "id": "Jalisco"
-    }, {
-      "op": "union",
-      "source": "overpass",
-      "id": "Zacatecas"
-    }, {
-      "op": "union",
-      "source": "overpass",
-      "id": "San Luis Potosí"
-    }, {
-      "op": "union",
-      "source": "overpass",
-      "id": "Veracruz"
-    }, {
-      "op": "union",
-      "source": "overpass",
-      "id": "Tabasco"
+      "id": "America-Mexico_City-tz"
     }
   ],
   "America/Moncton": [
@@ -1688,16 +1646,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Mexico"
-    }, {
-      "op": "intersect",
-      "source": "manual-polygon",
-      "data": [[[-112.6,28.5],[-112.55,28.2],[-112,28],[-122,28],[-116,35],[-114,34],[-114.8069313,31.8166753],[-114.802,31.816],[-114.793,31.8198],[-114.787,31.8205],[-114.7645,31.8174],[-114.755,31.812],[-114.7455,31.804],[-114.739,31.795],[-114.732,31.777],[-114.707,31.757],[-114.658,31.729],[-114.623,31.7],[-112.88,29.4],[-112.6,28.5]]],
-      "description": "Intersect part of Mexico.  This operation creates an arbitrary sea boundary in the Gulf of California."
-    }, {
-      "op": "difference",
-      "source": "overpass",
-      "id": "Sonora"
+      "id": "America-Tijuana-tz"
     }
   ],
   "America/Toronto": [
