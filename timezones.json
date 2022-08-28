@@ -473,6 +473,10 @@
       "op": "difference",
       "source": "overpass",
       "id": "Yukon"
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "America-Yakutat-tz"
     }
   ],
   "America/Anguilla": [
@@ -1572,6 +1576,10 @@
       "op": "difference",
       "source": "overpass",
       "id": "Hoonah-Angoon"
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "America-Juneau-tz"
     }
   ],
   "America/St_Barthelemy": [
