@@ -508,6 +508,10 @@
   "Cook Islands": {
     "ISO3166-1": "CK"
   },
+  "Corson County, SD": {
+    "name": "Corson County",
+    "nist:state_fips": "46"
+  },
   "Crimea": {
     "name:en": "Republic of Crimea"
   },
@@ -528,6 +532,10 @@
   },
   "Denmark": {
     "ISO3166-1": "DK"
+  },
+  "Dewey County, SD": {
+    "name": "Dewey County",
+    "nist:state_fips": "46"
   },
   "Djibouti": {
     "ISO3166-1": "DJ"
@@ -600,6 +608,10 @@
   },
   "Govi-Altai": {
     "ISO3166-2": "MN-065"
+  },
+  "Grant County, ND": {
+    "name": "Grant County",
+    "nist:state_fips": "38"
   },
   "Greece": {
     "ISO3166-1": "GR"

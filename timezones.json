@@ -812,7 +812,19 @@
       "op": "difference",
       "source": "manual-polygon",
       "data": [[[-98,44],[-98,46.5],[-100.8,46.57],[-101.326,46.146],[-101.324,45.938],[-100.583,44.865],[-100.475,44.533],[-100.855,44.162],[-98,44]]],
-      "description": "anomalies in North Dakota"
+      "description": "anomalies in North and South Dakota"
+    }, {
+      "op": "union",
+      "source": "overpass",
+      "id": "Grant County, ND"
+    }, {
+      "op": "union",
+      "source": "overpass",
+      "id": "Corson County, SD"
+    }, {
+      "op": "union",
+      "source": "overpass",
+      "id": "Dewey County, SD"
     }
   ],
   "America/Detroit": [
