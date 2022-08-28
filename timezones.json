@@ -1427,6 +1427,15 @@
     {
       "op": "init",
       "source": "overpass",
+      "id": "Chile"
+    }, {
+      "op": "difference",
+      "source": "manual-polygon",
+      "data": [[[-77,-15],[-117,-27],[-77.6,-48.77],[-75,-48.8],[-67,-50.7],[-63,-15],[-77,-15]]],
+      "description": "The Magallanes Region data in OSM no longer extends all the way to the territorial boundaries of Chile, so we need to diff the Santiago and Easter Island sections of Chile"
+    }, {
+      "op": "union",
+      "source": "overpass",
       "id": "Magallanes Region"
     }, {
       "op": "union",
@@ -1503,6 +1512,11 @@
       "op": "difference",
       "source": "overpass",
       "id": "Magallanes Region"
+    }, {
+      "op": "difference",
+      "source": "manual-polygon",
+      "data": [[[-77.6,-54.9],[-63,-60],[-67,-50.7],[-75,-48.8],[-77.6,-48.77],[-77.6,-54.9]]],
+      "description": "The Magallanes Region data in OSM no longer extends all the way to the territorial boundaries of Chile, so we need to diff this section"
     }
   ],
   "America/Santo_Domingo": [
