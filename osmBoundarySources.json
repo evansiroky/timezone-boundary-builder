@@ -140,17 +140,14 @@
   "America-New_York-tz": {
     "timezone": "America/New_York"
   },
-  "America-Nipigon-tz": {
-    "timezone": "America/Nipigon"
-  },
   "America-North_Dakota-Beulah-tz": {
-    "timezone": "America-North_Dakota-Beulah-tz"
+    "timezone": "America/North_Dakota/Beulah"
   },
   "America-North_Dakota-Center-tz": {
-    "timezone": "America-North_Dakota-Center-tz"
+    "timezone": "America/North_Dakota/Center"
   },
   "America-North_Dakota-New_Salem-tz": {
-    "timezone": "America-North_Dakota-New_Salem-tz"
+    "timezone": "America/North_Dakota/New_Salem"
   },
   "America-Ojinaga-tz": {
     "timezone": "America/Ojinaga"
@@ -160,9 +157,6 @@
   },
   "America-Phoenix-tz": {
     "timezone": "America/Phoenix"
-  },
-  "America-Rainy_River-tz": {
-    "timezone": "America/Rainy_River"
   },
   "America-Rankin_Inlet-tz": {
     "timezone": "America/Rankin_Inlet"
@@ -178,9 +172,6 @@
   },
   "America-Swift_Current-tz": {
     "timezone": "America/Swift_Current"
-  },
-  "America-Thunder_Bay-tz": {
-    "timezone": "America/Thunder_Bay"
   },
   "America-Toronto-tz": {
     "timezone": "America/Toronto"
