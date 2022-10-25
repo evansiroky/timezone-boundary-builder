@@ -23,11 +23,74 @@
   "Altai Republic": {
     "ISO3166-2": "RU-AL"
   },
+  "America-Anguilla-tz": {
+    "timezone": "America/Anguilla"
+  },
+  "America-Antigua-tz": {
+    "timezone": "America/Antigua"
+  },
+  "America-Aruba-tz": {
+    "timezone": "America/Aruba"
+  },
+  "America-Araguaina-tz": {
+    "timezone": "America/Araguaina"
+  },
+  "America-Argentina-Buenos_Aires-tz": {
+    "timezone": "America/Argentina/Buenos_Aires"
+  },
+  "America-Argentina-Catamarca-tz": {
+    "timezone": "America/Argentina/Catamarca"
+  },
+  "America-Argentina-Cordoba-tz": {
+    "timezone": "America/Argentina/Cordoba"
+  },
+  "America-Argentina-Jujuy-tz": {
+    "timezone": "America/Argentina/Jujuy"
+  },
+  "America-Argentina-La_Rioja-tz": {
+    "timezone": "America/Argentina/La_Rioja"
+  },
+  "America-Argentina-Mendoza-tz": {
+    "timezone": "America/Argentina/Mendoza"
+  },
+  "America-Argentina-Rio_Gallegos-tz": {
+    "timezone": "America/Argentina/Rio_Gallegos"
+  },
+  "America-Argentina-Salta-tz": {
+    "timezone": "America/Argentina/Salta"
+  },
+  "America-Argentina-San_Juan-tz": {
+    "timezone": "America/Argentina/San_Juan"
+  },
+  "America-Argentina-San_Luis-tz": {
+    "timezone": "America/Argentina/San_Luis"
+  },
+  "America-Argentina-Tucuman-tz": {
+    "timezone": "America/Argentina/Tucuman"
+  },
+  "America-Argentina-Ushuaia-tz": {
+    "timezone": "America/Argentina/Ushuaia"
+  },
+  "America-Asuncion-tz": {
+    "timezone": "America/Asuncion"
+  },
   "America-Atikokan-tz": {
     "timezone": "America/Atikokan"
   },
+  "America-Bahia-tz": {
+    "timezone": "America/Bahia"
+  },
+  "America-Bahia_Banderas-tz": {
+    "timezone": "America/Bahia_Banderas"
+  },
+  "America-Barbados-tz": {
+    "timezone": "America/Barbados"
+  },
   "America-Belem-tz": {
     "timezone": "America/Belem"
+  },
+  "America-Belize-tz": {
+    "timezone": "America/Belize"
   },
   "America-Blanc_Sablon-tz": {
     "timezone": "America/Blanc-Sablon"
@@ -38,14 +101,45 @@
   "America-Cambridge_Bay-tz": {
     "timezone": "America/Cambridge_Bay"
   },
+  "America-Boa_Vista-tz": {
+    "timezone": "America/Boa_Vista"
+  },
+  "America-Bogota-tz": {
+    "timezone": "America/Bogota"
+  },
+  "America-Campo_Grande-tz": {
+    "timezone": "America/Campo_Grande"
+  },
   "America-Cancun-tz": {
     "timezone": "America/Cancun"
+  },
+
+  "America-Caracas-tz": {
+    "timezone": "America/Caracas"
+  },
+  "America-Cayenne-tz": {
+    "timezone": "America/Cayenne"
+  },
+  "America-Cayman-tz": {
+    "timezone": "America/Cayman"
   },
   "America-Chicago-tz": {
     "timezone": "America/Chicago"
   },
+  "America-Chihuahua-tz": {
+    "timezone": "America/Chihuahua"
+  },
+  "America-Costa_Rica-tz": {
+    "timezone": "America/Costa_Rica"
+  },
   "America-Creston-tz": {
     "name": "America/Creston"
+  },
+  "America-Cuiaba-tz": {
+    "timezone": "America/Cuiaba"
+  },
+  "America-Curacao-tz": {
+    "timezone": "America/Curacao"
   },
   "America-Dawson-tz": {
     "timezone": "America/Dawson"
@@ -59,11 +153,17 @@
   "America-Detroit-tz": {
     "timezone": "America/Detroit"
   },
+  "America-Dominica-tz": {
+    "timezone": "America/Dominica"
+  },
   "America-Edmonton-tz": {
     "timezone": "America/Edmonton"
   },
   "America-Eirunepe-tz": {
     "timezone": "America/Eirunepe"
+  },
+  "America-El_Salvador-tz": {
+    "timezone": "America/El_Salvador"
   },
   "America-Fort_Nelson-tz": {
     "timezone": "America/Fort_Nelson"
@@ -71,8 +171,32 @@
   "America-Glace_Bay-tz": {
     "timezone": "America/Glace_Bay"
   },
+  "America-Goose_Bay-tz": {
+    "timezone": "America/Goose_Bay"
+  },
+  "America-Grand_Turk-tz": {
+    "timezone": "America/Grand_Turk"
+  },
+  "America-Grenada-tz": {
+    "timezone": "America/Grenada"
+  },
+  "America-Guadeloupe-tz": {
+    "timezone": "America/Guadeloupe"
+  },
+  "America-Guatemala-tz": {
+    "timezone": "America/Guatemala"
+  },
+  "America-Guayaquil-tz": {
+    "timezone": "America/Guayaquil"
+  },
+  "America-Guyana-tz": {
+    "timezone": "America/Guyana"
+  },
   "America-Halifax-tz": {
     "timezone": "America/Halifax"
+  },
+  "America-Hermosillo-tz": {
+    "timezone": "America/Hermosillo"
   },
   "America-Indiana-Indianapolis-tz": {
     "timezone": "America/Indiana/Indianapolis"
@@ -104,11 +228,23 @@
   "America-Iqaluit-tz": {
     "timezone": "America/Iqaluit"
   },
+  "America-Jamaica-tz": {
+    "timezone": "America/Jamaica"
+  },
   "America-Juneau-tz": {
     "timezone": "America/Juneau"
   },
   "America-Kentucky-Louisville-tz": {
     "timezone": "America/Kentucky/Louisville"
+  },
+  "America-Kralendijk-tz": {
+    "timezone": "America/Kralendijk"
+  },
+  "America-La_Paz-tz": {
+    "timezone": "America/La_Paz"
+  },
+  "America-Lima-tz": {
+    "timezone": "America/Lima"
   },
   "America-Los_Angeles-tz": {
     "timezone": "America/Los_Angeles"
@@ -121,6 +257,12 @@
   },
   "America-Matamoros-tz": {
     "timezone": "America/Matamoros"
+  },
+  "America-Mazatlan-tz": {
+    "timezone": "America/Mazatlan"
+  },
+  "America-Mexico_City-tz": {
+    "timezone": "America/Mexico_City"
   },
   "America-Menominee-tz": {
     "timezone": "America/Menominee"
@@ -140,17 +282,14 @@
   "America-New_York-tz": {
     "timezone": "America/New_York"
   },
-  "America-Nipigon-tz": {
-    "timezone": "America/Nipigon"
-  },
   "America-North_Dakota-Beulah-tz": {
-    "timezone": "America-North_Dakota-Beulah-tz"
+    "timezone": "America/North_Dakota/Beulah"
   },
   "America-North_Dakota-Center-tz": {
-    "timezone": "America-North_Dakota-Center-tz"
+    "timezone": "America/North_Dakota/Center"
   },
   "America-North_Dakota-New_Salem-tz": {
-    "timezone": "America-North_Dakota-New_Salem-tz"
+    "timezone": "America/North_Dakota/New_Salem"
   },
   "America-Ojinaga-tz": {
     "timezone": "America/Ojinaga"
@@ -160,9 +299,6 @@
   },
   "America-Phoenix-tz": {
     "timezone": "America/Phoenix"
-  },
-  "America-Rainy_River-tz": {
-    "timezone": "America/Rainy_River"
   },
   "America-Rankin_Inlet-tz": {
     "timezone": "America/Rankin_Inlet"
@@ -176,11 +312,14 @@
   "America-Santarem-tz": {
     "timezone": "America/Santarem"
   },
+  "America-St_Johns-tz": {
+    "timezone": "America/St_Johns"
+  },
   "America-Swift_Current-tz": {
     "timezone": "America/Swift_Current"
   },
-  "America-Thunder_Bay-tz": {
-    "timezone": "America/Thunder_Bay"
+  "America-Tijuana-tz": {
+    "timezone": "America/Tijuana"
   },
   "America-Toronto-tz": {
     "timezone": "America/Toronto"
@@ -209,24 +348,12 @@
   "Angola": {
     "ISO3166-1": "AO"
   },
-  "Anguilla": {
-    "ISO3166-1": "AI"
-  },
-  "Antigua and Barbuda": {
-    "ISO3166-1": "AG"
-  },
   "Area H2": {
     "name:en": "Area H2",
     "admin_level": "6"
   },
-  "Argentina": {
-    "ISO3166-1": "AR"
-  },
   "Armenia": {
     "ISO3166-1": "AM"
-  },
-  "Aruba": {
-    "ISO3166-1": "AW"
   },
   "Asia-Srednekolymsk-tz": {
     "timezone": "Asia/Srednekolymsk"
@@ -273,14 +400,8 @@
   "Bahrain": {
     "ISO3166-1": "BH"
   },
-  "Bahía de Banderas": {
-    "name": "Bahía de Banderas"
-  },
   "Bangladesh": {
     "ISO3166-1": "BD"
-  },
-  "Barbados": {
-    "ISO3166-1": "BB"
   },
   "Bas-Uele": {
     "name": "Bas-Uele",
@@ -291,9 +412,6 @@
   },
   "Belgium": {
     "ISO3166-1": "BE"
-  },
-  "Belize": {
-    "ISO3166-1": "BZ"
   },
   "Benin": {
     "ISO3166-1": "BJ"
@@ -306,12 +424,6 @@
   },
   "Bir Tawil": {
     "alt_name:en": "Bi'r Tawīl"
-  },
-  "Bolivia": {
-    "ISO3166-1": "BO"
-  },
-  "Bonaire, Sint Eustatius and Saba": {
-    "ISO3166-1": "BQ"
   },
   "Bosnia and Herzegovina": {
     "ISO3166-1": "BA"
@@ -334,9 +446,6 @@
   "Brunei": {
     "ISO3166-1": "BN"
   },
-  "Buenos Aires": {
-    "ISO3166-2": "AR-B"
-  },
   "Bulgaria": {
     "ISO3166-1": "BG"
   },
@@ -355,17 +464,8 @@
   "Cameroon": {
     "ISO3166-1": "CM"
   },
-  "Canada": {
-    "ISO3166-1": "CA"
-  },
   "Cape Verde": {
     "ISO3166-1": "CV"
-  },
-  "Catamarca": {
-    "ISO3166-2": "AR-K"
-  },
-  "Cayman Islands": {
-    "ISO3166-1": "KY"
   },
   "Central African Republic": {
     "ISO3166-1": "CF"
@@ -373,14 +473,8 @@
   "Central Kalimantan": {
     "name:en": "Central Kalimantan"
   },
-  "Chaco": {
-    "ISO3166-2": "AR-H"
-  },
   "Chad": {
     "ISO3166-1": "TD"
-  },
-  "Chihuahua": {
-    "ISO3166-2": "MX-CHH"
   },
   "Chile": {
     "ISO3166-1": "CL"
@@ -388,17 +482,14 @@
   "China": {
     "ISO3166-1": "CN"
   },
-  "Chubut": {
-    "ISO3166-2": "AR-U"
-  },
   "Chukotka": {
     "ISO3166-2": "RU-CHU"
   },
   "Chuuk": {
     "ISO3166-2": "FM-TRK"
   },
-  "Colombia": {
-    "ISO3166-1": "CO"
+  "City of Thunder Bay": {
+    "wikidata": "Q34116"
   },
   "Comoros": {
     "ISO3166-1": "KM"
@@ -412,11 +503,9 @@
   "Cook Islands": {
     "ISO3166-1": "CK"
   },
-  "Corrientes": {
-    "ISO3166-2": "AR-W"
-  },
-  "Costa Rica": {
-    "ISO3166-1": "CR"
+  "Corson County, SD": {
+    "name": "Corson County",
+    "nist:state_fips": "46"
   },
   "Crimea": {
     "name:en": "Republic of Crimea"
@@ -427,17 +516,11 @@
   "Cuba": {
     "ISO3166-1": "CU"
   },
-  "Curaçao": {
-    "ISO3166-1": "CW"
-  },
   "Cyprus": {
     "ISO3166-1": "CY"
   },
   "Czech Republic": {
     "ISO3166-1": "CZ"
-  },
-  "Córdoba": {
-    "ISO3166-2": "AR-X"
   },
   "Côte d'Ivoire": {
     "ISO3166-1": "CI"
@@ -445,17 +528,15 @@
   "Denmark": {
     "ISO3166-1": "DK"
   },
-  "Departamento Atlántico": {
-    "name": "Departamento Atlántico"
+  "Dewey County, SD": {
+    "name": "Dewey County",
+    "nist:state_fips": "46"
   },
   "Djibouti": {
     "ISO3166-1": "DJ"
   },
   "Doklam 洞朗地区": {
     "name": "Doklam 洞朗地区"
-  },
-  "Dominica": {
-    "ISO3166-1": "DM"
   },
   "Dominican Republic": {
     "ISO3166-1": "DO"
@@ -474,12 +555,6 @@
   },
   "Egypt": {
     "ISO3166-1": "EG"
-  },
-  "El Salvador": {
-    "ISO3166-1": "SV"
-  },
-  "Entre Ríos": {
-    "ISO3166-2": "AR-E"
   },
   "Equatorial Guinea": {
     "ISO3166-1": "GQ"
@@ -508,8 +583,8 @@
   "Finland": {
     "ISO3166-1": "FI"
   },
-  "Formosa": {
-    "ISO3166-2": "AR-P"
+  "Fort William First Nation": {
+    "name": "Animkii Wajiw / Fort William First Nation"
   },
   "France": {
     "ISO3166-1:alpha2": "FR"
@@ -532,20 +607,15 @@
   "Govi-Altai": {
     "ISO3166-2": "MN-065"
   },
+  "Grant County, ND": {
+    "name": "Grant County",
+    "nist:state_fips": "38"
+  },
   "Greece": {
     "ISO3166-1": "GR"
   },
   "Greenland": {
     "ISO3166-1": "GL"
-  },
-  "Grenada": {
-    "ISO3166-1": "GD"
-  },
-  "Guadeloupe": {
-    "ISO3166-1": "GP"
-  },
-  "Guatemala": {
-    "ISO3166-1": "GT"
   },
   "Guernsey": {
     "ISO3166-1": "GG"
@@ -555,9 +625,6 @@
   },
   "Guinea-Bissau": {
     "ISO3166-1": "GW"
-  },
-  "Guyana": {
-    "ISO3166-1": "GY"
   },
   "Haiti": {
     "ISO3166-1": "HT"
@@ -604,12 +671,6 @@
   "Italy": {
     "ISO3166-1": "IT"
   },
-  "Jalisco": {
-    "ISO3166-2": "MX-JAL"
-  },
-  "Jamaica": {
-    "ISO3166-1": "JM"
-  },
   "Japan": {
     "ISO3166-1": "JP"
   },
@@ -618,9 +679,6 @@
   },
   "Jordan": {
     "ISO3166-1": "JO"
-  },
-  "Jujuy": {
-    "ISO3166-2": "AR-Y"
   },
   "Jungholz, AT": {
     "name": "Jungholz",
@@ -674,12 +732,6 @@
   },
   "Kyzylorda": {
     "ISO3166-2": "KZ-KZY"
-  },
-  "La Pampa": {
-    "ISO3166-2": "AR-L"
-  },
-  "La Rioja": {
-    "ISO3166-2": "AR-F"
   },
   "Laos": {
     "ISO3166-1": "LA"
@@ -762,15 +814,6 @@
   "Mauritius": {
     "ISO3166-1": "MU"
   },
-  "Mendoza": {
-    "ISO3166-2": "AR-M"
-  },
-  "Mexico": {
-    "ISO3166-1": "MX"
-  },
-  "Misiones": {
-    "ISO3166-2": "AR-N"
-  },
   "Moldova": {
     "ISO3166-1": "MD"
   },
@@ -801,14 +844,8 @@
   "Nauru": {
     "ISO3166-1": "NR"
   },
-  "Nayarit": {
-    "ISO3166-2": "MX-NAY"
-  },
   "Nepal": {
     "ISO3166-1": "NP"
-  },
-  "Neuquén": {
-    "ISO3166-2": "AR-Q"
   },
   "New Zealand": {
     "ISO3166-1": "NZ"
@@ -821,6 +858,9 @@
   },
   "Nigeria": {
     "ISO3166-1": "NG"
+  },
+  "Nipigon": {
+    "wikidata": "Q1993247"
   },
   "Niue": {
     "ISO3166-1": "NU"
@@ -864,14 +904,8 @@
   "Papua New Guinea": {
     "ISO3166-1": "PG"
   },
-  "Paraguay": {
-    "ISO3166-1": "PY"
-  },
   "Pernambuco": {
     "ISO3166-2": "BR-PE"
-  },
-  "Peru": {
-    "ISO3166-1:alpha2": "PE"
   },
   "Philippines": {
     "ISO3166-1": "PH"
@@ -897,9 +931,6 @@
   "Quang Tri": {
     "ISO3166-2": "VN-25"
   },
-  "Quebec": {
-    "ISO3166-2": "CA-QC"
-  },
   "Queensland": {
     "ISO3166-2": "AU-QLD"
   },
@@ -909,17 +940,11 @@
   "Republic of Kosovo": {
     "ISO3166-1": "XK"
   },
-  "Rio Negro": {
-    "ISO3166-2": "AR-R"
-  },
   "Romania": {
     "ISO3166-1": "RO"
   },
   "Rondônia": {
     "ISO3166-2": "BR-RO"
-  },
-  "Roraima": {
-    "ISO3166-2": "BR-RR"
   },
   "Rwanda": {
     "ISO3166-1": "RW"
@@ -948,9 +973,6 @@
   "Sakhalin": {
     "ISO3166-2": "RU-SAK"
   },
-  "Salta": {
-    "ISO3166-2": "AR-A"
-  },
   "Samara": {
     "ISO3166-2": "RU-SAM"
   },
@@ -960,27 +982,12 @@
   "Samoa": {
     "ISO3166-1": "WS"
   },
-  "San Juan": {
-    "ISO3166-2": "AR-J"
-  },
-  "San Luis Potosí": {
-    "ISO3166-2": "MX-SLP"
-  },
-  "San Luis": {
-    "ISO3166-2": "AR-D"
-  },
   "San Marino": {
     "ISO3166-1": "SM"
   },
   "Sankuru": {
     "name": "Sankuru",
     "admin_level": "4"
-  },
-  "Santa Fe": {
-    "ISO3166-2": "AR-S"
-  },
-  "Santiago del Estero": {
-    "ISO3166-2": "AR-G"
   },
   "Saratov": {
     "ISO3166-2": "RU-SAR"
@@ -1006,9 +1013,6 @@
   "Sierra Leone": {
     "ISO3166-1": "SL"
   },
-  "Sinaloa": {
-    "ISO3166-2": "MX-SIN"
-  },
   "Singapore": {
     "ISO3166-1": "SG"
   },
@@ -1030,9 +1034,6 @@
   },
   "Somalia": {
     "ISO3166-1": "SO"
-  },
-  "Sonora": {
-    "ISO3166-2": "MX-SON"
   },
   "South Africa": {
     "ISO3166-1": "ZA",
@@ -1080,9 +1081,6 @@
   "Sühbaatar": {
     "ISO3166-2": "MN-051"
   },
-  "Tabasco": {
-    "ISO3166-2": "MX-TAB"
-  },
   "Tajikistan": {
     "ISO3166-1": "TJ"
   },
@@ -1120,15 +1118,15 @@
   "Tonga": {
     "ISO3166-1": "TO"
   },
+  "Town of Rainy River": {
+    "wikidata": "Q3492477"
+  },
   "Trinidad and Tobago": {
     "ISO3166-1": "TT"
   },
   "Tshopo": {
     "name": "Tshopo",
     "admin_level": "4"
-  },
-  "Tucumán": {
-    "ISO3166-2": "AR-T"
   },
   "Tunisia": {
     "ISO3166-1": "TN"
@@ -1138,9 +1136,6 @@
   },
   "Turkmenistan": {
     "ISO3166-1": "TM"
-  },
-  "Turks and Caicos Islands": {
-    "ISO3166-1": "TC"
   },
   "Tuva": {
     "ISO3166-2": "RU-TY"
@@ -1187,12 +1182,6 @@
   "Vatican City": {
     "ISO3166-1": "VA"
   },
-  "Venezuela": {
-    "ISO3166-1": "VE"
-  },
-  "Veracruz": {
-    "ISO3166-2": "MX-VER"
-  },
   "Victoria": {
     "ISO3166-2": "AU-VIC"
   },
@@ -1225,9 +1214,6 @@
   },
   "Zabaykalsk": {
     "ISO3166-2": "RU-ZAB"
-  },
-  "Zacatecas": {
-    "ISO3166-2": "MX-ZAC"
   },
   "Zakarpattia": {
     "ISO3166-2": "UA-21"

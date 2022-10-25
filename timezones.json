@@ -473,206 +473,122 @@
       "op": "difference",
       "source": "overpass",
       "id": "Yukon"
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "America-Yakutat-tz"
     }
   ],
   "America/Anguilla": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Anguilla"
+      "id": "America-Anguilla-tz"
     }
   ],
   "America/Antigua": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Antigua and Barbuda"
+      "id": "America-Antigua-tz"
     }
   ],
   "America/Aruba": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Aruba"
+      "id": "America-Aruba-tz"
     }
   ],
   "America/Araguaina": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Tocantins"
+      "id": "America-Araguaina-tz"
     }
   ],
   "America/Argentina/Buenos_Aires": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Argentina"
-    }, {
-      "op": "intersect",
-      "source": "manual-polygon",
-      "data": [[[-58,-34],[-52,-36],[-62.3476,-42],[-62.792531,-41.0179511],[-63,-35],[-58,-34]]],
-      "description": "Grab part of Argentina near Buenos Aires.  Make an arbitrary boundary in the sea for the boundary with Rio Negro."
-    }, {
-      "op": "union",
-      "source": "overpass",
-      "id": "Buenos Aires"
+      "id": "America-Argentina-Buenos_Aires-tz"
     }
   ],
   "America/Argentina/Catamarca": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Chubut"
-    }, {
-      "op": "union",
-      "source": "overpass",
-      "id": "Departamento Atlántico"
-    }, {
-      "op": "union",
-      "source": "overpass",
-      "id": "Catamarca"
+      "id": "America-Argentina-Catamarca-tz"
     }
   ],
   "America/Argentina/Cordoba": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Córdoba"
-    }, {
-      "op": "union",
-      "source": "overpass",
-      "id": "Santa Fe"
-    }, {
-      "op": "union",
-      "source": "overpass",
-      "id": "Entre Ríos"
-    }, {
-      "op": "union",
-      "source": "overpass",
-      "id": "Santiago del Estero"
-    }, {
-      "op": "union",
-      "source": "overpass",
-      "id": "Chaco"
-    }, {
-      "op": "union",
-      "source": "overpass",
-      "id": "Corrientes"
-    }, {
-      "op": "union",
-      "source": "overpass",
-      "id": "Misiones"
-    }, {
-      "op": "union",
-      "source": "overpass",
-      "id": "Formosa"
+      "id": "America-Argentina-Cordoba-tz"
     }
   ],
   "America/Argentina/Jujuy": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Jujuy"
+      "id": "America-Argentina-Jujuy-tz"
     }
   ],
   "America/Argentina/La_Rioja": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "La Rioja"
+      "id": "America-Argentina-La_Rioja-tz"
     }
   ],
   "America/Argentina/Mendoza": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Mendoza"
+      "id": "America-Argentina-Mendoza-tz"
     }
   ],
   "America/Argentina/Rio_Gallegos": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Argentina"
-    }, {
-      "op": "intersect",
-      "source": "manual-polygon",
-      "data": [[[-59,-44],[-65,-52],[-68.3079531,-52.5782436],[-68.6,-52.5],[-80,-52],[-80,-44],[-59,-44]]],
-      "description": "Isolate most of Santa Cruz from the rest of Argentina.  Also, use arbitrary sea boundary between Santa Cruz and Tierra Del Fuego"
-    }, {
-      "op": "difference",
-      "source": "overpass",
-      "id": "Chubut"
+      "id": "America-Argentina-Rio_Gallegos-tz"
     }
   ],
   "America/Argentina/Salta": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Argentina"
-    }, {
-      "op": "intersect",
-      "source": "manual-polygon",
-      "data": [[[-66,-40.5],[-66,-43],[-61,-43],[-62.3476,-42],[-62.792531,-41.0179511],[-64,-40.5],[-66,-40.5]]],
-      "description": "intersect part of Argentina to get Territorial waters and create an arbitrary sea boundary between Rio Negro and Buenos Aires."
-    }, {
-      "op": "difference",
-      "source": "overpass",
-      "id": "Chubut"
-    }, {
-      "op": "difference",
-      "source": "overpass",
-      "id": "Departamento Atlántico"
-    }, {
-      "op": "union",
-      "source": "overpass",
-      "id": "Rio Negro"
-    }, {
-      "op": "union",
-      "source": "overpass",
-      "id": "Neuquén"
-    }, {
-      "op": "union",
-      "source": "overpass",
-      "id": "La Pampa"
-    }, {
-      "op": "union",
-      "source": "overpass",
-      "id": "Salta"
+      "id": "America-Argentina-Salta-tz"
     }
   ],
   "America/Argentina/San_Juan": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "San Juan"
+      "id": "America-Argentina-San_Juan-tz"
     }
   ],
   "America/Argentina/San_Luis": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "San Luis"
+      "id": "America-Argentina-San_Luis-tz"
     }
   ],
   "America/Argentina/Tucuman": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Tucumán"
+      "id": "America-Argentina-Tucuman-tz"
     }
   ],
   "America/Argentina/Ushuaia": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Argentina"
-    }, {
-      "op": "intersect",
-      "source": "manual-polygon",
-      "data": [[[-59,-55],[-68.3079531,-52.5782436],[-68.6,-52.5],[-78,-57],[-59,-55]]],
-      "description": "Use arbitrary sea boundary between Santa Cruz and Tierra Del Fuego"
+      "id": "America-Argentina-Ushuaia-tz"
     }, {
       "op": "union",
       "source": "manual-polygon",
@@ -689,7 +605,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Paraguay"
+      "id": "America-Asuncion-tz"
     }
   ],
   "America/Atikokan": [
@@ -703,30 +619,21 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Bahia"
+      "id": "America-Bahia-tz"
     }
   ],
   "America/Bahia_Banderas": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Mexico"
-    }, {
-      "op": "intersect",
-      "source": "manual-polygon",
-      "data": [[[-105.287,20.68],[-105.3,20.8],[-105.4,20.8],[-105.3556082,20.9602092],[-105.56,21.11],[-106,21],[-105.883254,20.685482],[-105.5724898,20.62692],[-105.403923,20.6243015],[-105.330481,20.6347751],[-105.3009294,20.6475388],[-105.2808749,20.6713757],[-105.2786916,20.6724507],[-105.287,20.68]]],
-      "description": "Grab part of Mexico to get terriritorial waters near Bahía de Banderas."
-    }, {
-      "op": "union",
-      "source": "overpass",
-      "id": "Bahía de Banderas"
+      "id": "America-Bahia_Banderas-tz"
     }
   ],
   "America/Barbados": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Barbados"
+      "id": "America-Barbados-tz"
     }
   ],
   "America/Belem": [
@@ -740,7 +647,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Belize"
+      "id": "America-Belize-tz"
     }
   ],
   "America/Blanc-Sablon": [
@@ -754,14 +661,14 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Roraima"
+      "id": "America-Boa_Vista-tz"
     }
   ],
   "America/Bogota": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Colombia"
+      "id": "America-Bogota-tz"
     }
   ],
   "America/Boise": [
@@ -782,7 +689,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Mato Grosso do Sul"
+      "id": "America-Campo_Grande-tz"
     }
   ],
   "America/Cancun": [
@@ -796,26 +703,21 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Venezuela"
+      "id": "America-Caracas-tz"
     }
   ],
   "America/Cayenne": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "France"
-    }, {
-      "op": "intersect",
-      "source": "manual-polygon",
-      "data": [[[-55,8],[-55,0],[-48,4],[-55,8]]],
-      "description": "Grab the part of France that represents French Guiana."
+      "id": "America-Cayenne-tz"
     }
   ],
   "America/Cayman": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Cayman Islands"
+      "id": "America-Cayman-tz"
     }
   ],
   "America/Chicago": [
@@ -844,18 +746,14 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Chihuahua"
-    }, {
-      "op": "difference",
-      "source": "overpass",
-      "id": "America-Ojinaga-tz"
+      "id": "America-Chihuahua-tz"
     }
   ],
   "America/Costa_Rica": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Costa Rica"
+      "id": "America-Costa_Rica-tz"
     }
   ],
   "America/Creston": [
@@ -869,14 +767,14 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Mato Grosso"
+      "id": "America-Cuiaba-tz"
     }
   ],
   "America/Curacao": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Curaçao"
+      "id": "America-Curacao-tz"
     }
   ],
   "America/Danmarkshavn": [
@@ -918,7 +816,19 @@
       "op": "difference",
       "source": "manual-polygon",
       "data": [[[-98,44],[-98,46.5],[-100.8,46.57],[-101.326,46.146],[-101.324,45.938],[-100.583,44.865],[-100.475,44.533],[-100.855,44.162],[-98,44]]],
-      "description": "anomalies in North Dakota"
+      "description": "anomalies in North and South Dakota"
+    }, {
+      "op": "union",
+      "source": "overpass",
+      "id": "Grant County, ND"
+    }, {
+      "op": "union",
+      "source": "overpass",
+      "id": "Corson County, SD"
+    }, {
+      "op": "union",
+      "source": "overpass",
+      "id": "Dewey County, SD"
     }
   ],
   "America/Detroit": [
@@ -932,12 +842,12 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Dominica"
+      "id": "America-Dominica-tz"
     }
   ],
   "America/Edmonton": [
     {
-      "op": "union",
+      "op": "init",
       "source": "overpass",
       "id": "America-Edmonton-tz"
     }
@@ -953,7 +863,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "El Salvador"
+      "id": "America-El_Salvador-tz"
     }
   ],
   "America/Fort_Nelson": [
@@ -1002,67 +912,49 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Canada"
-    }, {
-      "op": "intersect",
-      "source": "manual-polygon",
-      "data": [[[-71,50],[-57.1077594,51.9984948],[-56.59,53.2],[-53.7,53.6],[-65,62],[-71,50]]],
-      "description": "Grab part of Canada to make timezone in northern Labrador.  Includes a slightly educated guess on timezone boundary in Labrador."
-    }, {
-      "op": "difference",
-      "source": "overpass",
-      "id": "Quebec"
-    }, {
-      "op": "difference",
-      "source": "overpass",
-      "id": "America-Pangnirtung-tz"
+      "id": "America-Goose_Bay-tz"
     }
   ],
   "America/Grand_Turk": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Turks and Caicos Islands"
+      "id": "America-Grand_Turk-tz"
     }
   ],
   "America/Grenada": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Grenada"
+      "id": "America-Grenada-tz"
     }
   ],
   "America/Guadeloupe": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Guadeloupe"
+      "id": "America-Guadeloupe-tz"
     }
   ],
   "America/Guatemala": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Guatemala"
+      "id": "America-Guatemala-tz"
     }
   ],
   "America/Guayaquil": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Ecuador"
-    }, {
-      "op": "intersect",
-      "source": "manual-polygon",
-      "data": [[[-72,0],[-83,4],[-83,-9],[-72,0]]],
-      "description": "Isolate mainlaind of Ecuador by excluding Galapagos islands."
+      "id": "America-Guayaquil-tz"
     }
   ],
   "America/Guyana": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Guyana"
+      "id": "America-Guyana-tz"
     }
   ],
   "America/Halifax": [
@@ -1088,16 +980,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Mexico"
-    }, {
-      "op": "intersect",
-      "source": "manual-polygon",
-      "data": [[[-112.6,28.5],[-112.55,28.2],[-111.5,27.6],[-110,26.3],[-109.2480469,26.316067],[-109,27],[-114,34],[-114.8069313,31.8166753],[-114.802,31.816],[-114.793,31.8198],[-114.787,31.8205],[-114.7645,31.8174],[-114.755,31.812],[-114.7455,31.804],[-114.739,31.795],[-114.732,31.777],[-114.707,31.757],[-114.658,31.729],[-114.623,31.7],[-112.88,29.4],[-112.6,28.5]]],
-      "description": "Grab part of Mexico including part of the Gulf of California.  The results in making an arbitrary boundary in the Gulf of California."
-    }, {
-      "op": "union",
-      "source": "overpass",
-      "id": "Sonora"
+      "id": "America-Hermosillo-tz"
     }
   ],
   "America/Indiana/Indianapolis": [
@@ -1174,7 +1057,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Jamaica"
+      "id": "America-Jamaica-tz"
     }
   ],
   "America/Juneau": [
@@ -1202,21 +1085,21 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Bonaire, Sint Eustatius and Saba"
+      "id": "America-Kralendijk-tz"
     }
   ],
   "America/La_Paz": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Bolivia"
+      "id": "America-La_Paz-tz"
     }
   ],
   "America/Lima": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Peru"
+      "id": "America-Lima-tz"
     }
   ],
   "America/Los_Angeles": [
@@ -1303,24 +1186,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Mexico"
-    }, {
-      "op": "intersect",
-      "source": "manual-polygon",
-      "data": [[[-112,28],[-128,28],[-109,20],[-105.56,21.11],[-105.3556082,20.9602092],[-104.22,21.22],[-107.75,25.33],[-109.2480469,26.316067],[-110,26.3],[-112,28]]],
-      "description": "Grab part of Mexico to make this timezone.  This operation results in two arbitrary sea boundaries - one near Los Mochis and another near Puerto Vallarta."
-    }, {
-      "op": "union",
-      "source": "overpass",
-      "id": "Sinaloa"
-    }, {
-      "op": "union",
-      "source": "overpass",
-      "id": "Nayarit"
-    }, {
-      "op": "difference",
-      "source": "overpass",
-      "id": "Bahía de Banderas"
+      "id": "America-Mazatlan-tz"
     }
   ],
   "America/Miquelon": [
@@ -1360,32 +1226,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Mexico"
-    }, {
-      "op": "intersect",
-      "source": "manual-polygon",
-      "data": [[[-120,18],[-93.64,11.17],[-89.4,15.7],[-90,17],[-91.74,17.9],[-92.7,18.2],[-92.4690272,18.6504269],[-92.5110808,18.8519806],[-95,23],[-97.574497,22.313607],[-97.7743477,22.263916],[-97.7745,22.2638],[-97.7844,22.26143],[-97.79,22.2604],[-97.797,22.256],[-98,21.7],[-102.7,24],[-103.3,21.4],[-104.3,20.4],[-105.26,20.68],[-105.2786916,20.6724507],[-105.2808749,20.6713757],[-105.3009294,20.6475388],[-105.330481,20.6347751],[-105.403923,20.6243015],[-105.5724898,20.62692],[-105.883254,20.685482],[-108,21.5],[-120,18]]],
-      "description": "Grab part of Mexico to make this timezone.  This operation results in three arbitrary sea boundaries - one near Puerto Vallarta, one near Tampico and another near Ciudad del Carmen."
-    }, {
-      "op": "union",
-      "source": "overpass",
-      "id": "Jalisco"
-    }, {
-      "op": "union",
-      "source": "overpass",
-      "id": "Zacatecas"
-    }, {
-      "op": "union",
-      "source": "overpass",
-      "id": "San Luis Potosí"
-    }, {
-      "op": "union",
-      "source": "overpass",
-      "id": "Veracruz"
-    }, {
-      "op": "union",
-      "source": "overpass",
-      "id": "Tabasco"
+      "id": "America-Mexico_City-tz"
     }
   ],
   "America/Moncton": [
@@ -1444,7 +1285,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "America-Nipigon-tz"
+      "id": "Nipigon"
     }
   ],
   "America/Nome": [
@@ -1586,6 +1427,15 @@
     {
       "op": "init",
       "source": "overpass",
+      "id": "Chile"
+    }, {
+      "op": "difference",
+      "source": "manual-polygon",
+      "data": [[[-77,-15],[-117,-27],[-77.6,-48.77],[-75,-48.8],[-67,-50.7],[-63,-15],[-77,-15]]],
+      "description": "The Magallanes Region data in OSM no longer extends all the way to the territorial boundaries of Chile, so we need to diff the Santiago and Easter Island sections of Chile"
+    }, {
+      "op": "union",
+      "source": "overpass",
       "id": "Magallanes Region"
     }, {
       "op": "union",
@@ -1598,7 +1448,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "America-Rainy_River-tz"
+      "id": "Town of Rainy River"
     }
   ],
   "America/Rankin_Inlet": [
@@ -1662,6 +1512,11 @@
       "op": "difference",
       "source": "overpass",
       "id": "Magallanes Region"
+    }, {
+      "op": "difference",
+      "source": "manual-polygon",
+      "data": [[[-77.6,-54.9],[-63,-60],[-67,-50.7],[-75,-48.8],[-77.6,-48.77],[-77.6,-54.9]]],
+      "description": "The Magallanes Region data in OSM no longer extends all the way to the territorial boundaries of Chile, so we need to diff this section"
     }
   ],
   "America/Santo_Domingo": [
@@ -1735,6 +1590,10 @@
       "op": "difference",
       "source": "overpass",
       "id": "Hoonah-Angoon"
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "America-Juneau-tz"
     }
   ],
   "America/St_Barthelemy": [
@@ -1748,20 +1607,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Canada"
-    }, {
-      "op": "intersect",
-      "source": "manual-polygon",
-      "data": [[[-40,40],[-53.7,53.6],[-56.59,53.2],[-57.1077594,51.9984948],[-64,51],[-60.4037717,47.7610985],[-58.9,46.8],[-40,40]]],
-      "description": "Grab part of Canada that includes Newfoundland and nearby sea area.  Also includes guesstimate of part of Labrador that observes St Johns time."
-    }, {
-      "op": "difference",
-      "source": "overpass",
-      "id": "Quebec"
-    }, {
-      "op": "difference",
-      "source": "overpass",
-      "id": "America-Glace_Bay-tz"
+      "id": "America-St_Johns-tz"
     }
   ],
   "America/St_Kitts": [
@@ -1827,23 +1673,18 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "America-Thunder_Bay-tz"
+      "id": "City of Thunder Bay"
+    }, {
+      "op": "union",
+      "source": "overpass",
+      "id": "Fort William First Nation"
     }
   ],
   "America/Tijuana": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Mexico"
-    }, {
-      "op": "intersect",
-      "source": "manual-polygon",
-      "data": [[[-112.6,28.5],[-112.55,28.2],[-112,28],[-122,28],[-116,35],[-114,34],[-114.8069313,31.8166753],[-114.802,31.816],[-114.793,31.8198],[-114.787,31.8205],[-114.7645,31.8174],[-114.755,31.812],[-114.7455,31.804],[-114.739,31.795],[-114.732,31.777],[-114.707,31.757],[-114.658,31.729],[-114.623,31.7],[-112.88,29.4],[-112.6,28.5]]],
-      "description": "Intersect part of Mexico.  This operation creates an arbitrary sea boundary in the Gulf of California."
-    }, {
-      "op": "difference",
-      "source": "overpass",
-      "id": "Sonora"
+      "id": "America-Tijuana-tz"
     }
   ],
   "America/Toronto": [
@@ -1851,6 +1692,18 @@
       "op": "init",
       "source": "overpass",
       "id": "America-Toronto-tz"
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "City of Thunder Bay"
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "Fort William First Nation"
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "Nipigon"
     }
   ],
   "America/Tortola": [
@@ -1862,7 +1715,7 @@
   ],
   "America/Vancouver": [
     {
-      "op": "union",
+      "op": "init",
       "source": "overpass",
       "id": "America-Vancouver-tz"
     }
@@ -1879,6 +1732,10 @@
       "op": "init",
       "source": "overpass",
       "id": "America-Winnipeg-tz"
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "Town of Rainy River"
     }
   ],
   "America/Yakutat": [
@@ -3408,7 +3265,7 @@
       "id": "Kaliningrad"
     }
   ],
-  "Europe/Kiev": [
+  "Europe/Kyiv": [
     {
       "op": "init",
       "source": "overpass",

@@ -2,13 +2,87 @@
 
 ### Zone Changes
 
+* Modify expected overlapping areas
+  * Enlarge `Europe/Paris`, `Europe/Rome` overlap. See [article](https://en.wikipedia.org/wiki/D%C3%B4me_du_Go%C3%BBter) and Col du Géant (https://en.wikipedia.org/wiki/Col_du_G%C3%A9ant).
+  * Remove `America/Nuuk`, `America/Pangnirtung` overlap since the dispute was resolved. See [article](https://en.wikipedia.org/wiki/Hans_Island).
 * Directly use OpenStreetMap timezone relations for the following zones:
+  * `America/Anguilla`
+  * `America/Antigua`
+  * `America/Aruba`
+  * `America/Araguaina`
+  * `America/Argentina/Buenos_Aires`
+  * `America/Argentina/Catamarca`
+  * `America/Argentina/Cordoba`
+  * `America/Argentina/Jujuy`
+  * `America/Argentina/La_Rioja`
+  * `America/Argentina/Mendoza`
+  * `America/Argentina/Rio_Gallegos`
+  * `America/Argentina/Salta`
+  * `America/Argentina/San_Juan`
+  * `America/Argentina/San_Luis`
+  * `America/Argentina/Tucuman`
+  * `America/Argentina/Ushuaia`
+  * `America/Asuncion`
+  * `America/Atikokan`
+  * `America/Bahia`
+  * `America/Bahia_Banderas`
+  * `America/Barbados`
+  * `America/Belize`
+  * `America/Boa_Vista`
+  * `America/Bogota`
+  * `America/Campo_Grande`
+  * `America/Caracas`
+  * `America/Cayenne`
+  * `America/Cayman`
+  * `America/Chihuahua`
+  * `America/Costa_Rica`
+  * `America/Cuiaba`
+  * `America/Curacao`
+  * `America/Dawson`
   * `America/Denver`
+  * `America/Detroit`
+  * `America/Dominica`
+  * `America/Edmonton`
+  * `America/El_Salvador`
+  * `America/Fort_Nelson`
+  * `America/Goose_Bay`
+  * `America/Grand_Turk`
+  * `America/Grenada`
+  * `America/Guadeloupe`
+  * `America/Guatemala`
+  * `America/Guayaquil`
+  * `America/Guyana`
+  * `America/Hermosillo`
+  * `America/Indiana/Knox`
+  * `America/Indiana/Marengo`
+  * `America/Indiana/Petersburg`
+  * `America/Indiana/Tell_City`
+  * `America/Indiana/Vevay`
+  * `America/Indiana/Winamac`
+  * `America/Inuvik`
+  * `America/Jamaica`
+  * `America/Juneau`
+  * `America/Kentucky/Louisville`
+  * `America/Kentucky/Monticello`
+  * `America/Kralendijk`
+  * `America/La_Paz`
+  * `America/Lima`
   * `America/Los_Angeles`
+  * `America/Mazatlan`
+  * `America/Menominee`
+  * `America/Mexico_City`
+  * `America/Miquelon`
+  * `America/Moncton`
   * `America/North_Dakota/Beulah`
   * `America/North_Dakota/Center`
   * `America/North_Dakota/New_Salem`
   * `America/Phoenix`
+  * `America/St_Johns`
+  * `America/Tijuana`
+  * `America/Vancouver`
+  * `America/Whitehorse`
+  * `America/Yakutat`
+  * `America/Yellowknife`
 * Update to latest OSM data
 
 ### Other Changes

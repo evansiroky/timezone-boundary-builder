@@ -32,12 +32,6 @@
       "description": "Allow disputed area near Machias Seal Island (https://en.wikipedia.org/wiki/Machias_Seal_Island) to overlap."
     }
   ],
-  "America/Nuuk-America/Pangnirtung": [
-    {
-      "bounds": [-66.6, 80.8, -66.3, 80.9],
-      "description": "Allow disupted borders of Greenland and Canada (https://en.wikipedia.org/wiki/Hans_Island) to overlap."
-    }
-  ],
   "America/Sitka-America/Vancouver": [
     {
       "bounds": [-133.2, 54.4, -130.6, 54.8],
@@ -148,8 +142,8 @@
   ],
   "Europe/Paris-Europe/Rome": [
     {
-      "bounds": [6.8, 45.8, 6.9, 45.9],
-      "description": "Allow disputed areas near Mont Blanc (https://en.wikipedia.org/wiki/Mont_Blanc#Ownership_of_the_summit) and Dôme du Goûter (https://en.wikipedia.org/wiki/D%C3%B4me_du_Go%C3%BBter) to overlap."
+      "bounds": [6.8, 45.8, 7, 45.9],
+      "description": "Allow disputed areas near Mont Blanc (https://en.wikipedia.org/wiki/Mont_Blanc#Ownership_of_the_summit), Dôme du Goûter (https://en.wikipedia.org/wiki/D%C3%B4me_du_Go%C3%BBter) and Col du Géant (https://en.wikipedia.org/wiki/Col_du_G%C3%A9ant) to overlap."
     }
   ]
 }
