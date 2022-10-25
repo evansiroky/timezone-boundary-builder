@@ -4,6 +4,7 @@
 
 * Modify expected overlapping areas
   * Enlarge `Europe/Paris`, `Europe/Rome` overlap. See [article](https://en.wikipedia.org/wiki/D%C3%B4me_du_Go%C3%BBter) and Col du Géant (https://en.wikipedia.org/wiki/Col_du_G%C3%A9ant).
+  * Remove `America/Nuuk`, `America/Pangnirtung` overlap since the dispute was resolved. See [article](https://en.wikipedia.org/wiki/Hans_Island).
 * Directly use OpenStreetMap timezone relations for the following zones:
   * `America/Anguilla`
   * `America/Antigua`
