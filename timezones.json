@@ -3273,19 +3273,11 @@
     }, {
       "op": "difference",
       "source": "overpass",
-      "id": "Zaporizhzhia"
-    }, {
-      "op": "difference",
-      "source": "overpass",
       "id": "Crimea"
     }, {
       "op": "difference",
       "source": "overpass",
       "id": "Sevastopol"
-    }, {
-      "op": "difference",
-      "source": "overpass",
-      "id": "Zakarpattia"
     }
   ],
   "Europe/Kirov": [
@@ -3558,13 +3550,6 @@
       "id": "Ulyanovsk"
     }
   ],
-  "Europe/Uzhgorod": [
-    {
-      "op": "init",
-      "source": "overpass",
-      "id": "Zakarpattia"
-    }
-  ],
   "Europe/Vaduz": [
     {
       "op": "init",
@@ -3617,13 +3602,6 @@
       "op": "init",
       "source": "overpass",
       "id": "Croatia"
-    }
-  ],
-  "Europe/Zaporozhye": [
-    {
-      "op": "init",
-      "source": "overpass",
-      "id": "Zaporizhzhia"
     }
   ],
   "Europe/Zurich": [
