@@ -1,21 +1,135 @@
 {
-  "Acre": {
-    "ISO3166-2": "BR-AC"
+  "Africa-Abidjan-tz": {
+    "timezone": "Africa/Abidjan"
   },
-  "Afghanistan": {
-    "ISO3166-1": "AF"
+  "Africa-Accra-tz": {
+    "timezone": "Africa/Accra"
+  },
+  "Africa-Addis_Ababa-tz": {
+    "timezone": "Africa/Addis_Ababa"
+  },
+  "Africa-Algiers-tz": {
+    "timezone": "Africa/Algiers"
+  },
+  "Africa-Asmara-tz": {
+    "timezone": "Africa/Asmara"
+  },
+  "Africa-Bamako-tz": {
+    "timezone": "Africa/Bamako"
+  },
+  "Africa-Bangui-tz": {
+    "timezone": "Africa/Bangui"
+  },
+  "Africa-Banjul-tz": {
+    "timezone": "Africa/Banjul"
+  },
+  "Africa-Bissau-tz": {
+    "timezone": "Africa/Bissau"
+  },
+  "Africa-Blantyre-tz": {
+    "timezone": "Africa/Blantyre"
+  },
+  "Africa-Brazzaville-tz": {
+    "timezone": "Africa/Brazzaville"
+  },
+  "Africa-Bujumbura-tz": {
+    "timezone": "Africa/Bujumbura"
+  },
+  "Africa-Conakry-tz": {
+    "timezone": "Africa/Conakry"
+  },
+  "Africa-Dakar-tz": {
+    "timezone": "Africa/Dakar"
+  },
+  "Africa-Dar_es_Salaam-tz": {
+    "timezone": "Africa/Dar_es_Salaam"
+  },
+  "Africa-Djibouti-tz": {
+    "timezone": "Africa/Djibouti"
+  },
+  "Africa-Douala-tz": {
+    "timezone": "Africa/Douala"
+  },
+  "Africa-Freetown-tz": {
+    "timezone": "Africa/Freetown"
+  },
+  "Africa-Gaborone-tz": {
+    "timezone": "Africa/Gaborone"
+  },
+  "Africa-Harare-tz": {
+    "timezone": "Africa/Harare"
+  },
+  "Africa-Kampala-tz": {
+    "timezone": "Africa/Kampala"
+  },
+  "Africa-Khartoum-tz": {
+    "timezone": "Africa/Khartoum"
+  },
+  "Africa-Kigali-tz": {
+    "timezone": "Africa/Kigali"
+  },
+  "Africa-Lagos-tz": {
+    "timezone": "Africa/Lagos"
+  },
+  "Africa-Libreville-tz": {
+    "timezone": "Africa/Libreville"
+  },
+  "Africa-Lome-tz": {
+    "timezone": "Africa/Lome"
+  },
+  "Africa-Luanda-tz": {
+    "timezone": "Africa/Luanda"
+  },
+  "Africa-Lusaka-tz": {
+    "timezone": "Africa/Lusaka"
+  },
+  "Africa-Malabo-tz": {
+    "timezone": "Africa/Malabo"
+  },
+  "Africa-Maputo-tz": {
+    "timezone": "Africa/Maputo"
+  },
+  "Africa-Maseru-tz": {
+    "timezone": "Africa/Maseru"
+  },
+  "Africa-Mbabane-tz": {
+    "timezone": "Africa/Mbabane"
+  },
+  "Africa-Mogadishu-tz": {
+    "timezone": "Africa/Mogadishu"
+  },
+  "Africa-Monrovia-tz": {
+    "timezone": "Africa/Monrovia"
+  },
+  "Africa-Nairobi-tz": {
+    "timezone": "Africa/Nairobi"
+  },
+  "Africa-Ndjamena-tz": {
+    "timezone": "Africa/Ndjamena"
+  },
+  "Africa-Niamey-tz": {
+    "timezone": "Africa/Niamey"
+  },
+  "Africa-Nouakchott-tz": {
+    "timezone": "Africa/Nouakchott"
+  },
+  "Africa-Sao_Tome-tz": {
+    "timezone": "Africa/Sao_Tome"
+  },
+  "Africa-Tripoli-tz": {
+    "timezone": "Africa/Tripoli"
+  },
+  "Africa-Tunis-tz": {
+    "timezone": "Africa/Tunis"
+  },
+  "Africa-Windhoek-tz": {
+    "timezone": "Africa/Windhoek"
   },
   "Aktobe": {
     "ISO3166-2": "KZ-AKT"
   },
   "Alagoas": {
     "ISO3166-2": "BR-AL"
-  },
-  "Albania": {
-    "ISO3166-1": "AL"
-  },
-  "Algeria": {
-    "ISO3166-1": "DZ"
   },
   "Altai Krai": {
     "ISO3166-2": "RU-ALT"
@@ -113,7 +227,6 @@
   "America-Cancun-tz": {
     "timezone": "America/Cancun"
   },
-
   "America-Caracas-tz": {
     "timezone": "America/Caracas"
   },
@@ -252,8 +365,14 @@
   "America-Kentucky-Monticello-tz": {
     "timezone": "America/Kentucky/Monticello"
   },
+  "America-Managua-tz": {
+    "timezone": "America/Managua"
+  },
   "America-Manaus-tz": {
     "timezone": "America/Manaus"
+  },
+  "America-Martinique-tz": {
+    "timezone": "America/Martinique"
   },
   "America-Matamoros-tz": {
     "timezone": "America/Matamoros"
@@ -279,6 +398,15 @@
   "America-Monterrey-tz": {
     "timezone": "America/Monterrey"
   },
+  "America-Montevideo-tz": {
+    "timezone": "America/Montevideo"
+  },
+  "America-Montserrat-tz": {
+    "timezone": "America/Montserrat"
+  },
+  "America-Nassau-tz": {
+    "timezone": "America/Nassau"
+  },
   "America-New_York-tz": {
     "timezone": "America/New_York"
   },
@@ -294,11 +422,26 @@
   "America-Ojinaga-tz": {
     "timezone": "America/Ojinaga"
   },
+  "America-Panama-tz": {
+    "timezone": "America/Panama"
+  },
   "America-Pangnirtung-tz": {
     "timezone": "America/Pangnirtung"
   },
+  "America-Paramaribo-tz": {
+    "timezone": "America/Paramaribo"
+  },
   "America-Phoenix-tz": {
     "timezone": "America/Phoenix"
+  },
+  "America-Port-au-Prince-tz": {
+    "timezone": "America/Port-au-Prince"
+  },
+  "America-Port_of_Spain-tz": {
+    "timezone": "America/Port_of_Spain"
+  },
+  "America-Porto_Velho-tz": {
+    "timezone": "America/Porto_Velho"
   },
   "America-Rankin_Inlet-tz": {
     "timezone": "America/Rankin_Inlet"
@@ -309,20 +452,44 @@
   "America-Resolute-tz": {
     "timezone": "America/Resolute"
   },
+  "America-Rio_Branco-tz": {
+    "timezone": "America/Rio_Branco"
+  },
   "America-Santarem-tz": {
     "timezone": "America/Santarem"
+  },
+  "America-Santo_Domingo-tz": {
+    "timezone": "America/Santo_Domingo"
+  },
+  "America-St_Barthelemy-tz": {
+    "timezone": "America/St_Barthelemy"
   },
   "America-St_Johns-tz": {
     "timezone": "America/St_Johns"
   },
+  "America-St_Kitts-tz": {
+    "timezone": "America/St_Kitts"
+  },
+  "America-St_Lucia-tz": {
+    "timezone": "America/St_Lucia"
+  },
+  "America-St_Vincent-tz": {
+    "timezone": "America/St_Vincent"
+  },
   "America-Swift_Current-tz": {
     "timezone": "America/Swift_Current"
+  },
+  "America-Tegucigalpa-tz": {
+    "timezone": "America/Tegucigalpa"
   },
   "America-Tijuana-tz": {
     "timezone": "America/Tijuana"
   },
   "America-Toronto-tz": {
     "timezone": "America/Toronto"
+  },
+  "America-Tortola-tz": {
+    "timezone": "America/Tortola"
   },
   "America-Vancouver-tz": {
     "timezone": "America/Vancouver"
@@ -342,21 +509,132 @@
   "Amur": {
     "ISO3166-2": "RU-AMU"
   },
-  "Andorra": {
-    "ISO3166-1": "AD"
-  },
-  "Angola": {
-    "ISO3166-1": "AO"
-  },
   "Area H2": {
     "name:en": "Area H2",
     "admin_level": "6"
   },
-  "Armenia": {
-    "ISO3166-1": "AM"
+  "Asia-Aden-tz": {
+    "timezone": "Asia/Aden"
+  },
+  "Asia-Amman-tz": {
+    "timezone": "Asia/Amman"
+  },
+  "Asia-Anadyr-tz": {
+    "timezone": "Asia/Anadyr"
+  },
+  "Asia-Aqtobe-tz": {
+    "timezone": "Asia/Aqtobe"
+  },
+  "Asia-Ashgabat-tz": {
+    "timezone": "Asia/Ashgabat"
+  },
+  "Asia-Baghdad-tz": {
+    "timezone": "Asia/Baghdad"
+  },
+  "Asia-Bahrain-tz": {
+    "timezone": "Asia/Bahrain"
+  },
+  "Asia-Baku-tz": {
+    "timezone": "Asia/Baku"
+  },
+  "Asia-Beirut-tz": {
+    "timezone": "Asia/Beirut"
+  },
+  "Asia-Bishkek-tz": {
+    "timezone": "Asia/Bishkek"
+  },
+  "Asia-Brunei-tz": {
+    "timezone": "Asia/Brunei"
+  },
+  "Asia-Chita-tz": {
+    "timezone": "Asia/Chita"
+  },
+  "Asia-Colombo-tz": {
+    "timezone": "Asia/Colombo"
+  },
+  "Asia-Damascus-tz": {
+    "timezone": "Asia/Damascus"
+  },
+  "Asia-Dhaka-tz": {
+    "timezone": "Asia/Dhaka"
+  },
+  "Asia-Dili-tz": {
+    "timezone": "Asia/Dili"
+  },
+  "Asia-Dubai-tz": {
+    "timezone": "Asia/Dubai"
+  },
+  "Asia-Dushanbe-tz": {
+    "timezone": "Asia/Dushanbe"
+  },
+  "Asia-Hong_Kong-tz": {
+    "timezone": "Asia/Hong_Kong"
+  },
+  "Asia-Kabul-tz": {
+    "timezone": "Asia/Kabul"
+  },
+  "Asia-Karachi-tz": {
+    "timezone": "Asia/Karachi"
+  },
+  "Asia-Kathmandu-tz": {
+    "timezone": "Asia/Kathmandu"
+  },
+  "Asia-Kolkata-tz": {
+    "timezone": "Asia/Kolkata"
+  },
+  "Asia-Kuwait-tz": {
+    "timezone": "Asia/Kuwait"
+  },
+  "Asia-Macau-tz": {
+    "timezone": "Asia/Macau"
+  },
+  "Asia-Manila-tz": {
+    "timezone": "Asia/Manila"
+  },
+  "Asia-Muscat-tz": {
+    "timezone": "Asia/Muscat"
+  },
+  "Asia-Novosibirsk-tz": {
+    "timezone": "Asia/Novosibirsk"
+  },
+  "Asia-Oral-tz": {
+    "timezone": "Asia/Oral"
+  },
+  "Asia-Phnom_Penh-tz": {
+    "timezone": "Asia/Phnom_Penh"
+  },
+  "Asia-Qatar-tz": {
+    "timezone": "Asia/Qatar"
+  },
+  "Asia-Riyadh-tz": {
+    "timezone": "Asia/Riyadh"
+  },
+  "Asia-Seoul-tz": {
+    "timezone": "Asia/Seoul"
+  },
+  "Asia-Singapore-tz": {
+    "timezone": "Asia/Singapore"
   },
   "Asia-Srednekolymsk-tz": {
     "timezone": "Asia/Srednekolymsk"
+  },
+  "Asia-Taipei-tz": {
+    "timezone": "Asia/Taipei"
+  },
+  "Asia-Tbilisi-tz": {
+    "timezone": "Asia/Tbilisi"
+  },
+  "Asia-Tehran-tz": {
+    "timezone": "Asia/Tehran"
+  },
+  "Asia-Tokyo-tz": {
+    "timezone": "Asia/Tokyo"
+  },
+  "Asia-Tomsk-tz": {
+    "timezone": "Asia/Tomsk"
+  },
+  "Asia-Vientiane-tz": {
+    "timezone": "Asia/Vientiane"
   },
   "Asia-Vladivostok-tz": {
     "timezone": "Asia/Vladivostok"
@@ -364,8 +642,32 @@
   "Asia-Yekaterinburg-tz": {
     "timezone": "Asia/Yekaterinburg"
   },
+  "Asia-Yerevan-tz": {
+    "timezone": "Asia/Yerevan"
+  },
   "Astrakhan": {
     "ISO3166-2": "RU-AST"
+  },
+  "Atlantic-Bermuda-tz": {
+    "timezone": "Atlantic/Bermuda"
+  },
+  "Atlantic-Cape_Verde-tz": {
+    "timezone": "Atlantic/Cape_Verde"
+  },
+  "Atlantic-Faroe-tz": {
+    "timezone": "Atlantic/Faroe"
+  },
+  "Atlantic-Reykjavik-tz": {
+    "timezone": "Atlantic/Reykjavik"
+  },
+  "Atlantic-South_Georgia-tz": {
+    "timezone": "Atlantic/South_Georgia"
+  },
+  "Atlantic-St_Helena-tz": {
+    "timezone": "Atlantic/St_Helena"
+  },
+  "Atlantic-Stanley-tz": {
+    "timezone": "Atlantic/Stanley"
   },
   "Atyrau Region": {
     "ISO3166-2": "KZ-ATY"
@@ -391,45 +693,21 @@
   "Autonomous Region of Bougainville": {
     "ISO3166-2": "PG-NSB"
   },
-  "Azerbaijan": {
-    "ISO3166-1": "AZ"
-  },
   "Bahia": {
     "ISO3166-2": "BR-BA"
-  },
-  "Bahrain": {
-    "ISO3166-1": "BH"
-  },
-  "Bangladesh": {
-    "ISO3166-1": "BD"
   },
   "Bas-Uele": {
     "name": "Bas-Uele",
     "admin_level": "4"
   },
-  "Belarus": {
-    "ISO3166-1": "BY"
-  },
-  "Belgium": {
-    "ISO3166-1": "BE"
-  },
   "Benin": {
     "ISO3166-1": "BJ"
-  },
-  "Bermuda": {
-    "ISO3166-1": "BM"
   },
   "Bhutan": {
     "ISO3166-1": "BT"
   },
   "Bir Tawil": {
     "alt_name:en": "Bi'r Tawīl"
-  },
-  "Bosnia and Herzegovina": {
-    "ISO3166-1": "BA"
-  },
-  "Botswana": {
-    "ISO3166-1": "BW"
   },
   "Brazil": {
     "ISO3166-1": "BR"
@@ -440,41 +718,14 @@
   "British Sovereign Base Areas": {
     "name": "British Sovereign Base Areas"
   },
-  "British Virgin Islands": {
-    "ISO3166-1": "VG"
-  },
-  "Brunei": {
-    "ISO3166-1": "BN"
-  },
-  "Bulgaria": {
-    "ISO3166-1": "BG"
-  },
   "Burkina Faso": {
     "ISO3166-1": "BF"
-  },
-  "Burundi": {
-    "ISO3166-1": "BI"
   },
   "Buryatia": {
     "ISO3166-2": "RU-BU"
   },
-  "Cambodia": {
-    "ISO3166-1": "KH"
-  },
-  "Cameroon": {
-    "ISO3166-1": "CM"
-  },
-  "Cape Verde": {
-    "ISO3166-1": "CV"
-  },
-  "Central African Republic": {
-    "ISO3166-1": "CF"
-  },
   "Central Kalimantan": {
     "name:en": "Central Kalimantan"
-  },
-  "Chad": {
-    "ISO3166-1": "TD"
   },
   "Chile": {
     "ISO3166-1": "CL"
@@ -490,12 +741,6 @@
   },
   "City of Thunder Bay": {
     "wikidata": "Q34116"
-  },
-  "Comoros": {
-    "ISO3166-1": "KM"
-  },
-  "Congo-Brazzaville": {
-    "ISO3166-1": "CG"
   },
   "Congo-Kinshasa": {
     "ISO3166-1": "CD"
@@ -519,27 +764,12 @@
   "Cyprus": {
     "ISO3166-1": "CY"
   },
-  "Czech Republic": {
-    "ISO3166-1": "CZ"
-  },
-  "Côte d'Ivoire": {
-    "ISO3166-1": "CI"
-  },
-  "Denmark": {
-    "ISO3166-1": "DK"
-  },
   "Dewey County, SD": {
     "name": "Dewey County",
     "nist:state_fips": "46"
   },
-  "Djibouti": {
-    "ISO3166-1": "DJ"
-  },
   "Doklam 洞朗地区": {
     "name": "Doklam 洞朗地区"
-  },
-  "Dominican Republic": {
-    "ISO3166-1": "DO"
   },
   "Dornod": {
     "ISO3166-2": "MN-061"
@@ -547,38 +777,128 @@
   "East Java": {
     "name:en": "East Java"
   },
-  "East Timor": {
-    "ISO3166-1": "TL"
-  },
   "Ecuador": {
     "ISO3166-1": "EC"
   },
   "Egypt": {
     "ISO3166-1": "EG"
   },
-  "Equatorial Guinea": {
-    "ISO3166-1": "GQ"
+  "Europe-Andorra-tz": {
+    "timezone": "Europe/Andorra"
   },
-  "Eritrea": {
-    "ISO3166-1": "ER"
+  "Europe-Athens-tz": {
+    "timezone": "Europe/Athens"
   },
-  "Estonia": {
-    "ISO3166-1": "EE"
+  "Europe-Bratislava-tz": {
+    "timezone": "Europe/Bratislava"
   },
-  "Ethiopia": {
-    "ISO3166-1": "ET"
+  "Europe-Brussels-tz": {
+    "timezone": "Europe/Brussels"
+  },
+  "Europe-Bucharest-tz": {
+    "timezone": "Europe/Bucharest"
+  },
+  "Europe-Budapest-tz": {
+    "timezone": "Europe/Budapest"
+  },
+  "Europe-Chisinau-tz": {
+    "timezone": "Europe/Chisinau"
+  },
+  "Europe-Copenhagen-tz": {
+    "timezone": "Europe/Copenhagen"
+  },
+  "Europe-Dublin-tz": {
+    "timezone": "Europe/Dublin"
+  },
+  "Europe-Gibraltar-tz": {
+    "timezone": "Europe/Gibraltar"
+  },
+  "Europe-Guernsey-tz": {
+    "timezone": "Europe/Guernsey"
+  },
+  "Europe-Isle_of_Man-tz": {
+    "timezone": "Europe/Isle_of_Man"
+  },
+  "Europe-Istanbul-tz": {
+    "timezone": "Europe/Istanbul"
+  },
+  "Europe-Jersey-tz": {
+    "timezone": "Europe/Jersey"
+  },
+  "Europe-Kaliningrad-tz": {
+    "timezone": "Europe/Kaliningrad"
+  },
+  "Europe-Luxembourg-tz": {
+    "timezone": "Europe/Luxembourg"
+  },
+  "Europe-Malta-tz": {
+    "timezone": "Europe/Malta"
+  },
+  "Europe-Mariehamn-tz": {
+    "timezone": "Europe/Mariehamn"
+  },
+  "Europe-Minsk-tz": {
+    "timezone": "Europe/Minsk"
+  },
+  "Europe-Monaco-tz": {
+    "timezone": "Europe/Monaco"
   },
   "Europe-Moscow-tz": {
     "timezone": "Europe/Moscow"
   },
-  "Falkland Islands": {
-    "ISO3166-1": "FK"
+  "Europe-Podgorica-tz": {
+    "timezone": "Europe/Podgorica"
   },
-  "Faroe Islands": {
-    "ISO3166-1": "FO"
+  "Europe-Prague-tz": {
+    "timezone": "Europe/Prague"
   },
-  "Fiji": {
-    "ISO3166-1": "FJ"
+  "Europe-Riga-tz": {
+    "timezone": "Europe/Riga"
+  },
+  "Europe-Rome-tz": {
+    "timezone": "Europe/Rome"
+  },
+  "Europe-San_Marino-tz": {
+    "timezone": "Europe/San_Marino"
+  },
+  "Europe-Sarajevo-tz": {
+    "timezone": "Europe/Sarajevo"
+  },
+  "Europe-Skopje-tz": {
+    "timezone": "Europe/Skopje"
+  },
+  "Europe-Sofia-tz": {
+    "timezone": "Europe/Sofia"
+  },
+  "Europe-Stockholm-tz": {
+    "timezone": "Europe/Stockholm"
+  },
+  "Europe-Tallinn-tz": {
+    "timezone": "Europe/Tallinn"
+  },
+  "Europe-Tirane-tz": {
+    "timezone": "Europe/Tirane"
+  },
+  "Europe-Ulyanovsk-tz": {
+    "timezone": "Europe/Ulyanovsk"
+  },
+  "Europe-Vaduz-tz": {
+    "timezone": "Europe/Vaduz"
+  },
+  "Europe-Vatican-tz": {
+    "timezone": "Europe/Vatican"
+  },
+  "Europe-Vilnius-tz": {
+    "timezone": "Europe/Vilnius"
+  },
+  "Europe-Warsaw-tz": {
+    "timezone": "Europe/Warsaw"
+  },
+  "Europe-Zagreb-tz": {
+    "timezone": "Europe/Zagreb"
+  },
+  "Europe-Zurich-tz": {
+    "timezone": "Europe/Zurich"
   },
   "Finland": {
     "ISO3166-1": "FI"
@@ -589,20 +909,8 @@
   "France": {
     "ISO3166-1:alpha2": "FR"
   },
-  "Gabon": {
-    "ISO3166-1": "GA"
-  },
-  "Georgia": {
-    "ISO3166-1": "GE"
-  },
   "Germany": {
     "ISO3166-1": "DE"
-  },
-  "Ghana": {
-    "ISO3166-1": "GH"
-  },
-  "Gibraltar": {
-    "ISO3166-1": "GI"
   },
   "Govi-Altai": {
     "ISO3166-2": "MN-065"
@@ -611,26 +919,8 @@
     "name": "Grant County",
     "nist:state_fips": "38"
   },
-  "Greece": {
-    "ISO3166-1": "GR"
-  },
   "Greenland": {
     "ISO3166-1": "GL"
-  },
-  "Guernsey": {
-    "ISO3166-1": "GG"
-  },
-  "Guinea": {
-    "ISO3166-1": "GN"
-  },
-  "Guinea-Bissau": {
-    "ISO3166-1": "GW"
-  },
-  "Haiti": {
-    "ISO3166-1": "HT"
-  },
-  "Honduras": {
-    "ISO3166-1": "HN"
   },
   "Hong Kong": {
     "ISO3166-1": "HK"
@@ -638,26 +928,23 @@
   "Hoonah-Angoon": {
     "name": "Hoonah-Angoon"
   },
-  "Hungary": {
-    "ISO3166-1": "HU"
+  "Indian-Antananarivo-tz": {
+    "timezone": "Indian/Antananarivo"
   },
-  "Iceland": {
-    "ISO3166-1": "IS"
+  "Indian-Comoro-tz": {
+    "timezone": "Indian/Comoro"
   },
-  "India": {
-    "ISO3166-1": "IN"
+  "Indian-Mahe-tz": {
+    "timezone": "Indian/Mahe"
+  },
+  "Indian-Maldives-tz": {
+    "timezone": "Indian/Maldives"
+  },
+  "Indian-Mauritius-tz": {
+    "timezone": "Indian/Mauritius"
   },
   "Indonesia": {
     "name": "Indonesia"
-  },
-  "Iran": {
-    "ISO3166-1": "IR"
-  },
-  "Iraq": {
-    "ISO3166-1": "IQ"
-  },
-  "Ireland": {
-    "ISO3166-1": "IE"
   },
   "Irkutsk": {
     "ISO3166-2": "RU-IRK"
@@ -668,24 +955,9 @@
   "Israel": {
     "ISO3166-1": "IL"
   },
-  "Italy": {
-    "ISO3166-1": "IT"
-  },
-  "Japan": {
-    "ISO3166-1": "JP"
-  },
-  "Jersey": {
-    "ISO3166-1": "JE"
-  },
-  "Jordan": {
-    "ISO3166-1": "JO"
-  },
   "Jungholz, AT": {
     "name": "Jungholz",
     "admin_level": "8"
-  },
-  "Kaliningrad": {
-    "ISO3166-2": "RU-KGD"
   },
   "Kamchatka": {
     "ISO3166-2": "RU-KAM"
@@ -715,59 +987,17 @@
   "Koalou-Kourou Zone": {
     "name:en": "Neutral Zone Burkina Faso and Benin"
   },
-  "Kosrae": {
-    "ISO3166-2": "FM-KSA"
-  },
   "Kostanay": {
     "ISO3166-2": "KZ-KUS"
   },
   "Krasnoyarsk": {
     "ISO3166-2": "RU-KYA"
   },
-  "Kuwait": {
-    "ISO3166-1": "KW"
-  },
-  "Kyrgyzstan": {
-    "ISO3166-1": "KG"
-  },
   "Kyzylorda": {
     "ISO3166-2": "KZ-KZY"
   },
-  "Laos": {
-    "ISO3166-1": "LA"
-  },
-  "Latvia": {
-    "ISO3166-1": "LV"
-  },
-  "Lebanon": {
-    "ISO3166-1": "LB"
-  },
-  "Lesotho": {
-    "ISO3166-1": "LS"
-  },
-  "Liberia": {
-    "ISO3166-1": "LR"
-  },
-  "Libya": {
-    "ISO3166-1": "LY"
-  },
-  "Liechtenstein": {
-    "ISO3166-1": "LI"
-  },
-  "Lithuania": {
-    "ISO3166-1": "LT"
-  },
-  "Luxemburg": {
-    "ISO3166-1": "LU"
-  },
   "Macau": {
     "ISO3166-1": "MO"
-  },
-  "Macedonia": {
-    "ISO3166-1": "MK"
-  },
-  "Madagascar": {
-    "ISO3166-1": "MG"
   },
   "Magadan": {
     "ISO3166-2": "RU-MAG"
@@ -775,20 +1005,8 @@
   "Magallanes Region": {
     "ISO3166-2": "CL-MA"
   },
-  "Malawi": {
-    "ISO3166-1": "MW"
-  },
   "Malaysia": {
     "ISO3166-1": "MY"
-  },
-  "Maldives": {
-    "ISO3166-1": "MV"
-  },
-  "Mali": {
-    "ISO3166-1": "ML"
-  },
-  "Malta": {
-    "ISO3166-1": "MT"
   },
   "Maluku": {
     "ISO3166-2": "ID-MA"
@@ -799,71 +1017,26 @@
   "Marshall Islands": {
     "ISO3166-1": "MH"
   },
-  "Martinique": {
-    "ISO3166-1": "MQ"
-  },
   "Mato Grosso do Sul": {
     "ISO3166-2": "BR-MS"
   },
   "Mato Grosso": {
     "ISO3166-2": "BR-MT"
   },
-  "Mauritania": {
-    "ISO3166-1": "MR"
-  },
-  "Mauritius": {
-    "ISO3166-1": "MU"
-  },
-  "Moldova": {
-    "ISO3166-1": "MD"
-  },
-  "Monaco": {
-    "ISO3166-1": "MC"
-  },
   "Mongolia": {
     "ISO3166-1": "MN"
-  },
-  "Montenegro": {
-    "ISO3166-1": "ME"
-  },
-  "Montserrat": {
-    "ISO3166-1": "MS"
   },
   "Morocco": {
     "ISO3166-1": "MA"
   },
-  "Mozambique": {
-    "ISO3166-1": "MZ"
-  },
   "Myanmar": {
     "ISO3166-1": "MM"
-  },
-  "Namibia": {
-    "ISO3166-1": "NA"
-  },
-  "Nauru": {
-    "ISO3166-1": "NR"
-  },
-  "Nepal": {
-    "ISO3166-1": "NP"
   },
   "New Zealand": {
     "ISO3166-1": "NZ"
   },
-  "Nicaragua": {
-    "ISO3166-1": "NI"
-  },
-  "Niger": {
-    "ISO3166-1": "NE"
-  },
-  "Nigeria": {
-    "ISO3166-1": "NG"
-  },
   "Nipigon": {
     "wikidata": "Q1993247"
-  },
-  "Niue": {
-    "ISO3166-1": "NU"
   },
   "North Korea": {
     "ISO3166-1": "KP"
@@ -877,29 +1050,53 @@
   "Norway": {
     "ISO3166-1": "NO"
   },
-  "Novosibirsk": {
-    "ISO3166-2": "RU-NVS"
-  },
-  "Oman": {
-    "ISO3166-1": "OM"
-  },
   "Omsk": {
     "ISO3166-2": "RU-OMS"
   },
   "Oymyakonsky": {
     "name:en": "Oymyakonsky Ulus"
   },
-  "Pakistan": {
-    "ISO3166-1": "PK"
+  "Pacific-Apia-tz": {
+    "timezone": "Pacific/Apia"
   },
-  "Palau": {
-    "ISO3166-1": "PW"
+  "Pacific-Bougainville-tz": {
+    "timezone": "Pacific/Bougainville"
+  },
+  "Pacific-Efate-tz": {
+    "timezone": "Pacific/Efate"
+  },
+  "Pacific-Fakaofo-tz": {
+    "timezone": "Pacific/Fakaofo"
+  },
+  "Pacific-Fiji-tz": {
+    "timezone": "Pacific/Fiji"
+  },
+  "Pacific-Funafuti-tz": {
+    "timezone": "Pacific/Funafuti"
+  },
+  "Pacific-Guadalcanal-tz": {
+    "timezone": "Pacific/Guadalcanal"
+  },
+  "Pacific-Kosrae-tz": {
+    "timezone": "Pacific/Kosrae"
+  },
+  "Pacific-Nauru-tz": {
+    "timezone": "Pacific/Nauru"
+  },
+  "Pacific-Niue-tz": {
+    "timezone": "Pacific/Niue"
+  },
+  "Pacific-Palau-tz": {
+    "timezone": "Pacific/Palau"
+  },
+  "Pacific-Pohnpei-tz": {
+    "timezone": "Pacific/Pohnpei"
+  },
+  "Pacific-Tongatapu-tz": {
+    "timezone": "Pacific/Tongatapu"
   },
   "Palestinian Territories": {
     "ISO3166-1": "PS"
-  },
-  "Panama": {
-    "ISO3166-1": "PA"
   },
   "Papua New Guinea": {
     "ISO3166-1": "PG"
@@ -907,26 +1104,14 @@
   "Pernambuco": {
     "ISO3166-2": "BR-PE"
   },
-  "Philippines": {
-    "ISO3166-1": "PH"
-  },
   "Pitcairn Islands": {
     "ISO3166-1": "PN"
-  },
-  "Pohnpei": {
-    "ISO3166-2": "FM-PNI"
-  },
-  "Poland": {
-    "ISO3166-1": "PL"
   },
   "Portugal": {
     "ISO3166-1": "PT"
   },
   "Prince of Wales-Hyder": {
     "name": "Prince of Wales-Hyder"
-  },
-  "Qatar": {
-    "ISO3166-1": "QA"
   },
   "Quang Tri": {
     "ISO3166-2": "VN-25"
@@ -940,32 +1125,8 @@
   "Republic of Kosovo": {
     "ISO3166-1": "XK"
   },
-  "Romania": {
-    "ISO3166-1": "RO"
-  },
-  "Rondônia": {
-    "ISO3166-2": "BR-RO"
-  },
-  "Rwanda": {
-    "ISO3166-1": "RW"
-  },
-  "Saint Helena, Ascension and Tristan da Cunha": {
-    "ISO3166-1": "SH"
-  },
-  "Saint Kitts and Nevis": {
-    "ISO3166-1": "KN"
-  },
-  "Saint Lucia": {
-    "ISO3166-1": "LC"
-  },
   "Saint Maarten": {
     "ISO3166-1": "MF"
-  },
-  "Saint Vincent and the Grenadines": {
-    "ISO3166-1": "VC"
-  },
-  "Saint-Barthélemy": {
-    "ISO3166-1": "BL"
   },
   "Sakha Republic": {
     "ISO3166-2": "RU-SA"
@@ -979,24 +1140,12 @@
   "Samarkand": {
     "timezone": "Asia/Samarkand"
   },
-  "Samoa": {
-    "ISO3166-1": "WS"
-  },
-  "San Marino": {
-    "ISO3166-1": "SM"
-  },
   "Sankuru": {
     "name": "Sankuru",
     "admin_level": "4"
   },
   "Saratov": {
     "ISO3166-2": "RU-SAR"
-  },
-  "Saudi Arabia": {
-    "ISO3166-1": "SA"
-  },
-  "Senegal": {
-    "ISO3166-1": "SN"
   },
   "Serbia": {
     "ISO3166-1": "RS"
@@ -1007,15 +1156,6 @@
   "Sevastopol": {
     "name:en": "Sevastopol"
   },
-  "Seychelles": {
-    "ISO3166-1": "SC"
-  },
-  "Sierra Leone": {
-    "ISO3166-1": "SL"
-  },
-  "Singapore": {
-    "ISO3166-1": "SG"
-  },
   "Sint Maarten": {
     "ISO3166-1": "SX"
   },
@@ -1023,17 +1163,8 @@
     "name": "Sioux County",
     "nist:state_fips": "38"
   },
-  "Slovakia": {
-    "ISO3166-1": "SK"
-  },
   "Slovenia": {
     "ISO3166-1": "SI"
-  },
-  "Solomon Islands": {
-    "ISO3166-1": "SB"
-  },
-  "Somalia": {
-    "ISO3166-1": "SO"
   },
   "South Africa": {
     "ISO3166-1": "ZA",
@@ -1042,60 +1173,18 @@
   "South Australia": {
     "ISO3166-2": "AU-SA"
   },
-  "South Georgia and the South Sandwich Islands": {
-    "ISO3166-1": "GS"
-  },
-  "South Korea": {
-    "ISO3166-1": "KR"
-  },
   "South Sudan": {
     "ISO3166-1": "SS"
   },
   "Spain": {
     "ISO3166-1:alpha2": "ES"
   },
-  "Sri Lanka": {
-    "ISO3166-1": "LK"
-  },
-  "Sudan": {
-    "ISO3166-1": "SD"
-  },
-  "Suriname": {
-    "ISO3166-1": "SR"
-  },
-  "Swaziland": {
-    "ISO3166-1": "SZ"
-  },
-  "Sweden": {
-    "ISO3166-1": "SE"
-  },
-  "Switzerland": {
-    "ISO3166-1": "CH"
-  },
-  "Syria": {
-    "ISO3166-1": "SY"
-  },
-  "São Tomé and Príncipe": {
-    "ISO3166-1": "ST"
-  },
   "Sühbaatar": {
     "ISO3166-2": "MN-051"
-  },
-  "Tajikistan": {
-    "ISO3166-1": "TJ"
-  },
-  "Tanzania": {
-    "name:en": "Tanzania"
   },
   "Thailand": {
     "ISO3166-1": "TH",
     "admin_level": "2"
-  },
-  "The Bahamas": {
-    "ISO3166-1": "BS"
-  },
-  "The Gambia": {
-    "ISO3166-1": "GM"
   },
   "The Netherlands": {
     "ISO3166-1": "NL"
@@ -1103,60 +1192,24 @@
   "Tocantins": {
     "ISO3166-2": "BR-TO"
   },
-  "Togo": {
-    "ISO3166-1": "TG"
-  },
-  "Tokelau": {
-    "ISO3166-1": "TK"
-  },
   "Tomponsky": {
     "name:en": "Tomponsky Ulus"
   },
-  "Tomsk": {
-    "ISO3166-2": "RU-TOM"
-  },
-  "Tonga": {
-    "ISO3166-1": "TO"
-  },
   "Town of Rainy River": {
     "wikidata": "Q3492477"
-  },
-  "Trinidad and Tobago": {
-    "ISO3166-1": "TT"
   },
   "Tshopo": {
     "name": "Tshopo",
     "admin_level": "4"
   },
-  "Tunisia": {
-    "ISO3166-1": "TN"
-  },
-  "Turkey": {
-    "ISO3166-1": "TR"
-  },
-  "Turkmenistan": {
-    "ISO3166-1": "TM"
-  },
   "Tuva": {
     "ISO3166-2": "RU-TY"
-  },
-  "Tuvalu": {
-    "ISO3166-1": "TV"
   },
   "Udmurtia": {
     "ISO3166-2": "RU-UD"
   },
-  "Uganda": {
-    "ISO3166-1": "UG"
-  },
   "Ukraine": {
     "ISO3166-1": "UA"
-  },
-  "Ulyanovsk": {
-    "ISO3166-2": "RU-ULY"
-  },
-  "United Arab Emirates": {
-    "ISO3166-1": "AE"
   },
   "United Kingdom": {
     "ISO3166-1": "GB"
@@ -1167,20 +1220,11 @@
   "United States of America": {
     "ISO3166-1": "US"
   },
-  "Uruguay": {
-    "ISO3166-1": "UY"
-  },
   "Ust-Maysky": {
     "name:en": "Ust-Maysky Ulus"
   },
   "Uzbekistan": {
     "ISO3166-1": "UZ"
-  },
-  "Vanuatu": {
-    "ISO3166-1": "VU"
-  },
-  "Vatican City": {
-    "ISO3166-1": "VA"
   },
   "Victoria": {
     "ISO3166-2": "AU-VIC"
@@ -1194,9 +1238,6 @@
   "West Kalimantan": {
     "name:en": "West Kalimantan"
   },
-  "West Kazakhstan": {
-    "ISO3166-2": "KZ-ZAP"
-  },
   "Western Sahara": {
     "ISO3166-1": "EH"
   },
@@ -1206,23 +1247,11 @@
   "Yap": {
     "ISO3166-2": "FM-YAP"
   },
-  "Yemen": {
-    "ISO3166-1": "YE"
-  },
   "Yukon": {
     "ISO3166-2": "CA-YT"
   },
-  "Zabaykalsk": {
-    "ISO3166-2": "RU-ZAB"
-  },
-  "Zambia": {
-    "ISO3166-1": "ZM"
-  },
   "Zavkhan": {
     "ISO3166-2": "MN-057"
-  },
-  "Zimbabwe": {
-    "ISO3166-1": "ZW"
   },
   "Åland Islands": {
     "ISO3166-2": "FI-01"

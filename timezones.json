@@ -3,84 +3,84 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Côte d'Ivoire"
+      "id": "Africa-Abidjan-tz"
     }
   ],
   "Africa/Accra": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Ghana"
+      "id": "Africa-Accra-tz"
     }
   ],
   "Africa/Addis_Ababa": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Ethiopia"
+      "id": "Africa-Addis_Ababa-tz"
     }
   ],
   "Africa/Algiers": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Algeria"
+      "id": "Africa-Algiers-tz"
     }
   ],
   "Africa/Asmara": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Eritrea"
+      "id": "Africa-Asmara-tz"
     }
   ],
   "Africa/Bamako": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Mali"
+      "id": "Africa-Bamako-tz"
     }
   ],
   "Africa/Bangui": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Central African Republic"
+      "id": "Africa-Bangui-tz"
     }
   ],
   "Africa/Banjul": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "The Gambia"
+      "id": "Africa-Banjul-tz"
     }
   ],
   "Africa/Bissau": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Guinea-Bissau"
+      "id": "Africa-Bissau-tz"
     }
   ],
   "Africa/Blantyre": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Malawi"
+      "id": "Africa-Blantyre-tz"
     }
   ],
   "Africa/Brazzaville": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Congo-Brazzaville"
+      "id": "Africa-Brazzaville-tz"
     }
   ],
   "Africa/Bujumbura": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Burundi"
+      "id": "Africa-Bujumbura-tz"
     }
   ],
   "Africa/Cairo": [
@@ -126,35 +126,35 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Guinea"
+      "id": "Africa-Conakry-tz"
     }
   ],
   "Africa/Dakar": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Senegal"
+      "id": "Africa-Dakar-tz"
     }
   ],
   "Africa/Dar_es_Salaam": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Tanzania"
+      "id": "Africa-Dar_es_Salaam-tz"
     }
   ],
   "Africa/Djibouti": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Djibouti"
+      "id": "Africa-Djibouti-tz"
     }
   ],
   "Africa/Douala": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Cameroon"
+      "id": "Africa-Douala-tz"
     }
   ],
   "Africa/El_Aaiun": [
@@ -168,21 +168,21 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Sierra Leone"
+      "id": "Africa-Freetown-tz"
     }
   ],
   "Africa/Gaborone": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Botswana"
+      "id": "Africa-Gaborone-tz"
     }
   ],
   "Africa/Harare": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Zimbabwe"
+      "id": "Africa-Harare-tz"
     }
   ],
   "Africa/Johannesburg": [
@@ -217,21 +217,21 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Uganda"
+      "id": "Africa-Kampala-tz"
     }
   ],
   "Africa/Khartoum": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Sudan"
+      "id": "Africa-Khartoum-tz"
     }
   ],
   "Africa/Kigali": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Rwanda"
+      "id": "Africa-Kigali-tz"
     }
   ],
   "Africa/Kinshasa": [
@@ -266,28 +266,28 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Nigeria"
+      "id": "Africa-Lagos-tz"
     }
   ],
   "Africa/Libreville": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Gabon"
+      "id": "Africa-Libreville-tz"
     }
   ],
   "Africa/Lome": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Togo"
+      "id": "Africa-Lome-tz"
     }
   ],
   "Africa/Luanda": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Angola"
+      "id": "Africa-Luanda-tz"
     }
   ],
   "Africa/Lubumbashi": [
@@ -322,77 +322,77 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Zambia"
+      "id": "Africa-Lusaka-tz"
     }
   ],
   "Africa/Malabo": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Equatorial Guinea"
+      "id": "Africa-Malabo-tz"
     }
   ],
   "Africa/Maputo": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Mozambique"
+      "id": "Africa-Maputo-tz"
     }
   ],
   "Africa/Maseru": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Lesotho"
+      "id": "Africa-Maseru-tz"
     }
   ],
   "Africa/Mbabane": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Swaziland"
+      "id": "Africa-Mbabane-tz"
     }
   ],
   "Africa/Mogadishu": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Somalia"
+      "id": "Africa-Mogadishu-tz"
     }
   ],
   "Africa/Monrovia": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Liberia"
+      "id": "Africa-Monrovia-tz"
     }
   ],
   "Africa/Nairobi": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Kenya"
+      "id": "Africa-Nairobi-tz"
     }
   ],
   "Africa/Ndjamena": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Chad"
+      "id": "Africa-Ndjamena-tz"
     }
   ],
   "Africa/Niamey": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Niger"
+      "id": "Africa-Niamey-tz"
     }
   ],
   "Africa/Nouakchott": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Mauritania"
+      "id": "Africa-Nouakchott-tz"
     }
   ],
   "Africa/Ouagadougou": [
@@ -423,28 +423,28 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "São Tomé and Príncipe"
+      "id": "Africa-Sao_Tome-tz"
     }
   ],
   "Africa/Tripoli": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Libya"
+      "id": "Africa-Tripoli-tz"
     }
   ],
   "Africa/Tunis": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Tunisia"
+      "id": "Africa-Tunis-tz"
     }
   ],
   "Africa/Windhoek": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Namibia"
+      "id": "Africa-Windhoek-tz"
     }
   ],
   "America/Adak": [
@@ -1141,7 +1141,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Nicaragua"
+      "id": "America-Managua-tz"
     }
   ],
   "America/Manaus": [
@@ -1172,7 +1172,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Martinique"
+      "id": "America-Martinique-tz"
     }
   ],
   "America/Matamoros": [
@@ -1247,21 +1247,21 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Uruguay"
+      "id": "America-Montevideo-tz"
     }
   ],
   "America/Montserrat": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Montserrat"
+      "id": "America-Montserrat-tz"
     }
   ],
   "America/Nassau": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "The Bahamas"
+      "id": "America-Nassau-tz"
     }
   ],
   "America/New_York": [
@@ -1366,7 +1366,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Panama"
+      "id": "America-Panama-tz"
     }
   ],
   "America/Pangnirtung": [
@@ -1380,7 +1380,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Suriname"
+      "id": "America-Paramaribo-tz"
     }
   ],
   "America/Phoenix": [
@@ -1394,21 +1394,21 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Haiti"
+      "id": "America-Port-au-Prince-tz"
     }
   ],
   "America/Port_of_Spain": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Trinidad and Tobago"
+      "id": "America-Port_of_Spain-tz"
     }
   ],
   "America/Porto_Velho": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Rondônia"
+      "id": "America-Porto_Velho-tz"
     }
   ],
   "America/Puerto_Rico": [
@@ -1488,7 +1488,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Acre"
+      "id": "America-Rio_Branco-tz"
     }
   ],
   "America/Santarem": [
@@ -1523,7 +1523,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Dominican Republic"
+      "id": "America-Santo_Domingo-tz"
     }
   ],
   "America/Sao_Paulo": [
@@ -1600,7 +1600,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Saint-Barthélemy"
+      "id": "America-St_Barthelemy-tz"
     }
   ],
   "America/St_Johns": [
@@ -1614,14 +1614,14 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Saint Kitts and Nevis"
+      "id": "America-St_Kitts-tz"
     }
   ],
   "America/St_Lucia": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Saint Lucia"
+      "id": "America-St_Lucia-tz"
     }
   ],
   "America/St_Thomas": [
@@ -1640,7 +1640,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Saint Vincent and the Grenadines"
+      "id": "America-St_Vincent-tz"
     }
   ],
   "America/Swift_Current": [
@@ -1654,7 +1654,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Honduras"
+      "id": "America-Tegucigalpa-tz"
     }
   ],
   "America/Thule": [
@@ -1710,7 +1710,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "British Virgin Islands"
+      "id": "America-Tortola-tz"
     }
   ],
   "America/Vancouver": [
@@ -1865,7 +1865,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Yemen"
+      "id": "Asia-Aden-tz"
     }
   ],
   "Asia/Almaty": [
@@ -1896,14 +1896,14 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Jordan"
+      "id": "Asia-Amman-tz"
     }
   ],
   "Asia/Anadyr": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Chukotka"
+      "id": "Asia-Anadyr-tz"
     }
   ],
   "Asia/Aqtau": [
@@ -1917,14 +1917,14 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Aktobe"
+      "id": "Asia-Aqtobe-tz"
     }
   ],
   "Asia/Ashgabat": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Turkmenistan"
+      "id": "Asia-Ashgabat-tz"
     }
   ],
   "Asia/Atyrau": [
@@ -1938,21 +1938,21 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Iraq"
+      "id": "Asia-Baghdad-tz"
     }
   ],
   "Asia/Bahrain": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Bahrain"
+      "id": "Asia-Bahrain-tz"
     }
   ],
   "Asia/Baku": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Azerbaijan"
+      "id": "Asia-Baku-tz"
     }
   ],
   "Asia/Bangkok": [
@@ -1991,28 +1991,28 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Lebanon"
+      "id": "Asia-Beirut-tz"
     }
   ],
   "Asia/Bishkek": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Kyrgyzstan"
+      "id": "Asia-Bishkek-tz"
     }
   ],
   "Asia/Brunei": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Brunei"
+      "id": "Asia-Brunei-tz"
     }
   ],
   "Asia/Chita": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Zabaykalsk"
+      "id": "Asia-Chita-tz"
     }
   ],
   "Asia/Choibalsan": [
@@ -2030,42 +2030,42 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Sri Lanka"
+      "id": "Asia-Colombo-tz"
     }
   ],
   "Asia/Damascus": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Syria"
+      "id": "Asia-Damascus-tz"
     }
   ],
   "Asia/Dhaka": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Bangladesh"
+      "id": "Asia-Dhaka-tz"
     }
   ],
   "Asia/Dili": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "East Timor"
+      "id": "Asia-Dili-tz"
     }
   ],
   "Asia/Dubai": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "United Arab Emirates"
+      "id": "Asia-Dubai-tz"
     }
   ],
   "Asia/Dushanbe": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Tajikistan"
+      "id": "Asia-Dushanbe-tz"
     }
   ],
   "Asia/Famagusta": [
@@ -2145,7 +2145,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Hong Kong"
+      "id": "Asia-Hong_Kong-tz"
     }
   ],
   "Asia/Hovd": [
@@ -2246,7 +2246,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Afghanistan"
+      "id": "Asia-Kabul-tz"
     }
   ],
   "Asia/Kamchatka": [
@@ -2260,14 +2260,14 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Pakistan"
+      "id": "Asia-Karachi-tz"
     }
   ],
   "Asia/Kathmandu": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Nepal"
+      "id": "Asia-Kathmandu-tz"
     }
   ],
   "Asia/Khandyga": [
@@ -2285,7 +2285,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "India"
+      "id": "Asia-Kolkata-tz"
     }
   ],
   "Asia/Krasnoyarsk": [
@@ -2331,14 +2331,14 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Kuwait"
+      "id": "Asia-Kuwait-tz"
     }
   ],
   "Asia/Macau": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Macau"
+      "id": "Asia-Macau-tz"
     }
   ],
   "Asia/Magadan": [
@@ -2384,14 +2384,14 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Philippines"
+      "id": "Asia-Manila-tz"
     }
   ],
   "Asia/Muscat": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Oman"
+      "id": "Asia-Muscat-tz"
     }
   ],
   "Asia/Nicosia": [
@@ -2429,7 +2429,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Novosibirsk"
+      "id": "Asia-Novosibirsk-tz"
     }
   ],
   "Asia/Omsk": [
@@ -2447,14 +2447,14 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "West Kazakhstan"
+      "id": "Asia-Oral-tz"
     }
   ],
   "Asia/Phnom_Penh": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Cambodia"
+      "id": "Asia-Phnom_Penh-tz"
     }
   ],
   "Asia/Pontianak": [
@@ -2479,7 +2479,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Qatar"
+      "id": "Asia-Qatar-tz"
     }
   ],
   "Asia/Qostanay": [
@@ -2500,7 +2500,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Saudi Arabia"
+      "id": "Asia-Riyadh-tz"
     }
   ],
   "Asia/Samarkand": [
@@ -2526,7 +2526,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "South Korea"
+      "id": "Asia-Seoul-tz"
     }
   ],
   "Asia/Shanghai": [
@@ -2578,7 +2578,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Singapore"
+      "id": "Asia-Singapore-tz"
     }
   ],
   "Asia/Srednekolymsk": [
@@ -2609,7 +2609,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Republic of China"
+      "id": "Asia-Taipei-tz"
     }
   ],
   "Asia/Tashkent": [
@@ -2627,14 +2627,14 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Georgia"
+      "id": "Asia-Tbilisi-tz"
     }
   ],
   "Asia/Tehran": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Iran"
+      "id": "Asia-Tehran-tz"
     }
   ],
   "Asia/Thimphu": [
@@ -2673,14 +2673,14 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Japan"
+      "id": "Asia-Tokyo-tz"
     }
   ],
   "Asia/Tomsk": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Tomsk"
+      "id": "Asia-Tomsk-tz"
     }
   ],
   "Asia/Ulaanbaatar": [
@@ -2742,7 +2742,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Laos"
+      "id": "Asia-Vientiane-tz"
     }
   ],
   "Asia/Vladivostok": [
@@ -2827,7 +2827,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Armenia"
+      "id": "Asia-Yerevan-tz"
     }
   ],
   "Atlantic/Azores": [
@@ -2846,7 +2846,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Bermuda"
+      "id": "Atlantic-Bermuda-tz"
     }
   ],
   "Atlantic/Canary": [
@@ -2865,14 +2865,14 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Cape Verde"
+      "id": "Atlantic-Cape_Verde-tz"
     }
   ],
   "Atlantic/Faroe": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Faroe Islands"
+      "id": "Atlantic-Faroe-tz"
     }
   ],
   "Atlantic/Madeira": [
@@ -2891,28 +2891,28 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Iceland"
+      "id": "Atlantic-Reykjavik-tz"
     }
   ],
   "Atlantic/South_Georgia": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "South Georgia and the South Sandwich Islands"
+      "id": "Atlantic-South_Georgia-tz"
     }
   ],
   "Atlantic/St_Helena": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Saint Helena, Ascension and Tristan da Cunha"
+      "id": "Atlantic-St_Helena-tz"
     }
   ],
   "Atlantic/Stanley": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Falkland Islands"
+      "id": "Atlantic-Stanley-tz"
     }
   ],
   "Australia/Adelaide": [
@@ -3102,7 +3102,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Andorra"
+      "id": "Europe-Andorra-tz"
     }
   ],
   "Europe/Astrakhan": [
@@ -3125,7 +3125,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Greece"
+      "id": "Europe-Athens-tz"
     }
   ],
   "Europe/Belgrade": [
@@ -3155,28 +3155,28 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Slovakia"
+      "id": "Europe-Bratislava-tz"
     }
   ],
   "Europe/Brussels": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Belgium"
+      "id": "Europe-Brussels-tz"
     }
   ],
   "Europe/Bucharest": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Romania"
+      "id": "Europe-Bucharest-tz"
     }
   ],
   "Europe/Budapest": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Hungary"
+      "id": "Europe-Budapest-tz"
     }
   ],
   "Europe/Busingen": [
@@ -3195,35 +3195,35 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Moldova"
+      "id": "Europe-Chisinau-tz"
     }
   ],
   "Europe/Copenhagen": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Denmark"
+      "id": "Europe-Copenhagen-tz"
     }
   ],
   "Europe/Dublin": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Ireland"
+      "id": "Europe-Dublin-tz"
     }
   ],
   "Europe/Gibraltar": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Gibraltar"
+      "id": "Europe-Gibraltar-tz"
     }
   ],
   "Europe/Guernsey": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Guernsey"
+      "id": "Europe-Guernsey-tz"
     }
   ],
   "Europe/Helsinki": [
@@ -3241,28 +3241,28 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Isle of Man"
+      "id": "Europe-Isle_of_Man-tz"
     }
   ],
   "Europe/Istanbul": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Turkey"
+      "id": "Europe-Istanbul-tz"
     }
   ],
   "Europe/Jersey": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Jersey"
+      "id": "Europe-Jersey-tz"
     }
   ],
   "Europe/Kaliningrad": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Kaliningrad"
+      "id": "Europe-Kaliningrad-tz"
     }
   ],
   "Europe/Kyiv": [
@@ -3329,7 +3329,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Luxemburg"
+      "id": "Europe-Luxembourg-tz"
     }
   ],
   "Europe/Madrid": [
@@ -3348,28 +3348,28 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Malta"
+      "id": "Europe-Malta-tz"
     }
   ],
   "Europe/Mariehamn": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Åland Islands"
+      "id": "Europe-Mariehamn-tz"
     }
   ],
   "Europe/Minsk": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Belarus"
+      "id": "Europe-Minsk-tz"
     }
   ],
   "Europe/Monaco": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Monaco"
+      "id": "Europe-Monaco-tz"
     }
   ],
   "Europe/Moscow": [
@@ -3436,28 +3436,28 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Montenegro"
+      "id": "Europe-Podgorica-tz"
     }
   ],
   "Europe/Prague": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Czech Republic"
+      "id": "Europe-Prague-tz"
     }
   ],
   "Europe/Riga": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Latvia"
+      "id": "Europe-Riga-tz"
     }
   ],
   "Europe/Rome": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Italy"
+      "id": "Europe-Rome-tz"
     }
   ],
   "Europe/Samara": [
@@ -3480,14 +3480,14 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "San Marino"
+      "id": "Europe-San_Marino-tz"
     }
   ],
   "Europe/Sarajevo": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Bosnia and Herzegovina"
+      "id": "Europe-Sarajevo-tz"
     }
   ],
   "Europe/Saratov": [
@@ -3512,56 +3512,56 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Macedonia"
+      "id": "Europe-Skopje-tz"
     }
   ],
   "Europe/Sofia": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Bulgaria"
+      "id": "Europe-Sofia-tz"
     }
   ],
   "Europe/Stockholm": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Sweden"
+      "id": "Europe-Stockholm-tz"
     }
   ],
   "Europe/Tallinn": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Estonia"
+      "id": "Europe-Tallinn-tz"
     }
   ],
   "Europe/Tirane": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Albania"
+      "id": "Europe-Tirane-tz"
     }
   ],
   "Europe/Ulyanovsk": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Ulyanovsk"
+      "id": "Europe-Ulyanovsk-tz"
     }
   ],
   "Europe/Vaduz": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Liechtenstein"
+      "id": "Europe-Vaduz-tz"
     }
   ],
   "Europe/Vatican": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Vatican City"
+      "id": "Europe-Vatican-tz"
     }
   ],
   "Europe/Vienna": [
@@ -3580,7 +3580,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Lithuania"
+      "id": "Europe-Vilnius-tz"
     }
   ],
   "Europe/Volgograd": [
@@ -3594,28 +3594,28 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Poland"
+      "id": "Europe-Warsaw-tz"
     }
   ],
   "Europe/Zagreb": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Croatia"
+      "id": "Europe-Zagreb-tz"
     }
   ],
   "Europe/Zurich": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Switzerland"
+      "id": "Europe-Zurich-tz"
     }
   ],
   "Indian/Antananarivo": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Madagascar"
+      "id": "Indian-Antananarivo-tz"
     }
   ],
   "Indian/Chagos": [
@@ -3653,7 +3653,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Comoros"
+      "id": "Indian-Comoro-tz"
     }
   ],
   "Indian/Kerguelen": [
@@ -3672,21 +3672,21 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Seychelles"
+      "id": "Indian-Mahe-tz"
     }
   ],
   "Indian/Maldives": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Maldives"
+      "id": "Indian-Maldives-tz"
     }
   ],
   "Indian/Mauritius": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Mauritius"
+      "id": "Indian-Mauritius-tz"
     }
   ],
   "Indian/Mayotte": [
@@ -3717,7 +3717,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Samoa"
+      "id": "Pacific-Apia-tz"
     }
   ],
   "Pacific/Auckland": [
@@ -3736,7 +3736,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Autonomous Region of Bougainville"
+      "id": "Pacific-Bougainville-tz"
     }
   ],
   "Pacific/Chatham": [
@@ -3778,28 +3778,28 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Vanuatu"
+      "id": "Pacific-Efate-tz"
     }
   ],
   "Pacific/Fakaofo": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Tokelau"
+      "id": "Pacific-Fakaofo-tz"
     }
   ],
   "Pacific/Fiji": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Fiji"
+      "id": "Pacific-Fiji-tz"
     }
   ],
   "Pacific/Funafuti": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Tuvalu"
+      "id": "Pacific-Funafuti-tz"
     }
   ],
   "Pacific/Galapagos": [
@@ -3830,7 +3830,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Solomon Islands"
+      "id": "Pacific-Guadalcanal-tz"
     }
   ],
   "Pacific/Guam": [
@@ -3885,7 +3885,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Kosrae"
+      "id": "Pacific-Kosrae-tz"
     }
   ],
   "Pacific/Kwajalein": [
@@ -3940,14 +3940,14 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Nauru"
+      "id": "Pacific-Nauru-tz"
     }
   ],
   "Pacific/Niue": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Niue"
+      "id": "Pacific-Niue-tz"
     }
   ],
   "Pacific/Norfolk": [
@@ -3990,7 +3990,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Palau"
+      "id": "Pacific-Palau-tz"
     }
   ],
   "Pacific/Pitcairn": [
@@ -4004,7 +4004,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Pohnpei"
+      "id": "Pacific-Pohnpei-tz"
     }
   ],
   "Pacific/Port_Moresby": [
@@ -4065,7 +4065,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Tonga"
+      "id": "Pacific-Tongatapu-tz"
     }
   ],
   "Pacific/Wake": [
