@@ -167,6 +167,7 @@
   * `Pacific/Palau`
   * `Pacific/Pohnpei`
   * `Pacific/Tongatapu`
+* Update relations used to make China-Bhutan disputed areas
 * Update to latest OSM data
 
 ## 2022b

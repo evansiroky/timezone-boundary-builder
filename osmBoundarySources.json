@@ -733,6 +733,9 @@
   "China": {
     "ISO3166-1": "CN"
   },
+  "China–Bhutan Disputed Area": {
+    "name:en": "China–Bhutan Disputed Area"
+  },
   "Chukotka": {
     "ISO3166-2": "RU-CHU"
   },
@@ -767,9 +770,6 @@
   "Dewey County, SD": {
     "name": "Dewey County",
     "nist:state_fips": "46"
-  },
-  "Doklam 洞朗地区": {
-    "name": "Doklam 洞朗地区"
   },
   "Dornod": {
     "ISO3166-2": "MN-061"
@@ -1261,17 +1261,5 @@
   },
   "שטח C": {
     "name:he": "שטח C"
-  },
-  "中国实控白玉地区": {
-    "name:zh": "中国实控白玉地区"
-  },
-  "基伍地区": {
-    "name": "基伍地区"
-  },
-  "查马普地区": {
-    "name": "查马普地区"
-  },
-  "鲁林地区": {
-    "name": "鲁林地区"
   }
 }
