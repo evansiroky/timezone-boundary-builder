@@ -2,6 +2,7 @@
 
 ### Zone Changes
 
+* Remove `Europe/Uzhgorod` and `Europe/Zaporozhye`. Those areas are now covered by `Europe/Kyiv`.
 * Directly use OpenStreetMap timezone relations for the following zones:
   * `Africa/Abidjan`
   * `Africa/Accra`
