@@ -1,3 +1,11 @@
+## Unreleased
+
+### Zone Changes
+
+* Remove `America/Nipigon` and `America/Thunder_Bay`. Those areas are now covered by `America/Toronto`. ([#131](https://github.com/evansiroky/timezone-boundary-builder/issues/131))
+* Remove `America/Rainy_River`. That area is now covered by `America/Winnipeg`. ([#131](https://github.com/evansiroky/timezone-boundary-builder/issues/131))
+* Update to latest OSM data
+
 ## 2022d
 
 ### Zone Changes

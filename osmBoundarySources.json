@@ -742,9 +742,6 @@
   "Chuuk": {
     "ISO3166-2": "FM-TRK"
   },
-  "City of Thunder Bay": {
-    "wikidata": "Q34116"
-  },
   "Congo-Kinshasa": {
     "ISO3166-1": "CD"
   },
@@ -903,9 +900,6 @@
   "Finland": {
     "ISO3166-1": "FI"
   },
-  "Fort William First Nation": {
-    "name": "Animkii Wajiw / Fort William First Nation"
-  },
   "France": {
     "ISO3166-1:alpha2": "FR"
   },
@@ -1034,9 +1028,6 @@
   },
   "New Zealand": {
     "ISO3166-1": "NZ"
-  },
-  "Nipigon": {
-    "wikidata": "Q1993247"
   },
   "North Korea": {
     "ISO3166-1": "KP"
@@ -1194,9 +1185,6 @@
   },
   "Tomponsky": {
     "name:en": "Tomponsky Ulus"
-  },
-  "Town of Rainy River": {
-    "wikidata": "Q3492477"
   },
   "Tshopo": {
     "name": "Tshopo",

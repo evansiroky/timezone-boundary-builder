@@ -1281,13 +1281,6 @@
       "description": "Add areas in Alabama near Phenix City and Lanett that observe eastern time.  The boundaries are a speculative guess."
     }
   ],
-  "America/Nipigon": [
-    {
-      "op": "init",
-      "source": "overpass",
-      "id": "Nipigon"
-    }
-  ],
   "America/Nome": [
     {
       "op": "init",
@@ -1442,13 +1435,6 @@
       "source": "manual-polygon",
       "data": [[[-64,-64],[-57.3,-63.4],[-58.8,-62.25],[-59,-61.8],[-63,-62.7],[-64,-64]]],
       "description": "Add Antarctic Areas.  Includes stations General Bernardo O'Higgins, Great Wall, Bellinghausen and Artigas."
-    }
-  ],
-  "America/Rainy_River": [
-    {
-      "op": "init",
-      "source": "overpass",
-      "id": "Town of Rainy River"
     }
   ],
   "America/Rankin_Inlet": [
@@ -1669,17 +1655,6 @@
       "description": "Grab part of Greenland and make a best guess at this timezone's location."
     }
   ],
-  "America/Thunder_Bay": [
-    {
-      "op": "init",
-      "source": "overpass",
-      "id": "City of Thunder Bay"
-    }, {
-      "op": "union",
-      "source": "overpass",
-      "id": "Fort William First Nation"
-    }
-  ],
   "America/Tijuana": [
     {
       "op": "init",
@@ -1692,18 +1667,6 @@
       "op": "init",
       "source": "overpass",
       "id": "America-Toronto-tz"
-    }, {
-      "op": "difference",
-      "source": "overpass",
-      "id": "City of Thunder Bay"
-    }, {
-      "op": "difference",
-      "source": "overpass",
-      "id": "Fort William First Nation"
-    }, {
-      "op": "difference",
-      "source": "overpass",
-      "id": "Nipigon"
     }
   ],
   "America/Tortola": [
@@ -1732,10 +1695,6 @@
       "op": "init",
       "source": "overpass",
       "id": "America-Winnipeg-tz"
-    }, {
-      "op": "difference",
-      "source": "overpass",
-      "id": "Town of Rainy River"
     }
   ],
   "America/Yakutat": [
