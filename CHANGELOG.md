@@ -9,6 +9,13 @@
   * `Africa/Kinshasa`
   * `Africa/Lubumbashi`
   * `Africa/Ouagadougou`
+  * `America/Adak`
+  * `America/Danmarkshavn`
+  * `America/Lower_Princes`
+  * `America/Maceio`
+  * `America/Marigot`
+  * `America/Scoresbysund`
+  * `America/Thule`
 
 ## 2022f
 

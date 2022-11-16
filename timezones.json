@@ -390,12 +390,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "United States of America"
-    }, {
-      "op": "intersect",
-      "source": "manual-multipolygon",
-      "data": [[[[-170.1,51],[-169.48009,52.634],[-169.329,53.1067],[-168.8,54],[-179.9999,54],[-179.9999,48],[-170.1,51]]],[[[168,54],[179.9999,54],[179.9999,48],[168,54]]]],
-      "description": "Grab western parts of Aleutian Islands."
+      "id": "America-Adak-tz"
     }
   ],
   "America/Anchorage": [
@@ -720,12 +715,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Greenland"
-    }, {
-      "op": "intersect",
-      "source": "manual-polygon",
-      "data": [[[-24.2,73.5],[-15,71.8],[-14,77],[-24.2,73.5]]],
-      "description": "Grab part of Greenland and make a best guess at this timezone's location."
+      "id": "America-Danmarkshavn-tz"
     }
   ],
   "America/Dawson": [
@@ -1052,28 +1042,14 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Sint Maarten"
-    }, {
-      "op": "union",
-      "source": "manual-polygon",
-      "data": [[[-63.03,18.06],[-63.01,18.04],[-63,18.06],[-63.03,18.06]]],
-      "description": "Union an area such that the disputed area of Oyster Pond is included. See article: http://www.dclportal.dreamhosters.com/news/latest-news/9228-negotiations-on-oyster-pond-border-to-commence-late-2019."
-    }, {
-      "op": "difference",
-      "source": "overpass",
-      "id": "Saint Maarten",
-      "description": "Diff the Dutch part of Saint Martin."
+      "id": "America-Lower_Princes-tz"
     }
   ],
   "America/Maceio": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Sergipe"
-    }, {
-      "op": "union",
-      "source": "overpass",
-      "id": "Alagoas"
+      "id": "America-Maceio-tz"
     }
   ],
   "America/Managua": [
@@ -1094,17 +1070,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Saint Maarten"
-    }, {
-      "op": "union",
-      "source": "manual-polygon",
-      "data": [[[-63.03,18.06],[-63.01,18.04],[-63,18.06],[-63.03,18.06]]],
-      "description": "Union an area such that the disputed area of Oyster Pond is included. See article: http://www.dclportal.dreamhosters.com/news/latest-news/9228-negotiations-on-oyster-pond-border-to-commence-late-2019."
-    }, {
-      "op": "difference",
-      "source": "overpass",
-      "id": "Sint Maarten",
-      "description": "Diff the French part of Saint Martin."
+      "id": "America-Marigot-tz"
     }
   ],
   "America/Martinique": [
@@ -1272,18 +1238,18 @@
       "id": "Greenland"
     }, {
       "op": "difference",
-      "source": "manual-polygon",
-      "data": [[[-24,72.4],[-19,71],[-18,70],[-25,70.5],[-24,72.4]]],
+      "source": "overpass",
+      "id": "America-Scoresbysund-tz",
       "description": "Exclude area from Greenland used to make America/Scoresbysund"
     }, {
       "op": "difference",
-      "source": "manual-polygon",
-      "data": [[[-24.2,73.5],[-15,71.8],[-14,77],[-24.2,73.5]]],
+      "source": "overpass",
+      "id": "America-Danmarkshavn-tz",
       "description": "Exclude area from Greenland used to make America/Danmarkshavn"
     }, {
       "op": "difference",
-      "source": "manual-polygon",
-      "data": [[[-81,82],[-60,78],[-81,60],[-81,82]]],
+      "source": "overpass",
+      "id": "America-Thule-tz",
       "description": "Exclude area from Greenland used to make America/Thule"
     }
   ],
@@ -1483,12 +1449,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Greenland"
-    }, {
-      "op": "intersect",
-      "source": "manual-polygon",
-      "data": [[[-24,72.4],[-19,71],[-18,70],[-25,70.5],[-24,72.4]]],
-      "description": "Grab part of Greenland and make a best guess at this timezone's location."
+      "id": "America-Scoresbysund-tz"
     }
   ],
   "America/Sitka": [
@@ -1586,12 +1547,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Greenland"
-    }, {
-      "op": "intersect",
-      "source": "manual-polygon",
-      "data": [[[-81,82],[-60,78],[-81,60],[-81,82]]],
-      "description": "Grab part of Greenland and make a best guess at this timezone's location."
+      "id": "America-Thule-tz"
     }
   ],
   "America/Tijuana": [

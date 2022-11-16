@@ -146,14 +146,14 @@
   "Aktobe": {
     "ISO3166-2": "KZ-AKT"
   },
-  "Alagoas": {
-    "ISO3166-2": "BR-AL"
-  },
   "Altai Krai": {
     "ISO3166-2": "RU-ALT"
   },
   "Altai Republic": {
     "ISO3166-2": "RU-AL"
+  },
+  "America-Adak-tz": {
+    "timezone": "America/Adak"
   },
   "America-Anguilla-tz": {
     "timezone": "America/Anguilla"
@@ -272,6 +272,9 @@
   "America-Curacao-tz": {
     "timezone": "America/Curacao"
   },
+  "America-Danmarkshavn-tz": {
+    "timezone": "America/Danmarkshavn"
+  },
   "America-Dawson-tz": {
     "timezone": "America/Dawson"
   },
@@ -380,14 +383,23 @@
   "America-Los_Angeles-tz": {
     "timezone": "America/Los_Angeles"
   },
+  "America-Lower_Princes-tz": {
+    "timezone": "America/Lower_Princes"
+  },
   "America-Kentucky-Monticello-tz": {
     "timezone": "America/Kentucky/Monticello"
+  },
+  "America-Maceio-tz": {
+    "timezone": "America/Maceio"
   },
   "America-Managua-tz": {
     "timezone": "America/Managua"
   },
   "America-Manaus-tz": {
     "timezone": "America/Manaus"
+  },
+  "America-Marigot-tz": {
+    "timezone": "America/Marigot"
   },
   "America-Martinique-tz": {
     "timezone": "America/Martinique"
@@ -479,6 +491,9 @@
   "America-Santo_Domingo-tz": {
     "timezone": "America/Santo_Domingo"
   },
+  "America-Scoresbysund-tz": {
+    "timezone": "America/Scoresbysund"
+  },
   "America-St_Barthelemy-tz": {
     "timezone": "America/St_Barthelemy"
   },
@@ -499,6 +514,9 @@
   },
   "America-Tegucigalpa-tz": {
     "timezone": "America/Tegucigalpa"
+  },
+  "America-Thule-tz": {
+    "timezone": "America/Thule"
   },
   "America-Tijuana-tz": {
     "timezone": "America/Tijuana"
@@ -1111,9 +1129,6 @@
   "Republic of Kosovo": {
     "ISO3166-1": "XK"
   },
-  "Saint Maarten": {
-    "ISO3166-1": "MF"
-  },
   "Sakha Republic": {
     "ISO3166-2": "RU-SA"
   },
@@ -1132,14 +1147,8 @@
   "Serbia": {
     "ISO3166-1": "RS"
   },
-  "Sergipe": {
-    "ISO3166-2": "BR-SE"
-  },
   "Sevastopol": {
     "name:en": "Sevastopol"
-  },
-  "Sint Maarten": {
-    "ISO3166-1": "SX"
   },
   "Sioux County, ND": {
     "name": "Sioux County",
