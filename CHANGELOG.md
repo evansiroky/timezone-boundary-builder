@@ -16,6 +16,21 @@
   * `America/Marigot`
   * `America/Scoresbysund`
   * `America/Thule`
+  * `Asia/Almaty`
+  * `Asia/Barnaul`
+  * `Asia/Choibalsan`
+  * `Asia/Hovd`
+  * `Asia/Irkutsk`
+  * `Asia/Jakarta`
+  * `Asia/Jayapura`
+  * `Asia/Kuching`
+  * `Asia/Makassar`
+  * `Asia/Novokuznetsk`
+  * `Asia/Omsk`
+  * `Asia/Pontianak`
+  * `Asia/Sakhalin`
+  * `Asia/Samarkand`
+  * `Asia/Ulaanbaatar`
 
 ## 2022f
 

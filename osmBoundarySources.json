@@ -143,15 +143,6 @@
   "Africa-Windhoek-tz": {
     "timezone": "Africa/Windhoek"
   },
-  "Aktobe": {
-    "ISO3166-2": "KZ-AKT"
-  },
-  "Altai Krai": {
-    "ISO3166-2": "RU-ALT"
-  },
-  "Altai Republic": {
-    "ISO3166-2": "RU-AL"
-  },
   "America-Adak-tz": {
     "timezone": "America/Adak"
   },
@@ -552,6 +543,9 @@
   "Asia-Aden-tz": {
     "timezone": "Asia/Aden"
   },
+  "Asia-Almaty-tz": {
+    "timezone": "Asia/Almaty"
+  },
   "Asia-Amman-tz": {
     "timezone": "Asia/Amman"
   },
@@ -573,6 +567,9 @@
   "Asia-Baku-tz": {
     "timezone": "Asia/Baku"
   },
+  "Asia-Barnaul-tz": {
+    "timezone": "Asia/Barnaul"
+  },
   "Asia-Beirut-tz": {
     "timezone": "Asia/Beirut"
   },
@@ -584,6 +581,9 @@
   },
   "Asia-Chita-tz": {
     "timezone": "Asia/Chita"
+  },
+  "Asia-Choibalsan-tz": {
+    "timezone": "Asia/Choibalsan"
   },
   "Asia-Colombo-tz": {
     "timezone": "Asia/Colombo"
@@ -606,6 +606,18 @@
   "Asia-Hong_Kong-tz": {
     "timezone": "Asia/Hong_Kong"
   },
+  "Asia-Hovd-tz": {
+    "timezone": "Asia/Hovd"
+  },
+  "Asia-Irkutsk-tz": {
+    "timezone": "Asia/Irkutsk"
+  },
+  "Asia-Jakarta-tz": {
+    "timezone": "Asia/Jakarta"
+  },
+  "Asia-Jayapura-tz": {
+    "timezone": "Asia/Jayapura"
+  },
   "Asia-Kabul-tz": {
     "timezone": "Asia/Kabul"
   },
@@ -618,11 +630,17 @@
   "Asia-Kolkata-tz": {
     "timezone": "Asia/Kolkata"
   },
+  "Asia-Kuching-tz": {
+    "timezone": "Asia/Kuching"
+  },
   "Asia-Kuwait-tz": {
     "timezone": "Asia/Kuwait"
   },
   "Asia-Macau-tz": {
     "timezone": "Asia/Macau"
+  },
+  "Asia-Makassar-tz": {
+    "timezone": "Asia/Makassar"
   },
   "Asia-Manila-tz": {
     "timezone": "Asia/Manila"
@@ -633,17 +651,32 @@
   "Asia-Novosibirsk-tz": {
     "timezone": "Asia/Novosibirsk"
   },
+  "Asia-Novokuznetsk-tz": {
+    "timezone": "Asia/Novokuznetsk"
+  },
+  "Asia-Omsk-tz": {
+    "timezone": "Asia/Omsk"
+  },
   "Asia-Oral-tz": {
     "timezone": "Asia/Oral"
   },
   "Asia-Phnom_Penh-tz": {
     "timezone": "Asia/Phnom_Penh"
   },
+  "Asia-Pontianak-tz": {
+    "timezone": "Asia/Pontianak"
+  },
   "Asia-Qatar-tz": {
     "timezone": "Asia/Qatar"
   },
   "Asia-Riyadh-tz": {
     "timezone": "Asia/Riyadh"
+  },
+  "Asia-Sakhalin-tz": {
+    "timezone": "Asia/Sakhalin"
+  },
+  "Asia-Samarkand-tz": {
+    "timezone": "Asia/Samarkand"
   },
   "Asia-Seoul-tz": {
     "timezone": "Asia/Seoul"
@@ -668,6 +701,9 @@
   },
   "Asia-Tomsk-tz": {
     "timezone": "Asia/Tomsk"
+  },
+  "Asia-Ulaanbaatar-tz": {
+    "timezone": "Asia/Ulaanbaatar"
   },
   "Asia-Vientiane-tz": {
     "timezone": "Asia/Vientiane"
@@ -747,12 +783,6 @@
   "British Sovereign Base Areas": {
     "name": "British Sovereign Base Areas"
   },
-  "Buryatia": {
-    "ISO3166-2": "RU-BU"
-  },
-  "Central Kalimantan": {
-    "name:en": "Central Kalimantan"
-  },
   "Chile": {
     "ISO3166-1": "CL"
   },
@@ -790,12 +820,6 @@
   "Dewey County, SD": {
     "name": "Dewey County",
     "nist:state_fips": "46"
-  },
-  "Dornod": {
-    "ISO3166-2": "MN-061"
-  },
-  "East Java": {
-    "name:en": "East Java"
   },
   "Ecuador": {
     "ISO3166-1": "EC"
@@ -926,9 +950,6 @@
   "Germany": {
     "ISO3166-1": "DE"
   },
-  "Govi-Altai": {
-    "ISO3166-2": "MN-065"
-  },
   "Grant County, ND": {
     "name": "Grant County",
     "nist:state_fips": "38"
@@ -957,12 +978,6 @@
   "Indian-Mauritius-tz": {
     "timezone": "Indian/Mauritius"
   },
-  "Indonesia": {
-    "name": "Indonesia"
-  },
-  "Irkutsk": {
-    "ISO3166-2": "RU-IRK"
-  },
   "Isle of Man": {
     "ISO3166-1": "IM"
   },
@@ -975,12 +990,6 @@
   },
   "Kamchatka": {
     "ISO3166-2": "RU-KAM"
-  },
-  "Kazakhstan": {
-    "ISO3166-1": "KZ"
-  },
-  "Kemerovo": {
-    "ISO3166-2": "RU-KEM"
   },
   "Khakassia": {
     "ISO3166-2": "RU-KK"
@@ -1015,9 +1024,6 @@
   "Malaysia": {
     "ISO3166-1": "MY"
   },
-  "Maluku": {
-    "ISO3166-2": "ID-MA"
-  },
   "Mangystau Region": {
     "ISO3166-2": "KZ-MAN"
   },
@@ -1029,9 +1035,6 @@
   },
   "Mato Grosso": {
     "ISO3166-2": "BR-MT"
-  },
-  "Mongolia": {
-    "ISO3166-1": "MN"
   },
   "Morocco": {
     "ISO3166-1": "MA"
@@ -1045,17 +1048,11 @@
   "North Korea": {
     "ISO3166-1": "KP"
   },
-  "North Maluku": {
-    "name:en": "North Maluku"
-  },
   "Northern Territory": {
     "ISO3166-2": "AU-NT"
   },
   "Norway": {
     "ISO3166-1": "NO"
-  },
-  "Omsk": {
-    "ISO3166-2": "RU-OMS"
   },
   "Oymyakonsky": {
     "name:en": "Oymyakonsky Ulus"
@@ -1163,9 +1160,6 @@
   "Spain": {
     "ISO3166-1:alpha2": "ES"
   },
-  "Sühbaatar": {
-    "ISO3166-2": "MN-051"
-  },
   "Thailand": {
     "ISO3166-1": "TH",
     "admin_level": "2"
@@ -1212,9 +1206,6 @@
   "Volgograd": {
     "ISO3166-2": "RU-VGG"
   },
-  "West Kalimantan": {
-    "name:en": "West Kalimantan"
-  },
   "Western Sahara": {
     "ISO3166-1": "EH"
   },
@@ -1226,9 +1217,6 @@
   },
   "Yukon": {
     "ISO3166-2": "CA-YT"
-  },
-  "Zavkhan": {
-    "ISO3166-2": "MN-057"
   },
   "Åland Islands": {
     "ISO3166-2": "FI-01"

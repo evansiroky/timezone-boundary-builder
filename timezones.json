@@ -1726,24 +1726,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Kazakhstan"
-    }, {
-      "op": "difference",
-      "source": "manual-polygon",
-      "data": [[[57,52],[57,26],[23,56],[57,52]]],
-      "description": "Intersect western part of Kazakhstan"
-    }, {
-      "op": "difference",
-      "source": "overpass",
-      "id": "Kostanay"
-    }, {
-      "op": "difference",
-      "source": "overpass",
-      "id": "Aktobe"
-    }, {
-      "op": "difference",
-      "source": "overpass",
-      "id": "Kyzylorda"
+      "id": "Asia-Almaty-tz"
     }
   ],
   "Asia/Amman": [
@@ -1834,11 +1817,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Altai Krai"
-    }, {
-      "op": "union",
-      "source": "overpass",
-      "id": "Altai Republic"
+      "id": "Asia-Barnaul-tz"
     }
   ],
   "Asia/Beirut": [
@@ -1873,11 +1852,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Dornod"
-    }, {
-      "op": "union",
-      "source": "overpass",
-      "id": "Sühbaatar"
+      "id": "Asia-Choibalsan-tz"
     }
   ],
   "Asia/Colombo": [
@@ -2006,75 +1981,28 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Mongolia"
-    }, {
-      "op": "intersect",
-      "source": "manual-polygon",
-      "data": [[[96,53],[97,40],[81,50],[96,53]]],
-      "description": "Intersect the western part of Mongolia."
-    }, {
-      "op": "union",
-      "source": "overpass",
-      "id": "Zavkhan"
-    }, {
-      "op": "union",
-      "source": "overpass",
-      "id": "Govi-Altai"
+      "id": "Asia-Hovd-tz"
     }
   ],
   "Asia/Irkutsk": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Irkutsk"
-    }, {
-      "op": "union",
-      "source": "overpass",
-      "id": "Buryatia"
+      "id": "Asia-Irkutsk-tz"
     }
   ],
   "Asia/Jakarta": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Indonesia"
-    }, {
-      "op": "intersect",
-      "source": "manual-polygon",
-      "data": [[[109,9],[114,-12],[56,14],[109,9]]],
-      "description": "Intersect the western part of Indonesia."
-    }, {
-      "op": "difference",
-      "source": "overpass",
-      "id": "West Kalimantan"
-    }, {
-      "op": "difference",
-      "source": "overpass",
-      "id": "Central Kalimantan"
-    }, {
-      "op": "union",
-      "source": "overpass",
-      "id": "East Java"
+      "id": "Asia-Jakarta-tz"
     }
   ],
   "Asia/Jayapura": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Indonesia"
-    }, {
-      "op": "difference",
-      "source": "manual-polygon",
-      "data": [[[90,9],[100,-12],[126,-13],[129,7],[90,9]]],
-      "description": "Exclude all parts of Indonesia to the west of Maluku and North Maluku"
-    }, {
-      "op": "union",
-      "source": "overpass",
-      "id": "Maluku"
-    }, {
-      "op": "union",
-      "source": "overpass",
-      "id": "North Maluku"
+      "id": "Asia-Jayapura-tz"
     }
   ],
   "Asia/Jerusalem": [
@@ -2173,12 +2101,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Malaysia"
-    }, {
-      "op": "intersect",
-      "source": "manual-polygon",
-      "data": [[[107,18],[107,-15],[130,5],[107,18]]],
-      "description": "Intersect Malaysia to include only Malaysian Borneo."
+      "id": "Asia-Kuching-tz"
     }
   ],
   "Asia/Kuwait": [
@@ -2206,32 +2129,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Indonesia"
-    }, {
-      "op": "intersect",
-      "source": "manual-polygon",
-      "data": [[[109,9],[114,-12],[126,-13],[129,7],[109,9]]],
-      "description": "Intersect Indonesia in center areas."
-    }, {
-      "op": "difference",
-      "source": "overpass",
-      "id": "West Kalimantan"
-    }, {
-      "op": "difference",
-      "source": "overpass",
-      "id": "Central Kalimantan"
-    }, {
-      "op": "difference",
-      "source": "overpass",
-      "id": "East Java"
-    }, {
-      "op": "difference",
-      "source": "overpass",
-      "id": "Maluku"
-    }, {
-      "op": "difference",
-      "source": "overpass",
-      "id": "North Maluku"
+      "id": "Asia-Makassar-tz"
     }
   ],
   "Asia/Manila": [
@@ -2272,11 +2170,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Kemerovo"
-    }, {
-      "op": "difference",
-      "source": "overpass",
-      "id": "Altai Krai"
+      "id": "Asia-Novokuznetsk-tz"
     }
   ],
   "Asia/Novosibirsk": [
@@ -2290,11 +2184,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Omsk"
-    }, {
-      "op": "difference",
-      "source": "overpass",
-      "id": "Asia-Yekaterinburg-tz"
+      "id": "Asia-Omsk-tz"
     }
   ],
   "Asia/Oral": [
@@ -2315,11 +2205,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "West Kalimantan"
-    }, {
-      "op": "union",
-      "source": "overpass",
-      "id": "Central Kalimantan"
+      "id": "Asia-Pontianak-tz"
     }
   ],
   "Asia/Pyongyang": [
@@ -2357,23 +2243,18 @@
       "id": "Asia-Riyadh-tz"
     }
   ],
-  "Asia/Samarkand": [
-    {
-      "op": "init",
-      "source": "overpass",
-      "id": "Samarkand"
-    }
-  ],
   "Asia/Sakhalin": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Sakhalin"
-    }, {
-      "op": "intersect",
-      "source": "manual-polygon",
-      "data": [[[152,52],[138,40],[140,61],[152,52]]],
-      "description": "Intersect part of the Sakhalin Oblast to include only the island of Sakhalin."
+      "id": "Asia-Sakhalin-tz"
+    }
+  ],
+  "Asia/Samarkand": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Asia-Samarkand-tz"
     }
   ],
   "Asia/Seoul": [
@@ -2501,28 +2382,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Mongolia"
-    }, {
-      "op": "intersect",
-      "source": "manual-polygon",
-      "data": [[[96,53],[113,55],[114,39],[97,40],[96,53]]],
-      "description": "Intersect center part of Mongolia."
-    }, {
-      "op": "difference",
-      "source": "overpass",
-      "id": "Zavkhan"
-    }, {
-      "op": "difference",
-      "source": "overpass",
-      "id": "Govi-Altai"
-    }, {
-      "op": "difference",
-      "source": "overpass",
-      "id": "Dornod"
-    }, {
-      "op": "difference",
-      "source": "overpass",
-      "id": "Sühbaatar"
+      "id": "Asia-Ulaanbaatar-tz"
     }
   ],
   "Asia/Urumqi": [
