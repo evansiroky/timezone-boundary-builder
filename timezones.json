@@ -87,12 +87,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Egypt"
-    }, {
-      "op": "union",
-      "source": "overpass",
-      "id": "Bir Tawil",
-      "description": "Although Bir Tawil is officially not part of Egypt, union to avoid holes. The wikipedia article on Bir Tawil suggests that Egypt retains administrative control of the area (https://en.wikipedia.org/wiki/Bir_Tawil)."
+      "id": "Africa-Cairo-tz"
     }
   ],
   "Africa/Casablanca": [
@@ -189,7 +184,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "South Africa"
+      "id": "Africa-Johannesburg-tz"
     }, {
       "op": "union",
       "source": "manual-polygon",
@@ -201,16 +196,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "South Sudan"
-    }, {
-      "op": "union",
-      "source": "manual-polygon",
-      "data": [[[35.3,5.2],[35.9,4.6],[34,4.6],[35.3,5.2]]],
-      "description": "Initially add Ilemi Triangle to South Sudan area.  Whatever OSM thinks Kenya's border is is then used as seen in the next operation.  This avoids having holes."
-    }, {
-      "op": "difference",
-      "source": "overpass",
-      "id": "Kenya"
+      "id": "Africa-Juba-tz"
     }
   ],
   "Africa/Kampala": [
@@ -238,28 +224,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Congo-Kinshasa"
-    }, {
-      "op": "intersect",
-      "source": "manual-polygon",
-      "data": [[[20,-9],[21,-4],[24.6,-1.63],[23,13],[3,-9],[20,-9]]],
-      "description": "Grab western part of Congo-Kinshasa."
-    }, {
-      "op": "difference",
-      "source": "overpass",
-      "id": "Kasai"
-    }, {
-      "op": "difference",
-      "source": "overpass",
-      "id": "Sankuru"
-    }, {
-      "op": "difference",
-      "source": "overpass",
-      "id": "Tshopo"
-    }, {
-      "op": "difference",
-      "source": "overpass",
-      "id": "Bas-Uele"
+      "id": "Africa-Kinshasa-tz"
     }
   ],
   "Africa/Lagos": [
@@ -294,28 +259,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Congo-Kinshasa"
-    }, {
-      "op": "difference",
-      "source": "manual-polygon",
-      "data": [[[20,-9],[21,-4],[24.6,-1.63],[23,13],[3,-9],[20,-9]]],
-      "description": "Exclude eastern part of Congo-Kinshasa."
-    }, {
-      "op": "union",
-      "source": "overpass",
-      "id": "Kasai"
-    }, {
-      "op": "union",
-      "source": "overpass",
-      "id": "Sankuru"
-    }, {
-      "op": "union",
-      "source": "overpass",
-      "id": "Tshopo"
-    }, {
-      "op": "union",
-      "source": "overpass",
-      "id": "Bas-Uele"
+      "id": "Africa-Lubumbashi-tz"
     }
   ],
   "Africa/Lusaka": [
@@ -399,12 +343,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Burkina Faso"
-    }, {
-      "op": "union",
-      "source": "overpass",
-      "id": "Koalou-Kourou Zone",
-      "description": "Add Koalou/Kourou Zone. See https://fr.wikipedia.org/wiki/Koalou."
+      "id": "Africa-Ouagadougou-tz"
     }
   ],
   "Africa/Porto-Novo": [

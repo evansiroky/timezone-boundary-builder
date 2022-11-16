@@ -1,3 +1,15 @@
+## Unreleased
+
+### Zone Changes
+
+* Directly use OpenStreetMap timezone relations for the following zones:
+  * `Africa/Cairo`
+  * `Africa/Johannesburg`
+  * `Africa/Juba`
+  * `Africa/Kinshasa`
+  * `Africa/Lubumbashi`
+  * `Africa/Ouagadougou`
+
 ## 2022f
 
 ### Zone Changes

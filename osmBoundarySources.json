@@ -35,6 +35,9 @@
   "Africa-Bujumbura-tz": {
     "timezone": "Africa/Bujumbura"
   },
+  "Africa-Cairo-tz": {
+    "timezone": "Africa/Cairo"
+  },
   "Africa-Conakry-tz": {
     "timezone": "Africa/Conakry"
   },
@@ -59,6 +62,12 @@
   "Africa-Harare-tz": {
     "timezone": "Africa/Harare"
   },
+  "Africa-Johannesburg-tz": {
+    "timezone": "Africa/Johannesburg"
+  },
+  "Africa-Juba-tz": {
+    "timezone": "Africa/Juba"
+  },
   "Africa-Kampala-tz": {
     "timezone": "Africa/Kampala"
   },
@@ -67,6 +76,9 @@
   },
   "Africa-Kigali-tz": {
     "timezone": "Africa/Kigali"
+  },
+  "Africa-Kinshasa-tz": {
+    "timezone": "Africa/Kinshasa"
   },
   "Africa-Lagos-tz": {
     "timezone": "Africa/Lagos"
@@ -79,6 +91,9 @@
   },
   "Africa-Luanda-tz": {
     "timezone": "Africa/Luanda"
+  },
+  "Africa-Lubumbashi-tz": {
+    "timezone": "Africa/Lubumbashi"
   },
   "Africa-Lusaka-tz": {
     "timezone": "Africa/Lusaka"
@@ -112,6 +127,9 @@
   },
   "Africa-Nouakchott-tz": {
     "timezone": "Africa/Nouakchott"
+  },
+  "Africa-Ouagadougou-tz": {
+    "timezone": "Africa/Ouagadougou"
   },
   "Africa-Sao_Tome-tz": {
     "timezone": "Africa/Sao_Tome"
@@ -696,18 +714,11 @@
   "Bahia": {
     "ISO3166-2": "BR-BA"
   },
-  "Bas-Uele": {
-    "name": "Bas-Uele",
-    "admin_level": "4"
-  },
   "Benin": {
     "ISO3166-1": "BJ"
   },
   "Bhutan": {
     "ISO3166-1": "BT"
-  },
-  "Bir Tawil": {
-    "alt_name:en": "Bi'r Tawīl"
   },
   "Brazil": {
     "ISO3166-1": "BR"
@@ -717,9 +728,6 @@
   },
   "British Sovereign Base Areas": {
     "name": "British Sovereign Base Areas"
-  },
-  "Burkina Faso": {
-    "ISO3166-1": "BF"
   },
   "Buryatia": {
     "ISO3166-2": "RU-BU"
@@ -741,9 +749,6 @@
   },
   "Chuuk": {
     "ISO3166-2": "FM-TRK"
-  },
-  "Congo-Kinshasa": {
-    "ISO3166-1": "CD"
   },
   "Cook Islands": {
     "ISO3166-1": "CK"
@@ -776,9 +781,6 @@
   },
   "Ecuador": {
     "ISO3166-1": "EC"
-  },
-  "Egypt": {
-    "ISO3166-1": "EG"
   },
   "Europe-Andorra-tz": {
     "timezone": "Europe/Andorra"
@@ -956,18 +958,11 @@
   "Kamchatka": {
     "ISO3166-2": "RU-KAM"
   },
-  "Kasai": {
-    "name:en": "Kasai",
-    "admin_level": "4"
-  },
   "Kazakhstan": {
     "ISO3166-1": "KZ"
   },
   "Kemerovo": {
     "ISO3166-2": "RU-KEM"
-  },
-  "Kenya": {
-    "ISO3166-1": "KE"
   },
   "Khakassia": {
     "ISO3166-2": "RU-KK"
@@ -1131,10 +1126,6 @@
   "Samarkand": {
     "timezone": "Asia/Samarkand"
   },
-  "Sankuru": {
-    "name": "Sankuru",
-    "admin_level": "4"
-  },
   "Saratov": {
     "ISO3166-2": "RU-SAR"
   },
@@ -1157,15 +1148,8 @@
   "Slovenia": {
     "ISO3166-1": "SI"
   },
-  "South Africa": {
-    "ISO3166-1": "ZA",
-    "admin_level": "2"
-  },
   "South Australia": {
     "ISO3166-2": "AU-SA"
-  },
-  "South Sudan": {
-    "ISO3166-1": "SS"
   },
   "Spain": {
     "ISO3166-1:alpha2": "ES"
@@ -1185,10 +1169,6 @@
   },
   "Tomponsky": {
     "name:en": "Tomponsky Ulus"
-  },
-  "Tshopo": {
-    "name": "Tshopo",
-    "admin_level": "4"
   },
   "Tuva": {
     "ISO3166-2": "RU-TY"
