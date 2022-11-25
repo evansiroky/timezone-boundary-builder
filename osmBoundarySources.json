@@ -720,14 +720,23 @@
   "Astrakhan": {
     "ISO3166-2": "RU-AST"
   },
+  "Atlantic-Azores-tz": {
+    "timezone": "Atlantic/Azores"
+  },
   "Atlantic-Bermuda-tz": {
     "timezone": "Atlantic/Bermuda"
+  },
+  "Atlantic-Canary-tz": {
+    "timezone": "Atlantic/Canary"
   },
   "Atlantic-Cape_Verde-tz": {
     "timezone": "Atlantic/Cape_Verde"
   },
   "Atlantic-Faroe-tz": {
     "timezone": "Atlantic/Faroe"
+  },
+  "Atlantic-Madeira-tz": {
+    "timezone": "Atlantic/Madeira"
   },
   "Atlantic-Reykjavik-tz": {
     "timezone": "Atlantic/Reykjavik"

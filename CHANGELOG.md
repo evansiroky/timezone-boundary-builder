@@ -31,6 +31,9 @@
   * `Asia/Sakhalin`
   * `Asia/Samarkand`
   * `Asia/Ulaanbaatar`
+  * `Atlantic/Azores`
+  * `Atlantic/Canary`
+  * `Atlantic/Madeira`
 
 ## 2022f
 

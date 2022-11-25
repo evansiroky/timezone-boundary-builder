@@ -2508,12 +2508,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Portugal"
-    }, {
-      "op": "intersect",
-      "source": "manual-polygon",
-      "data": [[[-21,41],[-25,33],[-35,41],[-21,41]]],
-      "description": "Intersect Portugal to isolate Azores"
+      "id": "Atlantic-Azores-tz"
     }
   ],
   "Atlantic/Bermuda": [
@@ -2527,12 +2522,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Spain"
-    }, {
-      "op": "intersect",
-      "source": "manual-polygon",
-      "data": [[[-24,29.5],[-12,22],[-12,31],[-15,29.5],[-24,29.5]]],
-      "description": "Intersect part of Spain to isolate Canary Islands"
+      "id": "Atlantic-Canary-tz"
     }
   ],
   "Atlantic/Cape_Verde": [
@@ -2553,12 +2543,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Portugal"
-    }, {
-      "op": "intersect",
-      "source": "manual-polygon",
-      "data": [[[-24,35],[-10,35],[-16,29.5],[-24,35]]],
-      "description": "Intersect to isolate Maderia and Salvage Islands."
+      "id": "Atlantic-Madeira-tz"
     }
   ],
   "Atlantic/Reykjavik": [
