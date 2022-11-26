@@ -2749,12 +2749,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "The Netherlands"
-    }, {
-      "op": "intersect",
-      "source": "manual-polygon",
-      "data": [[[9,55],[9,48],[-2,52],[9,55]]],
-      "description": "Intersect to include only European area of The Netherlands."
+      "id": "Europe-Amsterdam-tz"
     }
   ],
   "Europe/Andorra": [
@@ -2791,11 +2786,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Republic of Kosovo"
-    }, {
-      "op": "union",
-      "source": "overpass",
-      "id": "Serbia"
+      "id": "Europe-Belgrade-tz"
     }
   ],
   "Europe/Berlin": [
@@ -2889,11 +2880,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Finland"
-    }, {
-      "op": "difference",
-      "source": "overpass",
-      "id": "Åland Islands"
+      "id": "Europe-Helsinki-tz"
     }
   ],
   "Europe/Isle_of_Man": [
@@ -2954,34 +2941,21 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Portugal"
-    }, {
-      "op": "intersect",
-      "source": "manual-polygon",
-      "data": [[[-3,45],[-3,28],[-17,40],[-3,45]]],
-      "description": "Intersect to include only mainlaind of Portugal"
+      "id": "Europe-Lisbon-tz"
     }
   ],
   "Europe/Ljubljana": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Slovenia"
-    }, {
-      "op": "difference",
-      "source": "overpass",
-      "id": "Croatia"
+      "id": "Europe-Ljubljana-tz"
     }
   ],
   "Europe/London": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "United Kingdom"
-    }, {
-      "op": "difference",
-      "source": "overpass",
-      "id": "Isle of Man"
+      "id": "Europe-London-tz"
     }
   ],
   "Europe/Luxembourg": [
@@ -3071,12 +3045,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Norway"
-    }, {
-      "op": "intersect",
-      "source": "manual-polygon",
-      "data": [[[7,71],[0,54],[25,60],[37,73],[7,71]]],
-      "description": "Intersect to include only mainlaind part of Norway."
+      "id": "Europe-Oslo-tz"
     }
   ],
   "Europe/Paris": [
@@ -3160,11 +3129,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Crimea"
-    }, {
-      "op": "union",
-      "source": "overpass",
-      "id": "Sevastopol"
+      "id": "Europe-Simferopol-tz"
     }
   ],
   "Europe/Skopje": [
@@ -3227,12 +3192,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Austria"
-    }, {
-      "op": "union",
-      "source": "overpass",
-      "id": "Jungholz, AT",
-      "description": "Add back Jungholz as union to Austria. See https://github.com/evansiroky/timezone-boundary-builder/issues/93"
+      "id": "Europe-Vienna-tz"
     }
   ],
   "Europe/Vilnius": [

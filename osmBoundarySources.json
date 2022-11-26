@@ -768,9 +768,6 @@
   "Australia-Sydney-tz": {
     "timezone": "Australia/Sydney"
   },
-  "Austria": {
-    "ISO3166-1": "AT"
-  },
   "Autonomous Region of Bougainville": {
     "ISO3166-2": "PG-NSB"
   },
@@ -817,9 +814,6 @@
   "Crimea": {
     "name:en": "Republic of Crimea"
   },
-  "Croatia": {
-    "ISO3166-1": "HR"
-  },
   "Cuba": {
     "ISO3166-1": "CU"
   },
@@ -833,11 +827,17 @@
   "Ecuador": {
     "ISO3166-1": "EC"
   },
+  "Europe-Amsterdam-tz": {
+    "timezone": "Europe/Amsterdam"
+  },
   "Europe-Andorra-tz": {
     "timezone": "Europe/Andorra"
   },
   "Europe-Athens-tz": {
     "timezone": "Europe/Athens"
+  },
+  "Europe-Belgrade-tz": {
+    "timezone": "Europe/Belgrade"
   },
   "Europe-Bratislava-tz": {
     "timezone": "Europe/Bratislava"
@@ -866,6 +866,9 @@
   "Europe-Guernsey-tz": {
     "timezone": "Europe/Guernsey"
   },
+  "Europe-Helsinki-tz": {
+    "timezone": "Europe/Helsinki"
+  },
   "Europe-Isle_of_Man-tz": {
     "timezone": "Europe/Isle_of_Man"
   },
@@ -877,6 +880,15 @@
   },
   "Europe-Kaliningrad-tz": {
     "timezone": "Europe/Kaliningrad"
+  },
+  "Europe-Lisbon-tz": {
+    "timezone": "Europe/Lisbon"
+  },
+  "Europe-Ljubljana-tz": {
+    "timezone": "Europe/Ljubljana"
+  },
+  "Europe-London-tz": {
+    "timezone": "Europe/London"
   },
   "Europe-Luxembourg-tz": {
     "timezone": "Europe/Luxembourg"
@@ -896,6 +908,9 @@
   "Europe-Moscow-tz": {
     "timezone": "Europe/Moscow"
   },
+  "Europe-Oslo-tz": {
+    "timezone": "Europe/Oslo"
+  },
   "Europe-Podgorica-tz": {
     "timezone": "Europe/Podgorica"
   },
@@ -913,6 +928,9 @@
   },
   "Europe-Sarajevo-tz": {
     "timezone": "Europe/Sarajevo"
+  },
+  "Europe-Simferopol-tz": {
+    "timezone": "Europe/Simferopol"
   },
   "Europe-Skopje-tz": {
     "timezone": "Europe/Skopje"
@@ -938,6 +956,9 @@
   "Europe-Vatican-tz": {
     "timezone": "Europe/Vatican"
   },
+  "Europe-Vienna-tz": {
+    "timezone": "Europe/Vienna"
+  },
   "Europe-Vilnius-tz": {
     "timezone": "Europe/Vilnius"
   },
@@ -949,9 +970,6 @@
   },
   "Europe-Zurich-tz": {
     "timezone": "Europe/Zurich"
-  },
-  "Finland": {
-    "ISO3166-1": "FI"
   },
   "France": {
     "ISO3166-1:alpha2": "FR"
@@ -987,15 +1005,8 @@
   "Indian-Mauritius-tz": {
     "timezone": "Indian/Mauritius"
   },
-  "Isle of Man": {
-    "ISO3166-1": "IM"
-  },
   "Israel": {
     "ISO3166-1": "IL"
-  },
-  "Jungholz, AT": {
-    "name": "Jungholz",
-    "admin_level": "8"
   },
   "Kamchatka": {
     "ISO3166-2": "RU-KAM"
@@ -1117,9 +1128,6 @@
   "Pitcairn Islands": {
     "ISO3166-1": "PN"
   },
-  "Portugal": {
-    "ISO3166-1": "PT"
-  },
   "Prince of Wales-Hyder": {
     "name": "Prince of Wales-Hyder"
   },
@@ -1131,9 +1139,6 @@
   },
   "Republic of China": {
     "ISO3166-1": "TW"
-  },
-  "Republic of Kosovo": {
-    "ISO3166-1": "XK"
   },
   "Sakha Republic": {
     "ISO3166-2": "RU-SA"
@@ -1150,18 +1155,12 @@
   "Saratov": {
     "ISO3166-2": "RU-SAR"
   },
-  "Serbia": {
-    "ISO3166-1": "RS"
-  },
   "Sevastopol": {
     "name:en": "Sevastopol"
   },
   "Sioux County, ND": {
     "name": "Sioux County",
     "nist:state_fips": "38"
-  },
-  "Slovenia": {
-    "ISO3166-1": "SI"
   },
   "South Australia": {
     "ISO3166-2": "AU-SA"
@@ -1172,9 +1171,6 @@
   "Thailand": {
     "ISO3166-1": "TH",
     "admin_level": "2"
-  },
-  "The Netherlands": {
-    "ISO3166-1": "NL"
   },
   "Tocantins": {
     "ISO3166-2": "BR-TO"
@@ -1190,9 +1186,6 @@
   },
   "Ukraine": {
     "ISO3166-1": "UA"
-  },
-  "United Kingdom": {
-    "ISO3166-1": "GB"
   },
   "United Nations Buffer Zone": {
     "name": "United Nations Buffer Zone"
@@ -1226,9 +1219,6 @@
   },
   "Yukon": {
     "ISO3166-2": "CA-YT"
-  },
-  "Åland Islands": {
-    "ISO3166-2": "FI-01"
   },
   "שטח B": {
     "name:he": "שטח B"

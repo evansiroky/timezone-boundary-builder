@@ -34,6 +34,15 @@
   * `Atlantic/Azores`
   * `Atlantic/Canary`
   * `Atlantic/Madeira`
+  * `Europe/Amsterdam`
+  * `Europe/Belgrade`
+  * `Europe/Helsinki`
+  * `Europe/Lisbon`
+  * `Europe/Ljubljana`
+  * `Europe/London`
+  * `Europe/Oslo`
+  * `Europe/Simferopol`
+  * `Europe/Vienna`
 
 ## 2022f
 
