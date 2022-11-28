@@ -3342,23 +3342,14 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "New Zealand"
-    }, {
-      "op": "intersect",
-      "source": "manual-polygon",
-      "data": [[[-178,-41],[-178,-47],[-172,-44],[-178,-41]]],
-      "description": "Intersect to include Chatham Islands."
+      "id": "Pacific-Chatham-tz"
     }
   ],
   "Pacific/Chuuk": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Chuuk"
-    }, {
-      "op": "union",
-      "source": "overpass",
-      "id": "Yap"
+      "id": "Pacific-Chuuk-tz"
     }
   ],
   "Pacific/Easter": [
@@ -3405,12 +3396,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Ecuador"
-    }, {
-      "op": "intersect",
-      "source": "manual-polygon",
-      "data": [[[-93,4],[-93,-5],[-87,0],[-93,4]]],
-      "description": "Intersect Ecuador to isolate Galápagos Islands."
+      "id": "Pacific-Galapagos-tz"
     }
   ],
   "Pacific/Gambier": [
@@ -3460,24 +3446,14 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Kiribati"
-    }, {
-      "op": "intersect",
-      "source": "manual-polygon",
-      "data": [[[-176,0],[-176,-9],[-169,-3],[-176,0]]],
-      "description": "Intersect Kiribati to include Kanton Island and some other atolls."
+      "id": "Pacific-Kanton-tz"
     }
   ],
   "Pacific/Kiritimati": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Kiribati"
-    }, {
-      "op": "intersect",
-      "source": "manual-polygon",
-      "data": [[[-162,7],[-153,-14],[-133,5],[-162,7]]],
-      "description": "Intersect to include Kiribati's islands that are closest to the Americas."
+      "id": "Pacific-Kiritimati-tz"
     }
   ],
   "Pacific/Kosrae": [
@@ -3515,12 +3491,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "France"
-    }, {
-      "op": "intersect",
-      "source": "manual-polygon",
-      "data": [[[-141,-6],[-136,-11],[-143,-11],[-141,-6]]],
-      "description": "Intersect France to isolate the Marquesas Islands."
+      "id": "Pacific-Marquesas-tz"
     }
   ],
   "Pacific/Midway": [
@@ -3553,12 +3524,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Australia"
-    }, {
-      "op": "intersect",
-      "source": "manual-polygon",
-      "data": [[[167,-28],[169,-28],[168,-30],[167,-28]]],
-      "description": "Intersect to isolate Norfolk Island."
+      "id": "Pacific-Norfolk-tz"
     }
   ],
   "Pacific/Noumea": [
@@ -3610,18 +3576,14 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Papua New Guinea"
-    }, {
-      "op": "difference",
-      "source": "overpass",
-      "id": "Autonomous Region of Bougainville"
+      "id": "Pacific-Port_Moresby-tz"
     }
   ],
   "Pacific/Rarotonga": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Cook Islands"
+      "id": "Pacific-Rarotonga-tz"
     }
   ],
   "Pacific/Saipan": [
@@ -3652,12 +3614,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Kiribati"
-    }, {
-      "op": "intersect",
-      "source": "manual-polygon",
-      "data": [[[173,5],[179,-4],[167,-2],[173,5]]],
-      "description": "Intersect Kiribati to include westernmost islands."
+      "id": "Pacific-Tarawa-tz"
     }
   ],
   "Pacific/Tongatapu": [
@@ -3671,24 +3628,14 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "United States of America"
-    }, {
-      "op": "intersect",
-      "source": "manual-polygon",
-      "data": [[[165,20],[168,20],[166,18],[165,20]]],
-      "description": "Intersect USA to isolate Wake Island."
+      "id": "Pacific-Wake-tz"
     }
   ],
   "Pacific/Wallis": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "France"
-    }, {
-      "op": "intersect",
-      "source": "manual-polygon",
-      "data": [[[-179,-14],[-177,-17],[-175,-12],[-179,-14]]],
-      "description": "Intersect France to isolate Wallis and Futuna Islands."
+      "id": "Pacific-Wallis-tz"
     }
   ]
 }

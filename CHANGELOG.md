@@ -48,6 +48,18 @@
   * `Indian/Cocos`
   * `Indian/Mayotte`
   * `Indian/Reunion`
+  * `Pacific/Chatham`
+  * `Pacific/Chuuk`
+  * `Pacific/Galapagos`
+  * `Pacific/Kanton`
+  * `Pacific/Kiritimati`
+  * `Pacific/Marquesas`
+  * `Pacific/Norfolk`
+  * `Pacific/Port_Moresby`
+  * `Pacific/Rarotonga`
+  * `Pacific/Tarawa`
+  * `Pacific/Wake`
+  * `Pacific/Wallis`
 
 ## 2022f
 

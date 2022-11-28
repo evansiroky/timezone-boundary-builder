@@ -768,9 +768,6 @@
   "Australia-Sydney-tz": {
     "timezone": "Australia/Sydney"
   },
-  "Autonomous Region of Bougainville": {
-    "ISO3166-2": "PG-NSB"
-  },
   "Bahia": {
     "ISO3166-2": "BR-BA"
   },
@@ -798,12 +795,6 @@
   "Chukotka": {
     "ISO3166-2": "RU-CHU"
   },
-  "Chuuk": {
-    "ISO3166-2": "FM-TRK"
-  },
-  "Cook Islands": {
-    "ISO3166-1": "CK"
-  },
   "Corson County, SD": {
     "name": "Corson County",
     "nist:state_fips": "46"
@@ -820,9 +811,6 @@
   "Dewey County, SD": {
     "name": "Dewey County",
     "nist:state_fips": "46"
-  },
-  "Ecuador": {
-    "ISO3166-1": "EC"
   },
   "Europe-Amsterdam-tz": {
     "timezone": "Europe/Amsterdam"
@@ -1026,9 +1014,6 @@
   "Khakassia": {
     "ISO3166-2": "RU-KK"
   },
-  "Kiribati": {
-    "ISO3166-1": "KI"
-  },
   "Kirov": {
     "ISO3166-2": "RU-KIR"
   },
@@ -1095,6 +1080,12 @@
   "Pacific-Bougainville-tz": {
     "timezone": "Pacific/Bougainville"
   },
+  "Pacific-Chatham-tz": {
+    "timezone": "Pacific/Chatham"
+  },
+  "Pacific-Chuuk-tz": {
+    "timezone": "Pacific/Chuuk"
+  },
   "Pacific-Efate-tz": {
     "timezone": "Pacific/Efate"
   },
@@ -1107,11 +1098,23 @@
   "Pacific-Funafuti-tz": {
     "timezone": "Pacific/Funafuti"
   },
+  "Pacific-Galapagos-tz": {
+    "timezone": "Pacific/Galapagos"
+  },
   "Pacific-Guadalcanal-tz": {
     "timezone": "Pacific/Guadalcanal"
   },
+  "Pacific-Kanton-tz": {
+    "timezone": "Pacific/Kanton"
+  },
+  "Pacific-Kiritimati-tz": {
+    "timezone": "Pacific/Kiritimati"
+  },
   "Pacific-Kosrae-tz": {
     "timezone": "Pacific/Kosrae"
+  },
+  "Pacific-Marquesas-tz": {
+    "timezone": "Pacific/Marquesas"
   },
   "Pacific-Nauru-tz": {
     "timezone": "Pacific/Nauru"
@@ -1119,20 +1122,35 @@
   "Pacific-Niue-tz": {
     "timezone": "Pacific/Niue"
   },
+  "Pacific-Norfolk-tz": {
+    "timezone": "Pacific/Norfolk"
+  },
   "Pacific-Palau-tz": {
     "timezone": "Pacific/Palau"
   },
   "Pacific-Pohnpei-tz": {
     "timezone": "Pacific/Pohnpei"
   },
+  "Pacific-Port_Moresby-tz": {
+    "timezone": "Pacific/Port_Moresby"
+  },
+  "Pacific-Rarotonga-tz": {
+    "timezone": "Pacific/Rarotonga"
+  },
+  "Pacific-Tarawa-tz": {
+    "timezone": "Pacific/Tarawa"
+  },
   "Pacific-Tongatapu-tz": {
     "timezone": "Pacific/Tongatapu"
   },
+  "Pacific-Wake-tz": {
+    "timezone": "Pacific/Wake"
+  },
+  "Pacific-Wallis-tz": {
+    "timezone": "Pacific/Wallis"
+  },
   "Palestinian Territories": {
     "ISO3166-1": "PS"
-  },
-  "Papua New Guinea": {
-    "ISO3166-1": "PG"
   },
   "Pernambuco": {
     "ISO3166-2": "BR-PE"
@@ -1225,9 +1243,6 @@
   },
   "Xinjiang": {
     "ISO3166-2": "CN-XJ"
-  },
-  "Yap": {
-    "ISO3166-2": "FM-YAP"
   },
   "Yukon": {
     "ISO3166-2": "CA-YT"
