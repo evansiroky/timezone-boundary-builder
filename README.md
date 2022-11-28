@@ -44,9 +44,10 @@ A few common languages already have libraries with an API that can be used to lo
 | .NET | [GeoTimezone](https://github.com/mj1856/GeoTimeZone)|
 | php | [Geo-Timezone](https://github.com/minube/geo-timezone)|
 | Python | [timezonefinder](https://github.com/MrMinimal64/timezonefinder)|
-| Python | [tzfpy](https://github.com/ringsaturn/tzf/tree/main/python) |
+| Python | [tzfpy](https://github.com/ringsaturn/tzfpy) |
 | R | [lutz](https://github.com/ateucher/lutz)|
 | Ruby | [wheretz](https://github.com/zverok/wheretz)|
+| Rust | [tzf-rs](https://github.com/ringsaturn/tzf-rs) |
 
 Another common way to use the data for lookup purposes is to load the shapefile into a spatially-aware database.  See this [blog post](https://simonwillison.net/2017/Dec/12/location-time-zone-api/) for an example of how that can be done.
 
