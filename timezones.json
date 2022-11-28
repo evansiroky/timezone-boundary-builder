@@ -3241,31 +3241,21 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "British Indian Ocean Territory"
+      "id": "Indian-Chagos-tz"
     }
   ],
   "Indian/Christmas": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Australia"
-    }, {
-      "op": "intersect",
-      "source": "manual-polygon",
-      "data": [[[106,-10],[106,-12],[104,-10],[106,-10]]],
-      "description": "Intersect to isolate Christmas Island area."
+      "id": "Indian-Christmas-tz"
     }
   ],
   "Indian/Cocos": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Australia"
-    }, {
-      "op": "intersect",
-      "source": "manual-polygon",
-      "data": [[[98,-11],[98,-14],[95,-11],[98,-11]]],
-      "description": "Intersect to isolate Cocos Island area."
+      "id": "Indian-Cocos-tz"
     }
   ],
   "Indian/Comoro": [
@@ -3312,24 +3302,14 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "France"
-    }, {
-      "op": "intersect",
-      "source": "manual-polygon",
-      "data": [[[46,-11],[46,-14],[43.5,-14],[46,-11]]],
-      "description": "Intersect to grab terriritorial waters near Mayotte."
+      "id": "Indian-Mayotte-tz"
     }
   ],
   "Indian/Reunion": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "France"
-    }, {
-      "op": "intersect",
-      "source": "manual-polygon",
-      "data": [[[57,-19],[57,-22],[53,-22],[57,-19]]],
-      "description": "Intersect to grab terriritorial waters near Reunion."
+      "id": "Indian-Reunion-tz"
     }
   ],
   "Pacific/Apia": [

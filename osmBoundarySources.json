@@ -783,9 +783,6 @@
   "Brazil": {
     "ISO3166-1": "BR"
   },
-  "British Indian Ocean Territory": {
-    "ISO3166-1": "IO"
-  },
   "British Sovereign Base Areas": {
     "name": "British Sovereign Base Areas"
   },
@@ -993,6 +990,15 @@
   "Indian-Antananarivo-tz": {
     "timezone": "Indian/Antananarivo"
   },
+  "Indian-Chagos-tz": {
+    "timezone": "Indian/Chagos"
+  },
+  "Indian-Christmas-tz": {
+    "timezone": "Indian/Christmas"
+  },
+  "Indian-Cocos-tz": {
+    "timezone": "Indian/Cocos"
+  },
   "Indian-Comoro-tz": {
     "timezone": "Indian/Comoro"
   },
@@ -1004,6 +1010,12 @@
   },
   "Indian-Mauritius-tz": {
     "timezone": "Indian/Mauritius"
+  },
+  "Indian-Mayotte-tz": {
+    "timezone": "Indian/Mayotte"
+  },
+  "Indian-Reunion-tz": {
+    "timezone": "Indian/Reunion"
   },
   "Israel": {
     "ISO3166-1": "IL"

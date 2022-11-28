@@ -43,6 +43,11 @@
   * `Europe/Oslo`
   * `Europe/Simferopol`
   * `Europe/Vienna`
+  * `Indian/Chagos`
+  * `Indian/Christmas`
+  * `Indian/Cocos`
+  * `Indian/Mayotte`
+  * `Indian/Reunion`
 
 ## 2022f
 
