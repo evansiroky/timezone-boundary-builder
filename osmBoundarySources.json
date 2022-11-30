@@ -38,8 +38,14 @@
   "Africa-Cairo-tz": {
     "timezone": "Africa/Cairo"
   },
+  "Africa-Casablanca-tz": {
+    "timezone": "Africa/Casablanca"
+  },
   "Africa-Conakry-tz": {
     "timezone": "Africa/Conakry"
+  },
+  "Africa-Ceuta-tz": {
+    "timezone": "Africa/Ceuta"
   },
   "Africa-Dakar-tz": {
     "timezone": "Africa/Dakar"
@@ -52,6 +58,9 @@
   },
   "Africa-Douala-tz": {
     "timezone": "Africa/Douala"
+  },
+  "Africa-El_Aaiun-tz": {
+    "timezone": "Africa/El_Aaiun"
   },
   "Africa-Freetown-tz": {
     "timezone": "Africa/Freetown"
@@ -878,6 +887,9 @@
   "Europe-Luxembourg-tz": {
     "timezone": "Europe/Luxembourg"
   },
+  "Europe-Madrid-tz": {
+    "timezone": "Europe/Madrid"
+  },
   "Europe-Malta-tz": {
     "timezone": "Europe/Malta"
   },
@@ -1053,9 +1065,6 @@
   "Mato Grosso": {
     "ISO3166-2": "BR-MT"
   },
-  "Morocco": {
-    "ISO3166-1": "MA"
-  },
   "Myanmar": {
     "ISO3166-1": "MM"
   },
@@ -1195,9 +1204,6 @@
   "South Australia": {
     "ISO3166-2": "AU-SA"
   },
-  "Spain": {
-    "ISO3166-1:alpha2": "ES"
-  },
   "Thailand": {
     "ISO3166-1": "TH",
     "admin_level": "2"
@@ -1237,9 +1243,6 @@
   },
   "Volgograd": {
     "ISO3166-2": "RU-VGG"
-  },
-  "Western Sahara": {
-    "ISO3166-1": "EH"
   },
   "Xinjiang": {
     "ISO3166-2": "CN-XJ"

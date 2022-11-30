@@ -6,6 +6,9 @@
 * Create new zone `America/Ciudad_Juarez` by taking area from `America/Ojinaga`
 * Directly use OpenStreetMap timezone relations for the following zones:
   * `Africa/Cairo`
+  * `Africa/Casablanca`
+  * `Africa/Ceuta`
+  * `Africa/El_Aaiun`
   * `Africa/Johannesburg`
   * `Africa/Juba`
   * `Africa/Kinshasa`
@@ -42,6 +45,7 @@
   * `Europe/Lisbon`
   * `Europe/Ljubljana`
   * `Europe/London`
+  * `Europe/Madrid`
   * `Europe/Oslo`
   * `Europe/Simferopol`
   * `Europe/Vienna`

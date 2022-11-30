@@ -94,27 +94,14 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Morocco"
-    }, {
-      "op": "difference",
-      "source": "overpass",
-      "id": "Spain"
-    }, {
-      "op": "difference",
-      "source": "overpass",
-      "id": "Western Sahara"
+      "id": "Africa-Casablanca-tz"
     }
   ],
   "Africa/Ceuta": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Spain"
-    }, {
-      "op": "intersect",
-      "source": "manual-polygon",
-      "data": [[[-5.5,35.95],[-2,35.4],[-2,33],[-5.5,35.95]]],
-      "description": "Isolate exclaves of Spain that are enclaves of Morocco."
+      "id": "Africa-Ceuta-tz"
     }
   ],
   "Africa/Conakry": [
@@ -156,7 +143,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Western Sahara"
+      "id": "Africa-El_Aaiun-tz"
     }
   ],
   "Africa/Freetown": [
@@ -2969,12 +2956,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Spain"
-    }, {
-      "op": "intersect",
-      "source": "manual-polygon",
-      "data": [[[-5.3,35.95],[6,34.5],[6,56],[-21,35],[-5.3,35.95]]],
-      "description": "Intersect to include only mainlaind of Spain and Balearic Islands."
+      "id": "Europe-Madrid-tz"
     }
   ],
   "Europe/Malta": [
