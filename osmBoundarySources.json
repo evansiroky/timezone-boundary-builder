@@ -221,14 +221,14 @@
   "America-Boise-tz": {
     "timezone": "America/Boise"
   },
-  "America-Cambridge_Bay-tz": {
-    "timezone": "America/Cambridge_Bay"
-  },
   "America-Boa_Vista-tz": {
     "timezone": "America/Boa_Vista"
   },
   "America-Bogota-tz": {
     "timezone": "America/Bogota"
+  },
+  "America-Cambridge_Bay-tz": {
+    "timezone": "America/Cambridge_Bay"
   },
   "America-Campo_Grande-tz": {
     "timezone": "America/Campo_Grande"
