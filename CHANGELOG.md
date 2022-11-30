@@ -2,6 +2,8 @@
 
 ### Zone Changes
 
+* Merge `America/Pangnirtung` into `America/Iqaluit`
+* Create new zone `America/Ciudad_Juarez` by taking area from `America/Ojinaga`
 * Directly use OpenStreetMap timezone relations for the following zones:
   * `Africa/Cairo`
   * `Africa/Johannesburg`

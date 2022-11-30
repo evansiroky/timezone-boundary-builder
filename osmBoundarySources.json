@@ -251,6 +251,9 @@
   "America-Chihuahua-tz": {
     "timezone": "America/Chihuahua"
   },
+  "America-Ciudad_Juarez-tz": {
+    "timezone": "America/Ciudad_Juarez"
+  },
   "America-Costa_Rica-tz": {
     "timezone": "America/Costa_Rica"
   },
@@ -445,9 +448,6 @@
   },
   "America-Panama-tz": {
     "timezone": "America/Panama"
-  },
-  "America-Pangnirtung-tz": {
-    "timezone": "America/Pangnirtung"
   },
   "America-Paramaribo-tz": {
     "timezone": "America/Paramaribo"

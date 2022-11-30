@@ -683,6 +683,13 @@
       "id": "America-Chihuahua-tz"
     }
   ],
+  "America/Ciudad_Juarez": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "America-Ciudad_Juarez-tz"
+    }
+  ],
   "America/Costa_Rica": [
     {
       "op": "init",
@@ -1265,13 +1272,6 @@
       "op": "init",
       "source": "overpass",
       "id": "America-Panama-tz"
-    }
-  ],
-  "America/Pangnirtung": [
-    {
-      "op": "init",
-      "source": "overpass",
-      "id": "America-Pangnirtung-tz"
     }
   ],
   "America/Paramaribo": [
