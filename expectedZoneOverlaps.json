@@ -140,6 +140,12 @@
       "description": "Allow entire border of Germany and Luxembourg to overlap as most of it is a condominium.  https://opinionator.blogs.nytimes.com/2012/01/23/the-worlds-most-exclusive-condominium/"
     }
   ],
+  "Europe/Ljubljana-Europe/Zagreb": [
+    {
+      "bounds": [13.3, 45.4, 13.6, 45.6],
+      "description": "Allow disputed areas near Gulf of Piran (https://en.wikipedia.org/wiki/Croatia%E2%80%93Slovenia_border_disputes#Origins_of_Gulf_of_Piran_issues) to overlap."
+    }
+  ],
   "Europe/Paris-Europe/Rome": [
     {
       "bounds": [6.8, 45.8, 7, 45.9],
