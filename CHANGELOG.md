@@ -1,4 +1,4 @@
-## Unreleased
+## 2022g
 
 ### Zone Changes
 
@@ -67,6 +67,7 @@
   * `Pacific/Tarawa`
   * `Pacific/Wake`
   * `Pacific/Wallis`
+* Update to latest OSM data
 
 ## 2022f
 
