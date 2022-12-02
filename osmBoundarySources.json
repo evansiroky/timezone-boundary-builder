@@ -1020,6 +1020,10 @@
   "Israel": {
     "ISO3166-1": "IL"
   },
+  "Jungholz, AT": {
+    "name": "Jungholz",
+    "admin_level": "8"
+  },
   "Kamchatka": {
     "ISO3166-2": "RU-KAM"
   },
