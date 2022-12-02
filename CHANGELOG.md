@@ -4,6 +4,7 @@
 
 * Merge `America/Pangnirtung` into `America/Iqaluit`
 * Create new zone `America/Ciudad_Juarez` by taking area from `America/Ojinaga`
+* Allow timezones `Europe/Ljubljana` and `Europe/Zagreb` to overlap
 * Directly use OpenStreetMap timezone relations for the following zones:
   * `Africa/Cairo`
   * `Africa/Casablanca`
