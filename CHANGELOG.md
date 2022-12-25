@@ -1,3 +1,14 @@
+## Unreleased
+
+### Zone Changes
+
+* Directly use OpenStreetMap timezone relations for the following zones:
+  * `Africa/Porto-Novo`
+  * `America/Fortaleza`
+  * `America/Havana`
+  * `America/Metlakatla`
+  * `America/Sitka`
+
 ## 2022g
 
 ### Zone Changes

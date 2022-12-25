@@ -337,12 +337,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Benin"
-    }, {
-      "op": "union",
-      "source": "overpass",
-      "id": "Koalou-Kourou Zone",
-      "description": "Add Koalou/Kourou Zone. See https://fr.wikipedia.org/wiki/Koalou."
+      "id": "Africa-Porto_Novo-tz"
     }
   ],
   "Africa/Sao_Tome": [
@@ -800,28 +795,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Brazil"
-    }, {
-      "op": "intersect",
-      "source": "manual-polygon",
-      "data": [[[-28,-9],[-39,-8.5],[-44,-12],[-51,-8],[-46,2],[-28,-9]]],
-      "description": "intersect relevant part of Brazil to preserve terriritorial waters"
-    }, {
-      "op": "difference",
-      "source": "overpass",
-      "id": "Pernambuco"
-    }, {
-      "op": "difference",
-      "source": "overpass",
-      "id": "Bahia"
-    }, {
-      "op": "difference",
-      "source": "overpass",
-      "id": "Tocantins"
-    }, {
-      "op": "difference",
-      "source": "overpass",
-      "id": "America-Belem-tz"
+      "id": "America-Fortaleza-tz"
     }
   ],
   "America/Glace_Bay": [
@@ -891,12 +865,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Cuba"
-    }, {
-      "op": "difference",
-      "source": "manual-polygon",
-      "data": [[[-75.0866329,19.9027428],[-75.0866372,19.9041687],[-75.0866182,19.9104153],[-75.0866276,19.9115045],[-75.0866493,19.9122056],[-75.0866007,19.9125589],[-75.0865962,19.9138869],[-75.0866447,19.9738202],[-75.1668228,19.9738244],[-75.1906065,19.9737598],[-75.1946678,19.9699988],[-75.1964374,19.9683235],[-75.2320198,19.9345907],[-75.2320369,19.9022073],[-75.2324876,19.8697408],[-75.0865627,19.8717621],[-75.0866329,19.9027428]]],
-      "description": "Exclude Guantanamo Bay US Military base from the rest of Cuba."
+      "id": "America-Havana-tz"
     }
   ],
   "America/Hermosillo": [
@@ -1113,12 +1082,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Prince of Wales-Hyder"
-    }, {
-      "op": "intersect",
-      "source": "manual-polygon",
-      "data": [[[-131.65,55.11],[-131.674,55.04],[-131.65,54.964],[-131,54.96],[-131.3,55.4],[-131.8,55.25],[-131.65,55.11]]],
-      "description": "Intersect part of this county.  This operation results in an arbitrary sea boundary to the west of the Annette Island Airport."
+      "id": "America-Metlakatla-tz"
     }
   ],
   "America/Mexico_City": [
@@ -1168,11 +1132,6 @@
       "op": "init",
       "source": "overpass",
       "id": "America-New_York-tz"
-    }, {
-      "op": "union",
-      "source": "manual-polygon",
-      "data": [[[-75.0866329,19.9027428],[-75.0866372,19.9041687],[-75.0866182,19.9104153],[-75.0866276,19.9115045],[-75.0866493,19.9122056],[-75.0866007,19.9125589],[-75.0865962,19.9138869],[-75.0866447,19.9738202],[-75.1668228,19.9738244],[-75.1906065,19.9737598],[-75.1946678,19.9699988],[-75.1964374,19.9683235],[-75.2320198,19.9345907],[-75.2320369,19.9022073],[-75.2324876,19.8697408],[-75.0865627,19.8717621],[-75.0866329,19.9027428]]],
-      "description": "Add Guantanamo Bay US Military Base to this timeonze."
     }, {
       "op": "union",
       "source": "manual-polygon",
@@ -1443,30 +1402,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Prince of Wales-Hyder"
-    }, {
-      "op": "intersect",
-      "source": "manual-polygon",
-      "data": [[[-131.65,55.11],[-131.674,55.04],[-131.65,54.964],[-131,54.96],[-131.3,55.4],[-131.8,55.25],[-131.65,55.11]]],
-      "description": "Intersect part of this county.  This operation results in an arbitrary sea boundary to the west of the Annette Island Airport."
-    }, {
-      "op": "difference-reverse-order",
-      "source": "overpass",
-      "id": "United States of America",
-      "description": "Since this zone required the creation of a hole inside of it, this USA is diffed against the resulting geometry of the two previous operations."
-    }, {
-      "op": "intersect",
-      "source": "manual-polygon",
-      "data": [[[-136,58.1],[-136.431016,57.830928],[-137,57.8248],[-136,54],[-122,54],[-132,57.5],[-136,58.1]]],
-      "description": "Intersect part of Alaska.  This operation results in an arbitrary sea boundary based off of the last observed trajectory of the sea boundary of Sitka and Hoonah-Angoon counties."
-    }, {
-      "op": "difference",
-      "source": "overpass",
-      "id": "Hoonah-Angoon"
-    }, {
-      "op": "difference",
-      "source": "overpass",
-      "id": "America-Juneau-tz"
+      "id": "America-Sitka-tz"
     }
   ],
   "America/St_Barthelemy": [

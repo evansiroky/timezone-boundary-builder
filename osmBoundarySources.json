@@ -140,6 +140,9 @@
   "Africa-Ouagadougou-tz": {
     "timezone": "Africa/Ouagadougou"
   },
+  "Africa-Porto_Novo-tz": {
+    "timezone": "Africa/Porto-Novo"
+  },
   "Africa-Sao_Tome-tz": {
     "timezone": "Africa/Sao_Tome"
   },
@@ -305,6 +308,9 @@
   "America-Fort_Nelson-tz": {
     "timezone": "America/Fort_Nelson"
   },
+  "America-Fortaleza-tz": {
+    "timezone": "America/Fortaleza"
+  },
   "America-Glace_Bay-tz": {
     "timezone": "America/Glace_Bay"
   },
@@ -331,6 +337,9 @@
   },
   "America-Halifax-tz": {
     "timezone": "America/Halifax"
+  },
+  "America-Havana-tz": {
+    "timezone": "America/Havana"
   },
   "America-Hermosillo-tz": {
     "timezone": "America/Hermosillo"
@@ -422,6 +431,9 @@
   "America-Merida-tz": {
     "timezone": "America/Merida"
   },
+  "America-Metlakatla-tz": {
+    "timezone": "America/Metlakatla"
+  },
   "America-Miquelon-tz": {
     "timezone": "America/Miquelon"
   },
@@ -493,6 +505,9 @@
   },
   "America-Scoresbysund-tz": {
     "timezone": "America/Scoresbysund"
+  },
+  "America-Sitka-tz": {
+    "timezone": "America/Sitka"
   },
   "America-St_Barthelemy-tz": {
     "timezone": "America/St_Barthelemy"
@@ -780,9 +795,6 @@
   "Bahia": {
     "ISO3166-2": "BR-BA"
   },
-  "Benin": {
-    "ISO3166-1": "BJ"
-  },
   "Bhutan": {
     "ISO3166-1": "BT"
   },
@@ -810,9 +822,6 @@
   },
   "Crimea": {
     "name:en": "Republic of Crimea"
-  },
-  "Cuba": {
-    "ISO3166-1": "CU"
   },
   "Cyprus": {
     "ISO3166-1": "CY"
@@ -984,9 +993,6 @@
   "Hong Kong": {
     "ISO3166-1": "HK"
   },
-  "Hoonah-Angoon": {
-    "name": "Hoonah-Angoon"
-  },
   "Indian-Antananarivo-tz": {
     "timezone": "Indian/Antananarivo"
   },
@@ -1032,9 +1038,6 @@
   },
   "Kirov": {
     "ISO3166-2": "RU-KIR"
-  },
-  "Koalou-Kourou Zone": {
-    "name:en": "Neutral Zone Burkina Faso and Benin"
   },
   "Kostanay": {
     "ISO3166-2": "KZ-KUS"
@@ -1170,9 +1173,6 @@
   },
   "Pitcairn Islands": {
     "ISO3166-1": "PN"
-  },
-  "Prince of Wales-Hyder": {
-    "name": "Prince of Wales-Hyder"
   },
   "Quang Tri": {
     "ISO3166-2": "VN-25"
