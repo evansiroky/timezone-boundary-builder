@@ -4,9 +4,11 @@
 
 * Directly use OpenStreetMap timezone relations for the following zones:
   * `Africa/Porto-Novo`
+  * `America/Anchorage`
   * `America/Fortaleza`
   * `America/Havana`
   * `America/Metlakatla`
+  * `America/Nome`
   * `America/Sitka`
 
 ## 2022g

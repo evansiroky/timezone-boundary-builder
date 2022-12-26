@@ -158,6 +158,9 @@
   "America-Adak-tz": {
     "timezone": "America/Adak"
   },
+  "America-Anchorage-tz": {
+    "timezone": "America/Anchorage"
+  },
   "America-Anguilla-tz": {
     "timezone": "America/Anguilla"
   },
@@ -454,6 +457,9 @@
   },
   "America-New_York-tz": {
     "timezone": "America/New_York"
+  },
+  "America-Nome-tz": {
+    "timezone": "America/Nome"
   },
   "America-North_Dakota-Beulah-tz": {
     "timezone": "America/North_Dakota/Beulah"
@@ -1250,9 +1256,6 @@
   },
   "Xinjiang": {
     "ISO3166-2": "CN-XJ"
-  },
-  "Yukon": {
-    "ISO3166-2": "CA-YT"
   },
   "שטח B": {
     "name:he": "שטח B"

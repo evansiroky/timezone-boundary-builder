@@ -379,20 +379,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "United States of America"
-    }, {
-      "op": "intersect",
-      "source": "manual-polygon",
-      "data": [[[-162,77],[-162,48],[-141,48],[-141,77],[-162,77]]],
-      "description": "Grab part of Alaska between -162 longitude and Canadian border."
-    }, {
-      "op": "difference",
-      "source": "overpass",
-      "id": "Yukon"
-    }, {
-      "op": "difference",
-      "source": "overpass",
-      "id": "America-Yakutat-tz"
+      "id": "America-Anchorage-tz"
     }
   ],
   "America/Anguilla": [
@@ -1143,12 +1130,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "United States of America"
-    }, {
-      "op": "intersect",
-      "source": "manual-polygon",
-      "data": [[[-162,78],[-162,49],[-170,49],[-169.48009,52.634],[-169.329,53.1067],[-169,55],[-179,58],[-162,78]]],
-      "description": "Intersect part of Alaska to make this timezone.  Includes an arbitrary sea boundary in the Aleutian islands between Umnak Island and Chuginadak Island."
+      "id": "America-Nome-tz"
     }
   ],
   "America/Noronha": [
