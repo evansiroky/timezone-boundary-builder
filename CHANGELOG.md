@@ -9,6 +9,8 @@
   * `America/Havana`
   * `America/Metlakatla`
   * `America/Nome`
+  * `America/Noronha`
+  * `America/Recife`
   * `America/Sitka`
 
 ## 2022g

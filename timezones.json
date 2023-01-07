@@ -1137,12 +1137,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Brazil"
-    }, {
-      "op": "intersect",
-      "source": "manual-polygon",
-      "data": [[[-32.4,-3],[-33,-4.5],[-32,-4.5],[-32.4,-3]]],
-      "description": "Intersect the boundary of Brazil to isolate Fernando de Noronha archipelago."
+      "id": "America-Noronha-tz"
     }
   ],
   "America/North_Dakota/Beulah": [
@@ -1281,12 +1276,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Pernambuco"
-    }, {
-      "op": "intersect",
-      "source": "manual-polygon",
-      "data": [[[-33,-5],[-34,-13],[-46,-8],[-33,-5]]],
-      "description": "Isolate mainlaind part of Pernambuco to exlude Fernando de Noronha archipelago and other islands."
+      "id": "America-Recife-tz"
     }
   ],
   "America/Regina": [

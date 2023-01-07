@@ -461,6 +461,9 @@
   "America-Nome-tz": {
     "timezone": "America/Nome"
   },
+  "America-Noronha-tz": {
+    "timezone": "America/Noronha"
+  },
   "America-North_Dakota-Beulah-tz": {
     "timezone": "America/North_Dakota/Beulah"
   },
@@ -493,6 +496,9 @@
   },
   "America-Rankin_Inlet-tz": {
     "timezone": "America/Rankin_Inlet"
+  },
+  "America-Recife-tz": {
+    "timezone": "America/Recife"
   },
   "America-Regina-tz": {
     "timezone": "America/Regina"
@@ -1173,9 +1179,6 @@
   },
   "Palestinian Territories": {
     "ISO3166-1": "PS"
-  },
-  "Pernambuco": {
-    "ISO3166-2": "BR-PE"
   },
   "Pitcairn Islands": {
     "ISO3166-1": "PN"
