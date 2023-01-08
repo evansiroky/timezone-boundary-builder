@@ -473,6 +473,9 @@
   "America-North_Dakota-New_Salem-tz": {
     "timezone": "America/North_Dakota/New_Salem"
   },
+  "America-Nuuk-tz": {
+    "timezone": "America/Nuuk"
+  },
   "America-Ojinaga-tz": {
     "timezone": "America/Ojinaga"
   },
@@ -494,6 +497,12 @@
   "America-Porto_Velho-tz": {
     "timezone": "America/Porto_Velho"
   },
+  "America-Puerto_Rico-tz": {
+    "timezone": "America/Puerto_Rico"
+  },
+  "America-Punta_Arenas-tz": {
+    "timezone": "America/Punta_Arenas"
+  },
   "America-Rankin_Inlet-tz": {
     "timezone": "America/Rankin_Inlet"
   },
@@ -512,8 +521,14 @@
   "America-Santarem-tz": {
     "timezone": "America/Santarem"
   },
+  "America-Santiago-tz": {
+    "timezone": "America/Santiago"
+  },
   "America-Santo_Domingo-tz": {
     "timezone": "America/Santo_Domingo"
+  },
+  "America-Sao_Paulo-tz": {
+    "timezone": "America/Sao_Paulo"
   },
   "America-Scoresbysund-tz": {
     "timezone": "America/Scoresbysund"
@@ -532,6 +547,9 @@
   },
   "America-St_Lucia-tz": {
     "timezone": "America/St_Lucia"
+  },
+  "America-St_Thomas-tz": {
+    "timezone": "America/St_Thomas"
   },
   "America-St_Vincent-tz": {
     "timezone": "America/St_Vincent"
@@ -804,20 +822,11 @@
   "Australia-Sydney-tz": {
     "timezone": "Australia/Sydney"
   },
-  "Bahia": {
-    "ISO3166-2": "BR-BA"
-  },
   "Bhutan": {
     "ISO3166-1": "BT"
   },
-  "Brazil": {
-    "ISO3166-1": "BR"
-  },
   "British Sovereign Base Areas": {
     "name": "British Sovereign Base Areas"
-  },
-  "Chile": {
-    "ISO3166-1": "CL"
   },
   "China": {
     "ISO3166-1": "CN"
@@ -999,9 +1008,6 @@
     "name": "Grant County",
     "nist:state_fips": "38"
   },
-  "Greenland": {
-    "ISO3166-1": "GL"
-  },
   "Hong Kong": {
     "ISO3166-1": "HK"
   },
@@ -1066,9 +1072,6 @@
   "Magadan": {
     "ISO3166-2": "RU-MAG"
   },
-  "Magallanes Region": {
-    "ISO3166-2": "CL-MA"
-  },
   "Malaysia": {
     "ISO3166-1": "MY"
   },
@@ -1077,12 +1080,6 @@
   },
   "Marshall Islands": {
     "ISO3166-1": "MH"
-  },
-  "Mato Grosso do Sul": {
-    "ISO3166-2": "BR-MS"
-  },
-  "Mato Grosso": {
-    "ISO3166-2": "BR-MT"
   },
   "Myanmar": {
     "ISO3166-1": "MM"
@@ -1113,6 +1110,9 @@
   },
   "Pacific-Chuuk-tz": {
     "timezone": "Pacific/Chuuk"
+  },
+  "Pacific-Easter-tz": {
+    "timezone": "Pacific/Easter"
   },
   "Pacific-Efate-tz": {
     "timezone": "Pacific/Efate"
@@ -1220,9 +1220,6 @@
   "Thailand": {
     "ISO3166-1": "TH",
     "admin_level": "2"
-  },
-  "Tocantins": {
-    "ISO3166-2": "BR-TO"
   },
   "Tomponsky": {
     "name:en": "Tomponsky Ulus"

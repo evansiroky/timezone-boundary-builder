@@ -10,8 +10,15 @@
   * `America/Metlakatla`
   * `America/Nome`
   * `America/Noronha`
+  * `America/Nuuk`
+  * `America/Puerto_Rico`
+  * `America/Punta_Arenas`
   * `America/Recife`
+  * `America/Santiago`
+  * `America/Sao_Paulo`
   * `America/Sitka`
+  * `America/St_Thomas`
+  * `Pacific/Easter`
 
 ## 2022g
 

@@ -1165,22 +1165,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Greenland"
-    }, {
-      "op": "difference",
-      "source": "overpass",
-      "id": "America-Scoresbysund-tz",
-      "description": "Exclude area from Greenland used to make America/Scoresbysund"
-    }, {
-      "op": "difference",
-      "source": "overpass",
-      "id": "America-Danmarkshavn-tz",
-      "description": "Exclude area from Greenland used to make America/Danmarkshavn"
-    }, {
-      "op": "difference",
-      "source": "overpass",
-      "id": "America-Thule-tz",
-      "description": "Exclude area from Greenland used to make America/Thule"
+      "id": "America-Nuuk-tz"
     }
   ],
   "America/Ojinaga": [
@@ -1236,28 +1221,14 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "United States of America"
-    }, {
-      "op": "intersect",
-      "source": "manual-polygon",
-      "data": [[[-65.22,18.6],[-65.108,18.43],[-65.16,18.25],[-65.145,18.23],[-65.1,18.225],[-65,18],[-66,17],[-77,18],[-65,19],[-65.22,18.6]]],
-      "description": "Intersect the part of USA that includes Puerto Rico.  This results in an arbitrary sea boundary between Isla de Culebra and the Virgin Islands."
+      "id": "America-Puerto_Rico-tz"
     }
   ],
   "America/Punta_Arenas": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Chile"
-    }, {
-      "op": "difference",
-      "source": "manual-polygon",
-      "data": [[[-77,-15],[-117,-27],[-77.6,-48.77],[-75,-48.8],[-67,-50.7],[-63,-15],[-77,-15]]],
-      "description": "The Magallanes Region data in OSM no longer extends all the way to the territorial boundaries of Chile, so we need to diff the Santiago and Easter Island sections of Chile"
-    }, {
-      "op": "union",
-      "source": "overpass",
-      "id": "Magallanes Region"
+      "id": "America-Punta_Arenas-tz"
     }, {
       "op": "union",
       "source": "manual-polygon",
@@ -1311,21 +1282,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Chile"
-    }, {
-      "op": "intersect",
-      "source": "manual-polygon",
-      "data": [[[-70,15],[-50,-60],[-100,-60],[-70,15]]],
-      "description": "Include only mainlaind Chile (Exclude Easter Island)"
-    }, {
-      "op": "difference",
-      "source": "overpass",
-      "id": "Magallanes Region"
-    }, {
-      "op": "difference",
-      "source": "manual-polygon",
-      "data": [[[-77.6,-54.9],[-63,-60],[-67,-50.7],[-75,-48.8],[-77.6,-48.77],[-77.6,-54.9]]],
-      "description": "The Magallanes Region data in OSM no longer extends all the way to the territorial boundaries of Chile, so we need to diff this section"
+      "id": "America-Santiago-tz"
     }
   ],
   "America/Santo_Domingo": [
@@ -1339,28 +1296,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Brazil"
-    }, {
-      "op": "intersect",
-      "source": "manual-polygon",
-      "data": [[[-52,-11],[-63,-30],[-49,-40],[-34,-13],[-52,-11]]],
-      "description": "Extract parts of Brazil to preserve terriritorial waters and diff against a few Brazilian states."
-    }, {
-      "op": "difference",
-      "source": "overpass",
-      "id": "Mato Grosso do Sul"
-    }, {
-      "op": "difference",
-      "source": "overpass",
-      "id": "Mato Grosso"
-    }, {
-      "op": "difference",
-      "source": "overpass",
-      "id": "Tocantins"
-    }, {
-      "op": "difference",
-      "source": "overpass",
-      "id": "Bahia"
+      "id": "America-Sao_Paulo-tz"
     }
   ],
   "America/Scoresbysund": [
@@ -1409,12 +1345,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "United States of America"
-    }, {
-      "op": "intersect",
-      "source": "manual-polygon",
-      "data": [[[-65.22,18.6],[-65.108,18.43],[-65.16,18.25],[-65.145,18.23],[-65.1,18.225],[-65,18],[-66,17],[-62,18],[-65,19],[-65.22,18.6]]],
-      "description": "Intersect the USA to isolate the US Virgin Islands.  This operation results in an arbitrary sea boundary between Puerto Rico and the island of St Thomas."
+      "id": "America-St_Thomas-tz"
     }
   ],
   "America/St_Vincent": [
@@ -3251,12 +3182,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Chile"
-    }, {
-      "op": "intersect",
-      "source": "manual-polygon",
-      "data": [[[-108,-25],[-108,-29],[-111,-27],[-108,-25]]],
-      "description": "Intersect Chile to isolate Easter Island."
+      "id": "Pacific-Easter-tz"
     }
   ],
   "Pacific/Efate": [
