@@ -606,11 +606,17 @@
   "Asia-Anadyr-tz": {
     "timezone": "Asia/Anadyr"
   },
+  "Asia-Aqtau-tz": {
+    "timezone": "Asia/Aqtau"
+  },
   "Asia-Aqtobe-tz": {
     "timezone": "Asia/Aqtobe"
   },
   "Asia-Ashgabat-tz": {
     "timezone": "Asia/Ashgabat"
+  },
+  "Asia-Atyrau-tz": {
+    "timezone": "Asia/Atyrau"
   },
   "Asia-Baghdad-tz": {
     "timezone": "Asia/Baghdad"
@@ -723,6 +729,12 @@
   "Asia-Qatar-tz": {
     "timezone": "Asia/Qatar"
   },
+  "Asia-Qostanay-tz": {
+    "timezone": "Asia/Qostanay"
+  },
+  "Asia-Qyzylorda-tz": {
+    "timezone": "Asia/Qyzylorda"
+  },
   "Asia-Riyadh-tz": {
     "timezone": "Asia/Riyadh"
   },
@@ -803,9 +815,6 @@
   },
   "Atlantic-Stanley-tz": {
     "timezone": "Atlantic/Stanley"
-  },
-  "Atyrau Region": {
-    "ISO3166-2": "KZ-ATY"
   },
   "Australia": {
     "ISO3166-1": "AU"
@@ -1057,14 +1066,8 @@
   "Kirov": {
     "ISO3166-2": "RU-KIR"
   },
-  "Kostanay": {
-    "ISO3166-2": "KZ-KUS"
-  },
   "Krasnoyarsk": {
     "ISO3166-2": "RU-KYA"
-  },
-  "Kyzylorda": {
-    "ISO3166-2": "KZ-KZY"
   },
   "Macau": {
     "ISO3166-1": "MO"
@@ -1074,9 +1077,6 @@
   },
   "Malaysia": {
     "ISO3166-1": "MY"
-  },
-  "Mangystau Region": {
-    "ISO3166-2": "KZ-MAN"
   },
   "Marshall Islands": {
     "ISO3166-1": "MH"

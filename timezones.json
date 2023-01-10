@@ -1573,7 +1573,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Mangystau Region"
+      "id": "Asia-Aqtau-tz"
     }
   ],
   "Asia/Aqtobe": [
@@ -1594,7 +1594,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Atyrau Region"
+      "id": "Asia-Atyrau-tz"
     }
   ],
   "Asia/Baghdad": [
@@ -2052,14 +2052,14 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Kostanay"
+      "id": "Asia-Qostanay-tz"
     }
   ],
   "Asia/Qyzylorda": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Kyzylorda"
+      "id": "Asia-Qyzylorda-tz"
     }
   ],
   "Asia/Riyadh": [

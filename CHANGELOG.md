@@ -18,6 +18,10 @@
   * `America/Sao_Paulo`
   * `America/Sitka`
   * `America/St_Thomas`
+  * `Asia/Aqtau`
+  * `Asia/Atyrau`
+  * `Asia/Qostanay`
+  * `Asia/Qyzylorda`
   * `Pacific/Easter`
 
 ## 2022g
