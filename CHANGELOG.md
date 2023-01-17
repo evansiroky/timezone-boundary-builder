@@ -18,6 +18,7 @@
   * `America/Sao_Paulo`
   * `America/Sitka`
   * `America/St_Thomas`
+  * `Arctic/Longyearbyen`
   * `Asia/Aqtau`
   * `Asia/Atyrau`
   * `Asia/Qostanay`

@@ -594,6 +594,9 @@
     "name:en": "Area H2",
     "admin_level": "6"
   },
+  "Arctic-Longyearbyen-tz": {
+    "timezone": "Arctic/Longyearbyen"
+  },
   "Asia-Aden-tz": {
     "timezone": "Asia/Aden"
   },

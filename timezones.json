@@ -1533,12 +1533,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Norway"
-    }, {
-      "op": "intersect",
-      "source": "manual-polygon",
-      "data": [[[-13,69],[2,82],[35,81],[35,74],[-13,69]]],
-      "description": "Intersect part of Norway to isolate various North Atlantic islands."
+      "id": "Arctic-Longyearbyen-tz"
     }
   ],
   "Asia/Aden": [
