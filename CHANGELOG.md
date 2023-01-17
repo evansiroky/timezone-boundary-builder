@@ -21,6 +21,8 @@
   * `Arctic/Longyearbyen`
   * `Asia/Aqtau`
   * `Asia/Atyrau`
+  * `Asia/Bangkok`
+  * `Asia/Ho_Chi_Minh`
   * `Asia/Qostanay`
   * `Asia/Qyzylorda`
   * `Pacific/Easter`

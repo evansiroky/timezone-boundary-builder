@@ -630,6 +630,9 @@
   "Asia-Baku-tz": {
     "timezone": "Asia/Baku"
   },
+  "Asia-Bangkok-tz": {
+    "timezone": "Asia/Bangkok"
+  },
   "Asia-Barnaul-tz": {
     "timezone": "Asia/Barnaul"
   },
@@ -665,6 +668,9 @@
   },
   "Asia-Dushanbe-tz": {
     "timezone": "Asia/Dushanbe"
+  },
+  "Asia-Ho_Chi_Minh-tz": {
+    "timezone": "Asia/Ho_Chi_Minh"
   },
   "Asia-Hong_Kong-tz": {
     "timezone": "Asia/Hong_Kong"
@@ -1183,9 +1189,6 @@
   "Pitcairn Islands": {
     "ISO3166-1": "PN"
   },
-  "Quang Tri": {
-    "ISO3166-2": "VN-25"
-  },
   "Queensland": {
     "ISO3166-2": "AU-QLD"
   },
@@ -1217,10 +1220,6 @@
   "South Australia": {
     "ISO3166-2": "AU-SA"
   },
-  "Thailand": {
-    "ISO3166-1": "TH",
-    "admin_level": "2"
-  },
   "Tomponsky": {
     "name:en": "Tomponsky Ulus"
   },
@@ -1247,9 +1246,6 @@
   },
   "Victoria": {
     "ISO3166-2": "AU-VIC"
-  },
-  "Vietnam": {
-    "ISO3166-1": "VN"
   },
   "Volgograd": {
     "ISO3166-2": "RU-VGG"

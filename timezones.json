@@ -1617,21 +1617,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Vietnam",
-      "description": "Northern Vietnam had the same timekeeping method as Thailand, so this is added before adding Thailand. See (https://github.com/evansiroky/timezone-boundary-builder/issues/66)"
-    }, {
-      "op": "intersect",
-      "source": "manual-polygon",
-      "data": [[[100,11],[112,21],[100,30],[100,11]]],
-      "description": "Isolate Northern Vietnam as it is a part of Asia/Bangkok. See (https://github.com/evansiroky/timezone-boundary-builder/issues/66)"
-    }, {
-      "op": "difference",
-      "source": "overpass",
-      "id": "Quang Tri"
-    }, {
-      "op": "union",
-      "source": "overpass",
-      "id": "Thailand"
+      "id": "Asia-Bangkok-tz"
     }
   ],
   "Asia/Barnaul": [
@@ -1774,21 +1760,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Vietnam"
-    }, {
-      "op": "difference",
-      "source": "manual-polygon",
-      "data": [[[100,11],[112,21],[100,30],[100,11]]],
-      "description": "Exclude Northern Vietnam as it is a part of Asia/Bangkok. See (https://github.com/evansiroky/timezone-boundary-builder/issues/66)"
-    }, {
-      "op": "union",
-      "source": "overpass",
-      "id": "Quang Tri"
-    }, {
-      "op": "difference",
-      "source": "manual-polygon",
-      "data": [[[117.76,16.2],[116,14],[119,14],[117.76,16.2]]],
-      "description": "Exclude Scarborough Shoal because it's not claimed by Vietnam (https://en.wikipedia.org/wiki/Scarborough_Shoal)"
+      "id": "Asia-Ho_Chi_Minh-tz"
     }
   ],
   "Asia/Hong_Kong": [
