@@ -22,7 +22,9 @@
   * `Asia/Aqtau`
   * `Asia/Atyrau`
   * `Asia/Bangkok`
+  * `Asia/Famagusta`
   * `Asia/Ho_Chi_Minh`
+  * `Asia/Nicosia`
   * `Asia/Qostanay`
   * `Asia/Qyzylorda`
   * `Pacific/Easter`

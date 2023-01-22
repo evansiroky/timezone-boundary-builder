@@ -669,6 +669,9 @@
   "Asia-Dushanbe-tz": {
     "timezone": "Asia/Dushanbe"
   },
+  "Asia-Famagusta-tz": {
+    "timezone": "Asia/Famagusta"
+  },
   "Asia-Ho_Chi_Minh-tz": {
     "timezone": "Asia/Ho_Chi_Minh"
   },
@@ -716,6 +719,9 @@
   },
   "Asia-Muscat-tz": {
     "timezone": "Asia/Muscat"
+  },
+  "Asia-Nicosia-tz": {
+    "timezone": "Asia/Nicosia"
   },
   "Asia-Novosibirsk-tz": {
     "timezone": "Asia/Novosibirsk"
@@ -843,9 +849,6 @@
   "Bhutan": {
     "ISO3166-1": "BT"
   },
-  "British Sovereign Base Areas": {
-    "name": "British Sovereign Base Areas"
-  },
   "China": {
     "ISO3166-1": "CN"
   },
@@ -861,9 +864,6 @@
   },
   "Crimea": {
     "name:en": "Republic of Crimea"
-  },
-  "Cyprus": {
-    "ISO3166-1": "CY"
   },
   "Dewey County, SD": {
     "name": "Dewey County",
@@ -1231,9 +1231,6 @@
   },
   "Ukraine": {
     "ISO3166-1": "UA"
-  },
-  "United Nations Buffer Zone": {
-    "name": "United Nations Buffer Zone"
   },
   "United States of America": {
     "ISO3166-1": "US"
