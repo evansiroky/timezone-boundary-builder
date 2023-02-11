@@ -590,10 +590,6 @@
   "Amur": {
     "ISO3166-2": "RU-AMU"
   },
-  "Area H2": {
-    "name:en": "Area H2",
-    "admin_level": "6"
-  },
   "Arctic-Longyearbyen-tz": {
     "timezone": "Arctic/Longyearbyen"
   },
@@ -672,6 +668,12 @@
   "Asia-Famagusta-tz": {
     "timezone": "Asia/Famagusta"
   },
+  "Asia-Gaza-tz": {
+    "timezone": "Asia/Gaza"
+  },
+  "Asia-Hebron-tz": {
+    "timezone": "Asia/Hebron"
+  },
   "Asia-Ho_Chi_Minh-tz": {
     "timezone": "Asia/Ho_Chi_Minh"
   },
@@ -689,6 +691,9 @@
   },
   "Asia-Jayapura-tz": {
     "timezone": "Asia/Jayapura"
+  },
+  "Asia-Jerusalem-tz": {
+    "timezone": "Asia/Jerusalem"
   },
   "Asia-Kabul-tz": {
     "timezone": "Asia/Kabul"
@@ -1059,9 +1064,6 @@
   "Indian-Reunion-tz": {
     "timezone": "Indian/Reunion"
   },
-  "Israel": {
-    "ISO3166-1": "IL"
-  },
   "Jungholz, AT": {
     "name": "Jungholz",
     "admin_level": "8"
@@ -1183,9 +1185,6 @@
   "Pacific-Wallis-tz": {
     "timezone": "Pacific/Wallis"
   },
-  "Palestinian Territories": {
-    "ISO3166-1": "PS"
-  },
   "Pitcairn Islands": {
     "ISO3166-1": "PN"
   },
@@ -1249,11 +1248,5 @@
   },
   "Xinjiang": {
     "ISO3166-2": "CN-XJ"
-  },
-  "שטח B": {
-    "name:he": "שטח B"
-  },
-  "שטח C": {
-    "name:he": "שטח C"
   }
 }

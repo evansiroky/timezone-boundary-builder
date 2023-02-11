@@ -23,7 +23,10 @@
   * `Asia/Atyrau`
   * `Asia/Bangkok`
   * `Asia/Famagusta`
+  * `Asia/Gaza`
+  * `Asia/Hebron`
   * `Asia/Ho_Chi_Minh`
+  * `Asia/Jerusalem`
   * `Asia/Nicosia`
   * `Asia/Qostanay`
   * `Asia/Qyzylorda`
