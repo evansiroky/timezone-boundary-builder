@@ -27,6 +27,7 @@
   * `Asia/Hebron`
   * `Asia/Ho_Chi_Minh`
   * `Asia/Jerusalem`
+  * `Asia/Kamchatka`
   * `Asia/Nicosia`
   * `Asia/Qostanay`
   * `Asia/Qyzylorda`

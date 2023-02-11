@@ -698,6 +698,9 @@
   "Asia-Kabul-tz": {
     "timezone": "Asia/Kabul"
   },
+  "Asia-Kamchatka-tz": {
+    "timezone": "Asia/Kamchatka"
+  },
   "Asia-Karachi-tz": {
     "timezone": "Asia/Karachi"
   },
@@ -1067,9 +1070,6 @@
   "Jungholz, AT": {
     "name": "Jungholz",
     "admin_level": "8"
-  },
-  "Kamchatka": {
-    "ISO3166-2": "RU-KAM"
   },
   "Khakassia": {
     "ISO3166-2": "RU-KK"
