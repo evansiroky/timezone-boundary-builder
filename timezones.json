@@ -1806,11 +1806,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Tomponsky"
-    }, {
-      "op": "union",
-      "source": "overpass",
-      "id": "Ust-Maysky"
+      "id": "Asia-Khandyga-tz"
     }
   ],
   "Asia/Kolkata": [
@@ -2160,56 +2156,14 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Sakha Republic"
-    }, {
-      "op": "intersect",
-      "source": "manual-polygon",
-      "data": [[[141,72.1],[107,78],[174,78],[141,72.1]]],
-      "description": "Intersect part of Sakha Republic to add Anzhu Islands."
-    }, {
-      "op": "union",
-      "source": "overpass",
       "id": "Asia-Vladivostok-tz"
-    }, {
-      "op": "difference",
-      "source": "overpass",
-      "id": "Oymyakonsky"
     }
   ],
   "Asia/Yakutsk": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Sakha Republic"
-    }, {
-      "op": "intersect",
-      "source": "manual-polygon",
-      "data": [[[137,35],[142,71],[112,77],[46,29],[137,35]]],
-      "description": "Grab working area, excluding unneeded parts to east and west."
-    }, {
-      "op": "union",
-      "source": "overpass",
-      "id": "Amur"
-    }, {
-      "op": "difference",
-      "source": "overpass",
-      "id": "Asia-Vladivostok-tz"
-    }, {
-      "op": "difference",
-      "source": "overpass",
-      "id": "Tomponsky"
-    }, {
-      "op": "difference",
-      "source": "overpass",
-      "id": "Ust-Maysky"
-    }, {
-      "op": "difference",
-      "source": "overpass",
-      "id": "Asia-Srednekolymsk-tz"
-    }, {
-      "op": "difference",
-      "source": "overpass",
-      "id": "Oymyakonsky"
+      "id": "Asia-Yakutsk-tz"
     }
   ],
   "Asia/Yangon": [

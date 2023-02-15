@@ -587,9 +587,6 @@
   "America-Yellowknife-tz": {
     "timezone": "America/Yellowknife"
   },
-  "Amur": {
-    "ISO3166-2": "RU-AMU"
-  },
   "Arctic-Longyearbyen-tz": {
     "timezone": "Arctic/Longyearbyen"
   },
@@ -707,6 +704,9 @@
   "Asia-Kathmandu-tz": {
     "timezone": "Asia/Kathmandu"
   },
+  "Asia-Khandyga-tz": {
+    "timezone": "Asia/Khandyga"
+  },
   "Asia-Kolkata-tz": {
     "timezone": "Asia/Kolkata"
   },
@@ -799,6 +799,9 @@
   },
   "Asia-Vladivostok-tz": {
     "timezone": "Asia/Vladivostok"
+  },
+  "Asia-Yakutsk-tz": {
+    "timezone": "Asia/Yakutsk"
   },
   "Asia-Yekaterinburg-tz": {
     "timezone": "Asia/Yekaterinburg"
@@ -1219,9 +1222,6 @@
   "South Australia": {
     "ISO3166-2": "AU-SA"
   },
-  "Tomponsky": {
-    "name:en": "Tomponsky Ulus"
-  },
   "Tuva": {
     "ISO3166-2": "RU-TY"
   },
@@ -1233,9 +1233,6 @@
   },
   "United States of America": {
     "ISO3166-1": "US"
-  },
-  "Ust-Maysky": {
-    "name:en": "Ust-Maysky Ulus"
   },
   "Uzbekistan": {
     "ISO3166-1": "UZ"

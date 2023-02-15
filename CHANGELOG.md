@@ -28,9 +28,12 @@
   * `Asia/Ho_Chi_Minh`
   * `Asia/Jerusalem`
   * `Asia/Kamchatka`
+  * `Asia/Khandyga`
   * `Asia/Nicosia`
   * `Asia/Qostanay`
   * `Asia/Qyzylorda`
+  * `Asia/Vladivostok`
+  * `Asia/Yakutsk`
   * `Pacific/Easter`
 
 ## 2022g
