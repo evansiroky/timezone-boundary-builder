@@ -1820,15 +1820,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Krasnoyarsk"
-    }, {
-      "op": "union",
-      "source": "overpass",
-      "id": "Khakassia"
-    }, {
-      "op": "union",
-      "source": "overpass",
-      "id": "Tuva"
+      "id": "Asia-Krasnoyarsk-tz"
     }
   ],
   "Asia/Kuala_Lumpur": [

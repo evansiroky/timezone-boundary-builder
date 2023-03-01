@@ -29,6 +29,7 @@
   * `Asia/Jerusalem`
   * `Asia/Kamchatka`
   * `Asia/Khandyga`
+  * `Asia/Krasnoyarsk`
   * `Asia/Nicosia`
   * `Asia/Qostanay`
   * `Asia/Qyzylorda`

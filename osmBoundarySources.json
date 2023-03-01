@@ -710,6 +710,9 @@
   "Asia-Kolkata-tz": {
     "timezone": "Asia/Kolkata"
   },
+  "Asia-Krasnoyarsk-tz": {
+    "timezone": "Asia/Krasnoyarsk"
+  },
   "Asia-Kuching-tz": {
     "timezone": "Asia/Kuching"
   },
@@ -1074,14 +1077,8 @@
     "name": "Jungholz",
     "admin_level": "8"
   },
-  "Khakassia": {
-    "ISO3166-2": "RU-KK"
-  },
   "Kirov": {
     "ISO3166-2": "RU-KIR"
-  },
-  "Krasnoyarsk": {
-    "ISO3166-2": "RU-KYA"
   },
   "Macau": {
     "ISO3166-1": "MO"
@@ -1221,9 +1218,6 @@
   },
   "South Australia": {
     "ISO3166-2": "AU-SA"
-  },
-  "Tuva": {
-    "ISO3166-2": "RU-TY"
   },
   "Udmurtia": {
     "ISO3166-2": "RU-UD"
