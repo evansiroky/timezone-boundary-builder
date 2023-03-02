@@ -30,9 +30,12 @@
   * `Asia/Kamchatka`
   * `Asia/Khandyga`
   * `Asia/Krasnoyarsk`
+  * `Asia/Kuala_Lumpur`
+  * `Asia/Magadan`
   * `Asia/Nicosia`
   * `Asia/Qostanay`
   * `Asia/Qyzylorda`
+  * `Asia/Srednekolymsk`
   * `Asia/Vladivostok`
   * `Asia/Yakutsk`
   * `Pacific/Easter`

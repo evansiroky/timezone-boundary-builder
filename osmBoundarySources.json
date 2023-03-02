@@ -713,6 +713,9 @@
   "Asia-Krasnoyarsk-tz": {
     "timezone": "Asia/Krasnoyarsk"
   },
+  "Asia-Kuala_Lumpur-tz": {
+    "timezone": "Asia/Kuala_Lumpur"
+  },
   "Asia-Kuching-tz": {
     "timezone": "Asia/Kuching"
   },
@@ -721,6 +724,9 @@
   },
   "Asia-Macau-tz": {
     "timezone": "Asia/Macau"
+  },
+  "Asia-Magadan-tz": {
+    "timezone": "Asia/Magadan"
   },
   "Asia-Makassar-tz": {
     "timezone": "Asia/Makassar"
@@ -868,9 +874,6 @@
   },
   "China–Bhutan Disputed Area": {
     "name:en": "China–Bhutan Disputed Area"
-  },
-  "Chukotka": {
-    "ISO3166-2": "RU-CHU"
   },
   "Corson County, SD": {
     "name": "Corson County",
@@ -1083,12 +1086,6 @@
   "Macau": {
     "ISO3166-1": "MO"
   },
-  "Magadan": {
-    "ISO3166-2": "RU-MAG"
-  },
-  "Malaysia": {
-    "ISO3166-1": "MY"
-  },
   "Marshall Islands": {
     "ISO3166-1": "MH"
   },
@@ -1193,9 +1190,6 @@
   },
   "Republic of China": {
     "ISO3166-1": "TW"
-  },
-  "Sakha Republic": {
-    "ISO3166-2": "RU-SA"
   },
   "Sakhalin": {
     "ISO3166-2": "RU-SAK"
