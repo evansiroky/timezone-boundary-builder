@@ -47,6 +47,7 @@ A few common languages already have libraries with an API that can be used to lo
 | Python | [timezonefinder](https://github.com/MrMinimal64/timezonefinder)|
 | Python | [tzfpy](https://github.com/ringsaturn/tzfpy) |
 | R | [lutz](https://github.com/ateucher/lutz)|
+| Ruby | [tzf-rb](https://github.com/HarlemSquirrel/tzf-rb) |
 | Ruby | [wheretz](https://github.com/zverok/wheretz)|
 | Rust | [tzf-rs](https://github.com/ringsaturn/tzf-rs) |
 
