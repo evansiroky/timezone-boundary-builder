@@ -758,6 +758,9 @@
   "Asia-Pontianak-tz": {
     "timezone": "Asia/Pontianak"
   },
+  "Asia-Pyongyang-tz": {
+    "timezone": "Asia/Pyongyang"
+  },
   "Asia-Qatar-tz": {
     "timezone": "Asia/Qatar"
   },
@@ -1094,9 +1097,6 @@
   },
   "New Zealand": {
     "ISO3166-1": "NZ"
-  },
-  "North Korea": {
-    "ISO3166-1": "KP"
   },
   "Northern Territory": {
     "ISO3166-2": "AU-NT"

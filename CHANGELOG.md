@@ -33,6 +33,7 @@
   * `Asia/Kuala_Lumpur`
   * `Asia/Magadan`
   * `Asia/Nicosia`
+  * `Asia/Pyongyang`
   * `Asia/Qostanay`
   * `Asia/Qyzylorda`
   * `Asia/Srednekolymsk`
