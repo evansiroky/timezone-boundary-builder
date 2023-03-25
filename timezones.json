@@ -2099,20 +2099,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Sakhalin"
-    }, {
-      "op": "intersect",
-      "source": "manual-polygon",
-      "data": [[[140,41],[153,50],[155,43],[140,41]]],
-      "description": "Intersect part of Sakhalin that includes Kuril Islands."
-    }, {
-      "op": "union",
-      "source": "overpass",
-      "id": "Oymyakonsky"
-    }, {
-      "op": "difference",
-      "source": "overpass",
-      "id": "Asia-Srednekolymsk-tz"
+      "id": "Asia-Ust-Nera-tz"
     }
   ],
   "Asia/Vientiane": [

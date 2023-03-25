@@ -37,6 +37,7 @@
   * `Asia/Qostanay`
   * `Asia/Qyzylorda`
   * `Asia/Srednekolymsk`
+  * `Asia/Ust-Nera`
   * `Asia/Vladivostok`
   * `Asia/Yakutsk`
   * `Pacific/Easter`

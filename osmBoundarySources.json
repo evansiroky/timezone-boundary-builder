@@ -806,6 +806,9 @@
   "Asia-Ulaanbaatar-tz": {
     "timezone": "Asia/Ulaanbaatar"
   },
+  "Asia-Ust-Nera-tz": {
+    "timezone": "Asia/Ust-Nera"
+  },
   "Asia-Vientiane-tz": {
     "timezone": "Asia/Vientiane"
   },
@@ -1101,9 +1104,6 @@
   "Northern Territory": {
     "ISO3166-2": "AU-NT"
   },
-  "Oymyakonsky": {
-    "name:en": "Oymyakonsky Ulus"
-  },
   "Pacific-Apia-tz": {
     "timezone": "Pacific/Apia"
   },
@@ -1190,9 +1190,6 @@
   },
   "Republic of China": {
     "ISO3166-1": "TW"
-  },
-  "Sakhalin": {
-    "ISO3166-2": "RU-SAK"
   },
   "Samara": {
     "ISO3166-2": "RU-SAM"
