@@ -1425,13 +1425,6 @@
       "id": "America-Yakutat-tz"
     }
   ],
-  "America/Yellowknife": [
-    {
-      "op": "init",
-      "source": "overpass",
-      "id": "America-Yellowknife-tz"
-    }
-  ],
   "Antarctica/Casey": [
     {
       "op": "init",
