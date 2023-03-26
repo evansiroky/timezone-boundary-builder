@@ -42,6 +42,7 @@
   * `Asia/Yakutsk`
   * `Pacific/Easter`
 * Allow timezones `America/Anchorage` and `America/Dawson` to overlap ([#145](https://github.com/evansiroky/timezone-boundary-builder/issues/145))
+* Update to latest OSM data
 
 ## 2022g
 
