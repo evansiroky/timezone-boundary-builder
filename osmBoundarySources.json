@@ -791,11 +791,17 @@
   "Asia-Taipei-tz": {
     "timezone": "Asia/Taipei"
   },
+  "Asia-Tashkent-tz": {
+    "timezone": "Asia/Tashkent"
+  },
   "Asia-Tbilisi-tz": {
     "timezone": "Asia/Tbilisi"
   },
   "Asia-Tehran-tz": {
     "timezone": "Asia/Tehran"
+  },
+  "Asia-Thimphu-tz": {
+    "timezone": "Asia/Thimphu"
   },
   "Asia-Tokyo-tz": {
     "timezone": "Asia/Tokyo"
@@ -874,9 +880,6 @@
   },
   "Australia-Sydney-tz": {
     "timezone": "Australia/Sydney"
-  },
-  "Bhutan": {
-    "ISO3166-1": "BT"
   },
   "Corson County, SD": {
     "name": "Corson County",
@@ -1182,9 +1185,6 @@
   "Samara": {
     "ISO3166-2": "RU-SAM"
   },
-  "Samarkand": {
-    "timezone": "Asia/Samarkand"
-  },
   "Saratov": {
     "ISO3166-2": "RU-SAR"
   },
@@ -1206,9 +1206,6 @@
   },
   "United States of America": {
     "ISO3166-1": "US"
-  },
-  "Uzbekistan": {
-    "ISO3166-1": "UZ"
   },
   "Victoria": {
     "ISO3166-2": "AU-VIC"

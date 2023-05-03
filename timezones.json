@@ -2009,11 +2009,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Uzbekistan"
-    }, {
-      "op": "difference",
-      "source": "overpass",
-      "id": "Samarkand"
+      "id": "Asia-Tashkent-tz"
     }
   ],
   "Asia/Tbilisi": [
@@ -2034,12 +2030,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Bhutan"
-    }, {
-      "op": "union",
-      "source": "overpass",
-      "id": "China–Bhutan Disputed Area",
-      "description": "Add disputed areas along China-Bhutan border.  See https://en.wikipedia.org/wiki/Bhutan%E2%80%93China_border"
+      "id": "Asia-Thimphu-tz"
     }
   ],
   "Asia/Tokyo": [

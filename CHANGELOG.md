@@ -4,6 +4,8 @@
 
 * Directly use OpenStreetMap timezone relations for the following zones:
   * `Asia/Shanghai`
+  * `Asia/Tashkent`
+  * `Asia/Thimphu`
   * `Asia/Urumqi`
 
 ## 2023b
