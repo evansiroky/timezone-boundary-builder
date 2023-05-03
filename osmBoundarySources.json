@@ -779,6 +779,9 @@
   "Asia-Seoul-tz": {
     "timezone": "Asia/Seoul"
   },
+  "Asia-Shanghai-tz": {
+    "timezone": "Asia/Shanghai"
+  },
   "Asia-Singapore-tz": {
     "timezone": "Asia/Singapore"
   },
@@ -802,6 +805,9 @@
   },
   "Asia-Ulaanbaatar-tz": {
     "timezone": "Asia/Ulaanbaatar"
+  },
+  "Asia-Urumqi-tz": {
+    "timezone": "Asia/Urumqi"
   },
   "Asia-Ust-Nera-tz": {
     "timezone": "Asia/Ust-Nera"
@@ -871,12 +877,6 @@
   },
   "Bhutan": {
     "ISO3166-1": "BT"
-  },
-  "China": {
-    "ISO3166-1": "CN"
-  },
-  "China–Bhutan Disputed Area": {
-    "name:en": "China–Bhutan Disputed Area"
   },
   "Corson County, SD": {
     "name": "Corson County",
@@ -1046,9 +1046,6 @@
     "name": "Grant County",
     "nist:state_fips": "38"
   },
-  "Hong Kong": {
-    "ISO3166-1": "HK"
-  },
   "Indian-Antananarivo-tz": {
     "timezone": "Indian/Antananarivo"
   },
@@ -1085,9 +1082,6 @@
   },
   "Kirov": {
     "ISO3166-2": "RU-KIR"
-  },
-  "Macau": {
-    "ISO3166-1": "MO"
   },
   "Marshall Islands": {
     "ISO3166-1": "MH"
@@ -1185,9 +1179,6 @@
   "Queensland": {
     "ISO3166-2": "AU-QLD"
   },
-  "Republic of China": {
-    "ISO3166-1": "TW"
-  },
   "Samara": {
     "ISO3166-2": "RU-SAM"
   },
@@ -1224,8 +1215,5 @@
   },
   "Volgograd": {
     "ISO3166-2": "RU-VGG"
-  },
-  "Xinjiang": {
-    "ISO3166-2": "CN-XJ"
   }
 }

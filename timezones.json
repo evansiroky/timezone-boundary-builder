@@ -1981,25 +1981,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "China"
-    }, {
-      "op": "difference",
-      "source": "overpass",
-      "id": "Hong Kong"
-    }, {
-      "op": "difference",
-      "source": "overpass",
-      "id": "Macau"
-    }, {
-      "op": "union",
-      "source": "overpass",
-      "id": "China–Bhutan Disputed Area",
-      "description": "Add disputed areas along China-Bhutan border.  See https://en.wikipedia.org/wiki/Bhutan%E2%80%93China_border"
-    }, {
-      "op": "difference",
-      "source": "overpass",
-      "id": "Republic of China",
-      "description": "All areas of Taiwain are assumed to be a part of Asia/Taipei.  See discussion at https://github.com/evansiroky/timezone-boundary-builder/issues/52"
+      "id": "Asia-Shanghai-tz"
     }
   ],
   "Asia/Singapore": [
@@ -2085,7 +2067,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Xinjiang"
+      "id": "Asia-Urumqi-tz"
     }
   ],
   "Asia/Ust-Nera": [
