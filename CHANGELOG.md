@@ -7,6 +7,7 @@
   * `Asia/Tashkent`
   * `Asia/Thimphu`
   * `Asia/Urumqi`
+  * `Asia/Yangon`
 
 ## 2023b
 

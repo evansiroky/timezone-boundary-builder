@@ -827,6 +827,9 @@
   "Asia-Yakutsk-tz": {
     "timezone": "Asia/Yakutsk"
   },
+  "Asia-Yangon-tz": {
+    "timezone": "Asia/Yangon"
+  },
   "Asia-Yekaterinburg-tz": {
     "timezone": "Asia/Yekaterinburg"
   },
@@ -1088,9 +1091,6 @@
   },
   "Marshall Islands": {
     "ISO3166-1": "MH"
-  },
-  "Myanmar": {
-    "ISO3166-1": "MM"
   },
   "New Zealand": {
     "ISO3166-1": "NZ"
