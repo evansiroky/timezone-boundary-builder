@@ -2101,14 +2101,6 @@
       "op": "init",
       "source": "overpass",
       "id": "Asia-Yekaterinburg-tz"
-    }, {
-      "op": "difference",
-      "source": "overpass",
-      "id": "Udmurtia"
-    }, {
-      "op": "difference",
-      "source": "overpass",
-      "id": "Samara"
     }
   ],
   "Asia/Yerevan": [
@@ -2192,49 +2184,14 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Australia"
-    }, {
-      "op": "intersect",
-      "source": "manual-polygon",
-      "data": [[[137,-27],[100,-40],[140.9658101,-40],[140.9658101,-38.1084575],[137,-27]]],
-      "description": "Intersect part of South Australia to preserve Australian territorial waters."
-    }, {
-      "op": "difference",
-      "source": "overpass",
-      "id": "Australia-Perth-tz"
-    }, {
-      "op": "difference",
-      "source": "overpass",
-      "id": "Australia-Eucla-tz"
-    }, {
-      "op": "union",
-      "source": "overpass",
-      "id": "South Australia"
+      "id": "Australia-Adelaide-tz"
     }
   ],
   "Australia/Brisbane": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Australia"
-    }, {
-      "op": "intersect",
-      "source": "manual-polygon",
-      "data": [[[138.0273711,-16.4843665],[150,-31],[163,-24],[138,0],[138.3,-16.15],[138.0273711,-16.4843665]]],
-      "description": "Intersect part of Queensland to preserve Australian territorial waters."
-    }, {
-      "op": "difference",
-      "source": "overpass",
-      "id": "Australia-Sydney-tz"
-    }, {
-      "op": "union",
-      "source": "overpass",
-      "id": "Queensland"
-    }, {
-      "op": "difference",
-      "source": "manual-polygon",
-      "data": [[[148.8437,-20.354],[148.834,-20.32],[148.88,-20.27],[148.7,-19.7],[149.1,-19.84],[149.5,-20.25],[149.6,-20.37],[149.12,-20.57],[149.03,-20.57],[148.95,-20.45],[148.86,-20.42],[148.842,-20.38],[148.8437,-20.354]]],
-      "description": "Exclude Holiday Islands from Queensland via an arbitraty sea boundary."
+      "id": "Australia-Brisbane-tz"
     }
   ],
   "Australia/Broken_Hill": [
@@ -2248,20 +2205,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Australia"
-    }, {
-      "op": "intersect",
-      "source": "manual-polygon",
-      "data": [[[138.0273711,-16.4843665],[125,-16],[138,0],[138.3,-16.15],[138.0273711,-16.4843665]]],
-      "description": "Intersect part of Northern Territory to preserve Australian territorial waters."
-    }, {
-      "op": "difference",
-      "source": "overpass",
-      "id": "Australia-Perth-tz"
-    }, {
-      "op": "union",
-      "source": "overpass",
-      "id": "Northern Territory"
+      "id": "Australia-Darwin-tz"
     }
   ],
   "Australia/Eucla": [
@@ -2275,56 +2219,28 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Australia"
-    }, {
-      "op": "intersect",
-      "source": "manual-polygon",
-      "data": [[[141,-39.198485],[146,-50],[152,-39.198485],[141,-39.198485]]],
-      "description": "Extract Tasmania from Australia to include territorial waters."
+      "id": "Australia-Hobart-tz"
     }
   ],
   "Australia/Lindeman": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Australia"
-    }, {
-      "op": "intersect",
-      "source": "manual-polygon",
-      "data": [[[148.8437,-20.354],[148.834,-20.32],[148.88,-20.27],[148.7,-19.7],[149.1,-19.84],[149.5,-20.25],[149.6,-20.37],[149.12,-20.57],[149.03,-20.57],[148.95,-20.45],[148.86,-20.42],[148.842,-20.38],[148.8437,-20.354]]],
-      "description": "Exclude Holiday Islands from Queensland via an arbitraty sea boundary."
+      "id": "Australia-Lindeman-tz"
     }
   ],
   "Australia/Lord_Howe": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Australia"
-    }, {
-      "op": "intersect",
-      "source": "manual-polygon",
-      "data": [[[160,-33],[160,-31],[157,-31],[160,-33]]],
-      "description": "Intersect to include only Lord Howe Island."
+      "id": "Australia-Lord_Howe-tz"
     }
   ],
   "Australia/Melbourne": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Australia"
-    }, {
-      "op": "intersect",
-      "source": "manual-polygon",
-      "data": [[[147,-36.5],[140.9658101,-38.1084575],[140.9658101,-39.198485],[160,-39.198485],[147,-36.5]]],
-      "description": "Intersect part of Victoria to preserve Australian territorial waters."
-    }, {
-      "op": "difference",
-      "source": "overpass",
-      "id": "Australia-Sydney-tz"
-    }, {
-      "op": "union",
-      "source": "overpass",
-      "id": "Victoria"
+      "id": "Australia-Melbourne-tz"
     }
   ],
   "Australia/Perth": [
@@ -2332,16 +2248,6 @@
       "op": "init",
       "source": "overpass",
       "id": "Australia-Perth-tz"
-    }, {
-      "op": "union",
-      "source": "manual-polygon",
-      "data": [[[115,-86],[120,-86],[135,-86],[150,-86],[160,-86],[160,-70],[150,-70],[135,-70],[120,-70],[115,-70],[115,-86]]],
-      "description": "According to chatter on the tz mailing list, the Antrarctic Concordia Station uses Australia/Perth time.  https://mm.icann.org/pipermail/tz/2013-December/020520.html"
-    }, {
-      "op": "difference",
-      "source": "overpass",
-      "id": "Australia-Eucla-tz",
-      "description": "Remove Eucla portion since it's also added to the Western Australia relation."
     }
   ],
   "Australia/Sydney": [
@@ -2377,16 +2283,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Astrakhan"
-    }, {
-      "op": "union",
-      "source": "manual-polygon",
-      "data": [[[46.9,45.6],[47.6,46.2],[46.6,46.2],[46.9,45.6]]],
-      "description": "Union to fill in some exclaves."
-    }, {
-      "op": "difference",
-      "source": "overpass",
-      "id": "Europe-Moscow-tz"
+      "id": "Europe-Astrakhan-tz"
     }
   ],
   "Europe/Athens": [
@@ -2544,11 +2441,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Kirov"
-    }, {
-      "op": "difference",
-      "source": "overpass",
-      "id": "Asia-Yekaterinburg-tz"
+      "id": "Europe-Kirov-tz"
     }
   ],
   "Europe/Lisbon": [
@@ -2619,35 +2512,6 @@
       "op": "init",
       "source": "overpass",
       "id": "Europe-Moscow-tz"
-    }, {
-      "op": "difference",
-      "source": "overpass",
-      "id": "Kirov"
-    }, {
-      "op": "union",
-      "source": "manual-polygon",
-      "data": [[[46.7,52.7],[46.5,52.65],[46.7,52.65],[46.7,52.7]]],
-      "description": "Union with part of Moscow timezone along a river to cover holes between the OSM boundaries of Saratov and the Moscow timezone"
-    }, {
-      "op": "difference",
-      "source": "overpass",
-      "id": "Saratov"
-    }, {
-      "op": "difference",
-      "source": "overpass",
-      "id": "Volgograd"
-    }, {
-      "op": "difference",
-      "source": "overpass",
-      "id": "Crimea"
-    }, {
-      "op": "difference",
-      "source": "overpass",
-      "id": "Sevastopol"
-    }, {
-      "op": "difference",
-      "source": "overpass",
-      "id": "Asia-Yekaterinburg-tz"
     }
   ],
   "Europe/Oslo": [
@@ -2701,16 +2565,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Samara"
-    }, {
-      "op": "union",
-      "source": "overpass",
-      "id": "Udmurtia"
-    }, {
-      "op": "union",
-      "source": "manual-polygon",
-      "data": [[[53.05,56.185],[53.11,56.18],[53.1,56.23],[53.05,56.185]]],
-      "description": "Union this area to add some exclaves that probably don't belong to Moscow timezone"
+      "id": "Europe-Samara-tz"
     }
   ],
   "Europe/San_Marino": [
@@ -2731,7 +2586,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Saratov"
+      "id": "Europe-Saratov-tz"
     }
   ],
   "Europe/Simferopol": [
@@ -2820,7 +2675,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Volgograd"
+      "id": "Europe-Volgograd-tz"
     }
   ],
   "Europe/Warsaw": [

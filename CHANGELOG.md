@@ -8,6 +8,21 @@
   * `Asia/Thimphu`
   * `Asia/Urumqi`
   * `Asia/Yangon`
+  * `Asia/Yekaterinburg`
+  * `Australia/Adelaide`
+  * `Australia/Brisbane`
+  * `Australia/Darwin`
+  * `Australia/Hobart`
+  * `Australia/Lindeman`
+  * `Australia/Lord_Howe`
+  * `Australia/Melbourne`
+  * `Australia/Perth`
+  * `Europe/Astrakhan`
+  * `Europe/Kirov`
+  * `Europe/Moscow`
+  * `Europe/Samara`
+  * `Europe/Saratov`
+  * `Europe/Volgograd`
 
 ## 2023b
 

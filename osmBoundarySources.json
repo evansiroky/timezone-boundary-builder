@@ -836,9 +836,6 @@
   "Asia-Yerevan-tz": {
     "timezone": "Asia/Yerevan"
   },
-  "Astrakhan": {
-    "ISO3166-2": "RU-AST"
-  },
   "Atlantic-Azores-tz": {
     "timezone": "Atlantic/Azores"
   },
@@ -872,11 +869,32 @@
   "Australia": {
     "ISO3166-1": "AU"
   },
+  "Australia-Adelaide-tz": {
+    "timezone": "Australia/Adelaide"
+  },
+  "Australia-Brisbane-tz": {
+    "timezone": "Australia/Brisbane"
+  },
   "Australia-Broken_Hill-tz": {
     "timezone": "Australia/Broken_Hill"
   },
+  "Australia-Darwin-tz": {
+    "timezone": "Australia/Darwin"
+  },
   "Australia-Eucla-tz": {
     "timezone": "Australia/Eucla"
+  },
+  "Australia-Hobart-tz": {
+    "timezone": "Australia/Hobart"
+  },
+  "Australia-Lindeman-tz": {
+    "timezone": "Australia/Lindeman"
+  },
+  "Australia-Lord_Howe-tz": {
+    "timezone": "Australia/Lord_Howe"
+  },
+  "Australia-Melbourne-tz": {
+    "timezone": "Australia/Melbourne"
   },
   "Australia-Perth-tz": {
     "timezone": "Australia/Perth"
@@ -900,6 +918,9 @@
   },
   "Europe-Andorra-tz": {
     "timezone": "Europe/Andorra"
+  },
+  "Europe-Astrakhan-tz": {
+    "timezone": "Europe/Astrakhan"
   },
   "Europe-Athens-tz": {
     "timezone": "Europe/Athens"
@@ -949,6 +970,9 @@
   "Europe-Kaliningrad-tz": {
     "timezone": "Europe/Kaliningrad"
   },
+  "Europe-Kirov-tz": {
+    "timezone": "Europe/Kirov"
+  },
   "Europe-Lisbon-tz": {
     "timezone": "Europe/Lisbon"
   },
@@ -994,11 +1018,17 @@
   "Europe-Rome-tz": {
     "timezone": "Europe/Rome"
   },
+  "Europe-Samara-tz": {
+    "timezone": "Europe/Samara"
+  },
   "Europe-San_Marino-tz": {
     "timezone": "Europe/San_Marino"
   },
   "Europe-Sarajevo-tz": {
     "timezone": "Europe/Sarajevo"
+  },
+  "Europe-Saratov-tz": {
+    "timezone": "Europe/Saratov"
   },
   "Europe-Simferopol-tz": {
     "timezone": "Europe/Simferopol"
@@ -1032,6 +1062,9 @@
   },
   "Europe-Vilnius-tz": {
     "timezone": "Europe/Vilnius"
+  },
+  "Europe-Volgograd-tz": {
+    "timezone": "Europe/Volgograd"
   },
   "Europe-Warsaw-tz": {
     "timezone": "Europe/Warsaw"
@@ -1086,17 +1119,11 @@
     "name": "Jungholz",
     "admin_level": "8"
   },
-  "Kirov": {
-    "ISO3166-2": "RU-KIR"
-  },
   "Marshall Islands": {
     "ISO3166-1": "MH"
   },
   "New Zealand": {
     "ISO3166-1": "NZ"
-  },
-  "Northern Territory": {
-    "ISO3166-2": "AU-NT"
   },
   "Pacific-Apia-tz": {
     "timezone": "Pacific/Apia"
@@ -1179,15 +1206,6 @@
   "Pitcairn Islands": {
     "ISO3166-1": "PN"
   },
-  "Queensland": {
-    "ISO3166-2": "AU-QLD"
-  },
-  "Samara": {
-    "ISO3166-2": "RU-SAM"
-  },
-  "Saratov": {
-    "ISO3166-2": "RU-SAR"
-  },
   "Sevastopol": {
     "name:en": "Sevastopol"
   },
@@ -1195,22 +1213,10 @@
     "name": "Sioux County",
     "nist:state_fips": "38"
   },
-  "South Australia": {
-    "ISO3166-2": "AU-SA"
-  },
-  "Udmurtia": {
-    "ISO3166-2": "RU-UD"
-  },
   "Ukraine": {
     "ISO3166-1": "UA"
   },
   "United States of America": {
     "ISO3166-1": "US"
-  },
-  "Victoria": {
-    "ISO3166-2": "AU-VIC"
-  },
-  "Volgograd": {
-    "ISO3166-2": "RU-VGG"
   }
 }
