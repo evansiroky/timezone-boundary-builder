@@ -906,9 +906,6 @@
     "name": "Corson County",
     "nist:state_fips": "46"
   },
-  "Crimea": {
-    "name:en": "Republic of Crimea"
-  },
   "Dewey County, SD": {
     "name": "Dewey County",
     "nist:state_fips": "46"
@@ -928,6 +925,9 @@
   "Europe-Belgrade-tz": {
     "timezone": "Europe/Belgrade"
   },
+  "Europe-Berlin-tz": {
+    "timezone": "Europe/Berlin"
+  },
   "Europe-Bratislava-tz": {
     "timezone": "Europe/Bratislava"
   },
@@ -939,6 +939,9 @@
   },
   "Europe-Budapest-tz": {
     "timezone": "Europe/Budapest"
+  },
+  "Europe-Busingen-tz": {
+    "timezone": "Europe/Busingen"
   },
   "Europe-Chisinau-tz": {
     "timezone": "Europe/Chisinau"
@@ -973,6 +976,9 @@
   "Europe-Kirov-tz": {
     "timezone": "Europe/Kirov"
   },
+  "Europe-Kyiv-tz": {
+    "timezone": "Europe/Kyiv"
+  },
   "Europe-Lisbon-tz": {
     "timezone": "Europe/Lisbon"
   },
@@ -1005,6 +1011,9 @@
   },
   "Europe-Oslo-tz": {
     "timezone": "Europe/Oslo"
+  },
+  "Europe-Paris-tz": {
+    "timezone": "Europe/Paris"
   },
   "Europe-Podgorica-tz": {
     "timezone": "Europe/Podgorica"
@@ -1077,9 +1086,6 @@
   },
   "France": {
     "ISO3166-1:alpha2": "FR"
-  },
-  "Germany": {
-    "ISO3166-1": "DE"
   },
   "Grant County, ND": {
     "name": "Grant County",
@@ -1206,15 +1212,9 @@
   "Pitcairn Islands": {
     "ISO3166-1": "PN"
   },
-  "Sevastopol": {
-    "name:en": "Sevastopol"
-  },
   "Sioux County, ND": {
     "name": "Sioux County",
     "nist:state_fips": "38"
-  },
-  "Ukraine": {
-    "ISO3166-1": "UA"
   },
   "United States of America": {
     "ISO3166-1": "US"

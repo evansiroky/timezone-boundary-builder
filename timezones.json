@@ -2304,12 +2304,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Germany"
-    }, {
-      "op": "difference",
-      "source": "manual-polygon",
-      "data": [[[8.7,47.75],[8.75,47.63],[8.6,47.7],[8.7,47.75]]],
-      "description": "Exclude area belonging to Busingen timezone."
+      "id": "Europe-Berlin-tz"
     }
   ],
   "Europe/Bratislava": [
@@ -2344,12 +2339,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Germany"
-    }, {
-      "op": "intersect",
-      "source": "manual-polygon",
-      "data": [[[8.7,47.75],[8.75,47.63],[8.6,47.7],[8.7,47.75]]],
-      "description": "Isolate area belonging to Busingen timezone."
+      "id": "Europe-Busingen-tz"
     }
   ],
   "Europe/Chisinau": [
@@ -2426,15 +2416,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Ukraine"
-    }, {
-      "op": "difference",
-      "source": "overpass",
-      "id": "Crimea"
-    }, {
-      "op": "difference",
-      "source": "overpass",
-      "id": "Sevastopol"
+      "id": "Europe-Kyiv-tz"
     }
   ],
   "Europe/Kirov": [
@@ -2525,12 +2507,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "France"
-    }, {
-      "op": "intersect",
-      "source": "manual-polygon",
-      "data": [[[17,38],[4,58],[-19,45],[17,38]]],
-      "description": "Intersect to include only European part of France."
+      "id": "Europe-Paris-tz"
     }
   ],
   "Europe/Podgorica": [

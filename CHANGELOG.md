@@ -18,8 +18,12 @@
   * `Australia/Melbourne`
   * `Australia/Perth`
   * `Europe/Astrakhan`
+  * `Europe/Berlin`
+  * `Europe/Busingen`
   * `Europe/Kirov`
+  * `Europe/Kyiv`
   * `Europe/Moscow`
+  * `Europe/Paris`
   * `Europe/Samara`
   * `Europe/Saratov`
   * `Europe/Volgograd`
