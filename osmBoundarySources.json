@@ -1131,11 +1131,11 @@
   "Marshall Islands": {
     "ISO3166-1": "MH"
   },
-  "New Zealand": {
-    "ISO3166-1": "NZ"
-  },
   "Pacific-Apia-tz": {
     "timezone": "Pacific/Apia"
+  },
+  "Pacific-Auckland-tz": {
+    "timezone": "Pacific/Auckland"
   },
   "Pacific-Bougainville-tz": {
     "timezone": "Pacific/Bougainville"
@@ -1169,6 +1169,9 @@
   },
   "Pacific-Guadalcanal-tz": {
     "timezone": "Pacific/Guadalcanal"
+  },
+  "Pacific-Guam-tz": {
+    "timezone": "Pacific/Guam"
   },
   "Pacific-Kanton-tz": {
     "timezone": "Pacific/Kanton"

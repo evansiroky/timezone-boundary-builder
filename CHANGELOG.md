@@ -2,6 +2,7 @@
 
 ### Zone Changes
 
+* Expand `Pacific/Guam` to cover area of `Pacific/Saipan` and deprecate `Pacific/Saipan` as it is now in the backward file of the timezone database.
 * Directly use OpenStreetMap timezone relations for the following zones:
   * `Asia/Shanghai`
   * `Asia/Tashkent`
@@ -28,7 +29,9 @@
   * `Europe/Saratov`
   * `Europe/Volgograd`
   * `Indian/Kerguelen`
+  * `Pacific/Auckland`
   * `Pacific/Gambier`
+  * `Pacific/Guam`
 
 ## 2023b
 

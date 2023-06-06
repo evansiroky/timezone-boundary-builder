@@ -2764,12 +2764,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "New Zealand"
-    }, {
-      "op": "intersect",
-      "source": "manual-multipolygon",
-      "data": [[[[-179.8,-27],[-179.8,-34],[-172,-32],[-179.8,-27]]],[[[179.9,-33],[179.9,-56],[161,-56],[161,-33],[179.9,-33]]]],
-      "description": "Intersect to include all areas except Chatham Islands."
+      "id": "Pacific-Auckland-tz"
     }
   ],
   "Pacific/Bougainville": [
@@ -2853,12 +2848,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "United States of America"
-    }, {
-      "op": "intersect",
-      "source": "manual-polygon",
-      "data": [[[144,14.5],[145.7,13.5],[144,12],[144,14.5]]],
-      "description": "Intersect USA to isolate Guam."
+      "id": "Pacific-Guam-tz"
     }
   ],
   "Pacific/Honolulu": [
@@ -3015,18 +3005,6 @@
       "op": "init",
       "source": "overpass",
       "id": "Pacific-Rarotonga-tz"
-    }
-  ],
-  "Pacific/Saipan": [
-    {
-      "op": "init",
-      "source": "overpass",
-      "id": "United States of America"
-    }, {
-      "op": "intersect",
-      "source": "manual-polygon",
-      "data": [[[144,23],[143,14.55],[151,12],[144,23]]],
-      "description": "Intersect USA to isolate Northern Mariana Islands."
     }
   ],
   "Pacific/Tahiti": [
