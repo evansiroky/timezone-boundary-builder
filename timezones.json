@@ -2715,12 +2715,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "France"
-    }, {
-      "op": "intersect",
-      "source": "manual-polygon",
-      "data": [[[79,-36],[20,-52],[79,-52],[79,-36]]],
-      "description": "Intersect to include French Islands in Southern Indian Ocean."
+      "id": "Indian-Kerguelen-tz"
     }
   ],
   "Indian/Mahe": [
@@ -2844,12 +2839,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "France"
-    }, {
-      "op": "intersect",
-      "source": "manual-polygon",
-      "data": [[[-138,-21],[-135,-25],[-131,-20],[-138,-21]]],
-      "description": "Intersect France to include Gambier Islands."
+      "id": "Pacific-Gambier-tz"
     }
   ],
   "Pacific/Guadalcanal": [

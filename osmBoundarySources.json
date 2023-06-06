@@ -1106,6 +1106,9 @@
   "Indian-Comoro-tz": {
     "timezone": "Indian/Comoro"
   },
+  "Indian-Kerguelen-tz": {
+    "timezone": "Indian/Kerguelen"
+  },
   "Indian-Mahe-tz": {
     "timezone": "Indian/Mahe"
   },
@@ -1160,6 +1163,9 @@
   },
   "Pacific-Galapagos-tz": {
     "timezone": "Pacific/Galapagos"
+  },
+  "Pacific-Gambier-tz": {
+    "timezone": "Pacific/Gambier"
   },
   "Pacific-Guadalcanal-tz": {
     "timezone": "Pacific/Guadalcanal"

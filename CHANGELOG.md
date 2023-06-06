@@ -27,6 +27,8 @@
   * `Europe/Samara`
   * `Europe/Saratov`
   * `Europe/Volgograd`
+  * `Indian/Kerguelen`
+  * `Pacific/Gambier`
 
 ## 2023b
 
