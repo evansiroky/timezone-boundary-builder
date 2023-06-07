@@ -2883,24 +2883,14 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Marshall Islands"
-    }, {
-      "op": "intersect",
-      "source": "manual-polygon",
-      "data": [[[168.6,9.7],[167.8,8.35],[165.7,9.7],[168.6,9.7]]],
-      "description": "Intersect Marshall Islands to isolate Kwajalein Atoll."
+      "id": "Pacific-Kwajalein-tz"
     }
   ],
   "Pacific/Majuro": [
     {
       "op": "init",
       "source": "overpass",
-      "id": "Marshall Islands"
-    }, {
-      "op": "difference",
-      "source": "manual-polygon",
-      "data": [[[168.6,9.7],[167.8,8.35],[165.7,9.7],[168.6,9.7]]],
-      "description": "Difference Marshall Islands to exclude Kwajalein Atoll."
+      "id": "Pacific-Majuro-tz"
     }
   ],
   "Pacific/Marquesas": [

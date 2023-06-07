@@ -33,6 +33,8 @@
   * `Pacific/Gambier`
   * `Pacific/Guam`
   * `Pacific/Honolulu`
+  * `Pacific/Kwajalein`
+  * `Pacific/Majuro`
   * `Pacific/Midway`
 
 ## 2023b

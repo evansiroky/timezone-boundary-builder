@@ -1128,9 +1128,6 @@
     "name": "Jungholz",
     "admin_level": "8"
   },
-  "Marshall Islands": {
-    "ISO3166-1": "MH"
-  },
   "Pacific-Apia-tz": {
     "timezone": "Pacific/Apia"
   },
@@ -1184,6 +1181,12 @@
   },
   "Pacific-Kosrae-tz": {
     "timezone": "Pacific/Kosrae"
+  },
+  "Pacific-Kwajalein-tz": {
+    "timezone": "Pacific/Kwajalein"
+  },
+  "Pacific-Majuro-tz": {
+    "timezone": "Pacific/Majuro"
   },
   "Pacific-Marquesas-tz": {
     "timezone": "Pacific/Marquesas"
