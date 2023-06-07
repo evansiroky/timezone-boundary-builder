@@ -1173,6 +1173,9 @@
   "Pacific-Guam-tz": {
     "timezone": "Pacific/Guam"
   },
+  "Pacific-Honolulu-tz": {
+    "timezone": "Pacific/Honolulu"
+  },
   "Pacific-Kanton-tz": {
     "timezone": "Pacific/Kanton"
   },
@@ -1184,6 +1187,9 @@
   },
   "Pacific-Marquesas-tz": {
     "timezone": "Pacific/Marquesas"
+  },
+  "Pacific-Midway-tz": {
+    "timezone": "Pacific/Midway"
   },
   "Pacific-Nauru-tz": {
     "timezone": "Pacific/Nauru"

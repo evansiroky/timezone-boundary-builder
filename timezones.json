@@ -2855,12 +2855,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "United States of America"
-    }, {
-      "op": "intersect",
-      "source": "manual-polygon",
-      "data": [[[-179,18],[-169,35],[-144,10],[-179,18]]],
-      "description": "Clip US boundary to include Hawaiian Island and Jonhston Atoll"
+      "id": "Pacific-Honolulu-tz"
     }
   ],
   "Pacific/Kanton": [
@@ -2919,12 +2914,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "United States of America"
-    }, {
-      "op": "intersect",
-      "source": "manual-polygon",
-      "data": [[[-179,29],[-176,29],[-179,26],[-179,29]]],
-      "description": "Intersect USA to isolate Midway and Kure Atolls."
+      "id": "Pacific-Midway-tz"
     }
   ],
   "Pacific/Nauru": [

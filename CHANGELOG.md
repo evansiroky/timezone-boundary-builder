@@ -32,6 +32,8 @@
   * `Pacific/Auckland`
   * `Pacific/Gambier`
   * `Pacific/Guam`
+  * `Pacific/Honolulu`
+  * `Pacific/Midway`
 
 ## 2023b
 
