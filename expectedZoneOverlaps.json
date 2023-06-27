@@ -90,6 +90,9 @@
     {
       "bounds": [78.5, 32.5, 78.7, 32.7],
       "description": "Allow disputed areas near Chūmar (https://en.wikipedia.org/wiki/Sino-Indian_border_dispute) to overlap."
+    }, {
+      "bounds": [80.5, 30.1, 81.1, 30.5],
+      "description": "Allow disputed areas near Kalapani (https://en.wikipedia.org/wiki/Kalapani_territory) to overlap."
     }
   ],
   "Asia/Manila-Asia/Shanghai": [
