@@ -1087,7 +1087,7 @@ const autoScript = {
     )
   }],
   makeOSMTimezoneShapefile: ['mergeOSMZones', function (results, cb) {
-    if (argv.skip_analyze_osm_tz_diffs) {
+    if (argv.skip_analyze_osm_tz_diffs || argv.skip_shapefile) {
       overallProgress.beginTask('Skipping OSM zone shapefile creation')
       return cb()
     }
