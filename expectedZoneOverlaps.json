@@ -46,7 +46,7 @@
   ],
   "Asia/Bangkok-Asia/Yangon": [
     {
-      "bounds": [98.3, 9.7, 98.6, 10],
+      "bounds": [98.2, 9.7, 98.6, 10],
       "description": "Allow disputed borders near Ranong between Myanmar and Thailand (https://en.wikipedia.org/wiki/Myanmar%E2%80%93Thailand_relations#Disputed_territory) to overlap."
     }
   ],
