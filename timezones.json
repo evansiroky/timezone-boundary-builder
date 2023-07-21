@@ -2932,12 +2932,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "France"
-    }, {
-      "op": "intersect",
-      "source": "manual-polygon",
-      "data": [[[156,-13],[159,-27],[174,-23],[156,-13]]],
-      "description": "Intersect France to isolate New Caledonia."
+      "id": "Pacific-Noumea-tz"
     }
   ],
   "Pacific/Pago_Pago": [

@@ -36,6 +36,7 @@
   * `Pacific/Kwajalein`
   * `Pacific/Majuro`
   * `Pacific/Midway`
+  * `Pacific/Noumea`
 
 ## 2023b
 
