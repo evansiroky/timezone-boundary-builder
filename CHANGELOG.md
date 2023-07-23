@@ -37,6 +37,9 @@
   * `Pacific/Majuro`
   * `Pacific/Midway`
   * `Pacific/Noumea`
+  * `Pacific/Pago_Pago`
+  * `Pacific/Pitcairn`
+  * `Pacific/Tahiti`
 
 ## 2023b
 

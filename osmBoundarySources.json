@@ -1084,9 +1084,6 @@
   "Europe-Zurich-tz": {
     "timezone": "Europe/Zurich"
   },
-  "France": {
-    "ISO3166-1:alpha2": "FR"
-  },
   "Grant County, ND": {
     "name": "Grant County",
     "nist:state_fips": "38"
@@ -1206,8 +1203,14 @@
   "Pacific-Noumea-tz": {
     "timezone": "Pacific/Noumea"
   },
+  "Pacific-Pago_Pago-tz": {
+    "timezone": "Pacific/Pago_Pago"
+  },
   "Pacific-Palau-tz": {
     "timezone": "Pacific/Palau"
+  },
+  "Pacific-Pitcairn-tz": {
+    "timezone": "Pacific/Pitcairn"
   },
   "Pacific-Pohnpei-tz": {
     "timezone": "Pacific/Pohnpei"
@@ -1217,6 +1220,9 @@
   },
   "Pacific-Rarotonga-tz": {
     "timezone": "Pacific/Rarotonga"
+  },
+  "Pacific-Tahiti-tz": {
+    "timezone": "Pacific/Tahiti"
   },
   "Pacific-Tarawa-tz": {
     "timezone": "Pacific/Tarawa"
@@ -1230,14 +1236,8 @@
   "Pacific-Wallis-tz": {
     "timezone": "Pacific/Wallis"
   },
-  "Pitcairn Islands": {
-    "ISO3166-1": "PN"
-  },
   "Sioux County, ND": {
     "name": "Sioux County",
     "nist:state_fips": "38"
-  },
-  "United States of America": {
-    "ISO3166-1": "US"
   }
 }

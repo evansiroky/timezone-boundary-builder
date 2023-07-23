@@ -2939,12 +2939,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "United States of America"
-    }, {
-      "op": "intersect",
-      "source": "manual-polygon",
-      "data": [[[-171.5,-10],[-170.9,-17],[-167,-12],[-171.5,-10]]],
-      "description": "Intersect USA to isoalte American Samoa."
+      "id": "Pacific-Pago_Pago-tz"
     }
   ],
   "Pacific/Palau": [
@@ -2958,7 +2953,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Pitcairn Islands"
+      "id": "Pacific-Pitcairn-tz"
     }
   ],
   "Pacific/Pohnpei": [
@@ -2986,12 +2981,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "France"
-    }, {
-      "op": "intersect",
-      "source": "manual-polygon",
-      "data": [[[-137,-20],[-143,-32],[-156,-22],[-156,-14],[-139,-12],[-134,-20],[-137,-20]]],
-      "description": "Intersect France to include French Polynesia except for the Gambier Islands."
+      "id": "Pacific-Tahiti-tz"
     }
   ],
   "Pacific/Tarawa": [
