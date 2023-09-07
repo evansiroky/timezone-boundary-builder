@@ -1,38 +1,38 @@
 {
-  "name": "timezone-boundary-builder",
-  "version": "1.0.0",
-  "description": "Scripts to create a timezone shapefile from multiple sources",
-  "main": "index.js",
-  "engines": {
-    "node": ">=12"
-  },
-  "scripts": {
-    "test": "standard && node lint-json.js"
-  },
-  "keywords": [
-    "timezone",
-    "shapefile"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/evansiroky/timezone-boundary-builder.git"
-  },
-  "author": "Evan Siroky",
-  "license": "MIT",
-  "dependencies": {
-    "@mapbox/geojson-area": "^0.2.2",
-    "@mapbox/geojsonhint": "^3.0.1",
-    "@turf/bbox": "^6.5.0",
-    "@turf/helpers": "^6.5.0",
-    "async": "^3.2.1",
-    "got": "^11.8.3",
-    "jsts": "^2.7.1",
-    "query-overpass": "^1.5.5",
-    "rimraf": "^3.0.2",
-    "shpjs": "^4.0.2",
-    "yargs": "^17.2.0"
-  },
-  "devDependencies": {
-    "standard": "^16.0.3"
-  }
+	"name": "timezone-boundary-builder",
+	"version": "1.0.0",
+	"description": "Scripts to create a timezone shapefile from multiple sources",
+	"main": "index.js",
+	"engines": {
+		"node": ">=12"
+	},
+	"scripts": {
+		"test": "standard && node lint-json.js"
+	},
+	"keywords": [
+		"timezone",
+		"shapefile"
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/ever-ag/timezone-boundary-builder"
+	},
+	"author": "Evan Siroky",
+	"license": "MIT",
+	"dependencies": {
+		"@mapbox/geojson-area": "^0.2.2",
+		"@mapbox/geojsonhint": "^3.2.0",
+		"@turf/bbox": "^6.5.0",
+		"@turf/helpers": "^6.5.0",
+		"async": "^3.2.4",
+		"got": "^11.8.6",
+		"jsts": "^2.7.1",
+		"query-overpass": "^1.5.5",
+		"rimraf": "^3.0.2",
+		"shpjs": "^4.0.2",
+		"yargs": "^17.2.0"
+	},
+	"devDependencies": {
+		"standard": "^17.1.0"
+	}
 }
