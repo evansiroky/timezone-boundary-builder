@@ -1000,6 +1000,53 @@ function zipGeoJsonFiles (cb) {
   )
 }
 
+function makeShapefile(config, cb) {
+  rimraf(config.shapeFileGlob, rimrafErr => {
+    if (rimrafErr) { return cb(rimrafErr) }
+    exec(
+      `ogr2ogr -f "ESRI Shapefile" ${config.shapeFile} ${config.jsonFile}`,
+      ogrErr => {
+        if (ogrErr) { return cb(ogrErr) }
+        if (!config.shapeFileZip) { return cb() }
+        exec(`zip -j ${config.shapeFileZip} ${config.shapeFileGlob}`, cb)
+      }
+    )
+  })
+}
+
+function makeShapefiles (cb) {
+  const shapefileConfigs = [
+    { // combined without oceans
+      jsonFile: path.join(workingDir, 'combined.json'),
+      shapeFile: path.join(workingDir, 'combined-shapefile.shp'),
+      shapeFileGlob: path.join(workingDir, 'combined-shapefile.*'),
+      shapeFileZip: path.join(distDir, 'timezones.shapefile.zip')
+    }, { // combined with oceans
+      jsonFile: path.join(workingDir, 'combined-with-oceans.json'),
+      shapeFile: path.join(workingDir, 'combined-shapefile-with-oceans.shp'),
+      shapeFileGlob: path.join(workingDir, 'combined-shapefile-with-oceans.*'),
+      shapeFileZip: path.join(distDir, 'timezones-with-oceans.shapefile.zip')
+    }
+  ]
+
+  if (!argv.skip_1970_zones) {
+    shapefileConfigs.push({ // 1970 without oceans
+      jsonFile: path.join(workingDir, 'combined-1970.json'),
+      shapeFile: path.join(workingDir, 'combined-shapefile-1970.shp'),
+      shapeFileGlob: path.join(workingDir, 'combined-shapefile-1970.*'),
+      shapeFileZip: path.join(distDir, 'timezones-1970.shapefile.zip')
+    })
+    shapefileConfigs.push({ // 1970 with oceans
+      jsonFile: path.join(workingDir, 'combined-with-oceans-1970.json'),
+      shapeFile: path.join(workingDir, 'combined-shapefile-with-oceans-1970.shp'),
+      shapeFileGlob: path.join(workingDir, 'combined-shapefile-with-oceans-1970.*'),
+      shapeFileZip: path.join(distDir, 'timezones-with-oceans-1970.shapefile.zip')
+    })
+  }
+
+  asynclib.each(shapefileConfigs, makeShapefile, cb)
+}
+
 function analyzeChangesFromLastRelease (cb) {
   // load last release data into memory
   console.log('loading previous release into memory')
@@ -1178,57 +1225,26 @@ const autoScript = {
     overallProgress.beginTask('Zipping geojson files')
     zipGeoJsonFiles(cb)
   }],
-  makeShapefile: ['mergeZones', function (results, cb) {
+  makeShapefiles: ['mergeZones', function (results, cb) {
     if (argv.skip_shapefile) {
       overallProgress.beginTask('Skipping shapefile creation')
       return cb()
     }
     overallProgress.beginTask('Converting from geojson to shapefile')
-    const shapeFileGlob = workingDir + '/combined-shapefile.*'
-    rimraf.sync(shapeFileGlob)
-    const shapeFile = workingDir + '/combined-shapefile.shp'
-    const jsonFile = workingDir + '/combined.json'
-    exec(
-      'ogr2ogr -f "ESRI Shapefile" ' + shapeFile + ' ' + jsonFile,
-      function (err, stdout, stderr) {
-        if (err) { return cb(err) }
-        const shapeFileZip = distDir + '/timezones.shapefile.zip'
-        exec('zip -j ' + shapeFileZip + ' ' + shapeFileGlob, cb)
-      }
-    )
+    makeShapefiles(cb)
   }],
   makeOSMTimezoneShapefile: ['mergeOSMZones', function (results, cb) {
     if (argv.skip_analyze_osm_tz_diffs || argv.skip_shapefile) {
       overallProgress.beginTask('Skipping OSM zone shapefile creation')
       return cb()
     }
-    overallProgress.beginTask('Converting from geojson to shapefile')
-    const shapeFileGlob = workingDir + '/combined-osm-zone-shapefile.*'
-    rimraf.sync(shapeFileGlob)
-    const shapeFile = workingDir + '/combined-osm-zone-shapefile.shp'
-    const jsonFile = workingDir + '/combined-osm-zones.json'
-    exec(
-      'ogr2ogr -f "ESRI Shapefile" ' + shapeFile + ' ' + jsonFile,
+    makeShapefile(
+      {
+        jsonFile: path.join(workingDir, 'combined-osm-zones.json'),
+        shapeFile: path.join(workingDir, 'combined-osm-zone-shapefile.shp'),
+        shapeFileGlob: path.join(workingDir, 'combined-osm-zone-shapefile.*')
+      }, 
       cb
-    )
-  }],
-  makeShapefileWithOceans: ['mergeZones', function (results, cb) {
-    if (argv.skip_shapefile) {
-      overallProgress.beginTask('Skipping with oceans shapefile creation')
-      return cb()
-    }
-    overallProgress.beginTask('Converting from geojson with oceans to shapefile')
-    const shapeFileGlob = workingDir + '/combined-shapefile-with-oceans.*'
-    rimraf.sync(shapeFileGlob)
-    const shapeFile = workingDir + '/combined-shapefile-with-oceans.shp'
-    const jsonFile = workingDir + '/combined-with-oceans.json'
-    exec(
-      'ogr2ogr -f "ESRI Shapefile" ' + shapeFile + ' ' + jsonFile,
-      function (err, stdout, stderr) {
-        if (err) { return cb(err) }
-        const shapeFileZip = distDir + '/timezones-with-oceans.shapefile.zip'
-        exec('zip -j ' + shapeFileZip + ' ' + shapeFileGlob, cb)
-      }
     )
   }],
   makeListOfTimeZoneNames: function (cb) {
