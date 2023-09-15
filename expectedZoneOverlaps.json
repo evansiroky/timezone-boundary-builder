@@ -86,7 +86,7 @@
       "description": "Allow disputed area near Paracel Islands (https://en.wikipedia.org/wiki/Paracel_Islands) to overlap."
     }
   ],
-  "Asia-Kathmandu-Asia/Kolkata": [
+  "Asia/Kathmandu-Asia/Kolkata": [
     {
       "bounds": [80.5, 30.1, 81.1, 30.5],
       "description": "Allow disputed areas near Kalapani territory (https://en.wikipedia.org/wiki/Kalapani_territory) to overlap."

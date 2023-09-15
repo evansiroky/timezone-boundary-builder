@@ -610,7 +610,7 @@ const buildingProgress1970 = new ProgressStats(
 )
 
 function make1970TimezoneBoundary (tzid, callback) {
-  buildingProgress1970.beginTask(`make19790TimezoneBoundary for ${tzid}`, true)
+  buildingProgress1970.beginTask(`make1970TimezoneBoundary for ${tzid}`, true)
 
   let geom
 
@@ -990,7 +990,7 @@ function zipGeoJsonFiles (cb) {
     ['timezones-with-oceans.geojson.zip', 'combined-with-oceans.json']
   ]
   if (!argv.skip_1970_zones) {
-    zipCommands.push(['timezones-1970.geojson.zip', 'combined-1979.json'])
+    zipCommands.push(['timezones-1970.geojson.zip', 'combined-1970.json'])
     zipCommands.push(['timezones-with-oceans-1970.geojson.zip', 'combined-with-oceans-1970.json'])
   }
   asynclib.each(
