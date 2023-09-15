@@ -46,7 +46,7 @@
   ],
   "Asia/Bangkok-Asia/Yangon": [
     {
-      "bounds": [98.3, 9.7, 98.6, 10],
+      "bounds": [98.2, 9.7, 98.6, 10],
       "description": "Allow disputed borders near Ranong between Myanmar and Thailand (https://en.wikipedia.org/wiki/Myanmar%E2%80%93Thailand_relations#Disputed_territory) to overlap."
     }
   ],
@@ -84,6 +84,12 @@
     }, {
       "bounds": [110.9, 15.5, 113, 17.4],
       "description": "Allow disputed area near Paracel Islands (https://en.wikipedia.org/wiki/Paracel_Islands) to overlap."
+    }
+  ],
+  "Asia-Kathmandu-Asia/Kolkata": [
+    {
+      "bounds": [80.5, 30.1, 81.1, 30.5],
+      "description": "Allow disputed areas near Kalapani territory (https://en.wikipedia.org/wiki/Kalapani_territory) to overlap."
     }
   ],
   "Asia/Kolkata-Asia/Shanghai": [
