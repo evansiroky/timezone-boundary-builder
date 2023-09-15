@@ -52,14 +52,22 @@ Object.keys(expectedZoneOverlaps).forEach(zoneOverlap => {
 // Check 1970 zones for:
 // 1. All full timezone names being included in 1970 components
 // 2. Component timezones are only ever used once
+// 3. No zones being in 1970 that aren't in the full timezone set
 const zonesFoundToMake1970 = new Set()
 Object.keys(zoneCfg1970).forEach(zone => {
   zoneCfg1970[zone].forEach(zoneComponent => {
+    // check if 1970 zone is used twice
     if (zonesFoundToMake1970.has(zoneComponent)) {
       numErrors++
       console.error(`${zoneComponent} used twice to make a 1970 zone`)
     }
     zonesFoundToMake1970.add(zoneComponent)
+
+    // check if 1970 zone is present in zone config
+    if (!zoneCfg[zoneComponent]) {
+      numErrors++
+      console.error(`${zoneComponent} not used in full timezone set`)
+    }
   })
 })
 

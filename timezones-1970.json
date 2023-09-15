@@ -10,7 +10,6 @@
     "Africa/Lome",
     "Africa/Nouakchott",
     "Africa/Ouagadougou",
-    "Africa/Timbuktu",
     "Atlantic/Reykjavik",
     "Atlantic/St_Helena"
   ],
@@ -96,8 +95,7 @@
     "Africa/Windhoek"
   ],
   "America/Adak": [
-    "America/Adak",
-    "America/Atka"
+    "America/Adak"
   ],
   "America/Anchorage": [
     "America/Anchorage"
@@ -109,12 +107,10 @@
     "America/Argentina/Buenos_Aires"
   ],
   "America/Argentina/Catamarca": [
-    "America/Argentina/Catamarca",
-    "America/Argentina/ComodRivadavia"
+    "America/Argentina/Catamarca"
   ],
   "America/Argentina/Cordoba": [
-    "America/Argentina/Cordoba",
-    "America/Rosario"
+    "America/Argentina/Cordoba"
   ],
   "America/Argentina/Jujuy": [
     "America/Argentina/Jujuy"
@@ -210,15 +206,13 @@
     "America/Dawson_Creek"
   ],
   "America/Denver": [
-    "America/Denver",
-    "America/Shiprock"
+    "America/Denver"
   ],
   "America/Detroit": [
     "America/Detroit"
   ],
   "America/Edmonton": [
-    "America/Edmonton",
-    "America/Yellowknife"
+    "America/Edmonton"
   ],
   "America/Eirunepe": [
     "America/Eirunepe"
@@ -260,7 +254,6 @@
     "America/Hermosillo"
   ],
   "America/Indiana/Indianapolis": [
-    "America/Fort_Wayne",
     "America/Indiana/Indianapolis"
   ],
   "America/Indiana/Knox": [
@@ -288,8 +281,7 @@
     "America/Inuvik"
   ],
   "America/Iqaluit": [
-    "America/Iqaluit",
-    "America/Pangnirtung"
+    "America/Iqaluit"
   ],
   "America/Jamaica": [
     "America/Jamaica"
@@ -381,7 +373,6 @@
   "America/Panama": [
     "America/Atikokan",
     "America/Cayman",
-    "America/Coral_Harbour",
     "America/Panama"
   ],
   "America/Paramaribo": [
@@ -435,7 +426,6 @@
     "America/Resolute"
   ],
   "America/Rio_Branco": [
-    "America/Porto_Acre",
     "America/Rio_Branco"
   ],
   "America/Santarem": [
@@ -469,15 +459,10 @@
     "America/Thule"
   ],
   "America/Tijuana": [
-    "America/Ensenada",
-    "America/Santa_Isabel",
     "America/Tijuana"
   ],
   "America/Toronto": [
-    "America/Montreal",
     "America/Nassau",
-    "America/Nipigon",
-    "America/Thunder_Bay",
     "America/Toronto"
   ],
   "America/Vancouver": [
@@ -487,7 +472,6 @@
     "America/Whitehorse"
   ],
   "America/Winnipeg": [
-    "America/Rainy_River",
     "America/Winnipeg"
   ],
   "America/Yakutat": [
@@ -611,8 +595,7 @@
     "Asia/Jayapura"
   ],
   "Asia/Jerusalem": [
-    "Asia/Jerusalem",
-    "Asia/Tel_Aviv"
+    "Asia/Jerusalem"
   ],
   "Asia/Kabul": [
     "Asia/Kabul"
@@ -698,8 +681,6 @@
     "Asia/Seoul"
   ],
   "Asia/Shanghai": [
-    "Asia/Chongqing",
-    "Asia/Harbin",
     "Asia/Shanghai"
   ],
   "Asia/Singapore": [
@@ -735,7 +716,6 @@
   ],
   "Asia/Urumqi": [
     "Antarctica/Vostok",
-    "Asia/Kashgar",
     "Asia/Urumqi"
   ],
   "Asia/Ust-Nera": [
@@ -797,7 +777,6 @@
     "Australia/Eucla"
   ],
   "Australia/Hobart": [
-    "Australia/Currie",
     "Australia/Hobart"
   ],
   "Australia/Lindeman": [
@@ -813,7 +792,6 @@
     "Australia/Perth"
   ],
   "Australia/Sydney": [
-    "Australia/Canberra",
     "Australia/Sydney"
   ],
   "Etc/UTC": [
@@ -838,7 +816,6 @@
   ],
   "Europe/Berlin": [
     "Arctic/Longyearbyen",
-    "Atlantic/Jan_Mayen",
     "Europe/Berlin",
     "Europe/Copenhagen",
     "Europe/Oslo",
@@ -856,8 +833,7 @@
     "Europe/Budapest"
   ],
   "Europe/Chisinau": [
-    "Europe/Chisinau",
-    "Europe/Tiraspol"
+    "Europe/Chisinau"
   ],
   "Europe/Dublin": [
     "Europe/Dublin"
@@ -879,15 +855,12 @@
     "Europe/Kirov"
   ],
   "Europe/Kyiv": [
-    "Europe/Kyiv",
-    "Europe/Uzhgorod",
-    "Europe/Zaporozhye"
+    "Europe/Kyiv"
   ],
   "Europe/Lisbon": [
     "Europe/Lisbon"
   ],
   "Europe/London": [
-    "Europe/Belfast",
     "Europe/Guernsey",
     "Europe/Isle_of_Man",
     "Europe/Jersey",
@@ -974,7 +947,6 @@
   ],
   "Pacific/Auckland": [
     "Antarctica/McMurdo",
-    "Antarctica/South_Pole",
     "Pacific/Auckland"
   ],
   "Pacific/Bougainville": [
@@ -1006,15 +978,12 @@
     "Pacific/Pohnpei"
   ],
   "Pacific/Guam": [
-    "Pacific/Guam",
-    "Pacific/Saipan"
+    "Pacific/Guam"
   ],
   "Pacific/Honolulu": [
-    "Pacific/Honolulu",
-    "Pacific/Johnston"
+    "Pacific/Honolulu"
   ],
   "Pacific/Kanton": [
-    "Pacific/Enderbury",
     "Pacific/Kanton"
   ],
   "Pacific/Kiritimati": [
@@ -1054,8 +1023,7 @@
   "Pacific/Port_Moresby": [
     "Antarctica/DumontDUrville",
     "Pacific/Chuuk",
-    "Pacific/Port_Moresby",
-    "Pacific/Yap"
+    "Pacific/Port_Moresby"
   ],
   "Pacific/Rarotonga": [
     "Pacific/Rarotonga"
