@@ -612,28 +612,19 @@ const buildingProgress1970 = new ProgressStats(
 function make1970TimezoneBoundary (tzid, callback) {
   buildingProgress1970.beginTask(`make1970TimezoneBoundary for ${tzid}`, true)
 
-  let geom
+  let geom = getDataSource({ source: 'final', id: tzid })
 
-  asynclib.eachSeries(
-    zoneCfg1970[tzid], 
-    (zone, cb) => {
-      const zoneData = getDataSource({ source: 'final', id: tzid })
-      console.log('-', zone)
-      if (!geom) {
-        geom = zoneData
-      } else {
-        geom = debugGeo('union', geom, zoneData)
-      }
-      cb()
-    },
-    (err) => {
-      if (err) { return callback(err) }
-      fs.writeFile(
-        getFinal1970TzOutputFilename(tzid),
-        postProcessZone(geom),
-        callback
-      )
-    }
+  zoneCfg1970[tzid].forEach(zone => {
+    console.log('-', zone)
+    if (zone === tzid) return
+    const zoneData = getDataSource({ source: 'final', id: zone })
+    geom = debugGeo('union', geom, zoneData)
+  })
+  
+  fs.writeFile(
+    getFinal1970TzOutputFilename(tzid),
+    postProcessZone(geom),
+    callback
   )
 }
 
