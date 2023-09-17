@@ -6,6 +6,7 @@ const { promisify } = require('util')
 
 const area = require('@mapbox/geojson-area')
 const geojsonhint = require('@mapbox/geojsonhint')
+const time = require('@tubular/time')
 const bbox = require('@turf/bbox').default
 const helpers = require('@turf/helpers')
 const multiPolygon = helpers.multiPolygon
@@ -13,6 +14,7 @@ const polygon = helpers.polygon
 const asynclib = require('async')
 const got = require('got')
 const jsts = require('jsts')
+const hash = require('object-hash')
 const rimraf = require('rimraf')
 const overpass = require('query-overpass')
 const yargs = require('yargs')
@@ -23,6 +25,7 @@ const ProgressStats = require('./util/progressStats')
 let osmBoundarySources = require('./osmBoundarySources.json')
 let zoneCfg = require('./timezones.json')
 let zoneCfg1970 = require('./timezones-1970.json')
+const zoneCfgNow = {}
 const expectedZoneOverlaps = require('./expectedZoneOverlaps.json')
 
 const fiveYearsAgo = (new Date()).getFullYear()
@@ -52,7 +55,11 @@ const argv = yargs
     type: 'array'
   })
   .option('skip_1970_zones', {
-    description: 'Skip analysis of diffs between versions',
+    description: 'Skip creation of zones that are the same since 1970',
+    type: 'boolean'
+  })
+  .option('skip_now_zones', {
+    description: 'Skip creation of zones that are the same since now',
     type: 'boolean'
   })
   .option('skip_analyze_diffs', {
@@ -89,6 +96,47 @@ const argv = yargs
 const downloadsDir = path.resolve(argv.downloads_dir)
 const distDir = path.resolve(argv.dist_dir)
 const workingDir = path.resolve(argv.working_dir)
+
+function getTimezonePopulation (zone) {
+  // return 0 if the timezone is an alias so it doesn't conflict with larger zones
+  const zoneData = time.Timezone.from(zone)
+  return zoneData.aliasFor ? 0 : zoneData.population
+}
+
+// calculate now zones
+if (!argv.skip_now_zones) {
+  // initialize the tubular time to make sure it has all the latest zones
+  time.initTimezoneLarge()
+
+  // Iterate through all zones to determine which share same timekeeping method in the future
+  const now = (new Date()).getTime()
+  const timekeepingPatternZones = {}
+  Object.keys(zoneCfg).forEach(zone => {
+    // calculate which offset pattern this zone follows and add it to list
+    const timezoneInstance = time.Timezone.from(zone)
+    const currentZoneOffset = timezoneInstance.getOffsetForWallTime(timezoneInstance)
+    let futureTimekeepingKey = `${currentZoneOffset}`
+    const transitions = timezoneInstance.getAllTransitions()
+
+    if (transitions) {
+      // timezone with transitions between daylight savings and standard time in the future
+      const futureTransitionsHash = hash(transitions.filter(t => t.transitionTime > now))
+      futureTimekeepingKey = `${currentZoneOffset}-${futureTransitionsHash}`
+    }
+
+    if (!timekeepingPatternZones[futureTimekeepingKey]) {
+      timekeepingPatternZones[futureTimekeepingKey] = []
+    }
+    timekeepingPatternZones[futureTimekeepingKey].push(zone)
+  })
+
+  // iterate through each set of zones with the same future timekeeping method to determine 
+  // which has the largest population
+  Object.keys(timekeepingPatternZones).forEach(k => {
+    timekeepingPatternZones[k].sort((a, b) => getTimezonePopulation(b) - getTimezonePopulation(a))
+    zoneCfgNow[timekeepingPatternZones[k][0]] = timekeepingPatternZones[k]
+  })
+}
 
 // allow building of only a specified zones
 let includedZones = []

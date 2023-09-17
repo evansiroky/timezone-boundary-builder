@@ -22,11 +22,13 @@
   "dependencies": {
     "@mapbox/geojson-area": "^0.2.2",
     "@mapbox/geojsonhint": "^3.0.1",
+    "@tubular/time": "^3.8.15",
     "@turf/bbox": "^6.5.0",
     "@turf/helpers": "^6.5.0",
     "async": "^3.2.1",
     "got": "^11.8.3",
     "jsts": "^2.7.1",
+    "object-hash": "^3.0.0",
     "query-overpass": "^1.5.5",
     "rimraf": "^3.0.2",
     "shpjs": "^4.0.2",
