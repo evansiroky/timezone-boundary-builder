@@ -145,6 +145,7 @@ if (argv.included_zones || argv.excluded_zones) {
   if (argv.included_zones) {
     const newZoneCfg = {}
     const newZoneCfg1970 = {}
+    const newZoneCfgNow = {}
     includedZones = argv.included_zones
     includedZones.forEach((zoneName) => {
       if (
@@ -156,18 +157,22 @@ if (argv.included_zones || argv.excluded_zones) {
       }
       newZoneCfg[zoneName] = zoneCfg[zoneName]
       newZoneCfg1970[zoneName] = zoneCfg1970[zoneName]
+      newZoneCfgNow[zoneName] = zoneCfgNow[zoneName]
     })
     zoneCfg = newZoneCfg
     zoneCfg1970 = newZoneCfg1970
+    zoneCfgNow = newZoneCfgNow
   }
   if (argv.excluded_zones) {
     const newZoneCfg = {}
     const newZoneCfg1970 = {}
+    const newZoneCfgNow = {}
     excludedZones = argv.excluded_zones
     Object.keys(zoneCfg).forEach((zoneName) => {
       if (
         !zoneCfg[zoneName] || 
-        (!argv.skip_1970_zones && !zoneCfg1970[zoneName])
+        (!argv.skip_1970_zones && !zoneCfg1970[zoneName]) ||
+        (!argv.skip_now_zones && !zoneCfgNow[zoneName])
       ) {
         console.error(`${zoneName} is not a valid timezone identifier!`)
         process.exit(1)
@@ -175,10 +180,12 @@ if (argv.included_zones || argv.excluded_zones) {
       if (!excludedZones.includes(zoneName)) {
         newZoneCfg[zoneName] = zoneCfg[zoneName]
         newZoneCfg1970[zoneName] = zoneCfg1970[zoneName]
+        newZoneCfgNow[zoneName] = zoneCfgNow[zoneName]
       }
     })
     zoneCfg = newZoneCfg
     zoneCfg1970 = newZoneCfg1970
+    zoneCfgNow = newZoneCfgNow
   }
 
   // filter out unneccessary downloads
@@ -200,6 +207,7 @@ const precisionModel = new jsts.geom.PrecisionModel(1000000)
 const precisionReducer = new jsts.precision.GeometryPrecisionReducer(precisionModel)
 const finalZones = {}
 const final1970Zones = {}
+const finalNowZones = {}
 let lastReleaseJSONfile
 const minRequestGap = 8
 let curRequestGap = 8
@@ -517,11 +525,15 @@ function downloadOsmTimezoneBoundary (tzId, boundaryCallback) {
 }
 
 function getFinalTzOutputFilename (tzid) {
-  return workingDir + '/' + tzid.replace(/\//g, '__') + '.json'
+  return path.join(workingDir, `${tzid.replace(/\//g, '__')}.json`)
 }
 
 function getFinal1970TzOutputFilename (tzid) {
-  return workingDir + '/' + tzid.replace(/\//g, '__') + '-1970.json'
+  return path.join(workingDir, `${tzid.replace(/\//g, '__')}-1970.json`)
+}
+
+function getFinalNowTzOutputFilename (tzid) {
+  return path.join(workingDir, `${tzid.replace(/\//g, '__')}-now.json`)
 }
 
 /**
@@ -545,6 +557,8 @@ function getDataSource (source) {
     geoJson = require(getFinalTzOutputFilename(source.id))
   } else if (source.source === 'final1970') {
     geoJson = require(getFinal1970TzOutputFilename(source.id))
+  } else if (source.source === 'finalNow') {
+    geoJson = require(getFinalNowTzOutputFilename(source.id))
   } else {
     const err = new Error('unknown source: ' + source.source)
     throw err
@@ -676,6 +690,30 @@ function make1970TimezoneBoundary (tzid, callback) {
   )
 }
 
+const buildingProgressNow = new ProgressStats(
+  'Building Now zones',
+  Object.keys(zoneCfgNow).length
+)
+
+function makeNowTimezoneBoundary (tzid, callback) {
+  buildingProgressNow.beginTask(`makeNowTimezoneBoundary for ${tzid}`, true)
+
+  let geom = getDataSource({ source: 'final', id: tzid })
+
+  zoneCfgNow[tzid].forEach(zone => {
+    console.log('-', zone)
+    if (zone === tzid) return
+    const zoneData = getDataSource({ source: 'final', id: zone })
+    geom = debugGeo('union', geom, zoneData)
+  })
+  
+  fs.writeFile(
+    getFinalNowTzOutputFilename(tzid),
+    postProcessZone(geom),
+    callback
+  )
+}
+
 function loadFinalZonesIntoMemory () {
   console.log('load zones into memory')
   Object.keys(zoneCfg).forEach(tzid => {
@@ -687,6 +725,13 @@ function loadFinal1970ZonesIntoMemory () {
   console.log('load 1970 zones into memory')
   Object.keys(zoneCfg1970).forEach(tzid => {
     final1970Zones[tzid] = getDataSource({ source: 'final1970', id: tzid })
+  })
+}
+
+function loadFinalNowZonesIntoMemory () {
+  console.log('load Now zones into memory')
+  Object.keys(zoneCfgNow).forEach(tzid => {
+    finalNowZones[tzid] = getDataSource({ source: 'finalNow', id: tzid })
   })
 }
 
@@ -905,9 +950,17 @@ function combineAndWriteZones (callback) {
   const oceanWriter = new FeatureWriterStream(workingDir + '/combined-with-oceans.json')
   let regular1970Writer
   let ocean1970Writer
+  let regularNowWriter
+  let oceanNowWriter
+  
   if (!argv.skip_1970_zones) {
     regular1970Writer = new FeatureWriterStream(workingDir + '/combined-1970.json')
     ocean1970Writer = new FeatureWriterStream(workingDir + '/combined-with-oceans-1970.json')  
+  }
+  
+  if (!argv.skip_now_zones) {
+    regularNowWriter = new FeatureWriterStream(workingDir + '/combined-now.json')
+    oceanNowWriter = new FeatureWriterStream(workingDir + '/combined-with-oceans-now.json')  
   }
 
   Object.keys(zoneCfg).forEach(zoneName => {
@@ -932,6 +985,18 @@ function combineAndWriteZones (callback) {
       ocean1970Writer.add(stringified)
     })
   }
+  if (!argv.skip_now_zones) {
+    Object.keys(zoneCfgNow).forEach(zoneName => {
+      const feature = {
+        type: 'Feature',
+        properties: { tzid: zoneName },
+        geometry: geomToGeoJson(finalNowZones[zoneName])
+      }
+      const stringified = JSON.stringify(feature)
+      regularNowWriter.add(stringified)
+      oceanNowWriter.add(stringified)
+    })
+  }
   oceanZoneBoundaries.forEach(boundary => {
     const feature = {
       type: 'Feature',
@@ -943,6 +1008,9 @@ function combineAndWriteZones (callback) {
     if (!argv.skip_1970_zones) {
       ocean1970Writer.add(stringified)
     }
+    if (!argv.skip_now_zones) {
+      oceanNowWriter.add(stringified)
+    }
   })
   const writerEnders = [
     cb => regularWriter.end(cb),
@@ -951,6 +1019,10 @@ function combineAndWriteZones (callback) {
   if (!argv.skip_1970_zones) {
     writerEnders.push(cb => regular1970Writer.end(cb))
     writerEnders.push(cb => ocean1970Writer.end(cb))
+  }
+  if (!argv.skip_now_zones) {
+    writerEnders.push(cb => regularNowWriter.end(cb))
+    writerEnders.push(cb => oceanNowWriter.end(cb))
   }
   asynclib.parallel(writerEnders, callback)
 }
@@ -1032,6 +1104,10 @@ function zipGeoJsonFiles (cb) {
     zipCommands.push(['timezones-1970.geojson.zip', 'combined-1970.json'])
     zipCommands.push(['timezones-with-oceans-1970.geojson.zip', 'combined-with-oceans-1970.json'])
   }
+  if (!argv.skip_now_zones) {
+    zipCommands.push(['timezones-now.geojson.zip', 'combined-now.json'])
+    zipCommands.push(['timezones-with-oceans-now.geojson.zip', 'combined-with-oceans-now.json'])
+  }
   asynclib.each(
     zipCommands.map(([dist, working]) => `zip -j ${path.join(distDir, dist)} ${path.join(workingDir, working)}`),
     exec,
@@ -1080,6 +1156,21 @@ function makeShapefiles (cb) {
       shapeFile: path.join(workingDir, 'combined-shapefile-with-oceans-1970.shp'),
       shapeFileGlob: path.join(workingDir, 'combined-shapefile-with-oceans-1970.*'),
       shapeFileZip: path.join(distDir, 'timezones-with-oceans-1970.shapefile.zip')
+    })
+  }
+
+  if (!argv.skip_now_zones) {
+    shapefileConfigs.push({ // now without oceans
+      jsonFile: path.join(workingDir, 'combined-now.json'),
+      shapeFile: path.join(workingDir, 'combined-shapefile-now.shp'),
+      shapeFileGlob: path.join(workingDir, 'combined-shapefile-now.*'),
+      shapeFileZip: path.join(distDir, 'timezones-now.shapefile.zip')
+    })
+    shapefileConfigs.push({ // now with oceans
+      jsonFile: path.join(workingDir, 'combined-with-oceans-now.json'),
+      shapeFile: path.join(workingDir, 'combined-shapefile-with-oceans-now.shp'),
+      shapeFileGlob: path.join(workingDir, 'combined-shapefile-with-oceans-now.*'),
+      shapeFileZip: path.join(distDir, 'timezones-with-oceans-now.shapefile.zip')
     })
   }
 
@@ -1239,11 +1330,28 @@ const autoScript = {
       }
     )
   }],
+  createNowZones: ['validateZones', (results, cb) => {
+    if (argv.skip_now_zones) {
+      overallProgress.beginTask('WARNING: Skipping creation of now zones!')
+      cb()
+      return
+    }
+    overallProgress.beginTask('Creating now timezone boundaries')
+    asynclib.each(
+      Object.keys(zoneCfgNow), 
+      makeNowTimezoneBoundary, 
+      err => {
+        if (err) return cb(err)
+        loadFinalNowZonesIntoMemory()
+        cb()
+      }
+    )
+  }],
   addOceans: ['validateZones', function (results, cb) {
     overallProgress.beginTask('Adding oceans')
     addOceans(cb)
   }],
-  mergeZones: ['addOceans', 'create1970zones', function (results, cb) {
+  mergeZones: ['addOceans', 'create1970zones', 'createNowZones', function (results, cb) {
     overallProgress.beginTask('Merging zones')
     combineAndWriteZones(cb)
   }],
