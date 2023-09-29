@@ -24,8 +24,8 @@ const ProgressStats = require('./util/progressStats')
 
 let osmBoundarySources = require('./osmBoundarySources.json')
 let zoneCfg = require('./timezones.json')
-let zoneCfg1970 = require('./timezones-1970.json')
-const zoneCfgNow = {}
+let zoneCfg1970 = {}
+let zoneCfgNow = {}
 const expectedZoneOverlaps = require('./expectedZoneOverlaps.json')
 
 const fiveYearsAgo = (new Date()).getFullYear()
@@ -103,39 +103,54 @@ function getTimezonePopulation (zone) {
   return zoneData.aliasFor ? 0 : zoneData.population
 }
 
-// calculate now zones
-if (!argv.skip_now_zones) {
-  // initialize the tubular time to make sure it has all the latest zones
-  time.initTimezoneLarge()
+function getZoneCfgSinceTime (cutoffTime) {
+  let newZoneCfg = {}
 
-  // Iterate through all zones to determine which share same timekeeping method in the future
-  const now = (new Date()).getTime()
+  // Iterate through all zones to determine which share same timekeeping method since cutoff time
   const timekeepingPatternZones = {}
   Object.keys(zoneCfg).forEach(zone => {
     // calculate which offset pattern this zone follows and add it to list
     const timezoneInstance = time.Timezone.from(zone)
     const currentZoneOffset = timezoneInstance.getOffsetForWallTime(timezoneInstance)
-    let futureTimekeepingKey = `${currentZoneOffset}`
+    let timekeepingKey = `${currentZoneOffset}`
     const transitions = timezoneInstance.getAllTransitions()
 
     if (transitions) {
-      // timezone with transitions between daylight savings and standard time in the future
-      const futureTransitionsHash = hash(transitions.filter(t => t.transitionTime > now))
-      futureTimekeepingKey = `${currentZoneOffset}-${futureTransitionsHash}`
+      // timezone with transitions between daylight savings and standard time since cutoff time
+      const futureTransitionsHash = hash(transitions.filter(t => t.transitionTime > cutoffTime))
+      timekeepingKey = `${currentZoneOffset}-${futureTransitionsHash}`
     }
 
-    if (!timekeepingPatternZones[futureTimekeepingKey]) {
-      timekeepingPatternZones[futureTimekeepingKey] = []
+    if (!timekeepingPatternZones[timekeepingKey]) {
+      timekeepingPatternZones[timekeepingKey] = []
     }
-    timekeepingPatternZones[futureTimekeepingKey].push(zone)
+    timekeepingPatternZones[timekeepingKey].push(zone)
   })
 
   // iterate through each set of zones with the same future timekeeping method to determine 
   // which has the largest population
   Object.keys(timekeepingPatternZones).forEach(k => {
     timekeepingPatternZones[k].sort((a, b) => getTimezonePopulation(b) - getTimezonePopulation(a))
-    zoneCfgNow[timekeepingPatternZones[k][0]] = timekeepingPatternZones[k]
+    newZoneCfg[timekeepingPatternZones[k][0]] = timekeepingPatternZones[k]
   })
+
+  return newZoneCfg
+}
+
+// calculate 1970 and now zones
+if (!argv.skip_now_zones || !argv.skip_1970_zones) {
+  // initialize the tubular time to make sure it has all the latest zones
+  time.initTimezoneLarge()
+}
+
+if (!argv.skip_now_zones) {
+  console.log('Generating zone config for zones with the same timekeeping method since now')
+  zoneCfgNow = getZoneCfgSinceTime((new Date()).getTime())
+}
+
+if (!argv.skip_1970_zones) {
+  console.log('Generating zone config for zones with the same timekeeping method since 1970')
+  zoneCfg1970 = getZoneCfgSinceTime(0)
 }
 
 // allow building of only a specified zones
@@ -150,7 +165,8 @@ if (argv.included_zones || argv.excluded_zones) {
     includedZones.forEach((zoneName) => {
       if (
         !zoneCfg[zoneName] || 
-        (!argv.skip_1970_zones && !zoneCfg1970[zoneName])
+        (!argv.skip_1970_zones && !zoneCfg1970[zoneName]) ||
+        (!argv.skip_now_zones && !zoneCfgNow[zoneName])
       ) {
         console.error(`${zoneName} is not a valid timezone identifier!`)
         process.exit(1)
