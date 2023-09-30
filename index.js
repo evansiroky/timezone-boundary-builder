@@ -13,7 +13,9 @@ const multiPolygon = helpers.multiPolygon
 const polygon = helpers.polygon
 const asynclib = require('async')
 const got = require('got')
+const hasha = require('hasha')
 const jsts = require('jsts')
+const cloneDeep = require('lodash.clonedeep')
 const memoize = require('lodash.memoize')
 const memoizeFs = require('memoize-fs')
 const hash = require('object-hash')
@@ -98,6 +100,7 @@ const argv = yargs
 const downloadsDir = path.resolve(argv.downloads_dir)
 const distDir = path.resolve(argv.dist_dir)
 const workingDir = path.resolve(argv.working_dir)
+const fsMemoizer = memoizeFs({ cachePath: path.join(workingDir, 'memoize-fs-cache') })
 
 function hashMd5 (obj) {
   return hash(obj, { algorithm: 'md5' })
@@ -558,6 +561,10 @@ function getFinalNowTzOutputFilename (tzid) {
   return path.join(workingDir, `${tzid.replace(/\//g, '__')}-now.json`)
 }
 
+function getSourceDownloadName (id) {
+  return downloadsDir + '/' + id + '.json'
+}
+
 /**
  * Get the geometry of the requested source data
  *
@@ -570,7 +577,7 @@ function getFinalNowTzOutputFilename (tzid) {
 function getDataSource (source) {
   let geoJson
   if (source.source === 'overpass') {
-    geoJson = require(downloadsDir + '/' + source.id + '.json')
+    geoJson = require(getSourceDownloadName(source.id))
   } else if (source.source === 'manual-polygon') {
     geoJson = polygon(source.data).geometry
   } else if (source.source === 'manual-multipolygon') {
@@ -655,39 +662,75 @@ const buildingProgress = new ProgressStats(
   Object.keys(zoneCfg).length
 )
 
-function makeTimezoneBoundary (tzid, callback) {
-  buildingProgress.beginTask(`makeTimezoneBoundary for ${tzid}`, true)
+function makeTimezoneBoundaries (callback) {
+  let timezoneBoundaryCache = {}
+  // load cache if available
+  const timezoneBoundaryCacheFile = path.join(workingDir, 'boundary-creation-cache.json')
+  try {
+    timezoneBoundaryCache = JSON.parse(
+      fs.readFileSync(timezoneBoundaryCacheFile, { encoding: 'utf-8' })
+    )
+  } catch (err) {
+    // cache not found
+  }
+  const newTimezoneBoundaryCache = {}
+  asynclib.each(
+    Object.keys(zoneCfg),
+    (tzid, cb) => {
+      buildingProgress.beginTask(`makeTimezoneBoundary for ${tzid}`, true)
 
-  const ops = zoneCfg[tzid]
-  let geom
+      const ops = zoneCfg[tzid]
+      let geom
 
-  // TODO use memoize-fs to try to return cached result
+      const hashableOps = ops.map(op => {
+        const newOp = cloneDeep(op)
+        if (op.source === 'overpass') {
+          newOp.source = hasha.fromFileSync(getSourceDownloadName(op.id))
+        }
+        return newOp
+      })
+      const opsKey = hashMd5(hashableOps)
+      if (timezoneBoundaryCache[opsKey]) {
+        newTimezoneBoundaryCache[opsKey] = true
+        return cb()
+      }
 
-  asynclib.eachSeries(ops, function (task, cb) {
-    const taskData = getDataSource(task)
-    console.log('-', task.op, task.id)
-    if (task.op === 'init') {
-      geom = taskData
-    } else if (task.op === 'intersect') {
-      geom = debugGeo('intersection', geom, taskData)
-    } else if (task.op === 'difference') {
-      geom = debugGeo('diff', geom, taskData)
-    } else if (task.op === 'difference-reverse-order') {
-      geom = debugGeo('diff', taskData, geom)
-    } else if (task.op === 'union') {
-      geom = debugGeo('union', geom, taskData)
-    } else {
-      const err = new Error('unknown op: ' + task.op)
-      return cb(err)
+      asynclib.eachSeries(ops, function (task, cb) {
+        const taskData = getDataSource(task)
+        console.log('-', task.op, task.id)
+        if (task.op === 'init') {
+          geom = taskData
+        } else if (task.op === 'intersect') {
+          geom = debugGeo('intersection', geom, taskData)
+        } else if (task.op === 'difference') {
+          geom = debugGeo('diff', geom, taskData)
+        } else if (task.op === 'difference-reverse-order') {
+          geom = debugGeo('diff', taskData, geom)
+        } else if (task.op === 'union') {
+          geom = debugGeo('union', geom, taskData)
+        } else {
+          const err = new Error('unknown op: ' + task.op)
+          return cb(err)
+        }
+        cb()
+      },
+      function (err) {
+        if (err) { return callback(err) }
+        newTimezoneBoundaryCache[opsKey] = true
+        fs.writeFile(getFinalTzOutputFilename(tzid),
+          postProcessZone(geom),
+          cb)
+      })
+    },
+    err => {
+      if (err) return callback(err)
+      fs.writeFile(
+        timezoneBoundaryCacheFile, 
+        JSON.stringify(newTimezoneBoundaryCache),
+        callback
+      )
     }
-    cb()
-  },
-  function (err) {
-    if (err) { return callback(err) }
-    fs.writeFile(getFinalTzOutputFilename(tzid),
-      postProcessZone(geom),
-      callback)
-  })
+  )
 }
 
 const buildingProgress1970 = new ProgressStats(
@@ -780,7 +823,7 @@ function formatBounds (bounds) {
 }
 
 const getZoneGeomHash = memoize((tzid) => {
-  return `${tzid}-${hashMd5(finalZones[tzid])}`
+  return `${tzid}-${hasha.fromFileSync(getFinalTzOutputFilename(tzid))}`
 })
 
 function validateTimezoneBoundaries () {
@@ -940,7 +983,7 @@ function validateTimezoneBoundaries () {
   }
 
   // write cache
-  fs.writeFileSync(validationCacheFile, newValidationResults)
+  fs.writeFileSync(validationCacheFile, JSON.stringify(newValidationResults))
 
   return allZonesOk ? null : 'Zone validation unsuccessful'
 }
@@ -1254,6 +1297,50 @@ function makeShapefiles (cb) {
   asynclib.each(shapefileConfigs, makeShapefile, cb)
 }
 
+const analyzeZoneChange = fsMemoizer.fn((lastReleaseZone, finalZone) => {
+  if (finalZone && lastReleaseZone) {
+    const results = {}
+    // some zones take forever to diff unless they are buffered, so buffer by
+    // just a small amount
+    const lastReleaseGeom = geoJsonToGeom(
+      lastReleaseZone.geometry
+    ).buffer(bufferDistance)
+    const curDataGeom = finalZone.buffer(bufferDistance)
+
+    // don't diff equal geometries
+    if (curDataGeom.equals(lastReleaseGeom)) return results
+
+    // diff current - last = additions
+    const addition = debugGeo(
+      'diff',
+      curDataGeom,
+      lastReleaseGeom,
+      false,
+      true
+    )
+    if (addition.getArea() > 0.0001) {
+      results.addition = geomToGeoJson(addition)
+    }
+
+    // diff last - current = removals
+    const removal = debugGeo(
+      'diff',
+      lastReleaseGeom,
+      curDataGeom,
+      false,
+      true
+    )
+    if (removal.getArea() > 0.0001) {
+      results.removal = geomToGeoJson(removal)
+    }
+  } else if (finalZone) {
+    result.addition = geomToGeoJson(finalZone)
+  } else {
+    result.removal = JSON.stringify(lastReleaseZone)
+  }
+  return results
+})
+
 function analyzeChangesFromLastRelease (cb) {
   // load last release data into memory
   console.log('loading previous release into memory')
@@ -1279,62 +1366,31 @@ function analyzeChangesFromLastRelease (cb) {
   )
   const additionsWriter = new FeatureWriterStream(workingDir + '/additions.json')
   const removalsWriter = new FeatureWriterStream(workingDir + '/removals.json')
-  zoneNames.forEach(zoneName => {
-    analysisProgress.beginTask(zoneName, true)
-    if (finalZones[zoneName] && lastReleaseZones[zoneName]) {
-      // TODO memoize-fs
-
-      // some zones take forever to diff unless they are buffered, so buffer by
-      // just a small amount
-      const lastReleaseGeom = geoJsonToGeom(
-        lastReleaseZones[zoneName].geometry
-      ).buffer(bufferDistance)
-      const curDataGeom = finalZones[zoneName].buffer(bufferDistance)
-
-      // don't diff equal geometries
-      if (curDataGeom.equals(lastReleaseGeom)) return
-
-      // diff current - last = additions
-      const addition = debugGeo(
-        'diff',
-        curDataGeom,
-        lastReleaseGeom,
-        false,
-        true
-      )
-      if (addition.getArea() > 0.0001) {
-        additionsWriter.add(JSON.stringify({
-          type: 'Feature',
-          properties: { tzid: zoneName },
-          geometry: geomToGeoJson(addition)
-        }))
-      }
-
-      // diff last - current = removals
-      const removal = debugGeo(
-        'diff',
-        lastReleaseGeom,
-        curDataGeom,
-        false,
-        true
-      )
-      if (removal.getArea() > 0.0001) {
-        removalsWriter.add(JSON.stringify({
-          type: 'Feature',
-          properties: { tzid: zoneName },
-          geometry: geomToGeoJson(removal)
-        }))
-      }
-    } else if (finalZones[zoneName]) {
-      additionsWriter.add(JSON.stringify({
-        type: 'Feature',
-        properties: { tzid: zoneName },
-        geometry: geomToGeoJson(finalZones[zoneName])
-      }))
-    } else {
-      removalsWriter.add(JSON.stringify(lastReleaseZones[zoneName]))
+  asynclib.each(
+    zoneNames,
+    (zoneName, zoneCb) => {
+      analysisProgress.beginTask(zoneName, true)
+      analyzeZoneChange(lastReleaseZones[zoneName], finalZones[zoneName])
+        .then(({ addition, removal }) => {
+          if (addition) {
+            additionsWriter.add(JSON.stringify({
+              type: 'Feature',
+              properties: { tzid: zoneName },
+              geometry: addition
+            }))
+          }
+          if (removal) {
+            removalsWriter.add(JSON.stringify({
+              type: 'Feature',
+              properties: { tzid: zoneName },
+              geometry: removal
+            }))
+          }
+          zoneCb()
+        })
+        .catch(zoneCb)
     }
-  })
+  )
 
   // write files
   asynclib.parallel([
@@ -1380,7 +1436,7 @@ const autoScript = {
   }],
   createZones: ['makeWorkingDir', 'getOsmBoundaries', function (results, cb) {
     overallProgress.beginTask('Creating timezone boundaries')
-    asynclib.each(Object.keys(zoneCfg), makeTimezoneBoundary, cb)
+    makeTimezoneBoundaries(cb)
   }],
   validateZones: ['createZones', function (results, cb) {
     overallProgress.beginTask('Validating timezone boundaries')
