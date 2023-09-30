@@ -14,6 +14,8 @@ const polygon = helpers.polygon
 const asynclib = require('async')
 const got = require('got')
 const jsts = require('jsts')
+const memoize = require('lodash.memoize')
+const memoizeFs = require('memoize-fs')
 const hash = require('object-hash')
 const rimraf = require('rimraf')
 const overpass = require('query-overpass')
@@ -97,6 +99,10 @@ const downloadsDir = path.resolve(argv.downloads_dir)
 const distDir = path.resolve(argv.dist_dir)
 const workingDir = path.resolve(argv.working_dir)
 
+function hashMd5 (obj) {
+  return hash(obj, { algorithm: 'md5' })
+}
+
 function getTimezonePopulation (zone) {
   // return 0 if the timezone is an alias so it doesn't conflict with larger zones
   const zoneData = time.Timezone.from(zone)
@@ -117,7 +123,7 @@ function getZoneCfgSinceTime (cutoffTime) {
 
     if (transitions) {
       // timezone with transitions between daylight savings and standard time since cutoff time
-      const futureTransitionsHash = hash(transitions.filter(t => t.transitionTime > cutoffTime))
+      const futureTransitionsHash = hashMd5(transitions.filter(t => t.transitionTime > cutoffTime))
       timekeepingKey = `${currentZoneOffset}-${futureTransitionsHash}`
     }
 
@@ -655,6 +661,8 @@ function makeTimezoneBoundary (tzid, callback) {
   const ops = zoneCfg[tzid]
   let geom
 
+  // TODO use memoize-fs to try to return cached result
+
   asynclib.eachSeries(ops, function (task, cb) {
     const taskData = getDataSource(task)
     console.log('-', task.op, task.id)
@@ -687,8 +695,11 @@ const buildingProgress1970 = new ProgressStats(
   Object.keys(zoneCfg1970).length
 )
 
+// TODO genericize to work with now also
 function make1970TimezoneBoundary (tzid, callback) {
   buildingProgress1970.beginTask(`make1970TimezoneBoundary for ${tzid}`, true)
+
+  // TODO use memoize-fs to try to return cached result
 
   let geom = getDataSource({ source: 'final', id: tzid })
 
@@ -768,6 +779,10 @@ function formatBounds (bounds) {
   return boundsStr
 }
 
+const getZoneGeomHash = memoize((tzid) => {
+  return `${tzid}-${hashMd5(finalZones[tzid])}`
+})
+
 function validateTimezoneBoundaries () {
   const numZones = Object.keys(zoneCfg).length
   const validationProgress = new ProgressStats(
@@ -775,7 +790,20 @@ function validateTimezoneBoundaries () {
     numZones * (numZones + 1) / 2
   )
 
-  console.log('do validation... this may take a few minutes')
+  console.log('do validation... this may take a few minutes with fresh data')
+
+  // load cache if available
+  const validationCacheFile = path.join(workingDir, 'validation-cache.json')
+  let previousValidationResults = {}
+  try {
+    previousValidationResults = JSON.parse(
+      fs.readFileSync(validationCacheFile, { encoding: 'utf-8' })
+    )
+  } catch (err) {
+    // cache not found
+  }
+  const newValidationResults = {}
+
   let allZonesOk = true
   const zones = Object.keys(zoneCfg)
   let lastPct = 0
@@ -784,6 +812,7 @@ function validateTimezoneBoundaries () {
   for (let i = 0; i < zones.length; i++) {
     tzid = zones[i]
     zoneGeom = finalZones[tzid]
+    iZoneHash = getZoneGeomHash(tzid)
 
     for (let j = i + 1; j < zones.length; j++) {
       const curPct = Math.floor(validationProgress.getPercentage())
@@ -794,6 +823,17 @@ function validateTimezoneBoundaries () {
       compareTzid = zones[j]
 
       const compareZoneGeom = finalZones[compareTzid]
+
+      const compareKey = `${iZoneHash}-${getZoneGeomHash(compareTzid)}`
+      const previousResult = previousValidationResults[compareKey]
+      if (previousResult) {
+        if (!previousResult.ok) {
+          console.error('(Cached) validation error: ' + tzid + ' intersects ' + compareTzid + ' area: ' + previousResult.intersectedArea)
+          allZonesOk = false
+        }
+        newValidationResults[compareKey] = previousResult
+        continue
+      }
 
       let intersects = false
       try {
@@ -868,7 +908,12 @@ function validateTimezoneBoundaries () {
               }
             })
 
-            if (allOverlapsOk) continue
+            if (allOverlapsOk) {
+              newValidationResults[compareKey] = {
+                ok: true
+              }
+              continue
+            }
           }
 
           // at least one unexpected overlap found, output an error and write debug file
@@ -881,11 +926,21 @@ function validateTimezoneBoundaries () {
           console.error('wrote overlap area as file ' + debugFilename)
           console.error('To read more about this error, please visit https://git.io/vx6nx')
           allZonesOk = false
+          newValidationResults[compareKey] = {
+            intersectedArea,
+            ok: false
+          }
         }
+      }
+      newValidationResults[compareKey] = {
+        ok: true
       }
       validationProgress.logNext()
     }
   }
+
+  // write cache
+  fs.writeFileSync(validationCacheFile, newValidationResults)
 
   return allZonesOk ? null : 'Zone validation unsuccessful'
 }
@@ -935,6 +990,7 @@ function addOceans (callback) {
     oceanZones.length
   )
 
+  // TODO make asynchronous
   oceanZoneBoundaries = oceanZones.map(zone => {
     oceanProgress.beginTask(zone.tzid, true)
     const geoJson = polygon([[
@@ -946,6 +1002,11 @@ function addOceans (callback) {
     ]]).geometry
 
     let geom = geoJsonToGeom(geoJson)
+
+    // TODO calculate which zones have bounds that apply
+
+    // TODO use memoize-fs to try to obtain precalculated zone based on oceon 
+    //   geojson + applicable zones
 
     // diff against every zone
     zones.forEach(finalZone => {
@@ -1221,6 +1282,8 @@ function analyzeChangesFromLastRelease (cb) {
   zoneNames.forEach(zoneName => {
     analysisProgress.beginTask(zoneName, true)
     if (finalZones[zoneName] && lastReleaseZones[zoneName]) {
+      // TODO memoize-fs
+
       // some zones take forever to diff unless they are buffered, so buffer by
       // just a small amount
       const lastReleaseGeom = geoJsonToGeom(
