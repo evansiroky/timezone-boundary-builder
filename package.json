@@ -31,7 +31,6 @@
     "jsts": "^2.7.1",
     "lodash.clonedeep": "^4.5.0",
     "lodash.memoize": "^4.1.2",
-    "memoize-fs": "^2.2.0",
     "object-hash": "^3.0.0",
     "query-overpass": "^1.5.5",
     "rimraf": "^3.0.2",
