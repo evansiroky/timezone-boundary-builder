@@ -3,7 +3,7 @@ const hasha = require('hasha')
 
 const hashaOpts = { algorithm: 'md5' }
 
-class FileCache {
+class BaseFileCache {
   constructor ({ filename }) {
     this.filename = filename
     this.oldCache = {}
@@ -27,12 +27,44 @@ class FileCache {
     ) 
   }
 
+  end (cb) {
+    fs.writeFile(
+      this.filename, 
+      JSON.stringify(this.newCache),
+      cb
+    )
+  }
+}
+
+class FileCache extends BaseFileCache {
+  calculate ({
+    cacheKey,
+    calculateFn,
+    callback
+  }) {
+    const cacheVal = this.oldCache[cacheKey]
+
+    if (cacheVal) {
+      this.newCache[cacheKey] = cacheVal
+      return callback(null, cacheVal)
+    }
+
+    calculateFn((err, data) => {
+      if (err) return callback(err)
+      this.newCache[cacheKey] = data
+      callback(null, data)
+    })
+  }
+}
+
+class FileLookupCache extends BaseFileCache{
   calculate ({
     cacheKey,
     outputFilename,
     calculateFn,
     callback,
-    returnFile
+    returnFile,
+    verbose
   }) {
     const cacheVal = this.oldCache[cacheKey]
 
@@ -70,24 +102,18 @@ class FileCache {
             { encoding: 'utf-8' },
             (err, data) => {
               if (err) return callback(err)
-              return callback(null, JSON.parse(data))
+              callback(null, JSON.parse(data))
             }
           )
+        } else {
+          doCalc()
         }
-        doCalc()
       })
       .catch(doCalc)
-  }
-
-  end (cb) {
-    fs.writeFile(
-      this.filename, 
-      JSON.stringify(this.newCache),
-      cb
-    )
   }
 }
 
 module.exports = {
-  FileCache
+  FileCache,
+  FileLookupCache
 }

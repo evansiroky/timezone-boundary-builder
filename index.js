@@ -24,7 +24,7 @@ const yargs = require('yargs')
 
 const FeatureWriterStream = require('./util/featureWriterStream')
 const ProgressStats = require('./util/progressStats')
-const { FileCache } = require('./util/cache')
+const { FileCache, FileLookupCache } = require('./util/cache')
 
 let osmBoundarySources = require('./osmBoundarySources.json')
 let zoneCfg = require('./timezones.json')
@@ -106,6 +106,7 @@ const cacheDir = path.resolve(argv.cache_dir)
 const downloadsDir = path.resolve(argv.downloads_dir)
 const distDir = path.resolve(argv.dist_dir)
 const workingDir = path.resolve(argv.working_dir)
+const osmDownloadDir = path.join(workingDir, 'osm-downloads')
 
 function hashMd5 (obj) {
   return hash(obj, { algorithm: 'md5' })
@@ -120,14 +121,6 @@ function loadJsonCacheSync (filename) {
     // cache not found, return empty obj
     return {}    
   }
-}
-
-function writeJson (filename, json, callback) {
-  fs.writeFile(
-    filename, 
-    JSON.stringify(json),
-    callback
-  )
 }
 
 function writeJsonSync (filename, json) {
@@ -276,6 +269,7 @@ const precisionReducer = new jsts.precision.GeometryPrecisionReducer(precisionMo
 const finalZones = {}
 const final1970Zones = {}
 const finalNowZones = {}
+let lastReleaseName
 let lastReleaseJSONfile
 const minRequestGap = 8
 let curRequestGap = 8
@@ -562,32 +556,66 @@ function downloadOsmBoundary (boundaryId, boundaryCallback) {
 
 function downloadOsmTimezoneBoundary (tzId, boundaryCallback) {
   const tzBoundayName = `${tzId.replace(/\//g, '-')}-tz`
-  const boundaryFilename = downloadsDir + '/' + tzBoundayName + '.json'
+  const boundaryFilename = path.join(downloadsDir, `${tzBoundayName}.json`)
+  const workingBoundaryFilename = path.join(osmDownloadDir, `${tzBoundayName}.json`)
 
   downloadOSMZoneProgress.beginTask(`getting data for ${tzBoundayName}`, true)
 
-  downloadFromOverpass(
-    tzBoundayName,
-    { timezone: tzId },
+  // the downloads directory is cleared of all timezone boundaries not downloaded from OSM (there
+  // are still a few in here with manual definitions). Therefore, keep a copy of all OSM downloads
+  // so they aren't redownloaded during multiple reruns of the script
+  
+  function copyToOsmDownloadFolder (err) {
+    if (err) return boundaryCallback(err)
+    fs.copyFile(boundaryFilename, workingBoundaryFilename, boundaryCallback)
+  }
+
+  // Before downloading from Overpass, check if there's a copy in the working folder. Since osm 
+  // downloads are always after production zones, it is safe to copy an osm boundary because a 
+  // production one would've already been downloaded in the event it were deleted in order to force
+  // the retrieval of a new zone.
+  fs.stat(
     boundaryFilename,
-    err => {
-      if (err) {
-        // assume no data or unparseable data, write a null island
-        fs.writeFile(
-          boundaryFilename,
-          JSON.stringify(
-            {
-              type: 'Polygon',
-              coordinates: [
-                [[-0.1, -0.1], [0.1, -0.1], [0.1, 0.1], [-0.1, 0.1], [-0.1, -0.1]]
-              ]
-            }
-          ),
-          boundaryCallback
-        )
-      } else {
-        boundaryCallback()
+    (err, stats) => {
+      if (!err) {
+        // file found, initiate eventual callback
+        return copyToOsmDownloadFolder()
       }
+      // check for file in working dir
+      fs.stat(
+        workingBoundaryFilename,
+        (err, stats) => {
+          if (!err) {
+            // file exists, copy over
+            return fs.copyFile(workingBoundaryFilename, boundaryFilename, boundaryCallback)
+          }
+          // file doesn't exist, download from overpass
+          downloadFromOverpass(
+            tzBoundayName,
+            { timezone: tzId },
+            boundaryFilename,
+            err => {
+              if (err) {
+                // assume no data or unparseable data, write a null island
+                fs.writeFile(
+                  boundaryFilename,
+                  JSON.stringify(
+                    {
+                      type: 'Polygon',
+                      coordinates: [
+                        [[-0.1, -0.1], [0.1, -0.1], [0.1, 0.1], [-0.1, 0.1], [-0.1, -0.1]]
+                      ]
+                    }
+                  ),
+                  copyToOsmDownloadFolder
+                )
+              } else {
+                copyToOsmDownloadFolder()
+              }
+            }
+          )
+        }
+      )
     }
   )
 }
@@ -711,7 +739,7 @@ const buildingProgress = new ProgressStats(
 
 function makeTimezoneBoundaries (callback) {
   // load cache if available
-  const tzBoundaryCache = new FileCache({
+  const tzBoundaryCache = new FileLookupCache({
     filename: path.join(cacheDir, 'boundary-creation-cache.json')
   })
 
@@ -814,7 +842,7 @@ function makeDerivedTimezoneBoundaries (strategy, callback) {
   )
 
   // load cache if available
-  const tzBoundaryCache = new FileCache({
+  const tzBoundaryCache = new FileLookupCache({
     filename: cfg.cacheFilename
   })
 
@@ -898,162 +926,162 @@ const getZoneGeomHash = memoize((tzid) => {
   } catch (err) {
     return `${tzid}-filenotfound`  
   }
-  return `${tzid}-${hasha.fromFileSync(zoneFilename)}`
+  return `${tzid}-${hasha.fromFileSync(zoneFilename, { algorithm: 'md5' })}`
 })
 
-function validateTimezoneBoundaries () {
-  const numZones = Object.keys(zoneCfg).length
-  const validationProgress = new ProgressStats(
-    'Validation',
-    numZones * (numZones + 1) / 2
-  )
-
+function validateTimezoneBoundaries (callback) {
   console.log('do validation... this may take a few minutes with fresh data')
 
   // load cache if available
-  const validationCacheFile = path.join(cacheDir, 'validation-cache.json')
-  const previousValidationResults = loadJsonCacheSync(validationCacheFile)
-  const newValidationResults = {}
+  const validationCache = new FileCache({
+    filename: path.join(cacheDir, 'validation-cache.json')
+  })
 
-  let allZonesOk = true
-  const zones = Object.keys(zoneCfg)
-  let lastPct = 0
-  let compareTzid, tzid, zoneGeom
+  validationCache.init(() => {
+    let allZonesOk = true
+    const zones = Object.keys(zoneCfg)
 
-  for (let i = 0; i < zones.length; i++) {
-    tzid = zones[i]
-    zoneGeom = finalZones[tzid]
-    iZoneHash = getZoneGeomHash(tzid)
+    const numZones = Object.keys(zoneCfg).length
+    const validationProgress = new ProgressStats(
+      'Validation',
+      numZones * (numZones + 1) / 2
+    )
+    let lastPct = 0
 
-    for (let j = i + 1; j < zones.length; j++) {
-      const curPct = Math.floor(validationProgress.getPercentage())
-      if (curPct % 10 === 0 && curPct !== lastPct) {
-        validationProgress.printStats('Validating zones', true)
-        lastPct = curPct
+    const validationCalcs = []
+
+    for (let i = 0; i < zones.length; i++) {
+      for (let j = i + 1; j < zones.length; j++) {
+        validationCalcs.push({ tzid: zones[i], compareTzid: zones[j] })
       }
-      compareTzid = zones[j]
-
-      const compareZoneGeom = finalZones[compareTzid]
-
-      const compareKey = `${iZoneHash}-${getZoneGeomHash(compareTzid)}`
-      const previousResult = previousValidationResults[compareKey]
-      if (previousResult) {
-        if (!previousResult.ok) {
-          console.error('(Cached) validation error: ' + tzid + ' intersects ' + compareTzid + ' area: ' + previousResult.intersectedArea)
-          allZonesOk = false
-        }
-        newValidationResults[compareKey] = previousResult
-        continue
-      }
-
-      let intersects = false
-      try {
-        intersects = debugGeo('intersects', zoneGeom, compareZoneGeom)
-      } catch (e) {
-        console.warn('warning, encountered intersection error with zone ' + tzid + ' and ' + compareTzid)
-      }
-      if (intersects) {
-        const intersectedGeom = debugGeo('intersection', zoneGeom, compareZoneGeom)
-        const intersectedArea = intersectedGeom.getArea()
-
-        if (intersectedArea > 0.0001) {
-          // check if the intersected area(s) are one of the expected areas of overlap
-          const allowedOverlapBounds = expectedZoneOverlaps[`${tzid}-${compareTzid}`] || expectedZoneOverlaps[`${compareTzid}-${tzid}`]
-          const overlapsGeoJson = geoJsonWriter.write(intersectedGeom)
-
-          // these zones are allowed to overlap in certain places, make sure the
-          // found overlap(s) all fit within the expected areas of overlap
-          if (allowedOverlapBounds) {
-            // if the overlaps are a multipolygon, make sure each individual
-            // polygon of overlap fits within at least one of the expected
-            // overlaps
-            let overlapsPolygons
-            switch (overlapsGeoJson.type) {
-              case 'MultiPolygon':
-                overlapsPolygons = overlapsGeoJson.coordinates.map(
-                  polygonCoords => ({
-                    coordinates: polygonCoords,
-                    type: 'Polygon'
-                  })
-                )
-                break
-              case 'Polygon':
-                overlapsPolygons = [overlapsGeoJson]
-                break
-              case 'GeometryCollection':
-                overlapsPolygons = []
-                overlapsGeoJson.geometries.forEach(geom => {
-                  if (geom.type === 'Polygon') {
-                    overlapsPolygons.push(geom)
-                  } else if (geom.type === 'MultiPolygon') {
-                    geom.coordinates.forEach(polygonCoords => {
-                      overlapsPolygons.push({
-                        coordinates: polygonCoords,
-                        type: 'Polygon'
-                      })
-                    })
-                  }
-                })
-                break
-              default:
-                console.error('unexpected geojson overlap type')
-                console.log(overlapsGeoJson)
-                break
-            }
-
-            let allOverlapsOk = true
-            overlapsPolygons.forEach((polygon, idx) => {
-              const bounds = bbox(polygon)
-              const polygonArea = area.geometry(polygon)
-              if (
-                polygonArea > 10 && // ignore small polygons
-                !allowedOverlapBounds.some(allowedBounds =>
-                  allowedBounds.bounds[0] <= bounds[0] && // minX
-                    allowedBounds.bounds[1] <= bounds[1] && // minY
-                    allowedBounds.bounds[2] >= bounds[2] && // maxX
-                    allowedBounds.bounds[3] >= bounds[3] // maxY
-                )
-              ) {
-                console.error(`Unexpected intersection (${polygonArea} area) with bounds: ${formatBounds(bounds)}`)
-                allOverlapsOk = false
-              }
-            })
-
-            if (allOverlapsOk) {
-              newValidationResults[compareKey] = {
-                ok: true
-              }
-              continue
-            }
-          }
-
-          // at least one unexpected overlap found, output an error and write debug file
-          console.error('Validation error: ' + tzid + ' intersects ' + compareTzid + ' area: ' + intersectedArea)
-          const debugFilename = tzid.replace(/\//g, '-') + '-' + compareTzid.replace(/\//g, '-') + '-overlap.json'
-          fs.writeFileSync(
-            debugFilename,
-            JSON.stringify(overlapsGeoJson)
-          )
-          console.error('wrote overlap area as file ' + debugFilename)
-          console.error('To read more about this error, please visit https://git.io/vx6nx')
-          allZonesOk = false
-          newValidationResults[compareKey] = {
-            intersectedArea,
-            ok: false
-          }
-        }
-      }
-      newValidationResults[compareKey] = {
-        ok: true
-      }
-      validationProgress.logNext()
     }
-  }
 
-  // write cache
-  writeJsonSync(validationCacheFile, newValidationResults)
+    asynclib.each(
+      validationCalcs,
+      ({ tzid, compareTzid }, validationCb) => {
+        validationCache.calculate({
+          cacheKey: `${getZoneGeomHash(tzid)}-${getZoneGeomHash(compareTzid)}`,
+          calculateFn: calculateCb => {
+            const zoneGeom = finalZones[tzid]
+            const compareZoneGeom = finalZones[compareTzid]
 
-  return allZonesOk ? null : 'Zone validation unsuccessful'
+            let intersects = false
+            try {
+              intersects = debugGeo('intersects', zoneGeom, compareZoneGeom)
+            } catch (e) {
+              console.warn('warning, encountered intersection error with zone ' + tzid + ' and ' + compareTzid)
+            }
+            if (intersects) {
+              const intersectedGeom = debugGeo('intersection', zoneGeom, compareZoneGeom)
+              const intersectedArea = intersectedGeom.getArea()
+
+              if (intersectedArea > 0.0001) {
+                // check if the intersected area(s) are one of the expected areas of overlap
+                const allowedOverlapBounds = expectedZoneOverlaps[`${tzid}-${compareTzid}`] || expectedZoneOverlaps[`${compareTzid}-${tzid}`]
+                const overlapsGeoJson = geoJsonWriter.write(intersectedGeom)
+
+                // these zones are allowed to overlap in certain places, make sure the
+                // found overlap(s) all fit within the expected areas of overlap
+                if (allowedOverlapBounds) {
+                  // if the overlaps are a multipolygon, make sure each individual
+                  // polygon of overlap fits within at least one of the expected
+                  // overlaps
+                  let overlapsPolygons
+                  switch (overlapsGeoJson.type) {
+                    case 'MultiPolygon':
+                      overlapsPolygons = overlapsGeoJson.coordinates.map(
+                        polygonCoords => ({
+                          coordinates: polygonCoords,
+                          type: 'Polygon'
+                        })
+                      )
+                      break
+                    case 'Polygon':
+                      overlapsPolygons = [overlapsGeoJson]
+                      break
+                    case 'GeometryCollection':
+                      overlapsPolygons = []
+                      overlapsGeoJson.geometries.forEach(geom => {
+                        if (geom.type === 'Polygon') {
+                          overlapsPolygons.push(geom)
+                        } else if (geom.type === 'MultiPolygon') {
+                          geom.coordinates.forEach(polygonCoords => {
+                            overlapsPolygons.push({
+                              coordinates: polygonCoords,
+                              type: 'Polygon'
+                            })
+                          })
+                        }
+                      })
+                      break
+                    default:
+                      console.error('unexpected geojson overlap type')
+                      console.log(overlapsGeoJson)
+                      break
+                  }
+
+                  let allOverlapsOk = true
+                  overlapsPolygons.forEach((polygon, idx) => {
+                    const bounds = bbox(polygon)
+                    const polygonArea = area.geometry(polygon)
+                    if (
+                      polygonArea > 10 && // ignore small polygons
+                      !allowedOverlapBounds.some(allowedBounds =>
+                        allowedBounds.bounds[0] <= bounds[0] && // minX
+                          allowedBounds.bounds[1] <= bounds[1] && // minY
+                          allowedBounds.bounds[2] >= bounds[2] && // maxX
+                          allowedBounds.bounds[3] >= bounds[3] // maxY
+                      )
+                    ) {
+                      console.error(`Unexpected intersection (${polygonArea} area) with bounds: ${formatBounds(bounds)}`)
+                      allOverlapsOk = false
+                    }
+                  })
+
+                  if (allOverlapsOk) {
+                    return calculateCb(null, { ok: true })
+                  }
+                }
+
+                // at least one unexpected overlap found, output an error and write debug file
+                console.error('Validation error: ' + tzid + ' intersects ' + compareTzid + ' area: ' + intersectedArea)
+                const debugFilename = tzid.replace(/\//g, '-') + '-' + compareTzid.replace(/\//g, '-') + '-overlap.json'
+                fs.writeFileSync(
+                  debugFilename,
+                  JSON.stringify(overlapsGeoJson)
+                )
+                console.error('wrote overlap area as file ' + debugFilename)
+                console.error('To read more about this error, please visit https://git.io/vx6nx')
+                return calculateCb(null, {
+                  intersectedArea,
+                  ok: false
+                })
+              }
+            }
+            calculateCb(null, { ok: true })
+          },
+          callback: (err, data) => {
+            const curPct = Math.floor(validationProgress.getPercentage())
+            if (curPct % 10 === 0 && curPct !== lastPct) {
+              validationProgress.printStats('Validating zones', true)
+              lastPct = curPct
+            }
+            validationProgress.logNext()
+            if (err) return validationCb(err)
+            if (!data.ok) {
+              allZonesOk = false
+            }
+            validationCb()
+          }
+        })
+      },
+      err => {
+        const error = allZonesOk ? null : new Error('Zone validation unsuccessful')
+        console.log(allZonesOk ? 'Zones Validated Successfully' : 'Errors found during zone validation')
+        validationCache.end((err) => callback(err || error))
+      }
+    )    
+  })
 }
 
 let oceanZoneBoundaries
@@ -1101,52 +1129,56 @@ function addOceans (callback) {
     oceanZones.length
   )
 
-  const oceanBoundaryCacheFile = path.join(cacheDir, 'ocean-creation-cache.json')
-  const oceanBoundaryCache = loadJsonCacheSync(oceanBoundaryCacheFile)
-  const newoceanBoundaryCache = {}
+  const oceanBoundaryCache = new FileCache({
+    filename: path.join(cacheDir, 'ocean-creation-cache.json')
+  })
 
-  asynclib.map(
-    oceanZones,
-    (oceanZone, zoneCb) => {
-      oceanProgress.beginTask(oceanZone.tzid, true)
-      const geoJson = polygon([[
-        [oceanZone.left, 90],
-        [oceanZone.left, -90],
-        [oceanZone.right, -90],
-        [oceanZone.right, 90],
-        [oceanZone.left, 90]
-      ]]).geometry
-
-      let geom = geoJsonToGeom(geoJson)
-
-      // TODO calculate which zones have bounds that apply
-      const tzsInBounds = zones
-
-      const oceanHashKey = `${oceanZone.tzid}-${hashMd5(tzsInBounds.map(getZoneGeomHash))}`
-      const cacheResult = oceanBoundaryCache[oceanHashKey]
-      if (cacheResult) {
-        newoceanBoundaryCache[oceanHashKey] = cacheResult
-        return zoneCb(null, cacheResult)
+  oceanBoundaryCache.init(() => {
+    asynclib.map(
+      oceanZones,
+      (oceanZone, zoneCb) => {
+        oceanProgress.beginTask(oceanZone.tzid, true)
+        const geoJson = polygon([[
+          [oceanZone.left, 90],
+          [oceanZone.left, -90],
+          [oceanZone.right, -90],
+          [oceanZone.right, 90],
+          [oceanZone.left, 90]
+        ]]).geometry
+  
+        let oceanGeom = geoJsonToGeom(geoJson)
+  
+        // filter zones to those that have bounds that apply
+        const tzsInBounds = zones.filter(tzid => {
+          zoneEnvelope = finalZones[tzid].getEnvelopeInternal()
+          return !(
+            zoneEnvelope.getMaxX() < oceanZone.left || 
+            zoneEnvelope.getMinX() > oceanZone.right
+          )
+        })
+  
+        oceanBoundaryCache.calculate({
+          cacheKey: `${oceanZone.tzid}-${hashMd5(tzsInBounds.map(getZoneGeomHash))}`,
+          calculateFn: calculateCb => {
+            // diff against applicable zones
+            tzsInBounds.forEach(finalZone => {
+              oceanGeom = debugGeo('diff', oceanGeom, finalZones[finalZone])
+            })
+      
+            calculateCb(null, {
+              geom: postProcessZone(oceanGeom, true),
+              tzid: oceanZone.tzid
+            })
+          },
+          callback: zoneCb
+        })
+      },
+      (err, results) => {
+        oceanZoneBoundaries = results
+        oceanBoundaryCache.end(error => callback(err || error))
       }
-
-      // diff against applicable zones
-      tzsInBounds.forEach(finalZone => {
-        geom = debugGeo('diff', geom, finalZones[finalZone])
-      })
-
-      const result = {
-        geom: postProcessZone(geom, true),
-        tzid: oceanZone.tzid
-      }
-      newoceanBoundaryCache[oceanHashKey] = result
-      zoneCb(null, result)
-    },
-    (err, results) => {
-      if (err) return callback(err)
-      oceanZoneBoundaries = results
-      writeJson(oceanBoundaryCacheFile, newoceanBoundaryCache, callback)
-    }
-  )
+    )
+  })
 }
 
 function combineAndWriteZones (callback) {
@@ -1254,7 +1286,7 @@ function downloadLastRelease (cb) {
   ).json()
     .then(data => {
       // determine last release version name and download link
-      const lastReleaseName = data.name
+      lastReleaseName = data.name
       lastReleaseJSONfile = `${workingDir}/${lastReleaseName}.json`
       let lastReleaseDownloadUrl
       for (let i = 0; i < data.assets.length; i++) {
@@ -1407,8 +1439,8 @@ function analyzeChangesFromLastRelease (cb) {
   const additionsWriter = new FeatureWriterStream(workingDir + '/additions.json')
   const removalsWriter = new FeatureWriterStream(workingDir + '/removals.json')
 
-  const analysisCache = new FileCache({
-    filename: path.join(cacheDir, 'boundary-creation-cache.json')
+  const analysisCache = new FileLookupCache({
+    filename: path.join(cacheDir, 'last-release-diffs-analysis-cache.json')
   })
 
   analysisCache.init(() => {
@@ -1416,7 +1448,7 @@ function analyzeChangesFromLastRelease (cb) {
       zoneNames,
       (zoneName, zoneCb) => {
         analysisCache.calculate({
-          cacheKey: `${lastReleaseJSONfile}-${zoneName}-${getZoneGeomHash(zoneName)}`,
+          cacheKey: `${lastReleaseName}-${zoneName}-${getZoneGeomHash(zoneName)}`,
           outputFilename: path.join(cacheDir, 'last-release-diffs', safeTzFilename(zoneName)),
           calculateFn: calculateCb => {
             console.log(`Analyzing diffs from last release for ${zoneName}`)
@@ -1502,7 +1534,7 @@ function analyzeChangesFromLastRelease (cb) {
 const autoScript = {
   makeCacheDirAndFns: function(cb) {
     overallProgress.beginTask(`Creating downloads dir (${downloadsDir})`)
-    asynclib.parallel([
+    asynclib.series([
       mcb => safeMkdir(cacheDir, mcb),
       mcb => safeMkdir(path.join(cacheDir, 'last-release-diffs'), mcb)
     ], cb)
@@ -1513,7 +1545,10 @@ const autoScript = {
   },
   makeWorkingDir: function (cb) {
     overallProgress.beginTask(`Creating working dir (${workingDir})`)
-    safeMkdir(workingDir, cb)
+    asynclib.series([
+      mcb => safeMkdir(workingDir, mcb),
+      mcb => safeMkdir(osmDownloadDir, mcb)
+    ], cb)
   },
   makeDistDir: function (cb) {
     overallProgress.beginTask(`Creating dist dir (${distDir})`)
@@ -1552,7 +1587,7 @@ const autoScript = {
       console.warn('WARNING: Skipping validation!')
       cb()
     } else {
-      cb(validateTimezoneBoundaries())
+      validateTimezoneBoundaries(cb)
     }
   }],
   create1970zones: ['validateZones', (results, cb) => {
