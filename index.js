@@ -40,11 +40,6 @@ const argv = yargs
     default: './cache',
     type: 'string'
   })
-  .option('cutoff_years', {
-    description: 'Generate additional release files for timezones with the same data after a certain cutoff year.',
-    default: [fiveYearsAgo],
-    type: 'array'
-  })
   .option('dist_dir', {
     description: 'Set the dist location, for the generated release files',
     default: './dist',

@@ -40,6 +40,17 @@
   * `Pacific/Pago_Pago`
   * `Pacific/Pitcairn`
   * `Pacific/Tahiti`
+* Update to latest OSM data
+
+### Other Changes
+
+* Add code to be able to output additional release products ([#145](https://github.com/evansiroky/timezone-boundary-builder/issues/145))
+  * Add output of zones that share same timekeeping method since 1970
+  * Add output of zones that share same timekeeping method since the current time
+* Add caching of various operations to reuse data from previous calculations
+* Add cached data to input data in release files
+* Add ability to reuse downloaded OSM timezone comparison data by copying it to the working directory and reusing it on calculation retries
+* Update README noting new release types
 
 ## 2023b
 
