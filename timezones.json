@@ -2977,6 +2977,13 @@
       "id": "Pacific-Rarotonga-tz"
     }
   ],
+  "Pacific/Saipan": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "Pacific-Saipan-tz"
+    }
+  ],
   "Pacific/Tahiti": [
     {
       "op": "init",
