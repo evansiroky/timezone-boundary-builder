@@ -497,8 +497,8 @@
   "America-Porto_Velho-tz": {
     "timezone": "America/Porto_Velho"
   },
-  "America-Puerto_Rico-tz": {
-    "timezone": "America/Puerto_Rico"
+  "America-Puerto_Rico-tz-old": {
+    "name": "Old America/Puerto_Rico timezone"
   },
   "America-Punta_Arenas-tz": {
     "timezone": "America/Punta_Arenas"
@@ -1238,6 +1238,9 @@
   },
   "Pacific-Wallis-tz": {
     "timezone": "Pacific/Wallis"
+  },
+  "Panama": {
+    "ISO3166-1": "PA"
   },
   "Sioux County, ND": {
     "name": "Sioux County",

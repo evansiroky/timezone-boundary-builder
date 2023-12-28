@@ -1179,7 +1179,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "America-Panama-tz"
+      "id": "Panama"
     }
   ],
   "America/Paramaribo": [
@@ -1194,6 +1194,10 @@
       "op": "init",
       "source": "overpass",
       "id": "America-Phoenix-tz"
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "America-Creston-tz"
     }
   ],
   "America/Port-au-Prince": [
@@ -1221,7 +1225,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "America-Puerto_Rico-tz"
+      "id": "America-Puerto_Rico-tz-old"
     }
   ],
   "America/Punta_Arenas": [
