@@ -1064,6 +1064,7 @@ function validateTimezoneBoundaries (callback) {
             validationProgress.logNext()
             if (err) return validationCb(err)
             if (!data.ok) {
+              console.error('Validation error: ' + tzid + ' intersects ' + compareTzid)
               allZonesOk = false
             }
             validationCb()
@@ -1073,6 +1074,9 @@ function validateTimezoneBoundaries (callback) {
       err => {
         const error = allZonesOk ? null : new Error('Zone validation unsuccessful')
         console.log(allZonesOk ? 'Zones Validated Successfully' : 'Errors found during zone validation')
+        if (err) {
+          console.error(err)
+        }
         validationCache.end((err) => callback(err || error))
       }
     )    
