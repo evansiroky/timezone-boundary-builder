@@ -2,7 +2,7 @@
 
 The goal of this project is to produce a shapefile with the boundaries of the world's timezones using OpenStreetMap data.
 
-<p align="center"><img src="2023b.png" /></p>
+<p align="center"><img src="2023d.png" /></p>
 
 [![Github downloads for all releases](https://img.shields.io/github/downloads/evansiroky/timezone-boundary-builder/total.svg)](https://tooomm.github.io/github-release-stats/?username=evansiroky&repository=timezone-boundary-builder)  [![GitHub release](https://img.shields.io/github/release/evansiroky/timezone-boundary-builder.svg)](https://github.com/evansiroky/timezone-boundary-builder/releases/latest)
 
@@ -21,11 +21,11 @@ This project aims to stay up-to-date with all of the currently valid timezones t
 
 To maintain consistency with the timezone database, this project will only create a new release after the timezone database creates a new release. 
 
-**Important Note:** If there are no new timezones created or deleted in a timezone database release, then this project will only create a release if there have been changes performed to the boundary definitions of an existing zone within this project. This means that some timezone database releases may not have a respective release from this project.
+**Important Note:** Some timezone database releases may not have a respective release from this project. New release are always created if a new timezones is created or deprecated in a timezone database release. For timezone database releases that don't have this trigger, then this project may create a release if there have been changes performed to the boundary definitions of an existing zone, or a bugfix is needed or a new feature is introduced. However, that may not always happen. Sometimes, certain timezone database releases are skipped if a new release from this project was still being worked on.
 
 ### Different Types of Releases
 
-As of release UNRELEASED, this project produces timezone boundary data products with three different variations: 
+As of release 2023d, this project produces timezone boundary data products with three different variations: 
 
 1. Similarity of timekeeping method
 2. With or without oceans
@@ -43,23 +43,27 @@ There are 3 different timekeeping similarity variations that are produced:
 
 ##### Comprehensive #####
 
-This follows a strategy of including all timezone identifiers that were produced by the timezone database project prior to the 1993 practice of producing at least one zone per country. This does not include zones that were determined to be unneccessary due to lack of supporting evidence. This variation should mostly align with those timezones listed in the [zone.tab](https://github.com/eggert/tz/blob/main/zone.tab) file within the timezone database project. This dataset is the basis for producing the other 2 timekeeping variations in this project.
+This follows a strategy of including all timezone identifiers that were produced by the timezone database project according to the up-until 1993 practice of producing at least one zone per country. This does not include zones that were determined to be unneccessary due to lack of supporting evidence. This variation should mostly align with those timezones listed in the [zone.tab](https://github.com/eggert/tz/blob/main/zone.tab) file within the timezone database project. This dataset is the basis for producing the other 2 timekeeping variations in this project.
 
-In the release files, these zones are identified with the prefix `timezones.` or `timezones-with-oceans.`. This was how timezones were orginally published by this project and has backwards compatibility with the methodology used to produce timezone database releases since this project started.
+This output variation provides data assumes that some data about time changes prior to 1970 marked as deprecated within the timezone database is actually correct. Depending on whether the data prior to 1970 within the timezone database is deemed correct, then the use of this dataset will provide as comprehensive as possible data for observed timekeeping methods worldwide.
+
+In the release files, these zones are identified with the prefix `timezones` or `timezones-with-oceans`. This was how timezones were orginally published by this project and has backwards compatibility with the methodology used to produce timezone database releases since this project started.
 
 ##### Same since 1970 #####
 
-This strategy includes only timezones that have agreed on timekeeping methods since the year 1970. This variation should mostly align with those timezones listed in the [zone1970.tab](https://github.com/eggert/tz/blob/main/zone1970.tab) file within the timezone database project. The output of the zones from the comprehensive method are combined together for all relevant zones with the zone having the largest city population being used for the `tzid` of the merged zone in the final output.
+This strategy includes only timezones that have agreed on timekeeping methods since the year 1970. This variation should mostly align with those timezones listed in the [zone1970.tab](https://github.com/eggert/tz/blob/main/zone1970.tab) file within the timezone database project. However, the [@tubular/time](https://www.npmjs.com/package/@tubular/time) library is used to determine which zones get merged together from the comprehensive variation. The output of the zones from the comprehensive method are combined together for all relevant zones with the zone having the largest city population being used for the `tzid` of the merged zone in the final output.
 
-In the release files, these zones are identified with the prefix `timezones-1970` or `timezones-with-oceans-1970`. Data with the "Same since 1970" timekeeping method was first made availabile in release UNRELEASED. 
+This output variation is technically the most authoritative dataset since the timezone database officially supports only timekeeping methods that have been the same since 1970. Depending on whether the data prior to 1970 within the timezone database is deemed correct, then the use of this dataset may provide potentially incorrect data for observed timekeeping methods prior to 1970 at certain locations.
+
+In the release files, these zones are identified with the prefix `timezones-1970` or `timezones-with-oceans-1970`. Data with the "Same since 1970" timekeeping method was first made availabile in release 2023d. 
 
 ##### Same since now #####
 
-This strategy includes only timezones that agree on timekeeping methods as of the approximate release date of the data. This variation does not align with any file within the timezone database project and is instead dynamically computed with the assistance of the [@tubular/time](https://www.npmjs.com/package/@tubular/time) library. The output of the zones from the comprehensive method are combined together for all relevant zones and the zone with the largest city population is used in the final output. 
+This strategy includes only timezones that agree on timekeeping methods as of the approximate release date of the data. This variation should mostly align with those timezones listed in the [zonenow.tab](https://github.com/eggert/tz/blob/main/zonenow.tab) file within the timezone database project. However, the [@tubular/time](https://www.npmjs.com/package/@tubular/time) library is used to determine which zones get merged together from the comprehensive variation. The output of the zones from the comprehensive method are combined together for all relevant zones and the zone with the largest city population is used in the final output. 
 
-This output variation is only suitable for use cases that need to know the current or future time at a location. It will provide potentially incorrect data for times in the past at certain locations.
+This output variation is only suitable for use cases that need to know the current or future time at a location. It will provide potentially incorrect data for observed timekeeping methods in the past at certain locations.
 
-In the release files, these zones are identified with the prefix `timezones-now` or `timezones-with-oceans-now`. Data with the "Same since now" timekeeping method was first made availabile in release UNRELEASED.
+In the release files, these zones are identified with the prefix `timezones-now` or `timezones-with-oceans-now`. Data with the "Same since now" timekeeping method was first made availabile in release 2023d.
 
 #### 2. With or without oceans ####
 
@@ -91,7 +95,7 @@ This release file is simply a single array with the list of timezone identifiers
 
 #### input-data.zip ####
 
-Each release includes the input and cached data used to generate the timezone boundary files. This includes the raw data downloaded from OpenStreetMap and the definition files within this project at the time of the release. Additionally, as of UNRELEASED it also includes the cached data to facilitate quicker recomputation. The preparation phase of each release is so far still manual and therefore may include files downloaded on different days. This has been included in releases starting from release 2020a.
+Each release includes the input and cached data used to generate the timezone boundary files. This includes the raw data downloaded from OpenStreetMap and the definition files within this project at the time of the release. Additionally, as of 2023d it also includes the cached data to facilitate quicker recomputation. The preparation phase of each release is so far still manual and therefore may include files downloaded on different days. This has been included in releases starting from release 2020a.
 
 ### Source of Data
 
@@ -174,7 +178,7 @@ node --max-old-space-size=8192 index.js --downloads_dir ./downloads2 --dist_dir 
   + `--excluded_zones` - A list of timezone identifiers to exclude when building.
   + `--included_zones` - An allow-list of timezone identifiers to only include when building. (if excluded zones are provided, those will be removed from this list)
   + `--skip_1970_zones` - Skips the building of zones with the same timekeeping method since 1970.
-  + `--skip_now_zones` - Skips the building of zones with the same timekeeping method since 1970.
+  + `--skip_now_zones` - Skips the building of zones with the same timekeeping method since the time when the script is ran.
   + `--skip_analyze_diffs` - Skips analyzing differences between the current output and the previous release,
   + `--skip_analyze_osm_tz_diffs` - Skips the downloading of all OSM data for timezone relations that are not directly used to in this project's boundary building config. Also skips analyzing the differences between timezone-boundary-builder output and raw OSM timezone relations.
   + `--skip_shapefile` - Skips creating a shapefile output for all release data products.

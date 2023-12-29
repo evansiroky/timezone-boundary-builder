@@ -1,4 +1,4 @@
-## Unreleased
+## 2023d
 
 ### Zone Changes
 
@@ -49,7 +49,8 @@
 * Add caching of various operations to reuse data from previous calculations
 * Add cached data to input data in release files
 * Add ability to reuse downloaded OSM timezone comparison data by copying it to the working directory and reusing it on calculation retries
-* Update README noting new release types
+* Refactor README noting new release types
+* Note Sponsorship Opportunity
 
 ## 2023b
 
