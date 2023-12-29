@@ -2252,6 +2252,11 @@
       "op": "init",
       "source": "overpass",
       "id": "Australia-Perth-tz"
+    }, {
+      "op": "union",
+      "source": "manual-polygon",
+      "data": [[[115,-86],[120,-86],[135,-86],[150,-86],[160,-86],[160,-70],[150,-70],[135,-70],[120,-70],[115,-70],[115,-86]]],
+      "description": "According to chatter on the tz mailing list, the Antrarctic Concordia Station uses Australia/Perth time.  https://mm.icann.org/pipermail/tz/2013-December/020520.html"
     }
   ],
   "Australia/Sydney": [
