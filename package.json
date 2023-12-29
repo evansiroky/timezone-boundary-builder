@@ -26,7 +26,7 @@
     "@turf/bbox": "^6.5.0",
     "@turf/helpers": "^6.5.0",
     "async": "^3.2.1",
-    "got": "^11.8.3",
+    "got": "^11.8.5",
     "hasha": "^5.2.2",
     "jsts": "^2.7.1",
     "lodash.clonedeep": "^4.5.0",
