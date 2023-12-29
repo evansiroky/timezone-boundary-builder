@@ -1543,16 +1543,16 @@ function assembleAndZipInputData (callback) {
           [
             // downloads
             cb => fs.cp(
-              downloadsDir, 
-              path.join(tempInputFilesDir, 'downloads'), 
-              { recursive: true }, 
+              downloadsDir,
+              path.join(tempInputFilesDir, 'downloads'),
+              { recursive: true },
               cb
             ),
             // cache
             cb => fs.cp(
-              cacheDir, 
-              path.join(tempInputFilesDir, 'cache'), 
-              { recursive: true }, 
+              cacheDir,
+              path.join(tempInputFilesDir, 'cache'),
+              { recursive: true },
               cb
             ),
             // etc single files (assumes cwd is repo root)
