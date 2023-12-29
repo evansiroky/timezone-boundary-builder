@@ -19,17 +19,17 @@ class BaseFileCache {
           return cb()
         } else {
           try {
-            this.oldCache = JSON.parse(data) 
+            this.oldCache = JSON.parse(data)
           } catch (error) {}
           cb()
         }
       }
-    ) 
+    )
   }
 
   end (cb) {
     fs.writeFile(
-      this.filename, 
+      this.filename,
       JSON.stringify(this.newCache),
       cb
     )
@@ -57,7 +57,7 @@ class FileCache extends BaseFileCache {
   }
 }
 
-class FileLookupCache extends BaseFileCache{
+class FileLookupCache extends BaseFileCache {
   calculate ({
     cacheKey,
     outputFilename,
@@ -72,8 +72,8 @@ class FileLookupCache extends BaseFileCache{
       calculateFn((err, data) => {
         if (err) return callback(err)
         fs.writeFile(
-          outputFilename, 
-          data, 
+          outputFilename,
+          data,
           error => {
             if (error) return callback(error)
             hasha.fromFile(outputFilename, hashaOpts)
