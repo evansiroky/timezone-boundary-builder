@@ -47,7 +47,10 @@
   * Add output of zones that share same timekeeping method since 1970
   * Add output of zones that share same timekeeping method since the current time
 * Add caching of various operations to reuse data from previous calculations
-* Add cached data to input data in release files
+* Refactor input data output
+  * Move downloads to dedicated folder
+  * Add cached data to dedicated folder
+  * Include root-level files in root of zip file
 * Add ability to reuse downloaded OSM timezone comparison data by copying it to the working directory and reusing it on calculation retries
 * Refactor README noting new release types
 * Note Sponsorship Opportunity

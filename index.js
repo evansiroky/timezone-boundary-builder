@@ -1528,6 +1528,55 @@ function analyzeChangesFromLastRelease (cb) {
   })
 }
 
+function assembleAndZipInputData (callback) {
+  // since lots of files are at absolute paths, assemble a temporary folder with needed files
+  const tempInputFilesDir = path.join(workingDir, 'input-data')
+  asynclib.series(
+    [
+      // remove previous folder
+      cb => fs.rm(tempInputFilesDir, { recursive: true }, cb),
+      // create it again
+      cb => fs.mkdir(tempInputFilesDir, cb),
+      // copy necessary files
+      copyCb => {
+        asynclib.parallel(
+          [
+            // downloads
+            cb => fs.cp(
+              downloadsDir, 
+              path.join(tempInputFilesDir, 'downloads'), 
+              { recursive: true }, 
+              cb
+            ),
+            // cache
+            cb => fs.cp(
+              cacheDir, 
+              path.join(tempInputFilesDir, 'cache'), 
+              { recursive: true }, 
+              cb
+            ),
+            // etc single files (assumes cwd is repo root)
+            cb => fs.cp('timezones.json', path.join(tempInputFilesDir, 'timezones.json'), cb),
+            cb => fs.cp('osmBoundarySources.json', path.join(tempInputFilesDir, 'osmBoundarySources.json'), cb),
+            cb => fs.cp('expectedZoneOverlaps.json', path.join(tempInputFilesDir, 'expectedZoneOverlaps.json'), cb)
+          ],
+          copyCb
+        )
+      },
+      // zip up
+      cb => {
+        const zipFilepath = path.join(distDir, 'input-data.zip')
+        exec(
+          `zip -r ${zipFilepath} input-data`,
+          { cwd: workingDir },
+          cb
+        )
+      }
+    ],
+    callback
+  )
+}
+
 const autoScript = {
   makeCacheDirAndFns: function (cb) {
     overallProgress.beginTask(`Creating downloads dir (${downloadsDir})`)
@@ -1698,11 +1747,7 @@ const autoScript = {
   }],
   zipInputData: ['cleanDownloadFolder', function (results, cb) {
     overallProgress.beginTask('Zipping up input data')
-    const zipFilepath = path.join(distDir, 'input-data.zip')
-    exec(
-      `zip -j ${zipFilepath} ${downloadsDir}/* ${cacheDir}/* timezones.json osmBoundarySources.json expectedZoneOverlaps.json`,
-      cb
-    )
+    assembleAndZipInputData(cb)
   }]
 }
 
