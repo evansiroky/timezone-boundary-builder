@@ -1698,8 +1698,11 @@ const autoScript = {
   }],
   zipInputData: ['cleanDownloadFolder', function (results, cb) {
     overallProgress.beginTask('Zipping up input data')
-    exec('zip -j ' + distDir + '/input-data.zip ' + downloadsDir + cacheDir +
-         '/* timezones.json osmBoundarySources.json expectedZoneOverlaps.json', cb)
+    const zipFilepath = path.join(distDir, 'input-data.zip')
+    exec(
+      `zip -j ${zipFilepath} ${downloadsDir}/* ${cacheDir}/* timezones.json osmBoundarySources.json expectedZoneOverlaps.json`,
+      cb
+    )
   }]
 }
 
