@@ -139,7 +139,7 @@ Another common way to use the data for lookup purposes is to load the shapefile 
 
 | Data Warehouse | Public Dataset |
 | -- | -- |
-| BigQuery | `tz-data` ([EU](https://console.cloud.google.com/bigquery?page=table&p=tz-data&d=latest_EU&t=timezones) or [US](https://console.cloud.google.com/bigquery?page=table&p=tz-data&d=latest_US&t=timezones))|
+| BigQuery | [tz-data](https://github.com/redorkulated/bigquery-tz-data) |
 
 ## Running the script
 
