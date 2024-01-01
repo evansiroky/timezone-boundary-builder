@@ -137,6 +137,10 @@ A few common languages already have libraries with an API that can be used to lo
 
 Another common way to use the data for lookup purposes is to load the shapefile into a spatially-aware database.  See this [blog post](https://simonwillison.net/2017/Dec/12/location-time-zone-api/) for an example of how that can be done.
 
+| Data Warehouse | Public Dataset |
+| -- | -- |
+| BigQuery | [tz-data](https://github.com/redorkulated/bigquery-tz-data) |
+
 ## Running the script
 
 If the data in the releases are not sufficiently recent or you want to build the latest from master, it is possible to run the script to generate the timezones.  However, due to the ever-changing nature of OpenStreetMap, the script should be considered unstable.  The script frequently breaks when unexpected data is received or changes in OpenStreetMap cause validation issues.  Please see the [troubleshooting guide](https://github.com/evansiroky/timezone-boundary-builder/wiki/Troubleshooting) for help with common errors.
