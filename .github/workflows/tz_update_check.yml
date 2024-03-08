@@ -4,9 +4,6 @@ on:
   schedule:
     - cron: "0 0 * * 0"
   workflow_dispatch:
-  push:
-    branches:
-      - nn-gha-tz-update
 
 jobs:
   check_tz:
