@@ -19,7 +19,9 @@ jobs:
 
       - name: Run script
         env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           WORKFLOW_RUN_ID: ${{ github.run_id }}
+          WORKFLOW_JOB_ID: ${{ github.job }}
         run: |
           set -e 
 
