@@ -1,0 +1,41 @@
+name: Check for new IANA release
+
+on:
+  schedule:
+    - cron: "0 0 * * 0"
+  workflow_dispatch:
+
+jobs:
+  check_tz:
+    name: Check latest IANA release
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Run script
+        env:
+          WORKFLOW_RUN_ID: ${{ github.run_id }}
+        run: |
+          set -e 
+
+          git config user.name 'github-actions[bot]'
+          git config user.email 'github-actions[bot]@users.noreply.github.com'
+
+          latest_tag=$(curl --silent -L -H "Accept: application/vnd.github+json" https://api.github.com/repos/eggert/tz/tags | jq -r '.[0].name')
+          current_tag=$(cat TZ_RELEASE)
+
+          if [[ $latest_tag == $current_tag ]]; then
+            echo "tz up to date"
+            exit 0
+          fi
+
+          echo "New tz release available: ${latest_tag}"
+
+          # create issue with new release
+          body=$(echo "IANA released ${latest_tag}. See [here](https://github.com/eggert/tz/blob/main/NEWS) for the latest changes made to tz.\
+          Created by workflow run [#${WORKFLOW_RUN_ID}](https://github.com/evansiroky/timezone-boundary-builder/actions/runs/${WORKFLOW_RUN_ID})." | xargs)
+          gh issue create --title "IANA Release ${latest_tag}" --body "${body}"
+
+          exit 1
