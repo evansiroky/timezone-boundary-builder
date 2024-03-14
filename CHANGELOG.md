@@ -1,3 +1,15 @@
+## 2024a
+
+### Zone Changes
+
+* Update to reflect "same since now" changes taking effect in Kazakhstan
+* Update to latest OSM data
+
+### Other Changes
+
+* Add GitHub Action to create a new issue upon detecting a new timezone database release ([#169](https://github.com/evansiroky/timezone-boundary-builder/issues/169))
+* Additional notes in [#168](https://github.com/evansiroky/timezone-boundary-builder/issues/168)
+
 ## 2023d
 
 ### Zone Changes
