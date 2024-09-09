@@ -102,6 +102,7 @@ const workingDir = path.resolve(argv.working_dir)
 const osmDownloadDir = path.join(workingDir, 'osm-downloads')
 
 function hashMd5 (obj) {
+  if (!obj) return 'non-object'
   return hash(obj, { algorithm: 'md5' })
 }
 
@@ -952,8 +953,9 @@ function validateTimezoneBoundaries (callback) {
     asynclib.each(
       validationCalcs,
       ({ tzid, compareTzid }, validationCb) => {
+        const allowedOverlapBounds = expectedZoneOverlaps[`${tzid}-${compareTzid}`] || expectedZoneOverlaps[`${compareTzid}-${tzid}`]
         validationCache.calculate({
-          cacheKey: `${getZoneGeomHash(tzid)}-${getZoneGeomHash(compareTzid)}`,
+          cacheKey: `${getZoneGeomHash(tzid)}-${getZoneGeomHash(compareTzid)}-${hashMd5(allowedOverlapBounds)}`,
           calculateFn: calculateCb => {
             const zoneGeom = finalZones[tzid]
             const compareZoneGeom = finalZones[compareTzid]
@@ -970,7 +972,6 @@ function validateTimezoneBoundaries (callback) {
 
               if (intersectedArea > 0.0001) {
                 // check if the intersected area(s) are one of the expected areas of overlap
-                const allowedOverlapBounds = expectedZoneOverlaps[`${tzid}-${compareTzid}`] || expectedZoneOverlaps[`${compareTzid}-${tzid}`]
                 const overlapsGeoJson = geoJsonWriter.write(intersectedGeom)
 
                 // these zones are allowed to overlap in certain places, make sure the
