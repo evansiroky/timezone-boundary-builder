@@ -22,10 +22,10 @@
   "dependencies": {
     "@mapbox/geojson-area": "^0.2.2",
     "@mapbox/geojsonhint": "^3.3.0",
-    "@tubular/time": "^3.9.1",
-    "@turf/bbox": "^6.5.0",
-    "@turf/helpers": "^6.5.0",
-    "async": "^3.2.5",
+    "@tubular/time": "^3.9.2",
+    "@turf/bbox": "^7.1.0",
+    "@turf/helpers": "^7.1.0",
+    "async": "^3.2.6",
     "got": "^11.8.6",
     "hasha": "^5.2.2",
     "jsts": "^2.7.1",
@@ -35,7 +35,7 @@
     "query-overpass": "^1.5.5",
     "rimraf": "^3.0.2",
     "shpjs": "^4.0.2",
-    "yargs": "^17.2.0"
+    "yargs": "^17.7.2"
   },
   "funding": {
     "url": "https://github.com/sponsors/evansiroky"
