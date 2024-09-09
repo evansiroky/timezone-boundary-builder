@@ -1,3 +1,14 @@
+## Unreleased
+
+### Zone Changes
+
+* Remove `Asia/Choibalsan` as it has been moved to the "backward" file in the timezone database.
+* Update to latest OSM data
+
+### Other Changes
+
+* Update a few npm pacakges.
+
 ## 2024a
 
 ### Zone Changes

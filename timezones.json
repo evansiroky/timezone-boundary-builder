@@ -1652,13 +1652,6 @@
       "id": "Asia-Chita-tz"
     }
   ],
-  "Asia/Choibalsan": [
-    {
-      "op": "init",
-      "source": "overpass",
-      "id": "Asia-Choibalsan-tz"
-    }
-  ],
   "Asia/Colombo": [
     {
       "op": "init",
