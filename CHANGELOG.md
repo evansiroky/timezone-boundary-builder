@@ -3,6 +3,7 @@
 ### Zone Changes
 
 * Remove `Asia/Choibalsan` as it has been moved to the "backward" file in the timezone database.
+* Add an expected zone overlap between `Asia/Pyongyang` and `Asia/Shanghai` for a disputed area within the Tumen River.
 * Update to latest OSM data
 
 ### Other Changes

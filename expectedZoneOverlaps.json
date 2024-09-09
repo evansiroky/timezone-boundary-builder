@@ -104,6 +104,12 @@
       "description": "Allow disputed area near Gaven Reefs (https://en.wikipedia.org/wiki/Gaven_Reefs) to overlap."
     }
   ],
+  "Asia/Pyongyang-Asia/Shanghai": [
+    {
+      "bounds": [130, 42.4, 130.7, 43],
+      "description": "Allow disputed area within Tumen River (https://en.wikipedia.org/wiki/China%E2%80%93North_Korea%E2%80%93Russia_tripoint#Border_line_versus_border_zone) to overlap."
+    }
+  ],
   "Asia/Shanghai-Asia/Thimphu": [
     {
       "bounds": [88.9, 27.2, 89.2, 27.7],
