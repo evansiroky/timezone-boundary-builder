@@ -2,7 +2,7 @@
 
 The goal of this project is to produce a shapefile with the boundaries of the world's timezones using OpenStreetMap data.
 
-<p align="center"><img src="2024a.png" /></p>
+<p align="center"><img src="2024b.png" /></p>
 
 [![Github downloads for all releases](https://img.shields.io/github/downloads/evansiroky/timezone-boundary-builder/total.svg)](https://tooomm.github.io/github-release-stats/?username=evansiroky&repository=timezone-boundary-builder)  [![GitHub release](https://img.shields.io/github/release/evansiroky/timezone-boundary-builder.svg)](https://github.com/evansiroky/timezone-boundary-builder/releases/latest)
 
