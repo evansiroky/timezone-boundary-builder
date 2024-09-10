@@ -1078,6 +1078,9 @@
   "Europe-Zurich-tz": {
     "timezone": "Europe/Zurich"
   },
+  "Extent of Nepalese Claims at Kalapani Territory": {
+    "name": "Extent of Nepalese Claims at Kalapani Territory"
+  },
   "Grant County, ND": {
     "name": "Grant County",
     "nist:state_fips": "38"

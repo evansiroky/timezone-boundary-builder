@@ -1790,6 +1790,10 @@
       "op": "init",
       "source": "overpass",
       "id": "Asia-Kathmandu-tz"
+    }, {
+      "op": "union",
+      "source": "overpass",
+      "id": "Extent of Nepalese Claims at Kalapani Territory"
     }
   ],
   "Asia/Khandyga": [
@@ -1804,6 +1808,10 @@
       "op": "init",
       "source": "overpass",
       "id": "Asia-Kolkata-tz"
+    }, {
+      "op": "union",
+      "source": "overpass",
+      "id": "Extent of Nepalese Claims at Kalapani Territory"
     }
   ],
   "Asia/Krasnoyarsk": [

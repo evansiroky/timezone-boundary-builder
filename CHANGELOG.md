@@ -4,6 +4,7 @@
 
 * Remove `Asia/Choibalsan` as it has been moved to the "backward" file in the timezone database.
 * Add an expected zone overlap between `Asia/Pyongyang` and `Asia/Shanghai` for a disputed area within the Tumen River.
+* Explicitly include Kalapani Territory in both `Asia/Kathmandu` and `Asia/Kolkata`.
 * Update to latest OSM data
 
 ### Other Changes
