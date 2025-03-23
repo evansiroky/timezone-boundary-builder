@@ -666,6 +666,13 @@
       "id": "America-Costa_Rica-tz"
     }
   ],
+  "America/Coyhaique": [
+    {
+      "op": "init",
+      "source": "overpass",
+      "id": "America-Coyhaique-tz"
+    }
+  ],
   "America/Creston": [
     {
       "op": "init",

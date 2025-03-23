@@ -1,3 +1,9 @@
+## Unreleased
+
+### Zone Changes
+
+* Add new zone `America/Coyhaique` by taking area from `America/Santiago`.
+
 ## 2025a
 
 ### Zone Changes
