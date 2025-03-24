@@ -3,6 +3,7 @@
 ### Zone Changes
 
 * Add new zone `America/Coyhaique` by taking area from `America/Santiago`.
+* Directly use OpenStreetMap data for areas in North and South Dakota.
 
 ## 2025a
 

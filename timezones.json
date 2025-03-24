@@ -629,16 +629,6 @@
       "source": "overpass",
       "id": "America-Chicago-tz"
     }, {
-      "op": "union",
-      "source": "manual-polygon",
-      "data": [[[-100.475,44.533],[-100.855,44.162],[-99,44],[-100.475,44.533]]],
-      "description": "Include small region east of Fort Pierre"
-    }, {
-      "op": "difference",
-      "source": "manual-polygon",
-      "data": [[[-102,46],[-101.326,46.146],[-101.324,45.938],[-102,46]]],
-      "description": "Draw the line slightly east of ND 31"
-    }, {
       "op": "difference",
       "source": "manual-polygon",
       "data": [[[-85.2,32.97],[-85.237,32.954],[-85.282,32.847],[-85.235,32.765],[-85.198,32.656],[-85.182,32.571],[-85.214,32.514],[-85.119,32.444],[-85.094,32.397],[-85.073,32.355],[-85.031,32.339],[-85.02,32.3429],[-85.011,32.358],[-84.86,32.35],[-85.2,32.97]]],
@@ -720,27 +710,6 @@
       "op": "init",
       "source": "overpass",
       "id": "America-Denver-tz"
-    }, {
-      "op": "union",
-      "source": "overpass",
-      "id": "Sioux County, ND"
-    }, {
-      "op": "difference",
-      "source": "manual-polygon",
-      "data": [[[-98,44],[-98,46.5],[-100.8,46.57],[-101.326,46.146],[-101.324,45.938],[-100.583,44.865],[-100.475,44.533],[-100.855,44.162],[-98,44]]],
-      "description": "anomalies in North and South Dakota"
-    }, {
-      "op": "union",
-      "source": "overpass",
-      "id": "Grant County, ND"
-    }, {
-      "op": "union",
-      "source": "overpass",
-      "id": "Corson County, SD"
-    }, {
-      "op": "union",
-      "source": "overpass",
-      "id": "Dewey County, SD"
     }
   ],
   "America/Detroit": [

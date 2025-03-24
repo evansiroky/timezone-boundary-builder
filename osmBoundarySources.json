@@ -899,14 +899,6 @@
   "Australia-Sydney-tz": {
     "timezone": "Australia/Sydney"
   },
-  "Corson County, SD": {
-    "name": "Corson County",
-    "nist:state_fips": "46"
-  },
-  "Dewey County, SD": {
-    "name": "Dewey County",
-    "nist:state_fips": "46"
-  },
   "Europe-Amsterdam-tz": {
     "timezone": "Europe/Amsterdam"
   },
@@ -1084,10 +1076,6 @@
   "Extent of Nepalese Claims at Kalapani Territory": {
     "name": "Extent of Nepalese Claims at Kalapani Territory"
   },
-  "Grant County, ND": {
-    "name": "Grant County",
-    "nist:state_fips": "38"
-  },
   "Indian-Antananarivo-tz": {
     "timezone": "Indian/Antananarivo"
   },
@@ -1241,9 +1229,5 @@
   },
   "Panama": {
     "ISO3166-1": "PA"
-  },
-  "Sioux County, ND": {
-    "name": "Sioux County",
-    "nist:state_fips": "38"
   }
 }
