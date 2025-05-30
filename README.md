@@ -139,9 +139,17 @@ A few common languages already have libraries with an API that can be used to lo
 
 Another common way to use the data for lookup purposes is to load the shapefile into a spatially-aware database.  See this [blog post](https://simonwillison.net/2017/Dec/12/location-time-zone-api/) for an example of how that can be done.
 
+Data Warehouses:
+
 | Data Warehouse | Public Dataset |
 | -- | -- |
 | BigQuery | [tz-data](https://github.com/redorkulated/bigquery-tz-data) |
+
+Database Extensions:
+
+| Database | Libraries |
+| -- | -- |
+| PostgreSQL | [pg-tzf](https://github.com/ringsaturn/pg-tzf) |
 
 ## Running the script
 
