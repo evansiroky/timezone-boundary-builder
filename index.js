@@ -1705,19 +1705,58 @@ const autoScript = {
   makeListOfTimeZoneNames: function (cb) {
     overallProgress.beginTask('Writing timezone names to file')
     let zoneNames = Object.keys(zoneCfg)
+    let zoneNames1970 = Object.keys(zoneCfg1970)
+    let zoneNamesNow = Object.keys(zoneCfgNow)
     oceanZones.forEach(oceanZone => {
       zoneNames.push(oceanZone.tzid)
+      zoneNames1970.push(oceanZone.tzid)
+      zoneNamesNow.push(oceanZone.tzid)
     })
+    zoneNames.sort();
+    zoneNames1970.sort();
+    zoneNamesNow.sort();
     if (includedZones.length > 0) {
       zoneNames = zoneNames.filter(zoneName => includedZones.indexOf(zoneName) > -1)
+      zoneNames1970 = zoneNames1970.filter(zoneName => includedZones.indexOf(zoneName) > -1)
+      zoneNamesNow = zoneNamesNow.filter(zoneName => includedZones.indexOf(zoneName) > -1)
     }
     if (excludedZones.length > 0) {
       zoneNames = zoneNames.filter(zoneName => excludedZones.indexOf(zoneName) === -1)
+      zoneNames1970 = zoneNames1970.filter(zoneName => excludedZones.indexOf(zoneName) === -1)
+      zoneNamesNow = zoneNamesNow.filter(zoneName => excludedZones.indexOf(zoneName) === -1)
     }
     fs.writeFile(
       distDir + '/timezone-names.json',
       JSON.stringify(zoneNames),
-      cb
+      () => {
+        if (!argv.skip_1970_zones) {
+          fs.writeFile(
+            distDir + '/timezone-names-1970.json',
+            JSON.stringify(zoneNames1970),
+            () => {
+              if (!argv.skip_now_zones) {
+                fs.writeFile(
+                  distDir + '/timezone-names-now.json',
+                  JSON.stringify(zoneNamesNow),
+                  cb
+                )
+              } else {
+                cb()
+              }
+            }
+          )
+        } else {
+          if (!argv.skip_now_zones) {
+            fs.writeFile(
+              distDir + '/timezone-names-now.json',
+              JSON.stringify(zoneNamesNow),
+              cb
+            )
+          } else {
+            cb()
+          }
+        }
+      }
     )
   },
   analyzeChangesFromLastRelease: ['downloadLastRelease', 'mergeZones', function (results, cb) {
