@@ -1712,9 +1712,9 @@ const autoScript = {
       zoneNames1970.push(oceanZone.tzid)
       zoneNamesNow.push(oceanZone.tzid)
     })
-    zoneNames.sort();
-    zoneNames1970.sort();
-    zoneNamesNow.sort();
+    zoneNames.sort()
+    zoneNames1970.sort()
+    zoneNamesNow.sort()
     if (includedZones.length > 0) {
       zoneNames = zoneNames.filter(zoneName => includedZones.indexOf(zoneName) > -1)
       zoneNames1970 = zoneNames1970.filter(zoneName => includedZones.indexOf(zoneName) > -1)
