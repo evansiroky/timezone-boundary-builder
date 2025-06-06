@@ -150,13 +150,11 @@ function getZoneCfgSinceTime (cutoffTime, cacheFilename) {
     const timezoneInstance = time.Timezone.from(zone)
     const currentZoneOffset = timezoneInstance.getOffsetForWallTime(timezoneInstance)
     let timekeepingKey = `${currentZoneOffset}`
-    const transitions = timezoneInstance.getAllTransitions()
+    // Offset-only zones (Etc/UTC, Etc/GMT-3, etc) return null instead of an empty list
+    const transitions = timezoneInstance.getAllTransitions() || []
 
-    if (transitions) {
-      // timezone with transitions between daylight savings and standard time since cutoff time
-      const futureTransitionsHash = hashMd5(transitions.filter(t => t.transitionTime > cutoffTime))
-      timekeepingKey = `${currentZoneOffset}-${futureTransitionsHash}`
-    }
+    const futureTransitionsHash = hashMd5(transitions.filter(t => t.transitionTime > cutoffTime))
+    timekeepingKey = `${currentZoneOffset}-${futureTransitionsHash}`
 
     if (!timekeepingPatternZones[timekeepingKey]) {
       timekeepingPatternZones[timekeepingKey] = []
