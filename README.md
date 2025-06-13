@@ -126,6 +126,7 @@ A few common languages already have libraries with an API that can be used to lo
 | JavaScript (browser only) | [tzf-wasm](https://github.com/ringsaturn/tzf-wasm)|
 | Julia | [TimeZoneFinder](https://github.com/tpgillam/TimeZoneFinder.jl)|
 | .NET | [GeoTimezone](https://github.com/mj1856/GeoTimeZone)|
+| .NET | [TZFinder](https://github.com/devsko/TZFinder)|
 | Perl | [Geo::Location::TimeZoneFinder](https://github.com/voegelas/Geo-Location-TimeZoneFinder)|
 | php | [Geo-Timezone](https://github.com/minube/geo-timezone)|
 | Python | [timezonefinder](https://github.com/MrMinimal64/timezonefinder)|
