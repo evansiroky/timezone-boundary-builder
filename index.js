@@ -148,13 +148,24 @@ function getZoneCfgSinceTime (cutoffTime, cacheFilename) {
   Object.keys(zoneCfg).forEach(zone => {
     // calculate which offset pattern this zone follows and add it to list
     const timezoneInstance = time.Timezone.from(zone)
-    const currentZoneOffset = timezoneInstance.getOffsetForWallTime(timezoneInstance)
-    let timekeepingKey = `${currentZoneOffset}`
-    // Offset-only zones (Etc/UTC, Etc/GMT-3, etc) return null instead of an empty list
-    const transitions = timezoneInstance.getAllTransitions() || []
+    const startingZoneOffset = timezoneInstance.getOffsetForWallTime(cutoffTime)
 
-    const futureTransitionsHash = hashMd5(transitions.filter(t => t.transitionTime > cutoffTime))
-    timekeepingKey = `${currentZoneOffset}-${futureTransitionsHash}`
+    // Offset-only zones (Etc/UTC, Etc/GMT-3, etc) return null instead of an empty list
+    const transitions = (timezoneInstance.getAllTransitions() || [])
+      .filter(t => t.transitionTime > cutoffTime)
+      // Only respect the transition times and total offset for equality. This way, different
+      // zones that only use different names (like GMT/BST for London but WET/WEST for Lisbon),
+      // or that mark different periods as standard time (like Dublin which uses +1-1 in the
+      // winter and +1+0 in summer, whereas London and Lisbon use +0+0 in the winter and +0+1
+      // in the summer) will still merge.
+      .map(t => [t.transitionTime, t.utcOffset])
+      // getAllTransitions returns transitions until March 2499 for Europe/London, but until
+      // October 2499 for Europe/Dublin, which will lead to a mismatch. This limits the number
+      // of transitions to something a bit sooner (250 years) so that equality is not impacted
+      // by this.
+      .slice(0, 500)
+
+    const timekeepingKey = `${startingZoneOffset}-${hashMd5(transitions)}`
 
     if (!timekeepingPatternZones[timekeepingKey]) {
       timekeepingPatternZones[timekeepingKey] = []
