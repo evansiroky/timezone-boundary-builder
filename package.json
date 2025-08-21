@@ -42,7 +42,6 @@
     "url": "https://github.com/sponsors/evansiroky"
   },
   "devDependencies": {
-    "prettier": "^3.6.2",
-    "standard": "^17.1.0"
+    "prettier": "^3.6.2"
   }
 }
