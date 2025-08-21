@@ -7,7 +7,11 @@
     "node": ">=12"
   },
   "scripts": {
-    "test": "standard && node lint-json.js"
+    "format": "prettier --check .",
+    "format:fix": "prettier --write .",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "test": "node lint-json.js"
   },
   "keywords": [
     "timezone",
@@ -41,6 +45,10 @@
     "url": "https://github.com/sponsors/evansiroky"
   },
   "devDependencies": {
-    "standard": "^17.1.0"
+    "@eslint/js": "^9.34.0",
+    "eslint": "^9.34.0",
+    "eslint-config-prettier": "^10.1.8",
+    "globals": "^16.3.0",
+    "prettier": "^3.6.2"
   }
 }

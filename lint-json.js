@@ -20,9 +20,10 @@ Object.keys(zoneCfg).forEach(zone => {
       } else {
         sourcesUsage[operation.id] = true
       }
-    } else if (operation.source.indexOf('manual') > -1 &&
-      (!operation.description ||
-        operation.description.length < 3)) {
+    } else if (
+      operation.source.indexOf('manual') > -1 &&
+      (!operation.description || operation.description.length < 3)
+    ) {
       numErrors++
 
       console.error(`No description of ${operation.source} for operation ${idx} of zone: ${zone}`)
@@ -34,7 +35,9 @@ Object.keys(zoneCfg).forEach(zone => {
 Object.keys(sourcesUsage).forEach(source => {
   if (!sourcesUsage[source]) {
     numErrors++
-    console.error(`osmBoundarySources config "${source}" is never used in timezone boundary building`)
+    console.error(
+      `osmBoundarySources config "${source}" is never used in timezone boundary building`
+    )
   }
 })
 
