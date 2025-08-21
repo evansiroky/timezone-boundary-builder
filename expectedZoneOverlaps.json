@@ -3,7 +3,8 @@
     {
       "bounds": [27.8, 9.3, 29.1, 10.2],
       "description": "Allow disputed Abyei Area (https://en.wikipedia.org/wiki/Abyei) to overlap."
-    }, {
+    },
+    {
       "bounds": [23.4, 8.6, 24.9, 9.9],
       "description": "Allow disputed Kafia Kingi region (https://en.wikipedia.org/wiki/Kafia_Kingi) to overlap."
     }
@@ -66,22 +67,28 @@
     {
       "bounds": [114, 10.1, 114.3, 11],
       "description": "Allow disputed area near Gaven Reefs (https://en.wikipedia.org/wiki/Gaven_Reefs) to overlap."
-    }, {
+    },
+    {
       "bounds": [114.4, 9.8, 114.6, 10],
       "description": "Allow disputed area near Hughes Reef (https://en.wikipedia.org/wiki/Hughes_Reef) to overlap."
-    }, {
+    },
+    {
       "bounds": [115.4, 9.8, 115.6, 10],
       "description": "Allow disputed area near Mischief Reef (https://en.wikipedia.org/wiki/Mischief_Reef) to overlap."
-    }, {
+    },
+    {
       "bounds": [114.2, 9.6, 114.4, 9.8],
       "description": "Allow disputed area near Johnson South Reef (https://en.wikipedia.org/wiki/Johnson_South_Reef) to overlap."
-    }, {
+    },
+    {
       "bounds": [112.8, 9.5, 113.1, 9.8],
       "description": "Allow disputed area near Fiery Cross Reef (https://en.wikipedia.org/wiki/Fiery_Cross_Reef) to overlap."
-    }, {
+    },
+    {
       "bounds": [112.7, 8.8, 112.9, 8.9],
       "description": "Allow disputed area near Cuarteron Reef (https://en.wikipedia.org/wiki/Cuarteron_Reef) to overlap."
-    }, {
+    },
+    {
       "bounds": [110.9, 15.5, 113, 17.4],
       "description": "Allow disputed area near Paracel Islands (https://en.wikipedia.org/wiki/Paracel_Islands) to overlap."
     }
@@ -114,7 +121,8 @@
     {
       "bounds": [88.9, 27.2, 89.2, 27.7],
       "description": "Allow disputed area near Doklam to overlap (See https://zh.wikipedia.org/wiki/%E4%B8%AD%E4%B8%8D%E8%BE%B9%E7%95%8C%E4%BA%89%E8%AE%AE and https://en.wikipedia.org/wiki/Doklam)"
-    }, {
+    },
+    {
       "bounds": [90.7, 27.8, 91.4, 28.1],
       "description": "Allow disputed area along Northwest Bhutan-China border to overlap (See https://zh.wikipedia.org/wiki/%E4%B8%AD%E4%B8%8D%E8%BE%B9%E7%95%8C%E4%BA%89%E8%AE%AE)"
     }
@@ -129,7 +137,8 @@
     {
       "bounds": [39.8, 42.4, 42.2, 43.6],
       "description": "Allow overlap of state of Abkhazia using Moscow time with Georgian time.  https://en.wikipedia.org/wiki/Abkhazia"
-    }, {
+    },
+    {
       "bounds": [43.3, 42.8, 43.5, 42.9],
       "description": "Allow overlap of minimal areas at mountaintops due to likely mismatching OSM boundaries that should probably be fixed in OSM."
     }
