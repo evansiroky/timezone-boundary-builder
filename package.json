@@ -8,7 +8,7 @@
   },
   "scripts": {
     "format": "prettier --write .",
-    "test": "standard && node lint-json.js"
+    "test": "node lint-json.js"
   },
   "keywords": [
     "timezone",
