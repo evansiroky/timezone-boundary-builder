@@ -7,6 +7,7 @@
     "node": ">=12"
   },
   "scripts": {
+    "format": "prettier --write .",
     "test": "standard && node lint-json.js"
   },
   "keywords": [
@@ -41,6 +42,7 @@
     "url": "https://github.com/sponsors/evansiroky"
   },
   "devDependencies": {
+    "prettier": "^3.6.2",
     "standard": "^17.1.0"
   }
 }
