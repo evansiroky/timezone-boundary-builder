@@ -101,6 +101,8 @@ const distDir = path.resolve(argv.dist_dir)
 const workingDir = path.resolve(argv.working_dir)
 const osmDownloadDir = path.join(workingDir, 'osm-downloads')
 
+let includedZones = []
+let excludedZones = []
 let oceanZones = [
   { tzid: 'Etc/GMT-12', left: 172.5, right: 180 },
   { tzid: 'Etc/GMT-11', left: 157.5, right: 172.5 },
@@ -188,7 +190,8 @@ function getZoneCfgSinceTime (cutoffTime, cacheFilename) {
     const timezoneInstance = time.Timezone.from(zone)
     const currentZoneOffset = timezoneInstance.getOffsetForWallTime(timezoneInstance)
     let timekeepingKey = `${currentZoneOffset}`
-    const transitions = timezoneInstance.getAllTransitions()
+    // use empty array instead of null in cases where no transitions were present for a zone
+    const transitions = timezoneInstance.getAllTransitions() || []
 
     if (transitions) {
       // timezone with transitions between daylight savings and standard time since cutoff time
@@ -211,7 +214,7 @@ function getZoneCfgSinceTime (cutoffTime, cacheFilename) {
 
   // remove any ocean zones that were not merged into another zone
   oceanZones.forEach(oceanZone => {
-    if (newZoneCfg[oceanZone.tzid].length === 1) {
+    if (newZoneCfg[oceanZone.tzid] && newZoneCfg[oceanZone.tzid].length === 1) {
       delete newZoneCfg[oceanZone.tzid]
     }
   })
@@ -238,8 +241,6 @@ if (!argv.skip_1970_zones) {
 }
 
 // allow building of only a specified zones
-let includedZones = []
-let excludedZones = []
 if (argv.included_zones || argv.excluded_zones) {
   if (argv.included_zones) {
     const newZoneCfg = {}
@@ -300,26 +301,6 @@ if (argv.included_zones || argv.excluded_zones) {
 
   osmBoundarySources = newOsmBoundarySources
 }
-
-function oceanZoneHasAlikeZone (zoneCfgObj, oceanTzid) {
-  const zoneCfgs = Object.keys(zoneCfgObj)
-  for (let i = 0; i < zoneCfgs.length; i++) {
-    const zoneCfg = zoneCfgs[i]
-    for (let j = 0; j < zoneCfg.length; j++) {
-      if (zoneCfg[j] === oceanTzid) return true      
-    }
-  }
-  return false
-}
-
-// calculate which ocean zones are in merged configs
-oceanZoneBoundaries.forEach(oceanZone => {
-  oceanZone.hasAlikeIn1970 = oceanZoneHasAlikeZone(zoneCfg1970, oceanZone.tzid)
-  oceanZone.hasAlikeInNow = oceanZoneHasAlikeZone(zoneCfgNow, oceanZone.tzid)
-})
-
-console.log(oceanZoneBoundaries)
-// process.exit()
 
 const geoJsonReader = new jsts.io.GeoJSONReader()
 const geoJsonWriter = new jsts.io.GeoJSONWriter()
@@ -1208,6 +1189,17 @@ function validateTimezoneBoundaries (callback) {
 
 let oceanZoneBoundaries
 
+function oceanZoneHasAlikeZone (zoneCfgObj, oceanTzid) {
+  const zoneCfgs = Object.keys(zoneCfgObj)
+  for (let i = 0; i < zoneCfgs.length; i++) {
+    const zoneCfg = zoneCfgs[i]
+    for (let j = 0; j < zoneCfg.length; j++) {
+      if (zoneCfg[j] === oceanTzid) return true      
+    }
+  }
+  return false
+}
+
 /**
  * Calculates the ocean boundaries for the full set of timezones by
  * diffing all of the ocean zones against the calculated boundaries of
@@ -1259,6 +1251,8 @@ function calculateOceans (callback) {
             })
 
             calculateCb(null, {
+              hasAlikeIn1970: oceanZoneHasAlikeZone(zoneCfg1970, oceanZone.tzid),
+              hasAlikeInNow: oceanZoneHasAlikeZone(zoneCfgNow, oceanZone.tzid),
               geom: postProcessZone(oceanGeom, true),
               tzid: oceanZone.tzid
             })
@@ -1856,7 +1850,7 @@ const autoScript = {
       cb
     )
   },
-  analyzeChangesFromLastRelease: ['downloadLastRelease', 'mergeZones', function (results, cb) {
+  analyzeChangesFromLastRelease: ['downloadLastRelease', 'mergeAndWriteZones', function (results, cb) {
     if (argv.skip_analyze_diffs) {
       overallProgress.beginTask('WARNING: Skipping analysis of changes from last release!')
       cb()
