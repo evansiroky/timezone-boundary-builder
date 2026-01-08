@@ -668,14 +668,14 @@ function getFinalTzOutputFilename (tzid) {
 
 function getFinal1970TzOutputFilename (source) {
   return path.join(
-    workingDir, 
+    workingDir,
     `${safeTzFilename(source.id)}-1970${source.withOceans ? '-withOceans' : ''}.json`
   )
 }
 
 function getFinalNowTzOutputFilename (source) {
   return path.join(
-    workingDir, 
+    workingDir,
     `${safeTzFilename(source.id)}-now${source.withOceans ? '-withOceans' : ''}.json`
   )
 }
@@ -1198,10 +1198,11 @@ let oceanZoneBoundaries
 
 function oceanZoneHasAlikeZone (zoneCfgObj, oceanTzid) {
   const zoneCfgs = Object.keys(zoneCfgObj)
+  let combinedZoneList
   for (let i = 0; i < zoneCfgs.length; i++) {
-    let zoneCfg = zoneCfgObj[zoneCfgs[i]]
-    for (let j = 0; j < zoneCfg.length; j++) {
-      if (zoneCfg[j] === oceanTzid) return true      
+    combinedZoneList = zoneCfgObj[zoneCfgs[i]]
+    for (let j = 0; j < combinedZoneList.length; j++) {
+      if (combinedZoneList[j] === oceanTzid) return true
     }
   }
   return false
@@ -1697,9 +1698,9 @@ function assembleAndZipInputData (callback) {
   )
 }
 
-function writeCombinedZoneLookup(product, cfg, withOceans, cb) {
+function writeCombinedZoneLookup (product, cfg, withOceans, cb) {
   const filename = path.join(
-    distDir, 
+    distDir,
     `combined-zone-lookup${withOceans ? '-with-oceans' : ''}-${product}.json`
   )
   const cfgToWrite = cloneDeep(cfg)
@@ -1877,7 +1878,7 @@ const autoScript = {
       cb1970 => writeCombinedZoneLookup('1970', zoneCfg1970, false, cb1970),
       cb1970WithOceans => writeCombinedZoneLookup('1970', zoneCfg1970, true, cb1970WithOceans),
       cbNow => writeCombinedZoneLookup('Now', zoneCfgNow, false, cbNow),
-      cbNowWithOceans => writeCombinedZoneLookup('Now', zoneCfgNow, true, cbNowWithOceans),
+      cbNowWithOceans => writeCombinedZoneLookup('Now', zoneCfgNow, true, cbNowWithOceans)
     ], cb)
   },
   analyzeChangesFromLastRelease: ['downloadLastRelease', 'mergeAndWriteZones', function (results, cb) {
