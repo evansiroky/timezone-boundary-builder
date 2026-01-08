@@ -1697,6 +1697,20 @@ function assembleAndZipInputData (callback) {
   )
 }
 
+function writeCombinedZoneLookup(product, cfg, withOceans, cb) {
+  const filename = path.join(
+    distDir, 
+    `combined-zone-lookup${withOceans ? '-with-oceans' : ''}-${product}.json`
+  )
+  const cfgToWrite = cloneDeep(cfg)
+  if (!withOceans) {
+    Object.keys(cfgToWrite).forEach(zone => {
+      cfgToWrite[zone] = cfgToWrite[zone].filter(tzid => tzid.indexOf('Etc/GMT') === -1)
+    })
+  }
+  fs.writeFile(filename, JSON.stringify(cfgToWrite), cb)
+}
+
 const autoScript = {
   makeCacheDirAndFns: function (cb) {
     overallProgress.beginTask(`Creating downloads dir (${downloadsDir})`)
@@ -1856,6 +1870,15 @@ const autoScript = {
       JSON.stringify(zoneNames),
       cb
     )
+  },
+  makeCombinedZoneLookups: function (cb) {
+    overallProgress.beginTask('Writing combined zone lookups to file')
+    asynclib.parallel([
+      cb1970 => writeCombinedZoneLookup('1970', zoneCfg1970, false, cb1970),
+      cb1970WithOceans => writeCombinedZoneLookup('1970', zoneCfg1970, true, cb1970WithOceans),
+      cbNow => writeCombinedZoneLookup('Now', zoneCfgNow, false, cbNow),
+      cbNowWithOceans => writeCombinedZoneLookup('Now', zoneCfgNow, true, cbNowWithOceans),
+    ], cb)
   },
   analyzeChangesFromLastRelease: ['downloadLastRelease', 'mergeAndWriteZones', function (results, cb) {
     if (argv.skip_analyze_diffs) {
