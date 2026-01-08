@@ -9,6 +9,7 @@
 
 * Include mapping of combined zones with similar timekeeping methods as release outputs. ([#195](https://github.com/evansiroky/timezone-boundary-builder/issues/195))
 * Update Readme with notes on zone merging including visualizations. ([#194](https://github.com/evansiroky/timezone-boundary-builder/issues/194))
+* Improve algorithm for calculating zones with similar timekeeping methods. ([#191](https://github.com/evansiroky/timezone-boundary-builder/pull/191))
 
 ## 2025b
 
