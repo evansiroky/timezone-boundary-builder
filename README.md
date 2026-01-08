@@ -2,7 +2,7 @@
 
 The goal of this project is to produce a shapefile with the boundaries of the world's timezones using OpenStreetMap data.
 
-<p align="center"><img src="2025b.png" /></p>
+<p align="center"><img src="2025c.png" /></p>
 
 [![Github downloads for all releases](https://img.shields.io/github/downloads/evansiroky/timezone-boundary-builder/total.svg)](https://tooomm.github.io/github-release-stats/?username=evansiroky&repository=timezone-boundary-builder)  [![GitHub release](https://img.shields.io/github/release/evansiroky/timezone-boundary-builder.svg)](https://github.com/evansiroky/timezone-boundary-builder/releases/latest)
 
@@ -23,15 +23,13 @@ To maintain consistency with the timezone database, this project will only creat
 
 **Important Note:** Some timezone database releases may not have a respective release from this project. New release are always created if a new timezones is created or deprecated in a timezone database release. For timezone database releases that don't have this trigger, then this project may create a release if there have been changes performed to the boundary definitions of an existing zone, or a bugfix is needed or a new feature is introduced. However, that may not always happen. Sometimes, certain timezone database releases are skipped if a new release from this project was still being worked on.
 
-### Different Types of Releases
+### Different Types of Release Data Products
 
 As of release 2023d, this project produces timezone boundary data products with three different variations: 
 
 1. Similarity of timekeeping method
 2. With or without oceans
 3. GeoJSON or Shapefile
-
-Additionally, the input data used to assemble the releases and a list of timezone names are also included in each release.
 
 #### 1. Similarity of timekeeping method
 
@@ -43,6 +41,8 @@ There are 3 different timekeeping similarity variations that are produced:
 
 ##### Comprehensive #####
 
+<p align="center"><img src="2025c.png" /></p>
+
 This follows a strategy of including all timezone identifiers that were produced by the timezone database project according to the up-until 1993 practice of producing at least one zone per country. This does not include zones that were determined to be unneccessary due to lack of supporting evidence. This variation should mostly align with those timezones listed in the [zone.tab](https://github.com/eggert/tz/blob/main/zone.tab) file within the timezone database project. This dataset is the basis for producing the other 2 timekeeping variations in this project.
 
 This output variation provides data assumes that some data about time changes prior to 1970 marked as deprecated within the timezone database is actually correct. Depending on whether the data prior to 1970 within the timezone database is deemed correct, then the use of this dataset will provide as comprehensive as possible data for observed timekeeping methods worldwide.
@@ -51,6 +51,8 @@ In the release files, these zones are identified with the prefix `timezones` or 
 
 ##### Same since 1970 #####
 
+<p align="center"><img src="2025c-1970.png" /></p>
+
 This strategy includes only timezones that have agreed on timekeeping methods since the year 1970. This variation should mostly align with those timezones listed in the [zone1970.tab](https://github.com/eggert/tz/blob/main/zone1970.tab) file within the timezone database project. However, the [@tubular/time](https://www.npmjs.com/package/@tubular/time) library is used to determine which zones get merged together from the comprehensive variation. The output of the zones from the comprehensive method are combined together for all relevant zones with the zone having the largest city population being used for the `tzid` of the merged zone in the final output.
 
 This output variation is technically the most authoritative dataset since the timezone database officially supports only timekeeping methods that have been the same since 1970. Depending on whether the data prior to 1970 within the timezone database is deemed correct, then the use of this dataset may provide potentially incorrect data for observed timekeeping methods prior to 1970 at certain locations.
@@ -58,6 +60,8 @@ This output variation is technically the most authoritative dataset since the ti
 In the release files, these zones are identified with the prefix `timezones-1970` or `timezones-with-oceans-1970`. Data with the "Same since 1970" timekeeping method was first made availabile in release 2023d. 
 
 ##### Same since now #####
+
+<p align="center"><img src="2025c-now.png" /></p>
 
 This strategy includes only timezones that agree on timekeeping methods as of the approximate release date of the data. This variation should mostly align with those timezones listed in the [zonenow.tab](https://github.com/eggert/tz/blob/main/zonenow.tab) file within the timezone database project. However, the [@tubular/time](https://www.npmjs.com/package/@tubular/time) library is used to determine which zones get merged together from the comprehensive variation. The output of the zones from the comprehensive method are combined together for all relevant zones and the zone with the largest city population is used in the final output. 
 
@@ -81,7 +85,7 @@ A common misconception is that `Etc/GMT*` zones should increase from west to eas
 # mean 4 hours ahead of UT (i.e. east of Greenwich).
 ```
 
-In the release files, the files that have oceans are specifically noted as having them due to having the string `with-oceans` within the filename. Release files without this string do not have ocean data. Data with or without oceans was first made availabile in release 2018d. 
+In the release files, the files that have oceans are specifically noted as having them due to having the string `with-oceans` within the filename. Release files without this string do not have ocean data. Data with or without oceans was first made availabile in release 2018d. As of release 2025c, the ocean zones with similar timekeeping methods as other timezone identifiers are merged together.
 
 #### 3. GeoJSON or Shapefile ####
 
@@ -89,9 +93,20 @@ In combination with the timekeeping method and ocean variations, each of these c
 
 In the release files, the files that are provided in GeoJSON have the suffix `.geojson.zip`. The shapefiles have the suffix `.shapefile.zip`. Release files have been provided in GeoJSON or as shapefiles in releases since this project started.
 
-#### timezone-names.json ####
+### Supplementary Files
 
-This release file is simply a single array with the list of timezone identifiers used to create the comprehensive release of timezone data. This has been included in releases starting from release 2019b.
+There are also supplementary files included in each release:
+
+1. A list of all of the timezone identifiers included in each data release. (This started in 2019b, and was expanded to include the list of merged zones with 2025c).
+2. The input data used to assemble the releases (starting with release 2020a).
+
+#### Timezone Names ####
+
+There are various timezone name files that are outputted to list out each timezone identifier included in each dataset based on which zones were merged and whether or not oceans were included. The filenames begin with the prefix `timezone-names` and include JSON, but the structure of the JSON in the files differ slightly.
+
+For the comprehensive datasets, this release file is simply a single array with the list of timezone identifiers used to create the comprehensive release of timezone data. This has been included in releases starting from release 2019b. Starting in release 2025c, an additional file was added in this format that enabled differentiating between the zones included in the ocean dataset and the one without oceans.
+
+For the "Same since 1970" and "Same since now" datasets, the JSON contents include an object with a key for each merged timezone identifier. The value associated with each of these keys includes an array of strings of the associated timezone identifiers from the comprehensive dataset that had similar timekeeping methods that were merged together.
 
 #### input-data.zip ####
 

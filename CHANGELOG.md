@@ -1,8 +1,14 @@
-## Unreleased
+## 2025c
 
 ### Zone Changes
 
-* Merge ocean zones into other zones that have similar timekeeping methods.
+* Merge ocean zones into other zones that have similar timekeeping methods in 1970 with oceans and Now with oceans data products. ([#187](https://github.com/evansiroky/timezone-boundary-builder/issues/187))
+* Update to latest OSM data
+
+### Other Changes
+
+* Include mapping of combined zones with similar timekeeping methods as release outputs. ([#195](https://github.com/evansiroky/timezone-boundary-builder/issues/195))
+* Update Readme with notes on zone merging including visualizations. ([#194](https://github.com/evansiroky/timezone-boundary-builder/issues/194))
 
 ## 2025b
 
