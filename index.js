@@ -1698,18 +1698,41 @@ function assembleAndZipInputData (callback) {
   )
 }
 
-function writeCombinedZoneLookup (product, cfg, withOceans, cb) {
-  const filename = path.join(
-    distDir,
-    `combined-zone-lookup${withOceans ? '-with-oceans' : ''}-${product}.json`
+function writeBaseNames (withOceans, cb) {
+  let zoneNames = Object.keys(zoneCfg)
+  if (withOceans) {
+    oceanZones.forEach(oceanZone => {
+      zoneNames.push(oceanZone.tzid)
+    })
+  }
+  if (includedZones.length > 0) {
+    zoneNames = zoneNames.filter(zoneName => includedZones.indexOf(zoneName) > -1)
+  }
+  if (excludedZones.length > 0) {
+    zoneNames = zoneNames.filter(zoneName => excludedZones.indexOf(zoneName) === -1)
+  }
+  fs.writeFile(
+    path.join(distDir, `timezone-names${withOceans ? '-with-oceans' : ''}.json`),
+    JSON.stringify(zoneNames),
+    cb
   )
+}
+
+function writeCombinedZoneLookup (product, cfg, withOceans, cb) {
   const cfgToWrite = cloneDeep(cfg)
   if (!withOceans) {
     Object.keys(cfgToWrite).forEach(zone => {
       cfgToWrite[zone] = cfgToWrite[zone].filter(tzid => tzid.indexOf('Etc/GMT') === -1)
     })
   }
-  fs.writeFile(filename, JSON.stringify(cfgToWrite), cb)
+  fs.writeFile(
+    path.join(
+      distDir,
+      `timezone-names-${withOceans ? 'with-oceans-' : ''}${product}.json`
+    ),
+    JSON.stringify(cfgToWrite),
+    cb
+  )
 }
 
 const autoScript = {
@@ -1855,26 +1878,10 @@ const autoScript = {
     )
   }],
   makeListOfTimeZoneNames: function (cb) {
-    overallProgress.beginTask('Writing timezone names to file')
-    let zoneNames = Object.keys(zoneCfg)
-    oceanZones.forEach(oceanZone => {
-      zoneNames.push(oceanZone.tzid)
-    })
-    if (includedZones.length > 0) {
-      zoneNames = zoneNames.filter(zoneName => includedZones.indexOf(zoneName) > -1)
-    }
-    if (excludedZones.length > 0) {
-      zoneNames = zoneNames.filter(zoneName => excludedZones.indexOf(zoneName) === -1)
-    }
-    fs.writeFile(
-      distDir + '/timezone-names.json',
-      JSON.stringify(zoneNames),
-      cb
-    )
-  },
-  makeCombinedZoneLookups: function (cb) {
-    overallProgress.beginTask('Writing combined zone lookups to file')
+    overallProgress.beginTask('Writing timezone names and lookups to file')
     asynclib.parallel([
+      cbComprehensive => writeBaseNames(false, cbComprehensive),
+      cbComprehensiveWithOceans => writeBaseNames(true, cbComprehensiveWithOceans),
       cb1970 => writeCombinedZoneLookup('1970', zoneCfg1970, false, cb1970),
       cb1970WithOceans => writeCombinedZoneLookup('1970', zoneCfg1970, true, cb1970WithOceans),
       cbNow => writeCombinedZoneLookup('Now', zoneCfgNow, false, cbNow),
