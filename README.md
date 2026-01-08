@@ -53,8 +53,6 @@ In the release files, these zones are identified with the prefix `timezones` or 
 
 <p align="center"><img src="2025c-1970.png" /></p>
 
-<p align="center"><img src="2025c-1970.png" /></p>
-
 This strategy merges timezones that have agreed on timekeeping methods since the year 1970. This results in a reduced set of timezones, simplified timezone polygons and smaller storage footprint. This variation should mostly align with those timezones listed in the [zone1970.tab](https://github.com/eggert/tz/blob/main/zone1970.tab) file within the timezone database project. However, the [@tubular/time](https://www.npmjs.com/package/@tubular/time) library is used to determine which zones get merged together from the comprehensive variation. The output of the zones from the comprehensive method are combined together for all relevant zones with the zone having the largest city population being used for the `tzid` of the merged zone in the final output.
 
 This output variation is technically the most authoritative dataset since the timezone database officially supports only timekeeping methods that have been the same since 1970. Depending on whether the data prior to 1970 within the timezone database is deemed correct, then the use of this dataset may provide potentially incorrect data for observed timekeeping methods prior to 1970 at certain locations.
@@ -62,8 +60,6 @@ This output variation is technically the most authoritative dataset since the ti
 In the release files, these zones are identified with the prefix `timezones-1970` or `timezones-with-oceans-1970`. Data with the "Same since 1970" timekeeping method was first made availabile in release 2023d. 
 
 ##### Same since now #####
-
-<p align="center"><img src="2025c-now.png" /></p>
 
 <p align="center"><img src="2025c-now.png" /></p>
 
