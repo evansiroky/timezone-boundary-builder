@@ -1,6 +1,7 @@
 {
   "Africa-Abidjan-tz": {
-    "timezone": "Africa/Abidjan"
+    "timezone": "Africa/Abidjan",
+    "boundary": "administrative"
   },
   "Africa-Accra-tz": {
     "timezone": "Africa/Accra"
@@ -72,7 +73,8 @@
     "timezone": "Africa/Harare"
   },
   "Africa-Johannesburg-tz": {
-    "timezone": "Africa/Johannesburg"
+    "timezone": "Africa/Johannesburg",
+    "boundary": "administrative"
   },
   "Africa-Juba-tz": {
     "timezone": "Africa/Juba"
@@ -111,7 +113,8 @@
     "timezone": "Africa/Malabo"
   },
   "Africa-Maputo-tz": {
-    "timezone": "Africa/Maputo"
+    "timezone": "Africa/Maputo",
+    "boundary": "administrative"
   },
   "Africa-Maseru-tz": {
     "timezone": "Africa/Maseru"
@@ -126,7 +129,8 @@
     "timezone": "Africa/Monrovia"
   },
   "Africa-Nairobi-tz": {
-    "timezone": "Africa/Nairobi"
+    "timezone": "Africa/Nairobi",
+    "boundary": "administrative"
   },
   "Africa-Ndjamena-tz": {
     "timezone": "Africa/Ndjamena"
@@ -180,7 +184,8 @@
     "timezone": "America/Argentina/Catamarca"
   },
   "America-Argentina-Cordoba-tz": {
-    "timezone": "America/Argentina/Cordoba"
+    "timezone": "America/Argentina/Cordoba",
+    "boundary": "administrative"
   },
   "America-Argentina-Jujuy-tz": {
     "timezone": "America/Argentina/Jujuy"
@@ -651,7 +656,8 @@
     "timezone": "Asia/Dili"
   },
   "Asia-Dubai-tz": {
-    "timezone": "Asia/Dubai"
+    "timezone": "Asia/Dubai",
+    "boundary": "administrative"
   },
   "Asia-Dushanbe-tz": {
     "timezone": "Asia/Dushanbe"
@@ -678,7 +684,8 @@
     "timezone": "Asia/Irkutsk"
   },
   "Asia-Jakarta-tz": {
-    "timezone": "Asia/Jakarta"
+    "timezone": "Asia/Jakarta",
+    "boundary": "administrative"
   },
   "Asia-Jayapura-tz": {
     "timezone": "Asia/Jayapura"
@@ -899,6 +906,12 @@
   "Australia-Sydney-tz": {
     "timezone": "Australia/Sydney"
   },
+  "China–Bhutan Disputed Area": {
+    "name:en": "China–Bhutan Disputed Area"
+  },
+  "Chamorro Time Zone": {
+    "name": "Chamorro Time Zone"
+  },
   "Europe-Amsterdam-tz": {
     "timezone": "Europe/Amsterdam"
   },
@@ -915,7 +928,7 @@
     "timezone": "Europe/Belgrade"
   },
   "Europe-Berlin-tz": {
-    "timezone": "Europe/Berlin"
+    "name": "Old Europe/Berlin timezone"
   },
   "Europe-Bratislava-tz": {
     "timezone": "Europe/Bratislava"
@@ -1209,14 +1222,12 @@
   "Pacific-Rarotonga-tz": {
     "timezone": "Pacific/Rarotonga"
   },
-  "Pacific-Saipan-tz": {
-    "timezone": "Pacific/Saipan"
-  },
   "Pacific-Tahiti-tz": {
     "timezone": "Pacific/Tahiti"
   },
   "Pacific-Tarawa-tz": {
-    "timezone": "Pacific/Tarawa"
+    "timezone": "Pacific/Tarawa",
+    "boundary": "administrative"
   },
   "Pacific-Tongatapu-tz": {
     "timezone": "Pacific/Tongatapu"

@@ -22,7 +22,7 @@
   "dependencies": {
     "@mapbox/geojson-area": "^0.2.2",
     "@mapbox/geojsonhint": "^3.3.0",
-    "@tubular/time": "^3.9.9",
+    "@tubular/time": "^3.10.6",
     "@turf/bbox": "^7.1.0",
     "@turf/helpers": "^7.1.0",
     "async": "^3.2.6",

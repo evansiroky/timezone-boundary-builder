@@ -3,6 +3,14 @@ const hasha = require('hasha')
 
 const hashaOpts = { algorithm: 'md5' }
 
+/**
+ * A Base-level class for assisting with file-based caches. It assumes a workflow of
+ * initializing the cache by reading in a previously cached file if one exists. If a
+ * previous file doesn't exist, the cache is empty. The callback at the end of the init
+ * function should be waited upon to ensure cache initialization is complete. Upon
+ * announcing the end of calculations, a file is outputted that contains the new cache
+ * which is an object with keys of the cache lookup and the corresponding value.
+ */
 class BaseFileCache {
   constructor ({ filename }) {
     this.filename = filename
@@ -36,6 +44,9 @@ class BaseFileCache {
   }
 }
 
+/**
+ * A BaseFileCache where the values are stored directly in the cache object.
+ */
 class FileCache extends BaseFileCache {
   calculate ({
     cacheKey,
@@ -57,6 +68,9 @@ class FileCache extends BaseFileCache {
   }
 }
 
+/**
+ * A BaseFileCache where the values are stored as their own files.
+ */
 class FileLookupCache extends BaseFileCache {
   calculate ({
     cacheKey,

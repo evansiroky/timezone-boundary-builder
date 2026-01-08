@@ -1368,6 +1368,11 @@
       "op": "init",
       "source": "overpass",
       "id": "America-Toronto-tz"
+    }, {
+      "op": "difference",
+      "source": "manual-polygon",
+      "data": [[[-80.8,27.6],[-80.8,20.5],[-72,20.5],[-72,27.6],[-80.8,27.6]]],
+      "description": "Remove Bahamas included in raw OpenStreetMap relation."
     }
   ],
   "America/Tortola": [
@@ -1963,6 +1968,11 @@
       "op": "init",
       "source": "overpass",
       "id": "Asia-Shanghai-tz"
+    }, {
+      "op": "union",
+      "source": "overpass",
+      "id": "China–Bhutan Disputed Area",
+      "description": "Add China–Bhutan Disputed Area. See https://en.wikipedia.org/wiki/Bhutan%E2%80%93China_relations#Boundary_issues."
     }
   ],
   "Asia/Singapore": [
@@ -2012,6 +2022,11 @@
       "op": "init",
       "source": "overpass",
       "id": "Asia-Thimphu-tz"
+    }, {
+      "op": "union",
+      "source": "overpass",
+      "id": "China–Bhutan Disputed Area",
+      "description": "Add China–Bhutan Disputed Area. See https://en.wikipedia.org/wiki/Bhutan%E2%80%93China_relations#Boundary_issues."
     }
   ],
   "Asia/Tokyo": [
@@ -2480,6 +2495,10 @@
       "op": "init",
       "source": "overpass",
       "id": "Europe-Moscow-tz"
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "Europe-Simferopol-tz"
     }
   ],
   "Europe/Oslo": [
@@ -2751,6 +2770,11 @@
       "op": "init",
       "source": "overpass",
       "id": "Pacific-Auckland-tz"
+    }, {
+      "op": "difference",
+      "source": "manual-polygon",
+      "data": [[[-180,-90],[-180,-59],[180,-59],[180,-90],[-180,-90]]],
+      "description": "Remove arbitrary Antarctic Areas included in raw OpenStreetMap relation."
     }
   ],
   "Pacific/Bougainville": [
@@ -2834,7 +2858,7 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Pacific-Guam-tz"
+      "id": "Chamorro Time Zone"
     }
   ],
   "Pacific/Honolulu": [
@@ -2967,7 +2991,11 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Pacific-Saipan-tz"
+      "id": "Pacific-Guam-tz"
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "Chamorro Time Zone"
     }
   ],
   "Pacific/Tahiti": [

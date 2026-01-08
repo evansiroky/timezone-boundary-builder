@@ -101,6 +101,43 @@ const distDir = path.resolve(argv.dist_dir)
 const workingDir = path.resolve(argv.working_dir)
 const osmDownloadDir = path.join(workingDir, 'osm-downloads')
 
+let includedZones = []
+let excludedZones = []
+let oceanZones = [
+  { tzid: 'Etc/GMT-12', left: 172.5, right: 180 },
+  { tzid: 'Etc/GMT-11', left: 157.5, right: 172.5 },
+  { tzid: 'Etc/GMT-10', left: 142.5, right: 157.5 },
+  { tzid: 'Etc/GMT-9', left: 127.5, right: 142.5 },
+  { tzid: 'Etc/GMT-8', left: 112.5, right: 127.5 },
+  { tzid: 'Etc/GMT-7', left: 97.5, right: 112.5 },
+  { tzid: 'Etc/GMT-6', left: 82.5, right: 97.5 },
+  { tzid: 'Etc/GMT-5', left: 67.5, right: 82.5 },
+  { tzid: 'Etc/GMT-4', left: 52.5, right: 67.5 },
+  { tzid: 'Etc/GMT-3', left: 37.5, right: 52.5 },
+  { tzid: 'Etc/GMT-2', left: 22.5, right: 37.5 },
+  { tzid: 'Etc/GMT-1', left: 7.5, right: 22.5 },
+  { tzid: 'Etc/GMT', left: -7.5, right: 7.5 },
+  { tzid: 'Etc/GMT+1', left: -22.5, right: -7.5 },
+  { tzid: 'Etc/GMT+2', left: -37.5, right: -22.5 },
+  { tzid: 'Etc/GMT+3', left: -52.5, right: -37.5 },
+  { tzid: 'Etc/GMT+4', left: -67.5, right: -52.5 },
+  { tzid: 'Etc/GMT+5', left: -82.5, right: -67.5 },
+  { tzid: 'Etc/GMT+6', left: -97.5, right: -82.5 },
+  { tzid: 'Etc/GMT+7', left: -112.5, right: -97.5 },
+  { tzid: 'Etc/GMT+8', left: -127.5, right: -112.5 },
+  { tzid: 'Etc/GMT+9', left: -142.5, right: -127.5 },
+  { tzid: 'Etc/GMT+10', left: -157.5, right: -142.5 },
+  { tzid: 'Etc/GMT+11', left: -172.5, right: -157.5 },
+  { tzid: 'Etc/GMT+12', left: -180, right: -172.5 }
+]
+
+if (includedZones.length > 0) {
+  oceanZones = oceanZones.filter(oceanZone => includedZones.indexOf(oceanZone) > -1)
+}
+if (excludedZones.length > 0) {
+  oceanZones = oceanZones.filter(oceanZone => excludedZones.indexOf(oceanZone) === -1)
+}
+
 function hashMd5 (obj) {
   if (!obj) return 'non-object'
   return hash(obj, { algorithm: 'md5' })
@@ -145,7 +182,10 @@ function getZoneCfgSinceTime (cutoffTime, cacheFilename) {
 
   // Iterate through all zones to determine which share same timekeeping method since cutoff time
   const timekeepingPatternZones = {}
-  Object.keys(zoneCfg).forEach(zone => {
+  const zonesList = Object.keys(zoneCfg)
+  // add in Ocean zones too
+  oceanZones.map(oceanZoneConfig => zonesList.push(oceanZoneConfig.tzid))
+  zonesList.forEach(zone => {
     // calculate which offset pattern this zone follows and add it to list
     const timezoneInstance = time.Timezone.from(zone)
     const startingZoneOffset = timezoneInstance.getOffsetForWallTime(cutoffTime)
@@ -180,6 +220,13 @@ function getZoneCfgSinceTime (cutoffTime, cacheFilename) {
     newZoneCfg[timekeepingPatternZones[k][0]] = timekeepingPatternZones[k]
   })
 
+  // remove any ocean zones that were not merged into another zone
+  oceanZones.forEach(oceanZone => {
+    if (newZoneCfg[oceanZone.tzid] && newZoneCfg[oceanZone.tzid].length === 1) {
+      delete newZoneCfg[oceanZone.tzid]
+    }
+  })
+
   writeJsonSync(cacheFilename, newZoneCfg)
 
   return newZoneCfg
@@ -202,8 +249,6 @@ if (!argv.skip_1970_zones) {
 }
 
 // allow building of only a specified zones
-let includedZones = []
-let excludedZones = []
 if (argv.included_zones || argv.excluded_zones) {
   if (argv.included_zones) {
     const newZoneCfg = {}
@@ -270,8 +315,6 @@ const geoJsonWriter = new jsts.io.GeoJSONWriter()
 const precisionModel = new jsts.geom.PrecisionModel(1000000)
 const precisionReducer = new jsts.precision.GeometryPrecisionReducer(precisionModel)
 const finalZones = {}
-const final1970Zones = {}
-const finalNowZones = {}
 let lastReleaseName
 let lastReleaseJSONfile
 const minRequestGap = 8
@@ -631,12 +674,18 @@ function getFinalTzOutputFilename (tzid) {
   return path.join(workingDir, `${safeTzFilename(tzid)}.json`)
 }
 
-function getFinal1970TzOutputFilename (tzid) {
-  return path.join(workingDir, `${safeTzFilename(tzid)}-1970.json`)
+function getFinal1970TzOutputFilename (source) {
+  return path.join(
+    workingDir,
+    `${safeTzFilename(source.id)}-1970${source.withOceans ? '-withOceans' : ''}.json`
+  )
 }
 
-function getFinalNowTzOutputFilename (tzid) {
-  return path.join(workingDir, `${safeTzFilename(tzid)}-now.json`)
+function getFinalNowTzOutputFilename (source) {
+  return path.join(
+    workingDir,
+    `${safeTzFilename(source.id)}-now${source.withOceans ? '-withOceans' : ''}.json`
+  )
 }
 
 function getSourceDownloadName (id) {
@@ -663,9 +712,9 @@ function getDataSource (source) {
   } else if (source.source === 'final') {
     geoJson = require(getFinalTzOutputFilename(source.id))
   } else if (source.source === 'final1970') {
-    geoJson = require(getFinal1970TzOutputFilename(source.id))
+    geoJson = require(getFinal1970TzOutputFilename(source))
   } else if (source.source === 'finalNow') {
-    geoJson = require(getFinalNowTzOutputFilename(source.id))
+    geoJson = require(getFinalNowTzOutputFilename(source))
   } else {
     const err = new Error('unknown source: ' + source.source)
     throw err
@@ -825,17 +874,89 @@ function makeDerivedTimezoneBoundaries (strategy, callback) {
           cacheFilename: path.join(cacheDir, 'derived-1970-cache.json'),
           derivedZoneConfig: zoneCfg1970,
           getFinalTzFilenameFn: getFinal1970TzOutputFilename,
-          loadZonesInMemoryFn: loadFinal1970ZonesIntoMemory,
           progressStatsName: 'Building 1970 zones',
-          progressStatsUpdatePrefix: 'make1970TimezoneBoundary for'
+          progressStatsUpdatePrefix: 'make 1970 Timezone Boundary for'
         }
       : {
           cacheFilename: path.join(cacheDir, 'derived-now-cache.json'),
           derivedZoneConfig: zoneCfgNow,
           getFinalTzFilenameFn: getFinalNowTzOutputFilename,
-          loadZonesInMemoryFn: loadFinalNowZonesIntoMemory,
           progressStatsName: 'Building Now zones',
-          progressStatsUpdatePrefix: 'makeNowTimezoneBoundary for'
+          progressStatsUpdatePrefix: 'make Now Timezone Boundary for'
+        }
+  )
+
+  const buildingProgress = new ProgressStats(
+    cfg.progressStatsName,
+    Object.keys(cfg.derivedZoneConfig).length
+  )
+
+  // load cache if available
+  const tzBoundaryCache = new FileLookupCache({
+    filename: cfg.cacheFilename
+  })
+
+  tzBoundaryCache.init(() => {
+    asynclib.each(
+      Object.keys(cfg.derivedZoneConfig),
+      (tzid, cb) => {
+        const message = `${cfg.progressStatsUpdatePrefix} ${tzid}`
+        buildingProgress.beginTask(message, true)
+
+        // build a cache key that does not take into account the oceans
+        const cacheKey = hashMd5(
+          cfg.derivedZoneConfig[tzid]
+            .filter(zone => zone.indexOf('Etc/GMT') === -1)
+            .map(getZoneGeomHash)
+        )
+
+        tzBoundaryCache.calculate({
+          cacheKey,
+          outputFilename: cfg.getFinalTzFilenameFn({ id: tzid, withOceans: false }),
+          calculateFn: calculateCb => {
+            console.log(message)
+            let geom = getDataSource({ source: 'final', id: tzid })
+
+            cfg.derivedZoneConfig[tzid].forEach(zone => {
+              if (zone === tzid) return
+              // skip ocean zones at first
+              if (zone.indexOf('Etc/GMT') > -1) return
+              console.log('- ', zone)
+              const zoneData = getDataSource({ source: 'final', id: zone })
+              geom = debugGeo('union', geom, zoneData)
+            })
+
+            calculateCb(null, postProcessZone(geom))
+          },
+          callback: cb
+        })
+      },
+      err => {
+        if (err) return callback(err)
+        tzBoundaryCache.end(callback)
+      }
+    )
+  })
+}
+
+function makeDerivedTimezoneBoundariesWithOceans (strategy, callback) {
+  const cfg = (
+    strategy === '1970'
+      ? {
+          cacheFilename: path.join(cacheDir, 'derived-1970-with-oceans-cache.json'),
+          dataSource: 'final1970',
+          derivedZoneConfig: zoneCfg1970,
+          getFinalTzFilenameFn: getFinal1970TzOutputFilename,
+          progressStatsName: 'Building 1970 zones with oceans',
+          progressStatsUpdatePrefix: 'make 1970 Timezone Boundary with oceans for'
+        }
+      : {
+          cacheFilename: path.join(cacheDir, 'derived-now-with-oceans-cache.json'),
+          dataSource: 'finalNow',
+          derivedZoneConfig: zoneCfgNow,
+          getFinalTzFilenameFn: getFinalNowTzOutputFilename,
+          progressStatsName: 'Building Now zones with oceans',
+          progressStatsUpdatePrefix: 'make Now Timezone Boundary with oceans for'
         }
   )
 
@@ -858,16 +979,21 @@ function makeDerivedTimezoneBoundaries (strategy, callback) {
 
         tzBoundaryCache.calculate({
           cacheKey: hashMd5(cfg.derivedZoneConfig[tzid].map(getZoneGeomHash)),
-          outputFilename: cfg.getFinalTzFilenameFn(tzid),
+          outputFilename: cfg.getFinalTzFilenameFn({ id: tzid, withOceans: true }),
           calculateFn: calculateCb => {
             console.log(message)
-            let geom = getDataSource({ source: 'final', id: tzid })
+            // get geometry of unioned zones without oceans
+            let geom = getDataSource({ source: cfg.dataSource, id: tzid })
 
             cfg.derivedZoneConfig[tzid].forEach(zone => {
-              console.log('-', zone)
-              if (zone === tzid) return
-              const zoneData = getDataSource({ source: 'final', id: zone })
-              geom = debugGeo('union', geom, zoneData)
+              // skip everything except ocean zones
+              if (zone.indexOf('Etc/GMT') === -1) return
+              console.log('- ', zone)
+              oceanZoneBoundaries.forEach(oceanData => {
+                if (oceanData.tzid === zone) {
+                  geom = debugGeo('union', geom, geoJsonToGeom(oceanData.geom))
+                }
+              })
             })
 
             calculateCb(null, postProcessZone(geom))
@@ -877,7 +1003,6 @@ function makeDerivedTimezoneBoundaries (strategy, callback) {
       },
       err => {
         if (err) return callback(err)
-        cfg.loadZonesInMemoryFn()
         tzBoundaryCache.end(callback)
       }
     )
@@ -888,20 +1013,6 @@ function loadFinalZonesIntoMemory () {
   console.log('load zones into memory')
   Object.keys(zoneCfg).forEach(tzid => {
     finalZones[tzid] = getDataSource({ source: 'final', id: tzid })
-  })
-}
-
-function loadFinal1970ZonesIntoMemory () {
-  console.log('load 1970 zones into memory')
-  Object.keys(zoneCfg1970).forEach(tzid => {
-    final1970Zones[tzid] = getDataSource({ source: 'final1970', id: tzid })
-  })
-}
-
-function loadFinalNowZonesIntoMemory () {
-  console.log('load Now zones into memory')
-  Object.keys(zoneCfgNow).forEach(tzid => {
-    finalNowZones[tzid] = getDataSource({ source: 'finalNow', id: tzid })
   })
 }
 
@@ -1092,43 +1203,26 @@ function validateTimezoneBoundaries (callback) {
 }
 
 let oceanZoneBoundaries
-let oceanZones = [
-  { tzid: 'Etc/GMT-12', left: 172.5, right: 180 },
-  { tzid: 'Etc/GMT-11', left: 157.5, right: 172.5 },
-  { tzid: 'Etc/GMT-10', left: 142.5, right: 157.5 },
-  { tzid: 'Etc/GMT-9', left: 127.5, right: 142.5 },
-  { tzid: 'Etc/GMT-8', left: 112.5, right: 127.5 },
-  { tzid: 'Etc/GMT-7', left: 97.5, right: 112.5 },
-  { tzid: 'Etc/GMT-6', left: 82.5, right: 97.5 },
-  { tzid: 'Etc/GMT-5', left: 67.5, right: 82.5 },
-  { tzid: 'Etc/GMT-4', left: 52.5, right: 67.5 },
-  { tzid: 'Etc/GMT-3', left: 37.5, right: 52.5 },
-  { tzid: 'Etc/GMT-2', left: 22.5, right: 37.5 },
-  { tzid: 'Etc/GMT-1', left: 7.5, right: 22.5 },
-  { tzid: 'Etc/GMT', left: -7.5, right: 7.5 },
-  { tzid: 'Etc/GMT+1', left: -22.5, right: -7.5 },
-  { tzid: 'Etc/GMT+2', left: -37.5, right: -22.5 },
-  { tzid: 'Etc/GMT+3', left: -52.5, right: -37.5 },
-  { tzid: 'Etc/GMT+4', left: -67.5, right: -52.5 },
-  { tzid: 'Etc/GMT+5', left: -82.5, right: -67.5 },
-  { tzid: 'Etc/GMT+6', left: -97.5, right: -82.5 },
-  { tzid: 'Etc/GMT+7', left: -112.5, right: -97.5 },
-  { tzid: 'Etc/GMT+8', left: -127.5, right: -112.5 },
-  { tzid: 'Etc/GMT+9', left: -142.5, right: -127.5 },
-  { tzid: 'Etc/GMT+10', left: -157.5, right: -142.5 },
-  { tzid: 'Etc/GMT+11', left: -172.5, right: -157.5 },
-  { tzid: 'Etc/GMT+12', left: -180, right: -172.5 }
-]
 
-if (includedZones.length > 0) {
-  oceanZones = oceanZones.filter(oceanZone => includedZones.indexOf(oceanZone) > -1)
-}
-if (excludedZones.length > 0) {
-  oceanZones = oceanZones.filter(oceanZone => excludedZones.indexOf(oceanZone) === -1)
+function oceanZoneHasAlikeZone (zoneCfgObj, oceanTzid) {
+  const zoneCfgs = Object.keys(zoneCfgObj)
+  let combinedZoneList
+  for (let i = 0; i < zoneCfgs.length; i++) {
+    combinedZoneList = zoneCfgObj[zoneCfgs[i]]
+    for (let j = 0; j < combinedZoneList.length; j++) {
+      if (combinedZoneList[j] === oceanTzid) return true
+    }
+  }
+  return false
 }
 
-function addOceans (callback) {
-  console.log('adding ocean boundaries')
+/**
+ * Calculates the ocean boundaries for the full set of timezones by
+ * diffing all of the ocean zones against the calculated boundaries of
+ * each individual timezone.
+ */
+function calculateOceans (callback) {
+  console.log('calculating ocean boundaries')
   const zones = Object.keys(zoneCfg)
 
   const oceanProgress = new ProgressStats(
@@ -1173,6 +1267,8 @@ function addOceans (callback) {
             })
 
             calculateCb(null, {
+              hasAlikeIn1970: oceanZoneHasAlikeZone(zoneCfg1970, oceanZone.tzid),
+              hasAlikeInNow: oceanZoneHasAlikeZone(zoneCfgNow, oceanZone.tzid),
               geom: postProcessZone(oceanGeom, true),
               tzid: oceanZone.tzid
             })
@@ -1181,11 +1277,26 @@ function addOceans (callback) {
         })
       },
       (err, results) => {
+        if (err) return callback(err)
         oceanZoneBoundaries = results
-        oceanBoundaryCache.end(error => callback(err || error))
+        oceanBoundaryCache.end(callback)
       }
     )
   })
+}
+
+function add1970orNowZoneToWriter ({
+  filename,
+  tzid,
+  writer
+}) {
+  const feature = {
+    type: 'Feature',
+    properties: { tzid },
+    geometry: require(filename)
+  }
+  const stringified = JSON.stringify(feature)
+  writer.add(stringified)
 }
 
 function combineAndWriteZones (callback) {
@@ -1217,27 +1328,31 @@ function combineAndWriteZones (callback) {
     oceanWriter.add(stringified)
   })
   if (!argv.skip_1970_zones) {
-    Object.keys(zoneCfg1970).forEach(zoneName => {
-      const feature = {
-        type: 'Feature',
-        properties: { tzid: zoneName },
-        geometry: geomToGeoJson(final1970Zones[zoneName])
-      }
-      const stringified = JSON.stringify(feature)
-      regular1970Writer.add(stringified)
-      ocean1970Writer.add(stringified)
+    Object.keys(zoneCfg1970).forEach(tzid => {
+      add1970orNowZoneToWriter({
+        filename: getFinal1970TzOutputFilename({ id: tzid, withOceans: false }),
+        tzid,
+        writer: regular1970Writer
+      })
+      add1970orNowZoneToWriter({
+        filename: getFinal1970TzOutputFilename({ id: tzid, withOceans: true }),
+        tzid,
+        writer: ocean1970Writer
+      })
     })
   }
   if (!argv.skip_now_zones) {
-    Object.keys(zoneCfgNow).forEach(zoneName => {
-      const feature = {
-        type: 'Feature',
-        properties: { tzid: zoneName },
-        geometry: geomToGeoJson(finalNowZones[zoneName])
-      }
-      const stringified = JSON.stringify(feature)
-      regularNowWriter.add(stringified)
-      oceanNowWriter.add(stringified)
+    Object.keys(zoneCfgNow).forEach(tzid => {
+      add1970orNowZoneToWriter({
+        filename: getFinalNowTzOutputFilename({ id: tzid, withOceans: false }),
+        tzid,
+        writer: regularNowWriter
+      })
+      add1970orNowZoneToWriter({
+        filename: getFinalNowTzOutputFilename({ id: tzid, withOceans: true }),
+        tzid,
+        writer: oceanNowWriter
+      })
     })
   }
   oceanZoneBoundaries.forEach(boundary => {
@@ -1248,10 +1363,14 @@ function combineAndWriteZones (callback) {
     }
     const stringified = JSON.stringify(feature)
     oceanWriter.add(stringified)
-    if (!argv.skip_1970_zones) {
+
+    // skip any ocean zones that were merged into other 1970 zones (if doing 1970 zones)
+    if (!argv.skip_1970_zones && !boundary.hasAlikeIn1970) {
       ocean1970Writer.add(stringified)
     }
-    if (!argv.skip_now_zones) {
+
+    // skip any ocean zones that were merged into other now zones (if doing now zones)
+    if (!argv.skip_now_zones && !boundary.hasAlikeInNow) {
       oceanNowWriter.add(stringified)
     }
   })
@@ -1587,6 +1706,43 @@ function assembleAndZipInputData (callback) {
   )
 }
 
+function writeBaseNames (withOceans, cb) {
+  let zoneNames = Object.keys(zoneCfg)
+  if (withOceans) {
+    oceanZones.forEach(oceanZone => {
+      zoneNames.push(oceanZone.tzid)
+    })
+  }
+  if (includedZones.length > 0) {
+    zoneNames = zoneNames.filter(zoneName => includedZones.indexOf(zoneName) > -1)
+  }
+  if (excludedZones.length > 0) {
+    zoneNames = zoneNames.filter(zoneName => excludedZones.indexOf(zoneName) === -1)
+  }
+  fs.writeFile(
+    path.join(distDir, `timezone-names${withOceans ? '-with-oceans' : ''}.json`),
+    JSON.stringify(zoneNames),
+    cb
+  )
+}
+
+function writeCombinedZoneLookup (product, cfg, withOceans, cb) {
+  const cfgToWrite = cloneDeep(cfg)
+  if (!withOceans) {
+    Object.keys(cfgToWrite).forEach(zone => {
+      cfgToWrite[zone] = cfgToWrite[zone].filter(tzid => tzid.indexOf('Etc/GMT') === -1)
+    })
+  }
+  fs.writeFile(
+    path.join(
+      distDir,
+      `timezone-names-${withOceans ? 'with-oceans-' : ''}${product}.json`
+    ),
+    JSON.stringify(cfgToWrite),
+    cb
+  )
+}
+
 const autoScript = {
   makeCacheDirAndFns: function (cb) {
     overallProgress.beginTask(`Creating downloads dir (${downloadsDir})`)
@@ -1646,7 +1802,7 @@ const autoScript = {
       validateTimezoneBoundaries(cb)
     }
   }],
-  create1970zones: ['validateZones', (results, cb) => {
+  create1970Zones: ['validateZones', (results, cb) => {
     if (argv.skip_1970_zones) {
       overallProgress.beginTask('WARNING: Skipping creation of 1970 zones!')
       cb()
@@ -1664,11 +1820,29 @@ const autoScript = {
     overallProgress.beginTask('Creating now timezone boundaries')
     makeDerivedTimezoneBoundaries('now', cb)
   }],
-  addOceans: ['validateZones', function (results, cb) {
-    overallProgress.beginTask('Adding oceans')
-    addOceans(cb)
+  calculateOceans: ['validateZones', function (results, cb) {
+    overallProgress.beginTask('Calculating ocean boundaries')
+    calculateOceans(cb)
   }],
-  mergeZones: ['addOceans', 'create1970zones', 'createNowZones', function (results, cb) {
+  create1970ZonesWithOceans: ['calculateOceans', 'create1970Zones', (results, cb) => {
+    if (argv.skip_1970_zones) {
+      overallProgress.beginTask('WARNING: Skipping creation of 1970 zones with oceans!')
+      cb()
+      return
+    }
+    overallProgress.beginTask('Creating 1970 timezone boundaries')
+    makeDerivedTimezoneBoundariesWithOceans('1970', cb)
+  }],
+  createNowZonesWithOceans: ['calculateOceans', 'createNowZones', (results, cb) => {
+    if (argv.skip_now_zones) {
+      overallProgress.beginTask('WARNING: Skipping creation of now zones with oceans!')
+      cb()
+      return
+    }
+    overallProgress.beginTask('Creating 1970 timezone boundaries')
+    makeDerivedTimezoneBoundariesWithOceans('now', cb)
+  }],
+  mergeAndWriteZones: ['create1970ZonesWithOceans', 'createNowZonesWithOceans', function (results, cb) {
     overallProgress.beginTask('Merging zones')
     combineAndWriteZones(cb)
   }],
@@ -1681,7 +1855,7 @@ const autoScript = {
       combineAndWriteOSMZones(cb)
     }
   }],
-  zipGeoJsonFiles: ['mergeZones', function (results, cb) {
+  zipGeoJsonFiles: ['mergeAndWriteZones', function (results, cb) {
     if (argv.skip_zip) {
       overallProgress.beginTask('Skipping zip')
       return cb()
@@ -1689,7 +1863,7 @@ const autoScript = {
     overallProgress.beginTask('Zipping geojson files')
     zipGeoJsonFiles(cb)
   }],
-  makeShapefiles: ['mergeZones', function (results, cb) {
+  makeShapefiles: ['mergeAndWriteZones', function (results, cb) {
     if (argv.skip_shapefile) {
       overallProgress.beginTask('Skipping shapefile creation')
       return cb()
@@ -1712,63 +1886,17 @@ const autoScript = {
     )
   }],
   makeListOfTimeZoneNames: function (cb) {
-    overallProgress.beginTask('Writing timezone names to file')
-    let zoneNames = Object.keys(zoneCfg)
-    let zoneNames1970 = Object.keys(zoneCfg1970)
-    let zoneNamesNow = Object.keys(zoneCfgNow)
-    oceanZones.forEach(oceanZone => {
-      zoneNames.push(oceanZone.tzid)
-      zoneNames1970.push(oceanZone.tzid)
-      zoneNamesNow.push(oceanZone.tzid)
-    })
-    zoneNames.sort()
-    zoneNames1970.sort()
-    zoneNamesNow.sort()
-    if (includedZones.length > 0) {
-      zoneNames = zoneNames.filter(zoneName => includedZones.indexOf(zoneName) > -1)
-      zoneNames1970 = zoneNames1970.filter(zoneName => includedZones.indexOf(zoneName) > -1)
-      zoneNamesNow = zoneNamesNow.filter(zoneName => includedZones.indexOf(zoneName) > -1)
-    }
-    if (excludedZones.length > 0) {
-      zoneNames = zoneNames.filter(zoneName => excludedZones.indexOf(zoneName) === -1)
-      zoneNames1970 = zoneNames1970.filter(zoneName => excludedZones.indexOf(zoneName) === -1)
-      zoneNamesNow = zoneNamesNow.filter(zoneName => excludedZones.indexOf(zoneName) === -1)
-    }
-    fs.writeFile(
-      distDir + '/timezone-names.json',
-      JSON.stringify(zoneNames),
-      () => {
-        if (!argv.skip_1970_zones) {
-          fs.writeFile(
-            distDir + '/timezone-names-1970.json',
-            JSON.stringify(zoneNames1970),
-            () => {
-              if (!argv.skip_now_zones) {
-                fs.writeFile(
-                  distDir + '/timezone-names-now.json',
-                  JSON.stringify(zoneNamesNow),
-                  cb
-                )
-              } else {
-                cb()
-              }
-            }
-          )
-        } else {
-          if (!argv.skip_now_zones) {
-            fs.writeFile(
-              distDir + '/timezone-names-now.json',
-              JSON.stringify(zoneNamesNow),
-              cb
-            )
-          } else {
-            cb()
-          }
-        }
-      }
-    )
+    overallProgress.beginTask('Writing timezone names and lookups to file')
+    asynclib.parallel([
+      cbComprehensive => writeBaseNames(false, cbComprehensive),
+      cbComprehensiveWithOceans => writeBaseNames(true, cbComprehensiveWithOceans),
+      cb1970 => writeCombinedZoneLookup('1970', zoneCfg1970, false, cb1970),
+      cb1970WithOceans => writeCombinedZoneLookup('1970', zoneCfg1970, true, cb1970WithOceans),
+      cbNow => writeCombinedZoneLookup('Now', zoneCfgNow, false, cbNow),
+      cbNowWithOceans => writeCombinedZoneLookup('Now', zoneCfgNow, true, cbNowWithOceans)
+    ], cb)
   },
-  analyzeChangesFromLastRelease: ['downloadLastRelease', 'mergeZones', function (results, cb) {
+  analyzeChangesFromLastRelease: ['downloadLastRelease', 'mergeAndWriteZones', function (results, cb) {
     if (argv.skip_analyze_diffs) {
       overallProgress.beginTask('WARNING: Skipping analysis of changes from last release!')
       cb()
