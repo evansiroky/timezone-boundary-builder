@@ -927,9 +927,6 @@
   "Europe-Belgrade-tz": {
     "timezone": "Europe/Belgrade"
   },
-  "Europe-Berlin-tz": {
-    "name": "Old Europe/Berlin timezone"
-  },
   "Europe-Bratislava-tz": {
     "timezone": "Europe/Bratislava"
   },
@@ -1088,6 +1085,9 @@
   },
   "Extent of Nepalese Claims at Kalapani Territory": {
     "name": "Extent of Nepalese Claims at Kalapani Territory"
+  },
+  "Germany": {
+    "ISO3166-1": "DE"
   },
   "Indian-Antananarivo-tz": {
     "timezone": "Indian/Antananarivo"
