@@ -32,6 +32,12 @@
       "description": "Allow disputed area of Isla Suárez (https://en.wikipedia.org/wiki/Isla_Su%C3%A1rez) to overlap."
     }
   ],
+  "America/Los_Angeles-America/Vancouver": [
+    {
+      "bounds": [-125.1, 48.4, -124.7, 48.6],
+      "description": "Allow disputed area of seaward boundary of the Strait of Juan de Fuca (https://en.wikipedia.org/wiki/Strait_of_Juan_de_Fuca#Boundary_dispute) to overlap."
+    }
+  ],
   "America/Moncton-America/New_York": [
     {
       "bounds": [-67.4, 44.2, -66.9, 44.8],

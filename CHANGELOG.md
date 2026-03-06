@@ -3,6 +3,7 @@
 ### Zone Changes
 
 * Update to latest OSM data
+* Add an expected zone overlap between `America/Los_Angeles` and `America/Vancouver` for a disputed area of seaward boundary of the Strait of Juan de Fuca.
 
 ### Other Changes
 
