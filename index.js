@@ -318,6 +318,7 @@ const finalZones = {}
 let lastReleaseName
 let lastReleaseJSONfile
 const minRequestGap = 8
+const maxRequestGap = 300
 let curRequestGap = 8
 const bufferDistance = 0.01
 
@@ -492,7 +493,7 @@ function downloadFromOverpass (
           if (err) {
             console.log(err)
             console.log('Increasing overpass request gap')
-            curRequestGap *= 2
+            curRequestGap = Math.min(maxRequestGap, curRequestGap * 2)
             makeQuery()
           } else {
             console.log('Success, decreasing overpass request gap')

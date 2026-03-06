@@ -1,3 +1,13 @@
+## 2026a
+
+### Zone Changes
+
+* Update to latest OSM data
+
+### Other Changes
+
+* Implement a maximum overpass request gap.
+
 ## 2025c
 
 ### Zone Changes
