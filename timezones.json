@@ -2503,6 +2503,14 @@
       "op": "difference",
       "source": "overpass",
       "id": "Europe-Simferopol-tz"
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "Europe-Kirov-tz"
+    }, {
+      "op": "difference",
+      "source": "overpass",
+      "id": "Europe-Volgograd-tz"
     }
   ],
   "Europe/Oslo": [

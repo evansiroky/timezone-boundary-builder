@@ -712,7 +712,8 @@
     "timezone": "Asia/Kolkata"
   },
   "Asia-Krasnoyarsk-tz": {
-    "timezone": "Asia/Krasnoyarsk"
+    "timezone": "Asia/Krasnoyarsk",
+    "boundary": "administrative"
   },
   "Asia-Kuala_Lumpur-tz": {
     "timezone": "Asia/Kuala_Lumpur"
@@ -1027,7 +1028,8 @@
     "timezone": "Europe/Rome"
   },
   "Europe-Samara-tz": {
-    "timezone": "Europe/Samara"
+    "timezone": "Europe/Samara",
+    "boundary": "administrative"
   },
   "Europe-San_Marino-tz": {
     "timezone": "Europe/San_Marino"
