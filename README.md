@@ -2,7 +2,7 @@
 
 The goal of this project is to produce a shapefile with the boundaries of the world's timezones using OpenStreetMap data.
 
-<p align="center"><img src="2025c.png" /></p>
+<p align="center"><img src="2026a.png" /></p>
 
 [![Github downloads for all releases](https://img.shields.io/github/downloads/evansiroky/timezone-boundary-builder/total.svg)](https://tooomm.github.io/github-release-stats/?username=evansiroky&repository=timezone-boundary-builder)  [![GitHub release](https://img.shields.io/github/release/evansiroky/timezone-boundary-builder.svg)](https://github.com/evansiroky/timezone-boundary-builder/releases/latest)
 
@@ -41,7 +41,7 @@ There are 3 different timekeeping similarity variations that are produced:
 
 ##### Comprehensive #####
 
-<p align="center"><img src="2025c.png" /></p>
+<p align="center"><img src="2026a.png" /></p>
 
 This follows a strategy of including all timezone identifiers that were produced by the timezone database project according to the up-until 1993 practice of producing at least one zone per country. This does not include zones that were determined to be unneccessary due to lack of supporting evidence. This variation should mostly align with those timezones listed in the [zone.tab](https://github.com/eggert/tz/blob/main/zone.tab) file within the timezone database project. This dataset is the basis for producing the other 2 timekeeping variations in this project.
 
@@ -51,7 +51,7 @@ In the release files, these zones are identified with the prefix `timezones` or 
 
 ##### Same since 1970 #####
 
-<p align="center"><img src="2025c-1970.png" /></p>
+<p align="center"><img src="2026a-1970.png" /></p>
 
 This strategy merges timezones that have agreed on timekeeping methods since the year 1970. This results in a reduced set of timezones, simplified timezone polygons and smaller storage footprint. This variation should mostly align with those timezones listed in the [zone1970.tab](https://github.com/eggert/tz/blob/main/zone1970.tab) file within the timezone database project. However, the [@tubular/time](https://www.npmjs.com/package/@tubular/time) library is used to determine which zones get merged together from the comprehensive variation. The output of the zones from the comprehensive method are combined together for all relevant zones with the zone having the largest city population being used for the `tzid` of the merged zone in the final output.
 
@@ -61,7 +61,7 @@ In the release files, these zones are identified with the prefix `timezones-1970
 
 ##### Same since now #####
 
-<p align="center"><img src="2025c-now.png" /></p>
+<p align="center"><img src="2026a-now.png" /></p>
 
 This strategy merges timezones that agree on timekeeping methods as of the approximate release date of the data. This results in a reduced set of timezones, simplified timezone polygons and smaller storage footprint. This variation should mostly align with those timezones listed in the [zonenow.tab](https://github.com/eggert/tz/blob/main/zonenow.tab) file within the timezone database project. However, the [@tubular/time](https://www.npmjs.com/package/@tubular/time) library is used to determine which zones get merged together from the comprehensive variation. The output of the zones from the comprehensive method are combined together for all relevant zones and the zone with the largest city population is used in the final output. 
 
