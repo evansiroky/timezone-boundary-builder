@@ -32,7 +32,8 @@
     "lodash.clonedeep": "^4.5.0",
     "lodash.memoize": "^4.1.2",
     "object-hash": "^3.0.0",
-    "query-overpass": "^1.5.5",
+    "osmtogeojson": "^3.0.0-beta.5",
+    "overpass-ts": "^4.3.8",
     "rimraf": "^3.0.2",
     "shpjs": "^4.0.2",
     "yargs": "^17.7.2"

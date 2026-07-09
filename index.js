@@ -18,8 +18,9 @@ const jsts = require('jsts')
 const cloneDeep = require('lodash.clonedeep')
 const memoize = require('lodash.memoize')
 const hash = require('object-hash')
+const osmtogeojson = require('osmtogeojson')
+const { overpassJson } = require('overpass-ts')
 const rimraf = require('rimraf')
-const overpass = require('query-overpass')
 const yargs = require('yargs')
 
 const FeatureWriterStream = require('./util/featureWriterStream')
@@ -475,41 +476,31 @@ function downloadFromOverpass (
 
   query += ';);out body;>;out meta qt;'
 
-  // query-overpass sometimes makes duplicate callbacks, so keep track of the callbacks and
-  // only do a next action once.
   let curOverpassQueryAttempt = 0
-  const overpassAttempts = {}
 
   asynclib.auto({
     fetchFromOverpassIfNeeded: function (cb) {
       console.log('downloading from overpass')
       fetchIfNeeded(filename, overpassDownloadCallback, cb, function () {
-        const overpassResponseHandler = function (err, data, overpassAttempt) {
-          if (overpassAttempts[overpassAttempt]) {
-            // Skip duplicate callback
-            return
-          }
-          overpassAttempts[overpassAttempt] = true
-          if (err) {
-            console.log(err)
-            console.log('Increasing overpass request gap')
-            curRequestGap = Math.min(maxRequestGap, curRequestGap * 2)
-            makeQuery()
-          } else {
-            console.log('Success, decreasing overpass request gap')
-            curRequestGap = Math.max(minRequestGap, curRequestGap / 2)
-            cb(null, data)
-          }
+        
+        const overpassErrorHandler = function (err) {
+          console.log(err)
+          console.log('Increasing overpass request gap')
+          curRequestGap = Math.min(maxRequestGap, curRequestGap * 2)
+          makeQuery()
         }
+
+        const overpassSuccessHandler = function (data) {
+          console.log('Success, decreasing overpass request gap')
+          curRequestGap = Math.max(minRequestGap, curRequestGap / 2)
+          cb(null, osmtogeojson(data, { flatProperties: true }))
+        }
+
         const makeQuery = function () {
           console.log('waiting ' + curRequestGap + ' seconds')
           setTimeout(function () {
             curOverpassQueryAttempt++
-            overpass(
-              query,
-              (err, data) => overpassResponseHandler(err, data, curOverpassQueryAttempt),
-              { flatProperties: true }
-            )
+            overpassJson(query).then(overpassSuccessHandler).catch(overpassErrorHandler)
           }, curRequestGap * 1000)
         }
         makeQuery()
