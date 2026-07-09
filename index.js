@@ -191,7 +191,18 @@ function getZoneCfgSinceTime (cutoffTime, cacheFilename) {
     const startingZoneOffset = timezoneInstance.getOffsetForWallTime(cutoffTime)
 
     // Offset-only zones (Etc/UTC, Etc/GMT-3, etc) return null instead of an empty list
-    const transitions = (timezoneInstance.getAllTransitions() || [])
+    let transitions = (timezoneInstance.getAllTransitions() || [])
+
+    // Remove transitions that don't actually change the offset
+    for (let i = 1; i < transitions.length;) {
+      if (transitions[i - 1].utcOffset === transitions[i].utcOffset) {
+        transitions.splice(i, 1)
+      } else {
+        i += 1
+      }
+    }
+
+    transitions = transitions
       .filter(t => t.transitionTime > cutoffTime)
       // Only respect the transition times and total offset for equality. This way, different
       // zones that only use different names (like GMT/BST for London but WET/WEST for Lisbon),
