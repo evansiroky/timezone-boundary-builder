@@ -1,3 +1,14 @@
+## 2026c
+
+### Zone Changes
+
+* Update to latest OSM data.
+* Recalculate timezones since 1970 and timezones since now with most recent timezone database data.
+
+### Other Changes
+
+* Fix a bug that caused similar timezones to not merge despite same UTC Offsets after transitions. ([#210](https://github.com/evansiroky/timezone-boundary-builder/pull/210))
+
 ## 2026b
 
 ### Zone Changes
