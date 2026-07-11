@@ -487,13 +487,10 @@ function downloadFromOverpass (
 
   query += ';);out body;>;out meta qt;'
 
-  let curOverpassQueryAttempt = 0
-
   asynclib.auto({
     fetchFromOverpassIfNeeded: function (cb) {
       console.log('downloading from overpass')
       fetchIfNeeded(filename, overpassDownloadCallback, cb, function () {
-        
         const overpassErrorHandler = function (err) {
           console.log(err)
           console.log('Increasing overpass request gap')
@@ -510,7 +507,6 @@ function downloadFromOverpass (
         const makeQuery = function () {
           console.log('waiting ' + curRequestGap + ' seconds')
           setTimeout(function () {
-            curOverpassQueryAttempt++
             overpassJson(query).then(overpassSuccessHandler).catch(overpassErrorHandler)
           }, curRequestGap * 1000)
         }
