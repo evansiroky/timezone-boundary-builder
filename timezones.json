@@ -731,6 +731,14 @@
       "op": "init",
       "source": "overpass",
       "id": "America-Edmonton-tz"
+    }, {
+      "op": "union",
+      "source": "overpass",
+      "id": "Rural-Golden-BC"
+    }, {
+      "op": "union",
+      "source": "overpass",
+      "id": "Golden-BC"
     }
   ],
   "America/Eirunepe": [

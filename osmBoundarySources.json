@@ -1091,6 +1091,9 @@
   "Germany": {
     "ISO3166-1": "DE"
   },
+  "Golden-BC": {
+    "wikidata": "Q1020179"
+  },
   "Indian-Antananarivo-tz": {
     "timezone": "Indian/Antananarivo"
   },
@@ -1242,5 +1245,8 @@
   },
   "Panama": {
     "ISO3166-1": "PA"
+  },
+  "Rural-Golden-BC": {
+    "name": "Area A (Kicking Horse/Kinbasket Lake)"
   }
 }

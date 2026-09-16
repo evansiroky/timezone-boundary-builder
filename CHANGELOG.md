@@ -1,3 +1,11 @@
+## 2026d
+
+### Zone Changes
+
+* Update to latest OSM data.
+* Use America/Edmonton for Golden, BC while they figure out what to do.
+* Recalculate timezones since 1970 and timezones since now with most recent timezone database data.
+
 ## 2026c
 
 ### Zone Changes
