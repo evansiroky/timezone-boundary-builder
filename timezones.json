@@ -2822,7 +2822,12 @@
     {
       "op": "init",
       "source": "overpass",
-      "id": "Pacific-Easter-tz"
+      "id": "Chile"
+    }, {
+      "op": "intersect",
+      "source": "manual-polygon",
+      "data": [[[-113,-28],[-103,-23],[-104,-29],[-113,-28]]],
+      "description": "Intersect part of Chile to isolate Easter Island and Isla Salas y Gómez territorial waters."
     }
   ],
   "Pacific/Efate": [

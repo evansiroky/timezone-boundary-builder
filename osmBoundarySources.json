@@ -913,6 +913,9 @@
   "Chamorro Time Zone": {
     "name": "Chamorro Time Zone"
   },
+  "Chile": {
+    "ISO3166-1": "CL"
+  },
   "Europe-Amsterdam-tz": {
     "timezone": "Europe/Amsterdam"
   },
@@ -1145,9 +1148,6 @@
   },
   "Pacific-Chuuk-tz": {
     "timezone": "Pacific/Chuuk"
-  },
-  "Pacific-Easter-tz": {
-    "timezone": "Pacific/Easter"
   },
   "Pacific-Efate-tz": {
     "timezone": "Pacific/Efate"
