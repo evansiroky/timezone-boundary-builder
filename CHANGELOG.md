@@ -1,3 +1,15 @@
+## 2026e
+
+### Zone Changes
+
+* Update to latest OSM data.
+* Use Chilean territorial waters only for Pacific/Easter
+* Recalculate timezones since 1970 and timezones since now with most recent timezone database data.
+
+### Other Changes
+
+* Fix a caching issue with alike since zones that had ocean zones
+
 ## 2026d
 
 ### Zone Changes

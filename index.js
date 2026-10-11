@@ -918,7 +918,7 @@ function makeDerivedTimezoneBoundaries (strategy, callback) {
 
             cfg.derivedZoneConfig[tzid].forEach(zone => {
               if (zone === tzid) return
-              // skip ocean zones at first
+              // skip ocean zones
               if (zone.indexOf('Etc/GMT') > -1) return
               console.log('- ', zone)
               const zoneData = getDataSource({ source: 'final', id: zone })
@@ -936,6 +936,13 @@ function makeDerivedTimezoneBoundaries (strategy, callback) {
       }
     )
   })
+}
+
+function getOceanZoneGeom (zone) {
+  for (let i = 0; i < oceanZoneBoundaries.length; i++) {
+    const oceanZone = oceanZoneBoundaries[i]
+    if (oceanZone.tzid === zone) return oceanZone.geom
+  }
 }
 
 function makeDerivedTimezoneBoundariesWithOceans (strategy, callback) {
@@ -977,7 +984,13 @@ function makeDerivedTimezoneBoundariesWithOceans (strategy, callback) {
         buildingProgress.beginTask(message, true)
 
         tzBoundaryCache.calculate({
-          cacheKey: hashMd5(cfg.derivedZoneConfig[tzid].map(getZoneGeomHash)),
+          cacheKey: hashMd5(cfg.derivedZoneConfig[tzid].map(
+            tzidToCombine => {
+              return (tzidToCombine.indexOf('Etc/GMT') === -1)
+                ? getZoneGeomHash(tzidToCombine)
+                : hasha(JSON.stringify(getOceanZoneGeom(tzidToCombine)))
+            })
+          ),
           outputFilename: cfg.getFinalTzFilenameFn({ id: tzid, withOceans: true }),
           calculateFn: calculateCb => {
             console.log(message)
@@ -988,11 +1001,7 @@ function makeDerivedTimezoneBoundariesWithOceans (strategy, callback) {
               // skip everything except ocean zones
               if (zone.indexOf('Etc/GMT') === -1) return
               console.log('- ', zone)
-              oceanZoneBoundaries.forEach(oceanData => {
-                if (oceanData.tzid === zone) {
-                  geom = debugGeo('union', geom, geoJsonToGeom(oceanData.geom))
-                }
-              })
+              geom = debugGeo('union', geom, geoJsonToGeom(getOceanZoneGeom(zone)))
             })
 
             calculateCb(null, postProcessZone(geom))
