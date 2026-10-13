@@ -129,6 +129,7 @@ A few common languages already have libraries with an API that can be used to lo
 | Language | Library |
 | -- | -- |
 | C | [ZoneDetect](https://github.com/BertoldVdb/ZoneDetect)|
+| Delphi and Free Pascal | [libtz](https://github.com/zedxxx/libtz)|
 | Elixir | [tz_world](https://hex.pm/packages/tz_world)|
 | Go | [timezoneLookup](https://github.com/evanoberholster/timezoneLookup)|
 | Go | [tzf](https://github.com/ringsaturn/tzf)|
