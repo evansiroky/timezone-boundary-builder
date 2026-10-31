@@ -1,0 +1,64 @@
+{
+  "$schema": "https://raw.githubusercontent.com/taginfo/taginfo-projects/master/taginfo-project-schema.json",
+  "data_format": 1,
+  "data_url": "https://raw.githubusercontent.com/evansiroky/timezone-boundary-builder/master/taginfo.json",
+  "project": {
+    "name": "Timezone Boundary Builder",
+    "description": "Builds the boundaries of the world's IANA timezones from OpenStreetMap data.",
+    "project_url": "https://github.com/evansiroky/timezone-boundary-builder",
+    "doc_url": "https://github.com/evansiroky/timezone-boundary-builder#source-of-data",
+    "contact_name": "Evan Siroky",
+    "contact_email": "evan.siroky@yahoo.com"
+  },
+  "tags": [
+    {
+      "key": "timezone",
+      "object_types": ["relation"],
+      "description": "Relations tagged with an IANA timezone identifier are the main source for most zones, whether they are dedicated timezone boundaries or administrative boundaries. Every zone is also compared against the relations OSM tags with its identifier."
+    },
+    {
+      "key": "boundary",
+      "value": "timezone",
+      "object_types": ["relation"],
+      "description": "Not queried directly, but about a quarter of zones are built only from dedicated timezone boundary relations found through their timezone=* tag."
+    },
+    {
+      "key": "boundary",
+      "value": "administrative",
+      "object_types": ["relation"],
+      "description": "Most timezone=* tags are on administrative boundaries. For some zones, boundary=administrative is required together with timezone=* to pick the administrative relation."
+    },
+    {
+      "key": "type",
+      "value": "boundary",
+      "object_types": ["relation"],
+      "description": "Only polygons from type=boundary relations are merged into a zone; other polygons in the result (such as enclaves) are ignored."
+    },
+    {
+      "key": "ISO3166-1",
+      "object_types": ["relation"],
+      "description": "Selects whole-country boundaries used as building blocks for some zones."
+    },
+    {
+      "key": "admin_level",
+      "value": "8",
+      "object_types": ["relation"],
+      "description": "Used together with name=* to select a specific municipality boundary."
+    },
+    {
+      "key": "name",
+      "object_types": ["relation"],
+      "description": "Selects a few specific boundary relations by name, such as disputed areas and special timezone areas."
+    },
+    {
+      "key": "name:en",
+      "object_types": ["relation"],
+      "description": "Selects a specific disputed-area boundary relation by its English name."
+    },
+    {
+      "key": "wikidata",
+      "object_types": ["relation"],
+      "description": "Selects a specific municipality boundary relation by Wikidata ID."
+    }
+  ]
+}
