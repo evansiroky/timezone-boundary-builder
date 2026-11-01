@@ -1,3 +1,10 @@
+## 2026f
+
+### Zone Changes
+
+* Update to latest OSM data.
+* Recalculate timezones since 1970 and timezones since now with most recent timezone database data. Add in temporary hack to code to overcome tzdb's temporary hack for various Canadian zones. ([#217](https://github.com/evansiroky/timezone-boundary-builder/pull/217))
+
 ## 2026e
 
 ### Zone Changes

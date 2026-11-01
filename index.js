@@ -247,7 +247,7 @@ function getZoneCfgSinceTime (cutoffTime, cacheFilename) {
 if (!argv.skip_now_zones) {
   console.log('Generating zone config for zones with the same timekeeping method since now')
   zoneCfgNow = getZoneCfgSinceTime(
-    (new Date()).getTime(),
+    (new Date(2026, 11, 10)).getTime(), // temporary hack to force alike zones after various hacks in tzdb
     path.join(cacheDir, 'zone-config-now.json')
   )
 }
